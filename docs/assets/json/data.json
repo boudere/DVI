@@ -1,16 +1,16 @@
 {
     "Assets": {
-        "Path": "/BitByBit/docs/assets/",
+        "Path": "/DVI/docs/assets/",
         "Images": {
-            "Path": "/BitByBit/docs/assets/img/",
+            "Path": "/DVI/docs/assets/img/",
             "Prefix": "img_",
             "Extension": ".png",
             "Collider": {
-                "Path": "/BitByBit/docs/assets/img/collider/",
+                "Path": "/DVI/docs/assets/img/collider/",
                 "Collider": "collider"
             },
             "Cursor": {
-                "Path": "/BitByBit/docs/assets/img/cursor/",
+                "Path": "/DVI/docs/assets/img/cursor/",
                 "Cursor": "cursor",
                 "CursorSelect": "cursor_selected",
                 "CursorLeft": "cursor_left",
@@ -18,16 +18,16 @@
                 "Background": "background"
             },
             "Dialogos": {
-                "Path": "/BitByBit/docs/assets/img/dialogos/",
+                "Path": "/DVI/docs/assets/img/dialogos/",
 
                 "Dialogos": { 
-                    "Path": "/BitByBit/docs/assets/img/dialogos/dialogos/",
+                    "Path": "/DVI/docs/assets/img/dialogos/dialogos/",
 
                     "CuadradoDialogo": "cuadrado_dialogo",
                     "BotonDialogo": "boton_dialogo"
                 },
                 "Personajes": {
-                    "Path": "/BitByBit/docs/assets/img/dialogos/personajes/",
+                    "Path": "/DVI/docs/assets/img/dialogos/personajes/",
 
                     "Personajes": [
                         "prota",
@@ -43,7 +43,7 @@
                     ]
                 },
                 "Backgrounds": {
-                    "Path": "/BitByBit/docs/assets/img/dialogos/backgrounds/",
+                    "Path": "/DVI/docs/assets/img/dialogos/backgrounds/",
 
                     "Backgrounds": [
                         "habitacion",
@@ -55,10 +55,10 @@
                 }
             },
             "Pantallas": {
-                "Path": "/BitByBit/docs/assets/img/pantallas/",
+                "Path": "/DVI/docs/assets/img/pantallas/",
 
                 "Backgrounds": {
-                    "Path": "/BitByBit/docs/assets/img/pantallas/backgrounds/",
+                    "Path": "/DVI/docs/assets/img/pantallas/backgrounds/",
 
                     "Backgrounds": [
                         "habitacion",
@@ -69,7 +69,7 @@
             }
         },
         "Json": {
-            "Path": "/BitByBit/docs/assets/json/",
+            "Path": "/DVI/docs/assets/json/",
             "Prefix": "json_",
             "Extension": ".json",
 
