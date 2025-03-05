@@ -32,7 +32,7 @@ class AssetsData {
         this.FORMATO_JSON = ".json";
 
         // el path principal para descargar el json
-        this.JSON_PATH = "/DVI/docs/assets/json/";
+        this.JSON_PATH = "/BitByBit/assets/json/";
 
         this.inicializar_constantes_datos();
     }
