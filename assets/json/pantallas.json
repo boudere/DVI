@@ -88,7 +88,7 @@
                     "delay": 0,
                     "on_click": {
                         "scene": "dialogo",
-                        "name": "demo_dialogo_maria_1"
+                        "name": "tutorial1"
                     },
                     "animation": null
                 }
@@ -132,7 +132,7 @@
                     "delay": 0,
                     "on_click": {
                         "scene": "dialogo",
-                        "name": "demo_dialogo_maria_1"
+                        "name": "tutorial1"
                     },
                     "animation": null
                 }
