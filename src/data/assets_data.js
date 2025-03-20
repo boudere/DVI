@@ -33,7 +33,7 @@ class AssetsData {
         this.FORMATO_JSON = ".json";
 
         // el path principal para descargar el json
-        this.JSON_PATH = "/BitByBit/assets/json/";
+        this.JSON_PATH = "/DVI/assets/json/";
 
         this.inicializar_constantes_datos();
     }
@@ -55,6 +55,7 @@ class AssetsData {
     // carga los datos (json)
     cargar_datos() {
         this.scene.load.json(this.JSON_PREFIX + this.JSON_DATO, this.JSON_DATO_PATH)
+        console.log(this.JSON_PREFIX + this.JSON_DATO, this.JSON_DATO_PATH);
         
         // Agrega un evento 'filecomplete' para el JSON
         this.scene.load.once(`filecomplete-json-${this.JSON_PREFIX + this.JSON_DATO}`, () => {
@@ -71,8 +72,10 @@ class AssetsData {
     // vuelve a hacer load del dato
     recargar_datos() {
         this.datos = this.scene.cache.json.get(this.JSON_PREFIX + this.JSON_DATO);
+        console.log(this.JSON_PREFIX + this.JSON_DATO);
         if (this.datos) {
             this.datos_assets = this.datos.Assets;
+            console.log("Datos recargados");
         }
     }
     

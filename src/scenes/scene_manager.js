@@ -14,6 +14,7 @@ class SceneManager extends Phaser.Scene {
 
     init() {
         this.assets_data.recargar_datos();
+        console.log("SceneManager");
     }
 
     preload() {
