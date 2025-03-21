@@ -1,8 +1,8 @@
 {
-    "name": "plantillaphaser",
+    "name": "bitbybit",
     "version": "1.0.0",
     "main": "./main.js",
-    "description": "Plantilla para juegos con Phaser",
+    "description": "Juego en phaser",
     "scripts": {
         "build:win": "npm run electron && npx electron-builder --win --config",
         "build:mac": "npm run electron && npx electron-builder --mac --config",
@@ -13,22 +13,22 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/cleongh/plantillaphaser.git"
+        "url": "git+https://github.com/boudere/DVI.git"
     },
     "keywords": [],
-    "author": "Carlos León <cleon@ucm.es>",
+    "author": "Las BITches",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/cleongh/plantillaphaser/issues"
+        "url": "https://github.com/boudere/DVI.git"
     },
-    "homepage": "https://github.com/cleongh/plantillaphaser#readme",
+    "homepage": "https://github.com/boudere/DVI.git",
     "type": "module",
     "devDependencies": {
         "electron": "^34.0.1",
         "electron-builder": "^25.1.8",
         "electron-vite": "^2.3.0",
         "rollup": "^4.32.1",
-        "vite": "5.4.6"
+        "vite": "^5.4.6"
     },
     "dependencies": {
         "phaser": "3.85.2"
