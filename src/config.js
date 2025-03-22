@@ -8,12 +8,9 @@ import Phaser from "phaser";
 // Configuración del juego
 const config = {
     // Tamaño del canvas
-    width: 1860,
-    height: 1096,
-
-    // width: 1860/1.2,
-    // height: 1056+40,
-
+    width: 1820,
+    height: 1358,
+    
     // Contenedor del canvas (donde queremos poner el juego en el html)
     parent: 'juego',
 

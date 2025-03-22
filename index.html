@@ -15,24 +15,16 @@
             <img width="200" src="assets/img/paginaweb/logocircularweb.png">
         </a>
     </div>
+
+    <script type="module" crossorigin src="./src/config.js"></script>
     
     <!-- Contenedor del juego -->
     <div id="juego-container">
         <div id="juego">
-            <script type="module" crossorigin src="./src/config.js"></script>
         </div> <!-- Aquí se insertará el juego -->
     </div>
 
-    <!-- Phaser -->
+    <!-- Phaser --> 
     <script src="//cdn.jsdelivr.net/npm/phaser@3.87.0/dist/phaser.min.js"></script>
-
-    <!-- Configuración del juego -->
-    <script type="module">
-        import config from './src/config.js';
-
-        // Asegurar que el juego se monte dentro del div correcto
-        config.parent = "juego"; 
-        new Phaser.Game(config);
-    </script>
 </body>
 </html>

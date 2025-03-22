@@ -36,8 +36,10 @@ body {
 
 /* Pantalla del juego más pequeña y centrada */
 #juego {
-  width: 600px; /* Tamaño reducido */
-  height: 400px;
+  /* width: 80%; /*Tamaño reducido */
+  /* height: auto; */
+  width: 1860px; /* Tamaño reducido */
+  height: 1096px; /* Tamaño reducido */
   border: 2px solid #ff69b4; /* Borde opcional */
   background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente opcional */
   display: flex;
