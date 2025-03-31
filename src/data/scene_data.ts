@@ -7,3 +7,4 @@ export const SCENE_MANAGER = "SceneManager";
 
 export const SCENE_PANTALLAS = "Pantallas";
 export const SCENE_DIALOGO = "Dialogo";
+export const SCENE_MINIJUEGO1 = "Minijuego1"
