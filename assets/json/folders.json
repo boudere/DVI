@@ -1,0 +1,88 @@
+{
+  "name": "assets",
+  "folders": [
+    {
+      "name": "img",
+      "folders": [
+        {
+          "name": "backgrounds",
+          "folders": [],
+          "files": [
+            "fin_demo.png",
+            "habitacion.png",
+            "salon.png"
+          ]
+        },
+        {
+          "name": "dialogos",
+          "folders": [
+            {
+              "name": "dialogos",
+              "folders": [],
+              "files": [
+                "boton_dialogo copy.png",
+                "boton_dialogo.png",
+                "cuadrado_dialogo.png"
+              ]
+            }
+          ],
+          "files": []
+        },
+        {
+          "name": "pantallas",
+          "folders": [
+            {
+              "name": "personajes",
+              "folders": [
+                {
+                  "name": "maria",
+                  "folders": [],
+                  "files": [
+                    "maria_alegre.png",
+                    "maria_enfado.png",
+                    "maria_normal.png",
+                    "maria_triste.png"
+                  ]
+                },
+                {
+                  "name": "prota",
+                  "folders": [],
+                  "files": [
+                    "prota_alegre.png",
+                    "prota_enfado.png",
+                    "prota_normal.png",
+                    "prota_triste.png"
+                  ]
+                },
+                {
+                  "name": "veronica",
+                  "folders": [],
+                  "files": [
+                    "veronica_alegre.png",
+                    "veronica_enfado.png",
+                    "veronica_normal.png",
+                    "veronica_triste.png"
+                  ]
+                }
+              ],
+              "files": []
+            }
+          ],
+          "files": []
+        }
+      ],
+      "files": []
+    },
+    {
+      "name": "json",
+      "folders": [],
+      "files": [
+        "dialog.json",
+        "pantallas.json",
+        "pantalla_animation.json",
+        "saves.json"
+      ]
+    }
+  ],
+  "files": []
+}

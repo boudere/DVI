@@ -1,0 +1,80 @@
+{
+    "Assets": {
+        "Path": "/DVI/assets/",
+        "Images": {
+            "Path": "/DVI/assets/img/",
+            "Prefix": "img_",
+            "Extension": ".png",
+            "Collider": {
+                "Path": "/DVI/assets/img/collider/",
+                "Collider": "collider"
+            },
+            "Cursor": {
+                "Path": "/DVI/assets/img/cursor/",
+                "Cursor": "cursor",
+                "CursorSelect": "cursor_selected",
+                "CursorLeft": "cursor_left",
+                "CursorRight": "cursor_right",
+                "Background": "background"
+            },
+            "Dialogos": {
+                "Path": "/DVI/assets/img/dialogos/",
+
+                "Dialogos": { 
+                    "Path": "/DVI/assets/img/dialogos/dialogos/",
+
+                    "CuadradoDialogo": "cuadrado_dialogo",
+                    "BotonDialogo": "boton_dialogo"
+                },
+                "Personajes": {
+                    "Path": "/DVI/assets/img/dialogos/personajes/",
+
+                    "Personajes": [
+                        "prota",
+                        "veronica",
+                        "maria"
+                    ],
+
+                    "Poses": [
+                        "normal",
+                        "alegre",
+                        "triste",
+                        "enfado"
+                    ]
+                },
+                "Backgrounds": {
+                    "Path": "/DVI/assets/img/dialogos/backgrounds/",
+
+                    "Backgrounds": [
+                        "habitacion",
+                        "salon",
+                        "salon_cocina",
+                        "salon_comedor",
+                        "salon_descanso"
+                    ]
+                }
+            },
+            "Pantallas": {
+                "Path": "/DVI/assets/img/pantallas/",
+
+                "Backgrounds": {
+                    "Path": "/DVI/assets/img/pantallas/backgrounds/",
+
+                    "Backgrounds": [
+                        "habitacion",
+                        "salon",
+                        "fin_demo"
+                    ]
+                }
+            }
+        },
+        "Json": {
+            "Path": "/DVI/assets/json/",
+            "Prefix": "json_",
+            "Extension": ".json",
+
+            "Dialogos": "dialogo",
+            "Pantallas": "pantallas"
+        }
+    }
+}

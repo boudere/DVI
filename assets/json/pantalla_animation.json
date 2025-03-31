@@ -1,0 +1,40 @@
+{
+    "PantallaAnimation": {
+        "fade_in": {
+            "alpha_start": 0,
+            "alpha_end": 1
+        },
+        "fade_out": {
+            "alpha_start": 1,
+            "alpha_end": 0
+        },
+        "move_left": {
+            "pos_x_end": "$pos_x_start {sub} 100"
+        },
+        "move_right": {
+            "pos_x_end": "$pos_x_start {add} 100"
+        },
+        "move_up": {
+            "pos_y_end": "$pos_y_start {sub} 100"
+        },
+        "move_down": {
+            "pos_y_end": "$pos_y_start {add} 100"
+        },
+        "move_up_left": {
+            "pos_x_end": "$pos_x_start {sub} 100",
+            "pos_y_end": "$pos_y_start {sub} 100"
+        },
+        "move_up_right": {
+            "pos_x_end": "$pos_x_start {add} 100",
+            "pos_y_end": "$pos_y_start {sub} 100"
+        },
+        "move_down_left": {
+            "pos_x_end": "$pos_x_start {sub} 100",
+            "pos_y_end": "$pos_y_start {add} 100"
+        },
+        "move_down_right": {
+            "pos_x_end": "$pos_x_start {add} 100",
+            "pos_y_end": "$pos_y_start {add} 100"
+        }
+    }
+}

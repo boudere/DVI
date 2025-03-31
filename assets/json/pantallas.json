@@ -73,8 +73,22 @@
                 "size": 1.6,
                 "delay": 500,
                 "animation": {
-                    "type": "fade_in",
-                    "duration": 500
+                    "animation_1": [
+                        {
+                            "type": "fade_in",
+                            "duration": 500
+                        },
+                        {
+                            "type": "move_up_right",
+                            "duration": 500
+                        }
+                    ],
+                    "animation_2": [
+                        {
+                            "type": "move_up",
+                            "duration": 500
+                        }
+                    ]               
                 },
                 "on_click": null
             },
