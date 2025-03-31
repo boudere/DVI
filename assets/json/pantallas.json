@@ -35,13 +35,27 @@
             "prota": {
                 "nombre": "prota",
                 "pose": "normal",
-                "pos_x": 800,
+                "pos_x": 900,
                 "pos_y": 800,
                 "size": 1.8,
                 "delay": 500,
                 "animation": {
-                    "type": "fade_in",
-                    "duration": 500
+                    "animation_1" : [
+                        {
+                            "type": "fade_in",
+                            "duration": 500
+                        },
+                        {
+                            "type": "move_right",
+                            "duration": 500
+                        }
+                    ],
+                    "animation_2" : [
+                        {
+                            "type": "move_right",
+                            "duration": 500
+                        }
+                    ]
                 },
                 "on_click": null
             },

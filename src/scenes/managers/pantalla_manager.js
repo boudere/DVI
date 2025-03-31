@@ -46,7 +46,7 @@ class PantallaManager extends Managers {
 
         this.background.visible = false;
         this.npcs_array.forEach((npc) => {
-            npc.exit();;
+            npc.exit();
         });
         this.prota.exit();
     }
