@@ -1,22 +1,25 @@
-import { OVEJA_GAME, DATA_INFO, MINIJUEGO_MANAGER } from '/src/data/scene_data.js';
+import { JUEGO_OVEJA, DATA_INFO, MINIJUEGO_MANAGER } from '/src/data/scene_data.js';
 
-class OvejaGame extends Phaser.Scene {
+class JuegoOveja extends Phaser.Scene {
     constructor() {
-        super({ key: OVEJA_GAME });
+        super({ key: JUEGO_OVEJA });
 
         this.OVEJA_IMG = 'oveja';
         this.VALLA_IMG = 'valla';
         this.FONDO_IMG = 'fondo';
+        this.SCREEN_WIDTH = 1820; 
     }
 
     create() {
+        this.cameras.main.setBackgroundColor('#ADD8E6'); 
         this.data_info_scene = this.scene.get(DATA_INFO);
-        this.ground = this.add.tileSprite(400, 300, 800, 20, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.FONDO_IMG));
-        this.oveja = this.physics.add.sprite(100, 260, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OVEJA_IMG )).setCollideWorldBounds(true);
+        this.ground = this.add.tileSprite(910, 1358, 1820, 130, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.FONDO_IMG));
+        
+        this.oveja = this.physics.add.sprite(100, 1358, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OVEJA_IMG )).setCollideWorldBounds(true);
         this.oveja.setGravityY(600);
         
         this.valla = this.physics.add.group();
-        this.time.addEvent({ delay: 1500, callback: this.spawnOveja, callbackScope: this, loop: true });
+        this.time.addEvent({ delay: 1500, callback: this.spawnValla, callbackScope: this, loop: true });
 
         this.input.keyboard.on('keydown-SPACE', () => {
             if (this.oveja.body.touching.down) {
@@ -35,8 +38,16 @@ class OvejaGame extends Phaser.Scene {
     }
 
     spawnValla() {
-        let valla = this.valla.create(850, 260, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.VALLA_IMG ));
+        const randomY = 1000; 
+        let valla = this.valla.create(this.SCREEN_WIDTH, randomY, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.VALLA_IMG));
+        if (!valla) {
+            console.error("Error: La valla no se generó correctamente.");
+        }
+
+        valla.setGravityY(0); 
         valla.setVelocityX(-200);
+
+        valla.setCollideWorldBounds(false); 
     }
 
     gameOver() {
@@ -44,4 +55,4 @@ class OvejaGame extends Phaser.Scene {
     }
 }
 
-export default OvejaGame;
+export default JuegoOveja;
