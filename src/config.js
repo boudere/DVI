@@ -25,7 +25,8 @@ const config = {
         Managers,
         SceneManager,
         PantallaManager,
-        DialogoManager
+        DialogoManager,
+        MinijuegosManager
     ],
 
     scale: {

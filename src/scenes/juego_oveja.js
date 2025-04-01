@@ -4,13 +4,13 @@ class OvejaGame extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('oveja', 'oveja.png');
-        this.load.image('suelo', 'suelo.png');
-        this.load.image('valla', 'valla.png');
+        this.load.image('oveja', '../assets/img/minijuegos/mini_oveja/oveja.png');
+        this.load.image('fondo', '../assets/img/minijuegos/mini_oveja/fondo.png');
+        this.load.image('valla', '../assets/img/minijuegos/mini_oveja/valla.png');
     }
 
     create() {
-        this.ground = this.add.tileSprite(400, 300, 800, 20, 'suelo');
+        this.ground = this.add.tileSprite(400, 300, 800, 20, 'fondo');
         this.oveja = this.physics.add.sprite(100, 260, 'oveja').setCollideWorldBounds(true);
         this.oveja.setGravityY(600);
         
