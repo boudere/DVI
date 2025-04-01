@@ -16,7 +16,6 @@ class Managers extends Phaser.Scene {
 
     // se ejecuta al entrar en la escena
     enter(scene_data) { 
-        this.pause();
         if (!scene_data) { return false; }
         return true;
     }

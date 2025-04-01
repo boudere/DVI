@@ -10,14 +10,22 @@ class SceneManager extends Managers {
 
         this.scenes = {}
         this.currentScene = null;
+        this.currentSceneData = null;
     }
 
     create() {
+        this.data_info_scene = this.scene.get(DATA_INFO)
+
+        this.data = this.data_info_scene.get_data_json();
+        this.data_json = this.data.Json;
+        this.saves_data = this.data_info_scene.get_json(this.data_json.Saves);
+
         this.events.on(SIGNAL_SCENE_CREATED, this.scene_created, this);
 
         this.scene.start(PANTALLA_MANAGER);
         this.scenes[PANTALLA_MANAGER] = this.scene.get(PANTALLA_MANAGER);
         this.currentScene = PANTALLA_MANAGER;
+        this.currentSceneData = this.saves_data.Pantalla;
 
         this.scene.start(DIALOGO_MANAGER);
         this.scenes[DIALOGO_MANAGER] = this.scene.get(DIALOGO_MANAGER);
@@ -33,7 +41,7 @@ class SceneManager extends Managers {
 
     scene_created(scene) {
         if (scene == this.currentScene) {
-            this.scenes[scene].enter();
+            this.scenes[scene].enter(this.currentSceneData);
         } else {
             this.scenes[scene].exit();
         }

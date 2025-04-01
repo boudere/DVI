@@ -25,9 +25,6 @@ class PantallaManager extends Managers {
         this.data_json = this.data.Json;
 
         this.pantallas_data = this.data_info_scene.get_json(this.data_json.Pantallas);
-        this.saves_data = this.data_info_scene.get_json(this.data_json.Saves);
-
-        this._load_pantalla(this.saves_data.Pantalla);
 
         this.scene_created();
     }
@@ -54,13 +51,8 @@ class PantallaManager extends Managers {
     enter(scene_data) {
         if ( !super.enter(scene_data) ) { return; }
 
-        this.background.visible = true;
-
-        this.pantalla_data = this.pantallas_data[scene_data];
-
-        this._change_background();
-        this._load_npcs();
-        this._load_prota();
+        this._load_pantalla(scene_data)
+        this.pause();
     }
 
     update() {
@@ -102,15 +94,13 @@ class PantallaManager extends Managers {
     }
 
     _load_background(width, height) {
+        if (this.background) {
+            this.background.destroy();
+        }
+
         let img = this.data_info_scene.get_img(PANTALLA_MANAGER, this.pantalla_data.background)
         this.background = this.add.image(width / 2, height / 2, img);
     }
-
-    _change_background() {
-        let img = this.data_info_scene.get_img(PANTALLA_MANAGER, this.pantalla_data.background)
-        this.background.setTexture(img);
-    }
-
     _load_npcs() {
         if (this.npcs_array.length > 0) {
             this.npcs_array.forEach((npc) => {
