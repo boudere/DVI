@@ -183,8 +183,8 @@ class DataInfo extends Phaser.Scene {
                     this.load_img2(clase, name + "_" + pose, path);
                 });
                 break;
-            case "Dialogos":
             case "JuegoOveja":
+            case "Dialogos":
                 path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path;
                 this.load_img2(clase, name, path);
                 break;
@@ -207,6 +207,7 @@ class DataInfo extends Phaser.Scene {
                 break;
             case DIALOGO_MANAGER:
                 scene_name = "Dialogos";
+                break;
             case MINIJUEGO_MANAGER:
                 scene_name = "Minijuegos";
                 break;
