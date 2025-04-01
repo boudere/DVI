@@ -70,6 +70,10 @@ class DialogoManager extends Managers {
         } else {
             this.scene.get(SCENE_MANAGER).signal_click(on_click);
         }
+//////////////////////////////////////////////////////////////////////////////////////////////////
+        if (on_click.name === "tutorial_5") {
+            this.scene.get(MinijuegosManager).start_minigame("JuegoOveja");
+        }
     }
 
     _load_cuadrado_dialogo(width, height) {

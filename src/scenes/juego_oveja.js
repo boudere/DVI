@@ -1,10 +1,10 @@
-class OvejaGame extends Phaser.Scene {
+class JuegoOveja extends Phaser.Scene {
     constructor() {
-        super({ key: 'OvejaGame' });
+        super({ key: 'JuegoOveja' });
     }
 
     preload() {
-        this.load.image('oveja', '../assets/img/minijuegos/mini_oveja/oveja.png');
+        this.load.image('oveja', './assets/img/minijuegos/mini_oveja/oveja.png');
         this.load.image('fondo', '../assets/img/minijuegos/mini_oveja/fondo.png');
         this.load.image('valla', '../assets/img/minijuegos/mini_oveja/valla.png');
     }
@@ -48,7 +48,9 @@ const config = {
     width: 800,
     height: 300,
     physics: { default: 'arcade', arcade: { gravity: { y: 600 }, debug: false } },
-    scene: OvejaGame
+    scene: JuegoOveja
 };
 
 const game = new Phaser.Game(config);
+
+export default JuegoOveja;  // Asegúrate de exportar la clase de la escena
