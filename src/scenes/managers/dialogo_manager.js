@@ -1,5 +1,5 @@
 import Managers from "/src/scenes/managers";
-import DialogoGameObjects from "/src/dialogos/game_objects/dialogo_game_objects.js";
+import CuadradoDialogo from "/src/dialogos/game_objects/cuadrado_dialogo.js";
 import DialogoMainText from "/src/dialogos/game_objects/text/dialogo_main_text.js";
 
 import { DIALOGO_MANAGER, DATA_INFO, SCENE_MANAGER } from "/src/data/scene_data.js";
@@ -15,10 +15,12 @@ class DialogoManager extends Managers {
     _reset_data() {
         this.cuadrado_dialogo = null;
         this.main_text = null;
+        this.dialogo_data_selected = null;
     }
 
     create() {
         this.data_info_scene = this.scene.get(DATA_INFO)
+        this.dialogo_data = this.data_info_scene.get_json(this.data_info_scene.data_json.Dialogos);
 
         this.scene_created();
     }
@@ -28,6 +30,7 @@ class DialogoManager extends Managers {
 
         this._load_cuadrado_dialogo(width, height);
         this._load_main_text(width, height);
+        this._load_background();
     }
 
     exit() {
@@ -38,8 +41,11 @@ class DialogoManager extends Managers {
     enter(scene_data) {
         if ( !super.enter(scene_data) ) { return; }
 
+        this.dialogo_data_selected = this.dialogo_data[scene_data];
+
         this._load_dialogo(scene_data);
         this.cuadrado_dialogo.enter();
+        this.background.visible = true;
 
         this.pause();
     }
@@ -72,17 +78,23 @@ class DialogoManager extends Managers {
         }
     }
 
+    _load_background() {
+        let img = this.data_info_scene.get_img(DIALOGO_MANAGER, this.dialogo_data_selected.fondo);
+        console.log(img);
+        this.background = this.add.image(0, 0, img).setOrigin(0, 0);
+    }
+
     _load_cuadrado_dialogo(width, height) {
         if (this.cuadrado_dialogo) {
             console.log("destroy cuadrado_dialogo");
             this.cuadrado_dialogo.destroy();
         }
         let img = this.data_info_scene.get_img(DIALOGO_MANAGER, this.CUADRADO_DIALOGO);
-        this.cuadrado_dialogo = new DialogoGameObjects(this, width / 2, height - 150, img, 1000);
+        this.cuadrado_dialogo = new CuadradoDialogo(this, width / 2, height - 150, img, 1000);
     }
 
     _load_main_text(width, height) { 
-        this.main_text = new DialogoMainText(this, width / 2, height - 150, 1000, "Hola", 1000);
+        this.main_text = new DialogoMainText(this, width / 2, height - 150, this.cuadrado_dialogo.width, this.dialogo_data_selected.texto, 1000);
     }
 }
 

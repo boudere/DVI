@@ -1,9 +1,9 @@
 import Managers from "/src/scenes/managers";
-import { SCENE_MANAGER, DIALOGO_MANAGER, DATA_INFO } from "/src/data/scene_data.js";
+import { MINIJUEGO_MANAGER, SCENE_MANAGER, DIALOGO_MANAGER, DATA_INFO } from "/src/data/scene_data.js";
 
 class MinijuegosManager extends Managers {
     constructor() {
-        super({ key: 'MinijuegosManager' });
+        super({ key: MINIJUEGO_MANAGER });
     }
 
     _reset_data() {
@@ -13,6 +13,11 @@ class MinijuegosManager extends Managers {
     create() {
         this.data_info_scene = this.scene.get(DATA_INFO);
         this.scene_created();
+    }
+
+    enter(scene_data) {
+        if (!super.enter(scene_data)) { return; }
+        this.start_minigame(scene_data);
     }
 
     start_minigame(minigame_name) {

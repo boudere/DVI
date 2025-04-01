@@ -4,3 +4,8 @@ export const MANAGERS = "MANAGERS";
 export const PANTALLA_MANAGER = "PANTALLA_MANAGER";
 export const SCENE_MANAGER = "SCENE_MANAGER";
 export const DIALOGO_MANAGER = "DIALOGO_MANAGER";
+export const MINIJUEGO_MANAGER = "MINIJUEGO_MANAGER";
+
+
+// MINIJUEGOS
+export const OVEJA_GAME = "OvejaGame";

@@ -17,10 +17,12 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         super(scene, x, y, texto, opciones);
         this._reset_varaibles();
 
+        this.setOrigin(0, 0);
+
         this.on('destroy', this.before_destroy, this);
 
         setTimeout(() => {
-            this._add_text();
+            this._add_text(true);
         }, delay);
     }
 
@@ -32,13 +34,28 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         this.scene.add.existing(this);
 
         if (animation) {
-            this.start_animation(animation);
+            this.start_animation();
         } else {
             this.finish_animation();
         }
     }
 
-    async start_animation(animation) {}
+    start_animation() {
+        let i = 0;
+        let texto_animado = '';
+        let texto_completo = this.text;
+        console.log(texto_completo);
+
+        let intervalo = setInterval(() => {
+            if (i < texto_completo.length) {
+                texto_animado += texto_completo.charAt(i);
+                this.setText(texto_animado);
+                i++;
+            } else {
+                clearInterval(intervalo);
+            }
+        });
+    }
     
     run_tween(animation_data) {}
 

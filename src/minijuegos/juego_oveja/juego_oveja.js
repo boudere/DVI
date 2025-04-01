@@ -1,17 +1,18 @@
+import { OVEJA_GAME, DATA_INFO, MINIJUEGO_MANAGER } from '/src/data/scene_data.js';
+
 class OvejaGame extends Phaser.Scene {
     constructor() {
-        super({ key: 'OvejaGame' });
-    }
+        super({ key: OVEJA_GAME });
 
-    preload() {
-        this.load.image('oveja', 'oveja.png');
-        this.load.image('suelo', 'suelo.png');
-        this.load.image('valla', 'valla.png');
+        this.OVEJA_IMG = 'oveja';
+        this.VALLA_IMG = 'valla';
+        this.FONDO_IMG = 'fondo';
     }
 
     create() {
-        this.ground = this.add.tileSprite(400, 300, 800, 20, 'suelo');
-        this.oveja = this.physics.add.sprite(100, 260, 'oveja').setCollideWorldBounds(true);
+        this.data_info_scene = this.scene.get(DATA_INFO);
+        this.ground = this.add.tileSprite(400, 300, 800, 20, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.FONDO_IMG));
+        this.oveja = this.physics.add.sprite(100, 260, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OVEJA_IMG )).setCollideWorldBounds(true);
         this.oveja.setGravityY(600);
         
         this.valla = this.physics.add.group();
@@ -34,7 +35,7 @@ class OvejaGame extends Phaser.Scene {
     }
 
     spawnValla() {
-        let valla = this.valla.create(850, 260, 'valla');
+        let valla = this.valla.create(850, 260, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.VALLA_IMG ));
         valla.setVelocityX(-200);
     }
 
@@ -43,12 +44,4 @@ class OvejaGame extends Phaser.Scene {
     }
 }
 
-const config = {
-    type: Phaser.AUTO,
-    width: 800,
-    height: 300,
-    physics: { default: 'arcade', arcade: { gravity: { y: 600 }, debug: false } },
-    scene: OvejaGame
-};
-
-const game = new Phaser.Game(config);
+export default OvejaGame;

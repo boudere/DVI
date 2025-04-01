@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import { DATA_INFO, SCENE_MANAGER, PANTALLA_MANAGER, DIALOGO_MANAGER } from "/src/data/scene_data.js";
+import { DATA_INFO, SCENE_MANAGER, PANTALLA_MANAGER, DIALOGO_MANAGER, MINIJUEGO_MANAGER } from "/src/data/scene_data.js";
 
 class DataInfo extends Phaser.Scene {
     constructor() {
@@ -170,19 +170,22 @@ class DataInfo extends Phaser.Scene {
     }
 
     laod_img(clase, clase2, name) {
+        let path = '';
         switch (clase2) {
             case "Backgrounds":
-                this.load_img2(clase, name, this.data_imgs[clase][clase2].Path);
+                path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/";
+                this.load_img2(clase, name, path);
                 break;
             case "Personajes":
                 let poses = this.data_imgs[clase][clase2].Poses;
                 poses.forEach((pose) => {
-                    let path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/";
+                    path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/";
                     this.load_img2(clase, name + "_" + pose, path);
                 });
                 break;
             case "Dialogos":
-                let path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path;
+            case "JuegoOveja":
+                path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path;
                 this.load_img2(clase, name, path);
                 break;
             default:
@@ -204,6 +207,9 @@ class DataInfo extends Phaser.Scene {
                 break;
             case DIALOGO_MANAGER:
                 scene_name = "Dialogos";
+            case MINIJUEGO_MANAGER:
+                scene_name = "Minijuegos";
+                break;
             default:
                 break;
         }

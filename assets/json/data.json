@@ -45,13 +45,39 @@
                         "boton_dialogo"
                     ]
                 },
+                "Backgrounds": {
+                    "Path": "backgrounds/",
+
+                    "Backgrounds": [
+                        "habitacion",
+                        "salon",
+                        "fin_demo",
+                        "negro"
+                    ]
+                },
                 "Clases" : [
-                    "Dialogos"
+                    "Dialogos",
+                    "Backgrounds"
+                ]
+            },
+            "Minijuegos": {
+                "Path": "minijuegos/",
+                "JuegoOveja": {
+                    "Path": "juego_oveja/",
+                    "JuegoOveja": [
+                        "oveja",
+                        "fondo",
+                        "valla"
+                    ]
+                },
+                "Clases": [
+                    "JuegoOveja"
                 ]
             },
             "Clases": [
                 "Pantallas",
-                "Dialogos"
+                "Dialogos",
+                "Minijuegos"
             ]
         },
         "Json": {
@@ -59,14 +85,14 @@
             "Prefix": "json_",
             "Suffix": ".json",
 
-            "Dialogos": "dialog",
+            "Dialogos": "dialogo",
             "Pantallas": "pantallas",
             "Saves": "saves",
             "Folders": "folders",
             "PantallaAnimation": "pantalla_animation",
 
             "Jsons": [
-                "dialog",
+                "dialogo",
                 "pantallas",
                 "saves",
                 "pantalla_animation"

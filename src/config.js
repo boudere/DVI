@@ -1,8 +1,10 @@
 import PantallaManager from '/src/scenes/managers/pantalla_manager.js'; // Importamos la escena ScenePlay
 import SceneManager from '/src/scenes/managers/scene_manager.js'; // Importamos la escena ScenePlay
 import DialogoManager from '/src/scenes/managers/dialogo_manager.js'; // Importamos la escena ScenePlay
+import MinijuegosManager from '/src/scenes/managers/minijuegos_manager';
 import Managers from '/src/scenes/managers.js'; // Importamos la escena ScenePlay
 import DataInfo from '/src/scenes/data_info.js'; // Importamos la escena ScenePlay
+import OvejaGame from '/src/minijuegos/juego_oveja/juego_oveja.js'; // Importamos la escena ScenePlay
 import Phaser from "phaser";
 
 // Configuración del juego
@@ -15,9 +17,7 @@ const config = {
     parent: 'juego',
 
     // Físicas del juego
-    physics: {
-        default: 'arcade',
-    },
+    physics: { default: 'arcade', arcade: { gravity: { y: 600 }, debug: false } },
 
     // Escenas del juego
     scene: [
@@ -26,7 +26,8 @@ const config = {
         SceneManager,
         PantallaManager,
         DialogoManager,
-        MinijuegosManager
+        MinijuegosManager,
+        OvejaGame
     ],
 
     scale: {

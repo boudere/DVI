@@ -5,17 +5,42 @@
       "name": "img",
       "folders": [
         {
-          "name": "backgrounds",
-          "folders": [],
-          "files": [
-            "fin_demo.png",
-            "habitacion.png",
-            "salon.png"
-          ]
-        },
-        {
           "name": "dialogos",
           "folders": [
+            {
+              "name": "backgrounds",
+              "folders": [
+                {
+                  "name": "fin_demo",
+                  "folders": [],
+                  "files": [
+                    "fin_demo.png"
+                  ]
+                },
+                {
+                  "name": "habitacion",
+                  "folders": [],
+                  "files": [
+                    "habitacion.png"
+                  ]
+                },
+                {
+                  "name": "negro",
+                  "folders": [],
+                  "files": [
+                    "negro.png"
+                  ]
+                },
+                {
+                  "name": "salon",
+                  "folders": [],
+                  "files": [
+                    "salon.png"
+                  ]
+                }
+              ],
+              "files": []
+            },
             {
               "name": "dialogos",
               "folders": [],
@@ -28,8 +53,50 @@
           "files": []
         },
         {
+          "name": "minijuegos",
+          "folders": [
+            {
+              "name": "juego_oveja",
+              "folders": [],
+              "files": [
+                "fondo.png",
+                "oveja.png",
+                "valla.png"
+              ]
+            }
+          ],
+          "files": []
+        },
+        {
           "name": "pantallas",
           "folders": [
+            {
+              "name": "backgrounds",
+              "folders": [
+                {
+                  "name": "fin_demo",
+                  "folders": [],
+                  "files": [
+                    "fin_demo.png"
+                  ]
+                },
+                {
+                  "name": "habitacion",
+                  "folders": [],
+                  "files": [
+                    "habitacion.png"
+                  ]
+                },
+                {
+                  "name": "salon",
+                  "folders": [],
+                  "files": [
+                    "salon.png"
+                  ]
+                }
+              ],
+              "files": []
+            },
             {
               "name": "personajes",
               "folders": [
@@ -76,7 +143,7 @@
       "name": "json",
       "folders": [],
       "files": [
-        "dialog.json",
+        "dialogo.json",
         "pantallas.json",
         "pantalla_animation.json",
         "saves.json"

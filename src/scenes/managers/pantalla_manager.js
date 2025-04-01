@@ -33,7 +33,8 @@ class PantallaManager extends Managers {
         this.pantalla_data = this.pantallas_data[pantalla];
 
         const { width, height } = this.sys.game.canvas;
-        this._load_background(width, height);
+
+        this._load_background();
         this._load_npcs();
         this._load_prota();
     }
@@ -41,11 +42,11 @@ class PantallaManager extends Managers {
     exit() {
         super.exit();
 
-        this.background.visible = false;
+        if (this.background) this.background.visible = false;
         this.npcs_array.forEach((npc) => {
             npc.exit();
         });
-        this.prota.exit();
+        if (this.prota) this.prota.exit();
     }
 
     enter(scene_data) {
@@ -62,7 +63,7 @@ class PantallaManager extends Managers {
     pause(){
         super.pause();
 
-        this.prota.pause();
+        if (this.prota) this.prota.pause();
         this.npcs_array.forEach((npc) => {
             npc.pause();
         });
@@ -93,13 +94,13 @@ class PantallaManager extends Managers {
         }
     }
 
-    _load_background(width, height) {
+    _load_background() {
         if (this.background) {
             this.background.destroy();
         }
 
         let img = this.data_info_scene.get_img(PANTALLA_MANAGER, this.pantalla_data.background)
-        this.background = this.add.image(width / 2, height / 2, img);
+        this.background = this.add.image(0, 0, img).setOrigin(0, 0);
     }
     _load_npcs() {
         if (this.npcs_array.length > 0) {
