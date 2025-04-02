@@ -161,6 +161,14 @@
         "pantallas.json",
         "saves.json"
       ]
+    },
+    {
+      "name": "musica",
+      "folders": [],
+      "files": [
+        "ovejitas.ogg",
+        "tema_inicial.ogg"
+      ]
     }
   ],
   "files": []
