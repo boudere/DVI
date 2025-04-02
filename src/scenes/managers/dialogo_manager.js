@@ -36,7 +36,7 @@ class DialogoManager extends Managers {
             loop: true,
             volume: 0.1
         });
-        //this.musica.play();
+        this.musica.play();
 
         this.scene_created();
     }
@@ -71,6 +71,7 @@ class DialogoManager extends Managers {
         super.exit();
         this.musica.stop(); //con este suena 
         if ( this.cuadrado_dialogo ) this.cuadrado_dialogo.visible = false;
+        this.musica.stop(); 
     }
 
     enter(scene_data) {
@@ -86,7 +87,6 @@ class DialogoManager extends Managers {
         this.buttons_index = 0;
 
         this._load_dialogo(scene_data);
-        this.musica.play(); //este PONE MUSICA, PERO SE REINICIA EN CADA DIALOGO
         
         this.background.visible = true;
         if ( this.animate && this.persoanje ) this.persoanje.enter(); 
@@ -100,12 +100,10 @@ class DialogoManager extends Managers {
 
     pause(){
         super.pause();
-        //this.musica.pause(); este lo deja en silencio
     }
 
     unpause(){
         super.unpause();
-        this.musica.unpause(); //con este suena 
     }
 
     starting_animation() {
