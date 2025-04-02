@@ -63,19 +63,27 @@ class JuegoOveja extends Phaser.Scene {
         this.musica.play();
         //this.animations();
         
-        var suelo = this.physics.add.sprite(this.SCREEN_WIDTH/2, this.SCREEN_LENGTH, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.FONDO_IMG));
+        let suelo = this.physics.add.sprite(this.SCREEN_WIDTH/2, this.SCREEN_LENGTH, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.FONDO_IMG));
         suelo.setScale(this.SCREEN_WIDTH / 450, 700 / 338); 
         this.addObstacle(suelo);
         suelo.body.setSize(this.SCREEN_WIDTH, this.SCREEN_LENGTH); 
 
-        var oveja = this.physics.add.sprite(175, 1000, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OVEJA_IMG));
-        oveja.setScale(350/626, 350/569); 
-        this.addObstacle(oveja);
-        oveja.body.setSize(350/626, 350/569);
+        this.oveja = this.physics.add.sprite(175, 1000, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OVEJA_IMG));
+        this.oveja.setCollideWorldBounds(true);
+        this.oveja.setBounce(0.4);
+        this.oveja.setGravityY(800); 
+        this.cursors = this.input.keyboard.createCursorKeys();
+        
+        this.oveja.setScale(350/626, 350/569); 
+        this.addObstacle(this.oveja);
+        this.oveja.body.setSize(350/626, 350/569);
+
+        this.physics.add.collider(this.oveja, suelo); //para q haya colision con el suelo 
+
 
         this.vallas = []; //this.physics.add.group();
         this.time.addEvent({
-            delay: 1000, // Cada 2 segundos
+            delay: 3000, // Cada 2 segundos
             callback: this.spawnValla,
             callbackScope: this,
             loop: true
@@ -94,6 +102,12 @@ class JuegoOveja extends Phaser.Scene {
     }
 
     update() {
+
+        //NO SALTAAAAAAAAAAAAAAA
+        if (this.cursors.space.isDown && this.oveja.body.blocked.down) {
+            player.setVelocityY(-400); // Salto
+        }
+
         // this.vallas.children.iterate((valla) => {
         this.vallas.forEach((valla) => {
             // valla.setGravityY(0);
