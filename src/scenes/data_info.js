@@ -28,16 +28,19 @@ class DataInfo extends Phaser.Scene {
         this.data = this.cache.json.get(this.json_data).Assets;
         this.data_json = this.data.Json;
         this.data_imgs = this.data.Imgs;
+        this.data_musica = this.data.Musica;
 
         // carga los paths de los img y json
         this.ROOT = this.data.Root;
         this.ASSETS_PATH = this.ROOT + this.data.Path;
         this.JSON_PATH = this.ASSETS_PATH + this.data_json.Path;
         this.IMG_PATH = this.ASSETS_PATH + this.data_imgs.Path;
+        this.MUSICA_PATH = this.ASSETS_PATH + this.data_musica.Path; 
 
         // carga los prefijos de los assets y json
         this.json_prefix = this.data_json.Prefix;
         this.img_prefix = this.data_imgs.Prefix;
+        this.musica_prefix = this.data_musica.Prefix;
 
 
         let folders = this.data_json.Folders;
@@ -127,6 +130,7 @@ class DataInfo extends Phaser.Scene {
 
         this.load_jsons();
         this.load_imgs();
+        this.load_musicas();
 
         this.load.start();
     }
@@ -199,6 +203,27 @@ class DataInfo extends Phaser.Scene {
         this.load.image(this.img_prefix + scene + "_" + name, this.IMG_PATH + path + name + img_suffix);
 }
 
+
+load_musicas() {
+    const musicas = this.data_musica.Musicas;
+    musicas.forEach((name) => {
+        this.load_musica(name);
+    });
+}
+
+load_musica(name) {
+    const musica_suffix = this.data_musica.Suffix;
+    console
+    this.load.audio(this.musica_prefix + name, this.MUSICA_PATH + name + musica_suffix);
+}
+
+
+get_musica(name) {
+    console.log(this.musica_prefix + name)
+    return this.musica_prefix + name;
+}
+
+
     get_img(scene, name) {
         let scene_name = ""
         switch (scene) {
@@ -218,5 +243,7 @@ class DataInfo extends Phaser.Scene {
         return this.img_prefix + scene_name + "_" + name;
     }
 }
+
+
 
 export default DataInfo;

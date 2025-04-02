@@ -97,6 +97,16 @@
                 "saves",
                 "animation"
             ]
+        },
+        "Musica": {
+            "Path": "musica/",
+            "Prefix": "musica_",
+            "Suffix": ".ogg",
+
+            "Musicas": [
+                "ovejitas",
+                "tema_inicial"
+            ]
         }
     }
 }

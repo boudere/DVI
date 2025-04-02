@@ -9,6 +9,7 @@ class JuegoOveja extends Phaser.Scene {
         this.FONDO_IMG = 'fondo';
         this.SCREEN_WIDTH = 1820; 
         this.SCREEN_LENGTH = 1358;
+        this.OVEJITA_MUSICA = 'ovejitas';
     }
 
     preload() {
@@ -55,7 +56,11 @@ class JuegoOveja extends Phaser.Scene {
 
     create() {
         this.data_info_scene = this.scene.get(DATA_INFO);
-
+        this.musica = this.sound.add(this.data_info_scene.get_musica(this.OVEJITA_MUSICA), {
+            loop: true,
+            volume: 1.0
+        });
+        this.musica.play();
         //this.animations();
         
         var suelo = this.physics.add.sprite(this.SCREEN_WIDTH/2, this.SCREEN_LENGTH, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.FONDO_IMG));
