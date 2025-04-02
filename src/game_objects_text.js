@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 
 class GameObjectsText extends Phaser.GameObjects.Text {
-    constructor(scene, x, y, container_width, texto, delay, opciones_entrada = {}) {
+    constructor(scene, x, y, container, container_width, texto, delay, opciones_entrada = {}) {
         // opciones por defecto para el Text
         let opciones_por_defecto = {
             fontSize: "32px",
@@ -9,14 +9,18 @@ class GameObjectsText extends Phaser.GameObjects.Text {
             color: "#000000",
             align: "left",
             lineSpacing: 10,
-            wordWrap: { width: container_width - 20 },
+            wordWrap: { width: container_width - 20},
         };
 
         let opciones = { ...opciones_por_defecto, ...opciones_entrada };
 
-        super(scene, x, y, texto, opciones);
+        super(scene, x, y, '', opciones);
+
         this._reset_varaibles();
 
+        this.texto = texto;
+        this.containter = container;
+        
         this.setOrigin(0, 0);
 
         this.on('destroy', this.before_destroy, this);
@@ -43,8 +47,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
     start_animation() {
         let i = 0;
         let texto_animado = '';
-        let texto_completo = this.text;
-        console.log(texto_completo);
+        let texto_completo = this.texto;
 
         let intervalo = setInterval(() => {
             if (i < texto_completo.length) {
@@ -53,8 +56,9 @@ class GameObjectsText extends Phaser.GameObjects.Text {
                 i++;
             } else {
                 clearInterval(intervalo);
+                this.containter.finish_animation();
             }
-        });
+        }, 30);
     }
     
     run_tween(animation_data) {}
@@ -87,15 +91,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
 
     _stop_animation() {}
 
-    _set_events() {
-        this.on('pointerenter', this._mouse_enter, this);
-        this.on('pointerover', this._mouse_over, this);
-        this.on('pointerout', this._mouse_out, this);
-        this.on('pointerupoutside', this._mouse_out, this);
-        this.on('pointerdown', this._mouse_down, this);
-        this.on('pointerup', this._mouse_up, this);
-        this.on('pointermove', this._mouse_move, this);
-    }
+    _set_events() {}
 
     _mouse_enter() { return !this.isPause; }
 

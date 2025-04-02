@@ -8,4 +8,4 @@ export const MINIJUEGO_MANAGER = "MINIJUEGO_MANAGER";
 
 
 // MINIJUEGOS
-export const OVEJA_GAME = "OvejaGame";
+export const JUEGO_OVEJA = "JuegoOveja";

@@ -1,6 +1,6 @@
 import { DATA_INFO } from "/src/data/scene_data.js";
 
-class PantallaAnimation {
+class Animation {
     constructor(scene) {
         this.animation = {};
 
@@ -8,7 +8,7 @@ class PantallaAnimation {
 
         // carga los jsons
         this.data_json = scene.scene.get(DATA_INFO).get_data_json().Json;
-        this.animation_data = scene.scene.get(DATA_INFO).get_json(this.data_json.PantallaAnimation);
+        this.animation_data = scene.scene.get(DATA_INFO).get_json(this.data_json.Animation);
     }
 
     // setea las animaciones a valores default
@@ -23,6 +23,7 @@ class PantallaAnimation {
 
     // setea las animaciones
     get_animation_data(animation, data) {
+
         let data_assistant = {};
 
         // sirve para saber los valores default para las siguientes animaciones
@@ -68,7 +69,7 @@ class PantallaAnimation {
         // cambia los valores de la animacion dependiendo del tipo de animacion
         Object.entries(animation_type).forEach(([key_animation, value_animation]) => {
             // en el caso de tener operaciones las calcula
-            let value = this.translate_animation(value_animation, key, index)
+            let value = this.translate_animation(value_animation, key, index, animation)
             this.animation[key][index][key_animation] = value;
 
             // si la animacion es de tipo "end" se los guarda para que la siguiente animacion lo use
@@ -79,7 +80,7 @@ class PantallaAnimation {
     }
 
     // traduce las animaciones que tienen operaciones
-    translate_animation(value, key, index) {
+    translate_animation(value, key, index, animation) {
         // ej: $pos_x_start {add} 10
 
         // si no es un string (es un numero) directamente lo devuelve
@@ -88,7 +89,9 @@ class PantallaAnimation {
         const info = [];
         let buffer = '';
         let inBraces = false;
+        let inBrackets = false;
         let braceContent = '';
+        let bracketsContent = '';
         let i = 0;
         let operation = '';
     
@@ -97,7 +100,7 @@ class PantallaAnimation {
             const char = value[i];
     
             // si es un número (dígito) y no estamos leyendo otra cosa
-            if (!inBraces && /\d/.test(char)) {
+            if (!inBraces && !inBrackets && /\d/.test(char)) {
                 let numStr = char;
                 i++;              
                 // sigue leyendo números hasta que no haya más
@@ -131,6 +134,33 @@ class PantallaAnimation {
                 i++;
                 continue;
             }
+
+            if (char === '[') {
+                inBrackets = true;
+                bracketsContent = '';
+                i++;
+                continue;
+            }
+
+            if (char === ']' && inBrackets) {
+                inBrackets = false;
+                // si encontramos ] y ya teníamos algo en bracketsContent, lo añadimos al array de info
+                console.log('Aniamtion:', animation[key][index]);
+                info.push({ [bracketsContent]: animation[key][index].var[bracketsContent] });
+
+                console.log('bracketsContent', bracketsContent,  animation[key][index].var[bracketsContent]);
+                console.log('info[bracketContent]', info[1][bracketsContent]);
+                console.log('info', info);
+                i++;
+                continue;
+            }
+
+            if (inBrackets) {
+                bracketsContent += char;
+                i++;
+                continue;
+            }
+
     
             // si encontramos $
             if (char === '$') {
@@ -166,6 +196,8 @@ class PantallaAnimation {
             }
         });
 
+        console.log(operations, operation);
+
         // devuelve el valor de la operacion
         return this.operation_animation(operations[0], operations[1], operation);
     }
@@ -190,4 +222,4 @@ class PantallaAnimation {
 
 }
 
-export default PantallaAnimation;
+export default Animation;

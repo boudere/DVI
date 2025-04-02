@@ -47,12 +47,19 @@
                         },
                         {
                             "type": "move_right",
+                            "var": {
+                                "var1": 100
+                            },
                             "duration": 500
                         }
                     ],
                     "animation_2" : [
                         {
-                            "type": "move_right",
+                            "type": "move_up_right",
+                            "var": {
+                                "var1": 100,
+                                "var2": 1000
+                            },
                             "duration": 500
                         }
                     ]
@@ -87,22 +94,29 @@
                 "size": 1.6,
                 "delay": 500,
                 "animation": {
-                    "animation_1": [
+                    "animation_1" : [
                         {
                             "type": "fade_in",
                             "duration": 500
                         },
                         {
-                            "type": "move_up_right",
+                            "type": "move_right",
+                            "var": {
+                                "var1": 100
+                            },
                             "duration": 500
                         }
                     ],
-                    "animation_2": [
+                    "animation_2" : [
                         {
-                            "type": "move_up",
+                            "type": "move_up_right",
+                            "var": {
+                                "var1": 100,
+                                "var2": 1000
+                            },
                             "duration": 500
                         }
-                    ]               
+                    ]
                 },
                 "on_click": null
             },
