@@ -12,7 +12,7 @@ class PantallaManager extends Managers {
         this.offset_y = 0;
 
         this.can_move = false;
-        this.animation_finnished = false;
+        this.animation_finished = false;
 
         this.interactuables_animations = {};
         this.npcs_array = [];
@@ -36,7 +36,13 @@ class PantallaManager extends Managers {
 
         this._load_background();
         this._load_npcs();
+
+        this.npcs_array.forEach((npc) => {
+            this.total_animations++;
+        });
+
         this._load_prota();
+        this.total_animations++;
     }
 
     exit() {
@@ -51,6 +57,9 @@ class PantallaManager extends Managers {
 
     enter(scene_data) {
         if ( !super.enter(scene_data) ) { return; }
+        
+        this.animations_finished = 0;
+        this.total_animations = 0;
 
         this._load_pantalla(scene_data)
         this.pause();
@@ -72,7 +81,7 @@ class PantallaManager extends Managers {
     unpause(){
         super.unpause();
 
-        this.prota.unpause();
+        if (this.prota) this.prota.unpause();
         this.npcs_array.forEach((npc) => {
             npc.unpause();
         });
@@ -82,7 +91,11 @@ class PantallaManager extends Managers {
         this.pause();
     }
 
-    finnish_animation() {
+    finish_animation() {
+        this.animations_finished++;
+        if (this.animations_finished != this.total_animations) { return; }
+        
+        this.animation_finished = false;
         this.unpause();
     }
 

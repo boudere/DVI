@@ -11,32 +11,6 @@ class DialogoGameObjects extends GameObjectsSprite {
 
     _reset_varaibles() { super._reset_varaibles(); }
 
-    async start_animation(animation) {
-        await this.run_tween(); 
-        this.scene.finnish_animation();
-    }
-    
-
-    run_tween(animation_data) {
-        this.scaleX = 0;
-        this.scaleY = 0;
-        this.alpha = 0;
-
-        return new Promise((resolve) => {
-            this.scene.tweens.add({
-                targets: this,
-                scaleX: 1.2,
-                scaleY: 1.2,
-                alpha: 1,
-                duration: 1000,
-                ease: 'Power2',
-                onComplete: () => {
-                    resolve();
-                }
-            });
-        });
-    }
-
     finish_animation() {}
 
     // se ejecuta al salir de la escena
@@ -47,7 +21,7 @@ class DialogoGameObjects extends GameObjectsSprite {
         super.enter(); 
         
         setTimeout(() => {
-            this._add_sprite(true);
+            this._add_sprite(this.animation_data);
         }, this.delay);
     }
 
