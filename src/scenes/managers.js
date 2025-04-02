@@ -9,6 +9,8 @@ class Managers extends Phaser.Scene {
         super(scene);
 
         this.isPause = false;
+        this.animations_finished = 0;
+        this.total_animations = 0;
     }
 
     // se ejecuta al salir de la escena

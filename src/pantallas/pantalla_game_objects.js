@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 
-import PantallaAnimation from "/src/pantallas/utils/pantalla_animation.js";
+import Animation from "/src/utils/animation.js";
 import GameObjectsSprite from '/src/game_objects_sprite';
 
 class PantallaGameObjects extends GameObjectsSprite {
@@ -24,7 +24,7 @@ class PantallaGameObjects extends GameObjectsSprite {
         }
 
         if (animation) {
-            this.animation = new PantallaAnimation(scene);
+            this.animation = new Animation(scene);
         }
 
         this.nombre = nombre;
@@ -39,44 +39,8 @@ class PantallaGameObjects extends GameObjectsSprite {
         this.animation = null;
     }
 
-    async start_animation(animation) {
-        
-        let animation_data = this.animation.get_animation_data(animation, this.game_object_data);
-    
-        for (const [key, value] of Object.entries(animation_data)) {
-            const animation_tweens = value.map((val) => this.run_tween(val));
-    
-            await Promise.all(animation_tweens); // espera a que todos terminen antes de pasar al siguiente grupo
-        }
-
-        this.finish_animation();
-    }
-    
-
-    run_tween(animation_data) {
-        this.alpha = animation_data.alpha_start;
-        this.scale = animation_data.scale_start;
-        this.x = animation_data.pos_x_start;
-        this.y = animation_data.pos_y_start;
-
-        return new Promise((resolve) => {
-            this.scene.tweens.add({
-                targets: this,
-                duration: animation_data.duration,
-                alpha: animation_data.alpha_end,
-                scale: animation_data.scale_end,
-                x: animation_data.pos_x_end,
-                y: animation_data.pos_y_end,
-                ease: 'Power2',
-                onComplete: () => {
-                    resolve()
-                }
-            });
-        });
-    }
-
     finish_animation() {
-        this.scene.finnish_animation();
+        this.scene.finish_animation();
     }
 
     // se ejecuta al salir de la escena

@@ -29,8 +29,14 @@ class DialogoManager extends Managers {
         const { width, height } = this.sys.game.canvas;
 
         this._load_cuadrado_dialogo(width, height);
-        this._load_main_text(width, height);
+        this.total_animations++;
+
         this._load_background();
+
+        this._load_personaje();
+        this.total_animations++;
+        this._load_nombre_personaje();
+        this.total_animations++;
     }
 
     exit() {
@@ -42,6 +48,9 @@ class DialogoManager extends Managers {
         if ( !super.enter(scene_data) ) { return; }
 
         this.dialogo_data_selected = this.dialogo_data[scene_data];
+
+        this.total_animations = 0;
+        this.finished_animation = 0;
 
         this._load_dialogo(scene_data);
         this.cuadrado_dialogo.enter();
@@ -66,7 +75,11 @@ class DialogoManager extends Managers {
         this.pause();
     }
 
-    finnish_animation() {
+    finish_animation() {
+        this.finished_animation++;
+        if (this.finished_animation != this.total_animations) { return; }
+
+        this.animation_finished = false;
         this.unpause();
     }
 
@@ -76,29 +89,31 @@ class DialogoManager extends Managers {
         } else {
             this.scene.get(SCENE_MANAGER).signal_click(on_click);
         }
-//////////////////////////////////////////////////////////////////////////////////////////////////
-        if (on_click.name === "tutorial_5") {
-            this.scene.get(MinijuegosManager).start_minigame("JuegoOveja");
-        }
     }
 
     _load_background() {
+        if (this.background) {
+            this.background.destroy();
+        }
+        
         let img = this.data_info_scene.get_img(DIALOGO_MANAGER, this.dialogo_data_selected.fondo);
-        console.log(img);
         this.background = this.add.image(0, 0, img).setOrigin(0, 0);
     }
 
     _load_cuadrado_dialogo(width, height) {
         if (this.cuadrado_dialogo) {
-            console.log("destroy cuadrado_dialogo");
             this.cuadrado_dialogo.destroy();
         }
         let img = this.data_info_scene.get_img(DIALOGO_MANAGER, this.CUADRADO_DIALOGO);
-        this.cuadrado_dialogo = new CuadradoDialogo(this, width / 2, height - 150, img, 1000);
+        this.cuadrado_dialogo = new CuadradoDialogo(this, width / 2, height - 150, img, 1000, this.dialogo_data_selected.texto);
     }
 
-    _load_main_text(width, height) { 
-        this.main_text = new DialogoMainText(this, width / 2, height - 150, this.cuadrado_dialogo.width, this.dialogo_data_selected.texto, 1000);
+    _load_personaje() {
+        if (this.dialogo_data_selected.personaje == 'none') { return; }
+    }
+
+    _load_nombre_personaje() {
+        if (this.dialogo_data_selected.personaje == 'none') { return; }
     }
 }
 

@@ -89,13 +89,13 @@
             "Pantallas": "pantallas",
             "Saves": "saves",
             "Folders": "folders",
-            "PantallaAnimation": "pantalla_animation",
+            "Animation": "animation",
 
             "Jsons": [
                 "dialogo",
                 "pantallas",
                 "saves",
-                "pantalla_animation"
+                "animation"
             ]
         }
     }
