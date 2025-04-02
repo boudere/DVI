@@ -16,6 +16,7 @@ class DialogoManager extends Managers {
         this.BACKGROUND_DEPTH = 0;
         this.PERSONAJE_DEPTH = 1;
         this.CUADRADO_DIALOGO_DEPTH = 3;
+        this.PISO_MUSICA = 'tema_inicial';
     }
 
     _reset_data() {
@@ -30,6 +31,12 @@ class DialogoManager extends Managers {
     create() {
         this.data_info_scene = this.scene.get(DATA_INFO)
         this.dialogo_data = this.data_info_scene.get_json(this.data_info_scene.data_json.Dialogos);
+
+        this.musica = this.sound.add(this.data_info_scene.get_musica(this.PISO_MUSICA), {
+            loop: true,
+            volume: 0.1
+        });
+        //this.musica.play();
 
         this.scene_created();
     }
@@ -62,22 +69,24 @@ class DialogoManager extends Managers {
 
     exit() {
         super.exit();
+        this.musica.stop(); //con este suena 
         if ( this.cuadrado_dialogo ) this.cuadrado_dialogo.visible = false;
     }
 
     enter(scene_data) {
         if ( !super.enter(scene_data) ) { return; }
-
+        
         this.dialogo_data_selected = this.dialogo_data[scene_data];
-
+        
         this.animate = this.dialogo_data_selected.npc != this.npc;
         this.npc = this.dialogo_data_selected.npc;
-
+        
         this.total_animations = 0;
         this.finished_animation = 0;
         this.buttons_index = 0;
 
         this._load_dialogo(scene_data);
+        this.musica.play(); //este PONE MUSICA, PERO SE REINICIA EN CADA DIALOGO
         
         this.background.visible = true;
         if ( this.animate && this.persoanje ) this.persoanje.enter(); 
@@ -91,10 +100,12 @@ class DialogoManager extends Managers {
 
     pause(){
         super.pause();
+        //this.musica.pause(); este lo deja en silencio
     }
 
     unpause(){
         super.unpause();
+        this.musica.unpause(); //con este suena 
     }
 
     starting_animation() {
