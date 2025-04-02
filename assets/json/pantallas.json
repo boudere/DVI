@@ -323,6 +323,62 @@
                 }
             }
         },
+        "demo_pasillo_uni": {
+            "background": "pasillo_uni",
+            "prota": {
+                "nombre": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            },
+            "npcs": {}
+        },
+        "demo_clase_uni_alumnos": {
+            "background": "clase_uni_alumnos",
+            "prota": {
+                "nombre": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            },
+            "npcs": {}
+        },
+        "demo_cafeteria_uni": {
+            "background": "clase_cafeteria_uni",
+            "prota": {
+                "nombre": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            },
+            "npcs": {}
+        },
+        "demo_clase_profesor": {
+            "background": "clase_profesor",
+            "prota": {
+                "nombre": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            },
+            "npcs": {}
+        },
         "fin_demo": {
             "background": "fin_demo",
             "prota": null,
