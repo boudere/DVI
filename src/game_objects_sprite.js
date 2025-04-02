@@ -44,14 +44,16 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
     run_tween(animation_data) {
         // Asignar valores iniciales si están definidos
         if ('alpha_start' in animation_data) this.alpha = animation_data.alpha_start;
-        if ('scale_start' in animation_data) this.scale = animation_data.scale_start;
+        if ('scaleX_start' in animation_data) this.scale = animation_data.scaleX_start;
+        if ('scaleY_start' in animation_data) this.scale = animation_data.scaleY_start;
         if ('pos_x_start' in animation_data) this.x = animation_data.pos_x_start;
         if ('pos_y_start' in animation_data) this.y = animation_data.pos_y_start;
     
         // Construir objeto con solo las props de destino que estén definidas
         const tweenProps = {};
         if ('alpha_end' in animation_data) tweenProps.alpha = animation_data.alpha_end;
-        if ('scale_end' in animation_data) tweenProps.scale = animation_data.scale_end;
+        if ('scaleX_end' in animation_data) tweenProps.scale = animation_data.scaleX_end;
+        if ('scaleY_end' in animation_data) tweenProps.scale = animation_data.scaleY_end;
         if ('pos_x_end' in animation_data) tweenProps.x = animation_data.pos_x_end;
         if ('pos_y_end' in animation_data) tweenProps.y = animation_data.pos_y_end;
     
@@ -103,6 +105,16 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
         this.on('pointerdown', this._mouse_down, this);
         this.on('pointerup', this._mouse_up, this);
         this.on('pointermove', this._mouse_move, this);
+    }
+
+    _remove_events() {
+        this.off('pointerenter', this._mouse_enter, this);
+        this.off('pointerover', this._mouse_over, this);
+        this.off('pointerout', this._mouse_out, this);
+        this.off('pointerupoutside', this._mouse_out, this);
+        this.off('pointerdown', this._mouse_down, this);
+        this.off('pointerup', this._mouse_up, this);
+        this.off('pointermove', this._mouse_move, this);
     }
 
     _mouse_enter() { return !this.isPause; }

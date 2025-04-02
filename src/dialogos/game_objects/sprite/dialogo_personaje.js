@@ -10,7 +10,8 @@ class DialogoPersonaje extends DialogoGameObject {
 
         this.game_object_data = {
             'alpha': this.alpha,
-            'scale': this.scale,
+            "scaleX" : this.scaleX,
+            "scaleY" : this.scaleY,
             'pos_x': this.x,
             'pos_y': this.y,
         }
@@ -19,11 +20,11 @@ class DialogoPersonaje extends DialogoGameObject {
             "animation_1": [
                 {
                     "type": "fade_in", 
-                    "duration": 1000
+                    "duration": 400
                 },
                 {
                     "type": "move_right",
-                    "duration": 1000,
+                    "duration": 400,
                     "var": {
                         "pos_x": 500
                     }

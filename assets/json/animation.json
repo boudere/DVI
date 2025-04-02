@@ -21,8 +21,15 @@
             "pos_y_end": "$pos_y_start {add} [pos_y]"
         },
         "scale_center": {
-            "scale_start": 0,
-            "scale_end": "[scale]"
+            "scaleX_start": 0,
+            "scaleY_start": 0,
+            "scaleX_end": "[scale]",
+            "scaleY_end": "[scale]"
+        },
+        "scale_up": {
+            "scaleY_start": 0,
+            "scaleX_start": "[scaleX]",
+            "scaleY_end": "[scaleY]"
         }
     }
 }

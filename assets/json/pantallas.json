@@ -92,38 +92,8 @@
                 "pos_x": 200,
                 "pos_y": 900,
                 "size": 1.6,
-                "delay": 500,
-                "animation": {
-                    "animation_1" : [
-                        {
-                            "type": "fade_in",
-                            "duration": 500
-                        },
-                        {
-                            "type": "move_right",
-                            "var": {
-                                "pos_x": 100
-                            },
-                            "duration": 500
-                        }
-                    ],
-                    "animation_2" : [
-                        {
-                            "type": "move_right",
-                            "var": {
-                                "pos_x": 100
-                            },
-                            "duration": 500
-                        },
-                        {
-                            "type": "move_up",
-                            "var": {
-                                "pos_y": 200
-                            },
-                            "duration": 500
-                        }
-                    ]
-                },
+                "delay": 0,
+                "animation": null,
                 "on_click": null
             },
             "npcs": {
@@ -136,7 +106,7 @@
                     "delay": 0,
                     "on_click": {
                         "scene": "dialogo",
-                        "name": "tutorial1"
+                        "name": "tutorial13"
                     },
                     "animation": null
                 }

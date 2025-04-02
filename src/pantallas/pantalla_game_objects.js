@@ -9,7 +9,8 @@ class PantallaGameObjects extends GameObjectsSprite {
 
         this.game_object_data = {
             "alpha" : this.alpha,
-            "scale" : this.scale,
+            "scaleX" : this.scaleX,
+            "scaleY" : this.scaleY,
             "pos_x" : this.x,
             "pos_y" : this.y
         };

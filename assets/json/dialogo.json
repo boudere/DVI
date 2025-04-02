@@ -1,10 +1,10 @@
 {
   "Dialogo": {
     "dialogo_1": {
-      "texto": "Esto es una prueba",
-      "npc": "veronica",
-      "pose": "enfado",
-      "fondo": "clase",
+      "texto": " ",
+      "npc": "none",
+      "pose": "normal",
+      "fondo": "negro",
       "opciones": true,
       "opcion_1": "dialogo_2",
       "texto_1": "ve a dialogo 2",
@@ -67,7 +67,7 @@
     },
     "tutorial1": {
       "texto": "(Tenía aún calor cuando abrí el portal de mi nuevo piso.)",
-      "npc": "prota",
+      "npc": "none",
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
@@ -80,7 +80,7 @@
     },
     "tutorial2": {
       "texto": "(Supongo que es parte de la experiencia del metro, tendré que acostumbrarme.)",
-      "npc": "prota",
+      "npc": "none",
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
@@ -93,7 +93,7 @@
     },
     "tutorial3": {
       "texto": "(Conseguí subirme al ascensor con todas mis maletas con miedo en el cuerpo por ver con quién me encontraría al llegar.)",
-      "npc": "prota",
+      "npc": "none",
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
@@ -106,7 +106,7 @@
     },
     "tutorial4": {
       "texto": "(El ruido de las llaves en la cerradura de la puerta que seguramente tenga más años que yo me hizo salir de mis pensamientos.)",
-      "npc": "prota",
+      "npc": "none",
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,

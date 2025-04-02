@@ -21,8 +21,7 @@
                     "Path": "personajes/",
                     "Personajes": [
                         "prota",
-                        "maria",
-                        "veronica"
+                        "maria"
                     ],
                     "Poses": [
                         "normal",
@@ -46,13 +45,18 @@
                     ]
                 },
                 "Personajes": {
-                "Path": "personajes/",
-                "Personajes": [
-                    "prota"
-                ],
-                "Poses": [
-                    "normal"
-                ]
+                    "Path": "personajes/",
+                    "Personajes": [
+                        "prota",
+                        "maria",
+                        "none"
+                    ],
+                    "Poses": [
+                        "normal",
+                        "alegre",
+                        "triste",
+                        "enfado"
+                    ]
                 },
                 "Backgrounds": {
                     "Path": "backgrounds/",

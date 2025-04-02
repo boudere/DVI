@@ -2,13 +2,16 @@ import DialogoGameObject from '/src/dialogos/dialogo_game_objects.js';
 import DialogoMainText from "/src/dialogos/game_objects/text/dialogo_main_text.js";
 import Animation from '/src/utils/animation.js';
 
-class CuadradoDialogo extends DialogoGameObject {
-    constructor(scene, x, y, nombre_img, text, animation) {
+class ButtonCuadradoDialogo extends DialogoGameObject {
+    constructor(scene, x, y, nombre_img, text, next_text, animation) {
         super(scene, x, y, nombre_img, 200);
+
+        this.setOrigin(1, 1);
 
         this.SCALE = 1.2;
 
         this.text = text;
+        this.next_text = next_text;
 
         this.finished_animation = 0;
         this.total_animations = 0;
@@ -24,13 +27,14 @@ class CuadradoDialogo extends DialogoGameObject {
                 "animation_1": [
                     {
                         "type": "fade_in", 
-                        "duration": 400
+                        "duration": 200
                     },
                     {
-                        "type": "scale_center",
-                        "duration": 400,
+                        "type": "scale_up",
+                        "duration": 200,
                         "var": {
-                            "scale": this.SCALE
+                            "scaleX": this.SCALE,
+                            "scaleY": this.SCALE
                         }
                     }
                 ]
@@ -38,7 +42,7 @@ class CuadradoDialogo extends DialogoGameObject {
 
             this.animation = new Animation(this.scene, this.animation_data, 1000);
         } else {
-            this.setScale(SCALE);
+            this.setScale(this.SCALE);
         }
     }
 
@@ -47,9 +51,11 @@ class CuadradoDialogo extends DialogoGameObject {
             this._load_main_text();
             return;
         }
-
         this.finished_animation++;
+
         if (this.finished_animation != this.total_animations) { return; }
+        this.finished_animation = 0;
+
         this.scene.finish_animation();
     }
 
@@ -67,7 +73,7 @@ class CuadradoDialogo extends DialogoGameObject {
         }
         let x = this.x - this.width / 2 - 100;
         let y = this.y - this.height / 2;
-        this.main_text = new DialogoMainText(this.scene, x, y, this, this.width * 1.2, this.text, this.delay).setOrigin(0, 0)
+        this.main_text = new DialogoMainText(this.scene, x - this.width / 2, y - this.height / 2, this, this.width * this.SCALE, this.text, this.delay).setOrigin(0, 0)
         
         this.total_animations++;
     }
@@ -76,6 +82,27 @@ class CuadradoDialogo extends DialogoGameObject {
         super.before_destroy();
         if (this.main_text) this.main_text.destroy();
     }
+
+    pause() {
+        super.pause();
+
+        this._remove_events() 
+    }
+
+    unpause() {
+        super.unpause();
+
+        this._set_events()
+    }
+
+    _mouse_up() {
+        this.on_click = {
+            "scene": "dialogo",
+            "name": this.next_text,
+        }
+
+        super._mouse_up();
+    }
 }
 
-export default CuadradoDialogo;
+export default ButtonCuadradoDialogo;

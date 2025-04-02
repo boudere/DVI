@@ -1,5 +1,6 @@
 import Managers from "/src/scenes/managers";
 import CuadradoDialogo from "/src/dialogos/game_objects/sprite/cuadrado_dialogo.js";
+import ButtonCuadradoDialogo from "/src/dialogos/game_objects/sprite/button_cuadrado_dialogo.js";
 import DialogoPersonaje from "/src/dialogos/game_objects/sprite/dialogo_personaje.js";
 
 import { DIALOGO_MANAGER, DATA_INFO, SCENE_MANAGER } from "/src/data/scene_data.js";
@@ -10,6 +11,7 @@ class DialogoManager extends Managers {
         super({ key: DIALOGO_MANAGER });
 
         this.CUADRADO_DIALOGO = 'cuadrado_dialogo';
+        this.BUTTON_CUADRADO_DIALOGO = 'boton_dialogo';
 
         this.BACKGROUND_DEPTH = 0;
         this.PERSONAJE_DEPTH = 1;
@@ -21,6 +23,8 @@ class DialogoManager extends Managers {
         this.main_text = null;
         this.dialogo_data_selected = null;
         this.npc = '';
+        this.buttons_index = 0;
+        this.buttons = [];
     }
 
     create() {
@@ -45,6 +49,12 @@ class DialogoManager extends Managers {
             this._load_personaje(width, height);
             this.total_animations++;
         }
+
+        if (this.buttons) this.buttons.forEach(button => button.destroy());
+        
+        if ( this.dialogo_data_selected.opciones ) {
+            this._load_buttons(width, height);
+        }
         
         // this._load_nombre_personaje();
         // this.total_animations++;
@@ -65,11 +75,12 @@ class DialogoManager extends Managers {
 
         this.total_animations = 0;
         this.finished_animation = 0;
+        this.buttons_index = 0;
 
         this._load_dialogo(scene_data);
         
         this.background.visible = true;
-        if ( this.animate ) this.persoanje.enter(); 
+        if ( this.animate && this.persoanje ) this.persoanje.enter(); 
         this._set_events();
         this.pause();
     }
@@ -98,16 +109,27 @@ class DialogoManager extends Managers {
             return;
         }
 
+        if (this.dialogo_data_selected.opciones &&  this.buttons_index < this.buttons.length) {
+            this.buttons[this.buttons_index].enter();
+            this.buttons_index++;
+            return;
+        }
+
         if (this.finished_animation != this.total_animations) { return; }
 
-        if (this.dialogo_data_selected.opciones) {}
-
         this.animation_finished = true;
+
+        if (this.dialogo_data_selected.opciones) {
+            this.buttons.forEach(button => button.unpause());
+        }
+
         this.unpause();
     }
 
     signal_click(on_click) {
+        console.log(on_click);
         if (on_click.scene == 'dialogo') {
+            console.log('dialogo', on_click.name);
             this._load_dialogo(on_click.name);
         } else {
             this.scene.get(SCENE_MANAGER).signal_click(on_click);
@@ -120,7 +142,8 @@ class DialogoManager extends Managers {
         }
         
         let img = this.data_info_scene.get_img(DIALOGO_MANAGER, this.dialogo_data_selected.fondo);
-        this.background = this.add.image(0, 0, img).setOrigin(0, 0).setDepth(this.BACKGROUND_DEPTH);
+        this.background = this.add.image(0, 0, img).setOrigin(0, 0)
+        this.background.setDepth(this.BACKGROUND_DEPTH);
     }
 
     _load_cuadrado_dialogo(width, height) {
@@ -137,7 +160,6 @@ class DialogoManager extends Managers {
     }
 
     _load_personaje(width, height) {
-        if (this.dialogo_data_selected.npc == 'none') { return; }
         if (this.persoanje) {
             this.persoanje.destroy();
         }
@@ -152,6 +174,26 @@ class DialogoManager extends Managers {
         if (this.dialogo_data_selected.personaje == 'none') { return; }
     }
 
+    _load_buttons(width, height) {
+        this.buttons = [];
+
+        let img = this.data_info_scene.get_img(DIALOGO_MANAGER, this.BUTTON_CUADRADO_DIALOGO);
+        let x = this.cuadrado_dialogo.x + (this.cuadrado_dialogo.width / 2 * this.cuadrado_dialogo.SCALE);
+        let y = this.cuadrado_dialogo.y - (this.cuadrado_dialogo.height / 2 * this.cuadrado_dialogo.SCALE);
+        this.buttons_index = 1;
+        while (this.buttons_index <= 3 && this.dialogo_data_selected["texto_" + this.buttons_index]) {
+            let button = new ButtonCuadradoDialogo(this, x, y, img, this.dialogo_data_selected["texto_" + this.buttons_index], this.dialogo_data_selected["opcion_" + this.buttons_index] , true);
+            button.setDepth(this.CUADRADO_DIALOGO_DEPTH + 1);
+
+            this.buttons_index++;
+            y -= button.height;
+            this.buttons.push(button);
+
+            this.total_animations++;
+        }
+        this.buttons_index = 0;
+    }
+
     _set_events() {
         this.input.on('pointerup', this._mouse_up, this);
     }
@@ -163,7 +205,6 @@ class DialogoManager extends Managers {
             } else {   
                 this.scene.get(SCENE_MANAGER).signal_click(on_click);
             }
-        } else {
         }
     }
 }

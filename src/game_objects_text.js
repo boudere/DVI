@@ -47,19 +47,25 @@ class GameObjectsText extends Phaser.GameObjects.Text {
 
     start_animation() {
         let i = 0;
-        let texto_animado = '';
         let texto_completo = this.texto;
-
-        let intervalo = setInterval(() => {
-            if (i < texto_completo.length) {
-                texto_animado += texto_completo.charAt(i);
-                this.setText(texto_animado);
+        let texto_actual = '';
+    
+        // Aseguramos que empiece vacío
+        this.setText('');
+    
+        this.scene.time.addEvent({
+            delay: 30,
+            callback: () => {
+                texto_actual += texto_completo.charAt(i);
+                this.setText(texto_actual);
                 i++;
-            } else {
-                clearInterval(intervalo);
-                this.containter.finish_animation();
-            }
-        }, 30);
+    
+                if (i >= texto_completo.length) {
+                    this.containter.finish_animation();
+                }
+            },
+            repeat: texto_completo.length - 1
+        });
     }
     
     run_tween(animation_data) {}
