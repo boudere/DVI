@@ -32,6 +32,7 @@ class SceneManager extends Managers {
 
         this.scene.start(MINIJUEGO_MANAGER);
         this.scenes[MINIJUEGO_MANAGER] = this.scene.get(MINIJUEGO_MANAGER);
+
         this.currentScene = MINIJUEGO_MANAGER;
         this.currentSceneData = 'JuegoOveja';
     }

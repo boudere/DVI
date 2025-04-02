@@ -14,12 +14,17 @@ class DialogoGameObjects extends GameObjectsSprite {
     finish_animation() {}
 
     // se ejecuta al salir de la escena
-    exit() { super.exit(); }
+    exit() { 
+        this.musica.stop();
+        super.exit();
+    }
 
     // se ejecuta al entrar en la escena
     enter() { 
         super.enter(); 
         
+        //this.musica.play();
+
         setTimeout(() => {
             this._add_sprite(this.animation_data);
         }, this.delay);

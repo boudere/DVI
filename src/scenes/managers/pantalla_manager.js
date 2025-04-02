@@ -16,6 +16,9 @@ class PantallaManager extends Managers {
 
         this.interactuables_animations = {};
         this.npcs_array = [];
+
+        this.PISO_MUSICA = 'tema_inicial';
+
     }
 
     create() {
@@ -25,6 +28,11 @@ class PantallaManager extends Managers {
         this.data_json = this.data.Json;
 
         this.pantallas_data = this.data_info_scene.get_json(this.data_json.Pantallas);
+
+        this.musica = this.sound.add(this.data_info_scene.get_musica(this.PISO_MUSICA), {
+            loop: true,
+            volume: 0.8
+        });
 
         this.scene_created();
     }
@@ -53,6 +61,7 @@ class PantallaManager extends Managers {
             npc.exit();
         });
         if (this.prota) this.prota.exit();
+        this.musica.stop();
     }
 
     enter(scene_data) {
@@ -60,6 +69,8 @@ class PantallaManager extends Managers {
         
         this.animations_finished = 0;
         this.total_animations = 0;
+
+        this.musica.play();
 
         this._load_pantalla(scene_data)
         this.pause();
@@ -76,6 +87,8 @@ class PantallaManager extends Managers {
         this.npcs_array.forEach((npc) => {
             npc.pause();
         });
+
+        this.musica.pause();
     }
 
     unpause(){
@@ -85,6 +98,8 @@ class PantallaManager extends Managers {
         this.npcs_array.forEach((npc) => {
             npc.unpause();
         });
+
+        this.musica.unpause();
     }
 
     starting_animation() {
