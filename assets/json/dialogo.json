@@ -1,10 +1,10 @@
 {
   "Dialogo": {
     "dialogo_1": {
-      "texto": " ",
-      "npc": "none",
-      "pose": "normal",
-      "fondo": "negro",
+      "texto": "Esto es una prueba",
+      "npc": "veronica",
+      "pose": "enfado",
+      "fondo": "clase",
       "opciones": true,
       "opcion_1": "dialogo_2",
       "texto_1": "ve a dialogo 2",
@@ -33,8 +33,8 @@
       "fondo": "clase",
       "opciones": false,
       "opcion_1": "FIN",
-      "texto_1": "pantalla",
-      "opcion_2": "nombre_antalla",
+      "texto_1": null,
+      "opcion_2": null,
       "texto_2": null,
       "opcion_3": null,
       "texto_3": null
@@ -46,8 +46,8 @@
       "fondo": "clase",
       "opciones": false,
       "opcion_1": "FIN",
-      "texto_1": "pantalla",
-      "opcion_2": "nombre_antalla",
+      "texto_1": null,
+      "opcion_2": null,
       "texto_2": null,
       "opcion_3": null,
       "texto_3": null
@@ -66,8 +66,8 @@
       "texto_3": null
     },
     "tutorial1": {
-      "texto": "(Tenía aún calor cuando abrí el portal de mi nuevo piso.)",
-      "npc": "none",
+      "texto": "(Tenía aún calor cuando abrí el portal de mi nuevo piso...)",
+      "npc": "prota",
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
@@ -79,8 +79,8 @@
       "texto_3": null
     },
     "tutorial2": {
-      "texto": "(Supongo que es parte de la experiencia del metro, tendré que acostumbrarme.)",
-      "npc": "none",
+      "texto": "(Supongo que es parte de la experiencia del metro, tendré que acostumbrarme...)",
+      "npc": "prota",
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
@@ -92,8 +92,8 @@
       "texto_3": null
     },
     "tutorial3": {
-      "texto": "(Conseguí subirme al ascensor con todas mis maletas con miedo en el cuerpo por ver con quién me encontraría al llegar.)",
-      "npc": "none",
+      "texto": "(Conseguí subirme al ascensor con todas mis maletas, con miedo en el cuerpo por ver con quién me encontraría al llegar...)",
+      "npc": "prota",
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
@@ -105,8 +105,8 @@
       "texto_3": null
     },
     "tutorial4": {
-      "texto": "(El ruido de las llaves en la cerradura de la puerta que seguramente tenga más años que yo me hizo salir de mis pensamientos.)",
-      "npc": "none",
+      "texto": "(El ruido de las llaves en la cerradura de la puerta, que seguramente tenga más años que yo, me hizo salir de mis pensamientos.)",
+      "npc": "prota",
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
@@ -157,7 +157,7 @@
       "texto_3": null
     },
     "tutorial8": {
-      "texto": "(Una chica de pelo rizado y moreno aparece en la estancia.)",
+      "texto": "(Una chica de pelo rizado y moreno aparece.)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "salon",
@@ -183,7 +183,7 @@
       "texto_3": null
     },
     "tutorial10": {
-      "texto": "Hola, sí soy ____. He tardado un poco, era la primera vez que cogía el metro y he dado alguna vuelta.",
+      "texto": "Hola, sí soy ____. He tardado un poco, era la primera vez que cogía el metro y he dado alguna vuelta de más.",
       "npc": "prota",
       "pose": "alegre",
       "fondo": "salon",
@@ -241,9 +241,9 @@
       "fondo": "salon",
       "opciones": true,
       "opcion_1": "tutorial15",
-      "texto_1": "No me hace mucha ilusión escuchar la puerta y demás así que la de la cocina mejor.",
+      "texto_1": "Mejor la de la cocina, que escucho menos jaleo.",
       "opcion_2": "tutorial16",
-      "texto_2": "Esta misma está bien. Al lado de la puerta para entrar y salir rápidamente.",
+      "texto_2": "Aquí mismo, así entro y salgo sin molestar.",
       "opcion_3": null,
       "texto_3": null
     },
@@ -287,7 +287,7 @@
       "texto_3": null
     },
     "tutorial18": {
-      "texto": "(No sé a quién se refiere con el resto, yo solo hablé con ella cuando vi la historia de Instagram.)",
+      "texto": "(No sé a quién se refiere con el resto, yo solo hablé con ella cuando vi la historia de Instagram...)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "habitacion",
@@ -313,7 +313,7 @@
       "texto_3": null
     },
     "tutorial20": {
-      "texto": "La verdad es que es más grande de lo que imaginaba. No he traído muchas cosas para decorar, iba a ser demasiado.",
+      "texto": "La verdad es que es más grande de lo que imaginaba. No he traído muchas cosas para decorar, tendré que ir comprando cosas por aquí.",
       "npc": "prota",
       "pose": "normal",
       "fondo": "habitacion",
@@ -352,7 +352,7 @@
       "texto_3": null
     },
     "tutorial23": {
-      "texto": "Bien, pues así puedes escribirme para cualquier cosa porque...",
+      "texto": "Bien, así puedes escribirme para cualquier cosa porque...",
       "npc": "maria",
       "pose": "normal",
       "fondo": "habitacion",
@@ -404,7 +404,7 @@
       "texto_3": null
     },
     "tutorial27": {
-      "texto": "(Me dirijo al salón sin saber muy bien qué esperar cuando veo a dos chicos muy distintos cargando bolsas de la compra.)",
+      "texto": "(Me dirijo al salón sin saber muy bien qué esperar, cuando veo a dos chicos muy distintos cargando bolsas de la compra.)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "salon",
@@ -417,7 +417,7 @@
       "texto_3": null
     },
     "tutorial28": {
-      "texto": "Bueno no hemos comprado muchas cosas: papel de cocina, higiénico... lo típico.",
+      "texto": "Bueno no hemos comprado muchas cosas: pasta de dientes, papel higiénico... lo típico.",
       "npc": "samuel",
       "pose": "normal",
       "fondo": "salon",
@@ -456,7 +456,7 @@
       "texto_3": null
     },
     "tutorial31": {
-      "texto": "Bueno sí, yo he comprado tabaco que era a lo que iba en realidad. ¿Es el/la nuevx no?",
+      "texto": "Bueno sí, yo he comprado tabaco que era a lo que iba en realidad. ¿Es la nueva, no?",
       "npc": "pepe",
       "pose": "normal",
       "fondo": "salon",
@@ -560,7 +560,7 @@
       "texto_3": null
     },
     "tutorial39": {
-      "texto": "(Me siento con María en el sofá mientras Samuel va a la cocina cargando con las bolsas como si tuviesen solo aire dentro para organizar todo en un pispás.)",
+      "texto": "(Me siento con María en el sofá mientras Samuel va a la cocina, cargando con las bolsas como si solo tuviesen aire dentro, para organizar todo en un pispás.)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "salon",
@@ -800,11 +800,11 @@
       "fondo": "salon",
       "opciones": true,
       "opcion_1": "tutorial58",
-      "texto_1": "La residencia significa convivir con mucha gente y no estoy segurx de poder sobrevivir con tanto jaleo.",
+      "texto_1": "La residencia significa convivir con mucha gente, y yo paso de movidas...",
       "opcion_2": "tutorial58",
       "texto_2": "Aquí tengo más libertad. No me gustaba nada la idea de tener horarios para todo.",
       "opcion_3": "tutorial58",
-      "texto_3": "A decir verdad, no sé por qué elegí el piso. No me planteé otra opción."
+      "texto_3": "A decir verdad, no sé por qué elegí el piso, no lo pensé demasiado."
     },
     "tutorial58": {
       "texto": "En cualquier caso, seguro que nos llevamos bien. No te arrepentirás de tu decisión.",
@@ -830,7 +830,7 @@
       "opcion_2": "tutorial61",
       "texto_2": "Joder pues en realidad me muero de pereza solo de pensarlo.",
       "opcion_3": "tutorial60",
-      "texto_3": "Bueno he estado investigando y me encantaría ir a varias discotecas."
+      "texto_3": "Bueno he estado viendo por Insta y tengo fichadas un par de discotecas."
     },
     "tutorial60": {
       "texto": "Si quieres te puedo ayudar con eso.",
@@ -1054,14 +1054,14 @@
       "texto_3": null
     },
     "tutorial77": {
-      "texto": "Entonces cenamos que ____ tiene que descansar para estar frescx mañana en su primer día.",
+      "texto": "Entonces cenamos que ____ tiene que descansar para estar fresca mañana en su primer día.",
       "npc": "maria",
       "pose": "alegre",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "FIN",
-      "texto_1": "pantalla",
-      "opcion_2": "nombre_antalla",
+      "texto_1": null,
+      "opcion_2": null,
       "texto_2": null,
       "opcion_3": null,
       "texto_3": null
