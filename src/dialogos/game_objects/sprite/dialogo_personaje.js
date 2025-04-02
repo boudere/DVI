@@ -2,11 +2,8 @@ import DialogoGameObject from '/src/dialogos/dialogo_game_objects.js';
 import Animation from '/src/utils/animation.js';
 
 class DialogoPersonaje extends DialogoGameObject {
-    constructor(scene, x, y, nombre_img, delay, text) {
+    constructor(scene, x, y, nombre_img, delay) {
         super(scene, x, y, nombre_img, delay);
-
-        this.delay = 200;
-        this.text = text;
 
         this.finished_animation = 0;
         this.total_animations = 0;
@@ -26,27 +23,25 @@ class DialogoPersonaje extends DialogoGameObject {
                 },
                 {
                     "type": "move_right",
-                    "duration": 500,
+                    "duration": 1000,
                     "var": {
-                        "pos_x": 1000
+                        "pos_x": 500
                     }
                 }
             ]
         }
         this.animation = new Animation(this.scene, this.animation_data, 1000);
+
+        this.total_animations++;
     }
 
     finish_animation() {
-        if (this.total_animations == 0) {
-            this._load_main_text();
-            return;
-        }
-
         this.finished_animation++;
+
         if (this.finished_animation != this.total_animations) { return; }
         this.finished_animation = 0;
         this.scene.finish_animation();
     }
 }
 
-export default CuadradoDialogo;
+export default DialogoPersonaje;

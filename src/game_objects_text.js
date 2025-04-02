@@ -22,6 +22,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         this.containter = container;
         
         this.setOrigin(0, 0);
+        this.setDepth(container.depth + 1);
 
         this.on('destroy', this.before_destroy, this);
 
@@ -87,7 +88,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         this.setInteractive();
     }
 
-    _start_animation() {}
+    _start_animation() {this.scene.start_animation();}
 
     _stop_animation() {}
 

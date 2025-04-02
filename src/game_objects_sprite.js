@@ -27,6 +27,7 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
     }
 
     async start_animation(animation) {
+        this.scene.starting_animation();
         
         let animation_data = this.animation.get_animation_data(animation, this.game_object_data);
     
@@ -41,23 +42,27 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
     
 
     run_tween(animation_data) {
-        this.alpha = animation_data.alpha_start;
-        this.scale = animation_data.scale_start;
-        this.x = animation_data.pos_x_start;
-        this.y = animation_data.pos_y_start;
-
+        // Asignar valores iniciales si están definidos
+        if ('alpha_start' in animation_data) this.alpha = animation_data.alpha_start;
+        if ('scale_start' in animation_data) this.scale = animation_data.scale_start;
+        if ('pos_x_start' in animation_data) this.x = animation_data.pos_x_start;
+        if ('pos_y_start' in animation_data) this.y = animation_data.pos_y_start;
+    
+        // Construir objeto con solo las props de destino que estén definidas
+        const tweenProps = {};
+        if ('alpha_end' in animation_data) tweenProps.alpha = animation_data.alpha_end;
+        if ('scale_end' in animation_data) tweenProps.scale = animation_data.scale_end;
+        if ('pos_x_end' in animation_data) tweenProps.x = animation_data.pos_x_end;
+        if ('pos_y_end' in animation_data) tweenProps.y = animation_data.pos_y_end;
+    
+        // Aplicar tween
         return new Promise((resolve) => {
             this.scene.tweens.add({
                 targets: this,
-                duration: animation_data.duration,
-                alpha: animation_data.alpha_end,
-                scale: animation_data.scale_end,
-                x: animation_data.pos_x_end,
-                y: animation_data.pos_y_end,
-                ease: 'Power2',
-                onComplete: () => {
-                    resolve()
-                }
+                duration: animation_data.duration || 500,
+                ease: animation_data.ease || 'Power2',
+                ...tweenProps,
+                onComplete: () => resolve()
             });
         });
     }

@@ -3,10 +3,11 @@ import DialogoMainText from "/src/dialogos/game_objects/text/dialogo_main_text.j
 import Animation from '/src/utils/animation.js';
 
 class CuadradoDialogo extends DialogoGameObject {
-    constructor(scene, x, y, nombre_img, delay, text) {
-        super(scene, x, y, nombre_img, delay);
+    constructor(scene, x, y, nombre_img, text, animation) {
+        super(scene, x, y, nombre_img, 200);
 
-        this.delay = 200;
+        let SCALE = 1.2;
+
         this.text = text;
 
         this.finished_animation = 0;
@@ -18,23 +19,27 @@ class CuadradoDialogo extends DialogoGameObject {
             'pos_x': this.x,
             'pos_y': this.y,
         }
-
-        this.animation_data = {
-            "animation_1": [
-                {
-                    "type": "fade_in", 
-                    "duration": 1000
-                },
-                {
-                    "type": "scale_center",
-                    "duration": 1000,
-                    "var": {
-                        "scale": 1.2
+        if (animation) {
+            this.animation_data = {
+                "animation_1": [
+                    {
+                        "type": "fade_in", 
+                        "duration": 1000
+                    },
+                    {
+                        "type": "scale_center",
+                        "duration": 1000,
+                        "var": {
+                            "scale": 1.2
+                        }
                     }
-                }
-            ]
+                ]
+            }
+
+            this.animation = new Animation(this.scene, this.animation_data, 1000);
+        } else {
+            this.setScale(SCALE);
         }
-        this.animation = new Animation(this.scene, this.animation_data, 1000);
     }
 
     finish_animation() {
@@ -49,12 +54,28 @@ class CuadradoDialogo extends DialogoGameObject {
         this.scene.finish_animation();
     }
 
+    setText(text) {
+        this.total_animations = 0;
+        this.finished_animation = 0;
+        
+        this.text = text;
+        this._load_main_text();
+    }
+
     _load_main_text() {
+        if (this.main_text) {
+            this.main_text.destroy();
+        }
         let x = this.x - this.width / 2 - 100;
         let y = this.y - this.height / 2;
-        this.main_text = new DialogoMainText(this.scene, x, y, this, this.width * 1.2, this.text, this.delay).setOrigin(0, 0).setDepth(1);
+        this.main_text = new DialogoMainText(this.scene, x, y, this, this.width * 1.2, this.text, this.delay).setOrigin(0, 0)
         
         this.total_animations++;
+    }
+
+    before_destroy() {
+        super.before_destroy();
+        if (this.main_text) this.main_text.destroy();
     }
 }
 

@@ -109,9 +109,15 @@
                     ],
                     "animation_2" : [
                         {
-                            "type": "move_up_right",
+                            "type": "move_right",
                             "var": {
-                                "pos_x": 100,
+                                "pos_x": 100
+                            },
+                            "duration": 500
+                        },
+                        {
+                            "type": "move_up",
+                            "var": {
                                 "pos_y": 200
                             },
                             "duration": 500

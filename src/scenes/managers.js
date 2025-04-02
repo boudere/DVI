@@ -40,6 +40,8 @@ class Managers extends Phaser.Scene {
     scene_created() {
         this.scene.get(SCENE_MANAGER).events.emit(SIGNAL_SCENE_CREATED, this.scene.key);
     }
+
+    starting_animation() {}
 }
 
 export default Managers;

@@ -48,6 +48,19 @@
                 "boton_dialogo.png",
                 "cuadrado_dialogo.png"
               ]
+            },
+            {
+              "name": "personajes",
+              "folders": [
+                {
+                  "name": "prota",
+                  "folders": [],
+                  "files": [
+                    "prota_normal.png"
+                  ]
+                }
+              ],
+              "files": []
             }
           ],
           "files": []

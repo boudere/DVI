@@ -13,19 +13,18 @@ class Animation {
 
     // setea las animaciones a valores default
     set_animation(data) {
-        let animation = {};
-        Object.entries(data).forEach(([key, value]) => {
-            animation[key + "_start"] = value;
-            animation[key + "_end"] = value;
-        });
-        return animation;
+        // let animation = {};
+        // Object.entries(data).forEach(([key, value]) => {
+        //     animation[key + "_start"] = value;
+        //     animation[key + "_end"] = value;
+        // });
+        // return animation;
     }
 
     // setea las animaciones
     get_animation_data(animation, data) {
 
         let data_assistant = {};
-
         // sirve para saber los valores default para las siguientes animaciones
         Object.entries(data).forEach(([key, value]) => {
             data_assistant[key] = value;
@@ -46,20 +45,19 @@ class Animation {
                 let val_set_data = this.set_animation(data);
 
                 // añade dichos valores a la animacion
-                this.animation[key].push(val_set_data);
+                this.animation[key].push({});
 
                 // setea los valores de la animacion
                 let index = this.animation[key].length - 1;
-                this.get_animation(data_assistant, animation, key, index);
+                this.get_animation(data_assistant, animation, key, index, data);
             });
         });
-
         // devuelve los datos de la animacion
         return this.animation;
     }
 
     // setea los valores de la animacion
-    get_animation(data_assistant, animation, key, index) {
+    get_animation(data_assistant, animation, key, index, data) {
         // obtiene lso datos que se modifican con el tipo de animacion (fade-in, fade-out, etc)
         let animation_type = this.animation_data[animation[key][index].type];
 
@@ -69,7 +67,8 @@ class Animation {
         // cambia los valores de la animacion dependiendo del tipo de animacion
         Object.entries(animation_type).forEach(([key_animation, value_animation]) => {
             // en el caso de tener operaciones las calcula
-            let value = this.translate_animation(value_animation, key, index, animation)
+            let value = this.translate_animation(value_animation, key, index, animation, data)
+            this.animation[key][index][key_animation] = value;
             this.animation[key][index][key_animation] = value;
 
             // si la animacion es de tipo "end" se los guarda para que la siguiente animacion lo use
@@ -80,7 +79,7 @@ class Animation {
     }
 
     // traduce las animaciones que tienen operaciones
-    translate_animation(value, key, index, animation) {
+    translate_animation(value, key, index, animation, data) {
         // ej: $pos_x_start {add} 10
 
         // si no es un string (es un numero) directamente lo devuelve
@@ -186,7 +185,11 @@ class Animation {
             if (Number.isInteger(item)) {
                 operations.push(item);
             } else if (item.variable) {
-                operations.push(this.animation[key][index][item.variable]);
+                let variable = item.variable.split('_');
+                variable.pop();
+                variable = variable.join('_');
+
+                operations.push(data[variable]);
             } else if (item.bracketsContent) {
                 operations.push(animation[key][index].var[item.bracketsContent]);
             }
