@@ -143,9 +143,9 @@
       "name": "json",
       "folders": [],
       "files": [
+        "animation.json",
         "dialogo.json",
         "pantallas.json",
-        "pantalla_animation.json",
         "saves.json"
       ]
     }

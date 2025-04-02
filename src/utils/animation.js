@@ -145,12 +145,7 @@ class Animation {
             if (char === ']' && inBrackets) {
                 inBrackets = false;
                 // si encontramos ] y ya teníamos algo en bracketsContent, lo añadimos al array de info
-                console.log('Aniamtion:', animation[key][index]);
-                info.push({ [bracketsContent]: animation[key][index].var[bracketsContent] });
-
-                console.log('bracketsContent', bracketsContent,  animation[key][index].var[bracketsContent]);
-                console.log('info[bracketContent]', info[1][bracketsContent]);
-                console.log('info', info);
+                info.push({ bracketsContent: bracketsContent });
                 i++;
                 continue;
             }
@@ -161,7 +156,6 @@ class Animation {
                 continue;
             }
 
-    
             // si encontramos $
             if (char === '$') {
                 let varName = '';
@@ -188,16 +182,19 @@ class Animation {
 
         // guardamos los datos en orden para la operacion
         let operations = [];
-        info.forEach((item, index) => {
+        info.forEach((item) => {
             if (Number.isInteger(item)) {
                 operations.push(item);
             } else if (item.variable) {
                 operations.push(this.animation[key][index][item.variable]);
+            } else if (item.bracketsContent) {
+                operations.push(animation[key][index].var[item.bracketsContent]);
             }
         });
 
-        console.log(operations, operation);
-
+        if (operations.length < 2) {
+            return operations[0];
+        }
         // devuelve el valor de la operacion
         return this.operation_animation(operations[0], operations[1], operation);
     }

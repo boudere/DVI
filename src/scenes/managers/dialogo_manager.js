@@ -1,6 +1,5 @@
 import Managers from "/src/scenes/managers";
-import CuadradoDialogo from "/src/dialogos/game_objects/cuadrado_dialogo.js";
-import DialogoMainText from "/src/dialogos/game_objects/text/dialogo_main_text.js";
+import CuadradoDialogo from "/src/dialogos/game_objects/sprite/cuadrado_dialogo.js";
 
 import { DIALOGO_MANAGER, DATA_INFO, SCENE_MANAGER } from "/src/data/scene_data.js";
 
