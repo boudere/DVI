@@ -134,6 +134,13 @@
               "files": []
             },
             {
+              "name": "objetos",
+              "folders": [],
+              "files": [
+                "habitacion_cama.png"
+              ]
+            },
+            {
               "name": "personajes",
               "folders": [
                 {
@@ -166,16 +173,16 @@
                   "name": "habitacion",
                   "folders": [],
                   "files": [
-                    "puerta_derecha.png",
-                    "puerta_izquierda.png"
+                    "habitacion_derecha.png",
+                    "habitacion_izquierda.png"
                   ]
                 },
                 {
                   "name": "salon",
                   "folders": [],
                   "files": [
-                    "puerta_derecha.png",
-                    "puerta_izquierda.png"
+                    "salon_derecha.png",
+                    "salon_izquierda.png"
                   ]
                 }
               ],

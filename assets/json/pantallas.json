@@ -56,7 +56,8 @@
                         "direction": "left"
                     }
                 }
-            }
+            },
+            "objetos": {}
         },
         "demo_habitacion_1": {
             "background": "habitacion",
@@ -76,15 +77,23 @@
                     "nombre": "salon",
                     "pos_x": 1850,
                     "pos_y": 890,
-                    "size_x": 200,
-                    "size_y": 920,
-                    "delay": 0,
-                    "animation": null,
                     "on_click": {
                         "scene": "pantalla",
                         "name": "demo_salon_1",
                         "direction": "right"
                     }
+                }
+            },
+            "objetos": {
+                "habitacion_cama": {
+                    "nombre": "habitacion_cama",
+                    "pos_x": 379,
+                    "pos_y": 861,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": null
                 }
             }
         },

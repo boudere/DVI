@@ -41,10 +41,17 @@
                         "derecha"
                     ]
                 },
+                "Objetos": {
+                    "Path": "objetos/",
+                    "Objetos": [
+                        "habitacion_cama"
+                    ]
+                },
                 "Clases": [
                     "Backgrounds",
                     "Personajes",
-                    "Puertas"
+                    "Puertas",
+                    "Objetos"
                 ]   
             },
             "Dialogos": {

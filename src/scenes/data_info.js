@@ -228,6 +228,9 @@ class DataInfo extends Phaser.Scene {
                     this.load_img2(clase, name + "_" + lado, path);
                 });
                 break;
+            case "Objetos":
+                path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path;
+                this.load_img2(clase, name, path);
             default:
                 console.log("Clase no encontrada");
                 break;

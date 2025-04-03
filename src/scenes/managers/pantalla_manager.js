@@ -1,6 +1,7 @@
 import Managers from "/src/scenes/managers";
 import PantallaPersoanjes from "/src/pantallas/game_objects/pantalla_personajes";
 import PantallaPuertas from "/src/pantallas/game_objects/pantalla_puertas";
+import PantallaObjetos from "/src/pantallas/game_objects/pantalla_objetos";
 
 import { PANTALLA_MANAGER , DATA_INFO, SCENE_MANAGER } from "/src/data/scene_data.js";
 
@@ -59,6 +60,7 @@ class PantallaManager extends Managers {
             if (this.prota) this.prota.x += realOffsetX;
             this.npcs_array.forEach((npc) => npc.x += realOffsetX);
             if (this.puertas) this.puertas.forEach((puerta) => puerta.x += realOffsetX);
+            if (this.objetos) this.objetos.forEach((objeto) => objeto.x += realOffsetX);
         }
     
         // Aplicar desplazamiento vertical
@@ -67,6 +69,7 @@ class PantallaManager extends Managers {
             if (this.prota) this.prota.y += realOffsetY;
             this.npcs_array.forEach((npc) => npc.y += realOffsetY);
             if (this.puertas) this.puertas.forEach((puerta) => puerta.y += realOffsetY);
+            if (this.objetos) this.objetos.forEach((objeto) => objeto.y += realOffsetY);
         }
     }
     
@@ -88,6 +91,7 @@ class PantallaManager extends Managers {
         this.total_animations++;
 
         this._load_puertas();
+        this._load_objetos();
     }
 
     exit() {
@@ -155,6 +159,9 @@ class PantallaManager extends Managers {
         });
         this.puertas.forEach((puerta) => {
             puerta.unpause();
+        });
+        this.objetos.forEach((objeto) => {
+            objeto.unpause();
         });
     }
 
@@ -239,6 +246,29 @@ class PantallaManager extends Managers {
             puerta.enter();
 
             this.puertas.push(puerta);
+        });
+    }
+
+    _load_objetos() {
+        if (this.objetos) {
+            this.objetos.forEach((objeto) => {
+                objeto.destroy();
+            });
+        }
+        let data_objetos = this.pantalla_data.objetos;
+        
+        this.objetos = [];
+        Object.keys(data_objetos).forEach((key) => {
+            let nombre = data_objetos[key].nombre;
+            let pos_x = data_objetos[key].pos_x;
+            let pos_y = data_objetos[key].pos_y;
+            let on_click = data_objetos[key].on_click;
+
+            let img = this.data_info_scene.get_img(PANTALLA_MANAGER, key);
+            let objeto = new PantallaObjetos(this, pos_x, pos_y, img, on_click, nombre);
+            objeto.enter();
+
+            this.objetos.push(objeto);
         });
     }
 
