@@ -158,6 +158,28 @@
                 }
               ],
               "files": []
+            },
+            {
+              "name": "puertas",
+              "folders": [
+                {
+                  "name": "habitacion",
+                  "folders": [],
+                  "files": [
+                    "puerta_derecha.png",
+                    "puerta_izquierda.png"
+                  ]
+                },
+                {
+                  "name": "salon",
+                  "folders": [],
+                  "files": [
+                    "puerta_derecha.png",
+                    "puerta_izquierda.png"
+                  ]
+                }
+              ],
+              "files": []
             }
           ],
           "files": []

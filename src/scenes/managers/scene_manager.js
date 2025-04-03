@@ -1,6 +1,6 @@
 import Managers from "/src/scenes/managers";
 
-import { SCENE_MANAGER, DATA_INFO, PANTALLA_MANAGER, DIALOGO_MANAGER, MINIJUEGO_MANAGER } from "/src/data/scene_data.js";
+import { SCENE_MANAGER, DATA_INFO, PANTALLA_MANAGER, DIALOGO_MANAGER, MINIJUEGO_MANAGER, CURSOR_MANAGER } from "/src/data/scene_data.js";
 import { SIGNAL_SCENE_CREATED } from "/src/data/signal_data.js";
 
 // esta escena de momento solo lanza la escena de dialogo
@@ -11,6 +11,11 @@ class SceneManager extends Managers {
         this.scenes = {}
         this.currentScene = null;
         this.currentSceneData = null;
+
+        this.cursor_data = {
+            edge_margin: 300,
+            scroll_speed: 3
+        };
     }
 
     create() {
@@ -22,20 +27,24 @@ class SceneManager extends Managers {
 
         this.events.on(SIGNAL_SCENE_CREATED, this.scene_created, this);
 
-        this.scene.start(PANTALLA_MANAGER);
+        this.scene.launch(PANTALLA_MANAGER);
         this.scenes[PANTALLA_MANAGER] = this.scene.get(PANTALLA_MANAGER);
-        // this.currentScene = PANTALLA_MANAGER;
-        // this.currentSceneData = this.saves_data.Pantalla;
+        this.currentScene = PANTALLA_MANAGER;
+        this.currentSceneData = this.saves_data.Pantalla;
 
-        this.scene.start(DIALOGO_MANAGER);
+        this.scene.launch(DIALOGO_MANAGER);
         this.scenes[DIALOGO_MANAGER] = this.scene.get(DIALOGO_MANAGER);
-        this.currentScene = DIALOGO_MANAGER;
-        this.currentSceneData = this.saves_data.Dialogo;
+        // this.currentScene = DIALOGO_MANAGER;
+        // this.currentSceneData = this.saves_data.Dialogo;
 
-        this.scene.start(MINIJUEGO_MANAGER);
+        this.scene.launch(MINIJUEGO_MANAGER);
         this.scenes[MINIJUEGO_MANAGER] = this.scene.get(MINIJUEGO_MANAGER);
         // this.currentScene = MINIJUEGO_MANAGER;
         // this.currentSceneData = 'JuegoOveja';
+
+        this.scene.launch(CURSOR_MANAGER);
+        this.cursor = this.scene.get(CURSOR_MANAGER)
+        this.cursor.enter(this.cursor_data);
     }
 
     signal_click(on_click) {
@@ -65,6 +74,11 @@ class SceneManager extends Managers {
         }
     }
 
+    scroll(offsetX, offsetY) {
+        if (PANTALLA_MANAGER == this.currentScene) {
+            this.scenes[this.currentScene].scroll(offsetX, offsetY);
+        }
+    }
     exit() {
         this.pause();
     }
@@ -73,7 +87,11 @@ class SceneManager extends Managers {
         this.unpause();
     }
 
-    update() {
+    update(time, delta) {
+        this.scenes[this.currentScene]._update(time, delta);
+    }
+
+    _update() {
         super.update();
     }
 

@@ -31,7 +31,7 @@ class DialogoGameObjects extends GameObjectsSprite {
     }
 
     // se ejecuta al actualizar la escena
-    update() { super.update(); }
+    _update() { super.update(); }
 
     // se ejecuta al pausar la escena
     pause() { super.pause(); }

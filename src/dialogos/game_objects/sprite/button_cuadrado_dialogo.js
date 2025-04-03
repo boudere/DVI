@@ -73,7 +73,7 @@ class ButtonCuadradoDialogo extends DialogoGameObject {
         }
         let x = this.x - this.width / 2 - 100;
         let y = this.y - this.height / 2;
-        this.main_text = new DialogoMainText(this.scene, x - this.width / 2, y - this.height / 2, this, this.width * this.SCALE, this.text, this.delay).setOrigin(0, 0)
+        this.main_text = new DialogoMainText(this.scene, x - this.width / 2, y - this.height / 3, this, this.width * this.SCALE, this.text, this.delay, {fontSize: "32px",}).setOrigin(0, 0)
         
         this.total_animations++;
     }

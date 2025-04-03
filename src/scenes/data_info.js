@@ -14,6 +14,8 @@ class DataInfo extends Phaser.Scene {
 
         this.json_data = 'json_data';
         this.data_name = 'data.json';
+
+        this.asdasd = 0;
     }
 
     preload() {
@@ -35,7 +37,7 @@ class DataInfo extends Phaser.Scene {
         this.ASSETS_PATH = this.ROOT + this.data.Path;
         this.JSON_PATH = this.ASSETS_PATH + this.data_json.Path;
         this.IMG_PATH = this.ASSETS_PATH + this.data_imgs.Path;
-        this.MUSICA_PATH = this.ASSETS_PATH + this.data_musica.Path; 
+        this.MUSICA_PATH = this.ASSETS_PATH + this.data_musica.Path;
 
         // carga los prefijos de los assets y json
         this.json_prefix = this.data_json.Prefix;
@@ -52,6 +54,22 @@ class DataInfo extends Phaser.Scene {
             this.crear_laoding_screen();
             this.get_number_assets();
             this.load_assets();
+            // setTimeout(() => {
+            //     const clases_img = this.data_imgs.Clases;
+
+            //     clases_img.forEach((clases) => {
+            //         let clases_img2 = this.data_imgs[clases].Clases;
+            //         clases_img2.forEach((clases2) => {
+            //             let imgs = this.data_imgs[clases][clases2][clases2];
+            //             imgs.forEach((name) => {
+            //                 this.load_img3(clases, clases2, name);
+            //             })
+            //         });
+            //     });
+
+            //     this.load_jsons3();
+            //     this.load_musicas3();
+            // }, 2000);
         });
 
         this.load.json(this.json_prefix + folders, this.JSON_PATH + folders + this.data_json.Suffix);
@@ -62,7 +80,7 @@ class DataInfo extends Phaser.Scene {
     // crea la barra y caja de carga
     crear_laoding_screen() {
         const { width, height } = this.scale;
-        
+
         // crear caja de fondo de la barra
         this.loading_box = this.add.graphics();
         this.loading_box.fillStyle(0x222222, 0.8);
@@ -100,10 +118,9 @@ class DataInfo extends Phaser.Scene {
     }
 
     // actualiza la barra de carga
-    update_loading_bar() {
-        this.loaded_assets++;
-        const progress = this.loaded_assets / this.number_assets;
 
+
+    update_loading_bar(progress) {
         this.loading_bar.clear();
         this.loading_bar.fillStyle(0xffffff, 1);
         this.loading_bar.fillRect(
@@ -112,20 +129,18 @@ class DataInfo extends Phaser.Scene {
             this.bar_width * progress,
             this.bar_height
         );
-
-        if (progress === 1) {
-            setTimeout(() => {
-                this.scene.start(SCENE_MANAGER);
-            }, 100);
-        }
     }
 
     // carga los assets
     load_assets() {
-        this.loaded_assets = 0;
+        this.load.on("progress", (value) => {
+            this.update_loading_bar(value);
+        });
 
-        this.load.on("filecomplete", () => {
-            this.update_loading_bar();
+        this.load.on("complete", () => {
+            setTimeout(() => {
+                this.scene.start(SCENE_MANAGER);
+            }, 100);
         });
 
         this.load_jsons();
@@ -142,7 +157,21 @@ class DataInfo extends Phaser.Scene {
         });
     }
 
+    load_jsons3() {
+        const jsons = this.data_json.Jsons;
+        jsons.forEach((name) => {
+            this.asdasd++;
+            console.log(this.asdasd, "JSON", name, this.json_prefix + name, this.JSON_PATH + name + this.data_json.Suffix, this.cache.json.exists(this.json_prefix + name))
+        });
+    }
+
+
+
     load_json(name) {
+
+        // this.asdasd++;
+        // console.log(this.asdasd, this.json_prefix + name, this.JSON_PATH + name + this.data_json.Suffix)
+
         const json_suffix = this.data_json.Suffix;
         this.load.json(this.json_prefix + name, this.JSON_PATH + name + json_suffix);
     }
@@ -192,48 +221,110 @@ class DataInfo extends Phaser.Scene {
                 path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path;
                 this.load_img2(clase, name, path);
                 break;
+            case "Puertas":
+                let lados = this.data_imgs[clase][clase2].Lados;
+                lados.forEach((lado) => {
+                    path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/";
+                    this.load_img2(clase, name + "_" + lado, path);
+                });
+                break;
             default:
                 console.log("Clase no encontrada");
                 break;
         }
     }
 
-    load_img2(scene, name, path){
+    load_img3(clase, clase2, name) {
+        let path = '';
+        switch (clase2) {
+            case "Backgrounds":
+                path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/";
+                this.asdasd++;
+                console.log(this.asdasd, "Backgrounds", this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/", this.textures.exists(this.get_img(clase, name)))
+                break;
+            case "Personajes":
+                let poses = this.data_imgs[clase][clase2].Poses;
+                poses.forEach((pose) => {
+                    path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/";
+                    this.asdasd++;
+                    console.log(this.asdasd, "Personajes", this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/", this.textures.exists(this.get_img(clase, name + "_" + pose)))
+                });
+                break;
+            case "JuegoOveja":
+            case "Dialogos":
+                path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path;
+                this.asdasd++;
+                console.log(this.asdasd, "JuegoOveja | Dialogos", this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path, this.textures.exists(this.get_img(clase, name)))
+                break;
+            case "Puertas":
+                let lados = this.data_imgs[clase][clase2].Lados;
+                lados.forEach((lado) => {
+                    path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/";
+                    this.asdasd++;
+                    console.log(this.asdasd, "Puertas", this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/", this.textures.exists(this.get_img(clase, "puerta_" + lado)))
+                });
+                break;
+            default:
+                console.log("Clase no encontrada");
+                break;
+        }
+    }
+
+    load_img2(scene, name, path) {
         const img_suffix = this.data_imgs.Suffix;
         this.load.image(this.img_prefix + scene + "_" + name, this.IMG_PATH + path + name + img_suffix);
-}
+
+        // this.asdasd++;
+        // console.log(this.asdasd, this.img_prefix + scene + "_" + name, this.IMG_PATH + path + name + img_suffix)
+    }
 
 
-load_musicas() {
-    const musicas = this.data_musica.Musicas;
-    musicas.forEach((name) => {
-        this.load_musica(name);
-    });
-}
-
-load_musica(name) {
-    const musica_suffix = this.data_musica.Suffix;
-    console
-    this.load.audio(this.musica_prefix + name, this.MUSICA_PATH + name + musica_suffix);
-}
 
 
-get_musica(name) {
-    console.log(this.musica_prefix + name)
-    return this.musica_prefix + name;
-}
+    load_musicas3() {
+        const musicas = this.data_musica.Musicas;
+        musicas.forEach((name) => {
+            this.asdasd++;
+            console.log(this.asdasd, "Musica", this.musica_prefix + name, this.MUSICA_PATH + name + this.data_musica.Suffix, this.cache.audio.exists(this.get_musica(name)))
+        });
+    }
+
+
+
+    load_musicas() {
+        const musicas = this.data_musica.Musicas;
+        musicas.forEach((name) => {
+            this.load_musica(name);
+        });
+    }
+
+    load_musica(name) {
+        const musica_suffix = this.data_musica.Suffix;
+
+        // this.asdasd++;
+        // console.log(this.asdasd, this.musica_prefix + name, this.MUSICA_PATH + name + musica_suffix)
+
+        this.load.audio(this.musica_prefix + name, this.MUSICA_PATH + name + musica_suffix);
+    }
+
+    get_musica(name) {
+        return this.musica_prefix + name;
+    }
 
 
     get_img(scene, name) {
         let scene_name = ""
         switch (scene) {
             case PANTALLA_MANAGER:
+            case "Pantallas":
                 scene_name = "Pantallas";
                 break;
             case DIALOGO_MANAGER:
+            case "Dialogos":
                 scene_name = "Dialogos";
                 break;
             case MINIJUEGO_MANAGER:
+            case "Minijuegos":
                 scene_name = "Minijuegos";
                 break;
             default:

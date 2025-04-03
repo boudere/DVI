@@ -23,7 +23,7 @@ class Managers extends Phaser.Scene {
     }
 
     // se ejecuta al actualizar la escena
-    update() { if (this.isPause) { return; } }
+    _update() { if (this.isPause) { return; } }
 
     // se ejecuta al pausar la escena
     pause() { this.isPause = true; }

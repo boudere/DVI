@@ -30,9 +30,21 @@
                         "enfado"
                     ]
                 },
+                "Puertas": {
+                    "Path": "puertas/",
+                    "Puertas": [
+                        "salon",
+                        "habitacion"
+                    ],
+                    "Lados": [
+                        "izquierda",
+                        "derecha"
+                    ]
+                },
                 "Clases": [
                     "Backgrounds",
-                    "Personajes"
+                    "Personajes",
+                    "Puertas"
                 ]   
             },
             "Dialogos": {

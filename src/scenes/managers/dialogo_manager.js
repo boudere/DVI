@@ -36,7 +36,6 @@ class DialogoManager extends Managers {
             loop: true,
             volume: 0.1
         });
-        this.musica.play();
 
         this.scene_created();
     }
@@ -69,7 +68,7 @@ class DialogoManager extends Managers {
 
     exit() {
         super.exit();
-        this.musica.stop(); //con este suena 
+
         if ( this.cuadrado_dialogo ) this.cuadrado_dialogo.visible = false;
         this.musica.stop(); 
     }
@@ -77,6 +76,8 @@ class DialogoManager extends Managers {
     enter(scene_data) {
         if ( !super.enter(scene_data) ) { return; }
         
+        if (!this.musica.isPlaying ) this.musica.play();
+
         this.dialogo_data_selected = this.dialogo_data[scene_data];
         
         this.animate = this.dialogo_data_selected.npc != this.npc;
@@ -94,7 +95,7 @@ class DialogoManager extends Managers {
         this.pause();
     }
 
-    update() {
+    _update() {
         super.update();
     }
 

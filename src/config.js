@@ -1,5 +1,6 @@
 import PantallaManager from '/src/scenes/managers/pantalla_manager.js'; // Importamos la escena ScenePlay
 import SceneManager from '/src/scenes/managers/scene_manager.js'; // Importamos la escena ScenePlay
+import CursorManager from '/src/scenes/managers/cursor_manager';
 import DialogoManager from '/src/scenes/managers/dialogo_manager.js'; // Importamos la escena ScenePlay
 import MinijuegosManager from '/src/scenes/managers/minijuegos_manager';
 import Managers from '/src/scenes/managers.js'; // Importamos la escena ScenePlay
@@ -26,6 +27,7 @@ const config = {
         SceneManager,
         PantallaManager,
         DialogoManager,
+        CursorManager,
         MinijuegosManager,
         JuegoOveja
     ],

@@ -79,7 +79,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
     enter() { this.visible = true; }
 
     // se ejecuta al actualizar la escena
-    update() { return !this.isPause; }
+    _update() { return !this.isPause; }
 
     // se ejecuta al pausar la escena
     pause() {

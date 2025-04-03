@@ -94,7 +94,7 @@ this.physics.add.collider(this.oveja, suelo);
         this.vallas.push(this.valla);
     }
 
-    update() {
+    _update() {
 
         if (this.oveja.body.blocked.down) {
             this.oveja.setVelocityY(0);
