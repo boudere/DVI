@@ -18,6 +18,8 @@ class PantallaManager extends Managers {
 
         this.interactuables_animations = {};
         this.npcs_array = [];
+        this.puertas = [];
+        this.objetos = [];
 
         this.PISO_MUSICA = 'tema_inicial';
 
@@ -106,6 +108,12 @@ class PantallaManager extends Managers {
         if (this.background) this.background.visible = false;
         this.npcs_array.forEach((npc) => {
             npc.exit();
+        });
+        this.puertas.forEach((puerta) => {
+            puerta.exit();
+        });
+        this.objetos.forEach((objeto) => {
+            objeto.exit();
         });
         this.musica.stop();
     }

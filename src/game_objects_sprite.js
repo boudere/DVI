@@ -128,7 +128,7 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
         if (this.isPause) return false;
         this.mouse_over = true;
         this.setTint(0xdce8ff);
-        this.scene.cursor_entered(this.nombre);
+        if (this.nombre) this.scene.cursor_entered(this.nombre);
         return true;
     }
 
@@ -136,7 +136,7 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
         if (this.isPause) return false;
         this.mouse_over = false;
         this.clearTint();
-        this.scene.cursor_exited(this.nombre);
+        if (this.nombre) this.scene.cursor_exited(this.nombre);
         return true;
     }
 

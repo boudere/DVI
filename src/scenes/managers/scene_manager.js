@@ -29,13 +29,13 @@ class SceneManager extends Managers {
 
         this.scene.launch(PANTALLA_MANAGER);
         this.scenes[PANTALLA_MANAGER] = this.scene.get(PANTALLA_MANAGER);
-        this.currentScene = PANTALLA_MANAGER;
-        this.currentSceneData = this.saves_data.Pantalla;
+        // this.currentScene = PANTALLA_MANAGER;
+        // this.currentSceneData = this.saves_data.Pantalla;
 
         this.scene.launch(DIALOGO_MANAGER);
         this.scenes[DIALOGO_MANAGER] = this.scene.get(DIALOGO_MANAGER);
-        // this.currentScene = DIALOGO_MANAGER;
-        // this.currentSceneData = this.saves_data.Dialogo;
+        this.currentScene = DIALOGO_MANAGER;
+        this.currentSceneData = this.saves_data.Dialogo;
 
         this.scene.launch(MINIJUEGO_MANAGER);
         this.scenes[MINIJUEGO_MANAGER] = this.scene.get(MINIJUEGO_MANAGER);
@@ -48,6 +48,7 @@ class SceneManager extends Managers {
     }
 
     signal_click(on_click) {
+        console.log('on_click', on_click);
         this.scenes[this.currentScene].exit();
         this.currentScene = this._get_next_scene(on_click.scene);
 
@@ -69,6 +70,10 @@ class SceneManager extends Managers {
                 return DIALOGO_MANAGER;
             case "pantalla":
                 return PANTALLA_MANAGER;
+                break;
+            case "minijuego":
+                return MINIJUEGO_MANAGER;
+                break;
             default:
                 break;
         }

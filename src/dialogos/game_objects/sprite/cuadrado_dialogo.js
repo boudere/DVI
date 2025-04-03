@@ -42,6 +42,10 @@ class CuadradoDialogo extends DialogoGameObject {
         }
     }
 
+    create() {
+        this.on('destroy', this.before_destroy, this);
+    }
+
     finish_animation() {
         if (this.total_animations == 0) {
             this._load_main_text();
@@ -73,8 +77,8 @@ class CuadradoDialogo extends DialogoGameObject {
     }
 
     before_destroy() {
-        super.before_destroy();
         if (this.main_text) this.main_text.destroy();
+        super.before_destroy();
     }
 }
 

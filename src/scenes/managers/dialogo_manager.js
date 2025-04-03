@@ -69,8 +69,19 @@ class DialogoManager extends Managers {
     exit() {
         super.exit();
 
-        if ( this.cuadrado_dialogo ) this.cuadrado_dialogo.visible = false;
+        if ( this.cuadrado_dialogo ) {
+            this.cuadrado_dialogo.visible = false;
+            this.cuadrado_dialogo.main_text.visible = false;
+        }
+        if ( this.persoanje ) {
+            this.persoanje.visible = false;
+        }
+        if ( this.background ) {
+            this.background.visible = false;
+        }
+
         this.musica.stop(); 
+        this._remove_events();
     }
 
     enter(scene_data) {
@@ -207,12 +218,22 @@ class DialogoManager extends Managers {
     _set_events() {
         this.input.on('pointerup', this._mouse_up, this);
     }
+    _remove_events() {
+        this.input.off('pointerup', this._mouse_up, this);
+    }
 
     _mouse_up() {
         if (this.animation_finished && !this.dialogo_data_selected.opciones) {
             if (this.dialogo_data_selected.opcion_1 != 'FIN') {
                 this.enter(this.dialogo_data_selected.opcion_1);
-            } else {   
+            } else {  
+                let on_click = {
+                    scene: this.dialogo_data_selected.texto_1,
+                    name: this.dialogo_data_selected.opcion_2
+                };
+
+                console.log(on_click);
+                
                 this.scene.get(SCENE_MANAGER).signal_click(on_click);
             }
         }
