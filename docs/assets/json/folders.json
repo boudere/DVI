@@ -2,27 +2,283 @@
   "name": "assets",
   "folders": [
     {
-      "name": "backgrounds",
-      "folders": [],
-      "files": [
-        "fin_demo.png",
-        "habitacion.png",
-        "salon.png"
-      ]
-    },
-    {
       "name": "img",
-      "folders": [],
+      "folders": [
+        {
+          "name": "cursors",
+          "folders": [
+            {
+              "name": "backgrounds",
+              "folders": [
+                {
+                  "name": "can_be_clicked",
+                  "folders": [],
+                  "files": [
+                    "can_be_clicked.png"
+                  ]
+                }
+              ],
+              "files": []
+            },
+            {
+              "name": "cursors",
+              "folders": [],
+              "files": [
+                "cursor.png",
+                "cursor_left.png",
+                "cursor_right.png",
+                "cursor_selected.png"
+              ]
+            }
+          ],
+          "files": []
+        },
+        {
+          "name": "dialogos",
+          "folders": [
+            {
+              "name": "backgrounds",
+              "folders": [
+                {
+                  "name": "fin_demo",
+                  "folders": [],
+                  "files": [
+                    "fin_demo.png"
+                  ]
+                },
+                {
+                  "name": "habitacion",
+                  "folders": [],
+                  "files": [
+                    "habitacion.png"
+                  ]
+                },
+                {
+                  "name": "negro",
+                  "folders": [],
+                  "files": [
+                    "negro.png"
+                  ]
+                },
+                {
+                  "name": "salon",
+                  "folders": [],
+                  "files": [
+                    "salon.png"
+                  ]
+                }
+              ],
+              "files": []
+            },
+            {
+              "name": "dialogos",
+              "folders": [],
+              "files": [
+                "boton_dialogo.png",
+                "cuadrado_dialogo.png"
+              ]
+            },
+            {
+              "name": "personajes",
+              "folders": [
+                {
+                  "name": "maria",
+                  "folders": [],
+                  "files": [
+                    "maria_alegre.png",
+                    "maria_enfado.png",
+                    "maria_normal.png",
+                    "maria_triste.png"
+                  ]
+                },
+                {
+                  "name": "none",
+                  "folders": [],
+                  "files": [
+                    "none_alegre.png",
+                    "none_enfado.png",
+                    "none_normal.png",
+                    "none_triste.png"
+                  ]
+                },
+                {
+                  "name": "pepe",
+                  "folders": [],
+                  "files": [
+                    "pepe_alegre.png",
+                    "pepe_enfado.png",
+                    "pepe_normal.png",
+                    "pepe_triste.png"
+                  ]
+                },
+                {
+                  "name": "prota",
+                  "folders": [],
+                  "files": [
+                    "prota_alegre.png",
+                    "prota_enfado.png",
+                    "prota_normal.png",
+                    "prota_triste.png"
+                  ]
+                },
+                {
+                  "name": "samuel",
+                  "folders": [],
+                  "files": [
+                    "samuel_alegre.png",
+                    "samuel_enfado.png",
+                    "samuel_normal.png",
+                    "samuel_triste.png"
+                  ]
+                }
+              ],
+              "files": []
+            }
+          ],
+          "files": []
+        },
+        {
+          "name": "minijuegos",
+          "folders": [
+            {
+              "name": "juego_oveja",
+              "folders": [],
+              "files": [
+                "fondo.png",
+                "oveja.png",
+                "valla.png"
+              ]
+            }
+          ],
+          "files": []
+        },
+        {
+          "name": "pantallas",
+          "folders": [
+            {
+              "name": "backgrounds",
+              "folders": [
+                {
+                  "name": "fin_demo",
+                  "folders": [],
+                  "files": [
+                    "fin_demo.png"
+                  ]
+                },
+                {
+                  "name": "habitacion",
+                  "folders": [],
+                  "files": [
+                    "habitacion.png"
+                  ]
+                },
+                {
+                  "name": "salon",
+                  "folders": [],
+                  "files": [
+                    "salon.png"
+                  ]
+                }
+              ],
+              "files": []
+            },
+            {
+              "name": "objetos",
+              "folders": [],
+              "files": [
+                "habitacion_cama.png"
+              ]
+            },
+            {
+              "name": "personajes",
+              "folders": [
+                {
+                  "name": "maria",
+                  "folders": [],
+                  "files": [
+                    "maria_alegre.png",
+                    "maria_enfado.png",
+                    "maria_normal.png",
+                    "maria_triste.png"
+                  ]
+                },
+                {
+                  "name": "pepe",
+                  "folders": [],
+                  "files": [
+                    "pepe_alegre.png",
+                    "pepe_enfado.png",
+                    "pepe_normal.png",
+                    "pepe_triste.png"
+                  ]
+                },
+                {
+                  "name": "prota",
+                  "folders": [],
+                  "files": [
+                    "prota_alegre.png",
+                    "prota_enfado.png",
+                    "prota_normal.png",
+                    "prota_triste.png"
+                  ]
+                },
+                {
+                  "name": "samuel",
+                  "folders": [],
+                  "files": [
+                    "samuel_alegre.png",
+                    "samuel_enfado.png",
+                    "samuel_normal.png",
+                    "samuel_triste.png"
+                  ]
+                }
+              ],
+              "files": []
+            },
+            {
+              "name": "puertas",
+              "folders": [
+                {
+                  "name": "habitacion",
+                  "folders": [],
+                  "files": [
+                    "habitacion_derecha.png",
+                    "habitacion_izquierda.png"
+                  ]
+                },
+                {
+                  "name": "salon",
+                  "folders": [],
+                  "files": [
+                    "salon_derecha.png",
+                    "salon_izquierda.png"
+                  ]
+                }
+              ],
+              "files": []
+            }
+          ],
+          "files": []
+        }
+      ],
       "files": []
     },
     {
       "name": "json",
       "folders": [],
       "files": [
-        "data.json",
-        "dialog.json",
+        "animation.json",
+        "dialogo.json",
         "pantallas.json",
         "saves.json"
+      ]
+    },
+    {
+      "name": "musica",
+      "folders": [],
+      "files": [
+        "ovejitas.ogg",
+        "tema_inicial.ogg"
       ]
     }
   ],
