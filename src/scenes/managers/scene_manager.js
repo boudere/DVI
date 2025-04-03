@@ -74,6 +74,14 @@ class SceneManager extends Managers {
         }
     }
 
+    cursor_entered(name) {
+        this.cursor.cursor_entered(name);
+    }
+
+    cursor_exited(name) {
+        this.cursor.cursor_exited(name);
+    }
+
     scroll(offsetX, offsetY) {
         if (PANTALLA_MANAGER == this.currentScene) {
             this.scenes[this.currentScene].scroll(offsetX, offsetY);

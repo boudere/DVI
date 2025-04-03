@@ -5,7 +5,7 @@ import GameObjectsSprite from '/src/game_objects_sprite';
 
 class PantallaGameObjects extends GameObjectsSprite {
     constructor(scene, x, y, nombre_img, size_x, size_y, delay, animation, on_click, nombre) {
-        super(scene, x, y, nombre_img, size_x, size_y);
+        super(scene, x, y, nombre_img, size_x, size_y, on_click);
 
         this.game_object_data = {
             "alpha" : this.alpha,
@@ -17,12 +17,6 @@ class PantallaGameObjects extends GameObjectsSprite {
 
         this.delay = delay;
         this.anitmation_info = animation;
-
-        //  si se puede hacer click en el objeto agregamos los eventos
-        if (on_click) {
-            this._set_events();
-            this.on_click = on_click;
-        }
 
         if (animation) {
             this.animation = new Animation(scene);

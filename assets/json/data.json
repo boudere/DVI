@@ -107,10 +107,34 @@
                     "JuegoOveja"
                 ]
             },
+            "Cursors": {
+                "Path": "cursors/",
+                "Cursors": {
+                    "Path": "cursors/",
+                    "Cursors": [
+                        "cursor_left",
+                        "cursor_right",
+                        "cursor_selected",
+                        "cursor"
+                    ]
+                },
+                "Backgrounds": {
+                    "Path": "backgrounds/",
+
+                    "Backgrounds": [
+                        "can_be_clicked"
+                    ]
+                },
+                "Clases": [
+                    "Cursors",
+                    "Backgrounds"
+                ]
+            },
             "Clases": [
                 "Pantallas",
                 "Dialogos",
-                "Minijuegos"
+                "Minijuegos",
+                "Cursors"
             ]
         },
         "Json": {

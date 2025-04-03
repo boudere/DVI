@@ -5,6 +5,35 @@
       "name": "img",
       "folders": [
         {
+          "name": "cursor",
+          "folders": [
+            {
+              "name": "backgrounds",
+              "folders": [
+                {
+                  "name": "can_be_clicked",
+                  "folders": [],
+                  "files": [
+                    "can_be_clicked.png"
+                  ]
+                }
+              ],
+              "files": []
+            },
+            {
+              "name": "cursors",
+              "folders": [],
+              "files": [
+                "cursor.png",
+                "cursor_left.png",
+                "cursor_right.png",
+                "cursor_selected.png"
+              ]
+            }
+          ],
+          "files": []
+        },
+        {
           "name": "dialogos",
           "folders": [
             {

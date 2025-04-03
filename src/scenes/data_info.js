@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import { DATA_INFO, SCENE_MANAGER, PANTALLA_MANAGER, DIALOGO_MANAGER, MINIJUEGO_MANAGER } from "/src/data/scene_data.js";
+import { DATA_INFO, SCENE_MANAGER, PANTALLA_MANAGER, DIALOGO_MANAGER, MINIJUEGO_MANAGER, CURSOR_MANAGER } from "/src/data/scene_data.js";
 
 class DataInfo extends Phaser.Scene {
     constructor() {
@@ -218,6 +218,7 @@ class DataInfo extends Phaser.Scene {
                 break;
             case "JuegoOveja":
             case "Dialogos":
+            case "Cursors":
                 path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path;
                 this.load_img2(clase, name, path);
                 break;
@@ -231,8 +232,9 @@ class DataInfo extends Phaser.Scene {
             case "Objetos":
                 path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path;
                 this.load_img2(clase, name, path);
+                break;
             default:
-                console.log("Clase no encontrada");
+                console.log("Clase no encontrada", clase, clase2, name);
                 break;
         }
     }
@@ -329,6 +331,10 @@ class DataInfo extends Phaser.Scene {
             case MINIJUEGO_MANAGER:
             case "Minijuegos":
                 scene_name = "Minijuegos";
+                break;
+            case CURSOR_MANAGER:
+            case "Cursors":
+                scene_name = "Cursors";
                 break;
             default:
                 break;

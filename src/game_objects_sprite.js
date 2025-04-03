@@ -1,12 +1,17 @@
 import Phaser from 'phaser';
 
 class GameObjectsSprite extends Phaser.GameObjects.Sprite {
-    constructor(scene, x, y, nombre_img, size_x, size_y) {
+    constructor(scene, x, y, nombre_img, size_x, size_y, on_click) {
         super(scene, x, y, nombre_img);
         this._reset_varaibles();
 
         this.setScale(size_x, size_y);
-
+        
+        if (on_click) {
+            this._set_events();
+            this.on_click = on_click;
+        }
+        
         this.on('destroy', this.before_destroy, this);
     }
 
@@ -123,6 +128,7 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
         if (this.isPause) return false;
         this.mouse_over = true;
         this.setTint(0xdce8ff);
+        this.scene.cursor_entered(this.nombre);
         return true;
     }
 
@@ -130,6 +136,7 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
         if (this.isPause) return false;
         this.mouse_over = false;
         this.clearTint();
+        this.scene.cursor_exited(this.nombre);
         return true;
     }
 

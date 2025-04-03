@@ -43,7 +43,7 @@
                     }
                 },
                 "salon_izquierda": {
-                    "nombre": "salir",
+                    "nombre": "habitacion",
                     "pos_x": 54,
                     "pos_y": 900,
                     "size_x": 200,

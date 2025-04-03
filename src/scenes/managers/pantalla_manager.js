@@ -21,6 +21,11 @@ class PantallaManager extends Managers {
 
         this.PISO_MUSICA = 'tema_inicial';
 
+        this.BACKGROUND_DEPTH = 0;
+        this.PUERTAS_DEPTH = 1;
+        this.OBJETOS_DEPTH = 1;
+        this.NPCS_DEPTH = 2;
+        this.PROTA_DEPTH = 3;
     }
 
     create() {
@@ -97,11 +102,11 @@ class PantallaManager extends Managers {
     exit() {
         super.exit();
 
+        if (this.prota) this.prota.exit();
         if (this.background) this.background.visible = false;
         this.npcs_array.forEach((npc) => {
             npc.exit();
         });
-        if (this.prota) this.prota.exit();
         this.musica.stop();
     }
 
@@ -178,6 +183,7 @@ class PantallaManager extends Managers {
 
     signal_click(on_click) {
         if (on_click.scene == 'pantalla') {
+            this.exit();
             this.enter(on_click.name);
         } else {
             this.scene.get(SCENE_MANAGER).signal_click(on_click);
@@ -190,7 +196,8 @@ class PantallaManager extends Managers {
         }
 
         let img = this.data_info_scene.get_img(PANTALLA_MANAGER, this.pantalla_data.background)
-        this.background = this.add.image(0, 0, img).setOrigin(0, 0);
+        this.background = this.add.image(0, 0, img).setOrigin(0, 0)
+        this.background.setDepth(this.BACKGROUND_DEPTH);
     }
     _load_npcs() {
         if (this.npcs_array.length > 0) {
@@ -203,12 +210,14 @@ class PantallaManager extends Managers {
         
         Object.keys(pantalla_data_npcs).forEach((key) => {
             this.npcs_array.push(this._load_personaje(pantalla_data_npcs[key]));
+            this.npcs_array[this.npcs_array.length - 1].setDepth(this.NPCS_DEPTH);
             this.npcs_array[this.npcs_array.length - 1].enter();
         });
     }
 
     _load_prota() {
-        this.prota = this._load_personaje(this.pantalla_data.prota)
+        this.prota = this._load_personaje(this.pantalla_data.prota);
+        this.prota.setDepth(this.PROTA_DEPTH);
         this.prota.enter();
     }
 
@@ -243,6 +252,7 @@ class PantallaManager extends Managers {
 
             let img = this.data_info_scene.get_img(PANTALLA_MANAGER, key);
             let puerta = new PantallaPuertas(this, pos_x, pos_y, img, on_click, nombre);
+            puerta.setDepth(this.PUERTAS_DEPTH);
             puerta.enter();
 
             this.puertas.push(puerta);
@@ -266,6 +276,7 @@ class PantallaManager extends Managers {
 
             let img = this.data_info_scene.get_img(PANTALLA_MANAGER, key);
             let objeto = new PantallaObjetos(this, pos_x, pos_y, img, on_click, nombre);
+            objeto.setDepth(this.OBJETOS_DEPTH);
             objeto.enter();
 
             this.objetos.push(objeto);

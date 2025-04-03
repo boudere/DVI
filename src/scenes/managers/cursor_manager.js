@@ -1,4 +1,5 @@
 import Managers from "/src/scenes/managers";
+import CursorBackground from "/src/cursor/cursor_background";
 
 import { CURSOR_MANAGER, DIALOGO_MANAGER, DATA_INFO, SCENE_MANAGER } from "/src/data/scene_data.js";
 
@@ -17,6 +18,10 @@ class CursorManager extends Managers {
         this.movement_x = 0;
         this.movement_y = 0;
         this.can_move = false;
+
+        this.background = new CursorBackground(this, 0, 0, this.scene.get(DATA_INFO).get_img(CURSOR_MANAGER, "can_be_clicked"));
+
+        this._set_events();
     }
 
     enter(scene_data) {
@@ -32,37 +37,28 @@ class CursorManager extends Managers {
     }
 
     _set_events() {
-        // this.input.on('pointermove', this._mouse_move, this);
+        this.input.on('pointermove', this._mouse_move, this);
+        this.input.on('pointerup', this._mouse_up, this);
     }
 
     _mouse_move(pointer) {
-        const margin = this.edge_margin;
-        const maxSpeed = this.scroll_speed;
-    
-        this.movement_x = 0;
-        this.movement_y = 0;
-    
-        // Movimiento horizontal proporcional
-        if (pointer.x < margin) {
-            const factor = (margin - pointer.x) / margin;
-            this.movement_x = maxSpeed * factor;
-        } else if (pointer.x > this.sys.game.config.width - margin) {
-            const factor = (pointer.x - (this.sys.game.config.width - margin)) / margin;
-            this.movement_x = -maxSpeed * factor;
-        }
-    
-        // Movimiento vertical proporcional
-        if (pointer.y < margin) {
-            const factor = (margin - pointer.y) / margin;
-            this.movement_y = maxSpeed * factor;
-        } else if (pointer.y > this.sys.game.config.height - margin) {
-            const factor = (pointer.y - (this.sys.game.config.height - margin)) / margin;
-            this.movement_y = -maxSpeed * factor;
-        }
-    
-        this.can_move = (this.movement_x !== 0 || this.movement_y !== 0);
+        this.background.move(pointer.x, pointer.y);
+    }
+    _mouse_up() {
+        this.background.exit();
+    }
+
+    _load_background() {
     }
     
+    cursor_entered(name) {
+        this.background.enter(name);
+    }
+
+    cursor_exited(name) {
+        this.background.exit(name);
+    }
+
 }
 
 
