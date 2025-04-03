@@ -21,7 +21,9 @@
                     "Path": "personajes/",
                     "Personajes": [
                         "prota",
-                        "maria"
+                        "maria",
+                        "pepe",
+                        "samuel"
                     ],
                     "Poses": [
                         "normal",
@@ -68,7 +70,9 @@
                     "Personajes": [
                         "prota",
                         "maria",
-                        "none"
+                        "none",
+                        "pepe",
+                        "samuel"
                     ],
                     "Poses": [
                         "normal",

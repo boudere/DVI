@@ -5,7 +5,7 @@
       "name": "img",
       "folders": [
         {
-          "name": "cursor",
+          "name": "cursors",
           "folders": [
             {
               "name": "backgrounds",
@@ -102,6 +102,16 @@
                   ]
                 },
                 {
+                  "name": "pepe",
+                  "folders": [],
+                  "files": [
+                    "pepe_alegre.png",
+                    "pepe_enfado.png",
+                    "pepe_normal.png",
+                    "pepe_triste.png"
+                  ]
+                },
+                {
                   "name": "prota",
                   "folders": [],
                   "files": [
@@ -109,6 +119,16 @@
                     "prota_enfado.png",
                     "prota_normal.png",
                     "prota_triste.png"
+                  ]
+                },
+                {
+                  "name": "samuel",
+                  "folders": [],
+                  "files": [
+                    "samuel_alegre.png",
+                    "samuel_enfado.png",
+                    "samuel_normal.png",
+                    "samuel_triste.png"
                   ]
                 }
               ],
@@ -183,6 +203,16 @@
                   ]
                 },
                 {
+                  "name": "pepe",
+                  "folders": [],
+                  "files": [
+                    "pepe_alegre.png",
+                    "pepe_enfado.png",
+                    "pepe_normal.png",
+                    "pepe_triste.png"
+                  ]
+                },
+                {
                   "name": "prota",
                   "folders": [],
                   "files": [
@@ -190,6 +220,16 @@
                     "prota_enfado.png",
                     "prota_normal.png",
                     "prota_triste.png"
+                  ]
+                },
+                {
+                  "name": "samuel",
+                  "folders": [],
+                  "files": [
+                    "samuel_alegre.png",
+                    "samuel_enfado.png",
+                    "samuel_normal.png",
+                    "samuel_triste.png"
                   ]
                 }
               ],
