@@ -9,18 +9,6 @@ import { PANTALLA_MANAGER , DATA_INFO, SCENE_MANAGER } from "/src/data/scene_dat
 class PantallaManager extends Managers {
     constructor() {
         super({ key: PANTALLA_MANAGER });
-
-        this.offset_x = 0;
-        this.offset_y = 0;
-
-        this.can_move = false;
-        this.animation_finished = false;
-
-        this.interactuables_animations = {};
-        this.npcs_array = [];
-        this.puertas = [];
-        this.objetos = [];
-
         this.PISO_MUSICA = 'tema_inicial';
 
         this.BACKGROUND_DEPTH = 0;
@@ -28,6 +16,29 @@ class PantallaManager extends Managers {
         this.OBJETOS_DEPTH = 1;
         this.NPCS_DEPTH = 2;
         this.PROTA_DEPTH = 3;
+
+        this.MUSIC_VOLUME = 0.1;
+        this.MUSIC_LOOP = true;
+
+        this._reset_variables();
+
+        this.interactuables_animations = {};
+        this.npcs_array = [];
+        this.puertas = [];
+        this.objetos = [];
+    }
+
+    _reset_variables() {
+        this.offset_x = 0;
+        this.offset_y = 0;
+
+        this.can_move = false;
+        this.animation_finished = false;
+        this.total_animations = 0;
+        this.animations_finished = 0;
+
+        this.move_limit_x = 0;
+        this.move_limit_y = 0;
     }
 
     create() {
@@ -39,21 +50,23 @@ class PantallaManager extends Managers {
         this.pantallas_data = this.data_info_scene.get_json(this.data_json.Pantallas);
         
         this.musica = this.sound.add(this.data_info_scene.get_musica(this.PISO_MUSICA), {
-            loop: true,
-            volume: 0.1
+            loop: this.MUSIC_LOOP,
+            volume: this.MUSIC_VOLUME
         });
 
-        this.input.on('pointermove', this._handle_pointer_move, this);
-
+        // avisa q se ha creado la escena
         this.scene_created();
     }
 
-    scroll(offsetX, offsetY) {
+
+    // mueve el fondo y los objetos de la escena, etc.
+    move(offsetX, offsetY) {
+        if (!this.animation_finished) return;
         let new_offset_x = this.offset_x + offsetX;
         let new_offset_y = this.offset_y + offsetY;
     
-        new_offset_x = Phaser.Math.Clamp(new_offset_x, - this.scroll_limit_x, this.scroll_limit_x);
-        new_offset_y = Phaser.Math.Clamp(new_offset_y, - this.scroll_limit_y, this.scroll_limit_y);
+        new_offset_x = Phaser.Math.Clamp(new_offset_x, - this.move_limit_x, this.move_limit_x);
+        new_offset_y = Phaser.Math.Clamp(new_offset_y, - this.move_limit_y, this.move_limit_y);
     
         const realOffsetX = new_offset_x - this.offset_x;
         const realOffsetY = new_offset_y - this.offset_y;
@@ -80,8 +93,7 @@ class PantallaManager extends Managers {
         }
     }
     
-    
-
+    // carga la pantalla y los objetos de la escena
     _load_pantalla(pantalla) {
         this.pantalla_data = this.pantallas_data[pantalla];
 
@@ -90,22 +102,18 @@ class PantallaManager extends Managers {
         this._load_background();
         this._load_npcs();
 
-        this.npcs_array.forEach((npc) => {
-            this.total_animations++;
-        });
-
         this._load_prota();
-        this.total_animations++;
 
         this._load_puertas();
         this._load_objetos();
     }
 
+    // destruye la escena y los objetos de la escena o los oculta
     exit() {
         super.exit();
 
         if (this.prota) this.prota.exit();
-        if (this.background) this.background.visible = false;
+        if (this.background) this.background.destroy();
         this.npcs_array.forEach((npc) => {
             npc.exit();
         });
@@ -118,27 +126,24 @@ class PantallaManager extends Managers {
         this.musica.stop();
     }
 
+    // entra en la escena y carga los objetos de la escena
     enter(scene_data) {
         if (!super.enter(scene_data)) return;
     
         if (!this.musica.isPlaying) this.musica.play();
-    
-        this.offset_x = 0;
-        this.offset_y = 0;
 
-        this.animations_finished = 0;
-        this.total_animations = 0;
-    
-        this.edge_margin = 200;
-        this.scroll_speed = 1;
+        this._reset_variables();
+        
     
         this._load_pantalla(scene_data);
 
-        this.scroll_limit_x = (this.background.displayWidth - this.sys.game.canvas.width) / 2;
-        this.scroll_limit_y = (this.background.displayHeight - this.sys.game.canvas.height) / 2;
+        this.move_limit_x = (this.background.displayWidth - this.sys.game.canvas.width) / 2;
+        this.move_limit_y = (this.background.displayHeight - this.sys.game.canvas.height) / 2;
 
         // Centrado inicial
-        this.scroll(-this.scroll_limit_x, -this.scroll_limit_y);
+        this.animation_finished = true;
+        this.move(-this.move_limit_x, -this.move_limit_y);
+        this.animation_finished = false;
 
         this.offset_x = 0;
         this.offset_y = 0;
@@ -149,9 +154,6 @@ class PantallaManager extends Managers {
 
     _update(time, delta) {
         super._update();
-        if (this.can_scroll) {
-            this.scroll(this.movement_x * delta, this.movement_y * delta);
-        }
     }
 
     pause(){
@@ -185,7 +187,7 @@ class PantallaManager extends Managers {
     finish_animation() {
         this.animations_finished++;
         if (this.animations_finished != this.total_animations) { return; }
-        this.animation_finished = false;
+        this.animation_finished = true;
         this.unpause();
     }
 
@@ -199,10 +201,6 @@ class PantallaManager extends Managers {
     }
 
     _load_background() {
-        if (this.background) {
-            this.background.destroy();
-        }
-
         let img = this.data_info_scene.get_img(PANTALLA_MANAGER, this.pantalla_data.background)
         this.background = this.add.image(0, 0, img).setOrigin(0, 0)
         this.background.setDepth(this.BACKGROUND_DEPTH);
@@ -240,6 +238,8 @@ class PantallaManager extends Managers {
         let on_click = datos.on_click;
 
         let nombre_img = this.data_info_scene.get_img(PANTALLA_MANAGER, nombre + "_" + pose);
+        this.total_animations++;
+
         return new PantallaPersoanjes(this, x, y, nombre_img, size, delay, animation, on_click, nombre);
     }
 
@@ -259,9 +259,10 @@ class PantallaManager extends Managers {
             let on_click = data_puertas[key].on_click;
 
             let img = this.data_info_scene.get_img(PANTALLA_MANAGER, key);
-            let puerta = new PantallaPuertas(this, pos_x, pos_y, img, on_click, nombre);
-            puerta.setDepth(this.PUERTAS_DEPTH);
+            let puerta = new PantallaPuertas(this, pos_x, pos_y, img, on_click, nombre).setDepth(this.PUERTAS_DEPTH)
             puerta.enter();
+
+            this.total_animations++;
 
             this.puertas.push(puerta);
         });
@@ -289,34 +290,6 @@ class PantallaManager extends Managers {
 
             this.objetos.push(objeto);
         });
-    }
-
-    _handle_pointer_move(pointer) {
-        const margin = this.edge_margin;
-        const maxSpeed = this.scroll_speed;
-    
-        this.movement_x = 0;
-        this.movement_y = 0;
-    
-        // Horizontal
-        if (pointer.x < margin) {
-            const factor = (margin - pointer.x) / margin;
-            this.movement_x = maxSpeed * factor;
-        } else if (pointer.x > this.sys.game.config.width - margin) {
-            const factor = (pointer.x - (this.sys.game.config.width - margin)) / margin;
-            this.movement_x = -maxSpeed * factor;
-        }
-    
-        // Vertical
-        if (pointer.y < margin) {
-            const factor = (margin - pointer.y) / margin;
-            this.movement_y = maxSpeed * factor;
-        } else if (pointer.y > this.sys.game.config.height - margin) {
-            const factor = (pointer.y - (this.sys.game.config.height - margin)) / margin;
-            this.movement_y = -maxSpeed * factor;
-        }
-    
-        this.can_scroll = (this.movement_x !== 0 || this.movement_y !== 0);
     }
 }
 

@@ -12,6 +12,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
             wordWrap: { width: container_width - 20},
         };
 
+        // sobre escribimos las opciones por defecto con las opciones de entrada (si hay)
         let opciones = { ...opciones_por_defecto, ...opciones_entrada };
 
         super(scene, x, y, '', opciones);
@@ -22,7 +23,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         this.containter = container;
         
         this.setOrigin(0, 0);
-        this.setDepth(container.depth + 1);
+        this.setDepth(container.depth + 1); // para que se vea por encima del contenedor
 
         this.on('destroy', this.before_destroy, this);
 
@@ -104,15 +105,15 @@ class GameObjectsText extends Phaser.GameObjects.Text {
 
     _mouse_over() {
         if (this.isPause) return false;
-        this.mouse_over = true;
-        this.setTint(0xdce8ff);
+        // this.mouse_over = true;
+        // this.setTint(0xdce8ff);
         return true;
     }
 
     _mouse_out() {
         if (this.isPause) return false;
-        this.mouse_over = false;
-        this.clearTint();
+        // this.mouse_over = false;
+        // this.clearTint();
         return true;
     }
 

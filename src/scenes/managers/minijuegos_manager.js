@@ -25,7 +25,8 @@ class MinijuegosManager extends Managers {
             this.current_minigame.scene.stop();
         }
         
-        this.current_minigame = this.scene.launch(minigame_name);
+        this.scene.launch(minigame_name);
+        this.current_minigame = this.scene.get(minigame_name);
     }
 
     exit_minigame() {
@@ -37,8 +38,18 @@ class MinijuegosManager extends Managers {
         this.scene.get(SCENE_MANAGER).resume();
     }
 
+    _update() {
+        if (this.current_minigame) {
+            this.current_minigame._update();
+        }
+    }
+
     open_dialog(dialog_data) {
         this.scene.get(DIALOGO_MANAGER).enter(dialog_data);
+    }
+
+    game_created() {
+        this.current_minigame.enter();
     }
 }
 

@@ -148,9 +148,7 @@ class DialogoManager extends Managers {
     }
 
     signal_click(on_click) {
-        console.log(on_click);
         if (on_click.scene == 'dialogo') {
-            console.log('dialogo', on_click.name);
             this.enter(on_click.name);
         } else {
             this.scene.get(SCENE_MANAGER).signal_click(on_click);
@@ -231,8 +229,6 @@ class DialogoManager extends Managers {
                     scene: this.dialogo_data_selected.texto_1,
                     name: this.dialogo_data_selected.opcion_2
                 };
-
-                console.log(on_click);
                 
                 this.scene.get(SCENE_MANAGER).signal_click(on_click);
             }

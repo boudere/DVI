@@ -1,25 +1,32 @@
 import { JUEGO_OVEJA, DATA_INFO, MINIJUEGO_MANAGER } from '/src/data/scene_data.js';
+import Game from '/src/minijuegos/games.js';
+import Oveja from '/src/minijuegos/juego_oveja/game_objects/sprites/ovejas.js';
 
-class JuegoOveja extends Phaser.Scene {
-    constructor() {
+class JuegoOveja extends Game {
+    constructor(sprites) {
         super({ key: JUEGO_OVEJA });
 
-        this.OVEJA_IMG = 'oveja';
-        this.VALLA_IMG = 'valla';
-        this.FONDO_IMG = 'fondo';
-        this.SCREEN_WIDTH = 1820;
-        this.SCREEN_LENGTH = 1358;
-        this.OVEJITA_MUSICA = 'ovejitas';
-    }
+        sprites = {
+            OVEJA_IMG: 'oveja',
+            VALLA_IMG: 'valla',
+            FONDO_IMG: 'fondo'
+        }
 
-    preload() {
-        this.canvas = this.sys.game.canvas;
-        const { width, height } = this.canvas;
+        this.OVEJA_IMG = sprites.OVEJA_IMG;
+        this.VALLA_IMG = sprites.VALLA_IMG;
+        this.FONDO_IMG = sprites.FONDO_IMG;
+
+        this.OVEJITA_MUSICA = 'ovejitas';
+
+        this.started = false;
     }
 
 
     create() {
         this.vallasSaltadas = 0;
+
+        this.SCREEN_WIDTH = this.sys.game.canvas.width;
+        this.SCREEN_HEIGHT = this.sys.game.canvas.height;
 
         this.contadorTexto = this.add.text(
             this.SCREEN_WIDTH - 50, 50,
@@ -44,60 +51,37 @@ class JuegoOveja extends Phaser.Scene {
         // 📌 Crear el suelo en el cuarto inferior de la pantalla
         let suelo = this.physics.add.sprite(
             this.SCREEN_WIDTH / 2,
-            this.SCREEN_LENGTH * 0.95,  // 🔽 Ahora está bien colocado
+            this.SCREEN_HEIGHT * 0.95,  // 🔽 Ahora está bien colocado
             this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.FONDO_IMG)
         );
-        suelo.setScale(this.SCREEN_WIDTH / 450, (this.SCREEN_LENGTH * 0.3) / 338);
+        suelo.setScale(this.SCREEN_WIDTH / 450, (this.SCREEN_HEIGHT * 0.3) / 338);
         suelo.setImmovable(true);
         suelo.body.setAllowGravity(false);
 
-        // 📌 Crear la oveja justo sobre el suelo
-        this.oveja = this.physics.add.sprite(
-            175,
-            this.SCREEN_LENGTH * 0.75 - 100,  // 🔼 Aparece encima del suelo
-            this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OVEJA_IMG)
-        );
-        this.oveja.setScale(200 / 626, 200 / 569);
-        this.oveja.setGravityY(800);
-        this.oveja.setBounce(0);
-        this.oveja.setCollideWorldBounds(true);
-
-        this.oveja.body.setSize(
-            this.oveja.width * 0.8,
-            this.oveja.height * 0.8
-        );
-        this.oveja.body.setOffset(
-            this.oveja.width * 0.1,
-            this.oveja.height * 0.1
-        );
+        this._crearOveja(); 
 
         // 📌 Asegurar colisión entre la oveja y el suelo
         this.physics.add.collider(this.oveja, suelo);
-
-
-
-        /*  let suelo = this.physics.add.sprite(this.SCREEN_WIDTH/2, this.SCREEN_LENGTH, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.FONDO_IMG));
-          suelo.setScale(this.SCREEN_WIDTH / 450, 200 / 338); 
-          this.addObstacle(suelo);
-          suelo.body.setSize(this.SCREEN_WIDTH, this.SCREEN_LENGTH); 
-          suelo.setImmovable(true);
-          suelo.body.setAllowGravity(false);
-  
-          this.oveja = this.physics.add.sprite(175, 1000, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OVEJA_IMG));
-          this.oveja.setCollideWorldBounds(true);
-          this.oveja.setBounce(0.4);
-          this.oveja.setGravityY(800); 
-          
-          this.oveja.setScale(200/626, 200/569); 
-          this.addObstacle(this.oveja);
-          this.oveja.body.setSize(350/626, 350/569);
-          
-          this.physics.add.collider(this.oveja, suelo); //para q haya colision con el suelo */
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
         this.vallas = []; //this.physics.add.group();
         this.scheduleNextValla();
+
+        this.game_created(); // Llamar a la función de escena creada
+    }
+
+    enter() {
+        super.enter();
+        this.oveja.enter();
+
+        this.started = true; // Iniciar el juego
+    }
+
+    _crearOveja() {
+        let x = 175;
+        let y = this.SCREEN_HEIGHT * 0.75 - 100;
+        this.oveja = new Oveja(this, x, y, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OVEJA_IMG), 200 / 626, 200 / 569);
     }
 
     scheduleNextValla() {
@@ -142,7 +126,7 @@ class JuegoOveja extends Phaser.Scene {
             // Opcional: mostrar "Perdiste" en pantalla
             const textoGameOver = this.add.text(
                 this.SCREEN_WIDTH / 2,
-                this.SCREEN_LENGTH / 2,
+                this.SCREEN_HEIGHT / 2,
                 '¡Perdiste!',
                 {
                     fontSize: '96px',
@@ -158,6 +142,7 @@ class JuegoOveja extends Phaser.Scene {
 
 
     _update() {
+        if (!this.started) { return; } // Evitar que se ejecute antes de iniciar el juego
         if (this.oveja.body.blocked.down) {
             this.oveja.setVelocityY(0);
         }
@@ -190,41 +175,3 @@ class JuegoOveja extends Phaser.Scene {
 }
 
 export default JuegoOveja;
-
-
-/*
-animations(){
-
-    this.anims.create({
-        key: 'ovejaSalto',
-        frames: this.anims.generateFrameNumbers(this.OVEJA_IMG, { start: 4, end: 4 }),
-        frameRate: 5,
-        repeat: 0
-    });
-
-    this.anims.create({
-        key: 'ovejaMuere',
-        frames: this.anims.generateFrameNumbers(this.OVEJA_IMG, { start: 4, end: 4 }),
-        frameRate: 5,
-        repeat: 0
-    });
-
-    this.anims.create({
-        key: 'spawnValla',
-        frames: this.anims.generateFrameNumbers(this.VALLA_IMG, { start: 2, end: 2 }),
-        frameRate: 5,
-        repeat: -1
-    });
-    this.anims.create({
-        key: 'moverValla',
-        frames: this.anims.generateFrameNumbers(this.VALLA_IMG, { start: 1, end: 2 }),
-        frameRate: 5,
-        repeat: -1
-    });
-    this.anims.create({
-        key: 'eliminarValla',
-        frames: this.anims.generateFrameNumbers(this.VALLA_IMG, { start: 3, end: 3 }),
-        frameRate: 5,
-        repeat: -1
-    });
-}*/

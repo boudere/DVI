@@ -50,6 +50,8 @@ class Managers extends Phaser.Scene {
     cursor_exited(name) {
         this.scene.get(SCENE_MANAGER).cursor_exited(name);
     }
+
+    move(offsetX, offsetY, can_move) {}
 }
 
 export default Managers;

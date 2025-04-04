@@ -5,7 +5,7 @@ import DialogoManager from '/src/scenes/managers/dialogo_manager.js'; // Importa
 import MinijuegosManager from '/src/scenes/managers/minijuegos_manager';
 import Managers from '/src/scenes/managers.js'; // Importamos la escena ScenePlay
 import DataInfo from '/src/scenes/data_info.js'; // Importamos la escena ScenePlay
-import JuegoOveja from '/src/minijuegos/juego_oveja/juego_oveja.js'; // Importamos la escena ScenePlay
+import JuegoOveja from '/src/minijuegos/juego_oveja/juego_oveja2.js'; // Importamos la escena ScenePlay
 import Phaser from "phaser";
 
 // Configuración del juego

@@ -18,10 +18,13 @@ class DataInfo extends Phaser.Scene {
         this.asdasd = 0;
     }
 
+    ///////////////////////////////////////////////////////////////////////////////
+    //                            EIECUTAR EL COMANDO:                           //
+    //                   node ./src/utils/generateFoldersJson.js                 //
+    //                           AL AÑADIR NUEVO ASSET                           //
+    ///////////////////////////////////////////////////////////////////////////////
+
     preload() {
-        // ejecutar antes el comando:
-        //  node ./src/utils/generateFoldersJson.js 
-        // para actualizar el archivo folders.json
         this.load.json(this.json_data, this.JSON_PATH + this.data_name);
     }
 
@@ -118,8 +121,6 @@ class DataInfo extends Phaser.Scene {
     }
 
     // actualiza la barra de carga
-
-
     update_loading_bar(progress) {
         this.loading_bar.clear();
         this.loading_bar.fillStyle(0xffffff, 1);
@@ -168,10 +169,6 @@ class DataInfo extends Phaser.Scene {
 
 
     load_json(name) {
-
-        // this.asdasd++;
-        // console.log(this.asdasd, this.json_prefix + name, this.JSON_PATH + name + this.data_json.Suffix)
-
         const json_suffix = this.data_json.Suffix;
         this.load.json(this.json_prefix + name, this.JSON_PATH + name + json_suffix);
     }
@@ -201,6 +198,10 @@ class DataInfo extends Phaser.Scene {
             });
         });
     }
+
+    //////////////////////////////////////////////////////////////////////////////
+    //                    AGREGAR PARA NUEVO TIPO DE IMAGEN                     //
+    //////////////////////////////////////////////////////////////////////////////
 
     laod_img(clase, clase2, name) {
         let path = '';
@@ -278,9 +279,6 @@ class DataInfo extends Phaser.Scene {
     load_img2(scene, name, path) {
         const img_suffix = this.data_imgs.Suffix;
         this.load.image(this.img_prefix + scene + "_" + name, this.IMG_PATH + path + name + img_suffix);
-
-        // this.asdasd++;
-        // console.log(this.asdasd, this.img_prefix + scene + "_" + name, this.IMG_PATH + path + name + img_suffix)
     }
 
 
@@ -305,10 +303,6 @@ class DataInfo extends Phaser.Scene {
 
     load_musica(name) {
         const musica_suffix = this.data_musica.Suffix;
-
-        // this.asdasd++;
-        // console.log(this.asdasd, this.musica_prefix + name, this.MUSICA_PATH + name + musica_suffix)
-
         this.load.audio(this.musica_prefix + name, this.MUSICA_PATH + name + musica_suffix);
     }
 
@@ -316,6 +310,10 @@ class DataInfo extends Phaser.Scene {
         return this.musica_prefix + name;
     }
 
+
+    //////////////////////////////////////////////////////////////////////////////
+    //                        AGREFAR PARA NUEVO MANAGER                        //
+    //////////////////////////////////////////////////////////////////////////////
 
     get_img(scene, name) {
         let scene_name = ""

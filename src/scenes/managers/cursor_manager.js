@@ -25,14 +25,14 @@ class CursorManager extends Managers {
     }
 
     enter(scene_data) {
-        this.edge_margin = scene_data.edge_margin || 200;
-        this.scroll_speed = scene_data.scroll_speed || 5;
+        this.edge_margin = scene_data.edge_margin;
+        this.move_speed = scene_data.move_speed;
     }
 
-    update(time, delta) {
+    _update(time, delta) {
         // Este método se llama automáticamente cada frame
         if (this.can_move) {
-            this.scene_manager.scroll(this.movement_x * delta, this.movement_y * delta);
+            this.scene_manager.move(this.movement_x * delta, this.movement_y * delta);
         }
     }
 
@@ -43,7 +43,35 @@ class CursorManager extends Managers {
 
     _mouse_move(pointer) {
         this.background.move(pointer.x, pointer.y);
+
+
+        const margin = this.edge_margin;
+        const maxSpeed = this.move_speed;
+
+        this.movement_x = 0;
+        this.movement_y = 0;
+    
+        // Horizontal
+        if (pointer.x < margin) {
+            const factor = (margin - pointer.x) / margin;
+            this.movement_x = maxSpeed * factor;
+        } else if (pointer.x > this.sys.game.config.width - margin) {
+            const factor = (pointer.x - (this.sys.game.config.width - margin)) / margin;
+            this.movement_x = -maxSpeed * factor;
+        }
+    
+        // Vertical
+        if (pointer.y < margin) {
+            const factor = (margin - pointer.y) / margin;
+            this.movement_y = maxSpeed * factor;
+        } else if (pointer.y > this.sys.game.config.height - margin) {
+            const factor = (pointer.y - (this.sys.game.config.height - margin)) / margin;
+            this.movement_y = -maxSpeed * factor;
+        }
+    
+        this.can_move = (this.movement_x !== 0 || this.movement_y !== 0);
     }
+
     _mouse_up() {
         this.background.exit();
     }
@@ -58,7 +86,6 @@ class CursorManager extends Managers {
     cursor_exited(name) {
         this.background.exit(name);
     }
-
 }
 
 

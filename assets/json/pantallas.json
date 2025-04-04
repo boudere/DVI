@@ -9,7 +9,24 @@
                 "pos_y": 900,
                 "size": 1.6,
                 "delay": 0,
-                "animation": null,
+                "animation": {
+                    "animation_1":  [
+                        {
+                            "type": "move_right",
+                            "var": {
+                                "pos_x": 200
+                            },
+                            "duration": 600
+                        },
+                        {
+                            "type": "move_up",
+                            "var": {
+                                "pos_y": 700
+                            },
+                            "duration": 1000
+                        }
+                    ]
+                },
                 "on_click": null
             },
             "npcs": {

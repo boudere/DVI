@@ -7,6 +7,7 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
 
         this.setScale(size_x, size_y);
         
+        // si se peude hacer click
         if (on_click) {
             this._set_events();
             this.on_click = on_click;
@@ -36,6 +37,7 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
         
         let animation_data = this.animation.get_animation_data(animation, this.game_object_data);
     
+        // para cada grupo de animaciones, se ejecutan en paralelo
         for (const [key, value] of Object.entries(animation_data)) {
             const animation_tweens = value.map((val) => this.run_tween(val));
     
@@ -77,7 +79,10 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
     finish_animation() {}
 
     // se ejecuta al salir de la escena
-    exit() { this.visible = false; }
+    exit() { 
+        this.visible = false; 
+        this._remove_events(); // eliminar eventos al salir de la escena
+    }
 
     // se ejecuta al entrar en la escena
     enter() { this.visible = true; }

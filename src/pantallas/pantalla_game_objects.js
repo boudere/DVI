@@ -65,6 +65,8 @@ class PantallaGameObjects extends GameObjectsSprite {
 
     _set_events() { super._set_events(); }
 
+    _remove_events() { super._remove_events(); }
+
     _mouse_enter() { super._mouse_enter(); }
 
     _mouse_over() { super._mouse_over(); }

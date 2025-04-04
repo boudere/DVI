@@ -11,16 +11,6 @@ class Animation {
         this.animation_data = scene.scene.get(DATA_INFO).get_json(this.data_json.Animation);
     }
 
-    // setea las animaciones a valores default
-    set_animation(data) {
-        // let animation = {};
-        // Object.entries(data).forEach(([key, value]) => {
-        //     animation[key + "_start"] = value;
-        //     animation[key + "_end"] = value;
-        // });
-        // return animation;
-    }
-
     // setea las animaciones
     get_animation_data(animation, data) {
 
@@ -29,21 +19,18 @@ class Animation {
         Object.entries(data).forEach(([key, value]) => {
             data_assistant[key] = value;
         });
-        
+
         // se mueve por todas las estancias de la animacion
         Object.entries(animation).forEach(([key, value]) => {
             this.animation[key] = [];
 
             // carga los valores default de la animacion
-            Object.entries(data_assistant).forEach(([data_assistant_key, data_assistant_value]) => {
+            Object.entries(data_assistant).forEach(([data_assistant_key, __data_assistant_value]) => {
                 data[data_assistant_key] = data_assistant[data_assistant_key];
             });
 
             // se mueve por cada una de las animaciones que se ejecutan a la vez
-            value.forEach((val) => {
-                // setea los valores default de la animacion
-                let val_set_data = this.set_animation(data);
-
+            value.forEach((__val) => {
                 // añade dichos valores a la animacion
                 this.animation[key].push({});
 
@@ -84,96 +71,52 @@ class Animation {
 
         // si no es un string (es un numero) directamente lo devuelve
         if (typeof value !== 'string') return value;
-    
+
         const info = [];
         let buffer = '';
-        let inBraces = false;
-        let inBrackets = false;
-        let braceContent = '';
-        let bracketsContent = '';
         let i = 0;
         let operation = '';
-    
+
         // recorre el string
         while (i < value.length) {
-            const char = value[i];
-    
-            // si es un número (dígito) y no estamos leyendo otra cosa
-            if (!inBraces && !inBrackets && /\d/.test(char)) {
-                let numStr = char;
-                i++;              
-                // sigue leyendo números hasta que no haya más
-                while (i < value.length && /\d/.test(value[i])) {
-                    numStr += value[i];
-                    i++;
-                }
-                // lo convierte a número y lo añade al array de info
+            let char = value[i];
+        
+            // números
+            if (/\d/.test(char)) {
+                const { result: numStr, nextIndex } = this.readWhile(value, i, /\d/);   // /\d/ para leer solo números
                 info.push(parseInt(numStr));
+                i = nextIndex;
                 continue;
             }
-    
-            // si encontramos { obtenemos el contenido entre llaves
+        
+            // contenido entre llaves: {operation}
             if (char === '{') {
-                inBraces = true;
-                braceContent = '';
-                i++;
+                const { result: braceStr, nextIndex } = this.readBetween(value, i + 1, '}');
+                operation = braceStr;
+                i = nextIndex;
                 continue;
             }
-    
-            if (char === '}' && inBraces) {
-                inBraces = false;
-                // si encontramos } y ya teníamos algo en braceContent, lo añadimos a la operacion (add, sub, etc)
-                operation = braceContent;
-                i++;
-                continue;
-            }
-    
-            if (inBraces) {
-                braceContent += char;
-                i++;
-                continue;
-            }
-
+        
+            // contenido entre corchetes: [data]
             if (char === '[') {
-                inBrackets = true;
-                bracketsContent = '';
-                i++;
+                const { result: bracketStr, nextIndex } = this.readBetween(value, i + 1, ']');
+                info.push({ bracketsContent: bracketStr });
+                i = nextIndex;
                 continue;
             }
-
-            if (char === ']' && inBrackets) {
-                inBrackets = false;
-                // si encontramos ] y ya teníamos algo en bracketsContent, lo añadimos al array de info
-                info.push({ bracketsContent: bracketsContent });
-                i++;
-                continue;
-            }
-
-            if (inBrackets) {
-                bracketsContent += char;
-                i++;
-                continue;
-            }
-
-            // si encontramos $
+        
+            // variables tipo $nombre
             if (char === '$') {
-                let varName = '';
-                i++;
-                // lee el nombre de la variable hasta que encuentre un espacio o un caracter no válido
-                while (i < value.length && !/\s/.test(value[i])) {
-                    varName += value[i];
-                    i++;
-                }
-                // añade la variable al array de info como un objeto con la propiedad variable
+                const { result: varName, nextIndex } = this.readWhile(value, i + 1, /[^\s\{\}\[\]\$]/); // [^\s\{\}\[\]\$] para leer solo letras y números -> ^ == niega los siguiente: \s = espacio, \{ =  llave, \[ = corchete, \$ = dolar
                 info.push({ variable: varName });
+                i = nextIndex;
                 continue;
             }
-    
-            // si es cualquier otra letra o espacio
-            buffer += char;
-            i++;
+        
+            i++; // si no matchea nada, avanza
         }
-    
+        
+
         // agregar el texto plano restante si existe
         if (buffer.trim()) {
             info.push(buffer.trim());
@@ -201,7 +144,30 @@ class Animation {
         // devuelve el valor de la operacion
         return this.operation_animation(operations[0], operations[1], operation);
     }
-    
+
+    // Lee una cadena entre delimitadores como {}, [], etc.
+    readBetween(value, startIndex, endChar) {
+        let result = '';
+        let i = startIndex;
+        while (i < value.length && value[i] !== endChar) {
+            result += value[i];
+            i++;
+        }
+        return { result, nextIndex: i + 1 }; // i + 1 para saltar el delimitador de cierre
+    }
+
+    // Lee mientras se cumpla una condición, como dígitos o nombre de variable
+    readWhile(value, startIndex, conditionRegex) {
+        let result = '';
+        let i = startIndex;
+        while (i < value.length && conditionRegex.test(value[i])) {
+            result += value[i];
+            i++;
+        }
+        return { result, nextIndex: i };
+    }
+
+
 
     // realiza la operacion dependiendo de la que se le pase
     operation_animation(value1, value2, operation) {
