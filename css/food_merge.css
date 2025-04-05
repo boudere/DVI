@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(255, 238, 218);
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;     /* centra verticalmente */
+    flex-direction: column;  /* si tienes varios contenedores, se apilan verticalmente */
+}
+
+
+.main_container{
+    background-image: url('/assets/img/minijuegos/food_merge/cocina.png') ;
+    background-size: cover;
+    background-position: center;
+    width: 55vw; 
+    height: 80vh;
+}
+
+.next_food{
+    border: 2px solid black;
+    width: 10vw; 
+    height: 15vh;
+    margin-bottom: 5px;
+    display: flex;
+    font-size: larger;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 250, 243);
+}
+
