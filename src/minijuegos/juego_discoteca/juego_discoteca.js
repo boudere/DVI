@@ -17,7 +17,7 @@ class JuegoDiscoteca extends Game {
         this.OBSTACULO_IMG = sprites.OBSTACULO_IMG;
         this.FONDO_IMG = sprites.FONDO_IMG;
 
-        this.DISCOTECA_MUSICA = 'discoteca';
+        this.DISCOTECA_MUSICA = 'disco';
 
         this.personawidth = 1024;
         this.personaheight = 1024;
@@ -45,11 +45,11 @@ class JuegoDiscoteca extends Game {
         ).setOrigin(1, 0).setDepth(1); 
 
         this.data_info_scene = this.scene.get(DATA_INFO);
-        /*this.musica = this.sound.add(this.data_info_scene.get_musica(this.OVEJITA_MUSICA), {
+        this.musica = this.sound.add(this.data_info_scene.get_musica(this.DISCOTECA_MUSICA), {
             loop: true,
             volume: 1.0
         });
-        this.musica.play();*/
+        this.musica.play();
 
         let fondo = this.physics.add.sprite(
             0,
@@ -156,7 +156,7 @@ class JuegoDiscoteca extends Game {
             // Detener física y temporizadores
             this.physics.pause();            
             this.time.removeAllEvents();   
-            //this.musica.stop();         
+            this.musica.stop();         
 
             const textoGameOver = this.add.text(
                 this.SCREEN_WIDTH / 2,
@@ -177,7 +177,7 @@ class JuegoDiscoteca extends Game {
             // Detener física y temporizadores
             this.physics.pause();           
             this.time.removeAllEvents();    
-            //this.musica.stop();           
+            this.musica.stop();           
 
             const textoGameOver = this.add.text(
                 this.SCREEN_WIDTH / 2,
