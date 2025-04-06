@@ -148,6 +148,14 @@
                 "oveja.png",
                 "valla.png"
               ]
+            },
+            {
+              "name": "juego_discoteca",
+              "folders": [],
+              "files": [
+                "persona.png",
+                "obstaculo.png"
+              ]
             }
           ],
           "files": []

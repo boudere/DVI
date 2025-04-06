@@ -107,8 +107,16 @@
                         "valla"
                     ]
                 },
+                "JuegoDiscoteca": {
+                    "Path": "juego_discoteca/",
+                    "JuegoOveja": [
+                        "persona",
+                        "obstaculo"
+                    ]
+                },
                 "Clases": [
-                    "JuegoOveja"
+                    "JuegoOveja",
+                    "JuegoDiscoteca"
                 ]
             },
             "Cursors": {
