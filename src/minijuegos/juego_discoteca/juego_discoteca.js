@@ -73,7 +73,7 @@ class JuegoDiscoteca extends Game {
 
     enter() {
         super.enter();
-        this.oveja.enter();
+        this.persona.enter();
 
         this.started = true; // Iniciar el juego
     }

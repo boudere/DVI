@@ -7,6 +7,7 @@ import Managers from '/src/scenes/managers.js'; // Importamos la escena ScenePla
 import DataInfo from '/src/scenes/data_info.js'; // Importamos la escena ScenePlay
 import JuegoOveja from '/src/minijuegos/juego_oveja/juego_oveja2.js'; // Importamos la escena ScenePlay
 import Phaser from "phaser";
+import JuegoDiscoteca from './minijuegos/juego_discoteca/juego_discoteca';
 
 // Configuración del juego
 const config = {
@@ -29,7 +30,8 @@ const config = {
         DialogoManager,
         CursorManager,
         MinijuegosManager,
-        JuegoOveja
+        JuegoOveja,
+        JuegoDiscoteca
     ],
 
     scale: {

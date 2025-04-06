@@ -109,9 +109,10 @@
                 },
                 "JuegoDiscoteca": {
                     "Path": "juego_discoteca/",
-                    "JuegoOveja": [
+                    "JuegoDiscoteca": [
                         "persona",
-                        "obstaculo"
+                        "obstaculo",
+                        "fondodisco"
                     ]
                 },
                 "Clases": [

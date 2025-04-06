@@ -218,6 +218,7 @@ class DataInfo extends Phaser.Scene {
                 });
                 break;
             case "JuegoOveja":
+            case "JuegoDiscoteca":
             case "Dialogos":
             case "Cursors":
                 path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path;
@@ -257,10 +258,11 @@ class DataInfo extends Phaser.Scene {
                 });
                 break;
             case "JuegoOveja":
+            case "JuegoDiscoteca":
             case "Dialogos":
                 path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path;
                 this.asdasd++;
-                console.log(this.asdasd, "JuegoOveja | Dialogos", this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path, this.textures.exists(this.get_img(clase, name)))
+                console.log(this.asdasd, "JuegoDiscoteca | JuegoOveja | Dialogos", this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path, this.textures.exists(this.get_img(clase, name)))
                 break;
             case "Puertas":
                 let lados = this.data_imgs[clase][clase2].Lados;
