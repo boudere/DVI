@@ -10,3 +10,4 @@ export const CURSOR_MANAGER = "CURSOR_MANAGER";
 
 // MINIJUEGOS
 export const JUEGO_OVEJA = "JuegoOveja";
+export const JUEGO_DISCOTECA = "JuegoDiscoteca"
