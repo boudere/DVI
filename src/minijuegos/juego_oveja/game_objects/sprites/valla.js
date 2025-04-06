@@ -33,4 +33,4 @@ class Valla extends GamesGameObjects {
     }
 }
 
-export default Oveja;
+export default Valla;

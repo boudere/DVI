@@ -24,14 +24,14 @@ class JuegoDiscoteca extends Game {
 
 
     create() {
-        this.vallasSaltadas = 0;
+        this.obstaculossaltados = 0;
 
         this.SCREEN_WIDTH = this.sys.game.canvas.width;
         this.SCREEN_HEIGHT = this.sys.game.canvas.height;
 
         this.contadorTexto = this.add.text(
             this.SCREEN_WIDTH - 50, 50,
-            `Saltadas: ${this.vallasSaltadas}`,
+            `Salvados: ${this.obstaculossaltados}`,
             {
                 fontSize: '40px',
                 fill: '#ffffff',
@@ -41,12 +41,11 @@ class JuegoDiscoteca extends Game {
 
 
         this.data_info_scene = this.scene.get(DATA_INFO);
-        this.musica = this.sound.add(this.data_info_scene.get_musica(this.OVEJITA_MUSICA), {
+        /*this.musica = this.sound.add(this.data_info_scene.get_musica(this.OVEJITA_MUSICA), {
             loop: true,
             volume: 1.0
         });
-        this.musica.play();
-        //this.animations();
+        this.musica.play();*/
 
         //CHATGPT, PONERLO BIEN PORFA 
         // 📌 Crear el suelo en el cuarto inferior de la pantalla
@@ -59,15 +58,15 @@ class JuegoDiscoteca extends Game {
         suelo.setImmovable(true);
         suelo.body.setAllowGravity(false);
 
-        this._crearOveja(); 
+        this._crearPersona(); 
 
-        // 📌 Asegurar colisión entre la oveja y el suelo
-        this.physics.add.collider(this.oveja, suelo);
+        // Asegurar colisión entre la persona y el suelo
+        this.physics.add.collider(this.persona, suelo);
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
-        this.vallas = []; //this.physics.add.group();
-        this.scheduleNextValla();
+        this.obstaculos = []; 
+        this.scheduleNextObstaculo();
 
         this.game_created(); // Llamar a la función de escena creada
     }
@@ -79,52 +78,51 @@ class JuegoDiscoteca extends Game {
         this.started = true; // Iniciar el juego
     }
 
-    _crearOveja() {
+    _crearPersona() {
         let x = 175;
         let y = this.SCREEN_HEIGHT * 0.75 - 100;
-        this.oveja = new Oveja(this, x, y, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OVEJA_IMG), 200 / 626, 200 / 569);
+        this.persona = new Persona(this, x, y, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PERSONA__IMG), 200 / 626, 200 / 569);
     }
 
-    scheduleNextValla() {
+    scheduleNextObstaculo() {
         const delay = Phaser.Math.Between(1500, 3000); // entre 2 y 5 segundos
         this.time.delayedCall(delay, () => {
-            this.spawnValla();
-            this.scheduleNextValla(); // se vuelve a llamar recursivamente
+            this.spawnObstaculo();
+            this.scheduleNextObstaculo(); // se vuelve a llamar recursivamente
         });
     }
     
 
-    spawnValla() {
-        this.valla = this.physics.add.sprite(
+    spawnObstaculo() {
+        this.obstaculo = this.physics.add.sprite(
             this.SCREEN_WIDTH,
             1000,
-            this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.VALLA_IMG)
+            this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OBSTACULO_IMG)
         );
-        this.valla.setScale(350 / 626, 350 / 358);
-        this.valla.setVelocityX(-500);
-        this.valla.setGravityY(-600);
-        this.valla.contada = false;
+        this.obstaculo.setScale(350 / 626, 350 / 358);
+        this.obstaculo.setVelocityX(-500);
+        this.obstaculo.setGravityY(-600);
+        this.obstaculo.contado = false;
 
-        this.valla.body.setSize(
-            this.valla.width * 0.8, // 60% del ancho visual
-            this.valla.height * 0.8 // 80% del alto visual
+        this.obstaculo.body.setSize(
+            this.obstaculo.width * 0.8, // 60% del ancho visual
+            this.obstaculo.height * 0.8 // 80% del alto visual
         );
         
-        this.valla.body.setOffset(
-            this.valla.width * 0.1, // 10% del ancho visual
-            this.valla.height * 0.1 // 10% del alto visual
+        this.obstaculo.body.setOffset(
+            this.obstaculo.width * 0.1, // 10% del ancho visual
+            this.obstaculo.height * 0.1 // 10% del alto visual
         );
 
-        // ✅ Añadir colisión entre oveja y valla
-        this.physics.add.collider(this.oveja, this.valla, () => {
-            this.oveja.setTint(0xff0000);
+        // Añadir colisión entre persona y obstaculo
+        this.physics.add.collider(this.persona, this.obstaculo, () => {
+            this.persona.setTint(0xff0000);
 
-            // 🛑 Detener física y temporizadores
+            // Detener física y temporizadores
             this.physics.pause();            // Detiene la física
             this.time.removeAllEvents();    // Elimina todos los timers (como spawn de vallas)
-            this.musica.stop();             // Para la música (opcional)
+            //this.musica.stop();             // Para la música (opcional)
 
-            // Opcional: mostrar "Perdiste" en pantalla
             const textoGameOver = this.add.text(
                 this.SCREEN_WIDTH / 2,
                 this.SCREEN_HEIGHT / 2,
@@ -138,30 +136,29 @@ class JuegoDiscoteca extends Game {
         });
 
 
-        this.vallas.push(this.valla);
+        this.obstaculos.push(this.obstaculo);
     }
 
 
     _update() {
         if (!this.started) { return; } // Evitar que se ejecute antes de iniciar el juego
-        if (this.oveja.body.blocked.down) {
-            this.oveja.setVelocityY(0);
+        if (this.persona.body.blocked.down) {
+            this.persona.setVelocityY(0);
         }
 
-        // ✅ Corregido: usar .onFloor() como función
-        if (this.cursors.space.isDown && this.oveja.body.onFloor()) {
-            this.oveja.setVelocityY(-1100); // Salto
+        if (this.cursors.space.isDown && this.persona.body.onFloor()) {
+            this.persona.setVelocityY(-1100); // Salto
         }
 
-        this.vallas.forEach((valla) => {
-            if (valla && valla.x < this.oveja.x && !valla.contada) {
-                this.vallasSaltadas++;
-                this.contadorTexto.setText(`Saltadas: ${this.vallasSaltadas}`);
-                valla.contada = true;
+        this.obstaculos.forEach((obstaculo) => {
+            if (obstaculo && obstaculo.x < this.persona.x && !obstaculo.contado) {
+                this.obstaculossaltados++;
+                this.contadorTexto.setText(`Salvados: ${this.obstaculossaltados}`);
+                obstaculo.contado = true;
             }
 
-            if (valla && valla.x < -50) {
-                valla.destroy();
+            if (obstaculo && obstaculo.x < -50) {
+                obstaculo.destroy();
             }
         });
     }
