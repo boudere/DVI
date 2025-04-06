@@ -12,7 +12,7 @@ class Persona extends GamesGameObjects {
 
         this.setGravityY(800);
         this.setBounce(0);
-        this.setCollideWorldBounds(true);;
+        this.setCollideWorldBounds(true);
     }
 
     exit() {
