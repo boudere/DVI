@@ -10,7 +10,7 @@ class Food {
         this.size = BASE_FRUIT_SIZE * Math.pow(SIZE_INCREASE_RATIO, fruitTypes.indexOf(type));
         this.weight = BASE_FRUIT_WEIGHT * Math.pow(WEIGHT_INCREASE_RATIO, fruitTypes.indexOf(type));
         this.element = document.createElement('div');
-        this.element.className = `fruit ${type}`;
+        this.element.className = `food ${type}`;
         this.element.style.width = `${this.size}px`;
         this.element.style.height = `${this.size}px`;
         this.timeAboveBoard = 0; // New property to track time above board
