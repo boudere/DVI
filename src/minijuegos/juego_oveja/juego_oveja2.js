@@ -101,10 +101,25 @@ class JuegoOveja extends Game {
     }
 
     scheduleNextValla() {
+        /* DIFICULTAD CONSTANTE
         const delay = Phaser.Math.Between(1500, 3000); // entre 2 y 5 segundos
         this.time.delayedCall(delay, () => {
             this._crear_valla();
             this.scheduleNextValla(); // se vuelve a llamar recursivamente
+        });
+        */
+        let min = 1500;
+        let max = 3000;
+
+        // reduce tiempo de aparición con cada valla saltada
+        min = Math.max(600, 1500 - this.vallasSaltadas * 50);  
+        max = Math.max(1200, 3000 - this.vallasSaltadas * 60); 
+
+        const delay = Phaser.Math.Between(min, max);
+
+        this.time.delayedCall(delay, () => {
+            this._crear_valla();
+            this.scheduleNextValla();
         });
     }
     
