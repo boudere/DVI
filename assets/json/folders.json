@@ -141,20 +141,46 @@
           "name": "minijuegos",
           "folders": [
             {
-              "name": "juego_oveja",
+              "name": "food_merge",
               "folders": [],
               "files": [
-                "fondo.png",
-                "oveja.png",
-                "valla.png"
+                "cafe.png",
+                "cerve.png",
+                "churros.png",
+                "cocina.png",
+                "croasan.png",
+                "croquetas.png",
+                "donut.png",
+                "hamburguesa.png",
+                "huevos.png",
+                "kebap.png",
+                "magdalena.png",
+                "menu.png",
+                "patatas.png",
+                "prioridad.txt",
+                "quesadilla.png",
+                "salchichas.png",
+                "sandwich.png",
+                "tortilla.png"
               ]
             },
             {
               "name": "juego_discoteca",
               "folders": [],
               "files": [
-                "persona.png",
-                "obstaculo.png"
+                "fondodisco.png",
+                "obstaculo.png",
+                "persona.png"
+              ]
+            },
+            {
+              "name": "juego_oveja",
+              "folders": [],
+              "files": [
+                "cielo.png",
+                "fondo.png",
+                "oveja.png",
+                "valla.png"
               ]
             }
           ],
@@ -285,6 +311,7 @@
       "name": "musica",
       "folders": [],
       "files": [
+        "disco.ogg",
         "ovejitas.ogg",
         "tema_inicial.ogg"
       ]
