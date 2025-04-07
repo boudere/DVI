@@ -11,12 +11,14 @@ class JuegoOveja extends Game {
         sprites = {
             OVEJA_IMG: 'oveja',
             VALLA_IMG: 'valla',
-            FONDO_IMG: 'fondo'
+            FONDO_IMG: 'fondo',
+            CIELO_IMG: 'cielo'
         }
 
         this.OVEJA_IMG = sprites.OVEJA_IMG;
         this.VALLA_IMG = sprites.VALLA_IMG;
         this.FONDO_IMG = sprites.FONDO_IMG;
+        this.CIELO_IMG = sprites.CIELO_IMG;
 
         this.OVEJITA_MUSICA = 'ovejitas';
 
@@ -36,6 +38,14 @@ class JuegoOveja extends Game {
             volume: 1.0
         });
         this.musica.play();
+        let cielo = this.physics.add.sprite(
+            0,
+            0,
+            this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.CIELO_IMG)
+        ).setOrigin(0,0);
+        cielo.setScale(this.SCREEN_WIDTH / cielo.width, this.SCREEN_HEIGHT/ cielo.height);
+        cielo.setImmovable(true);
+        cielo.body.setAllowGravity(false);
 
         this._crear_suelo();
         this._crearOveja(); 
@@ -86,8 +96,8 @@ class JuegoOveja extends Game {
             {
                 fontSize: '40px',
                 fill: '#ffffff',
-                fontFamily: 'Arial'
-            }).setOrigin(1, 0); // Alineado a la esquina superior derecha
+                fontFamily: 'Impact'
+            }).setOrigin(1, 0).setDepth(1); // Alineado a la esquina superior derecha
     }
 
     scheduleNextValla() {
@@ -100,26 +110,26 @@ class JuegoOveja extends Game {
     
     _crear_valla() {
         let x = this.SCREEN_WIDTH + 50;
-        let y = this.SCREEN_HEIGHT * 0.75 - 100;
+        let y = this.SCREEN_HEIGHT * 0.75 - 50;
         let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.VALLA_IMG);
-        let scale_x = 350 / 626;
-        let scale_y = 350 / 358;
+        let scale_x = 300 / 626;
+        let scale_y = 300 / 358;
 
         this.valla = new Valla(this, x, y, img, scale_x, scale_y);
         this.valla.enter();
 
         this.valla.contada = false;
 
-        // ✅ Añadir colisión entre oveja y valla
+        // Añadir colisión entre oveja y valla
         this.physics.add.collider(this.oveja, this.valla, () => {
             this.oveja.setTint(0xff0000);
 
-            // 🛑 Detener física y temporizadores
-            this.physics.pause();            // Detiene la física
-            this.time.removeAllEvents();    // Elimina todos los timers (como spawn de vallas)
-            this.musica.stop();             // Para la música (opcional)
+            // Detener física y temporizadores
+            this.physics.pause();           
+            this.time.removeAllEvents();    
+            this.musica.stop();             
 
-            // Opcional: mostrar "Perdiste" en pantalla
+            
             const textoGameOver = this.add.text(
                 this.SCREEN_WIDTH / 2,
                 this.SCREEN_HEIGHT / 2,
@@ -127,9 +137,9 @@ class JuegoOveja extends Game {
                 {
                     fontSize: '96px',
                     color: '#ff0000',
-                    fontFamily: 'Arial'
+                    fontFamily: 'Impact'
                 }
-            ).setOrigin(0.5);
+            ).setOrigin(0.5).setDepth(1);  
         });
 
 
@@ -143,7 +153,7 @@ class JuegoOveja extends Game {
             this.oveja.setVelocityY(0);
         }
 
-        // ✅ Corregido: usar .onFloor() como función
+        
         if (this.cursors.space.isDown && this.oveja.body.onFloor()) {
             this.oveja.setVelocityY(-1100); // Salto
         }

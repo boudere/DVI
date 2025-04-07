@@ -104,7 +104,8 @@
                     "JuegoOveja": [
                         "oveja",
                         "fondo",
-                        "valla"
+                        "valla",
+                        "cielo"
                     ]
                 },
                 "JuegoDiscoteca": {
