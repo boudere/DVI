@@ -8,7 +8,6 @@ class GamesGameObjects extends Phaser.Physics.Arcade.Sprite {
     
     enter() {
         this._add_img();
-
         this._set_colliders();
     }
 

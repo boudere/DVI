@@ -1,6 +1,6 @@
 import GamesGameObjects from "/src/minijuegos/games_game_objects.js";
 
-class Valla extends GamesGameObjects {
+class Suelo extends GamesGameObjects {
     constructor(scene, x, y, texture, size_x, size_y) {
         super(scene, x, y, texture);
 
@@ -10,8 +10,8 @@ class Valla extends GamesGameObjects {
     enter() {
         super.enter();
 
-        this.setVelocityX(-500);
-        this.setGravityY(-600);
+        this.setImmovable(true);
+        this.body.allowGravity = false;
     }
 
     exit() {
@@ -29,6 +29,8 @@ class Valla extends GamesGameObjects {
     _remove_event(event) {
         super._remove_event(event);
     }
+
+    _set_colliders(size_x = 0.8, size_y = 0.8) {}
 }
 
-export default Valla;
+export default Suelo;

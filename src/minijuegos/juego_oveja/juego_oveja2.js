@@ -1,6 +1,8 @@
 import { JUEGO_OVEJA, DATA_INFO, MINIJUEGO_MANAGER } from '/src/data/scene_data.js';
 import Game from '/src/minijuegos/games.js';
 import Oveja from '/src/minijuegos/juego_oveja/game_objects/sprites/ovejas.js';
+import Valla from '/src/minijuegos/juego_oveja/game_objects/sprites/valla.js';
+import Suelo from '/src/minijuegos/juego_oveja/game_objects/sprites/suelo.js';
 
 class JuegoOveja extends Game {
     constructor(sprites) {
@@ -19,53 +21,29 @@ class JuegoOveja extends Game {
         this.OVEJITA_MUSICA = 'ovejitas';
 
         this.started = false;
+        this.vallasSaltadas = 0;
     }
 
 
     create() {
-        this.vallasSaltadas = 0;
-
         this.SCREEN_WIDTH = this.sys.game.canvas.width;
         this.SCREEN_HEIGHT = this.sys.game.canvas.height;
 
-        this.contadorTexto = this.add.text(
-            this.SCREEN_WIDTH - 50, 50,
-            `Saltadas: ${this.vallasSaltadas}`,
-            {
-                fontSize: '40px',
-                fill: '#ffffff',
-                fontFamily: 'Arial'
-            }
-        ).setOrigin(1, 0); // Alineado a la esquina superior derecha
-
-
         this.data_info_scene = this.scene.get(DATA_INFO);
+        
         this.musica = this.sound.add(this.data_info_scene.get_musica(this.OVEJITA_MUSICA), {
             loop: true,
             volume: 1.0
         });
         this.musica.play();
-        //this.animations();
 
-        //CHATGPT, PONERLO BIEN PORFA 
-        // 📌 Crear el suelo en el cuarto inferior de la pantalla
-        let suelo = this.physics.add.sprite(
-            this.SCREEN_WIDTH / 2,
-            this.SCREEN_HEIGHT * 0.95,  // 🔽 Ahora está bien colocado
-            this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.FONDO_IMG)
-        );
-        suelo.setScale(this.SCREEN_WIDTH / 450, (this.SCREEN_HEIGHT * 0.3) / 338);
-        suelo.setImmovable(true);
-        suelo.body.setAllowGravity(false);
-
+        this._crear_suelo();
         this._crearOveja(); 
-
-        // 📌 Asegurar colisión entre la oveja y el suelo
-        this.physics.add.collider(this.oveja, suelo);
+        this._crear_marcador();
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
-        this.vallas = []; //this.physics.add.group();
+        this.vallas = [];
         this.scheduleNextValla();
 
         this.game_created(); // Llamar a la función de escena creada
@@ -74,45 +52,63 @@ class JuegoOveja extends Game {
     enter() {
         super.enter();
         this.oveja.enter();
+        this.suelo.enter();
+
+        this.physics.add.collider(this.oveja, this.suelo);
 
         this.started = true; // Iniciar el juego
+    }
+
+    _crear_suelo() {
+        let x = this.SCREEN_WIDTH / 2;
+        let y = this.SCREEN_HEIGHT * 0.95;
+        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.FONDO_IMG);
+        let scale_x = this.SCREEN_WIDTH / 450;
+        let scale_y = (this.SCREEN_HEIGHT * 0.3) / 338;
+
+        this.suelo = new Suelo(this, x, y, img, scale_x, scale_y);
     }
 
     _crearOveja() {
         let x = 175;
         let y = this.SCREEN_HEIGHT * 0.75 - 100;
-        this.oveja = new Oveja(this, x, y, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OVEJA_IMG), 200 / 626, 200 / 569);
+        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OVEJA_IMG);
+        let scale_x = 200 / 626;
+        let scale_y = 200 / 569;
+
+        this.oveja = new Oveja(this, x, y, img, scale_x, scale_y);
+    }
+
+    _crear_marcador() {
+        this.contadorTexto = this.add.text(
+            this.SCREEN_WIDTH - 50, 50,
+            `Saltadas: ${this.vallasSaltadas}`,
+            {
+                fontSize: '40px',
+                fill: '#ffffff',
+                fontFamily: 'Arial'
+            }).setOrigin(1, 0); // Alineado a la esquina superior derecha
     }
 
     scheduleNextValla() {
         const delay = Phaser.Math.Between(1500, 3000); // entre 2 y 5 segundos
         this.time.delayedCall(delay, () => {
-            this.spawnValla();
+            this._crear_valla();
             this.scheduleNextValla(); // se vuelve a llamar recursivamente
         });
     }
     
+    _crear_valla() {
+        let x = this.SCREEN_WIDTH + 50;
+        let y = this.SCREEN_HEIGHT * 0.75 - 100;
+        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.VALLA_IMG);
+        let scale_x = 350 / 626;
+        let scale_y = 350 / 358;
 
-    spawnValla() {
-        this.valla = this.physics.add.sprite(
-            this.SCREEN_WIDTH,
-            1000,
-            this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.VALLA_IMG)
-        );
-        this.valla.setScale(350 / 626, 350 / 358);
-        this.valla.setVelocityX(-500);
-        this.valla.setGravityY(-600);
+        this.valla = new Valla(this, x, y, img, scale_x, scale_y);
+        this.valla.enter();
+
         this.valla.contada = false;
-
-        this.valla.body.setSize(
-            this.valla.width * 0.8, // 60% del ancho visual
-            this.valla.height * 0.8 // 80% del alto visual
-        );
-        
-        this.valla.body.setOffset(
-            this.valla.width * 0.1, // 10% del ancho visual
-            this.valla.height * 0.1 // 10% del alto visual
-        );
 
         // ✅ Añadir colisión entre oveja y valla
         this.physics.add.collider(this.oveja, this.valla, () => {
@@ -163,14 +159,6 @@ class JuegoOveja extends Game {
                 valla.destroy();
             }
         });
-    }
-
-
-    addObstacle(obstacle) {
-        this.physics.world.enable(obstacle);
-        obstacle.body.setAllowGravity(false);
-        obstacle.body.setImmovable(true);
-        this.physics.add.collider(obstacle, this.floor);
     }
 }
 

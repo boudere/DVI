@@ -46,7 +46,7 @@ class SceneManager extends Managers {
         this.scene.launch(MINIJUEGO_MANAGER);
         this.scenes[MINIJUEGO_MANAGER] = this.scene.get(MINIJUEGO_MANAGER);
         this.currentScene = MINIJUEGO_MANAGER;
-        this.currentSceneData = 'JuegoDiscoteca';
+        this.currentSceneData = 'JuegoOveja';
 
         // cursor manager:
         this.scene.launch(CURSOR_MANAGER);
