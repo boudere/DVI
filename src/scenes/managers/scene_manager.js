@@ -39,14 +39,14 @@ class SceneManager extends Managers {
         // dialogo manager:
         this.scene.launch(DIALOGO_MANAGER);
         this.scenes[DIALOGO_MANAGER] = this.scene.get(DIALOGO_MANAGER);
-        // this.currentScene = DIALOGO_MANAGER;
-        // this.currentSceneData = this.saves_data.Dialogo;
+        this.currentScene = DIALOGO_MANAGER;
+         this.currentSceneData = this.saves_data.Dialogo;
 
         // minijuego manager:
         this.scene.launch(MINIJUEGO_MANAGER);
         this.scenes[MINIJUEGO_MANAGER] = this.scene.get(MINIJUEGO_MANAGER);
-        this.currentScene = MINIJUEGO_MANAGER;
-        this.currentSceneData = 'JuegoOveja';
+        // this.currentScene = MINIJUEGO_MANAGER;
+       // this.currentSceneData = 'JuegoOveja';
 
         // cursor manager:
         this.scene.launch(CURSOR_MANAGER);
