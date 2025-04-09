@@ -1,16 +1,18 @@
-class Food {
+// fruit.js
+
+class Fruit {
     constructor(type, x, y) {
         this.type = type;
         this.x = x;
         this.y = y;
         this.vx = (Math.random() - 0.5) * 4; // Random horizontal velocity
         this.vy = 0; // Vertical velocity
-        this.gravity = 0.5; // Gravity acceleration
+        this.gravity = 0.3; // Gravity acceleration
         this.rotation = 0; // Initial rotation
         this.size = BASE_FRUIT_SIZE * Math.pow(SIZE_INCREASE_RATIO, fruitTypes.indexOf(type));
         this.weight = BASE_FRUIT_WEIGHT * Math.pow(WEIGHT_INCREASE_RATIO, fruitTypes.indexOf(type));
         this.element = document.createElement('div');
-        this.element.className = `food ${type}`;
+        this.element.className = `fruit ${type}`;
         this.element.style.width = `${this.size}px`;
         this.element.style.height = `${this.size}px`;
         this.timeAboveBoard = 0; // New property to track time above board

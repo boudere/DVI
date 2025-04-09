@@ -1,0 +1,195 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../assets/img/minijuegos/food_merge/fondoMinijuegoFood.png');
+}
+
+#game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#next-fruit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#next-fruit-text {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#next-fruit-wrapper {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+}
+
+#next-fruit {
+    border-radius: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#game-and-legend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+#game-container {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 4 / 3;
+    background-color: rgb(255, 238, 218);
+    border: 2px solid #333;
+    position: relative;
+    overflow: hidden;
+}
+
+
+#legend {
+    width: 100%;
+    max-width: 800px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    display:none;
+}
+
+#legend h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+}
+
+.legend-fruit {
+    border-radius: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.fruit {
+    border-radius: 50%;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform-origin: center center;
+}
+
+
+.cherry{background-image: url('../img/cherry.png')}
+
+.cerveza{background-image: url('../assets/img/minijuegos/food_merge/cerve.png')}
+.cafe{background-image: url('../assets/img/minijuegos/food_merge/cafe.png')}
+.magdalena{background-image: url('../assets/img/minijuegos/food_merge/magdalena.png')}
+.croasan{background-image: url('../assets/img/minijuegos/food_merge/croasan.png')}
+.churros{background-image: url('../assets/img/minijuegos/food_merge/churros.png')}
+.donut{background-image: url('../assets/img/minijuegos/food_merge/donut.png')}
+.patatas{background-image: url('../assets/img/minijuegos/food_merge/patatas.png')}
+.huevos{background-image: url('../assets/img/minijuegos/food_merge/huevos.png')}
+.tortilla{background-image: url('../assets/img/minijuegos/food_merge/tortilla.png')}
+.perrito{background-image: url('../assets/img/minijuegos/food_merge/salchichas.png')}
+.quesadilla{background-image: url('../assets/img/minijuegos/food_merge/quesadilla.png')}
+.sandwich{background-image: url('../assets/img/minijuegos/food_merge/sandwich.png')}
+.croquetas{background-image: url('../assets/img/minijuegos/food_merge/croquetas.png')}
+.kebab{background-image: url('../assets/img/minijuegos/food_merge/kebap.png')}
+.Hamburguesa{background-image: url('../assets/img/minijuegos/food_merge/hamburguesa.png')}
+.menu{background-image: url('../assets/img/minijuegos/food_merge/menu.png')}
+
+@media (min-width: 768px) {
+    #game-and-legend {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #game-container {
+        width: 600px;
+        height: 450px;
+    }
+
+    #legend {
+        width: 150px;
+        height: 450px;
+        overflow-y: auto;
+    }
+
+    #legend-items {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (min-width: 1024px) {
+    #game-container {
+        width: 800px;
+        height: 600px;
+    }
+}
+
+#score-container {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px;
+    text-align: center;
+}
+
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+    font-size: 48px; /* Large but not too big */
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 10; /* Make sure it appears above other elements */
+    text-align: center;
+    width: 80%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Optional: Add some shadow */
+}
