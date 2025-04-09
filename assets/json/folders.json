@@ -182,6 +182,14 @@
                 "oveja.png",
                 "valla.png"
               ]
+            },
+            {
+              "name": "juego_parejas",
+              "folders": [],
+              "files": [
+                "reverso.png",
+                "fondo.png"
+              ]
             }
           ],
           "files": []

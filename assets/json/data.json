@@ -116,9 +116,17 @@
                         "fondodisco"
                     ]
                 },
+                "JuegoParejas": {
+                    "Path": "juego_parejas/",
+                    "JuegoParejas": [
+                        "reverso",
+                        "fondo"
+                    ]
+                },
                 "Clases": [
                     "JuegoOveja",
-                    "JuegoDiscoteca"
+                    "JuegoDiscoteca",
+                    "JuegoParejas"
                 ]
             },
             "Cursors": {
