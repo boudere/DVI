@@ -219,6 +219,7 @@ class DataInfo extends Phaser.Scene {
                 break;
             case "JuegoOveja":
             case "JuegoDiscoteca":
+            case "JuegoParejas":
             case "Dialogos":
             case "Cursors":
                 path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path;
@@ -259,6 +260,7 @@ class DataInfo extends Phaser.Scene {
                 break;
             case "JuegoOveja":
             case "JuegoDiscoteca":
+            case "JuegoParejas":
             case "Dialogos":
                 path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path;
                 this.asdasd++;
