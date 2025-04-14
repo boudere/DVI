@@ -3,8 +3,8 @@ import Phaser from 'phaser';
 class GameObjectsSprite extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, nombre_img, size_x, size_y, on_click) {
         super(scene, x, y, nombre_img);
-        this._reset_varaibles();
 
+        this._reset_varaibles();
         this.setScale(size_x, size_y);
         
         // si se peude hacer click
@@ -12,6 +12,7 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
             this._set_events();
             this.on_click = on_click;
         }
+        this._set_main_events();
         
         this.on('destroy', this.before_destroy, this);
     }
@@ -20,7 +21,7 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
         this.isPause = false;
         this.mouse_over = false;
         
-        this.game_object_data =  {}
+        this.game_object_data =  {}     // datos del objeto para la animacion
     }
 
     _add_sprite(animation) {
@@ -49,14 +50,14 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
     
 
     run_tween(animation_data) {
-        // Asignar valores iniciales si están definidos
+        // asignar valores iniciales si están definidos
         if ('alpha_start' in animation_data) this.alpha = animation_data.alpha_start;
         if ('scaleX_start' in animation_data) this.scale = animation_data.scaleX_start;
         if ('scaleY_start' in animation_data) this.scale = animation_data.scaleY_start;
         if ('pos_x_start' in animation_data) this.x = animation_data.pos_x_start;
         if ('pos_y_start' in animation_data) this.y = animation_data.pos_y_start;
     
-        // Construir objeto con solo las props de destino que estén definidas
+        // construir objeto con solo las props de destino que estén definidas
         const tweenProps = {};
         if ('alpha_end' in animation_data) tweenProps.alpha = animation_data.alpha_end;
         if ('scaleX_end' in animation_data) tweenProps.scale = animation_data.scaleX_end;
@@ -64,7 +65,7 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
         if ('pos_x_end' in animation_data) tweenProps.x = animation_data.pos_x_end;
         if ('pos_y_end' in animation_data) tweenProps.y = animation_data.pos_y_end;
     
-        // Aplicar tween
+        // aplicar tween
         return new Promise((resolve) => {
             this.scene.tweens.add({
                 targets: this,
@@ -108,32 +109,42 @@ class GameObjectsSprite extends Phaser.GameObjects.Sprite {
     _stop_animation() {}
 
     _set_events() {
-        this.on('pointerenter', this._mouse_enter, this);
-        this.on('pointerover', this._mouse_over, this);
-        this.on('pointerout', this._mouse_out, this);
-        this.on('pointerupoutside', this._mouse_out, this);
         this.on('pointerdown', this._mouse_down, this);
         this.on('pointerup', this._mouse_up, this);
         this.on('pointermove', this._mouse_move, this);
     }
 
     _remove_events() {
-        this.off('pointerenter', this._mouse_enter, this);
-        this.off('pointerover', this._mouse_over, this);
-        this.off('pointerout', this._mouse_out, this);
-        this.off('pointerupoutside', this._mouse_out, this);
+        this._remove_main_events();
         this.off('pointerdown', this._mouse_down, this);
         this.off('pointerup', this._mouse_up, this);
         this.off('pointermove', this._mouse_move, this);
     }
 
+    _set_main_events() {
+        this.on('pointerover', this._mouse_over, this);
+        this.on('pointerout', this._mouse_out, this);
+        this.on('pointerupoutside', this._mouse_out, this);
+    }
+    
+    _remove_main_events() {
+        this.off('pointerover', this._mouse_over, this);
+        this.off('pointerout', this._mouse_out, this);
+        this.off('pointerupoutside', this._mouse_out, this);
+
+    }
+
     _mouse_enter() { return !this.isPause; }
 
     _mouse_over() {
-        if (this.isPause) return false;
+        let on_click = false;
+        
+        if (this.on_click) { on_click = true; }
+        if (this.nombre) this.scene.cursor_entered(this.nombre, on_click);
+        if (!on_click || this.isPause) return false;
+
         this.mouse_over = true;
         this.setTint(0xdce8ff);
-        if (this.nombre) this.scene.cursor_entered(this.nombre);
         return true;
     }
 

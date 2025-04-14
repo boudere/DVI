@@ -19,6 +19,8 @@ class CuadradoDialogo extends DialogoGameObject {
             'pos_x': this.x,
             'pos_y': this.y,
         }
+
+        // animacion del cuadrado de dialogos al aparecer
         if (animation) {
             this.animation_data = {
                 "animation_1": [

@@ -13,10 +13,15 @@ class DialogoManager extends Managers {
         this.CUADRADO_DIALOGO = 'cuadrado_dialogo';
         this.BUTTON_CUADRADO_DIALOGO = 'boton_dialogo';
 
+        // profundidad de los objetos
         this.BACKGROUND_DEPTH = 0;
         this.PERSONAJE_DEPTH = 1;
         this.CUADRADO_DIALOGO_DEPTH = 3;
+
+        // musica de fondo
         this.PISO_MUSICA = 'tema_inicial';
+        this.MUSIC_VOLUME = 0.1;
+        this.MUSIC_LOOP = true;
     }
 
     _reset_data() {
@@ -32,9 +37,10 @@ class DialogoManager extends Managers {
         this.data_info_scene = this.scene.get(DATA_INFO)
         this.dialogo_data = this.data_info_scene.get_json(this.data_info_scene.data_json.Dialogos);
 
+        //  cargamos la musica de fondo
         this.musica = this.sound.add(this.data_info_scene.get_musica(this.PISO_MUSICA), {
-            loop: true,
-            volume: 0.1
+            loop: this.MUSIC_LOOP,
+            volume: this.MUSIC_VOLUME
         });
 
         this.scene_created();
@@ -61,9 +67,6 @@ class DialogoManager extends Managers {
         if ( this.dialogo_data_selected.opciones ) {
             this._load_buttons(width, height);
         }
-        
-        // this._load_nombre_personaje();
-        // this.total_animations++;
     }
 
     exit() {

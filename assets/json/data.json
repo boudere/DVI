@@ -105,7 +105,9 @@
                         "oveja",
                         "fondo",
                         "valla",
-                        "cielo"
+                        "cielo",
+                        "pantalla_inicio",
+                        "pantalla_final"
                     ]
                 },
                 "JuegoDiscoteca": {

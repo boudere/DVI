@@ -145,7 +145,7 @@ class Animation {
         return this.operation_animation(operations[0], operations[1], operation);
     }
 
-    // Lee una cadena entre delimitadores como {}, [], etc.
+    // lee una cadena entre delimitadores como {}, [], etc.
     readBetween(value, startIndex, endChar) {
         let result = '';
         let i = startIndex;
@@ -156,7 +156,7 @@ class Animation {
         return { result, nextIndex: i + 1 }; // i + 1 para saltar el delimitador de cierre
     }
 
-    // Lee mientras se cumpla una condición, como dígitos o nombre de variable
+    // lee mientras se cumpla una condición, como dígitos o nombre de variable
     readWhile(value, startIndex, conditionRegex) {
         let result = '';
         let i = startIndex;

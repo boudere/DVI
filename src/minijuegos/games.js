@@ -30,6 +30,10 @@ class Games extends Phaser.Scene {
     game_created() {
         this.scene.get(MINIJUEGO_MANAGER).game_created(this.scene.key);
     }
+
+    start_game() {}
+
+    finnish_game() {}
 }
 
 export default Games;

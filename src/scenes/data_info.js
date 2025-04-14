@@ -57,22 +57,6 @@ class DataInfo extends Phaser.Scene {
             this.crear_laoding_screen();
             this.get_number_assets();
             this.load_assets();
-            // setTimeout(() => {
-            //     const clases_img = this.data_imgs.Clases;
-
-            //     clases_img.forEach((clases) => {
-            //         let clases_img2 = this.data_imgs[clases].Clases;
-            //         clases_img2.forEach((clases2) => {
-            //             let imgs = this.data_imgs[clases][clases2][clases2];
-            //             imgs.forEach((name) => {
-            //                 this.load_img3(clases, clases2, name);
-            //             })
-            //         });
-            //     });
-
-            //     this.load_jsons3();
-            //     this.load_musicas3();
-            // }, 2000);
         });
 
         this.load.json(this.json_prefix + folders, this.JSON_PATH + folders + this.data_json.Suffix);
@@ -158,16 +142,6 @@ class DataInfo extends Phaser.Scene {
         });
     }
 
-    load_jsons3() {
-        const jsons = this.data_json.Jsons;
-        jsons.forEach((name) => {
-            this.asdasd++;
-            console.log(this.asdasd, "JSON", name, this.json_prefix + name, this.JSON_PATH + name + this.data_json.Suffix, this.cache.json.exists(this.json_prefix + name))
-        });
-    }
-
-
-
     load_json(name) {
         const json_suffix = this.data_json.Suffix;
         this.load.json(this.json_prefix + name, this.JSON_PATH + name + json_suffix);
@@ -241,60 +215,10 @@ class DataInfo extends Phaser.Scene {
         }
     }
 
-    load_img3(clase, clase2, name) {
-        let path = '';
-        switch (clase2) {
-            case "Backgrounds":
-                path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/";
-                this.asdasd++;
-                console.log(this.asdasd, "Backgrounds", this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/", this.textures.exists(this.get_img(clase, name)))
-                break;
-            case "Personajes":
-                let poses = this.data_imgs[clase][clase2].Poses;
-                poses.forEach((pose) => {
-                    path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/";
-                    this.asdasd++;
-                    console.log(this.asdasd, "Personajes", this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/", this.textures.exists(this.get_img(clase, name + "_" + pose)))
-                });
-                break;
-            case "JuegoOveja":
-            case "JuegoDiscoteca":
-            case "Dialogos":
-                path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path;
-                this.asdasd++;
-                console.log(this.asdasd, "JuegoDiscoteca | JuegoOveja | Dialogos", this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path, this.textures.exists(this.get_img(clase, name)))
-                break;
-            case "Puertas":
-                let lados = this.data_imgs[clase][clase2].Lados;
-                lados.forEach((lado) => {
-                    path = this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/";
-                    this.asdasd++;
-                    console.log(this.asdasd, "Puertas", this.data_imgs[clase].Path + this.data_imgs[clase][clase2].Path + name + "/", this.textures.exists(this.get_img(clase, "puerta_" + lado)))
-                });
-                break;
-            default:
-                console.log("Clase no encontrada");
-                break;
-        }
-    }
-
     load_img2(scene, name, path) {
         const img_suffix = this.data_imgs.Suffix;
         this.load.image(this.img_prefix + scene + "_" + name, this.IMG_PATH + path + name + img_suffix);
     }
-
-
-
-
-    load_musicas3() {
-        const musicas = this.data_musica.Musicas;
-        musicas.forEach((name) => {
-            this.asdasd++;
-            console.log(this.asdasd, "Musica", this.musica_prefix + name, this.MUSICA_PATH + name + this.data_musica.Suffix, this.cache.audio.exists(this.get_musica(name)))
-        });
-    }
-
-
 
     load_musicas() {
         const musicas = this.data_musica.Musicas;
@@ -341,6 +265,41 @@ class DataInfo extends Phaser.Scene {
         }
 
         return this.img_prefix + scene_name + "_" + name;
+    }
+
+    // dentro de tu escena en Phaser (por ejemplo, después de preload)
+    gaurdar_puntuacion(nombre_juego, nueva_puntuacion) {
+        let SAVES = 'saves'
+        // 1. Obtener json desde la caché
+        let data = this.get_json(SAVES);
+        console.log("JSON en caché:", data);
+
+        if (!data) {
+            console.warn("❌ No se encontró el JSON en caché o está mal formado.");
+            return;
+        }
+
+        // 2. Asegurar estructura
+        if (!data.Minijuegos[nombre_juego]) {
+            data.Minijuegos[nombre_juego] = {};
+        }
+
+        // 3. Actualizar puntuación
+        data.Minijuegos[nombre_juego].RecordPuntuacion = nueva_puntuacion;
+
+        // 4. Guardar en disco usando Node.js (modo desarrollo con acceso a fs)
+        const fs = require('fs');
+
+        try {
+            fs.writeFileSync('public/assets/saves.json', JSON.stringify(data, null, 2));
+            console.log("✅ JSON actualizado y guardado correctamente");
+        } catch (err) {
+            console.error("❌ Error al guardar el JSON:", err);
+        }
+
+        // 5. Opcional: volver a ponerlo en caché
+        this.cache.json.remove(SAVES);
+        this.load_json(SAVES)
     }
 }
 

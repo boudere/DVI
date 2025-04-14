@@ -30,7 +30,6 @@ class CursorManager extends Managers {
     }
 
     _update(time, delta) {
-        // Este método se llama automáticamente cada frame
         if (this.can_move) {
             this.scene_manager.move(this.movement_x * delta, this.movement_y * delta);
         }
@@ -51,7 +50,7 @@ class CursorManager extends Managers {
         this.movement_x = 0;
         this.movement_y = 0;
     
-        // Horizontal
+        // horizontal
         if (pointer.x < margin) {
             const factor = (margin - pointer.x) / margin;
             this.movement_x = maxSpeed * factor;
@@ -60,7 +59,7 @@ class CursorManager extends Managers {
             this.movement_x = -maxSpeed * factor;
         }
     
-        // Vertical
+        // vertical
         if (pointer.y < margin) {
             const factor = (margin - pointer.y) / margin;
             this.movement_y = maxSpeed * factor;
@@ -79,8 +78,8 @@ class CursorManager extends Managers {
     _load_background() {
     }
     
-    cursor_entered(name) {
-        this.background.enter(name);
+    cursor_entered(name, on_click) {
+        this.background.enter(name, on_click);
     }
 
     cursor_exited(name) {

@@ -6,11 +6,11 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Lista de carpetas o archivos a ignorar
+// lista de carpetas o archivos a ignorar
 const IGNORE_LIST = ['paginaweb', 'loading_screen', 'folders.json', 'data.json', 'data2.json'];
 
 /**
- * Recorre recursivamente un directorio y devuelve la estructura (carpetas, archivos),
+ * recorre recursivamente un directorio y devuelve la estructura (carpetas, archivos),
  * ignorando los nombres en IGNORE_LIST.
  */
 function getDirectoryStructure(dir) {
@@ -22,7 +22,7 @@ function getDirectoryStructure(dir) {
 
   const items = fs.readdirSync(dir);
   items.forEach((item) => {
-    if (IGNORE_LIST.includes(item)) return; // Ignorar carpeta o archivo
+    if (IGNORE_LIST.includes(item)) return; // ignorar carpeta o archivo
 
     const fullPath = path.join(dir, item);
     const stats = fs.statSync(fullPath);
@@ -37,13 +37,13 @@ function getDirectoryStructure(dir) {
   return result;
 }
 
-// Ruta a explorar
+// ruta a explorar
 const ROOT_DIR = path.join(__dirname, '../../assets/'); 
 
-// Obtenemos estructura
+// obtenemos estructura
 const directoryData = getDirectoryStructure(ROOT_DIR);
 
-// Guarda el JSON en /assets/json/folders.json
+// guarda el JSON en /assets/json/folders.json
 fs.writeFileSync(
   path.join(ROOT_DIR, 'json', 'folders.json'),
   JSON.stringify(directoryData, null, 2),

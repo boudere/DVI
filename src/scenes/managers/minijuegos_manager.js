@@ -1,5 +1,8 @@
 import Managers from "/src/scenes/managers";
-import { MINIJUEGO_MANAGER, SCENE_MANAGER, DIALOGO_MANAGER, DATA_INFO } from "/src/data/scene_data.js";
+import { MINIJUEGO_MANAGER, SCENE_MANAGER, DIALOGO_MANAGER, DATA_INFO, JUEGO_OVEJA, JUEGO_DISCOTECA } from "/src/data/scene_data.js";
+
+import JuegoOveja from '/src/minijuegos/juego_oveja/juego_oveja2.js';
+import JuegoDiscoteca from '/src/minijuegos/juego_discoteca/juego_discoteca';
 
 class MinijuegosManager extends Managers {
     constructor() {
@@ -20,13 +23,17 @@ class MinijuegosManager extends Managers {
         this.start_minigame(scene_data);
     }
 
+    exit() {
+        if (!super.exit()) { return; }
+        this.exit_minigame();
+    }
+
     start_minigame(minigame_name) {
         if (this.current_minigame) {
             this.current_minigame.scene.stop();
         }
-        
-        this.scene.launch(minigame_name);
-        this.current_minigame = this.scene.get(minigame_name);
+
+        this.add_scene_minijuego(minigame_name, this.get_minijuego(minigame_name));
     }
 
     exit_minigame() {
@@ -34,8 +41,6 @@ class MinijuegosManager extends Managers {
             this.current_minigame.scene.stop();
             this.current_minigame = null;
         }
-        
-        this.scene.get(SCENE_MANAGER).resume();
     }
 
     _update() {
@@ -50,6 +55,30 @@ class MinijuegosManager extends Managers {
 
     game_created() {
         this.current_minigame.enter();
+    }
+
+    // añade de manera dinamica las diferentes escenas
+    add_scene_minijuego(scene_key, scene) {
+        // en caso de que la escena ya exista, la elimina y la vuelve a añadir (no deberia de pasar)
+        if (this.scene.get(scene_key)) {
+            this.scene.remove(scene_key);
+        }
+        // añade la escena al scene manager y la lanza
+        this.scene.add(scene_key, scene, false);
+        this.scene.launch(scene_key);
+        
+        this.current_minigame = this.scene.get(scene_key);
+    }
+
+    get_minijuego(minijuego_name) {
+        switch (minijuego_name) {
+            case JUEGO_OVEJA:
+                return JuegoOveja;
+            case JUEGO_DISCOTECA:
+                return JuegoDiscoteca;
+            default:
+                return null;
+        }
     }
 }
 

@@ -11,17 +11,20 @@ class PantallaManager extends Managers {
         super({ key: PANTALLA_MANAGER });
         this.PISO_MUSICA = 'tema_inicial';
 
+        // profundidad de los objetos (para q todo se vea como se tiene q ver)
         this.BACKGROUND_DEPTH = 0;
         this.PUERTAS_DEPTH = 1;
         this.OBJETOS_DEPTH = 1;
         this.NPCS_DEPTH = 2;
         this.PROTA_DEPTH = 3;
 
+        // datos musica
         this.MUSIC_VOLUME = 0.1;
         this.MUSIC_LOOP = true;
 
         this._reset_variables();
 
+        // datos de la escena
         this.interactuables_animations = {};
         this.npcs_array = [];
         this.puertas = [];
@@ -49,6 +52,7 @@ class PantallaManager extends Managers {
 
         this.pantallas_data = this.data_info_scene.get_json(this.data_json.Pantallas);
         
+        // carga de la musica
         this.musica = this.sound.add(this.data_info_scene.get_musica(this.PISO_MUSICA), {
             loop: this.MUSIC_LOOP,
             volume: this.MUSIC_VOLUME
@@ -74,7 +78,7 @@ class PantallaManager extends Managers {
         this.offset_x = new_offset_x;
         this.offset_y = new_offset_y;
     
-        // Aplicar desplazamiento horizontal
+        // aplicar desplazamiento horizontal
         if (realOffsetX !== 0) {
             if (this.background) this.background.x += realOffsetX;
             if (this.prota) this.prota.x += realOffsetX;
@@ -83,7 +87,7 @@ class PantallaManager extends Managers {
             if (this.objetos) this.objetos.forEach((objeto) => objeto.x += realOffsetX);
         }
     
-        // Aplicar desplazamiento vertical
+        // aplicar desplazamiento vertical
         if (realOffsetY !== 0) {
             if (this.background) this.background.y += realOffsetY;
             if (this.prota) this.prota.y += realOffsetY;

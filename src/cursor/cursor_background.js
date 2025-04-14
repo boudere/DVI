@@ -1,6 +1,7 @@
 import GameObjectsSprite from '/src/game_objects_sprite';
 import DialogoMainText from "/src/dialogos/game_objects/text/dialogo_main_text.js";
 
+// agrega el nombre de lo q se está seleccionando
 class CursorBackground extends GameObjectsSprite {
     constructor(scene, x, y, nombre_img) {
         super(scene, x, y, nombre_img, 1, 1);
@@ -10,7 +11,7 @@ class CursorBackground extends GameObjectsSprite {
     }
 
     create() {
-        this.name_text = new DialogoMainText(this.scene, this.x, this.y, this, this.width, "asw", 0, {
+        this.name_text = new DialogoMainText(this.scene, this.x, this.y, this, this.width, " ", 0, {
             fontSize: "24px",
             align: "center"
         }).setOrigin(0.5, 0.5);
@@ -24,14 +25,19 @@ class CursorBackground extends GameObjectsSprite {
         
         this.visible = false;
         this.name_text.visible = false;
+        this.clearTint();
     }
 
-    enter(text) { 
+    enter(text, on_click) { 
         super.enter(); 
 
         this.visible = true;
         this.name_text.visible = true;
         this.name_text.setText(text);
+
+        if (!on_click) {
+            this.setTint(0x888888);
+        }
     }
 
     _update() { super.update(); }

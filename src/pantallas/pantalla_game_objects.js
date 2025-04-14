@@ -77,7 +77,6 @@ class PantallaGameObjects extends GameObjectsSprite {
 
     _mouse_up() { 
         super._mouse_up();
-
         this.scene.signal_click(this.on_click)
  }
 

@@ -16,6 +16,7 @@ class DialogoPersonaje extends DialogoGameObject {
             'pos_y': this.y,
         }
 
+        // animacion del personaje al aparecer
         this.animation_data = {
             "animation_1": [
                 {
@@ -31,8 +32,8 @@ class DialogoPersonaje extends DialogoGameObject {
                 }
             ]
         }
+        
         this.animation = new Animation(this.scene, this.animation_data, 1000);
-
         this.total_animations++;
     }
 

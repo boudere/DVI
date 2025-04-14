@@ -43,8 +43,8 @@ class Managers extends Phaser.Scene {
 
     starting_animation() {}
 
-    cursor_entered(name) {
-        this.scene.get(SCENE_MANAGER).cursor_entered(name);
+    cursor_entered(name, on_click) {
+        this.scene.get(SCENE_MANAGER).cursor_entered(name, on_click);
     }
 
     cursor_exited(name) {

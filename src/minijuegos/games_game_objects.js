@@ -12,7 +12,7 @@ class GamesGameObjects extends Phaser.Physics.Arcade.Sprite {
     }
 
     exit() {
-        // Placeholder for exit logic
+        this.destroy();
     }
 
     _update(time, delta) {

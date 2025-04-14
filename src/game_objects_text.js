@@ -51,7 +51,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         let texto_completo = this.texto;
         let texto_actual = '';
     
-        // Aseguramos que empiece vacío
+        // aseguramos que empiece vacío
         this.setText('');
     
         this.scene.time.addEvent({
@@ -100,28 +100,6 @@ class GameObjectsText extends Phaser.GameObjects.Text {
     _stop_animation() {}
 
     _set_events() {}
-
-    _mouse_enter() { return !this.isPause; }
-
-    _mouse_over() {
-        if (this.isPause) return false;
-        // this.mouse_over = true;
-        // this.setTint(0xdce8ff);
-        return true;
-    }
-
-    _mouse_out() {
-        if (this.isPause) return false;
-        // this.mouse_over = false;
-        // this.clearTint();
-        return true;
-    }
-
-    _mouse_down() { return !this.isPause; }
-
-    _mouse_up() { return !this.isPause; }
-
-    _mouse_move() { return !this.isPause; }
 
     before_destroy() {}
 }

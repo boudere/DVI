@@ -1,5 +1,10 @@
 import Managers from "/src/scenes/managers";
 
+import DialogoManager from '/src/scenes/managers/dialogo_manager.js';
+import CursorManager from '/src/scenes/managers/cursor_manager';
+import MinijuegosManager from '/src/scenes/managers/minijuegos_manager';
+import PantallaManager from '/src/scenes/managers/pantalla_manager.js';
+
 import { SCENE_MANAGER, DATA_INFO, PANTALLA_MANAGER, DIALOGO_MANAGER, MINIJUEGO_MANAGER, CURSOR_MANAGER } from "/src/data/scene_data.js";
 import { SIGNAL_SCENE_CREATED } from "/src/data/signal_data.js";
 
@@ -31,27 +36,41 @@ class SceneManager extends Managers {
 
         // lanza las escenas managers
         // pantalla manager:
-        this.scene.launch(PANTALLA_MANAGER);
-        this.scenes[PANTALLA_MANAGER] = this.scene.get(PANTALLA_MANAGER);
-        this.currentScene = PANTALLA_MANAGER;
-        this.currentSceneData = this.saves_data.Pantalla;
+        // this.add_scene(PANTALLA_MANAGER, PantallaManager, this.saves_data.Pantalla);
+        this.add_scene(PANTALLA_MANAGER, PantallaManager);
 
         // dialogo manager:
-        this.scene.launch(DIALOGO_MANAGER);
-        this.scenes[DIALOGO_MANAGER] = this.scene.get(DIALOGO_MANAGER);
-        this.currentScene = DIALOGO_MANAGER;
-         this.currentSceneData = this.saves_data.Dialogo;
+        // this.add_scene(DIALOGO_MANAGER, DialogoManager, this.saves_data.Dialogo);
+        this.add_scene(DIALOGO_MANAGER, DialogoManager);
 
         // minijuego manager:
-        this.scene.launch(MINIJUEGO_MANAGER);
-        this.scenes[MINIJUEGO_MANAGER] = this.scene.get(MINIJUEGO_MANAGER);
-        // this.currentScene = MINIJUEGO_MANAGER;
-       // this.currentSceneData = 'JuegoOveja';
+        this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager, 'JuegoOveja');
+        // this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager);
 
         // cursor manager:
-        this.scene.launch(CURSOR_MANAGER);
-        this.cursor = this.scene.get(CURSOR_MANAGER)
+        this.add_scene(CURSOR_MANAGER, CursorManager);
+        this.cursor = this.scenes[CURSOR_MANAGER];
         this.cursor.enter(this.cursor_data);
+    }
+
+    // añade de manera dinamica las diferentes escenas
+    add_scene(scene_key, scene, scene_data=null) {
+        // en caso de que la escena ya exista, la elimina y la vuelve a añadir (no deberia de pasar)
+        if (this.scene.get(scene_key)) {
+            this.scene.remove(scene_key);
+        }
+        // añade la escena al scene manager y la lanza
+        this.scene.add(scene_key, scene, false);
+        this.scene.launch(scene_key);
+
+        // la escena manager se añade a la lista de escenas
+        this.scenes[scene_key] = this.scene.get(scene_key);
+
+        // si la escena tiene datos, los asigna a la escena manager
+        if (scene_data) {
+            this.currentScene = scene_key;
+            this.currentSceneData = scene_data;
+        }
     }
 
     // se ejecuta cuando hay un cambio de manaegr
@@ -66,7 +85,6 @@ class SceneManager extends Managers {
     // se ejecuta cuando se termina de crear una escena
     scene_created(scene) {
         if (scene == this.currentScene) {
-            console.log("SceneManager: Scene created: " + this.currentSceneData);
             this.scenes[scene].enter(this.currentSceneData);
         } else {
             this.scenes[scene].exit();
@@ -90,8 +108,8 @@ class SceneManager extends Managers {
     }
 
     // se ejecuta cuando el cursor entra en un objeto
-    cursor_entered(name) {
-        this.cursor.cursor_entered(name);
+    cursor_entered(name, on_click) {
+        this.cursor.cursor_entered(name, on_click);
     }
 
     // se ejecuta cuando el cursor sale de un objeto
