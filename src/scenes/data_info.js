@@ -1,5 +1,6 @@
 import Phaser from "phaser";
 import { DATA_INFO, SCENE_MANAGER, PANTALLA_MANAGER, DIALOGO_MANAGER, MINIJUEGO_MANAGER, CURSOR_MANAGER } from "/src/data/scene_data.js";
+import { cargarProgresoCompleto, guardarProgresoCompleto, cargarRanking, guardarRecordRanking } from '/src/database/save-data.js';
 
 class DataInfo extends Phaser.Scene {
     constructor() {
@@ -267,40 +268,125 @@ class DataInfo extends Phaser.Scene {
         return this.img_prefix + scene_name + "_" + name;
     }
 
-    // dentro de tu escena en Phaser (por ejemplo, después de preload)
-    gaurdar_puntuacion(nombre_juego, nueva_puntuacion) {
-        let SAVES = 'saves'
-        // 1. Obtener json desde la caché
-        let data = this.get_json(SAVES);
-        console.log("JSON en caché:", data);
+    save_firestore_data(data) {
+        this.userId = data.userId;
+        this.userName = data.displayName;
+        this.progreso = data.progreso;
 
-        if (!data) {
-            console.warn("❌ No se encontró el JSON en caché o está mal formado.");
+        this.cargar_datos_usuario();
+        this.cargar_rankings();
+    }
+
+    guardar_puntuacion(nombre_juego, nueva_puntuacion) {     
+        if (!this.userId || !this.progreso) {
+          console.error("⚠️ No hay sesión activa o progreso cargado.");
+          return;
+        }
+        
+        // Crear estructura si no existe
+        if (!this.progreso.Saves) this.progreso.Saves = {};
+        if (!this.progreso.Saves.Minijuegos) this.progreso.Saves.Minijuegos = {};
+        if (!this.progreso.Saves.Minijuegos[nombre_juego]) {
+          this.progreso.Saves.Minijuegos[nombre_juego] = {
+            RecortdPuntuacion: nueva_puntuacion
+          };
+          return
+        }
+
+        // Solo guarda si la nueva puntuación es mejor
+        const anterior = this.progreso.Saves.Minijuegos[nombre_juego].RecortdPuntuacion;
+        if (nueva_puntuacion <= anterior) { return; }
+
+        this.progreso.Saves.Minijuegos[nombre_juego].RecortdPuntuacion = nueva_puntuacion;
+        guardarProgresoCompleto(this.userId, this.progreso);
+        this.actualizar_ranking(nombre_juego, nueva_puntuacion);
+    }
+
+    cargar_datos_usuario() {
+        if (!this.userId) {
+            console.error("⚠️ No hay sesión activa.");
             return;
         }
 
-        // 2. Asegurar estructura
-        if (!data.Minijuegos[nombre_juego]) {
-            data.Minijuegos[nombre_juego] = {};
-        }
-
-        // 3. Actualizar puntuación
-        data.Minijuegos[nombre_juego].RecordPuntuacion = nueva_puntuacion;
-
-        // 4. Guardar en disco usando Node.js (modo desarrollo con acceso a fs)
-        const fs = require('fs');
-
-        try {
-            fs.writeFileSync('public/assets/saves.json', JSON.stringify(data, null, 2));
-            console.log("✅ JSON actualizado y guardado correctamente");
-        } catch (err) {
-            console.error("❌ Error al guardar el JSON:", err);
-        }
-
-        // 5. Opcional: volver a ponerlo en caché
-        this.cache.json.remove(SAVES);
-        this.load_json(SAVES)
+        cargarProgresoCompleto(this.userId).then((progreso) => {
+            if (progreso) {
+                this.progreso = progreso;
+                console.log("✅ Datos de usuario cargados:", this.progreso);
+            } else {
+                console.error("⚠️ No se encontraron datos para el usuario.");
+            }
+        }).catch((error) => {
+            console.error("❌ Error al cargar datos:", error);
+        });
     }
+
+    cargar_rankings() {
+        if (!this.userId) {
+            console.error("⚠️ No hay sesión activa.");
+            return;
+        }
+
+        cargarRanking().then((ranking) => {
+            if (ranking) {
+                this.ranking = ranking;
+                console.log("✅ Rankings cargados:", this.ranking);
+            } else {
+                console.error("⚠️ No se encontraron rankings para el usuario.");
+            }
+        }).catch((error) => {
+            console.error("❌ Error al cargar rankings:", error);
+        });
+    }
+
+    get_datos_usaurio() {
+        return this.progreso.Saves;
+    }
+
+    get_ranking(game_bame) {
+        return this.ranking[game_bame] || null;
+    }
+
+    async actualizar_ranking(nombre_juego, nueva_puntuacion) {
+        if (!this.userId || !this.ranking) {
+            console.error("⚠️ No hay sesión activa o ranking cargado.");
+            return;
+        }
+    
+        // Crear array si no existe
+        if (!this.ranking[nombre_juego]) {
+            console.log("⚠️ No existía ranking para", nombre_juego);
+            this.ranking[nombre_juego] = [];
+        }
+    
+        let rankingActual = this.ranking[nombre_juego];
+    
+        // Eliminar entradas del mismo jugador
+        rankingActual = rankingActual.filter(entry => entry.Nombre !== this.userName);
+    
+        // Añadir nueva puntuación
+        rankingActual.push({ Nombre: this.userName, Puntuacion: nueva_puntuacion });
+    
+        // Ordenar de mayor a menor
+        rankingActual.sort((a, b) => b.Puntuacion - a.Puntuacion);
+    
+        // Limitar a top 10
+        const nuevoRanking = rankingActual.slice(0, 10);
+    
+        // Comparar si ha cambiado
+        const jsonAntiguo = JSON.stringify(this.ranking[nombre_juego]);
+        const jsonNuevo = JSON.stringify(nuevoRanking);
+    
+        if (jsonAntiguo === jsonNuevo) {
+            console.log("🔁 El ranking no ha cambiado, no se guarda.");
+            return;
+        }
+    
+        // Actualizar local y guardar en Firestore
+        this.ranking[nombre_juego] = nuevoRanking;
+        console.log("✅ Ranking actualizado para", nombre_juego);
+        await guardarRecordRanking(nombre_juego, nuevoRanking);
+    }
+    
 }
 
 

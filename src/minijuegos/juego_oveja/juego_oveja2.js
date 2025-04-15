@@ -41,6 +41,9 @@ class JuegoOveja extends Game {
         this.data_info_scene = this.scene.get(DATA_INFO);
 
         this.persoanl_best = this.data_info_scene.get_json('saves').Minijuegos.JuegoOveja.RecortdPuntuacion;
+
+        this.datos_usuario = this.data_info_scene.get_datos_usaurio().Minijuegos.JuegoOveja;
+        this.persoanl_best = this.datos_usuario.RecortdPuntuacion;
         
         this.musica = this.sound.add(this.data_info_scene.get_musica(this.OVEJITA_MUSICA), {
             loop: true,
@@ -84,7 +87,7 @@ class JuegoOveja extends Game {
         this.pantalla_final.exit();
         
         if (this.persoanl_best < this.vallasSaltadas) {
-            this.data_info_scene.gaurdar_puntuacion(this.key, this.vallasSaltadas);
+            this.data_info_scene.guardar_puntuacion(this.scene.key, this.vallasSaltadas);
         }
 
         this.exit();

@@ -39,9 +39,8 @@ class SceneManager extends Managers {
     }
 
     agregar_scenes(data) {
-        this.userId = data.userId;
-        this.userName = data.displayName;
-        this.progreso = data.progreso;
+        this.scene.stop(LOGIN_SCENE);
+        this.data_info_scene.save_firestore_data(data);
 
          // activa la recepcion de señales de creacion de escenas
          this.events.on(SIGNAL_SCENE_CREATED, this.scene_created, this);
@@ -144,6 +143,7 @@ class SceneManager extends Managers {
 
     // se ejecuta constantemente para actualizar la escena manager
     update(time, delta) {
+        if (!this.currentScene) return; // si no hay escena actual, no hace nada
         this.scenes[this.currentScene]._update(time, delta);
         this.cursor._update(time, delta);
     }
