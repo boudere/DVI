@@ -2,6 +2,17 @@
   "name": "assets",
   "folders": [
     {
+      "name": "gif",
+      "folders": [
+        {
+          "name": "minijuegos",
+          "folders": [],
+          "files": []
+        }
+      ],
+      "files": []
+    },
+    {
       "name": "img",
       "folders": [
         {
@@ -115,10 +126,9 @@
                   "name": "prota",
                   "folders": [],
                   "files": [
-                    "prota_alegre.png",
                     "prota_enfado.png",
-                    "prota_normal.png",
-                    "prota_triste.png"
+                    "prota_feliz.png",
+                    "prota_normal.png"
                   ]
                 },
                 {
@@ -141,11 +151,48 @@
           "name": "minijuegos",
           "folders": [
             {
+              "name": "food_merge",
+              "folders": [],
+              "files": [
+                "cafe.png",
+                "cerve.png",
+                "churros.png",
+                "cocina.png",
+                "croasan.png",
+                "croquetas.png",
+                "donut.png",
+                "fondoMinijuegoFood.png",
+                "hamburguesa.png",
+                "huevos.png",
+                "kebap.png",
+                "magdalena.png",
+                "menu.png",
+                "patatas.png",
+                "prioridad.txt",
+                "quesadilla.png",
+                "salchichas.png",
+                "sandwich.png",
+                "tortilla.png"
+              ]
+            },
+            {
+              "name": "juego_discoteca",
+              "folders": [],
+              "files": [
+                "fondodisco.png",
+                "obstaculo.png",
+                "persona.png"
+              ]
+            },
+            {
               "name": "juego_oveja",
               "folders": [],
               "files": [
+                "cielo.png",
                 "fondo.png",
                 "oveja.png",
+                "pantalla_final.png",
+                "pantalla_inicio.png",
                 "valla.png"
               ]
             }
@@ -181,6 +228,13 @@
                 }
               ],
               "files": []
+            },
+            {
+              "name": "movil",
+              "folders": [],
+              "files": [
+                "movil.png"
+              ]
             },
             {
               "name": "objetos",
@@ -269,14 +323,14 @@
       "files": [
         "animation.json",
         "dialogo.json",
-        "pantallas.json",
-        "saves.json"
+        "pantallas.json"
       ]
     },
     {
       "name": "musica",
       "folders": [],
       "files": [
+        "disco.ogg",
         "ovejitas.ogg",
         "tema_inicial.ogg"
       ]

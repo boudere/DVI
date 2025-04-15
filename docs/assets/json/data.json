@@ -104,11 +104,23 @@
                     "JuegoOveja": [
                         "oveja",
                         "fondo",
-                        "valla"
+                        "valla",
+                        "cielo",
+                        "pantalla_inicio",
+                        "pantalla_final"
+                    ]
+                },
+                "JuegoDiscoteca": {
+                    "Path": "juego_discoteca/",
+                    "JuegoDiscoteca": [
+                        "persona",
+                        "obstaculo",
+                        "fondodisco"
                     ]
                 },
                 "Clases": [
-                    "JuegoOveja"
+                    "JuegoOveja",
+                    "JuegoDiscoteca"
                 ]
             },
             "Cursors": {
@@ -166,7 +178,8 @@
 
             "Musicas": [
                 "ovejitas",
-                "tema_inicial"
+                "tema_inicial",
+                "disco"
             ]
         }
     }
