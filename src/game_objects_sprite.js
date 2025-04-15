@@ -1,4 +1,3 @@
-import Phaser from 'phaser';
 
 class GameObjectsSprite extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, nombre_img, size_x, size_y, on_click) {

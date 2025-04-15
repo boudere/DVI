@@ -1,4 +1,3 @@
-import Phaser from 'phaser';
 
 class GameObjectsText extends Phaser.GameObjects.Text {
     constructor(scene, x, y, container, container_width, texto, delay, opciones_entrada = {}) {

@@ -1,4 +1,3 @@
-import Phaser from "phaser";
 
 class GamesGameObjects extends Phaser.Physics.Arcade.Sprite {
     constructor(scene, x, y, texture) {

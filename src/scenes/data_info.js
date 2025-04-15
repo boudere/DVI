@@ -1,4 +1,3 @@
-import Phaser from "phaser";
 import { DATA_INFO, SCENE_MANAGER, PANTALLA_MANAGER, DIALOGO_MANAGER, MINIJUEGO_MANAGER, CURSOR_MANAGER } from "/src/data/scene_data.js";
 import { cargarProgresoCompleto, guardarProgresoCompleto, cargarRanking, guardarRecordRanking } from '/src/database/save-data.js';
 

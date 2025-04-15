@@ -1,4 +1,3 @@
-import Phaser from 'phaser';
 
 import { MINIJUEGO_MANAGER } from '/src/data/scene_data';
 

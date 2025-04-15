@@ -1,4 +1,3 @@
-import Phaser from 'phaser';
 
 class PantallaDefault extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture) {

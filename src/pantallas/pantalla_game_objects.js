@@ -1,4 +1,3 @@
-import Phaser from 'phaser';
 
 import Animation from "/src/utils/animation.js";
 import GameObjectsSprite from '/src/game_objects_sprite';

@@ -1,4 +1,3 @@
-import Phaser from "phaser";
 
 import { SCENE_MANAGER } from "/src/data/scene_data.js";
 import { SIGNAL_SCENE_CREATED } from "/src/data/signal_data.js";

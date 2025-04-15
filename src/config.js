@@ -1,6 +1,5 @@
 // src/config.js
 
-import Phaser from "phaser";
 import SceneManager from '/src/scenes/managers/scene_manager.js';
 import Managers from '/src/scenes/managers.js';
 import DataInfo from '/src/scenes/data_info.js';
