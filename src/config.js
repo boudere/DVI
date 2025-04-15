@@ -1,32 +1,59 @@
-import SceneManager from '/src/scenes/managers/scene_manager.js'; // Importamos la escena ScenePlay
-import Managers from '/src/scenes/managers.js'; // Importamos la escena ScenePlay
-import DataInfo from '/src/scenes/data_info.js'; // Importamos la escena ScenePlay
+// src/config.js
+
 import Phaser from "phaser";
+import SceneManager from '/src/scenes/managers/scene_manager.js';
+import Managers from '/src/scenes/managers.js';
+import DataInfo from '/src/scenes/data_info.js';
 
-// Configuración del juego
-const config = {
-    // Tamaño del canvas
-    width: 1820,
-    height: 1358,
-    
-    // Contenedor del canvas (donde queremos poner el juego en el html)
-    parent: 'juego',
+import { loginGoogle } from '/src/databese/auth.js';
+import { guardarProgresoCompleto, cargarProgresoCompleto } from '/src/database/save-data.js';
+let usuario = null;
+let progreso = {
+  nivel: 1,
+  puntos: 0,
+};
 
-    // Físicas del juego
-    physics: { default: 'arcade', arcade: { gravity: { y: 600 }, debug: false } },
+async function iniciarJuego() {
+  usuario = await loginGoogle();
 
-    // Escenas del juego
-    scene: [
+  if (usuario) {
+    const datos = await cargarProgresoCompleto(usuario.uid);
+    if (datos) {
+      progreso = datos;
+    }
+
+    // Configuración del juego
+    const config = {
+      width: 1820,
+      height: 1358,
+      parent: 'juego',
+
+      physics: {
+        default: 'arcade',
+        arcade: {
+          gravity: { y: 600 },
+          debug: false
+        }
+      },
+
+      scene: [
         DataInfo,
         Managers,
         SceneManager
-    ],
+      ],
 
-    scale: {
-        mode: Phaser.Scale.EXACT_FIT,  // Ajusta el canvas al contenedor sin distorsión
-        autoCenter: Phaser.Scale.CENTER_BOTH  // Centra el juego en la pantalla
-    }
+      scale: {
+        mode: Phaser.Scale.EXACT_FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH
+      }
+    };
+
+    const game = new Phaser.Game(config);
+
+    // Guardamos datos accesibles para todas las escenas
+    game.registry.set('progreso', progreso);
+    game.registry.set('userId', usuario.uid);
+  }
 }
 
-// Creamos el juego con la configuración
-new Phaser.Game(config);
+iniciarJuego();

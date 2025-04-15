@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // lista de carpetas o archivos a ignorar
-const IGNORE_LIST = ['paginaweb', 'loading_screen', 'folders.json', 'data.json', 'data2.json'];
+const IGNORE_LIST = ['paginaweb', 'loading_screen', 'folders.json', 'data.json', 'data2.json', 'saves.json'];
 
 /**
  * recorre recursivamente un directorio y devuelve la estructura (carpetas, archivos),

@@ -2,6 +2,17 @@
   "name": "assets",
   "folders": [
     {
+      "name": "gif",
+      "folders": [
+        {
+          "name": "minijuegos",
+          "folders": [],
+          "files": []
+        }
+      ],
+      "files": []
+    },
+    {
       "name": "img",
       "folders": [
         {
@@ -115,10 +126,9 @@
                   "name": "prota",
                   "folders": [],
                   "files": [
-                    "prota_alegre.png",
                     "prota_enfado.png",
-                    "prota_normal.png",
-                    "prota_triste.png"
+                    "prota_feliz.png",
+                    "prota_normal.png"
                   ]
                 },
                 {
@@ -151,6 +161,7 @@
                 "croasan.png",
                 "croquetas.png",
                 "donut.png",
+                "fondoMinijuegoFood.png",
                 "hamburguesa.png",
                 "huevos.png",
                 "kebap.png",
@@ -180,6 +191,8 @@
                 "cielo.png",
                 "fondo.png",
                 "oveja.png",
+                "pantalla_final.png",
+                "pantalla_inicio.png",
                 "valla.png"
               ]
             }
@@ -215,6 +228,13 @@
                 }
               ],
               "files": []
+            },
+            {
+              "name": "movil",
+              "folders": [],
+              "files": [
+                "movil.png"
+              ]
             },
             {
               "name": "objetos",
@@ -303,8 +323,7 @@
       "files": [
         "animation.json",
         "dialogo.json",
-        "pantallas.json",
-        "saves.json"
+        "pantallas.json"
       ]
     },
     {

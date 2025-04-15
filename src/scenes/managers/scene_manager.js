@@ -5,7 +5,9 @@ import CursorManager from '/src/scenes/managers/cursor_manager';
 import MinijuegosManager from '/src/scenes/managers/minijuegos_manager';
 import PantallaManager from '/src/scenes/managers/pantalla_manager.js';
 
-import { SCENE_MANAGER, DATA_INFO, PANTALLA_MANAGER, DIALOGO_MANAGER, MINIJUEGO_MANAGER, CURSOR_MANAGER } from "/src/data/scene_data.js";
+import LoginScene from '/src/scenes/login_scene.js';
+
+import { SCENE_MANAGER, DATA_INFO, PANTALLA_MANAGER, DIALOGO_MANAGER, MINIJUEGO_MANAGER, CURSOR_MANAGER, LOGIN_SCENE } from "/src/data/scene_data.js";
 import { SIGNAL_SCENE_CREATED } from "/src/data/signal_data.js";
 
 // maneja todas las escenas del juego
@@ -31,26 +33,36 @@ class SceneManager extends Managers {
         this.data_json = this.data.Json;
         this.saves_data = this.data_info_scene.get_json(this.data_json.Saves);
 
-        // activa la recepcion de señales de creacion de escenas
-        this.events.on(SIGNAL_SCENE_CREATED, this.scene_created, this);
+        // añade la escena al scene manager y la lanza
+        this.scene.add(LOGIN_SCENE, LoginScene, false);
+        this.scene.launch(LOGIN_SCENE);
+    }
 
-        // lanza las escenas managers
-        // pantalla manager:
-        // this.add_scene(PANTALLA_MANAGER, PantallaManager, this.saves_data.Pantalla);
-        this.add_scene(PANTALLA_MANAGER, PantallaManager);
+    agregar_scenes(data) {
+        this.userId = data.userId;
+        this.userName = data.displayName;
+        this.progreso = data.progreso;
 
-        // dialogo manager:
-        // this.add_scene(DIALOGO_MANAGER, DialogoManager, this.saves_data.Dialogo);
-        this.add_scene(DIALOGO_MANAGER, DialogoManager);
+         // activa la recepcion de señales de creacion de escenas
+         this.events.on(SIGNAL_SCENE_CREATED, this.scene_created, this);
 
-        // minijuego manager:
-        this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager, 'JuegoOveja');
-        // this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager);
-
-        // cursor manager:
-        this.add_scene(CURSOR_MANAGER, CursorManager);
-        this.cursor = this.scenes[CURSOR_MANAGER];
-        this.cursor.enter(this.cursor_data);
+         // lanza las escenas managers
+         // pantalla manager:
+         // this.add_scene(PANTALLA_MANAGER, PantallaManager, this.saves_data.Pantalla);
+         this.add_scene(PANTALLA_MANAGER, PantallaManager);
+ 
+         // dialogo manager:
+         // this.add_scene(DIALOGO_MANAGER, DialogoManager, this.saves_data.Dialogo);
+         this.add_scene(DIALOGO_MANAGER, DialogoManager);
+ 
+         // minijuego manager:
+         this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager, 'JuegoOveja');
+         // this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager);
+ 
+         // cursor manager:
+         this.add_scene(CURSOR_MANAGER, CursorManager);
+         this.cursor = this.scenes[CURSOR_MANAGER];
+         this.cursor.enter(this.cursor_data);
     }
 
     // añade de manera dinamica las diferentes escenas
