@@ -1,5 +1,40 @@
 {
     "Pantallas": {
+        "prueba_1": {
+            "pantalla": {
+                "nombre": "salon",
+                "puertas": {
+                    "salon_derecha": {
+                        "on_click": null
+                    }
+                }
+            },
+            "prota": {
+                "nombre": "prota",
+                "pose": "normal",
+                "pos_x": 200,
+                "pos_y": 900,
+                "size": 1.6,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "maria",
+                    "pose": "normal",
+                    "pos_x": 580,
+                    "pos_y": 400,
+                    "size": 1.3,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "tutorial80"
+                    },
+                    "animation": null
+                }
+            }
+        },
         "demo_salon_1": {
             "background": "salon",
             "prota": {

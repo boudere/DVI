@@ -168,7 +168,8 @@
                 "dialogo",
                 "pantallas",
                 "saves",
-                "animation"
+                "animation",
+                "pantalla_info"
             ]
         },
         "Musica": {

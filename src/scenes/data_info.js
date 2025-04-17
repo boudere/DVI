@@ -156,6 +156,7 @@ class DataInfo extends Phaser.Scene {
             .split("_")
             .map(word => word.charAt(0).toUpperCase() + word.slice(1))
             .join("");
+        console.log("get_json", this.json_prefix + name);
         return this.cache.json.get(this.json_prefix + name)[name2];
     }
 

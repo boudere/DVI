@@ -1,0 +1,38 @@
+{
+    "PantallaInfo": {
+        "salon": {
+            "background": "salon",
+            "puertas": {
+                "salon_derecha": {
+                    "nombre": "salir",
+                    "pos_x": 1869,
+                    "pos_y": 900,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "demo_habitacion_1",
+                        "direction": "left"
+                    }
+                },
+                "salon_izquierda": {
+                    "nombre": "habitacion",
+                    "pos_x": 54,
+                    "pos_y": 900,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "demo_habitacion_1",
+                        "direction": "left"
+                    }
+                }
+            },
+            "objetos": {}
+        }
+    }
+}

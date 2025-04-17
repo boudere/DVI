@@ -1,7 +1,6 @@
 import Managers from "/src/scenes/managers";
 import PantallaPersoanjes from "/src/pantallas/game_objects/pantalla_personajes";
-import PantallaPuertas from "/src/pantallas/game_objects/pantalla_puertas";
-import PantallaObjetos from "/src/pantallas/game_objects/pantalla_objetos";
+import CreadorPantalla from "/src/pantallas/creador_pantalla.js";
 
 import { PANTALLA_MANAGER , DATA_INFO, SCENE_MANAGER } from "/src/data/scene_data.js";
 
@@ -101,6 +100,8 @@ class PantallaManager extends Managers {
     _load_pantalla(pantalla) {
         this.pantalla_data = this.pantallas_data[pantalla];
 
+        this.creador_pantalla = new CreadorPantalla(this, this.pantalla_data);
+
         const { width, height } = this.sys.game.canvas;
 
         this._load_background();
@@ -133,7 +134,7 @@ class PantallaManager extends Managers {
     // entra en la escena y carga los objetos de la escena
     enter(scene_data) {
         if (!super.enter(scene_data)) return;
-    
+
         if (!this.musica.isPlaying) this.musica.play();
 
         this._reset_variables();
@@ -205,8 +206,7 @@ class PantallaManager extends Managers {
     }
 
     _load_background() {
-        let img = this.data_info_scene.get_img(PANTALLA_MANAGER, this.pantalla_data.background)
-        this.background = this.add.image(0, 0, img).setOrigin(0, 0)
+        this.background = this.creador_pantalla.cargar_fondo();
         this.background.setDepth(this.BACKGROUND_DEPTH);
     }
     _load_npcs() {
@@ -252,23 +252,13 @@ class PantallaManager extends Managers {
             this.puertas.forEach((puerta) => {
                 puerta.destroy();
             });
-        }      
-        let data_puertas = this.pantalla_data.puertas;
+        }
 
-        this.puertas = [];
-        Object.keys(data_puertas).forEach((key) => {
-            let nombre = data_puertas[key].nombre;
-            let pos_x = data_puertas[key].pos_x;
-            let pos_y = data_puertas[key].pos_y;
-            let on_click = data_puertas[key].on_click;
-
-            let img = this.data_info_scene.get_img(PANTALLA_MANAGER, key);
-            let puerta = new PantallaPuertas(this, pos_x, pos_y, img, on_click, nombre).setDepth(this.PUERTAS_DEPTH)
+        this.puertas = this.creador_pantalla.cargar_puertas();
+        this.puertas.forEach((puerta) => {
+            puerta.setDepth(this.PUERTAS_DEPTH);
             puerta.enter();
-
             this.total_animations++;
-
-            this.puertas.push(puerta);
         });
     }
 
@@ -278,21 +268,12 @@ class PantallaManager extends Managers {
                 objeto.destroy();
             });
         }
-        let data_objetos = this.pantalla_data.objetos;
         
-        this.objetos = [];
-        Object.keys(data_objetos).forEach((key) => {
-            let nombre = data_objetos[key].nombre;
-            let pos_x = data_objetos[key].pos_x;
-            let pos_y = data_objetos[key].pos_y;
-            let on_click = data_objetos[key].on_click;
-
-            let img = this.data_info_scene.get_img(PANTALLA_MANAGER, key);
-            let objeto = new PantallaObjetos(this, pos_x, pos_y, img, on_click, nombre);
+        this.objetos = this.creador_pantalla.cargar_objetos();
+        this.objetos.forEach((objeto) => {
             objeto.setDepth(this.OBJETOS_DEPTH);
             objeto.enter();
-
-            this.objetos.push(objeto);
+            this.total_animations++;
         });
     }
 }
