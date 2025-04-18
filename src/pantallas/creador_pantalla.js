@@ -4,13 +4,14 @@ import PantallaObjetos from "/src/pantallas/game_objects/pantalla_objetos";
 
 class CreadorPantalla {
     constructor(scene, pantalla_info) {
-        this.PANTALLA_INFO = "pantalla_info";
-
         this.scene = scene;
         this.extra_info = pantalla_info;
 
         this.data_info_scene = this.scene.scene.get(DATA_INFO);
-        let pantallas_data = this.data_info_scene.get_json(this.PANTALLA_INFO);
+        this.data = this.data_info_scene.get_data_json();
+        this.data_json = this.data.Json;
+
+        let pantallas_data = this.data_info_scene.get_json(this.data_json.PantallaInfo);
         this.selected_pantalla_info = pantallas_data[this.extra_info.pantalla.nombre];
     }
 

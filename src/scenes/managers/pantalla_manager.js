@@ -8,7 +8,7 @@ import { PANTALLA_MANAGER , DATA_INFO, SCENE_MANAGER } from "/src/data/scene_dat
 class PantallaManager extends Managers {
     constructor() {
         super({ key: PANTALLA_MANAGER });
-        this.PISO_MUSICA = 'tema_inicial';
+        this.NOMBRE_MUSICA = 'tema_inicial';
 
         // profundidad de los objetos (para q todo se vea como se tiene q ver)
         this.BACKGROUND_DEPTH = 0;
@@ -16,10 +16,6 @@ class PantallaManager extends Managers {
         this.OBJETOS_DEPTH = 1;
         this.NPCS_DEPTH = 2;
         this.PROTA_DEPTH = 3;
-
-        // datos musica
-        this.MUSIC_VOLUME = 0.1;
-        this.MUSIC_LOOP = true;
 
         this._reset_variables();
 
@@ -50,12 +46,7 @@ class PantallaManager extends Managers {
         this.data_json = this.data.Json;
 
         this.pantallas_data = this.data_info_scene.get_json(this.data_json.Pantallas);
-        
-        // carga de la musica
-        this.musica = this.sound.add(this.data_info_scene.get_musica(this.PISO_MUSICA), {
-            loop: this.MUSIC_LOOP,
-            volume: this.MUSIC_VOLUME
-        });
+        this.personajes_data = this.data_info_scene.get_json(this.data_json.PersonajesInfo);
 
         // avisa q se ha creado la escena
         this.scene_created();
@@ -128,17 +119,14 @@ class PantallaManager extends Managers {
         this.objetos.forEach((objeto) => {
             objeto.exit();
         });
-        this.musica.stop();
     }
 
     // entra en la escena y carga los objetos de la escena
     enter(scene_data) {
         if (!super.enter(scene_data)) return;
 
-        if (!this.musica.isPlaying) this.musica.play();
-
+        this.scene.get(SCENE_MANAGER).play_music(PANTALLA_MANAGER, this.NOMBRE_MUSICA);
         this._reset_variables();
-        
     
         this._load_pantalla(scene_data);
 
@@ -232,19 +220,8 @@ class PantallaManager extends Managers {
     }
 
     _load_personaje(datos) {
-        let nombre = datos.nombre;
-        let pose = datos.pose;
-        let x = datos.pos_x;
-        let y = datos.pos_y;
-        let size = datos.size;
-        let delay = datos.delay;
-        let animation = datos.animation;
-        let on_click = datos.on_click;
-
-        let nombre_img = this.data_info_scene.get_img(PANTALLA_MANAGER, nombre + "_" + pose);
         this.total_animations++;
-
-        return new PantallaPersoanjes(this, x, y, nombre_img, size, delay, animation, on_click, nombre);
+        return new PantallaPersoanjes(this, datos, this.personajes_data);
     }
 
     _load_puertas() {

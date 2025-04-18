@@ -20,8 +20,6 @@ class DialogoManager extends Managers {
 
         // musica de fondo
         this.PISO_MUSICA = 'tema_inicial';
-        this.MUSIC_VOLUME = 0.1;
-        this.MUSIC_LOOP = true;
     }
 
     _reset_data() {
@@ -36,12 +34,6 @@ class DialogoManager extends Managers {
     create() {
         this.data_info_scene = this.scene.get(DATA_INFO)
         this.dialogo_data = this.data_info_scene.get_json(this.data_info_scene.data_json.Dialogos);
-
-        //  cargamos la musica de fondo
-        this.musica = this.sound.add(this.data_info_scene.get_musica(this.PISO_MUSICA), {
-            loop: this.MUSIC_LOOP,
-            volume: this.MUSIC_VOLUME
-        });
 
         this.scene_created();
     }
@@ -83,14 +75,13 @@ class DialogoManager extends Managers {
             this.background.visible = false;
         }
 
-        this.musica.stop(); 
         this._remove_events();
     }
 
     enter(scene_data) {
         if ( !super.enter(scene_data) ) { return; }
         
-        if (!this.musica.isPlaying ) this.musica.play();
+        this.scene.get(SCENE_MANAGER).play_music(DIALOGO_MANAGER, this.PISO_MUSICA);
 
         this.dialogo_data_selected = this.dialogo_data[scene_data];
         

@@ -18,7 +18,6 @@ export async function guardarProgresoCompleto(userId, progreso) {
       ...progreso,
       actualizado: serverTimestamp()
     });
-    console.log("✅ Progreso guardado correctamente");
   } catch (err) {
     console.error("❌ Error al guardar:", err);
   }
@@ -35,7 +34,6 @@ export async function cargarProgresoCompleto(userId) {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      console.log("✅ Progreso cargado correctamente");
       return docSnap.data();
     } else {
       console.log("⚠️ No hay progreso guardado aún.");
@@ -63,7 +61,6 @@ export async function guardarRecordRanking(juegoId, ranking) {
       await updateDoc(docRef, {
         [juegoId]: ranking
       });
-      console.log(`✅ Ranking actualizado para ${juegoId}`);
     } else {
       // Si no existe el documento, crearlo con el campo correcto
       await setDoc(docRef, {
@@ -71,7 +68,6 @@ export async function guardarRecordRanking(juegoId, ranking) {
           [juegoId]: ranking
         }
       });
-      console.log(`📄 Documento creado con ranking para ${juegoId}`);
     }
   } catch (err) {
     console.error("❌ Error al guardar ranking:", err);
@@ -89,7 +85,6 @@ export async function cargarRanking() {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      console.log("✅ Ranking cargado correctamente");
       return docSnap.data() || null;
     } else {
       console.log("⚠️ No hay ranking guardado aún.");

@@ -6,6 +6,7 @@ import MinijuegosManager from '/src/scenes/managers/minijuegos_manager';
 import PantallaManager from '/src/scenes/managers/pantalla_manager.js';
 
 import LoginScene from '/src/scenes/login_scene.js';
+import AudioManager from "/src/scenes/managers/audio_manager";
 
 import { SCENE_MANAGER, DATA_INFO, PANTALLA_MANAGER, DIALOGO_MANAGER, MINIJUEGO_MANAGER, CURSOR_MANAGER, LOGIN_SCENE } from "/src/data/scene_data.js";
 import { SIGNAL_SCENE_CREATED } from "/src/data/signal_data.js";
@@ -26,6 +27,7 @@ class SceneManager extends Managers {
     }
 
     create() {
+        this.audio_manager = new AudioManager(this);
         this.data_info_scene = this.scene.get(DATA_INFO)
 
         // carga los datos de la escena
@@ -158,6 +160,37 @@ class SceneManager extends Managers {
 
     unpause(){
         super.unpause();
+    }
+
+    play_music(key, music_key, config = {}) {
+        if (key != this.currentScene) return; // si la escena no es la actual, no hace nada
+        this.audio_manager.play_music(music_key, config);
+    }
+
+    stop_music(key) {
+        if (key != this.currentScene) return; // si la escena no es la actual, no hace nada
+        this.audio_manager.stop_music();
+    }
+
+    set_music_volume(key, volume) {
+        if (key != this.currentScene) return; // si la escena no es la actual, no hace nada
+        this.audio_manager.set_music_volume(volume);
+    }
+
+    // Efectos de sonido
+    play_SFX(key, sfx_key, config = {}) {
+        if (key != this.currentScene) return; // si la escena no es la actual, no hace nada
+        this.audio_manager.play_SFX(sfx_key, config);
+    }
+
+    stop_all_SFX(key) {
+        if (key != this.currentScene) return; // si la escena no es la actual, no hace nada
+        this.audio_manager.stop_all_SFX();
+    }
+
+    set_SFX_volume(key, volume) {
+        if (key != this.currentScene) return; // si la escena no es la actual, no hace nada
+        this.audio_manager.set_SFX_volume(volume);
     }
 }
 

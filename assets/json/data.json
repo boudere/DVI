@@ -163,13 +163,16 @@
             "Saves": "saves",
             "Folders": "folders",
             "Animation": "animation",
+            "PantallaInfo": "pantalla_info",
+            "PersonajesInfo": "personajes_info",
 
             "Jsons": [
                 "dialogo",
                 "pantallas",
                 "saves",
                 "animation",
-                "pantalla_info"
+                "pantalla_info",
+                "personajes_info"
             ]
         },
         "Musica": {

@@ -6,7 +6,7 @@ import { SCENE_MANAGER, LOGIN_SCENE } from "/src/data/scene_data.js";
 class LoginScene extends Phaser.Scene {
   constructor() {
     super(LOGIN_SCENE);
-  }
+    }
 
   async create() {
     const centerX = this.cameras.main.centerX;
@@ -29,7 +29,6 @@ class LoginScene extends Phaser.Scene {
     // ✅ Comprobar si ya hay sesión activa
     getAuth().onAuthStateChanged(async (user) => {
       if (user) {
-        console.log("🔐 Sesión ya iniciada como:", user.displayName);
         await this.cargarProgresoYEntrar(user);
       }
     });
@@ -88,8 +87,6 @@ class LoginScene extends Phaser.Scene {
     }
     this.loginButton.removeAllListeners('pointerdown');
     this.loginButton.destroy();
-
-    console.log("✅ LoginScene destroyed");
   }
 }
 

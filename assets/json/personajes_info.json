@@ -1,0 +1,33 @@
+{
+    "PersonajesInfo": {
+        "prota": {
+            "nombre": "prota",
+            "img": "prota",
+            "pose": "normal",
+            "pos_x": 800,
+            "pos_y": 800,
+            "size": 1.6,
+            "delay": 100,
+            "animation": {
+                "animation_1": [
+                    {
+                        "type": "fade_in",
+                        "duration": 500
+                    }
+                ]
+            },
+            "on_click": null
+        },
+        "maria": {
+            "nombre": "maria",
+            "img": "maria",
+            "pose": "normal",
+            "pos_x": 800,
+            "pos_y": 800,
+            "size": 1.6,
+            "delay": 0,
+            "animation": null,
+            "on_click": null
+        }
+    }
+}

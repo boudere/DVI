@@ -2,36 +2,27 @@
     "Pantallas": {
         "prueba_1": {
             "pantalla": {
-                "nombre": "salon",
-                "puertas": {
-                    "salon_derecha": {
-                        "on_click": null
-                    }
-                }
+                "nombre": "habitacion"
             },
             "prota": {
                 "nombre": "prota",
-                "pose": "normal",
                 "pos_x": 200,
-                "pos_y": 900,
-                "size": 1.6,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
+                "pos_y": 900
             },
             "npcs": {
                 "npc_1": {
                     "nombre": "maria",
-                    "pose": "normal",
                     "pos_x": 580,
                     "pos_y": 400,
-                    "size": 1.3,
-                    "delay": 0,
                     "on_click": {
                         "scene": "dialogo",
                         "name": "tutorial80"
-                    },
-                    "animation": null
+                    }
+                }
+            },
+            "objetos": {
+                "habitacion_cama": {
+                    "nombre": null
                 }
             }
         },
@@ -39,6 +30,7 @@
             "background": "salon",
             "prota": {
                 "nombre": "prota",
+                "img": "prota",
                 "pose": "normal",
                 "pos_x": 200,
                 "pos_y": 900,
@@ -67,6 +59,7 @@
             "npcs": {
                 "npc_1": {
                     "nombre": "maria",
+                    "img": "maria",
                     "pose": "normal",
                     "pos_x": 580,
                     "pos_y": 400,
@@ -109,12 +102,17 @@
                     }
                 }
             },
-            "objetos": {}
+            "objetos": {
+                "cama": {
+                    "nombre": null
+                }
+            }
         },
         "demo_habitacion_1": {
             "background": "habitacion",
             "prota": {
                 "nombre": "prota",
+                "img": "prota",
                 "pose": "normal",
                 "pos_x": 800,
                 "pos_y": 800,
@@ -153,6 +151,7 @@
             "background": "habitacion",
             "prota": {
                 "nombre": "prota",
+                "img": "prota",
                 "pose": "normal",
                 "pos_x": 800,
                 "pos_y": 800,
@@ -194,6 +193,7 @@
             "background": "pasillo_uni",
             "prota": {
                 "nombre": "prota",
+                "img": "prota",
                 "pose": "normal",
                 "pos_x": 800,
                 "pos_y": 800,
@@ -208,6 +208,7 @@
             "background": "clase_uni_alumnos",
             "prota": {
                 "nombre": "prota",
+                "img": "prota",
                 "pose": "normal",
                 "pos_x": 800,
                 "pos_y": 800,
@@ -222,6 +223,7 @@
             "background": "clase_cafeteria_uni",
             "prota": {
                 "nombre": "prota",
+                "img": "prota",
                 "pose": "normal",
                 "pos_x": 800,
                 "pos_y": 800,
@@ -236,6 +238,7 @@
             "background": "clase_profesor",
             "prota": {
                 "nombre": "prota",
+                "img": "prota",
                 "pose": "normal",
                 "pos_x": 800,
                 "pos_y": 800,

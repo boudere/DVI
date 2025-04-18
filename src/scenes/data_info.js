@@ -156,7 +156,6 @@ class DataInfo extends Phaser.Scene {
             .split("_")
             .map(word => word.charAt(0).toUpperCase() + word.slice(1))
             .join("");
-        console.log("get_json", this.json_prefix + name);
         return this.cache.json.get(this.json_prefix + name)[name2];
     }
 
@@ -311,7 +310,6 @@ class DataInfo extends Phaser.Scene {
         cargarProgresoCompleto(this.userId).then((progreso) => {
             if (progreso) {
                 this.progreso = progreso;
-                console.log("✅ Datos de usuario cargados:", this.progreso);
             } else {
                 console.error("⚠️ No se encontraron datos para el usuario.");
             }
@@ -329,7 +327,7 @@ class DataInfo extends Phaser.Scene {
         cargarRanking().then((ranking) => {
             if (ranking) {
                 this.ranking = ranking;
-                console.log("✅ Rankings cargados:", this.ranking);
+                ("✅ Rankings cargados:", this.ranking);
             } else {
                 console.error("⚠️ No se encontraron rankings para el usuario.");
             }
@@ -377,13 +375,11 @@ class DataInfo extends Phaser.Scene {
         const jsonNuevo = JSON.stringify(nuevoRanking);
     
         if (jsonAntiguo === jsonNuevo) {
-            console.log("🔁 El ranking no ha cambiado, no se guarda.");
             return;
         }
     
         // Actualizar local y guardar en Firestore
         this.ranking[nombre_juego] = nuevoRanking;
-        console.log("✅ Ranking actualizado para", nombre_juego);
         await guardarRecordRanking(nombre_juego, nuevoRanking);
     }
     
