@@ -1,0 +1,71 @@
+{
+    "DialogoCap3":{
+        "cap3_1":{
+            "texto": "(Un día más con clase a las 9 am)",
+            "npc":"prota",
+            "pose": "normal",
+            "fondo": "salon",
+            "opciones":false,
+            "opcion_1":"cap3_2",
+            "texto_1":null,
+            "opcion_2":null,
+            "texto_2":null,
+            "opcion_3":null,
+            "texto_3":null
+        },
+        "cap3_2":{
+            "texto":"Por mucho que remuevas el café no te va a despertar más.",
+            "npc":"samu",
+            "pose":"normal",
+            "fondo":"salon",
+            "opciones":false,
+            "opcion_1":"cap3_3",
+            "texto_1":null,
+            "opcion_2":null,
+            "texto_2":null,
+            "opcion_3":null,
+            "texto_3":null
+        },
+        "cap3_3":{
+            "texto":"No puedo más eh. ¿Tienes clase a las 9?",
+            "npc":"prota",
+            "pose":"normal",
+            "fondo":"salon",
+            "opciones":false,
+            "opcion_1":"cap3_4",
+            "texto_1":null,
+            "opcion_2":null,
+            "texto_2":null,
+            "opcion_3":null,
+            "texto_3":null
+        },
+        "cap3_4":{
+            "texto":"A las 9 y media en realidad. He quedado antes de clase con Montero.",
+            "npc":"samu",
+            "pose":"normal",
+            "fondo":"salon",
+            "opciones":false,
+            "opcion_1":"cap3_5",
+            "texto_1":null,
+            "opcion_2":null,
+            "texto_2":null,
+            "opcion_3":null,
+            "texto_3":null
+        },
+        "cap3_5":{
+            "texto":"Bueno, veo que vas con calma, ¿vienes a primera?",
+            "npc":"maria",
+            "pose":"normal",
+            "fondo":"salon",
+            "opciones":true,
+            "opcion_1":"",
+            "texto_1":null,
+            "opcion_2":null,
+            "texto_2":null,
+            "opcion_3":null,
+            "texto_3":null
+        }
+
+
+    }
+}

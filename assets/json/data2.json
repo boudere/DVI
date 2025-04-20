@@ -74,6 +74,7 @@
             "Extension": ".json",
 
             "Dialogos": "dialogo",
+            "DialogoCap3":"dialogoCap3",
             "Pantallas": "pantallas"
         }
     }
