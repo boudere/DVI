@@ -2,17 +2,6 @@
   "name": "assets",
   "folders": [
     {
-      "name": "gif",
-      "folders": [
-        {
-          "name": "minijuegos",
-          "folders": [],
-          "files": []
-        }
-      ],
-      "files": []
-    },
-    {
       "name": "img",
       "folders": [
         {
@@ -323,7 +312,9 @@
       "files": [
         "animation.json",
         "dialogo.json",
-        "pantallas.json"
+        "pantallas.json",
+        "pantalla_info.json",
+        "personajes_info.json"
       ]
     },
     {

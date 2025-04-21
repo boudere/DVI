@@ -1,13 +1,19 @@
+import { MINIJUEGO_MANAGER, DATA_INFO } from "/src/data/scene_data.js";
 
 class GamesGameObjects extends Phaser.Physics.Arcade.Sprite {
-    constructor(scene, x, y, texture) {
+    constructor(scene, x, y, img_name) {
+        let texture = scene.scene.get(DATA_INFO).get_img(MINIJUEGO_MANAGER, img_name);
+
         super(scene, x, y, texture);
 
+        this._add_img();
+        this._set_colliders();
+
+        this.visible = false;
     }
     
     enter() {
-        this._add_img();
-        this._set_colliders();
+        this.visible = true;
     }
 
     exit() {

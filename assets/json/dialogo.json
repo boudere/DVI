@@ -29,7 +29,7 @@
     "dialogo_3": {
       "texto": "Esto es otra una prueba 2",
       "npc": "prota",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "clase",
       "opciones": false,
       "opcion_1": "FIN",
@@ -120,7 +120,7 @@
     "tutorial5": {
       "texto": "¿Hola? ¿Hay alguien?",
       "npc": "prota",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial6",
@@ -133,7 +133,7 @@
     "tutorial6": {
       "texto": "¡¡Holaa!! ____, ¿no? ¡Estaba esperando a que llegaras!",
       "npc": "maria",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial7",
@@ -185,7 +185,7 @@
     "tutorial10": {
       "texto": "Hola, sí soy ____. He tardado un poco, era la primera vez que cogía el metro y he dado alguna vuelta de más.",
       "npc": "prota",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial11",
@@ -198,7 +198,7 @@
     "tutorial11": {
       "texto": "No te preocupes, te acostumbrarás al principio siempre cuesta. Soy María, tu compañera de piso.",
       "npc": "maria",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial12",
@@ -250,7 +250,7 @@
     "tutorial15": {
       "texto": "Vale, entonces la de la cocina para ti. ¡Vamos!",
       "npc": "maria",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial17",
@@ -263,7 +263,7 @@
     "tutorial16": {
       "texto": "Por si tienes que huir eh. Vamos a verla.",
       "npc": "maria",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial17",
@@ -315,7 +315,7 @@
     "tutorial20": {
       "texto": "La verdad es que es más grande de lo que imaginaba. No he traído muchas cosas para decorar, tendré que ir comprando cosas por aquí.",
       "npc": "prota",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "habitacion",
       "opciones": false,
       "opcion_1": "tutorial21",
@@ -328,7 +328,7 @@
     "tutorial21": {
       "texto": "¡No te preocupes! Cualquier cosa te sirve para darle personalidad a tu habitación. Irás llenando la estantería y seguro que al final hasta te falta sitio.",
       "npc": "maria",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "habitacion",
       "opciones": false,
       "opcion_1": "tutorial22",
@@ -484,7 +484,7 @@
     "tutorial33": {
       "texto": "Hola, sí, me llamo _____. María me había dicho que estábais al llegar.",
       "npc": "prota",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial34",
@@ -497,7 +497,7 @@
     "tutorial34": {
       "texto": "Yo soy Samuel y él es Pepe.",
       "npc": "samuel",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial35",
@@ -510,7 +510,7 @@
     "tutorial35": {
       "texto": "(El más alto de ellos me responde mientras se acerca mirándome de arriba a abajo para finalmente darme dos besos.)",
       "npc": "prota",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial36",
@@ -523,7 +523,7 @@
     "tutorial36": {
       "texto": "(El otro se sienta en la butaca del salón dirigiéndome algún pequeño gesto.)",
       "npc": "prota",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial37",
@@ -549,7 +549,7 @@
     "tutorial38": {
       "texto": "¡Es justo lo que estaba pensando! Ven ____, nos sentaremos en el sofá mientras esperamos a Samu.",
       "npc": "maria",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial39",
@@ -562,7 +562,7 @@
     "tutorial39": {
       "texto": "(Me siento con María en el sofá mientras Samuel va a la cocina, cargando con las bolsas como si solo tuviesen aire dentro, para organizar todo en un pispás.)",
       "npc": "prota",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial40",
@@ -575,7 +575,7 @@
     "tutorial40": {
       "texto": "¿Os parece bien cenar unas pizzas? Las he comprado para celebrar el primer día en el piso y como es domingo supongo que podré permitírmelo.",
       "npc": "samuel",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial41",
@@ -627,7 +627,7 @@
     "tutorial44": {
       "texto": "(Samuel se acerca hasta donde estamos para sentarse a mi lado en el sofá).",
       "npc": "prota",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial45",
@@ -640,7 +640,7 @@
     "tutorial45": {
       "texto": "Bueno _____, nosotros ya nos conocemos, pero queremos saber más sobre ti.",
       "npc": "samuel",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial46",
@@ -692,7 +692,7 @@
     "tutorial49": {
       "texto": "Ingeniería informática en la UCM.",
       "npc": "prota",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial50",
@@ -705,7 +705,7 @@
     "tutorial50": {
       "texto": "¡Qué casualidad yo también estoy haciendo eso! Puede que coincidamos en clase entonces.",
       "npc": "maria",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial51",
@@ -718,7 +718,7 @@
     "tutorial51": {
       "texto": "Pero creía que eras más mayor que yo.",
       "npc": "prota",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial52",
@@ -809,7 +809,7 @@
     "tutorial58": {
       "texto": "En cualquier caso, seguro que nos llevamos bien. No te arrepentirás de tu decisión.",
       "npc": "samuel",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial59",
@@ -822,7 +822,7 @@
     "tutorial59": {
       "texto": "¡Seguro! Además, estarás deseando empezar esta nueva etapa, ¿no?",
       "npc": "maria",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": true,
       "opcion_1": "tutorial60",
@@ -835,7 +835,7 @@
     "tutorial60": {
       "texto": "Si quieres te puedo ayudar con eso.",
       "npc": "samuel",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial63",
@@ -874,7 +874,7 @@
     "tutorial63": {
       "texto": "Aún me parece increíble que vayamos a estudiar lo mismo, ¿cómo es que elegiste informática?",
       "npc": "maria",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": true,
       "opcion_1": "tutorial64",
@@ -900,7 +900,7 @@
     "tutorial65": {
       "texto": "¡Esa es la actitud! Por fin una respuesta en condiciones.",
       "npc": "pepe",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial66",
@@ -965,7 +965,7 @@
     "tutorial70": {
       "texto": "Ea, mi misión aquí ha terminao.",
       "npc": "pepe",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial71",
@@ -1004,7 +1004,7 @@
     "tutorial73": {
       "texto": "Digamos que no es el lápiz más afilado del estuche.",
       "npc": "samuel",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial74",
@@ -1043,7 +1043,7 @@
     "tutorial76": {
       "texto": "Pfff, no se han quemado hemos tenido suerte.",
       "npc": "samuel",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial77",
@@ -1056,7 +1056,7 @@
     "tutorial77": {
       "texto": "Entonces cenamos que ____ tiene que descansar para estar fresca mañana en su primer día.",
       "npc": "maria",
-      "pose": "alegre",
+      "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
       "opcion_1": "tutorial78",

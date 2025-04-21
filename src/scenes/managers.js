@@ -4,12 +4,13 @@ import { SIGNAL_SCENE_CREATED } from "/src/data/signal_data.js";
 
 // esta escena de momento solo lanza la escena de dialogo
 class Managers extends Phaser.Scene {
-    constructor(scene) {
-        super(scene);
+    constructor(scene_key) {
+        super(scene_key);
 
         this.isPause = false;
         this.animations_finished = 0;
         this.total_animations = 0;
+        this.scene_name = scene_key.key;
     }
 
     // se ejecuta al salir de la escena
@@ -52,16 +53,16 @@ class Managers extends Phaser.Scene {
 
     move(offsetX, offsetY, can_move) {}
 
-    play_music(scene_key, key, config={}) {
-        this.scene.get(SCENE_MANAGER).play_music(scene_key, key, config);
+    play_music(key, config={}) {
+        this.scene.get(SCENE_MANAGER).play_music(this.scene_name, key, config);
     }
 
     stop_music(scene_key, key) {
         this.scene.get(SCENE_MANAGER).stop_music(scene_key, key);
     }
 
-    play_sfx(scene_key, key, config={}) {
-        this.scene.get(SCENE_MANAGER).play_sound(scene_key, key, config);
+    play_sfx(key, config={}) {
+        this.scene.get(SCENE_MANAGER).play_sound(this.scene_name, key, config);
     }
 
     stop_sfx(scene_key, key) {

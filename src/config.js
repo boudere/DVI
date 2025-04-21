@@ -1,7 +1,6 @@
 // src/config.js
 
 import SceneManager from '/src/scenes/managers/scene_manager.js';
-import Managers from '/src/scenes/managers.js';
 import DataInfo from '/src/scenes/data_info.js';
 
 const config = {
@@ -13,13 +12,12 @@ const config = {
     default: 'arcade',
     arcade: {
       gravity: { y: 600 },
-      debug: false
+      debug: true
     }
   },
 
   scene: [
     DataInfo,
-    Managers,
     SceneManager
   ],
 

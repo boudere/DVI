@@ -81,7 +81,7 @@ class DialogoManager extends Managers {
     enter(scene_data) {
         if ( !super.enter(scene_data) ) { return; }
         
-        this.scene.get(SCENE_MANAGER).play_music(DIALOGO_MANAGER, this.PISO_MUSICA);
+        this.play_music(this.PISO_MUSICA);
 
         this.dialogo_data_selected = this.dialogo_data[scene_data];
         

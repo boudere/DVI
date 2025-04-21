@@ -1,9 +1,36 @@
 {
     "Pantallas": {
+        "prueba_1": {
+            "pantalla": {
+                "nombre": "habitacion"
+            },
+            "prota": {
+                "nombre": "prota",
+                "pos_x": 200,
+                "pos_y": 900
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "maria",
+                    "pos_x": 580,
+                    "pos_y": 400,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "tutorial80"
+                    }
+                }
+            },
+            "objetos": {
+                "habitacion_cama": {
+                    "nombre": null
+                }
+            }
+        },
         "demo_salon_1": {
             "background": "salon",
             "prota": {
                 "nombre": "prota",
+                "img": "prota",
                 "pose": "normal",
                 "pos_x": 200,
                 "pos_y": 900,
@@ -32,6 +59,7 @@
             "npcs": {
                 "npc_1": {
                     "nombre": "maria",
+                    "img": "maria",
                     "pose": "normal",
                     "pos_x": 580,
                     "pos_y": 400,
@@ -74,12 +102,17 @@
                     }
                 }
             },
-            "objetos": {}
+            "objetos": {
+                "cama": {
+                    "nombre": null
+                }
+            }
         },
         "demo_habitacion_1": {
             "background": "habitacion",
             "prota": {
                 "nombre": "prota",
+                "img": "prota",
                 "pose": "normal",
                 "pos_x": 800,
                 "pos_y": 800,
@@ -118,6 +151,7 @@
             "background": "habitacion",
             "prota": {
                 "nombre": "prota",
+                "img": "prota",
                 "pose": "normal",
                 "pos_x": 800,
                 "pos_y": 800,
@@ -159,6 +193,7 @@
             "background": "pasillo_uni",
             "prota": {
                 "nombre": "prota",
+                "img": "prota",
                 "pose": "normal",
                 "pos_x": 800,
                 "pos_y": 800,
@@ -173,6 +208,7 @@
             "background": "clase_uni_alumnos",
             "prota": {
                 "nombre": "prota",
+                "img": "prota",
                 "pose": "normal",
                 "pos_x": 800,
                 "pos_y": 800,
@@ -187,6 +223,7 @@
             "background": "clase_cafeteria_uni",
             "prota": {
                 "nombre": "prota",
+                "img": "prota",
                 "pose": "normal",
                 "pos_x": 800,
                 "pos_y": 800,
@@ -201,6 +238,7 @@
             "background": "clase_profesor",
             "prota": {
                 "nombre": "prota",
+                "img": "prota",
                 "pose": "normal",
                 "pos_x": 800,
                 "pos_y": 800,

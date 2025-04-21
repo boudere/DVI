@@ -125,7 +125,7 @@ class PantallaManager extends Managers {
     enter(scene_data) {
         if (!super.enter(scene_data)) return;
 
-        this.scene.get(SCENE_MANAGER).play_music(PANTALLA_MANAGER, this.NOMBRE_MUSICA);
+        this.play_music(this.NOMBRE_MUSICA);
         this._reset_variables();
     
         this._load_pantalla(scene_data);

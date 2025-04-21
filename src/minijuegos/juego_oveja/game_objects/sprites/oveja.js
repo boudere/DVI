@@ -1,8 +1,10 @@
 import GamesGameObjects from "/src/minijuegos/games_game_objects.js";
 
 class Oveja extends GamesGameObjects {
-    constructor(scene, x, y, texture, size_x, size_y) {
-        super(scene, x, y, texture);
+    constructor(scene, x, y, size_x, size_y) {
+        let OVEJA_IMG = 'oveja';
+
+        super(scene, x, y, OVEJA_IMG);
 
         this.setScale(size_x, size_y);
     }
@@ -10,13 +12,21 @@ class Oveja extends GamesGameObjects {
     enter() {
         super.enter();
 
-        this.setGravityY(800);
-        this.setBounce(0);
-        this.setCollideWorldBounds(true);;
+        setTimeout(() => {
+            this.setBounce(0);
+            this.set_gravity_force(800);
+            this.setVelocityX(-500);
+        }, 10);
+
+        this._set_colliders(0.7, 0.7);
     }
 
     exit() {
         super.exit();
+    }
+
+    set_gravity_force(gravity) {
+        this.body.setGravityY(gravity);
     }
 
     _update(time, delta) {

@@ -1,17 +1,17 @@
 import GamesGameObjects from "/src/minijuegos/games_game_objects.js";
 
 class Valla extends GamesGameObjects {
-    constructor(scene, x, y, texture, size_x, size_y) {
-        super(scene, x, y, texture);
+    constructor(scene, x, y) {
+        let VALLA_IMG = 'valla';
 
-        this.setScale(size_x, size_y);
+        super(scene, x, y, VALLA_IMG);
+
+        this.body.setAllowGravity(false);
     }
 
     enter() {
         super.enter();
-
-        this.setVelocityX(-500);
-        this.setGravityY(-600);
+        this._set_colliders(0.5, 0.7);
     }
 
     exit() {
