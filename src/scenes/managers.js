@@ -51,6 +51,22 @@ class Managers extends Phaser.Scene {
     }
 
     move(offsetX, offsetY, can_move) {}
+
+    play_music(scene_key, key, config={}) {
+        this.scene.get(SCENE_MANAGER).play_music(scene_key, key, config);
+    }
+
+    stop_music(scene_key, key) {
+        this.scene.get(SCENE_MANAGER).stop_music(scene_key, key);
+    }
+
+    play_sfx(scene_key, key, config={}) {
+        this.scene.get(SCENE_MANAGER).play_sound(scene_key, key, config);
+    }
+
+    stop_sfx(scene_key, key) {
+        this.scene.get(SCENE_MANAGER).stop_sound(scene_key, key);
+    }
 }
 
 export default Managers;

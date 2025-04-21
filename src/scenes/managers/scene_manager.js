@@ -178,19 +178,19 @@ class SceneManager extends Managers {
     }
 
     // Efectos de sonido
-    play_SFX(key, sfx_key, config = {}) {
+    play_sfx(key, sfx_key, config = {}) {
         if (key != this.currentScene) return; // si la escena no es la actual, no hace nada
-        this.audio_manager.play_SFX(sfx_key, config);
+        this.audio_manager.play_sfx(sfx_key, config);
     }
 
-    stop_all_SFX(key) {
+    stop_all_sfx(key) {
         if (key != this.currentScene) return; // si la escena no es la actual, no hace nada
-        this.audio_manager.stop_all_SFX();
+        this.audio_manager.stop_all_sfx();
     }
 
-    set_SFX_volume(key, volume) {
+    set_sfx_volume(key, volume) {
         if (key != this.currentScene) return; // si la escena no es la actual, no hace nada
-        this.audio_manager.set_SFX_volume(volume);
+        this.audio_manager.set_sfx_volume(volume);
     }
 }
 
