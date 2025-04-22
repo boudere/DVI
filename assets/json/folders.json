@@ -116,19 +116,18 @@
                   "name": "pepe",
                   "folders": [],
                   "files": [
-                    "pepe_enfado.png",
                     "pepe_feliz.png",
                     "pepe_normal.png",
-                    "pepe_triste.png"
+                    "pepe_rayado.png"
                   ]
                 },
                 {
                   "name": "prota",
                   "folders": [],
                   "files": [
-                    "prota_enfado.png",
                     "prota_feliz.png",
-                    "prota_normal.png"
+                    "prota_normal.png",
+                    "prota_triste.png"
                   ]
                 },
                 {
