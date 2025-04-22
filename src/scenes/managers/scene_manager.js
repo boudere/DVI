@@ -42,7 +42,8 @@ class SceneManager extends Managers {
     agregar_scenes(data) {
         this.scene.stop(LOGIN_SCENE);
         this.data_info_scene.save_firestore_data(data);
-        this.saves_data = this.data_info_scene.get_datos_usaurio();
+        this.saves_data = this.data_info_scene.get_json(this.data_json.Saves);
+        // this.saves_data = this.data_info_scene.get_datos_usaurio();
 
          // activa la recepcion de señales de creacion de escenas
          this.events.on(SIGNAL_SCENE_CREATED, this.scene_created, this);
