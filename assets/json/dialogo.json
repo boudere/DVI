@@ -2201,7 +2201,7 @@
       "next_scene_id": null
     },
     "cap2004": {
-      "texto": "Aprovecha ahora porque vas a escuchar poco de eso ahora…",
+      "texto": "Aprovecha porque vas a escuchar poco de eso ahora…",
       "npc": "montero",
       "pose": "feliz",
       "fondo": "salon",
@@ -2235,7 +2235,7 @@
     },
     "cap2007": {
       "texto": "¿Y si hacemos una pequeña previa aquí…como la última vez?",
-      "npc": "samuel",
+      "npc": "montero",
       "pose": "feliz",
       "fondo": "salon",
       "opciones": false,

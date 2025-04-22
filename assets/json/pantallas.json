@@ -254,6 +254,33 @@
             "prota": null,
             "npcs": {},
             "change_pantallas_objects": {}
+        },
+        "cap2_1": {
+            "pantalla": {
+                "nombre": "salon"
+            },
+            "prota": {
+                "nombre": "prota",
+                "pos_x": 200,
+                "pos_y": 900
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "maria",
+                    "pos_x": 580,
+                    "pos_y": 400
+                },
+                "npc_2": {
+                    "nombre": "samu",
+                    "pos_x": 580,
+                    "pos_y": 600
+                },
+                "npc_3": {
+                    "nombre": "montero",
+                    "pos_x": 580,
+                    "pos_y": 800
+                }
+            }
         }
     }
 }
