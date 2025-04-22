@@ -14,7 +14,12 @@
                     "Backgrounds": [
                         "habitacion",
                         "salon",
-                        "fin_demo"
+                        "fin_demo",
+                        "clase",
+                        "pasillo",
+                        "cafeteria",
+                        "bares",
+                        "bus"
                     ]
                 },
                 "Personajes": {
@@ -23,7 +28,8 @@
                         "prota",
                         "maria",
                         "pepe",
-                        "samuel"
+                        "samuel",
+                        "montero"
                     ],
                     "Poses": [
                         "normal",
@@ -72,14 +78,16 @@
                         "maria",
                         "none",
                         "pepe",
-                        "samuel"
+                        "samuel",
+                        "montero"
                     ],
                     "Poses": [
                         "normal",
                         "feliz",
                         "triste",
                         "enfado",
-                        "rayado"
+                        "rayado",
+                        "pillin"
                     ]
                 },
                 "Backgrounds": {

@@ -254,6 +254,16 @@
             "prota": null,
             "npcs": {},
             "change_pantallas_objects": {}
+        },
+        "cap2_1": {
+            "pantalla": {
+                "nombre": "bares"
+            },
+            "prota": {
+                "nombre": "prota",
+                "pos_x": 200,
+                "pos_y": 900
+            }
         }
     }
 }

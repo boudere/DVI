@@ -50,7 +50,12 @@
                         "salon",
                         "salon_cocina",
                         "salon_comedor",
-                        "salon_descanso"
+                        "salon_descanso",
+                        "clase",
+                        "pasillo",
+                        "cafeteria",
+                        "bares",
+                        "bus"
                     ]
                 }
             },
@@ -63,7 +68,12 @@
                     "Backgrounds": [
                         "habitacion",
                         "salon",
-                        "fin_demo"
+                        "fin_demo",
+                        "clase",
+                        "pasillo",
+                        "cafeteria",
+                        "bares",
+                        "bus"
                     ]
                 }
             }

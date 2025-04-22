@@ -2,17 +2,6 @@
   "name": "assets",
   "folders": [
     {
-      "name": "gif",
-      "folders": [
-        {
-          "name": "minijuegos",
-          "folders": [],
-          "files": []
-        }
-      ],
-      "files": []
-    },
-    {
       "name": "img",
       "folders": [
         {
@@ -51,6 +40,34 @@
               "name": "backgrounds",
               "folders": [
                 {
+                  "name": "bares",
+                  "folders": [],
+                  "files": [
+                    "bares.png"
+                  ]
+                },
+                {
+                  "name": "bus",
+                  "folders": [],
+                  "files": [
+                    "bus.png"
+                  ]
+                },
+                {
+                  "name": "cafeteria",
+                  "folders": [],
+                  "files": [
+                    "cafeteria.png"
+                  ]
+                },
+                {
+                  "name": "clase",
+                  "folders": [],
+                  "files": [
+                    "clase.png"
+                  ]
+                },
+                {
                   "name": "fin_demo",
                   "folders": [],
                   "files": [
@@ -69,6 +86,13 @@
                   "folders": [],
                   "files": [
                     "negro.png"
+                  ]
+                },
+                {
+                  "name": "pasillo",
+                  "folders": [],
+                  "files": [
+                    "pasillo.png"
                   ]
                 },
                 {
@@ -100,6 +124,24 @@
                     "maria_feliz.png",
                     "maria_normal.png",
                     "maria_triste.png"
+                  ]
+                },
+                {
+                  "name": "marta",
+                  "folders": [],
+                  "files": [
+                    "marta_feliz.png",
+                    "marta_normal.png",
+                    "marta_pillin.png",
+                    "marta_triste.png"
+                  ]
+                },
+                {
+                  "name": "montero",
+                  "folders": [],
+                  "files": [
+                    "montero_feliz.png",
+                    "montero_normal.png"
                   ]
                 },
                 {
