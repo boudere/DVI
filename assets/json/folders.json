@@ -2,6 +2,17 @@
   "name": "assets",
   "folders": [
     {
+      "name": "gif",
+      "folders": [
+        {
+          "name": "minijuegos",
+          "folders": [],
+          "files": []
+        }
+      ],
+      "files": []
+    },
+    {
       "name": "img",
       "folders": [
         {
@@ -85,8 +96,8 @@
                   "name": "maria",
                   "folders": [],
                   "files": [
-                    "maria_alegre.png",
                     "maria_enfado.png",
+                    "maria_feliz.png",
                     "maria_normal.png",
                     "maria_triste.png"
                   ]
@@ -95,8 +106,8 @@
                   "name": "none",
                   "folders": [],
                   "files": [
-                    "none_alegre.png",
                     "none_enfado.png",
+                    "none_feliz.png",
                     "none_normal.png",
                     "none_triste.png"
                   ]
@@ -105,8 +116,8 @@
                   "name": "pepe",
                   "folders": [],
                   "files": [
-                    "pepe_alegre.png",
                     "pepe_enfado.png",
+                    "pepe_feliz.png",
                     "pepe_normal.png",
                     "pepe_triste.png"
                   ]
@@ -124,8 +135,8 @@
                   "name": "samuel",
                   "folders": [],
                   "files": [
-                    "samuel_alegre.png",
                     "samuel_enfado.png",
+                    "samuel_feliz.png",
                     "samuel_normal.png",
                     "samuel_triste.png"
                   ]
@@ -241,8 +252,8 @@
                   "name": "maria",
                   "folders": [],
                   "files": [
-                    "maria_alegre.png",
                     "maria_enfado.png",
+                    "maria_feliz.png",
                     "maria_normal.png",
                     "maria_triste.png"
                   ]
@@ -251,8 +262,8 @@
                   "name": "pepe",
                   "folders": [],
                   "files": [
-                    "pepe_alegre.png",
                     "pepe_enfado.png",
+                    "pepe_feliz.png",
                     "pepe_normal.png",
                     "pepe_triste.png"
                   ]
@@ -261,8 +272,8 @@
                   "name": "prota",
                   "folders": [],
                   "files": [
-                    "prota_alegre.png",
                     "prota_enfado.png",
+                    "prota_feliz.png",
                     "prota_normal.png",
                     "prota_triste.png"
                   ]
@@ -271,8 +282,8 @@
                   "name": "samuel",
                   "folders": [],
                   "files": [
-                    "samuel_alegre.png",
                     "samuel_enfado.png",
+                    "samuel_feliz.png",
                     "samuel_normal.png",
                     "samuel_triste.png"
                   ]
