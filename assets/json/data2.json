@@ -31,15 +31,20 @@
 
                     "Personajes": [
                         "prota",
-                        "veronica",
-                        "maria"
+                        "maria",
+                        "none",
+                        "pepe",
+                        "samuel",
+                        "montero"
                     ],
 
                     "Poses": [
                         "normal",
-                        "alegre",
+                        "feliz",
                         "triste",
-                        "enfado"
+                        "enfado",
+                        "rayado",
+                        "pillin"
                     ]
                 },
                 "Backgrounds": {

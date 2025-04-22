@@ -35,7 +35,9 @@
                         "normal",
                         "feliz",
                         "triste",
-                        "enfado"
+                        "enfado",
+                        "rayado",
+                        "pillin"
                     ]
                 },
                 "Puertas": {
@@ -97,7 +99,12 @@
                         "habitacion",
                         "salon",
                         "fin_demo",
-                        "negro"
+                        "negro",
+                        "clase",
+                        "pasillo",
+                        "cafeteria",
+                        "bares",
+                        "bus"
                     ]
                 },
                 "Clases" : [

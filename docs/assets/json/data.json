@@ -35,7 +35,9 @@
                         "normal",
                         "feliz",
                         "triste",
-                        "enfado"
+                        "enfado",
+                        "rayado",
+                        "pillin"
                     ]
                 },
                 "Puertas": {
@@ -78,13 +80,16 @@
                         "maria",
                         "none",
                         "pepe",
-                        "samuel"
+                        "samuel",
+                        "montero"
                     ],
                     "Poses": [
                         "normal",
                         "feliz",
                         "triste",
-                        "enfado"
+                        "enfado",
+                        "rayado",
+                        "pillin"
                     ]
                 },
                 "Backgrounds": {
@@ -94,7 +99,11 @@
                         "habitacion",
                         "salon",
                         "fin_demo",
-                        "negro"
+                        "negro",
+                        "pasillo",
+                        "cafeteria",
+                        "bares",
+                        "bus"
                     ]
                 },
                 "Clases" : [
