@@ -4,11 +4,12 @@ import DialogoManager from '/src/scenes/managers/dialogo_manager.js';
 import CursorManager from '/src/scenes/managers/cursor_manager';
 import MinijuegosManager from '/src/scenes/managers/minijuegos_manager';
 import PantallaManager from '/src/scenes/managers/pantalla_manager.js';
+import MovilManager from '/src/scenes/managers/movil_manager.js';
 
 import LoginScene from '/src/scenes/login_scene.js';
 import AudioManager from "/src/scenes/managers/audio_manager";
 
-import { SCENE_MANAGER, DATA_INFO, PANTALLA_MANAGER, DIALOGO_MANAGER, MINIJUEGO_MANAGER, CURSOR_MANAGER, LOGIN_SCENE } from "/src/data/scene_data.js";
+import { SCENE_MANAGER, DATA_INFO, PANTALLA_MANAGER, DIALOGO_MANAGER, MINIJUEGO_MANAGER, MOVIL_MANAGER, CURSOR_MANAGER, LOGIN_SCENE } from "/src/data/scene_data.js";
 import { SIGNAL_SCENE_CREATED } from "/src/data/signal_data.js";
 
 // maneja todas las escenas del juego
@@ -16,7 +17,7 @@ class SceneManager extends Managers {
     constructor() {
         super({ key: SCENE_MANAGER });
 
-        this.scenes = {}                // las escemas managers
+        this.scenes = {}                // las escenas managers
         this.currentScene = null;       // la escena actual
         this.currentSceneData = null;   // los datos de la escena actual (necesaria para inicializar la escena)
 
@@ -60,6 +61,9 @@ class SceneManager extends Managers {
         //  this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager, 'JuegoOveja');
          this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager);
  
+         //movil manager:
+         this.add_scene(MOVIL_MANAGER, MovilManager); //no se si asi esta bien 
+
          // cursor manager:
          this.add_scene(CURSOR_MANAGER, CursorManager);
          this.cursor = this.scenes[CURSOR_MANAGER];
@@ -111,10 +115,13 @@ class SceneManager extends Managers {
                 return DIALOGO_MANAGER;
             case "pantalla":
                 return PANTALLA_MANAGER;
-                break;
+                break; //y esto? 
             case "minijuego":
                 return MINIJUEGO_MANAGER;
-                break;
+                break; //y esto? 
+            case "movil":
+                return MOVIL_MANAGER;
+                break; //y esto? 
             default:
                 break;
         }

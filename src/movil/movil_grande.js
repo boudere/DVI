@@ -1,36 +1,35 @@
-import { JUEGO_OVEJA, DATA_INFO, MINIJUEGO_MANAGER } from '/src/data/scene_data.js';
-import Game from '/src/minijuegos/games.js';
+import { MOVIL_GRANDE, DATA_INFO, MOVIL_MANAGER } from '/src/data/scene_data.js';
+/*import Game from '/src/minijuegos/games.js';
 import Oveja from '/src/minijuegos/juego_oveja/game_objects/sprites/ovejas.js';
 import Valla from '/src/minijuegos/juego_oveja/game_objects/sprites/valla.js';
 import Suelo from '/src/minijuegos/juego_oveja/game_objects/sprites/suelo.js';
-import Cielo from '/src/minijuegos/juego_oveja/game_objects/sprites/cielo.js';
+import Cielo from '/src/minijuegos/juego_oveja/game_objects/sprites/movil.js';*/
 import PantallaIncio from '/src/minijuegos/juego_oveja/pantallas/pantalla_inicio.js';
 import PantallaFinal from '/src/minijuegos/juego_oveja/pantallas/pantalla_final.js';
 
-class JuegoOveja extends Game {
+class MovilGrande extends Game {
     constructor(sprites) {  
-        super({ key: JUEGO_OVEJA });
+        super({ key: MOVIL_GRANDE });
 
         sprites = {
-            OVEJA_IMG: 'oveja',
-            VALLA_IMG: 'valla',
+            MOVIL_IMG: 'movil',
+            /*VALLA_IMG: 'valla',
             FONDO_IMG: 'fondo',
-            CIELO_IMG: 'cielo',
+            MOVIL_IMG: 'movil',*/
             PANTALLA_INCIO: 'pantalla_inicio',
             PANTALLA_FINAL: 'pantalla_final'
         }
 
-        this.OVEJA_IMG = sprites.OVEJA_IMG;
-        this.VALLA_IMG = sprites.VALLA_IMG;
+        this.MOVIL_IMG = sprites.MOVIL_IMG;
+       /* this.VALLA_IMG = sprites.VALLA_IMG;
         this.FONDO_IMG = sprites.FONDO_IMG;
-        this.CIELO_IMG = sprites.CIELO_IMG;
+        this.MOVIL_IMG = sprites.MOVIL_IMG;*/
         this.PANTALLA_INCIO = sprites.PANTALLA_INCIO;
         this.PANTALLA_FINAL = sprites.PANTALLA_FINAL;
 
-        this.OVEJITA_MUSICA = 'ovejitas';
+        //this.OVEJITA_MUSICA = 'ovejitas';
 
         this.started = false;
-        this.vallasSaltadas = 0;
     }
 
 
@@ -39,29 +38,21 @@ class JuegoOveja extends Game {
         this.SCREEN_HEIGHT = this.sys.game.canvas.height;
 
         this.data_info_scene = this.scene.get(DATA_INFO);
-
-        this.personal.best = this.data_info_scene.get_json('saves').Minijuegos.JuegoOveja.RecortdPuntuacion;
-
-        this.datos_usuario = this.data_info_scene.get_datos_usaurio().Minijuegos.JuegoOveja;
-        this.personal.best = this.datos_usuario.RecortdPuntuacion;
         
-        this.musica = this.sound.add(this.data_info_scene.get_musica(this.OVEJITA_MUSICA), {
+       /* this.musica = this.sound.add(this.data_info_scene.get_musica(this.OVEJITA_MUSICA), {
             loop: true,
             volume: 1.0
         });
-        this.musica.play();
+        this.musica.play();*/
 
-        this._crear_cielo();
-        this._crear_suelo();
+        this._crear_movil();
+       /* this._crear_suelo();
         this._crearOveja(); 
-        this._crear_marcador();
+        this._crear_marcador();*/
         this._crear_pantalla_inicio();
         this._crear_pantalla_final();
 
-        this.cursors = this.input.keyboard.createCursorKeys();
-
-        this.vallas = [];
-        // this.scheduleNextValla();
+        //this.cursors = this.input.keyboard.createCursorKeys();
 
         this.game_created(); // Llamar a la función de escena creada
     }
@@ -73,40 +64,39 @@ class JuegoOveja extends Game {
 
     start_game() {
         this.pantalla_inicio.exit();
-        this.cielo.enter();
-        this.oveja.enter();
+        this.movil.enter();
+        /*this.oveja.enter();
         this.suelo.enter();
 
-        this.physics.add.collider(this.oveja, this.suelo);
+        this.physics.add.collider(this.oveja, this.suelo);*/
 
-        this.scheduleNextValla(); // Comenzar a crear vallas
         this.started = true; // Iniciar el juego
     }
 
-    finish_game() { //NO SE LE LLAMA
+    finish_game() { //NO SE LE LLAMA EN NINGUN SITIO 
         this.pantalla_final.exit();
         
-        if (this.personal.best < this.vallasSaltadas) {
+        if (this.personal_best < this.vallasSaltadas) {
             this.data_info_scene.guardar_puntuacion(this.scene.key, this.vallasSaltadas);
         }
 
         this.exit();
     }
 
-    _crear_cielo() {
+    _crear_movil() {
         let x = 0;
         let y = 0;
-        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.CIELO_IMG);
+        let img = this.data_info_scene.get_img(MOVIL_MANAGER, this.MOVIL_IMG);
         let scale_x = this.SCREEN_WIDTH / 768;
         let scale_y = this.SCREEN_HEIGHT/ 432;
 
-        this.cielo = new Cielo(this, x, y, img, scale_x, scale_y).setOrigin(0,0);
+        this.movil = new Movil(this, x, y, img, scale_x, scale_y).setOrigin(0,0);
     }
 
-    _crear_suelo() {
+    /*_crear_suelo() {
         let x = this.SCREEN_WIDTH / 2;
         let y = this.SCREEN_HEIGHT * 0.95;
-        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.FONDO_IMG);
+        let img = this.data_info_scene.get_img(MOVIL_MANAGER, this.FONDO_IMG);
         let scale_x = this.SCREEN_WIDTH / 450;
         let scale_y = (this.SCREEN_HEIGHT * 0.3) / 338;
 
@@ -116,17 +106,17 @@ class JuegoOveja extends Game {
     _crearOveja() {
         let x = 175;
         let y = this.SCREEN_HEIGHT * 0.75 - 100;
-        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OVEJA_IMG);
+        let img = this.data_info_scene.get_img(MOVIL_MANAGER, this.MOVIL_IMG);
         let scale_x = 200 / 626;
         let scale_y = 200 / 569;
 
         this.oveja = new Oveja(this, x, y, img, scale_x, scale_y);
-    }
+    }*/
 
     _crear_pantalla_inicio() {
         let x = 0;
         let y = 0;
-        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_INCIO);
+        let img = this.data_info_scene.get_img(MOVIL_MANAGER, this.PANTALLA_INCIO);
 
         this.pantalla_inicio = new PantallaIncio(this, x, y, img);
     }
@@ -134,62 +124,9 @@ class JuegoOveja extends Game {
     _crear_pantalla_final() {
         let x = 0;
         let y = 0;
-        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_FINAL);
+        let img = this.data_info_scene.get_img(MOVIL_MANAGER, this.PANTALLA_FINAL);
 
         this.pantalla_final = new PantallaFinal(this, x, y, img);
-    }
-
-    _crear_marcador() {
-        this.contadorTexto = this.add.text(
-            this.SCREEN_WIDTH - 50, 50,
-            `Saltadas: ${this.vallasSaltadas}`,
-            {
-                fontSize: '40px',
-                fill: '#ffffff',
-                fontFamily: 'Impact'
-            }).setOrigin(1, 0).setDepth(1); // Alineado a la esquina superior derecha
-    }
-
-    scheduleNextValla() {
-        /* DIFICULTAD CONSTANTE
-        const delay = Phaser.Math.Between(1500, 3000); // entre 2 y 5 segundos
-        this.time.delayedCall(delay, () => {
-            this._crear_valla();
-            this.scheduleNextValla(); // se vuelve a llamar recursivamente
-        });
-        */
-        let min = 1500;
-        let max = 3000;
-
-        // reduce tiempo de aparición con cada valla saltada
-        min = Math.max(600, 1500 - this.vallasSaltadas * 50);  
-        max = Math.max(1200, 3000 - this.vallasSaltadas * 60); 
-
-        const delay = Phaser.Math.Between(min, max);
-
-        this.time.delayedCall(delay, () => {
-            this._crear_valla();
-            this.scheduleNextValla();
-        });
-    }
-    
-    _crear_valla() {
-        let x = this.SCREEN_WIDTH + 50;
-        let y = this.SCREEN_HEIGHT * 0.75 - 50;
-        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.VALLA_IMG);
-        let scale_x = 300 / 626;
-        let scale_y = 300 / 358;
-
-        this.valla = new Valla(this, x, y, img, scale_x, scale_y);
-        this.valla.enter();
-
-        this.valla.contada = false;
-
-        // Añadir colisión entre oveja y valla
-        this.physics.add.collider(this.oveja, this.valla, this.choque_function, null, this);
-
-
-        this.vallas.push(this.valla);
     }
 
 
@@ -242,7 +179,7 @@ class JuegoOveja extends Game {
             this.pantalla_final.enter(this.vallasSaltadas);
 
             this.oveja.exit();
-            this.cielo.destroy()
+            this.movil.destroy()
             this.vallas.forEach((valla) => {
                 valla.exit();
             });
