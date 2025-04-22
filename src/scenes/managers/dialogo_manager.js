@@ -34,6 +34,8 @@ class DialogoManager extends Managers {
     create() {
         this.data_info_scene = this.scene.get(DATA_INFO)
         this.dialogo_data = this.data_info_scene.get_json(this.data_info_scene.data_json.Dialogos);
+        this.opciones_dialogo_data = this.data_info_scene.get_json(this.data_info_scene.data_json.OpcionesDialogo);
+        this.variables_dialogo_data = this.data_info_scene.get_json(this.data_info_scene.data_json.VariablesDialogo);
 
         this.scene_created();
     }
@@ -84,6 +86,10 @@ class DialogoManager extends Managers {
         this.play_music(this.PISO_MUSICA);
 
         this.dialogo_data_selected = this.dialogo_data[scene_data];
+        this.opciones_dialogo_data_selected = null;
+        if (this.dialogo_data_selected && this.dialogo_data_selected.opciones) {
+            this.opciones_dialogo_data_selected = this.opciones_dialogo_data[this.dialogo_data_selected.next_id];
+        }
         
         this.animate = this.dialogo_data_selected.npc != this.npc;
         this.npc = this.dialogo_data_selected.npc;
@@ -194,8 +200,8 @@ class DialogoManager extends Managers {
         let x = this.cuadrado_dialogo.x + (this.cuadrado_dialogo.width / 2 * this.cuadrado_dialogo.SCALE);
         let y = this.cuadrado_dialogo.y - (this.cuadrado_dialogo.height / 2 * this.cuadrado_dialogo.SCALE);
         this.buttons_index = 1;
-        while (this.buttons_index <= 3 && this.dialogo_data_selected["texto_" + this.buttons_index]) {
-            let button = new ButtonCuadradoDialogo(this, x, y, img, this.dialogo_data_selected["texto_" + this.buttons_index], this.dialogo_data_selected["opcion_" + this.buttons_index] , true);
+        while (this.buttons_index <= 3 && this.opciones_dialogo_data_selected["texto_" + this.buttons_index]) {
+            let button = new ButtonCuadradoDialogo(this, x, y, img, this.opciones_dialogo_data_selected["texto_" + this.buttons_index], this.opciones_dialogo_data_selected["opcion_" + this.buttons_index] , true);
             button.setDepth(this.CUADRADO_DIALOGO_DEPTH + 1);
 
             this.buttons_index++;
@@ -216,12 +222,12 @@ class DialogoManager extends Managers {
 
     _mouse_up() {
         if (this.animation_finished && !this.dialogo_data_selected.opciones) {
-            if (this.dialogo_data_selected.opcion_1 != 'FIN') {
-                this.enter(this.dialogo_data_selected.opcion_1);
+            if (this.dialogo_data_selected.next_id != 'FIN' && !this.dialogo_data_selected.opciones) {
+                this.enter(this.dialogo_data_selected.next_id);
             } else {  
                 let on_click = {
-                    scene: this.dialogo_data_selected.texto_1,
-                    name: this.dialogo_data_selected.opcion_2
+                    scene: this.dialogo_data_selected.next_scene_type,
+                    name: this.dialogo_data_selected.next_scene_id
                 };
                 
                 this.scene.get(SCENE_MANAGER).signal_click(on_click);

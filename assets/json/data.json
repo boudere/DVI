@@ -161,6 +161,8 @@
             "Suffix": ".json",
 
             "Dialogos": "dialogo",
+            "OpcionesDialogo": "opciones_dialogo",
+            "VariablesDialogo": "variables_dialogo",
             "Pantallas": "pantallas",
             "Saves": "saves",
             "Folders": "folders",
@@ -170,6 +172,8 @@
 
             "Jsons": [
                 "dialogo",
+                "opciones_dialogo",
+                "variables_dialogo",
                 "pantallas",
                 "saves",
                 "animation",

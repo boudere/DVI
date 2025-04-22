@@ -33,7 +33,6 @@ class SceneManager extends Managers {
         // carga los datos de la escena
         this.data = this.data_info_scene.get_data_json();
         this.data_json = this.data.Json;
-        this.saves_data = this.data_info_scene.get_json(this.data_json.Saves);
 
         // añade la escena al scene manager y la lanza
         this.scene.add(LOGIN_SCENE, LoginScene, false);
@@ -43,6 +42,7 @@ class SceneManager extends Managers {
     agregar_scenes(data) {
         this.scene.stop(LOGIN_SCENE);
         this.data_info_scene.save_firestore_data(data);
+        this.saves_data = this.data_info_scene.get_datos_usaurio();
 
          // activa la recepcion de señales de creacion de escenas
          this.events.on(SIGNAL_SCENE_CREATED, this.scene_created, this);
@@ -53,12 +53,12 @@ class SceneManager extends Managers {
          this.add_scene(PANTALLA_MANAGER, PantallaManager);
  
          // dialogo manager:
-         // this.add_scene(DIALOGO_MANAGER, DialogoManager, this.saves_data.Dialogo);
-         this.add_scene(DIALOGO_MANAGER, DialogoManager);
+         this.add_scene(DIALOGO_MANAGER, DialogoManager, this.saves_data.Dialogo);
+        //  this.add_scene(DIALOGO_MANAGER, DialogoManager);
  
          // minijuego manager:
-         this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager, 'JuegoOveja');
-        //  this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager);
+        //  this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager, 'JuegoOveja');
+         this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager);
  
          // cursor manager:
          this.add_scene(CURSOR_MANAGER, CursorManager);

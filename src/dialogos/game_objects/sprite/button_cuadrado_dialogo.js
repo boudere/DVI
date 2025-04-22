@@ -23,6 +23,11 @@ class ButtonCuadradoDialogo extends DialogoGameObject {
             'pos_y': this.y,
         }
 
+        this.on_click = {
+            "scene": "dialogo",
+            "name": this.next_text,
+        }
+
         // animacion del boton al aparecer
         if (animation) {
             this.animation_data = {
@@ -98,11 +103,6 @@ class ButtonCuadradoDialogo extends DialogoGameObject {
     }
 
     _mouse_up() {
-        this.on_click = {
-            "scene": "dialogo",
-            "name": this.next_text,
-        }
-
         super._mouse_up();
     }
 }

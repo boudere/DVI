@@ -182,6 +182,8 @@
                 "oveja.png",
                 "pantalla_final.png",
                 "pantalla_inicio.png",
+                "prota1.png",
+                "prota2.png",
                 "valla.png"
               ]
             }
@@ -312,9 +314,11 @@
       "files": [
         "animation.json",
         "dialogo.json",
+        "opciones_dialogo.json",
         "pantallas.json",
         "pantalla_info.json",
-        "personajes_info.json"
+        "personajes_info.json",
+        "variables_dialogo.json"
       ]
     },
     {

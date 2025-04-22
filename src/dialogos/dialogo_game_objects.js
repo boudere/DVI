@@ -5,7 +5,7 @@ class DialogoGameObjects extends GameObjectsSprite {
     constructor(scene, x, y, nombre_img, delay) {
         super(scene, x, y, nombre_img, 1, 1);
 
-        this.delauy = delay;
+        this.delay = delay;
     }
 
     _reset_varaibles() { super._reset_varaibles(); }
