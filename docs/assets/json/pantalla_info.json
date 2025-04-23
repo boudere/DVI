@@ -64,6 +64,11 @@
                     "on_click": null
                 }
             }
+        },
+        "bares": {
+            "background": "bares",
+            "puertas": {},
+            "objetos": {}
         }
     }
 }

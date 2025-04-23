@@ -2943,7 +2943,7 @@
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
-      "next_id": "minjuego_discoteca",
+      "next_id": "FIN",
       "var_id": null,
       "next_scene_type": "pantalla",
       "next_scene_id": "minijuego_discoteca"

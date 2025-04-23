@@ -68,7 +68,21 @@
         "bares": {
             "background": "bares",
             "puertas": {},
-            "objetos": {}
+            "objetos": {
+                "puerta_disco": {
+                    "nombre": "entrar_disco",
+                    "pos_x": 800,
+                    "pos_y": 800,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "minijuego",
+                        "name": "JuegoDiscoteca"
+                    }
+                }
+            }
         }
     }
 }
