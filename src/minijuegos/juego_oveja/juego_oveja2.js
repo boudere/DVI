@@ -110,8 +110,8 @@ class JuegoOveja extends Game {
     _crear_cielo() {
         let x = 0;
         let y = 0;
-        let scale_x = this.SCREEN_WIDTH / 768;
-        let scale_y = this.SCREEN_HEIGHT/ 432;
+        let scale_x = 1;
+        let scale_y = 1;
 
         this.cielo = new Cielo(this, x, y, scale_x, scale_y).setOrigin(0,0);
     }
@@ -128,10 +128,8 @@ class JuegoOveja extends Game {
     _crear_oveja() {
         let x = this.SCREEN_WIDTH + 100;
         let y = this.SCREEN_HEIGHT * 0.78;
-        let scale_x = 0.85;
-        let scale_y = 0.85;
 
-        let oveja = new Oveja(this, x, y, scale_x, scale_y);
+        let oveja = new Oveja(this, x, y);
         oveja.enter();
         this.ovejas.push(oveja);
         this.ovejaGroup.add(oveja);
@@ -141,7 +139,7 @@ class JuegoOveja extends Game {
         let x = 650;
         let y = this.SCREEN_HEIGHT * 0.65;
 
-        this.prota = new Prota(this, x, y, 1, 1);
+        this.prota = new Prota(this, x, y);
     }
     
     _crear_valla() {

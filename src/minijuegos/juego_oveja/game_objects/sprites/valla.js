@@ -11,7 +11,7 @@ class Valla extends GamesGameObjects {
 
     enter() {
         super.enter();
-        this._set_colliders(0.5, 0.7);
+        this._set_colliders(0.45, 0.65);
     }
 
     exit() {
