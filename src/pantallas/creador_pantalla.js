@@ -16,8 +16,21 @@ class CreadorPantalla {
     }
 
     cargar_fondo() {
-        let img = this.data_info_scene.get_img(PANTALLA_MANAGER, this.selected_pantalla_info.background);
-        let background = this.scene.add.image(0, 0, img).setOrigin(0, 0);
+        let imgKey = this.data_info_scene.get_img(PANTALLA_MANAGER, this.selected_pantalla_info.background);
+        let background = this.scene.add.image(0, 0, imgKey).setOrigin(0, 0);
+    
+        // Obtener dimensiones del canvas y de la imagen
+        let canvasWidth = this.scene.scale.width;
+        let canvasHeight = this.scene.scale.height;
+        let imgWidth = background.width;
+        let imgHeight = background.height;
+    
+        // Calcular escala para que ocupe todo el canvas
+        let scale = canvasHeight / imgHeight;
+    
+        // Aplicar escala
+        background.setScale(scale);
+    
         return background;
     }
 
