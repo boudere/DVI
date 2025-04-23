@@ -18,6 +18,9 @@ class CreadorPantalla {
     cargar_fondo() {
         let img = this.data_info_scene.get_img(PANTALLA_MANAGER, this.selected_pantalla_info.background);
         let background = this.scene.add.image(0, 0, img).setOrigin(0, 0);
+        
+        background.setSize(1.2, 1.2);
+
         return background;
     }
 

@@ -196,6 +196,7 @@ class PantallaManager extends Managers {
     _load_background() {
         this.background = this.creador_pantalla.cargar_fondo();
         this.background.setDepth(this.BACKGROUND_DEPTH);
+        this.background.setSize(1.2, 1.2);
     }
     _load_npcs() {
         if (this.npcs_array.length > 0) {
