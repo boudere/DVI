@@ -205,6 +205,7 @@ class PantallaManager extends Managers {
             });
         }
         this.npcs_array = [];
+        if (!this.pantalla_data.npcs) return;
         let pantalla_data_npcs = this.pantalla_data.npcs;
         
         Object.keys(pantalla_data_npcs).forEach((key) => {

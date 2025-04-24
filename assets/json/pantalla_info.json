@@ -68,10 +68,12 @@
         "bares": {
             "background": "bares",
             "puertas": {},
+            "npcs": {},
             "objetos": {
                 "puerta_disco": {
-                    "nombre": "entrar_disco",
-                    "pos_x": 800,
+                    "nombre": "entrar disco",
+                    "img": "habitacion_cama",
+                    "pos_x": 1000,
                     "pos_y": 800,
                     "size_x": 1,
                     "size_y": 1,

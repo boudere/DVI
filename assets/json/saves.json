@@ -1,15 +1,8 @@
 {
     "Saves": {
         "Pantalla": "cap2_1",
-        "Dialogo": "cap2000",
+        "Dialogo": "cap2071",
         "Minijuegos": {
-        },
-        "Pantalla": "cap2_2",
-        "Dialogo": "cap2039",
-        "Minijuegos": {
-            "JuegoDiscoteca": {
-                "RecortdPuntuacion": -2
-            }
         }
     }
 }

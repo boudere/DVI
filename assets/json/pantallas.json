@@ -257,7 +257,7 @@
         },
         "cap2_1": {
             "pantalla": {
-                "nombre": "bares"
+                "nombre": "habitacion"
             },
             "prota": {
                 "nombre": "prota",
@@ -266,7 +266,9 @@
             }
         },
         "minijuego_discoteca": {
-            "background": "bares",
+            "pantalla": {
+                "nombre": "bares"
+            },
             "prota": {
                 "nombre": "prota",
                 "img": "prota",
@@ -277,23 +279,6 @@
                 "delay": 0,
                 "animation": null,
                 "on_click": null
-            },
-            "npcs": {},
-            "puertas": {},
-            "objetos": {
-                "puerta_disco": {
-                    "nombre": "entrar_disco",
-                    "pos_x": 300,
-                    "pos_y": 800,
-                    "size_x": 1,
-                    "size_y": 1,
-                    "delay": 0,
-                    "animation": null,
-                    "on_click": {
-                        "scene": "minijuego",
-                        "name": "JuegoDiscoteca"
-                    }
-                }
             }
         }
     }
