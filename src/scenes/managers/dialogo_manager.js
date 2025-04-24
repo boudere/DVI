@@ -161,7 +161,7 @@ class DialogoManager extends Managers {
         }
         
         let img = this.data_info_scene.get_img(DIALOGO_MANAGER, this.dialogo_data_selected.fondo);
-        this.background = this.add.image(0, 0, img).setOrigin(0, 0)
+        this.background = this.add.image(0, 0, img).setOrigin(0, 0);
         this.background.setDepth(this.BACKGROUND_DEPTH);
         
         let canvasHeight = this.scale.height;
@@ -169,7 +169,7 @@ class DialogoManager extends Managers {
     
         // Calcular escala para que ocupe todo el canvas
         let scale = canvasHeight / imgHeight;
-        this.background.setSize(scale);
+        this.background.setScale(scale);
     }
 
     _load_cuadrado_dialogo(width, height) {
