@@ -1,7 +1,10 @@
 import { JUEGO_DISCOTECA, DATA_INFO, MINIJUEGO_MANAGER } from '/src/data/scene_data.js';
 import Game from '/src/minijuegos/games.js';
 import Persona from '/src/minijuegos/juego_discoteca/game_objects/sprites/persona.js';
-import Obstaculo from '/src/minijuegos/juego_discoteca/game_objects/sprites/obstaculo.js';
+//import Obstaculo from '/src/minijuegos/juego_discoteca/game_objects/sprites/obstaculo.js';
+import Fondo from '/src/minijuegos/juego_discoteca/game_objects/sprites/fondo.js';
+import PantallaInicio from '/src/minijuegos/juego_discoteca/pantallas/pantalla_inicio.js';
+//import PantallaFinal from '/src/minijuegos/juego_discoteca/pantallas/pantalla_final.js';
 
 class JuegoDiscoteca extends Game {
     constructor(sprites) {
@@ -10,12 +13,16 @@ class JuegoDiscoteca extends Game {
         sprites = {
             PERSONA_IMG: 'persona',
             OBSTACULO_IMG: 'obstaculo',
-            FONDO_IMG: 'fondodisco'
+            FONDO_IMG: 'fondodisco',
+            PANTALLA_INICIO: 'pantalla_inicio',
+           // PANTALLA_FINAL: 'pantalla_final'
         }
 
         this.PERSONA_IMG = sprites.PERSONA_IMG;
         this.OBSTACULO_IMG = sprites.OBSTACULO_IMG;
         this.FONDO_IMG = sprites.FONDO_IMG;
+        this.PANTALLA_INICIO = sprites.PANTALLA_INICIO;
+       // this.PANTALLA_FINAL = sprites.PANTALLA_FINAL;
 
         this.DISCOTECA_MUSICA = 'disco';
 
@@ -23,6 +30,8 @@ class JuegoDiscoteca extends Game {
         this.personaheight = 1024;
         this.obstaculowidth = 1024;
         this.obstaculoheight = 1024;
+        this.fondowidth = 612;
+        this.fondoheight = 408;
 
         this.started = false;
     }
@@ -34,6 +43,44 @@ class JuegoDiscoteca extends Game {
         this.SCREEN_WIDTH = this.sys.game.canvas.width;
         this.SCREEN_HEIGHT = this.sys.game.canvas.height;
 
+        this.data_info_scene = this.scene.get(DATA_INFO);
+
+        //BASE DE DATOS PARA EL RECORD
+        this.scene.get(MINIJUEGO_MANAGER).play_music(this.DISCOTECA_MUSICA);
+        
+        this.obstaculos = []; 
+
+        this._crear_fondo();
+        this._crear_persona();
+        this._crear_marcador();
+        this._crear_pantalla_inicio();
+        //this._crear_pantalla_final();
+
+        this.cursors = this.input.keyboard.createCursorKeys();
+
+        this.input.on('pointerdown', () => {
+            if (!this.started) return;
+            this.persona.setVelocityY(-600); 
+        });
+        
+        
+        this.game_created(); // Llamar a la función de escena creada
+    }
+
+    enter() {
+        super.enter();
+        this.pantalla_inicio.enter();
+    }
+
+    start_game() {
+        this.pantalla_inicio.exit();
+        this.fondo.enter();
+        this.persona.enter();
+        this._next_obstaculo();
+        this.started = true; // Iniciar el juego
+    }
+
+    _crear_marcador(){
         this.contadorTexto = this.add.text(
             this.SCREEN_WIDTH - 50, 50,
             `Puntuación: ${this.obstaculossaltados}`,
@@ -43,56 +90,41 @@ class JuegoDiscoteca extends Game {
                 fontFamily: 'Impact'
             }
         ).setOrigin(1, 0).setDepth(1); 
-
-        this.data_info_scene = this.scene.get(DATA_INFO);
-        this.musica = this.sound.add(this.data_info_scene.get_musica(this.DISCOTECA_MUSICA), {
-            loop: true,
-            volume: 1.0
-        });
-        this.musica.play();
-
-        let fondo = this.physics.add.sprite(
-            0,
-            0,
-            this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.FONDO_IMG)
-        ).setOrigin(0,0);
-        fondo.setScale(this.SCREEN_WIDTH / fondo.width, this.SCREEN_HEIGHT/ fondo.height);
-        fondo.setImmovable(true);
-        fondo.body.setAllowGravity(false);
-
-        this._crearPersona(); 
-
-        this.cursors = this.input.keyboard.createCursorKeys();
-
-        this.obstaculos = []; 
-        this.scheduleNextObstaculo();
-
-        this.game_created(); // Llamar a la función de escena creada
     }
 
-    enter() {
-        super.enter();
-        this.persona.enter();
-
-        this.started = true; // Iniciar el juego
+    _crear_fondo(){
+        let x = 0;
+        let y = 0;
+        let scale_x = this.SCREEN_WIDTH / this.fondowidth;
+        let scale_y = this.SCREEN_HEIGHT / this.fondoheight;
+        
+        this.fondo = new Fondo(this, x, y, scale_x, scale_y).setOrigin(0,0);
     }
 
-    _crearPersona() {
+    _crear_persona() {
         let x = 175;
         let y = this.SCREEN_HEIGHT * 0.5;
-        this.persona = new Persona(this, x, y, this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PERSONA_IMG), 200 / this.personawidth, 200 / this.personaheight);
+        this.persona = new Persona(this, x, y, 200 / this.personawidth, 200 / this.personaheight);
     }
 
-    scheduleNextObstaculo() {
+    _crear_pantalla_inicio() {
+        let x = 0;
+        let y = 0;
+        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_INICIO);
+
+        this.pantalla_inicio = new PantallaInicio(this, x, y, img);
+    }
+
+    _next_obstaculo() {
         const delay = Phaser.Math.Between(1500, 3000); // entre 2 y 5 segundos
         this.time.delayedCall(delay, () => {
-            this.spawnObstaculo();
-            this.scheduleNextObstaculo(); 
+            this._spawn_obstaculo();
+            this._next_obstaculo(); 
         });
     }
     
 
-    spawnObstaculo() {
+    _spawn_obstaculo() {
         
         let hueco = 300; // tamaño del hueco
         let ancho = 350; // ancho del tubo
@@ -156,7 +188,7 @@ class JuegoDiscoteca extends Game {
             // Detener física y temporizadores
             this.physics.pause();            
             this.time.removeAllEvents();   
-            this.musica.stop();         
+            this.scene.get(MINIJUEGO_MANAGER).stop_music(this.DISCOTECA_MUSICA);         
 
             const textoGameOver = this.add.text(
                 this.SCREEN_WIDTH / 2,
@@ -177,7 +209,7 @@ class JuegoDiscoteca extends Game {
             // Detener física y temporizadores
             this.physics.pause();           
             this.time.removeAllEvents();    
-            this.musica.stop();           
+            this.scene.get(MINIJUEGO_MANAGER).stop_music(this.DISCOTECA_MUSICA);          
 
             const textoGameOver = this.add.text(
                 this.SCREEN_WIDTH / 2,
@@ -200,10 +232,6 @@ class JuegoDiscoteca extends Game {
         if (!this.started) { return; } // Evitar que se ejecute antes de iniciar el juego
         if (this.persona.body.blocked.down) {
             this.persona.setVelocityY(0);
-        }
-
-        if (Phaser.Input.Keyboard.JustDown(this.cursors.space)) {
-            this.persona.setVelocityY(-600); 
         }
 
         this.obstaculos.forEach((obstaculo) => {

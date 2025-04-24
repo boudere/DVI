@@ -1,18 +1,18 @@
 import GamesGameObjects from "/src/minijuegos/games_game_objects.js";
 
-class Obstaculo extends GamesGameObjects {
-    constructor(scene, x, y, texture, size_x, size_y) {
-        super(scene, x, y, texture);
+class Fondo extends GamesGameObjects {
+    constructor(scene, x, y, size_x, size_y) {
+        let FONDO_IMG = 'fondodisco';
+
+        super(scene, x, y, FONDO_IMG);
 
         this.setScale(size_x, size_y);
+        this.body.setAllowGravity(false);
+
     }
 
     enter() {
         super.enter();
-
-        this.setGravityY(800);
-        this.setBounce(0);
-        this.setCollideWorldBounds(true);
     }
 
     exit() {
@@ -30,6 +30,8 @@ class Obstaculo extends GamesGameObjects {
     _remove_event(event) {
         super._remove_event(event);
     }
+
+    _set_colliders(size_x = 0.8, size_y = 0.8) {}
 }
 
-export default Obstaculo;
+export default Fondo;

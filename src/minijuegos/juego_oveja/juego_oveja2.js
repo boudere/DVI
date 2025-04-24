@@ -5,7 +5,7 @@ import Valla from '/src/minijuegos/juego_oveja/game_objects/sprites/valla.js';
 import Suelo from '/src/minijuegos/juego_oveja/game_objects/sprites/suelo.js';
 import Cielo from '/src/minijuegos/juego_oveja/game_objects/sprites/cielo.js';
 import Prota from '/src/minijuegos/juego_oveja/game_objects/sprites/prota.js';
-import PantallaIncio from '/src/minijuegos/juego_oveja/pantallas/pantalla_inicio.js';
+import PantallaInicio from '/src/minijuegos/juego_oveja/pantallas/pantalla_inicio.js';
 import PantallaFinal from '/src/minijuegos/juego_oveja/pantallas/pantalla_final.js';
 
 class JuegoOveja extends Game {
@@ -13,7 +13,7 @@ class JuegoOveja extends Game {
         super({ key: JUEGO_OVEJA });
 
         sprites = {
-            PANTALLA_INCIO: 'pantalla_inicio',
+            PANTALLA_INICIO: 'pantalla_inicio',
             PANTALLA_FINAL: 'pantalla_final'
         }
 
@@ -21,7 +21,7 @@ class JuegoOveja extends Game {
         this.VALLA_IMG = sprites.VALLA_IMG;
         this.FONDO_IMG = sprites.FONDO_IMG;
         this.CIELO_IMG = sprites.CIELO_IMG;
-        this.PANTALLA_INCIO = sprites.PANTALLA_INCIO;
+        this.PANTALLA_INICIO = sprites.PANTALLA_INICIO;
         this.PANTALLA_FINAL = sprites.PANTALLA_FINAL;
 
         this.OVEJITA_MUSICA = 'ovejitas';
@@ -153,9 +153,9 @@ class JuegoOveja extends Game {
     _crear_pantalla_inicio() {
         let x = 0;
         let y = 0;
-        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_INCIO);
+        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_INICIO);
 
-        this.pantalla_inicio = new PantallaIncio(this, x, y, img);
+        this.pantalla_inicio = new PantallaInicio(this, x, y, img);
     }
 
     _crear_pantalla_final() {

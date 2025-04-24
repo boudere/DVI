@@ -1,6 +1,6 @@
 import PantallaDefault from "/src/minijuegos/pantalla_default";
 
-class PantallaIncioDefault extends PantallaDefault {
+class PantallaInicioDefault extends PantallaDefault {
     constructor(scene, x, y, texture) {
         super(scene, x, y, texture);
     }
@@ -10,4 +10,4 @@ class PantallaIncioDefault extends PantallaDefault {
     }
 }
 
-export default PantallaIncioDefault;
+export default PantallaInicioDefault;
