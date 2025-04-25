@@ -4,11 +4,12 @@ import DialogoManager from '/src/scenes/managers/dialogo_manager.js';
 import CursorManager from '/src/scenes/managers/cursor_manager';
 import MinijuegosManager from '/src/scenes/managers/minijuegos_manager';
 import PantallaManager from '/src/scenes/managers/pantalla_manager.js';
+import AfinidadDialogoManager from "/src/scenes/managers/afinidad_dialogo_manager";
 
 import LoginScene from '/src/scenes/login_scene.js';
 import AudioManager from "/src/scenes/managers/audio_manager";
 
-import { SCENE_MANAGER, DATA_INFO, PANTALLA_MANAGER, DIALOGO_MANAGER, MINIJUEGO_MANAGER, CURSOR_MANAGER, LOGIN_SCENE } from "/src/data/scene_data.js";
+import { SCENE_MANAGER, DATA_INFO, PANTALLA_MANAGER, DIALOGO_MANAGER, MINIJUEGO_MANAGER, CURSOR_MANAGER, AFINIDAD_DIALOGO_MANAGER, LOGIN_SCENE } from "/src/data/scene_data.js";
 import { SIGNAL_SCENE_CREATED } from "/src/data/signal_data.js";
 
 // maneja todas las escenas del juego
@@ -60,6 +61,8 @@ class SceneManager extends Managers {
          // minijuego manager:
          this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager, 'JuegoOveja');
         //  this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager);
+
+        this.add_scene(AFINIDAD_DIALOGO_MANAGER, AfinidadDialogoManager);
  
          // cursor manager:
          this.add_scene(CURSOR_MANAGER, CursorManager);
