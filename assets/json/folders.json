@@ -271,6 +271,13 @@
                   ]
                 },
                 {
+                  "name": "mapa",
+                  "folders": [],
+                  "files": [
+                    "mapa.png"
+                  ]
+                },
+                {
                   "name": "salon",
                   "folders": [],
                   "files": [

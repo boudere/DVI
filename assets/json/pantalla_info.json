@@ -69,12 +69,12 @@
             "background": "bares",
             "puertas": {
                 "bares_izquierda": {
-                    "nombre": "casa",
+                    "nombre": "mapa",
                     "img": "bares_izquierda",
                     "pos_x": 54,
                     "pos_y": 900,
-                    "size_x": 200,
-                    "size_y": 800,
+                    "size_x": 1,
+                    "size_y": 1,
                     "on_click":null
                 }
             },
@@ -83,7 +83,7 @@
                 "puerta_disco": {
                     "nombre": "entrar disco",
                     "img": "puerta_disco",
-                    "pos_x": 1000,
+                    "pos_x": 1750,
                     "pos_y": 800,
                     "size_x": 1,
                     "size_y": 1,
