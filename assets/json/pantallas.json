@@ -287,6 +287,79 @@
                 "on_click": null
             }
         },
+        "salon_1": {
+            "pantalla": {
+                "nombre": "salon_1"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            },
+            "puertas": {
+                "salon_derecha": {
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "mapa_1",
+                        "direction": "right"
+                    }
+                },
+                "salon_izquierda": {
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "habitacion_1",
+                        "direction": "left"
+                    }
+                }
+            }
+        },
+        "habitacion_1": {
+            "pantalla": {
+                "nombre": "habitacion_1"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            },
+            "puertas": {
+                "habitacion_derecha": {
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "salon_1",
+                        "direction": "right"
+                    }
+                }
+            }
+        },
+        "mapa_1":{
+            "pantalla": {
+                "nombre": "mapa_1"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -100000,
+                "pos_y": -100000,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            }
+        },
         "minijuego_discoteca": {
             "pantalla": {
                 "nombre": "bares"

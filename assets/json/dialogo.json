@@ -2382,10 +2382,10 @@
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "cap2039",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "salon_1"
     },
     "cap2016": {
       "texto": "Aquí nos lo pasamos bien siempre eh",
@@ -2635,10 +2635,10 @@
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "cap2039",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "salon"
     },
     "cap2039": {
       "texto": "Bueno pues ya estamos a ver qué se cuece por aquí",
