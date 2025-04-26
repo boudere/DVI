@@ -95,7 +95,7 @@ class SceneManager extends Managers {
         this.scenes[this.currentScene].exit();
         this.currentScene = this._get_next_scene(on_click.scene);
 
-        this.scenes[this.currentScene].enter(on_click.name);
+        this.scenes[this.currentScene].enter(on_click);
 
     }
 
@@ -115,10 +115,10 @@ class SceneManager extends Managers {
                 return DIALOGO_MANAGER;
             case "pantalla":
                 return PANTALLA_MANAGER;
-                break;
             case "minijuego":
                 return MINIJUEGO_MANAGER;
-                break;
+            case "afinidad_dialogo":
+                return AFINIDAD_DIALOGO_MANAGER;
             default:
                 break;
         }
