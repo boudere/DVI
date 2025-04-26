@@ -1,4 +1,4 @@
-
+import { DATA_INFO } from "/src/data/scene_data.js";
 class GameObjectsText extends Phaser.GameObjects.Text {
     constructor(scene, x, y, container, container_width, texto, delay, opciones_entrada = {}) {
         // opciones por defecto para el Text
@@ -23,7 +23,6 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         
         this.setOrigin(0, 0);
         this.setDepth(container.depth + 1); // para que se vea por encima del contenedor
-
         this.on('destroy', this.before_destroy, this);
 
         setTimeout(() => {
@@ -52,11 +51,14 @@ class GameObjectsText extends Phaser.GameObjects.Text {
     
         // aseguramos que empiece vacío
         this.setText('');
+        let rate = 1.5;
     
         this.scene.time.addEvent({
             delay: 30,
             callback: () => {
                 texto_actual += texto_completo.charAt(i);
+                rate = this.cambiar_pitch(rate);
+                this.scene.play_sfx('dialogo', { rate: rate });
                 this.setText(texto_actual);
                 i++;
     
@@ -66,6 +68,15 @@ class GameObjectsText extends Phaser.GameObjects.Text {
             },
             repeat: texto_completo.length - 1
         });
+    }
+
+    cambiar_pitch(pitch) {
+        let max = 1.5;
+        let min = 0.5;
+        // suma o resta un valor aleatorio entre -0.05 y 0.05 a la pitch
+        pitch += Phaser.Math.FloatBetween(-0.05, 0.05);
+        pitch = Phaser.Math.Clamp(pitch, min, max);
+        return pitch;
     }
     
     run_tween(animation_data) {}

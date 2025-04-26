@@ -361,8 +361,13 @@
       "name": "musica",
       "folders": [],
       "files": [
+        "dialogo.ogg",
         "disco.ogg",
         "ovejitas.ogg",
+        "tecla1.ogg",
+        "tecla2.ogg",
+        "tecla3.ogg",
+        "tecla4.ogg",
         "tema_inicial.ogg"
       ]
     }
