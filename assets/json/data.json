@@ -31,7 +31,13 @@
                         "maria",
                         "pepe",
                         "samuel",
-                        "montero"
+                        "montero",
+                        "jaime",
+                        "lorena",
+                        "marta",
+                        "none",
+                        "profesor",
+                        "victor"
                     ],
                     "Poses": [
                         "normal",
@@ -39,6 +45,7 @@
                         "triste",
                         "enfado",
                         "rayado",
+                        "rayada",
                         "pillin"
                     ]
                 },

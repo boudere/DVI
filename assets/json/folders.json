@@ -117,13 +117,29 @@
               "name": "personajes",
               "folders": [
                 {
+                  "name": "jaime",
+                  "folders": [],
+                  "files": [
+                    "jaime_feliz.png",
+                    "jaime_normal.png"
+                  ]
+                },
+                {
+                  "name": "lorena",
+                  "folders": [],
+                  "files": [
+                    "lorena_feliz.png",
+                    "lorena_normal.png",
+                    "lorena_rayada.png"
+                  ]
+                },
+                {
                   "name": "maria",
                   "folders": [],
                   "files": [
-                    "maria_enfado.png",
                     "maria_feliz.png",
                     "maria_normal.png",
-                    "maria_triste.png"
+                    "maria_rayada.png"
                   ]
                 },
                 {
@@ -158,11 +174,16 @@
                   "name": "pepe",
                   "folders": [],
                   "files": [
-                    "pepe_enfado.png",
                     "pepe_feliz.png",
                     "pepe_normal.png",
-                    "pepe_rayado.png",
-                    "pepe_triste.png"
+                    "pepe_rayado.png"
+                  ]
+                },
+                {
+                  "name": "profesor",
+                  "folders": [],
+                  "files": [
+                    "profesor_normal.png"
                   ]
                 },
                 {
@@ -178,10 +199,18 @@
                   "name": "samuel",
                   "folders": [],
                   "files": [
-                    "samuel_enfado.png",
                     "samuel_feliz.png",
                     "samuel_normal.png",
-                    "samuel_triste.png"
+                    "samuel_rayado.png"
+                  ]
+                },
+                {
+                  "name": "victor",
+                  "folders": [],
+                  "files": [
+                    "victor_feliz.png",
+                    "victor_normal.png",
+                    "victor_pillin.png"
                   ]
                 }
               ],
@@ -421,7 +450,6 @@
         "dialogo.json",
         "opciones_dialogo.json",
         "pantallas.json",
-        "pantalla_info.json",
         "personajes_info.json",
         "saves.json",
         "variables_dialogo.json"
