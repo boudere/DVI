@@ -123,12 +123,16 @@ class PantallaManager extends Managers {
 
     // entra en la escena y carga los objetos de la escena
     enter(scene_data) {
-        if (!super.enter(scene_data)) return;
+        let name = null;
+        if (scene_data.name) { name = scene_data.name; }
+        else { name = scene_data; }
+
+        if (!super.enter(name)) return;
 
         this.play_music(this.NOMBRE_MUSICA);
         this._reset_variables();
     
-        this._load_pantalla(scene_data);
+        this._load_pantalla(name);
 
         this.move_limit_x = (this.background.displayWidth - this.sys.game.canvas.width) / 2;
         this.move_limit_y = (this.background.displayHeight - this.sys.game.canvas.height) / 2;
@@ -198,6 +202,7 @@ class PantallaManager extends Managers {
         this.background.setDepth(this.BACKGROUND_DEPTH);
         this.background.setSize(1.2, 1.2);
     }
+    
     _load_npcs() {
         if (this.npcs_array.length > 0) {
             this.npcs_array.forEach((npc) => {
@@ -233,7 +238,7 @@ class PantallaManager extends Managers {
             });
         }
 
-        this.puertas = this.creador_pantalla.cargar_puertas();
+        this.puertas = this.creador_pantalla.cargar_puertas(this.scale);
         this.puertas.forEach((puerta) => {
             puerta.setDepth(this.PUERTAS_DEPTH);
             puerta.enter();
