@@ -257,12 +257,18 @@
         },
         "cap2_1": {
             "pantalla": {
-                "nombre": "habitacion"
+                "nombre": "bares"
             },
             "prota": {
                 "nombre": "prota",
-                "pos_x": 200,
-                "pos_y": 900
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
             }
         },
         "minijuego_discoteca": {
