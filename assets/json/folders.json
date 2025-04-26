@@ -313,11 +313,15 @@
               "name": "objetos",
               "folders": [],
               "files": [
-                "habitacion_cama.png",
-                "puerta_disco.png",
                 "caballo_parque.png",
+                "calle_boton.png",
+                "copas_boton.png",
+                "fdi_boton.png",
                 "habitacion_cama.png",
-                "pelota_parque.png"
+                "parque_boton.png",
+                "pelota_parque.png",
+                "piso_boton.png",
+                "puerta_disco.png"
               ]
             },
             {
