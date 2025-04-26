@@ -20,7 +20,8 @@
                         "cafeteria",
                         "bares",
                         "bus",
-                        "parque"
+                        "parque",
+                        "mapa"
                     ]
                 },
                 "Personajes": {
@@ -60,7 +61,12 @@
                         "habitacion_cama",
                         "puerta_disco",
                         "pelota_parque",
-                        "caballo_parque"
+                        "caballo_parque",
+                        "calle_boton",
+                        "copas_boton",
+                        "fdi_boton",
+                        "parque_boton",
+                        "piso_boton"
                     ]
                 },
                 "Clases": [
