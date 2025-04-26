@@ -360,6 +360,38 @@
                 "on_click":null
             }
         },
+        "cap2_2": {
+            "pantalla": {
+                "nombre": "bares"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "maria",
+                    "img": "maria",
+                    "pose": "normal",
+                    "pos_x": 1200,
+                    "pos_y": 800,
+                    "size": 1.3,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap2039"
+                    },
+                    "animation": null
+                }
+            }
+        },
         "minijuego_discoteca": {
             "pantalla": {
                 "nombre": "bares"
