@@ -51,12 +51,12 @@ class SceneManager extends Managers {
 
          // lanza las escenas managers
          // pantalla manager:
-        //  this.add_scene(PANTALLA_MANAGER, PantallaManager, this.saves_data.Pantalla);
-         this.add_scene(PANTALLA_MANAGER, PantallaManager);
+        this.add_scene(PANTALLA_MANAGER, PantallaManager, this.saves_data.Pantalla);
+        //this.add_scene(PANTALLA_MANAGER, PantallaManager);
  
          // dialogo manager:
-        //  this.add_scene(DIALOGO_MANAGER, DialogoManager, this.saves_data.Dialogo);
-         this.add_scene(DIALOGO_MANAGER, DialogoManager);
+        this.add_scene(DIALOGO_MANAGER, DialogoManager, this.saves_data.Dialogo);
+        //this.add_scene(DIALOGO_MANAGER, DialogoManager);
  
          // minijuego manager:
          //this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager, 'JuegoOveja');
