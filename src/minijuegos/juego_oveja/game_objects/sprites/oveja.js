@@ -1,12 +1,10 @@
 import GamesGameObjects from "/src/minijuegos/games_game_objects.js";
 
 class Oveja extends GamesGameObjects {
-    constructor(scene, x, y, size_x, size_y) {
+    constructor(scene, x, y) {
         let OVEJA_IMG = 'oveja';
 
         super(scene, x, y, OVEJA_IMG);
-
-        this.setScale(size_x, size_y);
     }
 
     enter() {

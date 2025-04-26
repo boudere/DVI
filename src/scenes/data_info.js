@@ -151,6 +151,10 @@ class DataInfo extends Phaser.Scene {
         return this.cache.json.get(this.json_data).Assets;
     }
 
+    get_saves() {
+        return this.cache.json.get(this.json_prefix + 'saves');
+    }
+
     get_json(name) {
         let name2 = name
             .split("_")

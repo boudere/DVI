@@ -58,7 +58,7 @@ class CreadorPantalla {
             let { nombre, pos_x, pos_y, on_click } = final_info;
             let img = this.data_info_scene.get_img(PANTALLA_MANAGER, key);
     
-            let elemento = new ClaseElemento(this.scene, pos_x, pos_y, img, on_click, nombre);
+            let elemento = new ClaseElemento(this.scene, pos_x, pos_y, img, this.scale, on_click, nombre);
             elementos.push(elemento);
         });
     

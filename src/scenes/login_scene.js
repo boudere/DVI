@@ -1,7 +1,7 @@
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
 import { loginGoogle } from '/src/database/auth.js';
 import { cargarProgresoCompleto, guardarProgresoCompleto } from '/src/database/save-data.js';
-import { SCENE_MANAGER, LOGIN_SCENE } from "/src/data/scene_data.js";
+import { SCENE_MANAGER, LOGIN_SCENE, DATA_INFO } from "/src/data/scene_data.js";
 
 class LoginScene extends Phaser.Scene {
   constructor() {
@@ -50,17 +50,7 @@ class LoginScene extends Phaser.Scene {
     let progreso = await cargarProgresoCompleto(userId);
 
     if (!progreso) {
-      progreso = {
-        Saves: {
-          Pantalla: "demo_salon_1",
-          Dialogo: "tutorial1",
-          Minijuegos: {
-            JuegoOveja: {
-              RecortdPuntuacion: -2
-            }
-          }
-        }
-      };
+      progreso = this.scene.get(DATA_INFO).get_saves();
       await guardarProgresoCompleto(userId, progreso);
     }
 

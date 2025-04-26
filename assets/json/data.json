@@ -19,7 +19,8 @@
                         "pasillo",
                         "cafeteria",
                         "bares",
-                        "bus"
+                        "bus",
+                        "parque"
                     ]
                 },
                 "Personajes": {
@@ -45,7 +46,8 @@
                     "Puertas": [
                         "salon",
                         "habitacion",
-                        "bares"
+                        "bares",
+                        "parque"
                     ],
                     "Lados": [
                         "izquierda",
@@ -56,7 +58,9 @@
                     "Path": "objetos/",
                     "Objetos": [
                         "habitacion_cama",
-                        "puerta_disco"
+                        "puerta_disco",
+                        "pelota_parque",
+                        "caballo_parque"
                     ]
                 },
                 "Clases": [

@@ -1,5 +1,60 @@
 {
   "Dialogo": {
+    "perueba_0": {
+      "texto": "Esto es una prueba",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "salon",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": null,
+      "next_scene_type": "dialogo",
+      "next_scene_id": "perueba_1"
+    },
+    "perueba_1": {
+      "texto": "Esto es una prueba",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "salon",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": "prueba_1",
+      "next_scene_type": "afinidad_dialogo",
+      "next_scene_id": "perueba_2"
+    },
+    "perueba_2A": {
+      "texto": "afinidad_montero",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "salon",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": "prueba_1",
+      "next_scene_type": "pantalla",
+      "next_scene_id": "prueba_1"
+    },
+    "perueba_2B": {
+      "texto": "Esto es una prueba",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "salon",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": "prueba_1",
+      "next_scene_type": "pantalla",
+      "next_scene_id": "prueba_1"
+    },
+    "perueba_2C": {
+      "texto": "Esto es una prueba",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "salon",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": "prueba_1",
+      "next_scene_type": "pantalla",
+      "next_scene_id": "prueba_1"
+    },
     "dialogo_1": {
       "texto": "Esto es una prueba",
       "npc": "veronica",
@@ -19,7 +74,7 @@
       "opciones": false,
       "next_id": "FIN",
       "var_id": "dialogo_3",
-      "next_scene_type": "AfinidadDialogo",
+      "next_scene_type": "afinidad_dialogo",
       "next_scene_id": "dialogo_3"
     },
     "dialogo_3A": {
