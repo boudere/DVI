@@ -130,7 +130,7 @@
                   "files": [
                     "lorena_feliz.png",
                     "lorena_normal.png",
-                    "lorena_rayada.png"
+                    "lorena_rayado.png"
                   ]
                 },
                 {
@@ -139,7 +139,7 @@
                   "files": [
                     "maria_feliz.png",
                     "maria_normal.png",
-                    "maria_rayada.png"
+                    "maria_rayado.png"
                   ]
                 },
                 {
@@ -294,6 +294,27 @@
                   ]
                 },
                 {
+                  "name": "bus",
+                  "folders": [],
+                  "files": [
+                    "bus.png"
+                  ]
+                },
+                {
+                  "name": "cafeteria",
+                  "folders": [],
+                  "files": [
+                    "cafeteria.png"
+                  ]
+                },
+                {
+                  "name": "clase",
+                  "folders": [],
+                  "files": [
+                    "clase.png"
+                  ]
+                },
+                {
                   "name": "fin_demo",
                   "folders": [],
                   "files": [
@@ -319,6 +340,13 @@
                   "folders": [],
                   "files": [
                     "parque.png"
+                  ]
+                },
+                {
+                  "name": "pasillo",
+                  "folders": [],
+                  "files": [
+                    "pasillo.png"
                   ]
                 },
                 {
@@ -450,6 +478,7 @@
         "dialogo.json",
         "opciones_dialogo.json",
         "pantallas.json",
+        "pantalla_info.json",
         "personajes_info.json",
         "saves.json",
         "variables_dialogo.json"

@@ -30,23 +30,11 @@
                         "prota",
                         "maria",
                         "pepe",
-                        "samuel",
-                        "montero",
-                        "jaime",
-                        "lorena",
-                        "marta",
-                        "none",
-                        "profesor",
-                        "victor"
+                        "samuel"
                     ],
                     "Poses": [
                         "normal",
-                        "feliz",
-                        "triste",
-                        "enfado",
-                        "rayado",
-                        "rayada",
-                        "pillin"
+                        "feliz"
                     ]
                 },
                 "Puertas": {
@@ -55,7 +43,8 @@
                         "salon",
                         "habitacion",
                         "bares",
-                        "parque"
+                        "parque",
+                        "bares"
                     ],
                     "Lados": [
                         "izquierda",
@@ -97,10 +86,15 @@
                     "Personajes": [
                         "prota",
                         "maria",
-                        "none",
                         "pepe",
                         "samuel",
-                        "montero"
+                        "montero",
+                        "jaime",
+                        "lorena",
+                        "marta",
+                        "none",
+                        "profesor",
+                        "victor"
                     ],
                     "Poses": [
                         "normal",

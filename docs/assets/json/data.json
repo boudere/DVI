@@ -19,7 +19,9 @@
                         "pasillo",
                         "cafeteria",
                         "bares",
-                        "bus"
+                        "bus",
+                        "parque",
+                        "mapa"
                     ]
                 },
                 "Personajes": {
@@ -28,23 +30,21 @@
                         "prota",
                         "maria",
                         "pepe",
-                        "samuel",
-                        "montero"
+                        "samuel"
                     ],
                     "Poses": [
                         "normal",
-                        "feliz",
-                        "triste",
-                        "enfado",
-                        "rayado",
-                        "pillin"
+                        "feliz"
                     ]
                 },
                 "Puertas": {
                     "Path": "puertas/",
                     "Puertas": [
                         "salon",
-                        "habitacion"
+                        "habitacion",
+                        "bares",
+                        "parque",
+                        "bares"
                     ],
                     "Lados": [
                         "izquierda",
@@ -54,7 +54,15 @@
                 "Objetos": {
                     "Path": "objetos/",
                     "Objetos": [
-                        "habitacion_cama"
+                        "habitacion_cama",
+                        "puerta_disco",
+                        "pelota_parque",
+                        "caballo_parque",
+                        "calle_boton",
+                        "copas_boton",
+                        "fdi_boton",
+                        "parque_boton",
+                        "piso_boton"
                     ]
                 },
                 "Clases": [
@@ -78,10 +86,15 @@
                     "Personajes": [
                         "prota",
                         "maria",
-                        "none",
                         "pepe",
                         "samuel",
-                        "montero"
+                        "montero",
+                        "jaime",
+                        "lorena",
+                        "marta",
+                        "none",
+                        "profesor",
+                        "victor"
                     ],
                     "Poses": [
                         "normal",
@@ -100,6 +113,7 @@
                         "salon",
                         "fin_demo",
                         "negro",
+                        "clase",
                         "pasillo",
                         "cafeteria",
                         "bares",
@@ -176,6 +190,8 @@
             "Suffix": ".json",
 
             "Dialogos": "dialogo",
+            "OpcionesDialogo": "opciones_dialogo",
+            "VariablesDialogo": "variables_dialogo",
             "Pantallas": "pantallas",
             "Saves": "saves",
             "Folders": "folders",
@@ -185,6 +201,8 @@
 
             "Jsons": [
                 "dialogo",
+                "opciones_dialogo",
+                "variables_dialogo",
                 "pantallas",
                 "saves",
                 "animation",
