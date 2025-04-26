@@ -22,7 +22,6 @@ class AudioManager {
         const newKey = this.data_info_scene.get_musica(key);
 
         // Si ya está sonando la misma música, no hacer nada
-        if (this.currentMusic) console.log("play_music", key, newKey, this.currentMusic.key, this.currentMusic.isPlaying, config);
         if (this.currentMusic && this.currentMusic.key === newKey && this.currentMusic.isPlaying) {
             return;
         }

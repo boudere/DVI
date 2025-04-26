@@ -116,9 +116,11 @@
                   "name": "pepe",
                   "folders": [],
                   "files": [
+                    "pepe_enfado.png",
                     "pepe_feliz.png",
                     "pepe_normal.png",
-                    "pepe_rayado.png"
+                    "pepe_rayado.png",
+                    "pepe_triste.png"
                   ]
                 },
                 {
@@ -188,7 +190,13 @@
               "folders": [],
               "files": [
                 "cielo.png",
+                "cielo3.png",
                 "fondo.png",
+                "nube1.png",
+                "nube2.png",
+                "nube3.png",
+                "nube4.png",
+                "nube5.png",
                 "oveja.png",
                 "pantalla_final.png",
                 "pantalla_inicio.png",
@@ -221,6 +229,13 @@
                   ]
                 },
                 {
+                  "name": "parque",
+                  "folders": [],
+                  "files": [
+                    "parque.png"
+                  ]
+                },
+                {
                   "name": "salon",
                   "folders": [],
                   "files": [
@@ -241,7 +256,9 @@
               "name": "objetos",
               "folders": [],
               "files": [
-                "habitacion_cama.png"
+                "caballo_parque.png",
+                "habitacion_cama.png",
+                "pelota_parque.png"
               ]
             },
             {
@@ -302,6 +319,14 @@
                   ]
                 },
                 {
+                  "name": "parque",
+                  "folders": [],
+                  "files": [
+                    "parque_derecha.png",
+                    "parque_izquierda.png"
+                  ]
+                },
+                {
                   "name": "salon",
                   "folders": [],
                   "files": [
@@ -328,6 +353,7 @@
         "pantallas.json",
         "pantalla_info.json",
         "personajes_info.json",
+        "saves.json",
         "variables_dialogo.json"
       ]
     },

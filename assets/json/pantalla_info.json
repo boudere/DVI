@@ -64,6 +64,53 @@
                     "on_click": null
                 }
             }
+        },
+        "parque_prueba": {
+            "background": "parque",
+            "puertas": {
+                "parque_derecha": {
+                    "nombre": "rio",
+                    "img": "parque_derecha",
+                    "pos_x": 2190,
+                    "pos_y": 950,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": null
+                },
+                "parque_izquierda": {
+                    "nombre": "casa",
+                    "img": "parque_izquierda",
+                    "pos_x": 174,
+                    "pos_y": 898,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "prueba_2",
+                        "direction": "left"
+                    }
+                }
+            },
+            "objetos": {
+                "caballo_parque": {
+                    "nombre": "caballito",
+                    "img": "habitacion_cama",
+                    "pos_x": 379,
+                    "pos_y": 861,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "minijuego",
+                        "name": "JuegoOveja"
+                    }
+                }
+            }
         }
     }
 }

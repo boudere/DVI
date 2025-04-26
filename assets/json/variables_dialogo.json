@@ -1,5 +1,13 @@
 {
   "VariablesDialogo": {
+    "prueba_1": {
+      "var_1": "afinidad_montero",
+      "val_1": 2,
+      "var_2": "afinidad_pepe",
+      "val_2": 3,
+      "var_3": "afinidad_maria",
+      "val_3": 1
+    },
     "afinidad_cap2010b": {
       "var_1": "afinidad_montero",
       "val_1": 2,

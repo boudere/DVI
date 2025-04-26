@@ -14,7 +14,8 @@
                     "Backgrounds": [
                         "habitacion",
                         "salon",
-                        "fin_demo"
+                        "fin_demo",
+                        "parque"
                     ]
                 },
                 "Personajes": {
@@ -36,7 +37,8 @@
                     "Path": "puertas/",
                     "Puertas": [
                         "salon",
-                        "habitacion"
+                        "habitacion",
+                        "parque"
                     ],
                     "Lados": [
                         "izquierda",
@@ -46,7 +48,9 @@
                 "Objetos": {
                     "Path": "objetos/",
                     "Objetos": [
-                        "habitacion_cama"
+                        "habitacion_cama",
+                        "pelota_parque",
+                        "caballo_parque"
                     ]
                 },
                 "Clases": [

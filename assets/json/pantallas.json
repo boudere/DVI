@@ -2,29 +2,45 @@
     "Pantallas": {
         "prueba_1": {
             "pantalla": {
+                "nombre": "parque_prueba",
+                "puertas": {
+                    "parque_izquierda": {
+                        "on_click": {
+                            "scene": "pantalla",
+                            "name": "prueba_3",
+                            "direction": "left"
+                        }
+                    }
+                }
+            },
+            "prota": {
+                "nombre": "prota",
+                "pos_x": 800,
+                "pos_y": 900
+            },
+            "npcs": {}
+        },
+        "prueba_2": {
+            "pantalla": {
                 "nombre": "habitacion"
             },
             "prota": {
                 "nombre": "prota",
-                "pos_x": 200,
+                "pos_x": 800,
                 "pos_y": 900
             },
-            "npcs": {
-                "npc_1": {
-                    "nombre": "maria",
-                    "pos_x": 580,
-                    "pos_y": 400,
-                    "on_click": {
-                        "scene": "dialogo",
-                        "name": "tutorial80"
-                    }
-                }
+            "npcs": {}
+        },
+        "prueba_3": {
+            "pantalla": {
+                "nombre": "salon"
             },
-            "objetos": {
-                "habitacion_cama": {
-                    "nombre": null
-                }
-            }
+            "prota": {
+                "nombre": "prota",
+                "pos_x": 800,
+                "pos_y": 900
+            },
+            "npcs": {}
         },
         "demo_salon_1": {
             "background": "salon",
@@ -32,7 +48,7 @@
                 "nombre": "prota",
                 "img": "prota",
                 "pose": "normal",
-                "pos_x": 200,
+                "pos_x": 800,
                 "pos_y": 900,
                 "size": 1.6,
                 "delay": 0,
