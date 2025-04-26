@@ -454,6 +454,15 @@
                   ]
                 },
                 {
+                  "name": "pasillo",
+                  "folders": [],
+                  "files": [
+                    "pasillo_centro.png",
+                    "pasillo_derecha.png",
+                    "pasillo_izquierda.png"
+                  ]
+                },
+                {
                   "name": "salon",
                   "folders": [],
                   "files": [

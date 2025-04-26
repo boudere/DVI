@@ -712,6 +712,38 @@
                 }
             }
         },
+        "clase_4a": {
+            "pantalla": {
+                "nombre": "clase_4a"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "cafe_4a": {
+            "pantalla": {
+                "nombre": "cafe_4a"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
         "cap2_4b": {
             "pantalla": {
                 "nombre": "salon_4b"

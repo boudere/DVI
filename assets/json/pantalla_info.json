@@ -769,7 +769,114 @@
         },
         "pasillo_4a": {
             "background": "pasillo",
-            "puertas":{},
+            "puertas":{
+                "pasillo_izquierda": {
+                    "nombre": "clase",
+                    "img": "pasillo_izquierda",
+                    "pos_x": 54,
+                    "pos_y": 900,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "clase_4a",
+                        "direction": "left"
+                    }
+                },
+                "pasillo_derecha": {
+                    "nombre": "cafeteria",
+                    "img": "pasillo_derecha",
+                    "pos_x": 1869,
+                    "pos_y": 900,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "cafe_4a",
+                        "direction": "right"
+                    }
+                },
+                "pasillo_centro": {
+                    "nombre": "cafeteria",
+                    "img": "pasillo_centro",
+                    "pos_x": 1869,
+                    "pos_y": 900,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "mapa_4a",
+                        "direction": "right"
+                    }
+                }
+            },
+            "objetos": {}
+        },
+        "clase_4a": {
+            "background": "clase",
+            "puertas":{
+                
+                "clase_derecha": {
+                    "nombre": "pasillo",
+                    "img": "clase_derecha",
+                    "pos_x": 1869,
+                    "pos_y": 900,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "pasillo_4a",
+                        "direction": "right"
+                    }
+                }
+                
+            },
+            "objetos": {}
+        },
+        "cafe_4a": {
+            "background": "cafeteria",
+            "puertas":{
+                
+                "cafeteria_derecha": {
+                    "nombre": "pasillo",
+                    "img": "clase_derecha",
+                    "pos_x": 1869,
+                    "pos_y": 900,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "pasillo_4a",
+                        "direction": "right"
+                    }
+                },
+                "cafeteria_izquierda": {
+                    "nombre": "pasillo",
+                    "img": "cafeteria_izquierda",
+                    "pos_x": 1869,
+                    "pos_y": 900,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "pasillo_4a",
+                        "direction": "left"
+                    }
+                }
+                
+            },
             "objetos": {}
         },
         "salon_4b": {
