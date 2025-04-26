@@ -46,7 +46,10 @@ class DialogoManager extends Managers {
         this.animation_finished = false;
 
         if (this.animate) this._load_cuadrado_dialogo(width, height);
-        else this._set_main_text();
+        else {
+            if (this.cuadrado_dialogo) {this.cuadrado_dialogo.visible = true;}
+            this._set_main_text();
+        }
         this.total_animations++;
 
         this._load_background();
@@ -54,6 +57,8 @@ class DialogoManager extends Managers {
         if (this.animate) {
             this._load_personaje(width, height);
             this.total_animations++;
+        } else if (this.persoanje) {
+            this.persoanje.visible = true;
         }
 
         if (this.buttons) this.buttons.forEach(button => button.destroy());
@@ -81,11 +86,15 @@ class DialogoManager extends Managers {
     }
 
     enter(scene_data) {
-        if ( !super.enter(scene_data) ) { return; }
+        let name = null;
+        if (scene_data.name) { name = scene_data.name; }
+        else { name = scene_data; }
+
+        if ( !super.enter(name) ) { return; }
         
         this.play_music(this.PISO_MUSICA);
 
-        this.dialogo_data_selected = this.dialogo_data[scene_data];
+        this.dialogo_data_selected = this.dialogo_data[name];
         this.opciones_dialogo_data_selected = null;
         if (this.dialogo_data_selected && this.dialogo_data_selected.opciones) {
             this.opciones_dialogo_data_selected = this.opciones_dialogo_data[this.dialogo_data_selected.next_id];
@@ -98,7 +107,7 @@ class DialogoManager extends Managers {
         this.finished_animation = 0;
         this.buttons_index = 0;
 
-        this._load_dialogo(scene_data);
+        this._load_dialogo(name);
         
         this.background.visible = true;
         if ( this.animate && this.persoanje ) this.persoanje.enter(); 
@@ -149,7 +158,7 @@ class DialogoManager extends Managers {
 
     signal_click(on_click) {
         if (on_click.scene == 'dialogo') {
-            this.enter(on_click.name);
+            this.enter(on_click);
         } else {
             this.scene.get(SCENE_MANAGER).signal_click(on_click);
         }
@@ -165,12 +174,12 @@ class DialogoManager extends Managers {
         this.background.setDepth(this.BACKGROUND_DEPTH);
     }
 
-    _load_cuadrado_dialogo(width, height) {
+    _load_cuadrado_dialogo(width, height, animacion=true) {
         if (this.cuadrado_dialogo) {
             this.cuadrado_dialogo.destroy();
         }
         let img = this.data_info_scene.get_img(DIALOGO_MANAGER, this.CUADRADO_DIALOGO);
-        this.cuadrado_dialogo = new CuadradoDialogo(this, width / 2, height - 150, img, this.dialogo_data_selected.texto, true);
+        this.cuadrado_dialogo = new CuadradoDialogo(this, width / 2, height - 150, img, this.dialogo_data_selected.texto, animacion);
         this.cuadrado_dialogo.setDepth(this.CUADRADO_DIALOGO_DEPTH);
     }
 
@@ -224,10 +233,11 @@ class DialogoManager extends Managers {
         if (this.animation_finished && !this.dialogo_data_selected.opciones) {
             if (this.dialogo_data_selected.next_id != 'FIN' && !this.dialogo_data_selected.opciones) {
                 this.enter(this.dialogo_data_selected.next_id);
-            } else {  
+            } else {
                 let on_click = {
                     scene: this.dialogo_data_selected.next_scene_type,
-                    name: this.dialogo_data_selected.next_scene_id
+                    name: this.dialogo_data_selected.next_scene_id,
+                    var_id: this.dialogo_data_selected.var_id
                 };
                 
                 this.scene.get(SCENE_MANAGER).signal_click(on_click);

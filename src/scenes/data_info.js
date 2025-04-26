@@ -280,6 +280,16 @@ class DataInfo extends Phaser.Scene {
         this.cargar_rankings();
     }
 
+    guardar_progreso(progreso) {
+        if (!this.userId) {
+            console.error("⚠️ No hay sesión activa.");
+            return;
+        }
+
+        this.progresos = { Save: { progreso } };
+        guardarProgresoCompleto(this.userId, this.progreso);
+    }
+
     guardar_puntuacion(nombre_juego, nueva_puntuacion) {     
         if (!this.userId || !this.progreso) {
           console.error("⚠️ No hay sesión activa o progreso cargado.");
