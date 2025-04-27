@@ -2,17 +2,6 @@
   "name": "assets",
   "folders": [
     {
-      "name": "gif",
-      "folders": [
-        {
-          "name": "minijuegos",
-          "folders": [],
-          "files": []
-        }
-      ],
-      "files": []
-    },
-    {
       "name": "img",
       "folders": [
         {
@@ -236,6 +225,11 @@
                   ]
                 },
                 {
+                  "name": "prueba1",
+                  "folders": [],
+                  "files": []
+                },
+                {
                   "name": "salon",
                   "folders": [],
                   "files": [
@@ -363,11 +357,8 @@
       "files": [
         "dialogo.ogg",
         "disco.ogg",
+        "mechanical_keyboard.ogg",
         "ovejitas.ogg",
-        "tecla1.ogg",
-        "tecla2.ogg",
-        "tecla3.ogg",
-        "tecla4.ogg",
         "tema_inicial.ogg"
       ]
     }

@@ -52,17 +52,18 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         // aseguramos que empiece vacío
         this.setText('');
         let rate = 1.5;
+        this.scene.play_sfx('mechanical_keyboard');
     
         this.scene.time.addEvent({
             delay: 30,
             callback: () => {
                 texto_actual += texto_completo.charAt(i);
                 rate = this.cambiar_pitch(rate);
-                this.scene.play_sfx('dialogo', { rate: rate });
                 this.setText(texto_actual);
                 i++;
     
                 if (i >= texto_completo.length) {
+                    this.scene.stop_sfx('mechanical_keyboard');
                     this.containter.finish_animation();
                 }
             },
