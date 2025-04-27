@@ -4,7 +4,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         // opciones por defecto para el Text
         let opciones_por_defecto = {
             fontSize: "32px",
-            fontFamily: "Arial",
+            fontFamily: "Times New Roman",
             color: "#000000",
             align: "left",
             lineSpacing: 10,
