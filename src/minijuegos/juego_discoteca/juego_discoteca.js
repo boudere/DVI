@@ -58,12 +58,6 @@ class JuegoDiscoteca extends Game {
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
-<<<<<<< Updated upstream
-        this.input.on('pointerdown', () => {
-            if (!this.started) return;
-            this.persona.setVelocityY(-600); 
-        });
-=======
         if(this.persona){
             this.input.on('pointerdown', () => {
                 if (!this.started) return;
@@ -71,7 +65,6 @@ class JuegoDiscoteca extends Game {
             });
             
         }
->>>>>>> Stashed changes
         
         
         this.game_created(); // Llamar a la función de escena creada
