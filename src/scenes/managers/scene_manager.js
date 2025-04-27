@@ -95,7 +95,13 @@ class SceneManager extends Managers {
         this.scenes[this.currentScene].exit();
         this.currentScene = this._get_next_scene(on_click.scene);
 
-        this.scenes[this.currentScene].enter(on_click.name);
+        if (on_click.scene === 'minijuego') {
+            // Si es minijuego, pasar TODO el on_click
+            this.scenes[this.currentScene].enter(on_click);
+        } else {
+            // Si es cualquier otra cosa, pasar solo el name
+            this.scenes[this.currentScene].enter(on_click.name);
+        }
 
     }
 
