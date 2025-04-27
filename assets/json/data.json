@@ -45,12 +45,13 @@
                         "bares",
                         "parque",
                         "bares",
-                        "pasillo"
+                        "pasillo",
+                        "cafeteria",
+                        "clase"
                     ],
                     "Lados": [
                         "izquierda",
-                        "derecha",
-                        "centro"
+                        "derecha"
                     ]
                 },
                 "Objetos": {

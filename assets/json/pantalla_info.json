@@ -773,10 +773,10 @@
                 "pasillo_izquierda": {
                     "nombre": "clase",
                     "img": "pasillo_izquierda",
-                    "pos_x": 54,
-                    "pos_y": 900,
-                    "size_x": 200,
-                    "size_y": 800,
+                    "pos_x": 625,
+                    "pos_y": 650,
+                    "size_x": 1,
+                    "size_y": 1,
                     "delay": 0,
                     "animation": null,
                     "on_click": {
@@ -788,30 +788,15 @@
                 "pasillo_derecha": {
                     "nombre": "cafeteria",
                     "img": "pasillo_derecha",
-                    "pos_x": 1869,
-                    "pos_y": 900,
-                    "size_x": 200,
-                    "size_y": 800,
+                    "pos_x": 1750,
+                    "pos_y": 850,
+                    "size_x": 1,
+                    "size_y": 1,
                     "delay": 0,
                     "animation": null,
                     "on_click":{
                         "scene": "pantalla",
                         "name": "cafe_4a",
-                        "direction": "right"
-                    }
-                },
-                "pasillo_centro": {
-                    "nombre": "cafeteria",
-                    "img": "pasillo_centro",
-                    "pos_x": 1869,
-                    "pos_y": 900,
-                    "size_x": 200,
-                    "size_y": 800,
-                    "delay": 0,
-                    "animation": null,
-                    "on_click":{
-                        "scene": "pantalla",
-                        "name": "mapa_4a",
                         "direction": "right"
                     }
                 }
@@ -846,8 +831,8 @@
             "puertas":{
                 
                 "cafeteria_derecha": {
-                    "nombre": "pasillo",
-                    "img": "clase_derecha",
+                    "nombre": "mapa",
+                    "img": "cafeteria_derecha",
                     "pos_x": 1869,
                     "pos_y": 900,
                     "size_x": 200,
@@ -856,7 +841,7 @@
                     "animation": null,
                     "on_click":{
                         "scene": "pantalla",
-                        "name": "pasillo_4a",
+                        "name": "mapa_4a",
                         "direction": "right"
                     }
                 },

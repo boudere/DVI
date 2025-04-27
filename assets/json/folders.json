@@ -438,6 +438,21 @@
                   ]
                 },
                 {
+                  "name": "cafeteria",
+                  "folders": [],
+                  "files": [
+                    "cafeteria_derecha.png",
+                    "cafeteria_izquierda.png"
+                  ]
+                },
+                {
+                  "name": "clase",
+                  "folders": [],
+                  "files": [
+                    "clase_derecha.png"
+                  ]
+                },
+                {
                   "name": "habitacion",
                   "folders": [],
                   "files": [
@@ -457,7 +472,6 @@
                   "name": "pasillo",
                   "folders": [],
                   "files": [
-                    "pasillo_centro.png",
                     "pasillo_derecha.png",
                     "pasillo_izquierda.png"
                   ]
