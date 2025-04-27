@@ -25,17 +25,16 @@ class CreadorPantalla {
         let imgWidth = background.width;
         let imgHeight = background.height;
     
-        if(this.displayWidth > canvasWidth){
-            // Calcular escala para que ocupe todo el canvas
-            this.scale = canvasHeight / imgHeight;
-            background.setScale(this.scale);
-        }
-        else{
+        // Calcular escala para que ocupe todo el canvas
+        this.scale = canvasHeight / imgHeight;
+    
+        // Aplicar escala
+        background.setScale(this.scale);
+
+        if (this.displayWidth < canvasWidth) {
             this.scale = canvasWidth / imgWidth;
             background.setScale(this.scale);
         }
-        
-
         return background;
     }
 

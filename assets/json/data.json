@@ -223,7 +223,9 @@
             "Musicas": [
                 "ovejitas",
                 "tema_inicial",
-                "disco"
+                "disco",
+                "dialogo",
+                "mechanical_keyboard"
             ]
         }
     }

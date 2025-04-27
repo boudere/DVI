@@ -242,7 +242,7 @@ class DataInfo extends Phaser.Scene {
 
 
     //////////////////////////////////////////////////////////////////////////////
-    //                        AGREFAR PARA NUEVO MANAGER                        //
+    //                        AGREGAR PARA NUEVO MANAGER                        //
     //////////////////////////////////////////////////////////////////////////////
 
     get_img(scene, name) {
@@ -259,6 +259,10 @@ class DataInfo extends Phaser.Scene {
             case MINIJUEGO_MANAGER:
             case "Minijuegos":
                 scene_name = "Minijuegos";
+                break;
+            case CURSOR_MANAGER:
+            case "Cursors":
+                scene_name = "Cursors";
                 break;
             case CURSOR_MANAGER:
             case "Cursors":

@@ -71,8 +71,8 @@ class CuadradoDialogo extends DialogoGameObject {
         if (this.main_text) {
             this.main_text.destroy();
         }
-        let x = this.x - this.width / 2 - 100;
-        let y = this.y - this.height / 2;
+        let x = this.x - this.width / 2 - 110;
+        let y = this.y - this.height / 2 + 25;
         this.main_text = new DialogoMainText(this.scene, x, y, this, this.width * 1.2, this.text, this.delay).setOrigin(0, 0)
         
         this.total_animations++;

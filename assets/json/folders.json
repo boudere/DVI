@@ -527,7 +527,9 @@
       "name": "musica",
       "folders": [],
       "files": [
+        "dialogo.ogg",
         "disco.ogg",
+        "mechanical_keyboard.ogg",
         "ovejitas.ogg",
         "tema_inicial.ogg"
       ]

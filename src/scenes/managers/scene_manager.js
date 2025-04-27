@@ -187,6 +187,11 @@ class SceneManager extends Managers {
         this.audio_manager.play_sfx(sfx_key, config);
     }
 
+    stop_sfx(key, sfx_key) {
+        if (key != this.currentScene) return; // si la escena no es la actual, no hace nada
+        this.audio_manager.stop_sfx(sfx_key);
+    }
+
     stop_all_sfx(key) {
         if (key != this.currentScene) return; // si la escena no es la actual, no hace nada
         this.audio_manager.stop_all_sfx();

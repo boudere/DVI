@@ -3,7 +3,7 @@ import DialogoMainText from "/src/dialogos/game_objects/text/dialogo_main_text.j
 import Animation from '/src/utils/animation.js';
 
 class ButtonCuadradoDialogo extends DialogoGameObject {
-    constructor(scene, x, y, nombre_img, text, next_text, animation) {
+    constructor(scene, x, y, nombre_img, text, next_text, animation, var_id) {
         super(scene, x, y, nombre_img, 200);
 
         this.setOrigin(1, 1);
@@ -26,6 +26,7 @@ class ButtonCuadradoDialogo extends DialogoGameObject {
         this.on_click = {
             "scene": "dialogo",
             "name": this.next_text,
+            "var_id": var_id
         }
 
         // animacion del boton al aparecer
