@@ -4,7 +4,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         // opciones por defecto para el Text
         let opciones_por_defecto = {
             fontSize: "32px",
-            fontFamily: "Arial",
+            fontFamily: "Times New Roman",
             color: "#000000",
             align: "left",
             lineSpacing: 10,
@@ -16,7 +16,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
 
         super(scene, x, y, '', opciones);
 
-        this._reset_varaibles();
+        this._reset_variables();
 
         this.texto = texto;
         this.containter = container;
@@ -30,7 +30,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         }, delay);
     }
 
-    _reset_varaibles() {          
+    _reset_variables() {          
         this.isPause = false;
     }
 
