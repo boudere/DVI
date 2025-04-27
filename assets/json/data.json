@@ -151,9 +151,7 @@
                     "JuegoDiscoteca": [
                         "persona",
                         "obstaculo",
-                        "fondodisco",
-                        "pantalla_inicio",
-                        "pantalla_final"
+                        "fondodisco"
                     ]
                 },
                 "Clases": [
