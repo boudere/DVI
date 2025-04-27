@@ -117,6 +117,15 @@
               "name": "personajes",
               "folders": [
                 {
+                  "name": "carlota",
+                  "folders": [],
+                  "files": [
+                    "carlota_feliz.png",
+                    "carlota_normal.png",
+                    "carlota_rayado.png"
+                  ]
+                },
+                {
                   "name": "jaime",
                   "folders": [],
                   "files": [
@@ -435,6 +444,13 @@
                   "folders": [],
                   "files": [
                     "bares_izquierda.png"
+                  ]
+                },
+                {
+                  "name": "bus",
+                  "folders": [],
+                  "files": [
+                    "bus_izquierda.png"
                   ]
                 },
                 {

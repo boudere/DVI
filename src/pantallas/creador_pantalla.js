@@ -27,6 +27,9 @@ class CreadorPantalla {
     
         // Calcular escala para que ocupe todo el canvas
         let scale = canvasHeight / imgHeight;
+        // Guardar escala
+        this.scale = scale;
+
     
         // Aplicar escala
         background.setScale(scale);
@@ -58,7 +61,7 @@ class CreadorPantalla {
             let { nombre, pos_x, pos_y, on_click } = final_info;
             let img = this.data_info_scene.get_img(PANTALLA_MANAGER, key);
     
-            let elemento = new ClaseElemento(this.scene, pos_x, pos_y, img, this.scale, on_click, nombre);
+            let elemento = new ClaseElemento(this.scene, pos_x * this.scale, pos_y * this.scale, img, this.scale, on_click, nombre);
             elementos.push(elemento);
         });
     

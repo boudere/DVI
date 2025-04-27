@@ -47,7 +47,8 @@
                         "bares",
                         "pasillo",
                         "cafeteria",
-                        "clase"
+                        "clase",
+                        "bus"
                     ],
                     "Lados": [
                         "izquierda",
@@ -97,7 +98,8 @@
                         "marta",
                         "none",
                         "profesor",
-                        "victor"
+                        "victor",
+                        "carlota"
                     ],
                     "Poses": [
                         "normal",

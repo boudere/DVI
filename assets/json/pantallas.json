@@ -744,6 +744,70 @@
                 "on_click": null
             }
         },
+        "pasillo_4a1": {
+            "pantalla": {
+                "nombre": "pasillo_4a1"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "clase_4a1": {
+            "pantalla": {
+                "nombre": "clase_4a1"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "maria",
+                    "img": "maria",
+                    "pose": "normal",
+                    "pos_x": 1200,
+                    "pos_y": 800,
+                    "size": 1.3,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap2135"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "cafe_4a1": {
+            "pantalla": {
+                "nombre": "cafe_4a1"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
         "cap2_4b": {
             "pantalla": {
                 "nombre": "salon_4b"
@@ -808,6 +872,22 @@
                 "on_click":null
             }
         },
+        "pasillo_4b": {
+            "pantalla": {
+                "nombre": "pasillo_4b"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
         "clase_4b": {
             "pantalla": {
                 "nombre": "clase_4b"
@@ -834,10 +914,554 @@
                     "delay": 0,
                     "on_click": {
                         "scene": "dialogo",
-                        "name": "cap2135"
+                        "name": "cap2136bis"
                     },
                     "animation": null
                 }
+            }
+        },
+        "cafe_4b": {
+            "pantalla": {
+                "nombre": "cafe_4b"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "clase_5a": {
+            "pantalla": {
+                "nombre": "clase_5a"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "pasillo_5a": {
+            "pantalla": {
+                "nombre": "pasillo_5a"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "cafe_5a": {
+            "pantalla": {
+                "nombre": "cafe_5a"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "maria",
+                    "img": "maria",
+                    "pose": "normal",
+                    "pos_x": 1200,
+                    "pos_y": 800,
+                    "size": 1.3,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap2170"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "clase_5b": {
+            "pantalla": {
+                "nombre": "clase_5a"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "pasillo_5b": {
+            "pantalla": {
+                "nombre": "pasillo_5b"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "cafe_5b": {
+            "pantalla": {
+                "nombre": "cafe_5b"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "maria",
+                    "img": "maria",
+                    "pose": "normal",
+                    "pos_x": 1200,
+                    "pos_y": 800,
+                    "size": 1.3,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap2161"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "cafe_6": {
+            "pantalla": {
+                "nombre": "cafe_6"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "pasillo_6": {
+            "pantalla": {
+                "nombre": "pasillo_6"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "maria",
+                    "img": "maria",
+                    "pose": "normal",
+                    "pos_x": 1200,
+                    "pos_y": 800,
+                    "size": 1.3,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap2189"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "clase_6": {
+            "pantalla": {
+                "nombre": "clase_6"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "pasillo_7": {
+            "pantalla": {
+                "nombre": "pasillo_7"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "clase_7": {
+            "pantalla": {
+                "nombre": "clase_7"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "maria",
+                    "img": "maria",
+                    "pose": "normal",
+                    "pos_x": 1200,
+                    "pos_y": 800,
+                    "size": 1.3,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap2203"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "cafe_7": {
+            "pantalla": {
+                "nombre": "cafe_7"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "clase_8": {
+            "pantalla": {
+                "nombre": "clase_8"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "pasillo_8": {
+            "pantalla": {
+                "nombre": "pasillo_8"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "maria",
+                    "img": "maria",
+                    "pose": "normal",
+                    "pos_x": 1200,
+                    "pos_y": 800,
+                    "size": 1.3,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap2216"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "cafe_8": {
+            "pantalla": {
+                "nombre": "cafe_8"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "pasillo_9": {
+            "pantalla": {
+                "nombre": "pasillo_9"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "clase_9": {
+            "pantalla": {
+                "nombre": "clase_9"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "cafe_9": {
+            "pantalla": {
+                "nombre": "cafe_9"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "bus_9": {
+            "pantalla": {
+                "nombre": "bus_9"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "maria",
+                    "img": "maria",
+                    "pose": "normal",
+                    "pos_x": 1200,
+                    "pos_y": 800,
+                    "size": 1.3,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap2220"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "habitacion_10": {
+            "pantalla": {
+                "nombre": "habitacion_10"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "salon_10": {
+            "pantalla": {
+                "nombre": "salon_10"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "mapa_10":{
+            "pantalla": {
+                "nombre": "mapa_10"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -100000,
+                "pos_y": -100000,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            }
+        },
+        "pasillo_10": {
+            "pantalla": {
+                "nombre": "pasillo_10"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "maria",
+                    "img": "maria",
+                    "pose": "normal",
+                    "pos_x": 1200,
+                    "pos_y": 800,
+                    "size": 1.3,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap2254"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "clase_10": {
+            "pantalla": {
+                "nombre": "clase_10"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "cafe_10": {
+            "pantalla": {
+                "nombre": "cafe_10"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
+        },
+        "minijuego_examen_2": {
+            "pantalla": {
+                "nombre": "pasillo_final2"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
             }
         }
     }

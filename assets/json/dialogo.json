@@ -3691,10 +3691,10 @@
       "pose": "normal",
       "fondo": "pasillo",
       "opciones": false,
-      "next_id": "cap2136",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "pasillo_4a1"
     },
     "cap2135bis": {
       "texto": "Valeee, ten un buen día",
@@ -3708,7 +3708,18 @@
       "next_scene_id": "cap2_4b"
     },
     "cap2135": {
-      "texto": "(Por suerte Lorena llega igual de tarde que yo)",
+      "texto": "(Lorena llega tarde como acostumbra)",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "clase",
+      "opciones": false,
+      "next_id": "cap2136",
+      "var_id": null,
+      "next_scene_type": null,
+      "next_scene_id": null
+    },
+    "cap2136bis": {
+      "texto": "(He llegado muy justa a clase y aún así Lorena llega después que yo)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "clase",
@@ -3933,10 +3944,10 @@
       "pose": "feliz",
       "fondo": "clase",
       "opciones": false,
-      "next_id": "cap2170",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "clase_5a"
     },
     "cap2156": {
       "texto": "Bueno, supongo que luego os contaré hasta donde llega",
@@ -3988,10 +3999,10 @@
       "pose": "normal",
       "fondo": "clase",
       "opciones": false,
-      "next_id": "cap2161",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "clase_5b"
     },
     "cap2161": {
       "texto": "Bueno entonces tres pinchos de tortilla, ¿no?",
@@ -4296,10 +4307,10 @@
       "pose": "feliz",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "cap2189",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "cafe_6"
     },
     "cap2189": {
       "texto": "Por lo que sea no hablan de absolutamente nada",
@@ -4450,10 +4461,10 @@
       "pose": "feliz",
       "fondo": "pasillo",
       "opciones": false,
-      "next_id": "cap2203",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "pasillo_7"
     },
     "cap2203": {
       "texto": "Sabía que algo raro tenía",
@@ -4593,10 +4604,10 @@
       "pose": "normal",
       "fondo": "clase",
       "opciones": false,
-      "next_id": "cap2216",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "clase_8"
     },
     "cap2216": {
       "texto": "Bueno por fin se acabó",
@@ -4637,10 +4648,10 @@
       "pose": "normal",
       "fondo": "pasillo",
       "opciones": false,
-      "next_id": "cap2220",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "pasillo_9"
     },
     "cap2220": {
       "texto": "(Coger un asiento en el F es siempre muy difícil pero la verdad es que he tenido suerte con la conexión)",
@@ -4832,7 +4843,7 @@
     "cap2237": {
       "texto": "No creo que sea cuestión de que Álex sea informático",
       "npc": "carlota",
-      "pose": "triste",
+      "pose": "rayado",
       "fondo": "bus",
       "opciones": false,
       "next_id": "cap2238",
@@ -5009,12 +5020,34 @@
       "texto": "(Maldije a Lorena por tener razón y dejé que el autobús me llevase a mi destino)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "pasillo",
+      "fondo": "bus",
       "opciones": false,
-      "next_id": "cap2254",
+      "next_id": "cap2300",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
+    },
+    "cap2300": {
+      "texto": "(Último día de examenes, por fin!)",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "habitacion",
+      "opciones": false,
+      "next_id": "cap2301",
+      "var_id": null,
+      "next_scene_type": null,
+      "next_scene_id": null
+    },
+    "cap2301": {
+      "texto": "(Cuanto antes termine con esto, mejor)",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "habitacion",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": null,
+      "next_scene_type": "pantalla",
+      "next_scene_id": "habitacion_10"
     },
     "cap2254": {
       "texto": "¿Readys para el examen?",
@@ -5066,7 +5099,7 @@
       "pose": "rayado",
       "fondo": "pasillo",
       "opciones": false,
-      "next_id": "minijuego_examen",
+      "next_id": "FIN",
       "var_id": null,
       "next_scene_type": "pantalla",
       "next_scene_id": "minijuego_examen_2"
