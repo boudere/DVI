@@ -58,10 +58,12 @@ class JuegoDiscoteca extends Game {
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
-        this.input.on('pointerdown', () => {
-            if (!this.started) return;
-            this.persona.setVelocityY(-600); 
-        });
+        if(this.persona){
+            this.input.on('pointerdown', () => {
+                if (!this.started) return;
+                this.persona.setVelocityY(-600); 
+            });
+        }
         
         
         this.game_created(); // Llamar a la función de escena creada
@@ -90,7 +92,7 @@ class JuegoDiscoteca extends Game {
             this.data_info_scene.guardar_puntuacion(this.scene.key,this.obstaculossaltados);
         }*/
 
-        //this.exit();
+        this.exit();
     }
 
     _crear_marcador(){

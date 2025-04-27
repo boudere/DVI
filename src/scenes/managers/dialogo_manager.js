@@ -143,7 +143,7 @@ class DialogoManager extends Managers {
             this.buttons[this.buttons_index].enter();
             this.buttons_index++;
             return;
-        }
+        } 
 
         if (this.finished_animation != this.total_animations) { return; }
 
@@ -157,10 +157,14 @@ class DialogoManager extends Managers {
     }
 
     signal_click(on_click) {
-        if (on_click.scene == 'dialogo') {
-            this.enter(on_click);
-        } else {
+        if ( on_click.var_id || on_click.scene != 'dialogo') {
+            if (on_click.var_id) {
+                on_click.scene = 'afinidad_dialogo';
+            }
             this.scene.get(SCENE_MANAGER).signal_click(on_click);
+        }
+        else {
+            this.enter(on_click);
         }
     }
 
@@ -170,15 +174,8 @@ class DialogoManager extends Managers {
         }
         
         let img = this.data_info_scene.get_img(DIALOGO_MANAGER, this.dialogo_data_selected.fondo);
-        this.background = this.add.image(0, 0, img).setOrigin(0, 0);
+        this.background = this.add.image(0, 0, img).setOrigin(0, 0)
         this.background.setDepth(this.BACKGROUND_DEPTH);
-        
-        let canvasHeight = this.scale.height;
-        let imgHeight = this.background.height;
-    
-        // Calcular escala para que ocupe todo el canvas
-        let scale = canvasHeight / imgHeight;
-        this.background.setScale(scale);
     }
 
     _load_cuadrado_dialogo(width, height, animacion=true) {
@@ -217,7 +214,7 @@ class DialogoManager extends Managers {
         let y = this.cuadrado_dialogo.y - (this.cuadrado_dialogo.height / 2 * this.cuadrado_dialogo.SCALE);
         this.buttons_index = 1;
         while (this.buttons_index <= 3 && this.opciones_dialogo_data_selected["texto_" + this.buttons_index]) {
-            let button = new ButtonCuadradoDialogo(this, x, y, img, this.opciones_dialogo_data_selected["texto_" + this.buttons_index], this.opciones_dialogo_data_selected["opcion_" + this.buttons_index] , true);
+            let button = new ButtonCuadradoDialogo(this, x, y, img, this.opciones_dialogo_data_selected["texto_" + this.buttons_index], this.opciones_dialogo_data_selected["opcion_" + this.buttons_index] , true, this.opciones_dialogo_data_selected["var_" + this.buttons_index]);
             button.setDepth(this.CUADRADO_DIALOGO_DEPTH + 1);
 
             this.buttons_index++;
@@ -238,16 +235,20 @@ class DialogoManager extends Managers {
 
     _mouse_up() {
         if (this.animation_finished && !this.dialogo_data_selected.opciones) {
-            if (this.dialogo_data_selected.next_id != 'FIN' && !this.dialogo_data_selected.opciones) {
-                this.enter(this.dialogo_data_selected.next_id);
-            } else {
+            if (this.dialogo_data_selected.var_id || this.dialogo_data_selected.next_id == 'FIN') {
                 let on_click = {
                     scene: this.dialogo_data_selected.next_scene_type,
                     name: this.dialogo_data_selected.next_scene_id,
                     var_id: this.dialogo_data_selected.var_id
                 };
+
+                if (!this.dialogo_data_selected.name && this.dialogo_data_selected.next_id) {
+                    on_click.name = this.dialogo_data_selected.next_id;
+                }
                 
-                this.scene.get(SCENE_MANAGER).signal_click(on_click);
+                this.signal_click(on_click);
+            } else {
+                this.enter(this.dialogo_data_selected.next_id);
             }
         }
     }
