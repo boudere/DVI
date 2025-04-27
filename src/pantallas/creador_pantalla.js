@@ -30,7 +30,11 @@ class CreadorPantalla {
         // Guardar escala
         this.scale = scale;
 
-    
+        if (this.displayWidth < canvasWidth) {
+            this.scale = canvasWidth / imgWidth;
+            background.setScale(this.scale);
+        }
+        
         // Aplicar escala
         background.setScale(scale);
     
