@@ -2638,7 +2638,7 @@
       "next_id": "FIN",
       "var_id": null,
       "next_scene_type": "pantalla",
-      "next_scene_id": "salon"
+      "next_scene_id": "salon_1"
     },
     "cap2039": {
       "texto": "Bueno pues ya estamos a ver qué se cuece por aquí",
@@ -2998,10 +2998,10 @@
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
-      "next_id": "cap2072",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "minijuego_discoteca"
     },
     "cap2072": {
       "texto": "Bueno más o menos debería estar la barra por aquí",
