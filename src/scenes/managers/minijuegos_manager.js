@@ -21,7 +21,7 @@ class MinijuegosManager extends Managers {
     enter(scene_data) {
         if (!super.enter(scene_data)) { return; }
         this.scene_data = scene_data;  // guarda todo el objeto scene_data
-        this.start_minigame(scene_data);
+        this.start_minigame(scene_data.name); // inicia el minijuego
     }
 
     return_to_dialogo() {

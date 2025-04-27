@@ -63,7 +63,6 @@ class JuegoDiscoteca extends Game {
                 if (!this.started) return;
                 this.persona.setVelocityY(-600); 
             });
-            
         }
         
         
@@ -81,6 +80,17 @@ class JuegoDiscoteca extends Game {
         this.persona.enter();
         this._next_obstaculo();
         this.started = true; // Iniciar el juego
+    }
+
+    finnish_game() {
+        this.pantalla_final.exit();
+        
+        /* cosas del firebase
+        if (this.persoanl_best <this.ovejas_contadas) {
+            this.data_info_scene.guardar_puntuacion(this.scene.key,this.ovejas_contadas);
+        }
+        */
+        this.exit();
     }
 
     _crear_marcador(){
