@@ -71,8 +71,8 @@
                 "bares_izquierda": {
                     "nombre": "mapa",
                     "img": "bares_izquierda",
-                    "pos_x": 54,
-                    "pos_y": 900,
+                    "pos_x": 88.5,
+                    "pos_y": 702.5,
                     "size_x": 1,
                     "size_y": 1,
                     "on_click":{
@@ -87,15 +87,16 @@
                 "puerta_disco": {
                     "nombre": "entrar disco",
                     "img": "puerta_disco",
-                    "pos_x": 1750,
-                    "pos_y": 800,
-                    "size_x": 200,
-                    "size_y": 800,
+                    "pos_x": 614,
+                    "pos_y": 1305.5,
+                    "size_x": 1,
+                    "size_y": 1,
                     "delay": 0,
                     "animation": null,
                     "on_click": {
                         "scene": "minijuego",
-                        "name": "JuegoDiscoteca"
+                        "name": "JuegoDiscoteca",
+                        "return_dialogo": "cap2072"
                     }
                 }
             }
@@ -106,8 +107,8 @@
                 "bares_izquierda": {
                     "nombre": "mapa",
                     "img": "bares_izquierda",
-                    "pos_x": 54,
-                    "pos_y": 900,
+                    "pos_x": 88.5,
+                    "pos_y": 702.5,
                     "size_x": 1,
                     "size_y": 1,
                     "on_click":{
@@ -126,8 +127,8 @@
                 "bares_izquierda": {
                     "nombre": "mapa",
                     "img": "bares_izquierda",
-                    "pos_x": 54,
-                    "pos_y": 900,
+                    "pos_x": 88.5,
+                    "pos_y": 702.5,
                     "size_x": 1,
                     "size_y": 1,
                     "on_click":{
@@ -146,8 +147,8 @@
                 "bares_izquierda": {
                     "nombre": "mapa",
                     "img": "bares_izquierda",
-                    "pos_x": 54,
-                    "pos_y": 900,
+                    "pos_x": 88.5,
+                    "pos_y": 702.5,
                     "size_x": 1,
                     "size_y": 1,
                     "on_click":{

@@ -4,7 +4,7 @@ import Persona from '/src/minijuegos/juego_discoteca/game_objects/sprites/person
 //import Obstaculo from '/src/minijuegos/juego_discoteca/game_objects/sprites/obstaculo.js';
 import Fondo from '/src/minijuegos/juego_discoteca/game_objects/sprites/fondo.js';
 import PantallaInicio from '/src/minijuegos/juego_discoteca/pantallas/pantalla_inicio.js';
-//import PantallaFinal from '/src/minijuegos/juego_discoteca/pantallas/pantalla_final.js';
+import PantallaFinal from '/src/minijuegos/juego_discoteca/pantallas/pantalla_final.js';
 
 class JuegoDiscoteca extends Game {
     constructor(sprites) {
@@ -15,14 +15,14 @@ class JuegoDiscoteca extends Game {
             OBSTACULO_IMG: 'obstaculo',
             FONDO_IMG: 'fondodisco',
             PANTALLA_INICIO: 'pantalla_inicio',
-           // PANTALLA_FINAL: 'pantalla_final'
+            PANTALLA_FINAL: 'pantalla_final'
         }
 
         this.PERSONA_IMG = sprites.PERSONA_IMG;
         this.OBSTACULO_IMG = sprites.OBSTACULO_IMG;
         this.FONDO_IMG = sprites.FONDO_IMG;
         this.PANTALLA_INICIO = sprites.PANTALLA_INICIO;
-       // this.PANTALLA_FINAL = sprites.PANTALLA_FINAL;
+        this.PANTALLA_FINAL = sprites.PANTALLA_FINAL;
 
         this.DISCOTECA_MUSICA = 'disco';
 
@@ -54,7 +54,7 @@ class JuegoDiscoteca extends Game {
         this._crear_persona();
         this._crear_marcador();
         this._crear_pantalla_inicio();
-        //this._crear_pantalla_final();
+        this._crear_pantalla_final();
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
@@ -113,6 +113,14 @@ class JuegoDiscoteca extends Game {
         let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_INICIO);
 
         this.pantalla_inicio = new PantallaInicio(this, x, y, img);
+    }
+
+    _crear_pantalla_final() {
+        let x = 0;
+        let y = 0;
+        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_FINAL);
+
+        this.pantalla_final = new PantallaFinal(this, x, y, img);
     }
 
     _next_obstaculo() {
@@ -199,7 +207,20 @@ class JuegoDiscoteca extends Game {
                     color: '#ff0000',
                     fontFamily: 'Impact'
                 }
-            ).setOrigin(0.5);
+            ).setOrigin(0.5).setDepth(1);
+            setTimeout(() => {
+                this.pantalla_final.enter(this.vallasSaltadas);
+    
+                this.persona.exit();
+                this.fondo.exit()
+                this.obstaculos.forEach((obstaculo) => {
+                    obstaculo.superior.destroy();
+                    obstaculo.inferior.destroy();
+                });
+                this.obstaculos = [];
+                this.contadorTexto.destroy();
+                textoGameOver.destroy();
+            }, 2000);
         });
 
         // Añadir colisión entre persona y tubo superior
@@ -220,7 +241,21 @@ class JuegoDiscoteca extends Game {
                     color: '#ff0000',
                     fontFamily: 'Impact'
                 }
-            ).setOrigin(0.5);
+            ).setOrigin(0.5).setDepth(1);
+
+            setTimeout(() => {
+                this.pantalla_final.enter(this.vallasSaltadas);
+    
+                this.persona.exit();
+                this.fondo.exit()
+                this.obstaculos.forEach((obstaculo) => {
+                    obstaculo.superior.destroy();
+                    obstaculo.inferior.destroy();
+                });
+                this.obstaculos = [];
+                this.contadorTexto.destroy();
+                textoGameOver.destroy();
+            }, 2000);
         });
 
 
@@ -229,8 +264,8 @@ class JuegoDiscoteca extends Game {
 
 
     _update() {
-        if (!this.started) { return; } // Evitar que se ejecute antes de iniciar el juego
-        if (this.persona.body.blocked.down) {
+        if (!this.started || !this.persona) { return; } // Evitar que se ejecute antes de iniciar el juego
+        if (this.persona && this.persona.body && this.persona.body.blocked.down) {
             this.persona.setVelocityY(0);
         }
 
