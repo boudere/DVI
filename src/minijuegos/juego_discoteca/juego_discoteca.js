@@ -1,7 +1,6 @@
-import { JUEGO_DISCOTECA, DATA_INFO, MINIJUEGO_MANAGER } from '/src/data/scene_data.js';
+import { JUEGO_DISCOTECA, DATA_INFO, MINIJUEGO_MANAGER, SCENE_MANAGER } from '/src/data/scene_data.js';
 import Game from '/src/minijuegos/games.js';
 import Persona from '/src/minijuegos/juego_discoteca/game_objects/sprites/persona.js';
-//import Obstaculo from '/src/minijuegos/juego_discoteca/game_objects/sprites/obstaculo.js';
 import Fondo from '/src/minijuegos/juego_discoteca/game_objects/sprites/fondo.js';
 import PantallaInicio from '/src/minijuegos/juego_discoteca/pantallas/pantalla_inicio.js';
 import PantallaFinal from '/src/minijuegos/juego_discoteca/pantallas/pantalla_final.js';
@@ -16,7 +15,7 @@ class JuegoDiscoteca extends Game {
             FONDO_IMG: 'fondodisco',
             PANTALLA_INICIO: 'pantalla_inicio',
             PANTALLA_FINAL: 'pantalla_final'
-        }
+        };
 
         this.PERSONA_IMG = sprites.PERSONA_IMG;
         this.OBSTACULO_IMG = sprites.OBSTACULO_IMG;
@@ -36,20 +35,15 @@ class JuegoDiscoteca extends Game {
         this.started = false;
     }
 
-
     create() {
         this.obstaculossaltados = 0;
-
         this.SCREEN_WIDTH = this.sys.game.canvas.width;
         this.SCREEN_HEIGHT = this.sys.game.canvas.height;
 
         this.data_info_scene = this.scene.get(DATA_INFO);
-
-        //BASE DE DATOS PARA EL RECORD
         this.scene.get(MINIJUEGO_MANAGER).play_music(this.DISCOTECA_MUSICA);
-        
-        this.obstaculos = []; 
 
+        this.obstaculos = [];
         this._crear_fondo();
         this._crear_persona();
         this._crear_marcador();
@@ -58,15 +52,12 @@ class JuegoDiscoteca extends Game {
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
-        if(this.persona){
-            this.input.on('pointerdown', () => {
-                if (!this.started) return;
-                this.persona.setVelocityY(-600); 
-            });
-        }
-        
-        
-        this.game_created(); // Llamar a la función de escena creada
+        this.pointerDownEvent = this.input.on('pointerdown', () => {
+            if (!this.started || !this.persona) return;
+            this.persona.setVelocityY(-600);
+        });
+
+        this.game_created();
     }
 
     enter() {
@@ -79,21 +70,18 @@ class JuegoDiscoteca extends Game {
         this.fondo.enter();
         this.persona.enter();
         this._next_obstaculo();
-        this.started = true; // Iniciar el juego
+        this.started = true;
     }
 
     finnish_game() {
         this.pantalla_final.exit();
-        
-        /* cosas del firebase
-        if (this.persoanl_best <this.ovejas_contadas) {
-            this.data_info_scene.guardar_puntuacion(this.scene.key,this.ovejas_contadas);
-        }
-        */
-        this.exit();
+        this._clean_up();
+
+        // Volver al dialogo después del juego
+        this.scene.get(MINIJUEGO_MANAGER).return_to_dialogo();
     }
 
-    _crear_marcador(){
+    _crear_marcador() {
         this.contadorTexto = this.add.text(
             this.SCREEN_WIDTH - 50, 50,
             `Puntuación: ${this.obstaculossaltados}`,
@@ -102,16 +90,16 @@ class JuegoDiscoteca extends Game {
                 fill: '#ffffff',
                 fontFamily: 'Impact'
             }
-        ).setOrigin(1, 0).setDepth(1); 
+        ).setOrigin(1, 0).setDepth(1);
     }
 
-    _crear_fondo(){
+    _crear_fondo() {
         let x = 0;
         let y = 0;
         let scale_x = this.SCREEN_WIDTH / this.fondowidth;
         let scale_y = this.SCREEN_HEIGHT / this.fondoheight;
-        
-        this.fondo = new Fondo(this, x, y, scale_x, scale_y).setOrigin(0,0);
+
+        this.fondo = new Fondo(this, x, y, scale_x, scale_y).setOrigin(0, 0);
     }
 
     _crear_persona() {
@@ -137,167 +125,118 @@ class JuegoDiscoteca extends Game {
     }
 
     _next_obstaculo() {
-        const delay = Phaser.Math.Between(1500, 3000); // entre 2 y 5 segundos
-        this.time.delayedCall(delay, () => {
+        const delay = Phaser.Math.Between(1500, 3000);
+        this.timerEvent = this.time.delayedCall(delay, () => {
             this._spawn_obstaculo();
-            this._next_obstaculo(); 
+            this._next_obstaculo();
         });
     }
-    
 
     _spawn_obstaculo() {
-        
-        let hueco = 300; // tamaño del hueco
-        let ancho = 350; // ancho del tubo
-
+        let hueco = 300;
+        let ancho = 350;
         let x = this.SCREEN_WIDTH + 100;
-
         let minTuboY = 100;
         let maxTuboY = this.SCREEN_HEIGHT - hueco - 100;
         let yHueco = Phaser.Math.Between(minTuboY, maxTuboY);
 
-        // Calcular altura dinámica
         let alturaSuperior = yHueco - hueco / 2;
         let alturaInferior = this.SCREEN_HEIGHT - (yHueco + hueco / 2);
+
+        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OBSTACULO_IMG);
 
         // Tubo superior
         this.tuboSuperior = this.physics.add.sprite(
             x,
-            alturaSuperior / 2, // centro del tubo
-            this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OBSTACULO_IMG)
+            alturaSuperior / 2,
+            img
         ).setScale(ancho / this.obstaculowidth, alturaSuperior / this.obstaculoheight);
         this.tuboSuperior.setFlipY(true);
 
         // Tubo inferior
         this.tuboInferior = this.physics.add.sprite(
             x,
-            yHueco + hueco / 2 + alturaInferior / 2, // centro del tubo 
-            this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OBSTACULO_IMG)
+            yHueco + hueco / 2 + alturaInferior / 2,
+            img
         ).setScale(ancho / this.obstaculowidth, alturaInferior / this.obstaculoheight);
 
-        
-        this.tuboInferior.setVelocityX(-500);
-        this.tuboInferior.setGravityY(-600);
-
-        this.tuboSuperior.setVelocityX(-500);
-        this.tuboSuperior.setGravityY(-600);
-
-        this.tuboInferior.body.setSize(
-            this.tuboInferior.width * 0.8,
-            this.tuboInferior.height * 0.8 
-        );
-        
-        this.tuboInferior.body.setOffset(
-            this.tuboInferior.width * 0.1, 
-            this.tuboInferior.height * 0.1 
-        );
-
-        this.tuboSuperior.body.setSize(
-            this.tuboSuperior.width * 0.8, 
-            this.tuboSuperior.height * 0.8 
-        );
-        
-        this.tuboSuperior.body.setOffset(
-            this.tuboSuperior.width * 0.1, 
-            this.tuboSuperior.height * 0.1 
-        );
-
-        // Añadir colisión entre persona y tubo inferior
-        this.physics.add.collider(this.persona, this.tuboInferior,  () => {
-            this.persona.setTint(0xff0000);
-
-            // Detener física y temporizadores
-            this.physics.pause();            
-            this.time.removeAllEvents();   
-            this.scene.get(MINIJUEGO_MANAGER).stop_music(this.DISCOTECA_MUSICA);         
-
-            const textoGameOver = this.add.text(
-                this.SCREEN_WIDTH / 2,
-                this.SCREEN_HEIGHT / 2,
-                '¡Perdiste!',
-                {
-                    fontSize: '96px',
-                    color: '#ff0000',
-                    fontFamily: 'Impact'
-                }
-            ).setOrigin(0.5).setDepth(1);
-            setTimeout(() => {
-                this.pantalla_final.enter(this.vallasSaltadas);
-    
-                this.persona.exit();
-                this.fondo.exit()
-                this.obstaculos.forEach((obstaculo) => {
-                    obstaculo.superior.destroy();
-                    obstaculo.inferior.destroy();
-                });
-                this.obstaculos = [];
-                this.contadorTexto.destroy();
-                textoGameOver.destroy();
-            }, 2000);
+        // Físicas
+        [this.tuboSuperior, this.tuboInferior].forEach(tubo => {
+            tubo.setVelocityX(-500);
+            tubo.setGravityY(-600);
+            tubo.body.setSize(tubo.width * 0.8, tubo.height * 0.8);
+            tubo.body.setOffset(tubo.width * 0.1, tubo.height * 0.1);
         });
 
-        // Añadir colisión entre persona y tubo superior
-        this.physics.add.collider(this.persona, this.tuboSuperior,  () => {
-            this.persona.setTint(0xff0000);
+        this.physics.add.collider(this.persona, this.tuboInferior, this._game_over, null, this);
+        this.physics.add.collider(this.persona, this.tuboSuperior, this._game_over, null, this);
 
-            // Detener física y temporizadores
-            this.physics.pause();           
-            this.time.removeAllEvents();    
-            this.scene.get(MINIJUEGO_MANAGER).stop_music(this.DISCOTECA_MUSICA);          
-
-            const textoGameOver = this.add.text(
-                this.SCREEN_WIDTH / 2,
-                this.SCREEN_HEIGHT / 2,
-                '¡Perdiste!',
-                {
-                    fontSize: '96px',
-                    color: '#ff0000',
-                    fontFamily: 'Impact'
-                }
-            ).setOrigin(0.5).setDepth(1);
-
-            setTimeout(() => {
-                this.pantalla_final.enter(this.vallasSaltadas);
-    
-                this.persona.exit();
-                this.fondo.exit()
-                this.obstaculos.forEach((obstaculo) => {
-                    obstaculo.superior.destroy();
-                    obstaculo.inferior.destroy();
-                });
-                this.obstaculos = [];
-                this.contadorTexto.destroy();
-                textoGameOver.destroy();
-            }, 2000);
-        });
-
-
-        this.obstaculos.push({superior: this.tuboSuperior, inferior: this.tuboInferior, contado: false});
+        this.obstaculos.push({ superior: this.tuboSuperior, inferior: this.tuboInferior, contado: false });
     }
 
+    _game_over() {
+        if (this.losing) return;
+        this.losing = true;
+
+        this.persona.setTint(0xff0000);
+        this.physics.pause();
+        this.time.removeAllEvents();
+        this.scene.get(MINIJUEGO_MANAGER).stop_music(this.DISCOTECA_MUSICA);
+
+        const textoGameOver = this.add.text(
+            this.SCREEN_WIDTH / 2,
+            this.SCREEN_HEIGHT / 2,
+            '¡Perdiste!',
+            {
+                fontSize: '96px',
+                color: '#ff0000',
+                fontFamily: 'Impact'
+            }
+        ).setOrigin(0.5).setDepth(1);
+
+        setTimeout(() => {
+            this.pantalla_final.enter();
+            textoGameOver.destroy();
+        }, 2000);
+    }
 
     _update() {
-        if (!this.started || !this.persona) { return; } // Evitar que se ejecute antes de iniciar el juego
-        if (this.persona && this.persona.body && this.persona.body.blocked.down) {
+        if (!this.started || !this.persona) return;
+
+        if (this.persona.body && this.persona.body.blocked.down) {
             this.persona.setVelocityY(0);
         }
 
         this.obstaculos.forEach((obstaculo) => {
-            const tubo = obstaculo.inferior; 
-        
-            // Sumar puntos cuando la persona lo pasa
+            const tubo = obstaculo.inferior;
+
             if (tubo.x < this.persona.x && !obstaculo.contado) {
                 this.obstaculossaltados++;
                 this.contadorTexto.setText(`Puntuación: ${this.obstaculossaltados}`);
                 obstaculo.contado = true;
             }
-        
-            // Destruir cuando sale de pantalla
+
             if (tubo.x < -tubo.width) {
                 obstaculo.superior.destroy();
                 obstaculo.inferior.destroy();
             }
         });
+    }
+
+    _clean_up() {
+        if (this.pointerDownEvent) {
+            this.input.off('pointerdown');
+        }
+        this.time.removeAllEvents();
+        this.physics.pause();
+        if (this.persona) this.persona.destroy();
+        if (this.fondo) this.fondo.destroy();
+        if (this.contadorTexto) this.contadorTexto.destroy();
+        this.obstaculos.forEach((obstaculo) => {
+            if (obstaculo.superior) obstaculo.superior.destroy();
+            if (obstaculo.inferior) obstaculo.inferior.destroy();
+        });
+        this.obstaculos = [];
     }
 }
 
