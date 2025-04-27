@@ -15,7 +15,13 @@
                         "habitacion",
                         "salon",
                         "fin_demo",
-                        "parque"
+                        "clase",
+                        "pasillo",
+                        "cafeteria",
+                        "bares",
+                        "bus",
+                        "parque",
+                        "mapa"
                     ]
                 },
                 "Personajes": {
@@ -28,9 +34,7 @@
                     ],
                     "Poses": [
                         "normal",
-                        "feliz",
-                        "triste",
-                        "enfado"
+                        "feliz"
                     ]
                 },
                 "Puertas": {
@@ -38,7 +42,12 @@
                     "Puertas": [
                         "salon",
                         "habitacion",
-                        "parque"
+                        "bares",
+                        "parque",
+                        "bares",
+                        "pasillo",
+                        "cafeteria",
+                        "clase"
                     ],
                     "Lados": [
                         "izquierda",
@@ -49,8 +58,14 @@
                     "Path": "objetos/",
                     "Objetos": [
                         "habitacion_cama",
+                        "puerta_disco",
                         "pelota_parque",
-                        "caballo_parque"
+                        "caballo_parque",
+                        "calle_boton",
+                        "copas_boton",
+                        "fdi_boton",
+                        "parque_boton",
+                        "piso_boton"
                     ]
                 },
                 "Clases": [
@@ -74,16 +89,23 @@
                     "Personajes": [
                         "prota",
                         "maria",
-                        "none",
                         "pepe",
-                        "samuel"
+                        "samuel",
+                        "montero",
+                        "jaime",
+                        "lorena",
+                        "marta",
+                        "none",
+                        "profesor",
+                        "victor"
                     ],
                     "Poses": [
                         "normal",
                         "feliz",
                         "triste",
                         "enfado",
-                        "rayado"
+                        "rayado",
+                        "pillin"
                     ]
                 },
                 "Backgrounds": {
@@ -93,7 +115,12 @@
                         "habitacion",
                         "salon",
                         "fin_demo",
-                        "negro"
+                        "negro",
+                        "clase",
+                        "pasillo",
+                        "cafeteria",
+                        "bares",
+                        "bus"
                     ]
                 },
                 "Clases" : [

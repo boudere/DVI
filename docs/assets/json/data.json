@@ -1,48 +1,104 @@
 {
     "Assets": {
-        "Path": "/DVI/assets/",
-        "Images": {
-            "Path": "/DVI/assets/img/",
+        "Root": "/DVI/",
+        "Path": "assets/",
+        "Imgs": {
+            "Path": "img/",
             "Prefix": "img_",
-            "Extension": ".png",
-            "Collider": {
-                "Path": "/DVI/assets/img/collider/",
-                "Collider": "collider"
-            },
-            "Cursor": {
-                "Path": "/DVI/assets/img/cursor/",
-                "Cursor": "cursor",
-                "CursorSelect": "cursor_selected",
-                "CursorLeft": "cursor_left",
-                "CursorRight": "cursor_right",
-                "Background": "background"
-            },
-            "Dialogos": {
-                "Path": "/DVI/assets/img/dialogos/",
+            "Suffix": ".png",
+            "Pantallas": {
+                "Path": "pantallas/",
+                "Backgrounds": {
+                    "Path": "backgrounds/",
 
-                "Dialogos": { 
-                    "Path": "/DVI/assets/img/dialogos/dialogos/",
-
-                    "CuadradoDialogo": "cuadrado_dialogo",
-                    "BotonDialogo": "boton_dialogo"
+                    "Backgrounds": [
+                        "habitacion",
+                        "salon",
+                        "fin_demo",
+                        "clase",
+                        "pasillo",
+                        "cafeteria",
+                        "bares",
+                        "bus",
+                        "parque",
+                        "mapa"
+                    ]
                 },
                 "Personajes": {
-                    "Path": "/DVI/assets/img/dialogos/personajes/",
-
+                    "Path": "personajes/",
                     "Personajes": [
                         "prota",
                         "maria",
-                        "anonimo",
+                        "pepe",
+                        "samuel"
+                    ],
+                    "Poses": [
+                        "normal",
+                        "feliz"
+                    ]
+                },
+                "Puertas": {
+                    "Path": "puertas/",
+                    "Puertas": [
+                        "salon",
+                        "habitacion",
+                        "bares",
+                        "parque",
+                        "bares",
+                        "pasillo",
+                        "cafeteria",
+                        "clase"
+                    ],
+                    "Lados": [
+                        "izquierda",
+                        "derecha"
+                    ]
+                },
+                "Objetos": {
+                    "Path": "objetos/",
+                    "Objetos": [
+                        "habitacion_cama",
+                        "puerta_disco",
+                        "pelota_parque",
+                        "caballo_parque",
+                        "calle_boton",
+                        "copas_boton",
+                        "fdi_boton",
+                        "parque_boton",
+                        "piso_boton"
+                    ]
+                },
+                "Clases": [
+                    "Backgrounds",
+                    "Personajes",
+                    "Puertas",
+                    "Objetos"
+                ]   
+            },
+            "Dialogos": {
+                "Path": "dialogos/",
+                "Dialogos": {
+                    "Path": "dialogos/",
+                    "Dialogos": [
+                        "cuadrado_dialogo",
+                        "boton_dialogo"
+                    ]
+                },
+                "Personajes": {
+                    "Path": "personajes/",
+                    "Personajes": [
+                        "prota",
+                        "maria",
+                        "pepe",
+                        "samuel",
+                        "montero",
                         "jaime",
                         "lorena",
-                        "montero",
+                        "marta",
                         "none",
-                        "pepe",
                         "profesor",
-                        "samuel",
                         "victor"
                     ],
-
                     "Poses": [
                         "normal",
                         "feliz",
@@ -53,52 +109,120 @@
                     ]
                 },
                 "Backgrounds": {
-                    "Path": "/DVI/assets/img/dialogos/backgrounds/",
+                    "Path": "backgrounds/",
 
                     "Backgrounds": [
                         "habitacion",
                         "salon",
                         "fin_demo",
-                        "salon_cocina",
-                        "salon_comedor",
-                        "salon_descanso",
+                        "negro",
                         "clase",
                         "pasillo",
                         "cafeteria",
                         "bares",
                         "bus"
                     ]
-                }
+                },
+                "Clases" : [
+                    "Dialogos",
+                    "Personajes",
+                    "Backgrounds"
+                ]
             },
-            "Pantallas": {
-                "Path": "/DVI/assets/img/pantallas/",
-
+            "Minijuegos": {
+                "Path": "minijuegos/",
+                "JuegoOveja": {
+                    "Path": "juego_oveja/",
+                    "JuegoOveja": [
+                        "oveja",
+                        "fondo",
+                        "valla",
+                        "cielo",
+                        "prota1",
+                        "prota2",
+                        "pantalla_inicio",
+                        "pantalla_final"
+                    ]
+                },
+                "JuegoDiscoteca": {
+                    "Path": "juego_discoteca/",
+                    "JuegoDiscoteca": [
+                        "persona",
+                        "obstaculo",
+                        "fondodisco"
+                    ]
+                },
+                "Clases": [
+                    "JuegoOveja",
+                    "JuegoDiscoteca"
+                ]
+            },
+            "Cursors": {
+                "Path": "cursors/",
+                "Cursors": {
+                    "Path": "cursors/",
+                    "Cursors": [
+                        "cursor_left",
+                        "cursor_right",
+                        "cursor_selected",
+                        "cursor"
+                    ]
+                },
                 "Backgrounds": {
-                    "Path": "/DVI/assets/img/pantallas/backgrounds/",
+                    "Path": "backgrounds/",
 
                     "Backgrounds": [
-                        "habitacion",
-                        "salon",
-                        "fin_demo",
-                        "salon_cocina",
-                        "salon_comedor",
-                        "salon_descanso",
-                        "clase",
-                        "pasillo",
-                        "cafeteria",
-                        "bares",
-                        "bus"
+                        "can_be_clicked"
                     ]
-                }
-            }
+                },
+                "Clases": [
+                    "Cursors",
+                    "Backgrounds"
+                ]
+            },
+            "Clases": [
+                "Pantallas",
+                "Dialogos",
+                "Minijuegos",
+                "Cursors"
+            ]
         },
         "Json": {
-            "Path": "/DVI/assets/json/",
+            "Path": "json/",
             "Prefix": "json_",
-            "Extension": ".json",
+            "Suffix": ".json",
 
             "Dialogos": "dialogo",
-            "Pantallas": "pantallas"
+            "OpcionesDialogo": "opciones_dialogo",
+            "VariablesDialogo": "variables_dialogo",
+            "Pantallas": "pantallas",
+            "Saves": "saves",
+            "Folders": "folders",
+            "Animation": "animation",
+            "PantallaInfo": "pantalla_info",
+            "PersonajesInfo": "personajes_info",
+
+            "Jsons": [
+                "dialogo",
+                "opciones_dialogo",
+                "variables_dialogo",
+                "pantallas",
+                "saves",
+                "animation",
+                "pantalla_info",
+                "personajes_info"
+            ]
+        },
+        "Musica": {
+            "Path": "musica/",
+            "Prefix": "musica_",
+            "Suffix": ".ogg",
+
+            "Musicas": [
+                "ovejitas",
+                "tema_inicial",
+                "disco"
+            ]
         }
     }
 }

@@ -959,7 +959,7 @@
     },
     "cap1002": {
       "texto": "¡Hola!!! ¿qué tal estás? ¿cómo te llamas? ay que ilusión, ¿eres de aquí?",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "normal",
       "fondo": "clase",
       "opciones": true,
@@ -1091,7 +1091,7 @@
     },
     "cap1014": {
       "texto": "Perdón, es que perdí el bus F…",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "normal",
       "fondo": "clase",
       "opciones": false,
@@ -1113,7 +1113,7 @@
     },
     "cap1016": {
       "texto": "Hola buenas.",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "normal",
       "fondo": "clase",
       "opciones": false,

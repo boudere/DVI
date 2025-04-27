@@ -32,14 +32,14 @@
                     "Personajes": [
                         "prota",
                         "maria",
-                        "anonimo",
+                        "pepe",
+                        "samuel",
+                        "montero",
                         "jaime",
                         "lorena",
-                        "montero",
+                        "marta",
                         "none",
-                        "pepe",
                         "profesor",
-                        "samuel",
                         "victor"
                     ],
 
@@ -58,7 +58,6 @@
                     "Backgrounds": [
                         "habitacion",
                         "salon",
-                        "fin_demo",
                         "salon_cocina",
                         "salon_comedor",
                         "salon_descanso",
@@ -80,9 +79,6 @@
                         "habitacion",
                         "salon",
                         "fin_demo",
-                        "salon_cocina",
-                        "salon_comedor",
-                        "salon_descanso",
                         "clase",
                         "pasillo",
                         "cafeteria",
