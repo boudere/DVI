@@ -31,15 +31,25 @@
 
                     "Personajes": [
                         "prota",
-                        "veronica",
-                        "maria"
+                        "maria",
+                        "anonimo",
+                        "jaime",
+                        "lorena",
+                        "montero",
+                        "none",
+                        "pepe",
+                        "profesor",
+                        "samuel",
+                        "victor"
                     ],
 
                     "Poses": [
                         "normal",
-                        "alegre",
+                        "feliz",
                         "triste",
-                        "enfado"
+                        "enfado",
+                        "rayado",
+                        "pillin"
                     ]
                 },
                 "Backgrounds": {
@@ -48,9 +58,15 @@
                     "Backgrounds": [
                         "habitacion",
                         "salon",
+                        "fin_demo",
                         "salon_cocina",
                         "salon_comedor",
-                        "salon_descanso"
+                        "salon_descanso",
+                        "clase",
+                        "pasillo",
+                        "cafeteria",
+                        "bares",
+                        "bus"
                     ]
                 }
             },
@@ -63,7 +79,15 @@
                     "Backgrounds": [
                         "habitacion",
                         "salon",
-                        "fin_demo"
+                        "fin_demo",
+                        "salon_cocina",
+                        "salon_comedor",
+                        "salon_descanso",
+                        "clase",
+                        "pasillo",
+                        "cafeteria",
+                        "bares",
+                        "bus"
                     ]
                 }
             }

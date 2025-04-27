@@ -1,7 +1,7 @@
 {
     "Saves": {
-        "Pantalla": "prueba_1",
-        "Dialogo": "tutorial1",
+        "Pantalla": "Dialogo",
+        "Dialogo": "cap1000",
         "Minijuegos": {
             "JuegoOveja": {
                 "RecortdPuntuacion": -2

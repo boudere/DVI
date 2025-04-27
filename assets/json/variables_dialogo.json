@@ -1,12 +1,220 @@
 {
-  "VariablesDialogo": {
-    "prueba_1": {
+  "Hoja 1": {
+    "afinidad_cap1002a": {
+      "var_1": "afinidad_victor",
+      "val_1": 5,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1002b": {
+      "var_1": "afinidad_victor",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1002c": {
+      "var_1": "afinidad_victor",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1002d": {
+      "var_1": "afinidad_victor",
+      "val_1": 3,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1007a": {
+      "var_1": "afinidad_victor",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1007b": {
+      "var_1": "afinidad_victor",
+      "val_1": 3,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1007c": {
+      "var_1": "afinidad_victor",
+      "val_1": 5,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1008a": {
+      "var_1": "afinidad_montero",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1008b": {
+      "var_1": "afinidad_montero",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1008c": {
+      "var_1": "afinidad_montero",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1010a": {
+      "var_1": "afinidad_victor",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1010b": {
+      "var_1": "afinidad_victor",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1010c": {
+      "var_1": "afinidad_victor",
+      "val_1": 5,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1011a": {
+      "var_1": "afinidad_victor",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1011b": {
+      "var_1": "afinidad_victor",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1011c": {
+      "var_1": "afinidad_victor",
+      "val_1": 5,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1012a": {
+      "var_1": "afinidad_victor",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1012b": {
+      "var_1": "afinidad_victor",
+      "val_1": 3,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1014a": {
+      "var_1": "afinidad_montero",
+      "val_1": 5,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1014b": {
+      "var_1": "afinidad_montero",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1015a": {
       "var_1": "afinidad_montero",
       "val_1": 2,
-      "var_2": "afinidad_pepe",
-      "val_2": 3,
-      "var_3": "afinidad_maria",
-      "val_3": 1
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1015b": {
+      "var_1": "afinidad_montero",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1015c": {
+      "var_1": "afinidad_montero",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1017a": {
+      "var_1": "afinidad_victor",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1017b": {
+      "var_1": "afinidad_victor",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_cap1017c": {
+      "var_1": "afinidad_victor",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "": {
+      "var_1": null,
+      "val_1": null,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
     },
     "afinidad_cap2010b": {
       "var_1": "afinidad_montero",
