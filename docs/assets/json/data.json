@@ -1,192 +1,104 @@
 {
     "Assets": {
-        "Root": "/DVI/",
-        "Path": "assets/",
-        "Imgs": {
-            "Path": "img/",
+        "Path": "/DVI/assets/",
+        "Images": {
+            "Path": "/DVI/assets/img/",
             "Prefix": "img_",
-            "Suffix": ".png",
-            "Pantallas": {
-                "Path": "pantallas/",
-                "Backgrounds": {
-                    "Path": "backgrounds/",
-
-                    "Backgrounds": [
-                        "habitacion",
-                        "salon",
-                        "fin_demo"
-                    ]
-                },
-                "Personajes": {
-                    "Path": "personajes/",
-                    "Personajes": [
-                        "prota",
-                        "maria",
-                        "pepe",
-                        "samuel"
-                    ],
-                    "Poses": [
-                        "normal",
-                        "feliz",
-                        "triste",
-                        "enfado"
-                    ]
-                },
-                "Puertas": {
-                    "Path": "puertas/",
-                    "Puertas": [
-                        "salon",
-                        "habitacion"
-                    ],
-                    "Lados": [
-                        "izquierda",
-                        "derecha"
-                    ]
-                },
-                "Objetos": {
-                    "Path": "objetos/",
-                    "Objetos": [
-                        "habitacion_cama"
-                    ]
-                },
-                "Clases": [
-                    "Backgrounds",
-                    "Personajes",
-                    "Puertas",
-                    "Objetos"
-                ]   
+            "Extension": ".png",
+            "Collider": {
+                "Path": "/DVI/assets/img/collider/",
+                "Collider": "collider"
+            },
+            "Cursor": {
+                "Path": "/DVI/assets/img/cursor/",
+                "Cursor": "cursor",
+                "CursorSelect": "cursor_selected",
+                "CursorLeft": "cursor_left",
+                "CursorRight": "cursor_right",
+                "Background": "background"
             },
             "Dialogos": {
-                "Path": "dialogos/",
-                "Dialogos": {
-                    "Path": "dialogos/",
-                    "Dialogos": [
-                        "cuadrado_dialogo",
-                        "boton_dialogo"
-                    ]
+                "Path": "/DVI/assets/img/dialogos/",
+
+                "Dialogos": { 
+                    "Path": "/DVI/assets/img/dialogos/dialogos/",
+
+                    "CuadradoDialogo": "cuadrado_dialogo",
+                    "BotonDialogo": "boton_dialogo"
                 },
                 "Personajes": {
-                    "Path": "personajes/",
+                    "Path": "/DVI/assets/img/dialogos/personajes/",
+
                     "Personajes": [
                         "prota",
                         "maria",
+                        "anonimo",
+                        "jaime",
+                        "lorena",
+                        "montero",
                         "none",
                         "pepe",
-                        "samuel"
+                        "profesor",
+                        "samuel",
+                        "victor"
                     ],
+
                     "Poses": [
                         "normal",
                         "feliz",
                         "triste",
-                        "enfado"
+                        "enfado",
+                        "rayado",
+                        "pillin"
                     ]
                 },
                 "Backgrounds": {
-                    "Path": "backgrounds/",
+                    "Path": "/DVI/assets/img/dialogos/backgrounds/",
 
                     "Backgrounds": [
                         "habitacion",
                         "salon",
                         "fin_demo",
-                        "negro"
+                        "salon_cocina",
+                        "salon_comedor",
+                        "salon_descanso",
+                        "clase",
+                        "pasillo",
+                        "cafeteria",
+                        "bares",
+                        "bus"
                     ]
-                },
-                "Clases" : [
-                    "Dialogos",
-                    "Personajes",
-                    "Backgrounds"
-                ]
+                }
             },
-            "Minijuegos": {
-                "Path": "minijuegos/",
-                "JuegoOveja": {
-                    "Path": "juego_oveja/",
-                    "JuegoOveja": [
-                        "oveja",
-                        "fondo",
-                        "valla",
-                        "cielo",
-                        "prota1",
-                        "prota2",
-                        "pantalla_inicio",
-                        "pantalla_final"
-                    ]
-                },
-                "JuegoDiscoteca": {
-                    "Path": "juego_discoteca/",
-                    "JuegoDiscoteca": [
-                        "persona",
-                        "obstaculo",
-                        "fondodisco"
-                    ]
-                },
-                "Clases": [
-                    "JuegoOveja",
-                    "JuegoDiscoteca"
-                ]
-            },
-            "Cursors": {
-                "Path": "cursors/",
-                "Cursors": {
-                    "Path": "cursors/",
-                    "Cursors": [
-                        "cursor_left",
-                        "cursor_right",
-                        "cursor_selected",
-                        "cursor"
-                    ]
-                },
+            "Pantallas": {
+                "Path": "/DVI/assets/img/pantallas/",
+
                 "Backgrounds": {
-                    "Path": "backgrounds/",
+                    "Path": "/DVI/assets/img/pantallas/backgrounds/",
 
                     "Backgrounds": [
-                        "can_be_clicked"
+                        "habitacion",
+                        "salon",
+                        "fin_demo",
+                        "salon_cocina",
+                        "salon_comedor",
+                        "salon_descanso",
+                        "clase",
+                        "pasillo",
+                        "cafeteria",
+                        "bares",
+                        "bus"
                     ]
-                },
-                "Clases": [
-                    "Cursors",
-                    "Backgrounds"
-                ]
-            },
-            "Clases": [
-                "Pantallas",
-                "Dialogos",
-                "Minijuegos",
-                "Cursors"
-            ]
+                }
+            }
         },
         "Json": {
-            "Path": "json/",
+            "Path": "/DVI/assets/json/",
             "Prefix": "json_",
-            "Suffix": ".json",
+            "Extension": ".json",
 
             "Dialogos": "dialogo",
-            "Pantallas": "pantallas",
-            "Saves": "saves",
-            "Folders": "folders",
-            "Animation": "animation",
-            "PantallaInfo": "pantalla_info",
-            "PersonajesInfo": "personajes_info",
-
-            "Jsons": [
-                "dialogo",
-                "pantallas",
-                "saves",
-                "animation",
-                "pantalla_info",
-                "personajes_info"
-            ]
-        },
-        "Musica": {
-            "Path": "musica/",
-            "Prefix": "musica_",
-            "Suffix": ".ogg",
-
-            "Musicas": [
-                "ovejitas",
-                "tema_inicial",
-                "disco"
-            ]
+            "Pantallas": "pantallas"
         }
     }
 }
