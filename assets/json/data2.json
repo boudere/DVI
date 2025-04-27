@@ -63,6 +63,7 @@
                         "salon_descanso",
                         "clase",
                         "pasillo",
+                        "entradafacul",
                         "cafeteria",
                         "bares",
                         "bus"
@@ -81,6 +82,7 @@
                         "fin_demo",
                         "clase",
                         "pasillo",
+                        "entradafacul",
                         "cafeteria",
                         "bares",
                         "bus"
