@@ -16,7 +16,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
 
         super(scene, x, y, '', opciones);
 
-        this._reset_varaibles();
+        this._reset_variables();
 
         this.texto = texto;
         this.containter = container;
@@ -31,7 +31,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         }, delay);
     }
 
-    _reset_varaibles() {          
+    _reset_variables() {          
         this.isPause = false;
     }
 
