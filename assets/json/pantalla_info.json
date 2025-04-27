@@ -75,11 +75,7 @@
                     "pos_y": 702.5,
                     "size_x": 1,
                     "size_y": 1,
-                    "on_click":{
-                        "scene": "pantalla",
-                        "name": "mapa_1",
-                        "direction": "left"
-                    }
+                    "on_click":null
                 }
             },
             "objetos": {
