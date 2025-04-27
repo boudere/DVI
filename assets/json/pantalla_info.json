@@ -1971,6 +1971,141 @@
                 }
             },
             "objetos": {}
+        },
+        "clase_1_00": {
+            "background": "clase",
+            "puertas":{
+                
+                "clase_derecha": {
+                    "nombre": "pasillo",
+                    "img": "clase_derecha",
+                    "pos_x": 997,
+                    "pos_y": 392,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "pasillo_1_00",
+                        "direction": "right"
+                    }
+                }
+                
+            },
+            "objetos": {}
+        },
+        "pasillo_1_00":{
+            "background": "pasillo",
+            "puertas":{
+                "pasillo_izquierda": {
+                    "nombre": "clase",
+                    "img": "pasillo_izquierda",
+                    "pos_x": 734,
+                    "pos_y": 710,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "clase_1_00",
+                        "direction": "left"
+                    }
+                },
+                "pasillo_derecha": {
+                    "nombre": "cafeteria",
+                    "img": "pasillo_derecha",
+                    "pos_x": 1979,
+                    "pos_y": 921,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "cafe_1_00",
+                        "direction": "right"
+                    }
+                }
+            },
+            "objetos": {
+                "entrada_boton": {
+                    "nombre": "entrada",
+                    "img": "entrada_boton",
+                    "pos_x": 765,
+                    "pos_y": 501,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "entrada_facultad_1_00",
+                        "direction": "right"
+                    }
+                }
+            }
+        },
+        "cafe_1_00":{
+            "background": "cafeteria",
+            "puertas":{
+                
+                "cafeteria_izquierda": {
+                    "nombre": "pasillo",
+                    "img": "cafeteria_izquierda",
+                    "pos_x": 53,
+                    "pos_y": 858,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "pasillo_1_01",
+                        "direction": "left"
+                    }
+                },
+                "cafeteria_derecha": {
+                    "nombre": "mapa",
+                    "img": "cafeteria_derecha",
+                    "pos_x": 1547,
+                    "pos_y": 858,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "entrada_facultad_1_00",
+                        "direction": "right"
+                    }
+                }
+            },
+            "objetos": {}
+        },
+        "entrada_facultad_1_00":{
+            "background": "entradafacul",
+            "puertas": {
+                
+                "entradafacul_derecha": {
+                    "nombre": "pasillo",
+                    "img": "puerta_pasillo", 
+                    "pos_x": 997,
+                    "pos_y": 392,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "pasillo_1_00",
+                        "direction": "right"
+                    }
+                }
+                
+            },
+            "objetos": {}
         }
     }
 }

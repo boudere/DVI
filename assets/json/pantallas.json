@@ -1480,9 +1480,9 @@
                 "on_click": null
             }
         },
-        "clase_1_01":{
+        "clase_1_00":{
             "pantalla": {
-                "nombre": "clase_1_01"
+                "nombre": "clase_1_00"
             },
             "prota": {
                 "nombre": "prota",
@@ -1496,7 +1496,7 @@
                 "on_click": null
             }
         },
-        "cafe_1_01":{
+        "cafe_1_00":{
             "pantalla": {
                 "nombre": "cafe_1_01"
             },
@@ -1512,9 +1512,9 @@
                 "on_click": null
             }
         },
-        "entrada_facultad1":{
+        "entrada_facultad_1_00":{
             "pantalla": {
-                "nombre": "entrada_facultad1"
+                "nombre": "entrada_facultad_1_00"
             },
             "prota": {
                 "nombre": "prota",
@@ -1543,57 +1543,6 @@
                     "animation": null
                 }
             }
-
-        },
-        "pasillo_01":{
-            "pantalla": {
-                "nombre": "pasillo_01"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
-            }
-        },
-        "clase_01":{
-            "pantalla": {
-                "nombre": "clase_01"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
-            }
-        },
-        "cafe_01":{
-            "pantalla": {
-                "nombre": "cafe_01"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
-            }
-        },
-        "pasillo_001":{
 
         }
     }
