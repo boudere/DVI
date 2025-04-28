@@ -394,6 +394,13 @@
               "name": "personajes",
               "folders": [
                 {
+                  "name": "boton_continuar",
+                  "folders": [],
+                  "files": [
+                    "boton_continuar_normal.png"
+                  ]
+                },
+                {
                   "name": "maria",
                   "folders": [],
                   "files": [

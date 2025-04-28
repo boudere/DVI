@@ -113,7 +113,6 @@
                     }
                 }
             },
-            "npcs": {},
             "objetos": {}
         },
         "bares_2": {
@@ -1986,8 +1985,9 @@
                     "animation": null,
                     "on_click": {
                         "scene": "minijuego",
-                        "name": "minijuego_examen2",
-                        "direction": "left"
+                        "name": "JuegoExamen2",
+                        "direction": "left",
+                        "return_dialogo": "aaaa"
                     }
                 },
                 "pasillo_derecha": {
@@ -1999,8 +1999,46 @@
                     "size_y": 1,
                     "delay": 0,
                     "animation": null,
-                    "on_click":null
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "cafefinal2",
+                        "direction": "right"
+                    }
                 }
+            },
+            "objetos": {}
+        },
+        "cafefinal2": {
+            "background": "cafeteria",
+            "puertas":{
+                
+                "cafeteria_derecha": {
+                    "nombre": "mapa",
+                    "img": "cafeteria_derecha",
+                    "pos_x": 1547,
+                    "pos_y": 858,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":null
+                },
+                "cafeteria_izquierda": {
+                    "nombre": "pasillo",
+                    "img": "cafeteria_izquierda",
+                    "pos_x": 53,
+                    "pos_y": 858,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "minijuego_examen_2",
+                        "direction": "left"
+                    }
+                }
+                
             },
             "objetos": {}
         }

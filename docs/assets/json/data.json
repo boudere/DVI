@@ -30,7 +30,8 @@
                         "prota",
                         "maria",
                         "pepe",
-                        "samuel"
+                        "samuel",
+                        "boton_continuar"
                     ],
                     "Poses": [
                         "normal",
@@ -151,7 +152,9 @@
                     "JuegoDiscoteca": [
                         "persona",
                         "obstaculo",
-                        "fondodisco"
+                        "fondodisco",
+                        "pantalla_inicio",
+                        "pantalla_final"
                     ]
                 },
                 "Clases": [
@@ -224,7 +227,6 @@
                 "ovejitas",
                 "tema_inicial",
                 "disco",
-                "dialogo",
                 "mechanical_keyboard"
             ]
         }
