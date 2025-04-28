@@ -153,8 +153,8 @@
                         "persona",
                         "obstaculo",
                         "fondodisco",
-                        "pantalla_inicio",
-                        "pantalla_final"
+                        "pantalla_inicio_disco",
+                        "pantalla_final_disco"
                     ]
                 },
                 "Clases": [

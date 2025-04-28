@@ -13,8 +13,8 @@ class JuegoDiscoteca extends Game {
             PERSONA_IMG: 'persona',
             OBSTACULO_IMG: 'obstaculo',
             FONDO_IMG: 'fondodisco',
-            PANTALLA_INICIO: 'pantalla_inicio',
-            PANTALLA_FINAL: 'pantalla_final'
+            PANTALLA_INICIO: 'pantalla_inicio_disco',
+            PANTALLA_FINAL: 'pantalla_final_disco'
         };
 
         this.PERSONA_IMG = sprites.PERSONA_IMG;
@@ -25,12 +25,12 @@ class JuegoDiscoteca extends Game {
 
         this.DISCOTECA_MUSICA = 'disco';
 
-        this.personawidth = 1024;
-        this.personaheight = 1024;
+        this.personawidth = 408;
+        this.personaheight = 612;
         this.obstaculowidth = 1024;
         this.obstaculoheight = 1024;
-        this.fondowidth = 612;
-        this.fondoheight = 408;
+        this.fondowidth = 1536;
+        this.fondoheight = 1024;
 
         this.started = false;
     }
@@ -164,8 +164,7 @@ class JuegoDiscoteca extends Game {
         [this.tuboSuperior, this.tuboInferior].forEach(tubo => {
             tubo.setVelocityX(-500);
             tubo.setGravityY(-600);
-            tubo.body.setSize(tubo.width * 0.8, tubo.height * 0.8);
-            tubo.body.setOffset(tubo.width * 0.1, tubo.height * 0.1);
+            tubo.refreshBody();
         });
 
         this.physics.add.collider(this.persona, this.tuboInferior, this._game_over, null, this);

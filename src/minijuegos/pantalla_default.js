@@ -4,6 +4,7 @@ class PantallaDefault extends Phaser.GameObjects.Sprite {
         super(scene, x, y, texture);
 
         this.setOrigin(0, 0);
+        this.setScale(scene.scale.width/this.width, scene.scale.height/this.height);
         this.setInteractive();
 
         this.total_clicks = 0;

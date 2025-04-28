@@ -51,7 +51,7 @@ class SceneManager extends Managers {
 
          // lanza las escenas managers
          // pantalla manager:
-         this.add_scene(PANTALLA_MANAGER, PantallaManager, this.saves_data.Pantalla);
+        this.add_scene(PANTALLA_MANAGER, PantallaManager, this.saves_data.Pantalla);
         //this.add_scene(PANTALLA_MANAGER, PantallaManager);
  
          // dialogo manager:
