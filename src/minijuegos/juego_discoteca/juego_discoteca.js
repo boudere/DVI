@@ -105,7 +105,7 @@ class JuegoDiscoteca extends Game {
     _crear_persona() {
         let x = 175;
         let y = this.SCREEN_HEIGHT * 0.5;
-        this.persona = new Persona(this, x, y, 200 / this.personawidth, 200 / this.personaheight);
+        this.persona = new Persona(this, x, y, 150 / this.personawidth, 150 / this.personaheight);
     }
 
     _crear_pantalla_inicio() {
