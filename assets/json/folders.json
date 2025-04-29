@@ -262,8 +262,8 @@
               "files": [
                 "fondodisco.png",
                 "obstaculo.png",
-                "pantalla_final.png",
-                "pantalla_inicio.png",
+                "pantalla_final_disco.png",
+                "pantalla_inicio_disco.png",
                 "persona.png"
               ]
             },
