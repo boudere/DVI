@@ -11,7 +11,7 @@ class CursorBackground extends GameObjectsSprite {
     }
 
     create() {
-        this.name_text = new DialogoMainText(this.scene, this.x, this.y, this, this.width, " ", 0, {
+        this.name_text = new DialogoMainText(this.scene, this.x, this.y, this, this.width, " ", 0, false, {
             fontSize: "24px",
             align: "center"
         }).setOrigin(0.5, 0.5);

@@ -1,6 +1,6 @@
 import { DATA_INFO } from "/src/data/scene_data.js";
 class GameObjectsText extends Phaser.GameObjects.Text {
-    constructor(scene, x, y, container, container_width, texto, delay, opciones_entrada = {}) {
+    constructor(scene, x, y, container, container_width, texto, delay, animation=false, opciones_entrada = {}) {
         // opciones por defecto para el Text
         let opciones_por_defecto = {
             fontSize: "32px",
@@ -25,8 +25,11 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         this.setDepth(container.depth + 1); // para que se vea por encima del contenedor
         this.on('destroy', this.before_destroy, this);
 
+        
+        this.animation_finished != animation;
+
         setTimeout(() => {
-            this._add_text(true);
+            this._add_text(animation);
         }, delay);
     }
 
@@ -38,6 +41,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         this.scene.add.existing(this);
 
         if (animation) {
+            console.log("animation", animation);
             this.start_animation();
         } else {
             this.finish_animation();
@@ -49,27 +53,38 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         let texto_completo = this.texto;
         let texto_actual = '';
     
-        // aseguramos que empiece vacío
         this.setText('');
         let rate = 1.5;
         this.scene.play_sfx('mechanical_keyboard');
     
-        this.scene.time.addEvent({
+        const timerEvent = this.scene.time.addEvent({
             delay: 30,
             callback: () => {
+                // Si se ha marcado como terminada la animación, mostramos el texto completo
+                if (this.animation_finished) {
+                    this.setText(texto_completo);
+                    this.scene.stop_sfx('mechanical_keyboard');
+                    this.containter.finish_animation();
+                    timerEvent.remove(); // Detenemos el evento manualmente
+                    return;
+                }
+    
                 texto_actual += texto_completo.charAt(i);
                 rate = this.cambiar_pitch(rate);
                 this.setText(texto_actual);
                 i++;
     
                 if (i >= texto_completo.length) {
+                    this.texto = texto_completo;
                     this.scene.stop_sfx('mechanical_keyboard');
                     this.containter.finish_animation();
+                    timerEvent.remove(); // También detenemos el evento aquí
                 }
             },
-            repeat: texto_completo.length - 1
+            loop: true // Usamos loop en lugar de repeat, así tenemos control total
         });
     }
+    
 
     cambiar_pitch(pitch) {
         let max = 1.5;
@@ -82,7 +97,10 @@ class GameObjectsText extends Phaser.GameObjects.Text {
     
     run_tween(animation_data) {}
 
-    finish_animation() {}
+    finish_animation() {
+        this.setText(this.texto);
+        this.containter.finish_animation();
+    }
 
     // se ejecuta al salir de la escena
     exit() { this.visible = false; }
@@ -113,6 +131,10 @@ class GameObjectsText extends Phaser.GameObjects.Text {
     _set_events() {}
 
     before_destroy() {}
+
+    skip_animation() {
+        this.animation_finished = true;
+    }
 }
 
 export default GameObjectsText;

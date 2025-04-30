@@ -4,7 +4,7 @@ import Animation from '/src/utils/animation.js';
 
 class CuadradoDialogo extends DialogoGameObject {
     constructor(scene, x, y, nombre_img, text, animation) {
-        super(scene, x, y, nombre_img, 200);
+        super(scene, x, y, nombre_img, 100);
 
         this.SCALE = 1.2;
 
@@ -26,11 +26,11 @@ class CuadradoDialogo extends DialogoGameObject {
                 "animation_1": [
                     {
                         "type": "fade_in", 
-                        "duration": 400
+                        "duration": 300
                     },
                     {
                         "type": "scale_center",
-                        "duration": 400,
+                        "duration": 300,
                         "var": {
                             "scale": this.SCALE
                         }
@@ -53,9 +53,10 @@ class CuadradoDialogo extends DialogoGameObject {
             this._load_main_text();
             return;
         }
-
+    
         this.finished_animation++;
         if (this.finished_animation != this.total_animations) { return; }
+    
         this.scene.finish_animation();
     }
 
@@ -73,7 +74,7 @@ class CuadradoDialogo extends DialogoGameObject {
         }
         let x = this.x - this.width / 2 - 110;
         let y = this.y - this.height / 2 + 25;
-        this.main_text = new DialogoMainText(this.scene, x, y, this, this.width * 1.2, this.text, this.delay).setOrigin(0, 0)
+        this.main_text = new DialogoMainText(this.scene, x, y, this, this.width * 1.2, this.text, this.delay, !this.animation_finished).setOrigin(0, 0)
         
         this.total_animations++;
     }

@@ -7,6 +7,7 @@ class DialogoPersonaje extends DialogoGameObject {
 
         this.finished_animation = 0;
         this.total_animations = 0;
+        this.animation_finished = false;
 
         this.game_object_data = {
             'alpha': this.alpha,
@@ -21,11 +22,11 @@ class DialogoPersonaje extends DialogoGameObject {
             "animation_1": [
                 {
                     "type": "fade_in", 
-                    "duration": 400
+                    "duration": 1000
                 },
                 {
                     "type": "move_right",
-                    "duration": 400,
+                    "duration": 1000,
                     "var": {
                         "pos_x": 500
                     }

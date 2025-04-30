@@ -15,6 +15,7 @@ class ButtonCuadradoDialogo extends DialogoGameObject {
 
         this.finished_animation = 0;
         this.total_animations = 0;
+        this.animation_finished = false;
 
         this.game_object_data = {
             'alpha': this.alpha,
@@ -63,6 +64,7 @@ class ButtonCuadradoDialogo extends DialogoGameObject {
 
         if (this.finished_animation != this.total_animations) { return; }
         this.finished_animation = 0;
+        this.animation_finished = true;
 
         this.scene.finish_animation();
     }
@@ -79,9 +81,10 @@ class ButtonCuadradoDialogo extends DialogoGameObject {
         if (this.main_text) {
             this.main_text.destroy();
         }
+
         let x = this.x - this.width / 2 - 100;
         let y = this.y - this.height / 2;
-        this.main_text = new DialogoMainText(this.scene, x - this.width / 2, y - this.height / 3, this, this.width * this.SCALE, this.text, this.delay, {fontSize: "32px",}).setOrigin(0, 0)
+        this.main_text = new DialogoMainText(this.scene, x - this.width / 2, y - this.height / 3, this, this.width * this.SCALE, this.text, this.delay, !this.animation_finished, {fontSize: "32px",}).setOrigin(0, 0)
         
         this.total_animations++;
     }
