@@ -4,6 +4,7 @@ import Oveja from '/src/minijuegos/juego_oveja/game_objects/sprites/oveja.js';
 import Valla from '/src/minijuegos/juego_oveja/game_objects/sprites/valla.js';
 import Suelo from '/src/minijuegos/juego_oveja/game_objects/sprites/suelo.js';
 import Cielo from '/src/minijuegos/juego_oveja/game_objects/sprites/cielo.js';
+import Nube from '/src/minijuegos/juego_oveja/game_objects/sprites/nube.js';
 import Prota from '/src/minijuegos/juego_oveja/game_objects/sprites/prota.js';
 import PantallaIncio from '/src/minijuegos/juego_oveja/pantallas/pantalla_inicio.js';
 import PantallaFinal from '/src/minijuegos/juego_oveja/pantallas/pantalla_final.js';
@@ -46,8 +47,22 @@ class JuegoOveja extends Game {
         this.scene.get(MINIJUEGO_MANAGER).play_music(this.OVEJITA_MUSICA);
 
         this.ovejas = [];
+        this.nubes = {
+            'cerca': [],
+            'media': [],
+            'lejos': [],
+        };
+        this.nubes_cantidad = {
+            'cerca': 0,
+            'max_cerca': 2,
+            'media': 0,
+            'max_media': 1,
+            'lejos': 0,
+            'max_lejos': 2,
+        }
 
         this._crear_cielo();
+        this._crear_nubes_iniciales();  
         this._crear_suelo();
         this._crear_prota();
         this._crear_valla();
@@ -88,12 +103,18 @@ class JuegoOveja extends Game {
     start_game() {
         this.pantalla_inicio.exit();
         this.cielo.enter();
+        Object.keys(this.nubes).forEach((key) => {
+            this.nubes[key].forEach((nube) => {
+                nube.enter();
+            });
+        });
         this.suelo.enter();
         this.prota.enter();
         this.valla.enter();
         this._crear_oveja();
 
         this.schedule_next_oveja(); // Comenzar a crear vallas
+        this.schedule_next_nube(); // Comenzar a crear nubes
         this.started = true; // Iniciar el juego
     }
 
@@ -110,19 +131,48 @@ class JuegoOveja extends Game {
     _crear_cielo() {
         let x = 0;
         let y = 0;
-        let scale_x = 1;
-        let scale_y = 1;
 
-        this.cielo = new Cielo(this, x, y, scale_x, scale_y).setOrigin(0,0);
+        this.cielo = new Cielo(this, x, y).setOrigin(0,0);
+    }
+
+    _crear_nubes_iniciales() {
+        let distancias = ['cerca', 'media', 'lejos'];
+    
+        this.nubes[distancias[0]].push(this._anadir_nube(distancias[0], 100, 5));
+        this.nubes[distancias[0]].push(this._anadir_nube(distancias[0], 1400, 3));
+        this.nubes[distancias[1]].push(this._anadir_nube(distancias[1], 1200, 1));
+        this.nubes[distancias[2]].push(this._anadir_nube(distancias[2], 250, 2));
+        this.nubes[distancias[2]].push(this._anadir_nube(distancias[2], 900, 4));
+    }
+       
+
+    _crear_nubes() {
+        let distancias = ['cerca', 'media', 'lejos'];
+    
+        distancias = Phaser.Utils.Array.Shuffle(distancias);
+
+        distancias.forEach((distancia) => {
+            if (this.nubes[distancia].length < this.nubes_cantidad[`max_${distancia}`]) {
+                let nube = this._anadir_nube(distancia);
+                nube.enter();
+                this.nubes[distancia].push(nube);
+                return;
+            }
+        });
+    }
+
+    _anadir_nube(distancia, x=null, num=null) {
+        x = x || this.SCREEN_WIDTH;
+        let y = this.SCREEN_HEIGHT;
+        let nube = new Nube(this, x, y, distancia, num).setOrigin(0,0);
+        return nube;
     }
 
     _crear_suelo() {
         let x = this.SCREEN_WIDTH / 2;
-        let y = this.SCREEN_HEIGHT * 0.95;
-        let scale_x = this.SCREEN_WIDTH / 450;
-        let scale_y = (this.SCREEN_HEIGHT * 0.3) / 338;
+        let y = this.SCREEN_HEIGHT * 0.9;
 
-        this.suelo = new Suelo(this, x, y, scale_x, scale_y);
+        this.suelo = new Suelo(this, x, y);
     }
 
     _crear_oveja() {
@@ -191,10 +241,31 @@ class JuegoOveja extends Game {
         });
     }
 
+    schedule_next_nube() {
+        let min = 100;
+        let max = 300;
+
+        min = Math.max(100, 300 -this.ovejas_contadas * 10);  
+        max = Math.max(400, 500 -this.ovejas_contadas * 20); 
+
+        const delay = Phaser.Math.Between(min, max);
+
+        this.time.delayedCall(delay, () => {
+            if (!this.started) { return; }
+            this._crear_nubes();
+            this.schedule_next_nube();
+        });
+    }
+
 
     _update() {
         if (!this.started) { return; }
 
+        this.ovejas_update()
+        this.nubes_update();
+    }
+
+    ovejas_update() {
         this.ovejas.forEach((oveja) => {
             if (oveja && oveja.x < this.valla.x && !oveja.contada) {
                 oveja.contada = true;
@@ -219,6 +290,18 @@ class JuegoOveja extends Game {
                 this.prota.oveja_contada(this.ovejas_contadas);
             }
         }
+    }
+
+    nubes_update() {
+        Object.keys(this.nubes).forEach((key) => {
+            this.nubes[key].forEach((nube) => {
+                if (nube.x < -nube.displayWidth) {
+                    nube.exit();
+                    nube.destroy();
+                    this.nubes[key].splice(this.nubes[key].indexOf(nube), 1);
+                }
+            });
+        });
     }
 
     choque_function(oveja) {
@@ -246,6 +329,12 @@ class JuegoOveja extends Game {
             this.pantalla_final.enter(this.vallasSaltadas);
 
             this.prota.exit();
+            Object.keys(this.nubes).forEach((key) => {
+                this.nubes[key].forEach((nube) => {
+                    nube.exit();
+                });
+            });
+
             this.valla.exit();
             this.cielo.destroy()
             this.ovejas.forEach((oveja) => {

@@ -191,6 +191,7 @@
                 "pantalla_inicio.png",
                 "prota1.png",
                 "prota2.png",
+                "suelo.png",
                 "valla.png"
               ]
             }
@@ -359,7 +360,8 @@
         "disco.ogg",
         "mechanical_keyboard.ogg",
         "ovejitas.ogg",
-        "tema_inicial.ogg"
+        "tema_inicial.ogg",
+        "tema_inicial2.ogg"
       ]
     }
   ],

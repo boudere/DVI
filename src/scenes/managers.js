@@ -58,7 +58,7 @@ class Managers extends Phaser.Scene {
     }
 
     stop_music(key) {
-        this.scene.get(SCENE_MANAGER).stop_music(scene_key, key);
+        this.scene.get(SCENE_MANAGER).stop_music(this.scene_key, key);
     }
 
     play_sfx(key, config={}) {
