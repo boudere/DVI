@@ -28,10 +28,10 @@
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "perueba_2",
       "var_id": "prueba_1",
-      "next_scene_type": "afinidad_dialogo",
-      "next_scene_id": "perueba_2"
+      "next_scene_type": null,
+      "next_scene_id": null
     },
     "perueba_2A": {
       "texto": "afinidad_montero",

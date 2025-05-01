@@ -38,6 +38,7 @@ class AfinidadDialogoManager extends Managers {
         if (this._get_length() == 1) {
             this.actualizar_datos();
         } else {
+            console.log(this.get_npc_most_afinity());
             this.elegir_dialogo();
         }
     }
@@ -92,12 +93,28 @@ class AfinidadDialogoManager extends Managers {
         this.datos_actualizados = true;
     }
 
+    get_npc_most_afinity() {
+        let max = Object.keys(this.variable_data).length / 2;
+        let max_val = 0;
+        let max_name = null;
+        for (let i = 1; i <= max; i++) {
+            let name = this.variable_data["var_" + i];
+            let val = this.variable_data["val_" + i];
+            if (this.datos_usuario.Afinidad[name] > max_val) {
+                max_val = this.datos_usuario.Afinidad[name];
+                max_name = name;
+            }
+        }
+        return max_name;
+    }
+
     enviar_dialogo(num) {
         let on_click = {
             scene: 'dialogo',
             name: this.next_scene_id + this._numero_a_letra(num),
             var_id: null
         };
+        console.log("Enviando dialogo: " + on_click.name);
         this.scene.get(SCENE_MANAGER).signal_click(on_click);
     }
 
