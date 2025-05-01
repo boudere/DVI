@@ -355,7 +355,6 @@ class DataInfo extends Phaser.Scene {
     }
 
     get_datos_usaurio() {
-        console.log("asdas:2", this.progreso);
         return this.progreso.Saves;
     }
 
@@ -402,6 +401,9 @@ class DataInfo extends Phaser.Scene {
         await guardarRecordRanking(nombre_juego, nuevoRanking);
     }
     
+    get_dialogo_data_usuario(name) {
+        return this.progreso.Saves.DialogoData[name];
+    }
 }
 
 

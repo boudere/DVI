@@ -45,6 +45,10 @@ class DialogoPersonaje extends DialogoGameObject {
         this.finished_animation = 0;
         this.scene.finish_animation();
     }
+
+    change_personaje(nombre_img) {
+        this.setTexture(nombre_img);
+    }
 }
 
 export default DialogoPersonaje;

@@ -1,6 +1,6 @@
 import { DATA_INFO } from "/src/data/scene_data.js";
 class GameObjectsText extends Phaser.GameObjects.Text {
-    constructor(scene, x, y, container, container_width, texto, delay, animation=false, opciones_entrada = {}) {
+    constructor(scene, x, y, container, container_width, texto_data, delay, animation=false, opciones_entrada = {}) {
         // opciones por defecto para el Text
         let opciones_por_defecto = {
             fontSize: "32px",
@@ -18,7 +18,13 @@ class GameObjectsText extends Phaser.GameObjects.Text {
 
         this._reset_variables();
 
-        this.texto = texto;
+        this.texto_data = texto_data;
+        this.texto_data_index = 0;
+        if (texto_data.text) {
+            this.texto = texto_data.text;
+        } else {
+            this.texto = texto_data;
+        }
         this.containter = container;
         
         this.setOrigin(0, 0);
@@ -41,7 +47,6 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         this.scene.add.existing(this);
 
         if (animation) {
-            console.log("animation", animation);
             this.start_animation();
         } else {
             this.finish_animation();
@@ -54,8 +59,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
         let texto_actual = '';
     
         this.setText('');
-        let rate = 1.5;
-        this.scene.play_sfx('mechanical_keyboard');
+        this.scene.play_sfx('mechanical_keyboard', {loop: true});
     
         const timerEvent = this.scene.time.addEvent({
             delay: 30,
@@ -68,11 +72,19 @@ class GameObjectsText extends Phaser.GameObjects.Text {
                     timerEvent.remove(); // Detenemos el evento manualmente
                     return;
                 }
-    
-                texto_actual += texto_completo.charAt(i);
-                rate = this.cambiar_pitch(rate);
-                this.setText(texto_actual);
-                i++;
+                if (texto_completo.charAt(i) != '@') {
+                    texto_actual += texto_completo.charAt(i);
+                    this.setText(texto_actual);
+                    i++;
+                } else {
+                    if (this.texto_data && this.texto_data.types && this.texto_data.values) {
+                        let new_texto = this.apply_effects(this.texto_data.types[this.texto_data_index], this.texto_data.values[this.texto_data_index], i);
+                        if (new_texto) {
+                            texto_completo = new_texto; }
+                        this.texto_data_index++;
+                    }
+                    i += 2;
+                }
     
                 if (i >= texto_completo.length) {
                     this.texto = texto_completo;
@@ -84,6 +96,8 @@ class GameObjectsText extends Phaser.GameObjects.Text {
             loop: true // Usamos loop en lugar de repeat, así tenemos control total
         });
     }
+
+    apply_effects(type, name, index) {}
     
 
     cambiar_pitch(pitch) {

@@ -3,12 +3,12 @@ import DialogoMainText from "/src/dialogos/game_objects/text/dialogo_main_text.j
 import Animation from '/src/utils/animation.js';
 
 class CuadradoDialogo extends DialogoGameObject {
-    constructor(scene, x, y, nombre_img, text, animation) {
+    constructor(scene, x, y, nombre_img, text_data, animation) {
         super(scene, x, y, nombre_img, 100);
 
         this.SCALE = 1.2;
 
-        this.text = text;
+        this.text = text_data;
 
         this.finished_animation = 0;
         this.total_animations = 0;

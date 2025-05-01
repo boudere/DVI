@@ -1,11 +1,14 @@
 {
     "Saves": {
         "Pantalla": "prueba_1",
-        "Dialogo": "tutorial1",
+        "Dialogo": "esto",
         "Minijuegos": {
             "JuegoOveja": {
                 "RecortdPuntuacion": -2
             }
+        },
+        "DialogoData": {
+            "nombre_prota": "prota"
         }
     }
 }

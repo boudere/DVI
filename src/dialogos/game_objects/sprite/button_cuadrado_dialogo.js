@@ -3,14 +3,14 @@ import DialogoMainText from "/src/dialogos/game_objects/text/dialogo_main_text.j
 import Animation from '/src/utils/animation.js';
 
 class ButtonCuadradoDialogo extends DialogoGameObject {
-    constructor(scene, x, y, nombre_img, text, next_text, animation, var_id) {
+    constructor(scene, x, y, nombre_img, text_data, next_text, animation, var_id) {
         super(scene, x, y, nombre_img, 200);
 
         this.setOrigin(1, 1);
 
         this.SCALE = 1.2;
 
-        this.text = text;
+        this.text = text_data;
         this.next_text = next_text;
 
         this.finished_animation = 0;
