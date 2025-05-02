@@ -2066,7 +2066,7 @@
             },
             "objetos": {}
         },
-        "pasillo_1_00":{
+        "pasillo_1_00": {
             "background": "pasillo",
             "puertas":{
                 "pasillo_izquierda": {
