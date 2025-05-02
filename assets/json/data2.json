@@ -84,7 +84,10 @@
                         "pasillo",
                         "cafeteria",
                         "bares",
-                        "bus"
+                        "bus",
+                        "futbol",
+                        "calle",
+                        "cita"
                     ]
                 }
             }
