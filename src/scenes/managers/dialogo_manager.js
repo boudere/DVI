@@ -93,7 +93,6 @@ class DialogoManager extends Managers {
         if ( !super.enter(name) ) { return; }
         
         this.play_music(this.PISO_MUSICA);
-        this.skip_animation = false;
 
         this.dialogo_data_selected = this.dialogo_data[name];
         this.opciones_dialogo_data_selected = null;
@@ -144,7 +143,7 @@ class DialogoManager extends Managers {
             this.buttons[this.buttons_index].enter();
             this.buttons_index++;
             return;
-        } 
+        }
 
         if (this.finished_animation != this.total_animations) { return; }
 
@@ -158,14 +157,10 @@ class DialogoManager extends Managers {
     }
 
     signal_click(on_click) {
-        if ( on_click.var_id || on_click.scene != 'dialogo') {
-            if (on_click.var_id) {
-                on_click.scene = 'afinidad_dialogo';
-            }
-            this.scene.get(SCENE_MANAGER).signal_click(on_click);
-        }
-        else {
+        if (on_click.scene == 'dialogo') {
             this.enter(on_click);
+        } else {
+            this.scene.get(SCENE_MANAGER).signal_click(on_click);
         }
     }
 
@@ -206,7 +201,7 @@ class DialogoManager extends Managers {
 
         let name = this.dialogo_data_selected.npc + "_" + this.dialogo_data_selected.pose;
         let img = this.data_info_scene.get_img(DIALOGO_MANAGER, name);
-        this.persoanje = new DialogoPersonaje(this, 0, height * 0.61, img, 100);
+        this.persoanje = new DialogoPersonaje(this, 0, height * 0.61, img, 1000);
         this.persoanje.setDepth(this.PERSONAJE_DEPTH);
     }
 
@@ -222,7 +217,7 @@ class DialogoManager extends Managers {
         let y = this.cuadrado_dialogo.y - (this.cuadrado_dialogo.height / 2 * this.cuadrado_dialogo.SCALE);
         this.buttons_index = 1;
         while (this.buttons_index <= 3 && this.opciones_dialogo_data_selected["texto_" + this.buttons_index]) {
-            let button = new ButtonCuadradoDialogo(this, x, y, img, this.opciones_dialogo_data_selected["texto_" + this.buttons_index], this.opciones_dialogo_data_selected["opcion_" + this.buttons_index], !this.skip_animation, this.opciones_dialogo_data_selected["var_" + this.buttons_index]);
+            let button = new ButtonCuadradoDialogo(this, x, y, img, this.opciones_dialogo_data_selected["texto_" + this.buttons_index], this.opciones_dialogo_data_selected["opcion_" + this.buttons_index] , true);
             button.setDepth(this.CUADRADO_DIALOGO_DEPTH + 1);
 
             this.buttons_index++;
@@ -235,42 +230,25 @@ class DialogoManager extends Managers {
     }
 
     _set_events() {
-        this.input.once('pointerup', this._mouse_up, this);
+        this.input.on('pointerup', this._mouse_up, this);
     }
     _remove_events() {
         this.input.off('pointerup', this._mouse_up, this);
     }
 
-    _skip_animation() {
-        this.skip_animation = true;
-        if (this.cuadrado_dialogo) {
-            this.cuadrado_dialogo.skip_animation();
-        }
-        if (this.buttons) this.buttons.forEach(button => button.skip_animation());
-        if (this.persoanje) this.persoanje.skip_animation();
-
-        this._set_events();
-    }
-
     _mouse_up() {
         if (this.animation_finished && !this.dialogo_data_selected.opciones) {
-            if (this.dialogo_data_selected.var_id || this.dialogo_data_selected.next_id == 'FIN') {
+            if (this.dialogo_data_selected.next_id != 'FIN' && !this.dialogo_data_selected.opciones) {
+                this.enter(this.dialogo_data_selected.next_id);
+            } else {
                 let on_click = {
                     scene: this.dialogo_data_selected.next_scene_type,
                     name: this.dialogo_data_selected.next_scene_id,
                     var_id: this.dialogo_data_selected.var_id
                 };
-
-                if (!this.dialogo_data_selected.name && this.dialogo_data_selected.next_id) {
-                    on_click.name = this.dialogo_data_selected.next_id;
-                }
                 
-                this.signal_click(on_click);
-            } else {
-                this.enter(this.dialogo_data_selected.next_id);
+                this.scene.get(SCENE_MANAGER).signal_click(on_click);
             }
-        } else if (!this.animation_finished || this.dialogo_data_selected.opciones && !this.buttons[this.buttons.length - 1].animation_finished) {
-            this._skip_animation();
         }
     }
 }

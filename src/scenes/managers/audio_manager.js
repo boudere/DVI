@@ -12,7 +12,7 @@ class AudioManager {
         this.sfxVolume = 1.0;
 
         // Lista de efectos de sonido activos
-        this.activesfx = {};
+        this.activesfx = [];
 
         this.data_info_scene = scene.scene.get(DATA_INFO);
     }
@@ -69,40 +69,28 @@ class AudioManager {
         const sfx = this.scene.sound.add(this.data_info_scene.get_musica(key), sfxConfig);
         sfx.play();
 
-        this.activesfx[key] = sfx;
+        this.activesfx.push(sfx);
 
         // Eliminar de la lista cuando termine
         sfx.once('complete', () => {
-            delete this.activesfx[key];
+            this.activesfx = this.activesfx.filter(s => s !== sfx);
             sfx.destroy();
         });
 
         return sfx;
     }
 
-    stop_sfx(key) {
-        if (this.activesfx[key]) {
-            const sfx = this.activesfx[key];
-            sfx.stop();
-            sfx.destroy();
-            delete this.activesfx[key];
-        }
-    }
-
-
     stop_all_sfx() {
-        Object.keys(this.activesfx).forEach(key => {
-            const sfx = this.activesfx[key];
+        this.activesfx.forEach(sfx => {
             sfx.stop();
             sfx.destroy();
         });
-        this.activesfx = {};
+        this.activesfx = [];
     }
 
     set_sfx_volume(volume) {
         this.sfxVolume = Phaser.Math.Clamp(volume, 0, 1);
-        Object.keys(this.activesfx).forEach(key => {
-            const sfx = this.activesfx[key];
+        this.activesfx.forEach(sfx => {
             sfx.setVolume(this.sfxVolume);
         });
     }

@@ -1,16 +1,5 @@
 {
   "Dialogo": {
-    "esto": {
-      "texto": "Hola $nombre_prota, {sound=ovejitas} {sprite=enfado} como estas?",
-      "npc": "maria",
-      "pose": "normal",
-      "fondo": "salon",
-      "opciones": false,
-      "next_id": "FIN",
-      "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "perueba_1"
-    },
     "perueba_0": {
       "texto": "Esto es una prueba",
       "npc": "prota",
@@ -28,10 +17,10 @@
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "perueba_2",
+      "next_id": "FIN",
       "var_id": "prueba_1",
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "afinidad_dialogo",
+      "next_scene_id": "perueba_2"
     },
     "perueba_2A": {
       "texto": "afinidad_montero",

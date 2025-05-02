@@ -10,18 +10,18 @@ class DialogoGameObjects extends GameObjectsSprite {
 
     _reset_varaibles() { super._reset_varaibles(); }
 
-    finish_animation() { }
+    finish_animation() {}
 
     // se ejecuta al salir de la escena
-    exit() {
+    exit() { 
         this.musica.stop();
         super.exit();
     }
 
     // se ejecuta al entrar en la escena
-    enter() {
-        super.enter();
-
+    enter() { 
+        super.enter(); 
+        
         //this.musica.play();
 
         setTimeout(() => {
@@ -54,42 +54,15 @@ class DialogoGameObjects extends GameObjectsSprite {
 
     _mouse_down() { super._mouse_down(); }
 
-    _mouse_up() {
+    _mouse_up() { 
         super._mouse_up();
 
         this.scene.signal_click(this.on_click)
-    }
+ }
 
     _mouse_move() { super._mouse_move(); }
 
     before_destroy() { super.before_destroy(); }
-
-    skip_animation() {
-        this.animation_finished = true;
-        this.animation_data = false;
-        this.delay = 0;
-
-        
-    
-        // Skip del texto principal si existe
-        if (this.main_text && typeof this.main_text.skip_animation === 'function') {
-            this.main_text.skip_animation();
-        }
-    
-        // Skip de tweens locales
-        if (this._active_tweens) {
-            this._skip_requested = true;
-    
-            for (const { tween, finalValues, resolve } of this._active_tweens) {
-                tween.stop(); // Detiene el tween
-                Object.assign(this, finalValues); // Aplica estado final
-                resolve(); // Resuelve la promesa asociada
-            }
-    
-            this._active_tweens = [];
-        }
-        this.setScale(this.SCALE);
-    }
 }
 
 export default DialogoGameObjects;

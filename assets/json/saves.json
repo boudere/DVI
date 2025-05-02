@@ -1,18 +1,8 @@
 {
     "Saves": {
-        "Pantalla": "prueba_1",
-        "Dialogo": "perueba_1",
+        "Pantalla": "bares_1",
+        "Dialogo": "cap2071",
         "Minijuegos": {
-            "JuegoOveja": {
-                "RecortdPuntuacion": -2
-            }
-        },
-        "DialogoData": {
-            "nombre_prota": "prota"
-        },
-        "Afinidad": {
-            "afinidad_montero": 20,
-            "afinidad_pepe": 3
         }
     }
 }

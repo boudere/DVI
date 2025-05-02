@@ -1,12 +1,14 @@
 import GamesGameObjects from "/src/minijuegos/games_game_objects.js";
 
 class Cielo extends GamesGameObjects {
-    constructor(scene, x, y) {
+    constructor(scene, x, y, size_x, size_y) {
         let CIELO_IMG = 'cielo';
 
         super(scene, x, y, CIELO_IMG);
 
+        this.setScale(size_x, size_y);
         this.body.setAllowGravity(false);
+
     }
 
     enter() {

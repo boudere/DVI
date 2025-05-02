@@ -7,7 +7,6 @@ class DialogoPersonaje extends DialogoGameObject {
 
         this.finished_animation = 0;
         this.total_animations = 0;
-        this.animation_finished = false;
 
         this.game_object_data = {
             'alpha': this.alpha,
@@ -22,11 +21,11 @@ class DialogoPersonaje extends DialogoGameObject {
             "animation_1": [
                 {
                     "type": "fade_in", 
-                    "duration": 1000
+                    "duration": 400
                 },
                 {
                     "type": "move_right",
-                    "duration": 1000,
+                    "duration": 400,
                     "var": {
                         "pos_x": 500
                     }
@@ -44,10 +43,6 @@ class DialogoPersonaje extends DialogoGameObject {
         if (this.finished_animation != this.total_animations) { return; }
         this.finished_animation = 0;
         this.scene.finish_animation();
-    }
-
-    change_personaje(nombre_img) {
-        this.setTexture(nombre_img);
     }
 }
 

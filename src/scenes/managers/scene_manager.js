@@ -121,10 +121,10 @@ class SceneManager extends Managers {
                 return DIALOGO_MANAGER;
             case "pantalla":
                 return PANTALLA_MANAGER;
+                break;
             case "minijuego":
                 return MINIJUEGO_MANAGER;
-            case "afinidad_dialogo":
-                return AFINIDAD_DIALOGO_MANAGER;
+                break;
             default:
                 break;
         }
@@ -191,11 +191,6 @@ class SceneManager extends Managers {
     play_sfx(key, sfx_key, config = {}) {
         if (key != this.currentScene) return; // si la escena no es la actual, no hace nada
         this.audio_manager.play_sfx(sfx_key, config);
-    }
-
-    stop_sfx(key, sfx_key) {
-        if (key != this.currentScene) return; // si la escena no es la actual, no hace nada
-        this.audio_manager.stop_sfx(sfx_key);
     }
 
     stop_all_sfx(key) {
