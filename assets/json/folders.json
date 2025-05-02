@@ -131,6 +131,11 @@
               "name": "personajes",
               "folders": [
                 {
+                  "name": "anonimo",
+                  "folders": [],
+                  "files": []
+                },
+                {
                   "name": "carlota",
                   "folders": [],
                   "files": [
@@ -333,7 +338,15 @@
                 },
                 {
                   "name": "clase",
-                  "folders": [],
+                  "folders": [
+                    {
+                      "name": "cafeteria",
+                      "folders": [],
+                      "files": [
+                        "cafeteria.png"
+                      ]
+                    }
+                  ],
                   "files": [
                     "clase.png"
                   ]
@@ -360,17 +373,17 @@
                   ]
                 },
                 {
-                  "name": "negro",
-                  "folders": [],
-                  "files": [
-                    "negro.png"
-                  ]
-                },
-                {
                   "name": "mapa",
                   "folders": [],
                   "files": [
                     "mapa.png"
+                  ]
+                },
+                {
+                  "name": "negro",
+                  "folders": [],
+                  "files": [
+                    "negro.png"
                   ]
                 },
                 {
@@ -428,6 +441,13 @@
                   "files": []
                 },
                 {
+                  "name": "boton_continuar",
+                  "folders": [],
+                  "files": [
+                    "boton_continuar_normal.png"
+                  ]
+                },
+                {
                   "name": "jaime",
                   "folders": [],
                   "files": [
@@ -442,13 +462,6 @@
                     "lorena_feliz.png",
                     "lorena_normal.png",
                     "lorena_rayado.png"
-                  ]
-                },
-                {
-                  "name": "boton_continuar",
-                  "folders": [],
-                  "files": [
-                    "boton_continuar_normal.png"
                   ]
                 },
                 {

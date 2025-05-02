@@ -2135,7 +2135,7 @@
                     "animation": null,
                     "on_click":{
                         "scene": "pantalla",
-                        "name": "pasillo_1_01",
+                        "name": "pasillo_1_00",
                         "direction": "left"
                     }
                 },
