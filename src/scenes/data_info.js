@@ -264,6 +264,10 @@ class DataInfo extends Phaser.Scene {
             case "Cursors":
                 scene_name = "Cursors";
                 break;
+            case CURSOR_MANAGER:
+            case "Cursors":
+                scene_name = "Cursors";
+                break;
             default:
                 break;
         }
@@ -397,6 +401,9 @@ class DataInfo extends Phaser.Scene {
         await guardarRecordRanking(nombre_juego, nuevoRanking);
     }
     
+    get_dialogo_data_usuario(name) {
+        return this.progreso.Saves.DialogoData[name];
+    }
 }
 
 

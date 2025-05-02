@@ -1,8 +1,8 @@
-import GameObjectsText from '/src/game_objects_text.js';
+import DialogoGameObjectsText from "/src/dialogos/dialogo_game_objects_text";
 
-class DialogoMainText extends GameObjectsText {
-    constructor(scene, x, y, container, container_width, texto, delay, opciones = {}) {
-        super(scene, x, y, container, container_width, texto, delay, opciones);
+class DialogoMainText extends DialogoGameObjectsText {
+    constructor(scene, x, y, container, container_width, texto, delay, animacion, opciones = {}) {
+        super(scene, x, y, container, container_width, texto, delay, animacion, opciones);
     }
 }
 

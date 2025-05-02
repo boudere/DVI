@@ -139,12 +139,18 @@
                     "JuegoOveja": [
                         "oveja",
                         "fondo",
+                        "suelo",
                         "valla",
                         "cielo",
                         "prota1",
                         "prota2",
                         "pantalla_inicio",
-                        "pantalla_final"
+                        "pantalla_final",
+                        "nube1",
+                        "nube2",
+                        "nube3",
+                        "nube4",
+                        "nube5"
                     ]
                 },
                 "JuegoDiscoteca": {
@@ -227,6 +233,7 @@
                 "ovejitas",
                 "tema_inicial",
                 "disco",
+                "dialogo",
                 "mechanical_keyboard"
             ]
         }
