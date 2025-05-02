@@ -19,7 +19,7 @@ class DataInfo extends Phaser.Scene {
     }
 
     ///////////////////////////////////////////////////////////////////////////////
-    //                            EIECUTAR EL COMANDO:                           //
+    //                            EJECUTAR EL COMANDO:                           //
     //                   node ./src/utils/generateFoldersJson.js                 //
     //                           AL AÑADIR NUEVO ASSET                           //
     ///////////////////////////////////////////////////////////////////////////////
@@ -242,7 +242,7 @@ class DataInfo extends Phaser.Scene {
 
 
     //////////////////////////////////////////////////////////////////////////////
-    //                        AGREFAR PARA NUEVO MANAGER                        //
+    //                        AGREGAR PARA NUEVO MANAGER                        //
     //////////////////////////////////////////////////////////////////////////////
 
     get_img(scene, name) {

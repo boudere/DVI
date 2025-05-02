@@ -134,12 +134,22 @@ class PantallaManager extends Managers {
     
         this._load_pantalla(name);
 
-        this.move_limit_x = (this.background.displayWidth - this.sys.game.canvas.width) / 2;
-        this.move_limit_y = (this.background.displayHeight - this.sys.game.canvas.height) / 2;
+        if (this.background.displayWidth > this.sys.game.canvas.width) {
+            this.move_limit_x = (this.background.displayWidth - this.sys.game.canvas.width) / 2;
+            this.move_limit_y = (this.background.displayHeight - this.sys.game.canvas.height) / 2;
+            
+            // Centrado inicial
+            this.animation_finished = true;
+            this.move(-this.move_limit_x, -this.move_limit_y);
+        }
+        else {
+            this.move_limit_x = (this.background.displayWidth - this.sys.game.canvas.width) / 2;
+            this.move_limit_y = (this.background.displayHeight - this.sys.game.canvas.height) / 2;
 
-        // Centrado inicial
-        this.animation_finished = true;
-        this.move(-this.move_limit_x, -this.move_limit_y);
+            // Centrado inicial
+            this.animation_finished = true;
+            this.move(-this.move_limit_x, -this.move_limit_y);
+        }
         this.animation_finished = false;
 
         this.offset_x = 0;
@@ -200,6 +210,7 @@ class PantallaManager extends Managers {
     _load_background() {
         this.background = this.creador_pantalla.cargar_fondo();
         this.background.setDepth(this.BACKGROUND_DEPTH);
+        this.background.setSize(1.2, 1.2);
     }
     
     _load_npcs() {
@@ -209,6 +220,7 @@ class PantallaManager extends Managers {
             });
         }
         this.npcs_array = [];
+        if (!this.pantalla_data.npcs) return;
         let pantalla_data_npcs = this.pantalla_data.npcs;
         
         Object.keys(pantalla_data_npcs).forEach((key) => {

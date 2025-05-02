@@ -15,7 +15,11 @@ body {
 
 /* Centrar el logo */
 #logo {
-  margin-top: 20px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; /* Asegura que quede por encima */
 }
 
 /* Nombre del equipo */
@@ -30,8 +34,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 60vh; /* Ajusta según el tamaño del juego */
+  margin-top: 100px;
+  width: 1860px; /* Tamaño reducido */
+  height: 1296px; /* Tamaño reducido */
+  border: 5px solid rgb(202, 202, 42); /* Borde opcional */
+  
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente opcional */
 }
 
 /* Pantalla del juego más pequeña y centrada */
@@ -40,8 +48,7 @@ body {
   /* height: auto; */
   width: 1860px; /* Tamaño reducido */
   height: 1296px; /* Tamaño reducido */
-  border: 2px solid #ff69b4; /* Borde opcional */
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente opcional */
+  
   display: flex;
   justify-content: center;
   align-items: center;

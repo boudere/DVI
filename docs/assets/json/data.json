@@ -30,7 +30,8 @@
                         "prota",
                         "maria",
                         "pepe",
-                        "samuel"
+                        "samuel",
+                        "boton_continuar"
                     ],
                     "Poses": [
                         "normal",
@@ -47,7 +48,8 @@
                         "bares",
                         "pasillo",
                         "cafeteria",
-                        "clase"
+                        "clase",
+                        "bus"
                     ],
                     "Lados": [
                         "izquierda",
@@ -97,7 +99,8 @@
                         "marta",
                         "none",
                         "profesor",
-                        "victor"
+                        "victor",
+                        "carlota"
                     ],
                     "Poses": [
                         "normal",
@@ -149,7 +152,9 @@
                     "JuegoDiscoteca": [
                         "persona",
                         "obstaculo",
-                        "fondodisco"
+                        "fondodisco",
+                        "pantalla_inicio",
+                        "pantalla_final"
                     ]
                 },
                 "Clases": [
@@ -221,7 +226,8 @@
             "Musicas": [
                 "ovejitas",
                 "tema_inicial",
-                "disco"
+                "disco",
+                "mechanical_keyboard"
             ]
         }
     }

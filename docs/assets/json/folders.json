@@ -40,6 +40,34 @@
               "name": "backgrounds",
               "folders": [
                 {
+                  "name": "bares",
+                  "folders": [],
+                  "files": [
+                    "bares.png"
+                  ]
+                },
+                {
+                  "name": "bus",
+                  "folders": [],
+                  "files": [
+                    "bus.png"
+                  ]
+                },
+                {
+                  "name": "cafeteria",
+                  "folders": [],
+                  "files": [
+                    "cafeteria.png"
+                  ]
+                },
+                {
+                  "name": "clase",
+                  "folders": [],
+                  "files": [
+                    "clase.png"
+                  ]
+                },
+                {
                   "name": "fin_demo",
                   "folders": [],
                   "files": [
@@ -58,6 +86,13 @@
                   "folders": [],
                   "files": [
                     "negro.png"
+                  ]
+                },
+                {
+                  "name": "pasillo",
+                  "folders": [],
+                  "files": [
+                    "pasillo.png"
                   ]
                 },
                 {
@@ -82,21 +117,55 @@
               "name": "personajes",
               "folders": [
                 {
+                  "name": "jaime",
+                  "folders": [],
+                  "files": [
+                    "jaime_feliz.png",
+                    "jaime_normal.png"
+                  ]
+                },
+                {
+                  "name": "lorena",
+                  "folders": [],
+                  "files": [
+                    "lorena_feliz.png",
+                    "lorena_normal.png",
+                    "lorena_rayado.png"
+                  ]
+                },
+                {
                   "name": "maria",
                   "folders": [],
                   "files": [
-                    "maria_alegre.png",
-                    "maria_enfado.png",
+                    "maria_feliz.png",
                     "maria_normal.png",
-                    "maria_triste.png"
+                    "maria_rayado.png"
+                  ]
+                },
+                {
+                  "name": "marta",
+                  "folders": [],
+                  "files": [
+                    "marta_feliz.png",
+                    "marta_normal.png",
+                    "marta_pillin.png",
+                    "marta_triste.png"
+                  ]
+                },
+                {
+                  "name": "montero",
+                  "folders": [],
+                  "files": [
+                    "montero_feliz.png",
+                    "montero_normal.png"
                   ]
                 },
                 {
                   "name": "none",
                   "folders": [],
                   "files": [
-                    "none_alegre.png",
                     "none_enfado.png",
+                    "none_feliz.png",
                     "none_normal.png",
                     "none_triste.png"
                   ]
@@ -105,29 +174,43 @@
                   "name": "pepe",
                   "folders": [],
                   "files": [
-                    "pepe_alegre.png",
-                    "pepe_enfado.png",
+                    "pepe_feliz.png",
                     "pepe_normal.png",
-                    "pepe_triste.png"
+                    "pepe_rayado.png"
+                  ]
+                },
+                {
+                  "name": "profesor",
+                  "folders": [],
+                  "files": [
+                    "profesor_normal.png"
                   ]
                 },
                 {
                   "name": "prota",
                   "folders": [],
                   "files": [
-                    "prota_enfado.png",
                     "prota_feliz.png",
-                    "prota_normal.png"
+                    "prota_normal.png",
+                    "prota_triste.png"
                   ]
                 },
                 {
                   "name": "samuel",
                   "folders": [],
                   "files": [
-                    "samuel_alegre.png",
-                    "samuel_enfado.png",
+                    "samuel_feliz.png",
                     "samuel_normal.png",
-                    "samuel_triste.png"
+                    "samuel_rayado.png"
+                  ]
+                },
+                {
+                  "name": "victor",
+                  "folders": [],
+                  "files": [
+                    "victor_feliz.png",
+                    "victor_normal.png",
+                    "victor_pillin.png"
                   ]
                 }
               ],
@@ -170,6 +253,7 @@
               "files": [
                 "fondodisco.png",
                 "obstaculo.png",
+                "pantalla_inicio.png",
                 "persona.png"
               ]
             },
@@ -178,10 +262,18 @@
               "folders": [],
               "files": [
                 "cielo.png",
+                "cielo3.png",
                 "fondo.png",
+                "nube1.png",
+                "nube2.png",
+                "nube3.png",
+                "nube4.png",
+                "nube5.png",
                 "oveja.png",
                 "pantalla_final.png",
                 "pantalla_inicio.png",
+                "prota1.png",
+                "prota2.png",
                 "valla.png"
               ]
             }
@@ -195,6 +287,13 @@
               "name": "backgrounds",
               "folders": [
                 {
+                  "name": "bares",
+                  "folders": [],
+                  "files": [
+                    "bares.png"
+                  ]
+                },
+                {
                   "name": "fin_demo",
                   "folders": [],
                   "files": [
@@ -206,6 +305,20 @@
                   "folders": [],
                   "files": [
                     "habitacion.png"
+                  ]
+                },
+                {
+                  "name": "mapa",
+                  "folders": [],
+                  "files": [
+                    "mapa.png"
+                  ]
+                },
+                {
+                  "name": "parque",
+                  "folders": [],
+                  "files": [
+                    "parque.png"
                   ]
                 },
                 {
@@ -229,7 +342,15 @@
               "name": "objetos",
               "folders": [],
               "files": [
-                "habitacion_cama.png"
+                "caballo_parque.png",
+                "calle_boton.png",
+                "copas_boton.png",
+                "fdi_boton.png",
+                "habitacion_cama.png",
+                "parque_boton.png",
+                "pelota_parque.png",
+                "piso_boton.png",
+                "puerta_disco.png"
               ]
             },
             {
@@ -239,8 +360,8 @@
                   "name": "maria",
                   "folders": [],
                   "files": [
-                    "maria_alegre.png",
                     "maria_enfado.png",
+                    "maria_feliz.png",
                     "maria_normal.png",
                     "maria_triste.png"
                   ]
@@ -249,8 +370,8 @@
                   "name": "pepe",
                   "folders": [],
                   "files": [
-                    "pepe_alegre.png",
                     "pepe_enfado.png",
+                    "pepe_feliz.png",
                     "pepe_normal.png",
                     "pepe_triste.png"
                   ]
@@ -259,8 +380,8 @@
                   "name": "prota",
                   "folders": [],
                   "files": [
-                    "prota_alegre.png",
                     "prota_enfado.png",
+                    "prota_feliz.png",
                     "prota_normal.png",
                     "prota_triste.png"
                   ]
@@ -269,8 +390,8 @@
                   "name": "samuel",
                   "folders": [],
                   "files": [
-                    "samuel_alegre.png",
                     "samuel_enfado.png",
+                    "samuel_feliz.png",
                     "samuel_normal.png",
                     "samuel_triste.png"
                   ]
@@ -282,11 +403,26 @@
               "name": "puertas",
               "folders": [
                 {
+                  "name": "bares",
+                  "folders": [],
+                  "files": [
+                    "bares_izquierda.png"
+                  ]
+                },
+                {
                   "name": "habitacion",
                   "folders": [],
                   "files": [
                     "habitacion_derecha.png",
                     "habitacion_izquierda.png"
+                  ]
+                },
+                {
+                  "name": "parque",
+                  "folders": [],
+                  "files": [
+                    "parque_derecha.png",
+                    "parque_izquierda.png"
                   ]
                 },
                 {
@@ -312,9 +448,12 @@
       "files": [
         "animation.json",
         "dialogo.json",
+        "opciones_dialogo.json",
         "pantallas.json",
         "pantalla_info.json",
-        "personajes_info.json"
+        "personajes_info.json",
+        "saves.json",
+        "variables_dialogo.json"
       ]
     },
     {

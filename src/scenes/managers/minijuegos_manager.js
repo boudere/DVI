@@ -20,9 +20,23 @@ class MinijuegosManager extends Managers {
 
     enter(scene_data) {
         if (!super.enter(scene_data)) { return; }
-        this.start_minigame(scene_data);
+        this.scene_data = scene_data;  // guarda todo el objeto scene_data
+        this.start_minigame(scene_data.name); // inicia el minijuego
     }
 
+    return_to_dialogo() {
+        this.exit_minigame();
+    
+        if (this.scene_data && this.scene_data.return_dialogo) {
+            this.scene.get(SCENE_MANAGER).signal_click({
+                scene: 'dialogo',
+                name: this.scene_data.return_dialogo
+            });
+        } else {
+            console.error("No se encontró el return_dialogo para volver al diálogo.");
+        }
+    }
+    
     exit() {
         if (!super.exit()) { return; }
         this.exit_minigame();

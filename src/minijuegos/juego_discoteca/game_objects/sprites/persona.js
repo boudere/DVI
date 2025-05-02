@@ -1,8 +1,9 @@
 import GamesGameObjects from "/src/minijuegos/games_game_objects.js";
 
 class Persona extends GamesGameObjects {
-    constructor(scene, x, y, texture, size_x, size_y) {
-        super(scene, x, y, texture);
+    constructor(scene, x, y, size_x, size_y) {
+        let PERSONA_IMG = 'persona';
+        super(scene, x, y, PERSONA_IMG);
 
         this.setScale(size_x, size_y);
     }

@@ -40,7 +40,8 @@
                         "marta",
                         "none",
                         "profesor",
-                        "victor"
+                        "victor",
+                        "carlota"
                     ],
 
                     "Poses": [
@@ -61,6 +62,7 @@
                         "salon_cocina",
                         "salon_comedor",
                         "salon_descanso",
+                        "entradafacul",
                         "clase",
                         "pasillo",
                         "cafeteria",

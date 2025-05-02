@@ -51,15 +51,15 @@ class SceneManager extends Managers {
 
          // lanza las escenas managers
          // pantalla manager:
-         this.add_scene(PANTALLA_MANAGER, PantallaManager, this.saves_data.Pantalla);
-        // this.add_scene(PANTALLA_MANAGER, PantallaManager);
+        this.add_scene(PANTALLA_MANAGER, PantallaManager, this.saves_data.Pantalla);
+        //this.add_scene(PANTALLA_MANAGER, PantallaManager);
  
          // dialogo manager:
          this.add_scene(DIALOGO_MANAGER, DialogoManager, this.saves_data.Dialogo);
          //this.add_scene(DIALOGO_MANAGER, DialogoManager);
  
          // minijuego manager:
-         //this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager, 'JuegoOveja');
+         //this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager, 'JuegoDiscoteca');
          this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager);
 
         this.add_scene(AFINIDAD_DIALOGO_MANAGER, AfinidadDialogoManager);
@@ -96,6 +96,13 @@ class SceneManager extends Managers {
         this.currentScene = this._get_next_scene(on_click.scene);
 
         this.scenes[this.currentScene].enter(on_click);
+        if (on_click.scene === 'minijuego') {
+            // Si es minijuego, pasar TODO el on_click
+            this.scenes[this.currentScene].enter(on_click);
+        } else {
+            // Si es cualquier otra cosa, pasar solo el name
+            this.scenes[this.currentScene].enter(on_click.name);
+        }
 
     }
 

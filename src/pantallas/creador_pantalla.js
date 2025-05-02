@@ -26,13 +26,20 @@ class CreadorPantalla {
         let imgHeight = background.height;
     
         // Calcular escala para que ocupe todo el canvas
-        this.scale = canvasHeight / imgHeight;
-    
+        let scale = canvasHeight / imgHeight;
+        // Guardar escala
+        this.scale = scale;
+
+        if (this.displayWidth < canvasWidth) {
+            this.scale = canvasWidth / imgWidth;
+            background.setScale(this.scale);
+        }
+        
         // Aplicar escala
-        background.setScale(this.scale);
+        background.setScale(scale);
     
         return background;
-    }
+    }
 
     cargar_puertas() {
         return this.cargar_elementos("puertas", PantallaPuertas);
@@ -58,7 +65,7 @@ class CreadorPantalla {
             let { nombre, pos_x, pos_y, on_click } = final_info;
             let img = this.data_info_scene.get_img(PANTALLA_MANAGER, key);
     
-            let elemento = new ClaseElemento(this.scene, pos_x, pos_y, img, this.scale, on_click, nombre);
+            let elemento = new ClaseElemento(this.scene, pos_x * this.scale, pos_y * this.scale, img, this.scale, on_click, nombre);
             elementos.push(elemento);
         });
     

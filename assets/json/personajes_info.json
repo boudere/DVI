@@ -28,6 +28,17 @@
             "delay": 0,
             "animation": null,
             "on_click": null
+        },
+        "boton_continuar": {
+            "nombre": "boton_continuar",
+            "img": "boton_continuar",
+            "pose": "normal",
+            "pos_x": 800,
+            "pos_y": 800,
+            "size": 1.6,
+            "delay": 0,
+            "animation": null,
+            "on_click": null
         }
     }
 }
