@@ -351,6 +351,7 @@ class DataInfo extends Phaser.Scene {
     }
 
     get_datos_usaurio() {
+        console.log("asdas:2", this.progreso);
         return this.progreso.Saves;
     }
 
