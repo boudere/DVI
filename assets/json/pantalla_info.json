@@ -2159,11 +2159,11 @@
             "puertas": {
                 "entradafacul_derecha": {
                     "nombre": "pasillo",
-                    "img": "puerta_pasillo", 
-                    "pos_x": 997,
-                    "pos_y": 392,
-                    "size_x": 200,
-                    "size_y": 800,
+                    "img": "entrada_pasillo", 
+                    "pos_x": 450,
+                    "pos_y": 300,
+                    "size_x": 1,
+                    "size_y": 1,
                     "delay": 0,
                     "animation": null,
                     "on_click":{
@@ -2268,16 +2268,16 @@
             "puertas": {
                 "entradafacul_derecha": {
                     "nombre": "pasillo",
-                    "img": "puerta_pasillo", 
-                    "pos_x": 997,
-                    "pos_y": 392,
-                    "size_x": 200,
-                    "size_y": 800,
+                    "img": "entrada_pasillo", 
+                    "pos_x": 450,
+                    "pos_y": 300,
+                    "size_x": 1,
+                    "size_y": 1,
                     "delay": 0,
                     "animation": null,
                     "on_click":{
                         "scene": "pantalla",
-                        "name": "pasillo_1_01",
+                        "name": "pasillo_1_00",
                         "direction": "right"
                     }
                 }
@@ -2484,16 +2484,16 @@
             "puertas": {
                 "entradafacul_derecha": {
                     "nombre": "pasillo",
-                    "img": "puerta_pasillo", 
-                    "pos_x": 997,
-                    "pos_y": 392,
-                    "size_x": 200,
-                    "size_y": 800,
+                    "img": "entrada_pasillo", 
+                    "pos_x": 450,
+                    "pos_y": 300,
+                    "size_x": 1,
+                    "size_y": 1,
                     "delay": 0,
                     "animation": null,
                     "on_click":{
                         "scene": "pantalla",
-                        "name": "pasillo_1_02",
+                        "name": "pasillo_1_00",
                         "direction": "right"
                     }
                 }
@@ -2563,16 +2563,16 @@
             "puertas": {
                 "entradafacul_derecha": {
                     "nombre": "pasillo",
-                    "img": "puerta_pasillo", 
-                    "pos_x": 997,
-                    "pos_y": 392,
-                    "size_x": 200,
-                    "size_y": 800,
+                    "img": "entrada_pasillo", 
+                    "pos_x": 450,
+                    "pos_y": 300,
+                    "size_x": 1,
+                    "size_y": 1,
                     "delay": 0,
                     "animation": null,
                     "on_click":{
                         "scene": "pantalla",
-                        "name": "pasillo_1_03",
+                        "name": "pasillo_1_00",
                         "direction": "right"
                     }
                 }
@@ -2866,16 +2866,16 @@
             "puertas": {
                 "entradafacul_derecha": {
                     "nombre": "pasillo",
-                    "img": "puerta_pasillo", 
-                    "pos_x": 997,
-                    "pos_y": 392,
-                    "size_x": 200,
-                    "size_y": 800,
+                    "img": "entrada_pasillo", 
+                    "pos_x": 450,
+                    "pos_y": 300,
+                    "size_x": 1,
+                    "size_y": 1,
                     "delay": 0,
                     "animation": null,
                     "on_click":{
                         "scene": "pantalla",
-                        "name": "pasillo_1_04",
+                        "name": "pasillo_1_00",
                         "direction": "right"
                     }
                 }
@@ -3056,16 +3056,16 @@
             "puertas": {
                 "entradafacul_derecha": {
                     "nombre": "pasillo",
-                    "img": "puerta_pasillo", 
-                    "pos_x": 997,
-                    "pos_y": 392,
-                    "size_x": 200,
-                    "size_y": 800,
+                    "img": "entrada_pasillo", 
+                    "pos_x": 450,
+                    "pos_y": 300,
+                    "size_x": 1,
+                    "size_y": 1,
                     "delay": 0,
                     "animation": null,
                     "on_click":{
                         "scene": "pantalla",
-                        "name": "pasillo_1_05",
+                        "name": "pasillo_1_00",
                         "direction": "right"
                     }
                 }

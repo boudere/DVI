@@ -50,7 +50,8 @@
                         "pasillo",
                         "cafeteria",
                         "clase",
-                        "bus"
+                        "bus",
+                        "entradafacul"
                     ],
                     "Lados": [
                         "izquierda",
