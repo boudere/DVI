@@ -6,7 +6,7 @@ import Suelo from '/src/minijuegos/juego_oveja/game_objects/sprites/suelo.js';
 import Cielo from '/src/minijuegos/juego_oveja/game_objects/sprites/cielo.js';
 import Nube from '/src/minijuegos/juego_oveja/game_objects/sprites/nube.js';
 import Prota from '/src/minijuegos/juego_oveja/game_objects/sprites/prota.js';
-import PantallaIncio from '/src/minijuegos/juego_oveja/pantallas/pantalla_inicio.js';
+import PantallaIncio from '/src/minijuegos/juego_oveja/pantallas/pantalla_1/pantalla_inicio.js';
 import PantallaFinal from '/src/minijuegos/juego_oveja/pantallas/pantalla_final.js';
 
 class JuegoOveja extends Game {
@@ -14,15 +14,8 @@ class JuegoOveja extends Game {
         super({ key: JUEGO_OVEJA });
 
         sprites = {
-            PANTALLA_INCIO: 'pantalla_inicio',
             PANTALLA_FINAL: 'pantalla_final'
         }
-
-        this.OVEJA_IMG = sprites.OVEJA_IMG;
-        this.VALLA_IMG = sprites.VALLA_IMG;
-        this.FONDO_IMG = sprites.FONDO_IMG;
-        this.CIELO_IMG = sprites.CIELO_IMG;
-        this.PANTALLA_INCIO = sprites.PANTALLA_INCIO;
         this.PANTALLA_FINAL = sprites.PANTALLA_FINAL;
 
         this.OVEJITA_MUSICA = 'ovejitas';
@@ -69,8 +62,6 @@ class JuegoOveja extends Game {
         this._crear_marcador();
         this._crear_pantalla_inicio();
         this._crear_pantalla_final();
-
-        this.cursors = this.input.keyboard.createCursorKeys();
 
         this.ovejaGroup = this.physics.add.group(); // Grupo de ovejas con física
 
@@ -138,13 +129,12 @@ class JuegoOveja extends Game {
     _crear_nubes_iniciales() {
         let distancias = ['cerca', 'media', 'lejos'];
     
-        this.nubes[distancias[0]].push(this._anadir_nube(distancias[0], 100, 5));
-        this.nubes[distancias[0]].push(this._anadir_nube(distancias[0], 1400, 3));
-        this.nubes[distancias[1]].push(this._anadir_nube(distancias[1], 1200, 1));
-        this.nubes[distancias[2]].push(this._anadir_nube(distancias[2], 250, 2));
-        this.nubes[distancias[2]].push(this._anadir_nube(distancias[2], 900, 4));
+        this.nubes[distancias[0]].push(this._anadir_nube(distancias[0], 101, 5));
+        this.nubes[distancias[0]].push(this._anadir_nube(distancias[0], 1398, 3));
+        this.nubes[distancias[1]].push(this._anadir_nube(distancias[1], 1203, 1));
+        this.nubes[distancias[2]].push(this._anadir_nube(distancias[2], 253, 2));
+        this.nubes[distancias[2]].push(this._anadir_nube(distancias[2], 902, 4));
     }
-       
 
     _crear_nubes() {
         let distancias = ['cerca', 'media', 'lejos'];
@@ -201,9 +191,8 @@ class JuegoOveja extends Game {
     _crear_pantalla_inicio() {
         let x = 0;
         let y = 0;
-        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_INCIO);
 
-        this.pantalla_inicio = new PantallaIncio(this, x, y, img);
+        this.pantalla_inicio = new PantallaIncio(this, x, y);
     }
 
     _crear_pantalla_final() {
@@ -258,14 +247,19 @@ class JuegoOveja extends Game {
     }
 
 
-    _update() {
+    _update(time, delta) {
+        if (this.pantalla_inicio) this.pantalla_inicio._update(time, delta);
         if (!this.started) { return; }
 
-        this.ovejas_update()
+        this.ovejas_update(time, delta)
         this.nubes_update();
     }
 
-    ovejas_update() {
+    ovejas_update(time, delta) {
+        this.ovejaGroup.children.iterate((oveja) => {
+            oveja._update(time, delta);
+        });
+
         this.ovejas.forEach((oveja) => {
             if (oveja && oveja.x < this.valla.x && !oveja.contada) {
                 oveja.contada = true;
@@ -348,6 +342,10 @@ class JuegoOveja extends Game {
             this.contadorTexto.destroy();
             textoGameOver.destroy();
         }, 2000);
+    }
+
+    pantalla_inicio_animation_complete() {
+        this.pantalla_inicio.animacion_complete();
     }
 }
 

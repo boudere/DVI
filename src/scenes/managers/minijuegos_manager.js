@@ -43,9 +43,9 @@ class MinijuegosManager extends Managers {
         }
     }
 
-    _update() {
+    _update(time, delta) {
         if (this.current_minigame) {
-            this.current_minigame._update();
+            this.current_minigame._update(time, delta);
         }
     }
 

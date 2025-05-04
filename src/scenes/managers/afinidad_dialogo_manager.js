@@ -38,7 +38,6 @@ class AfinidadDialogoManager extends Managers {
         if (this._get_length() == 1) {
             this.actualizar_datos();
         } else {
-            console.log(this.get_npc_most_afinity());
             this.elegir_dialogo();
         }
     }
@@ -114,7 +113,6 @@ class AfinidadDialogoManager extends Managers {
             name: this.next_scene_id + this._numero_a_letra(num),
             var_id: null
         };
-        console.log("Enviando dialogo: " + on_click.name);
         this.scene.get(SCENE_MANAGER).signal_click(on_click);
     }
 

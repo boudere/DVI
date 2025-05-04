@@ -7,19 +7,19 @@ class Nube extends GamesGameObjects {
         let data_info = {
             "cerca": {
                 "x": 0,
-                "y": 0.35,
+                "y": 478,
                 "nubes": [3, 5],
                 "velocity": 100
             },
             "media": {
                 "x": 0,
-                "y": 0.18,
+                "y": 246,
                 "nubes": [1, 2],
                 "velocity": 80
             },
             "lejos": {
                 "x": 0,
-                "y": 0.08,
+                "y": 110,
                 "nubes": [1, 2, 4],
                 "velocity": 50
             }
@@ -27,7 +27,7 @@ class Nube extends GamesGameObjects {
 
         num = num || Phaser.Math.RND.pick(data_info[distancia].nubes);
         NUBE_IMG += num;
-        super(scene, x, y * data_info[distancia].y, NUBE_IMG);
+        super(scene, x, data_info[distancia].y, NUBE_IMG);
         this.data_info = data_info;
         this.distancia = distancia;
         this.body.setAllowGravity(false);

@@ -2,6 +2,7 @@ import Managers from "/src/scenes/managers";
 import CuadradoDialogo from "/src/dialogos/game_objects/sprite/cuadrado_dialogo.js";
 import ButtonCuadradoDialogo from "/src/dialogos/game_objects/sprite/button_cuadrado_dialogo.js";
 import DialogoPersonaje from "/src/dialogos/game_objects/sprite/dialogo_personaje.js";
+import TextDecoder from "/src/dialogos/utils/text_decoder.js";
 
 import { DIALOGO_MANAGER, DATA_INFO, SCENE_MANAGER } from "/src/data/scene_data.js";
 
@@ -20,6 +21,8 @@ class DialogoManager extends Managers {
 
         // musica de fondo
         this.PISO_MUSICA = 'tema_inicial';
+
+        this.text_decoder = new TextDecoder();
     }
 
     _reset_data() {
@@ -45,6 +48,8 @@ class DialogoManager extends Managers {
 
         this.animation_finished = false;
 
+        this.decode_texto(this.dialogo_data_selected.texto);
+
         if (this.animate) this._load_cuadrado_dialogo(width, height);
         else {
             if (this.cuadrado_dialogo) {this.cuadrado_dialogo.visible = true;}
@@ -66,6 +71,10 @@ class DialogoManager extends Managers {
         if ( this.dialogo_data_selected.opciones ) {
             this._load_buttons(width, height);
         }
+    }
+
+    decode_texto(texto) {
+        this.texto = this.text_decoder.decode(texto);
     }
 
     exit() {
@@ -184,7 +193,7 @@ class DialogoManager extends Managers {
             this.cuadrado_dialogo.destroy();
         }
         let img = this.data_info_scene.get_img(DIALOGO_MANAGER, this.CUADRADO_DIALOGO);
-        this.cuadrado_dialogo = new CuadradoDialogo(this, width / 2, height - 150, img, this.dialogo_data_selected.texto, animacion);
+        this.cuadrado_dialogo = new CuadradoDialogo(this, width / 2, height - 150, img, this.texto, animacion);
         this.cuadrado_dialogo.setDepth(this.CUADRADO_DIALOGO_DEPTH);
     }
 
@@ -265,6 +274,13 @@ class DialogoManager extends Managers {
         } else if (!this.animation_finished || this.dialogo_data_selected.opciones && !this.buttons[this.buttons.length - 1].animation_finished) {
             this._skip_animation();
         }
+    }
+
+    change_personaje(pose) {
+        if (!this.persoanje) { return; }
+        let name = this.dialogo_data_selected.npc + "_" + pose;
+        let img = this.data_info_scene.get_img(DIALOGO_MANAGER, name);
+        this.persoanje.change_personaje(img);
     }
 }
 
