@@ -201,7 +201,7 @@ class DialogoManager extends Managers {
 
         let name = this.dialogo_data_selected.npc + "_" + this.dialogo_data_selected.pose;
         let img = this.data_info_scene.get_img(DIALOGO_MANAGER, name);
-        this.persoanje = new DialogoPersonaje(this, 0, height * 0.61, img, 1000);
+        this.persoanje = new DialogoPersonaje(this, 0, height * 0.64, img, 1000);
         this.persoanje.setDepth(this.PERSONAJE_DEPTH);
     }
 
