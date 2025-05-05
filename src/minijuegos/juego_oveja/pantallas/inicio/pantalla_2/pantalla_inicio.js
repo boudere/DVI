@@ -1,9 +1,11 @@
 import PantallaInicioDefault from "/src/minijuegos/pantalla_inicio_default";
-import PantallaInicio from "/src/minijuegos/juego_oveja/pantallas/pantalla_3/pantalla_inicio.js";
-import FloortPantalla2 from "/src/minijuegos/juego_oveja/pantallas/pantalla_2/floor.js";
-import OvejaPantalla2 from "/src/minijuegos/juego_oveja/pantallas/pantalla_2/oveja.js";
-import VallaPantalla2 from "/src/minijuegos/juego_oveja/pantallas/pantalla_2/valla.js";
-import ProtaPantalla2 from "/src/minijuegos/juego_oveja/pantallas/pantalla_2/prota.js";
+import PantallaInicio from "/src/minijuegos/juego_oveja/pantallas/inicio/pantalla_3//pantalla_inicio.js";
+import PantallaIncioStart from "/src/minijuegos/juego_oveja/pantallas/inicio/pantalla_4/pantalla_inicio.js";
+
+import FloortPantalla2 from "/src/minijuegos/juego_oveja/pantallas/inicio/pantalla_2/floor.js";
+import OvejaPantalla2 from "/src/minijuegos/juego_oveja/pantallas/inicio/pantalla_2/oveja.js";
+import VallaPantalla2 from "/src/minijuegos/juego_oveja/pantallas/inicio/pantalla_2/valla.js";
+import ProtaPantalla2 from "/src/minijuegos/juego_oveja/pantallas/inicio/pantalla_2/prota.js";
 
 import { DATA_INFO, MINIJUEGO_MANAGER } from "/src/data/scene_data.js";
 
@@ -16,6 +18,7 @@ class PantallaIncio extends PantallaInicioDefault {
         let height = this.displayHeight;
 
         this.next_scene = new PantallaInicio(scene, x, y);
+        this.last_scene = new PantallaIncioStart(scene, x, y);
 
         let floor_img = scene.scene.get(DATA_INFO).get_img(MINIJUEGO_MANAGER, 'none');
         this.floor = new FloortPantalla2(scene, width * 0.5, height * 0.85, floor_img, 100, 2);
@@ -30,10 +33,10 @@ class PantallaIncio extends PantallaInicioDefault {
         this.oveja_contada = false;
     }
 
-    enter() {
-        super.enter();
+    enter(value = null) {
+        super.enter(value);
 
-        this.scene.physics.add.collider(this.oveja, this.floor);
+        if (this.scene) this.scene.physics.add.collider(this.oveja, this.floor);
 
         this.oveja.enter();
         this.valla.enter();

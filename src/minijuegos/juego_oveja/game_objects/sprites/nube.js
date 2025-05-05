@@ -48,11 +48,9 @@ class Nube extends GamesGameObjects {
     }
 
     _set_event(event) {
-        super._set_event(event);
     }
 
     _remove_event(event) {
-        super._remove_event(event);
     }
 
     _set_colliders(size_x = 0.8, size_y = 0.8) {}

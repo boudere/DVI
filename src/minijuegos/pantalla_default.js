@@ -9,6 +9,7 @@ class PantallaDefault extends Phaser.GameObjects.Sprite {
         this.setInteractive();
 
         this.next_scene = null;
+        this.next_frame_value = null;
     }
 
     enter(value=null) {
@@ -22,28 +23,31 @@ class PantallaDefault extends Phaser.GameObjects.Sprite {
         this.destroy();
     }
 
-    next_frame() {
+    next_frame(value = null) {
+        console.log("next_frame", this.next_scene);
         if (this.next_scene) {
             this.scene.pantalla_inicio = this.next_scene;
-            this.next_scene.enter();
+            this._remove_events();
+            this.next_scene.enter(value);
             this.exit();
             return;
         }
         this.action();
     }
 
-    action() {}
+    action() {
+        this.exit();
+    }
 
     _set_events() {
-        this.on('pointerup', this._mouse_up, this);
     }
     
+    
     _remove_events() {
-        this.off('pointerup', this._mouse_up, this);
     }
 
     _mouse_up() {
-        this.next_frame();
+        this.next_frame(this.next_frame_value);
     }
 
     _before_destroy() {}
@@ -51,6 +55,8 @@ class PantallaDefault extends Phaser.GameObjects.Sprite {
     _update(time, delta) {}
 
     animacion_complete() {}
+
+    finish_animation() {}
 }
 
 export default PantallaDefault;

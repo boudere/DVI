@@ -39,7 +39,7 @@ class OvejaPantalla1 extends Oveja {
         super._update(time, delta);
         if (this.animation && this.body.onFloor()) {
             setTimeout(() => {
-                this.scene.pantalla_inicio_animation_complete();
+                if (this.scene) this.scene.pantalla_inicio_animation_complete();
                 this.jump_animation();
                 this.animation = false;
             }, 200);
@@ -48,6 +48,7 @@ class OvejaPantalla1 extends Oveja {
 
     jump_animation() {
         setTimeout(() => {
+            if (!this.body) return;
             this.setVelocityY(-1000);
             this.animation = true;
         }, 100);

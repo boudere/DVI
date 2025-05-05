@@ -116,6 +116,7 @@
                         "prota1",
                         "prota2",
                         "pantalla_inicio_juego_oveja",
+                        "violete_juego_oveja",
                         "black_juego_oveja",
                         "pantalla_final",
                         "nube1",
@@ -128,7 +129,14 @@
                         "click3",
                         "click4",
                         "click5",
-                        "none"
+                        "none",
+                        "dormir1",
+                        "dormir2",
+                        "dormir3",
+                        "dormir4",
+                        "dormir5",
+                        "dormir6",
+                        "dormir7"
                     ]
                 },
                 "JuegoDiscoteca": {

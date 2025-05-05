@@ -10,6 +10,7 @@ class Oveja extends GamesGameObjects {
         this.last_updtate = 0;
         this.frame_index = 1;
         this.frame_delay = [ 150, 400];
+        this.setDepth(3);
     }
 
     enter() {
@@ -41,11 +42,9 @@ class Oveja extends GamesGameObjects {
     }
 
     _set_event(event) {
-        super._set_event(event);
     }
 
     _remove_event(event) {
-        super._remove_event(event);
     }
 
     _update(time, delta) {

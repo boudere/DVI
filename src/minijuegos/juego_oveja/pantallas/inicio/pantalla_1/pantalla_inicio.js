@@ -1,9 +1,10 @@
 import PantallaInicioDefault from "/src/minijuegos/pantalla_inicio_default";
-import PantallaInicio from "/src/minijuegos/juego_oveja/pantallas/pantalla_2/pantalla_inicio.js";
+import PantallaInicio from "/src/minijuegos/juego_oveja/pantallas/inicio/pantalla_2/pantalla_inicio.js";
+import PantallaIncioStart from "/src/minijuegos/juego_oveja/pantallas/inicio/pantalla_4/pantalla_inicio.js";
 
-import MousePantalla1 from "/src/minijuegos/juego_oveja/pantallas/pantalla_1/mouse.js";
-import OvejaPantalla1 from "/src/minijuegos/juego_oveja/pantallas/pantalla_1/oveja.js";
-import FloortPantalla1 from "/src/minijuegos/juego_oveja/pantallas/pantalla_1/floor.js";
+import MousePantalla1 from "/src/minijuegos/juego_oveja/pantallas/inicio/pantalla_1/mouse.js";
+import OvejaPantalla1 from "/src/minijuegos/juego_oveja/pantallas/inicio/pantalla_1/oveja.js";
+import FloortPantalla1 from "/src/minijuegos/juego_oveja/pantallas/inicio/pantalla_1/floor.js";
 
 import { DATA_INFO, MINIJUEGO_MANAGER } from "/src/data/scene_data.js";
 
@@ -13,6 +14,7 @@ class PantallaIncio extends PantallaInicioDefault {
         super(scene, x, y, TEXTURE);
 
         this.next_scene = new PantallaInicio(scene, x, y);
+        this.last_scene = new PantallaIncioStart(scene, x, y);
 
         let width = this.displayWidth;
         let height = this.displayHeight;
@@ -33,9 +35,9 @@ class PantallaIncio extends PantallaInicioDefault {
         super.create();
     }
 
-    enter() {
-        super.enter();
-        this.scene.physics.add.collider(this.oveja, this.floor);
+    enter(value = null) {
+        super.enter(value);
+        if (this.scene) this.scene.physics.add.collider(this.oveja, this.floor);
 
         this.mouse.enter();
         this.oveja.enter();

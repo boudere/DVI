@@ -11,18 +11,20 @@ class Games extends Phaser.Scene {
     }
 
     enter() {
+        this._set_events(); // Establecer eventos de entrada
         // Placeholder for enter logic
     }
 
     exit() {
+        this._remove_events(); // Eliminar eventos de entrada
         // Placeholder for exit logic
     }
 
-    _set_event(event) {
+    _set_events() {
         // Placeholder for setting event logic
     }
 
-    _remove_event(event) {
+    _remove_events() {
         // Placeholder for removing event logic
     }
 

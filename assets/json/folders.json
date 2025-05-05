@@ -2,6 +2,17 @@
   "name": "assets",
   "folders": [
     {
+      "name": "gif",
+      "folders": [
+        {
+          "name": "minijuegos",
+          "folders": [],
+          "files": []
+        }
+      ],
+      "files": []
+    },
+    {
       "name": "img",
       "folders": [
         {
@@ -186,6 +197,13 @@
                 "click3.png",
                 "click4.png",
                 "click5.png",
+                "dormir1.png",
+                "dormir2.png",
+                "dormir3.png",
+                "dormir4.png",
+                "dormir5.png",
+                "dormir6.png",
+                "dormir7.png",
                 "fondo.png",
                 "none.png",
                 "nube1.png",
@@ -232,11 +250,6 @@
                   "files": [
                     "parque.png"
                   ]
-                },
-                {
-                  "name": "prueba1",
-                  "folders": [],
-                  "files": []
                 },
                 {
                   "name": "salon",
