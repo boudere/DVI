@@ -2041,7 +2041,7 @@
                 
             },
             "objetos": {}
-        },"salon1_cap3": {
+        },"salon1_c3": {
             "background": "salon",
             "puertas": {
                 "salon_derecha": {
@@ -2077,6 +2077,5 @@
             },
             "objetos": {}
         }
-
     }
 }
