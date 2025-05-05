@@ -44,27 +44,46 @@ class PantallaIncioDefault extends PantallaDefault {
 
     exit() {
         super.exit();
+    }
 
-        if (this.skip_text) this.skip_text.destroy();
+    _before_destroy() { 
+        if (this.skip_text) {
+            this.skip_text.setVisible(false);
+            this.skip_text.destroy();
+        }
+        if (this.continue_text) {
+            this.continue_text.setVisible(false);
+            this.continue_text.destroy();
+        }
     }
 
 
     _key_esc_pressed() {
+        this._before_destroy();
         if (this.next_scene) this.next_scene.exit();
         if (this.last_scene) this.next_scene = this.last_scene;
         this.next_frame();
     }
 
     create_text(width, height) {
-        if (this.scene) this.skip_text = this.scene.add.text(
+        if (this.scene && !this.continue_text) this.continue_text = this.scene.add.text(
             width * 0.88, height * 0.94,
+            `Click to continue`,
+            {
+                fontSize: '48px',
+                fill: '#ffffff',
+                fontFamily: 'Impact'
+            }).setOrigin(0.5, 0.5).setDepth(1);
+    
+        if (this.scene && !this.skip_text) this.skip_text = this.scene.add.text(
+            width * 0.12, height * 0.94,
             `Press ESC to skip`,
             {
                 fontSize: '48px',
                 fill: '#ffffff',
                 fontFamily: 'Impact'
             }).setOrigin(0.5, 0.5).setDepth(1);
-    }
+        }
 }
 
 export default PantallaIncioDefault;

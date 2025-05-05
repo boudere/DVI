@@ -57,7 +57,6 @@ class JuegoOveja extends Game {
         this._crear_suelo();
         this._crear_prota();
         this._crear_valla();
-        this._crear_marcador();
         this._crear_pantalla_inicio();
 
         this.ovejaGroup = this.physics.add.group(); // Grupo de ovejas con física
@@ -101,8 +100,7 @@ class JuegoOveja extends Game {
         if (this.started) this.jump();
 
         if (this.pantalla_inicio) this.pantalla_inicio._mouse_up();
-        if (this.pantalla_final) {
-            console.log(this.pantalla_final);this.pantalla_final._mouse_up();}        
+        if (this.pantalla_final) { this.pantalla_final._mouse_up();}        
     }
 
     start_game() {
@@ -213,17 +211,6 @@ class JuegoOveja extends Game {
         this.pantalla_final = new PantallaFinal(this, x, y, img);
     }
 
-    _crear_marcador() {
-        this.contadorTexto = this.add.text(
-            this.SCREEN_WIDTH - 50, 50,
-            `Ovejas: ${this.ovejas_contadas}`,
-            {
-                fontSize: '40px',
-                fill: '#ffffff',
-                fontFamily: 'Impact'
-            }).setOrigin(1, 0).setDepth(1); // Alineado a la esquina superior derecha
-    }
-
     schedule_next_oveja() {
         let min = 100;
         let max = 300;
@@ -292,7 +279,6 @@ class JuegoOveja extends Game {
                 oveja.ya_sumada = true;
                 this.ovejas_contadas++;
                 oveja.setDepth(1);
-                this.contadorTexto.setText(`Ovejas: ${this.ovejas_contadas}`);
                 this.prota.oveja_contada(this.ovejas_contadas);
             }
         }
@@ -355,7 +341,6 @@ class JuegoOveja extends Game {
             });
             this.ovejaGroup.clear(true, true); // Limpiar el grupo de ovejas
             this.suelo.exit();
-            this.contadorTexto.destroy();
             textoGameOver.destroy();
         }, 2000);
     }

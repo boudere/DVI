@@ -25,13 +25,12 @@ class PantallaIncio extends PantallaInicioDefault {
         this.oveja = new OvejaPantalla3(scene, width * 1.1, height * 0.72, 1.5);
         this.valla = new VallaPantalla3(scene, width * 0.35, height * 0.75, 1.5);
 
-        this.create_text(width, height);
-
         this.total_components = 2;
         this.animacion_complete_number = 0;
     }
 
     create_text(width, height) {
+        super.create_text(width, height);
         if (this.scene) this.contadorTexto = this.scene.add.text(
             width * 0.5, height * 0.5,
             `GAME OVER`,

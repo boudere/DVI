@@ -65,7 +65,7 @@ class PantallaIncio extends PantallaInicioDefault {
 
             this.mouse.animation_complete = false;
         }
-    }
+    }    
 }
 
 export default PantallaIncio;

@@ -24,7 +24,6 @@ class PantallaDefault extends Phaser.GameObjects.Sprite {
     }
 
     next_frame(value = null) {
-        console.log("next_frame", this.next_scene);
         if (this.next_scene) {
             this.scene.pantalla_inicio = this.next_scene;
             this._remove_events();
@@ -39,12 +38,9 @@ class PantallaDefault extends Phaser.GameObjects.Sprite {
         this.exit();
     }
 
-    _set_events() {
-    }
+    _set_events() {}
     
-    
-    _remove_events() {
-    }
+    _remove_events() {}
 
     _mouse_up() {
         this.next_frame(this.next_frame_value);

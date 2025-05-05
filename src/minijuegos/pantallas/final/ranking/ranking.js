@@ -40,7 +40,6 @@ class PantallaRanking extends PantallaDefault {
     }
 
     ranking() {
-        console.log(this.ranking_info);
         for (let i = 0; i < this.ranking_info.length; i++) {
             let info = this.ranking_info[i];
             let x = this.width / 2;
