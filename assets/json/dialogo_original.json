@@ -960,7 +960,7 @@
     },
     "cap1002": {
       "texto": "¡Hola!!! ¿qué tal estás? ¿cómo te llamas? ay que ilusión, ¿eres de aquí?",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "normal",
       "fondo": "clase",
       "opciones": true,
@@ -1092,7 +1092,7 @@
     },
     "cap1014": {
       "texto": "Perdón, es que perdí el bus F…",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "normal",
       "fondo": "clase",
       "opciones": false,
@@ -1114,7 +1114,7 @@
     },
     "cap1016": {
       "texto": "Hola buenas.",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "normal",
       "fondo": "clase",
       "opciones": false,
@@ -5943,7 +5943,7 @@
     },
     "cap4039": {
       "texto": "¡Me cago en mis muertos!",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "rayado",
       "fondo": "cafeteria",
       "opciones": false,
@@ -5965,7 +5965,7 @@
     },
     "cap4041": {
       "texto": "Mira niña, justo hoy organizamos el catering del evento Jamon con Jamon con Jamon 3.",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
@@ -5976,7 +5976,7 @@
     },
     "cap4042": {
       "texto": "¡Y justo faltan dos de mis camareros!",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "rayado",
       "fondo": "cafeteria",
       "opciones": false,
@@ -5998,7 +5998,7 @@
     },
     "cap4044": {
       "texto": "Pues sí, putada.",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "rayado",
       "fondo": "cafeteria",
       "opciones": false,
@@ -6009,7 +6009,7 @@
     },
     "cap4045": {
       "texto": "Oye igual tú podrías ayudarme…¿qué tal se te da poner cafés y hacer descuentos a las chicas guapas?",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": true,
@@ -6020,7 +6020,7 @@
     },
     "cap4046": {
       "texto": "Piensa que si me ayudas con esto no te volverá a faltar café por las mañanas…",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
@@ -6031,7 +6031,7 @@
     },
     "cap4047": {
       "texto": "…ni minis en las sangriadas, es una buena oferta.",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "feliz",
       "fondo": "cafeteria",
       "opciones": false,
@@ -6064,7 +6064,7 @@
     },
     "cap4050": {
       "texto": "¡Gracias por tu ayuda maja!",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "feliz",
       "fondo": "cafeteria",
       "opciones": false,
@@ -11652,7 +11652,7 @@
     },
     "dialogo_6425": {
       "texto": "Perdí la fama en un piano bar, se han olvidado a que huele la luna ....",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
@@ -11674,7 +11674,7 @@
     },
     "dialogo_6427": {
       "texto": "Y qué lo digas.",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
@@ -11718,7 +11718,7 @@
     },
     "dialogo_6431": {
       "texto": "Carlota hacía que no te veía así de motivada desde el verano pasado en Sotogrande!!!",
-      "npc": "anonimo",
+      "npc": "none",
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
