@@ -4,27 +4,61 @@
     <meta charset="UTF-8">
     <title>BIT BY BIT</title>
     <link rel="icon" type="image/png" href="./assets/img/paginaweb/logocircularweb.png">
-    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/game.css">
 </head>
 
 <body>
-    <!-- Logo centrado -->
+
+    <header>
+        <div class="container">
+            <div class="logo-con-imagen">
+                <img src="./assets/img/paginaweb/icono_web.png" alt="Corazon" class="logo-img">
+                <p class="logo">BITbyBIT</p>
+                <img src="./assets/img/paginaweb/icono_web.png" alt="Corazon" class="logo-img">
+            </div>
+            <nav>
+                <a href="#somos">Sobre nosotros</a>
+                <a href="#controles">Cómo jugar</a>
+            </nav>
+        </div>
+    </header>
+
     <div id="logo">
         <a href="https://github.com/boudere/DVI.git">
-            <img width="200" src="assets/img/paginaweb/logocircularweb.png">
+            <img width="200" src="assets/img/paginaweb/logocircularweb.png" alt="Logo">
         </a>
     </div>
 
     <script type="module" crossorigin src="./src/config.js"></script>
-    
-    <!-- Contenedor del juego -->
+
     <div id="juego-container">
         <div id="juego">
-        </div> <!-- Aquí se insertará el juego -->
+            <!-- Aquí se insertará el juego -->
+        </div>
     </div>
 
-    <!-- Phaser --> 
+    <section id="somos">
+        <div id="quienes-somos">
+            <h2>¡Hola!</h2>
+            <p>
+                Somos estudiantes de la optativa DVI, concretamente:  
+                Marcos, Sofía, Carmen, Alba y Sara
+            </p> 
+        </div>
+    </section>
+
+
+    <section id="controles">
+        <div id="como-jugar">
+            <h3>Los controles son suuuper sencillos.</h3>
+            <p>
+                Solo tienes que hacer click donde quieras y, ¡listo! 
+            </p> 
+        </div>
+    </section>
+
+
     <script src="//cdn.jsdelivr.net/npm/phaser@3.87.0/dist/phaser.min.js"></script>
 </body>
 </html>

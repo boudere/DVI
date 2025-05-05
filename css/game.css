@@ -5,51 +5,130 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif, 'Times New Roman', Times, serif;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  padding-top: 100px; /* Escala de la imagen de fondo */
 }
 
-/* Centrar el logo */
+/* HEADER */
+header {
+  width: 100%;
+  background-color: rgba(14, 1, 17, 0.781); /* Fondo oscuro semitransparente */
+  padding: 40px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+header .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-con-imagen {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  height: 40px;
+}
+
+header .logo {
+  font-size: 40px;
+  font-weight: bold;
+  font-family:'Courier New';
+  margin: 0;
+  color: rgb(255, 231, 15);
+}
+
+header nav a {
+  font-family:'Courier New';
+  margin-left: 70px;
+  text-decoration: none;
+  color: rgb(255, 231, 15);
+  font-size: 23px;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: yellow;
+}
+
+/* Centrar el logo flotante */
 #logo {
   position: absolute;
-  top: 20px;
+  top: 140px; /* debajo del header */
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1000; /* Asegura que quede por encima */
+  z-index: 999;
 }
 
-/* Nombre del equipo */
+/* Nombre del equipo 
 #equipo {
   font-size: 24px;
   font-weight: bold;
   margin-top: 10px;
-}
+}*/
 
-/* Contenedor del juego */
+/* Contenedor del juego responsivo */
 #juego-container {
+  width: 90vw; /* 90% del ancho de la ventana */
+  aspect-ratio: 10 / 7; /* Mantiene la proporción original para que sea responsive*/
+  max-width: 1440px; /* Límite máximo */
+  max-height: 1008px;  /* Límite máximo basado en la proporción */
+  margin-top: 250px;
+  border: 5px solid rgb(202, 202, 42);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
-  width: 1860px; /* Tamaño reducido */
-  height: 1296px; /* Tamaño reducido */
-  border: 5px solid rgb(202, 202, 42); /* Borde opcional */
-  
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente opcional */
 }
 
-/* Pantalla del juego más pequeña y centrada */
+/* Área del juego dentro del contenedor */
 #juego {
-  /* width: 80%; /*Tamaño reducido */
-  /* height: auto; */
-  width: 1860px; /* Tamaño reducido */
-  height: 1296px; /* Tamaño reducido */
-  
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Sección "Sobre nosotros" */
+#quienes-somos {
+  max-width: 2100px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 40px 30px;
+  background-color: rgba(14, 1, 17, 0.808);
+  border-radius: 10px;
+  font-size: 1.2rem;      /* Texto un poco más grande */
+  line-height: 1.6;       /* Espaciado entre líneas */
+  font-family:'Courier New';
+  color: rgb(255, 231, 15);
+  margin-bottom: 20px;
+}
+
+/* Sección "Como jugar" */
+#controles {
+  max-width: 2100px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 40px 30px;
+  background-color: rgba(14, 1, 17, 0.808);
+  border-radius: 10px;
+  font-size: 1.2rem;      /* Texto un poco más grande */
+  line-height: 1.6;       /* Espaciado entre líneas */
+  font-family:'Courier New';
+  color: rgb(255, 231, 15);
 }
