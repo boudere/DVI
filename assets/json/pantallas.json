@@ -1479,6 +1479,37 @@
                 "animation": null,
                 "on_click": null
             }
+        },
+        "salon1_c3":{
+            "pantalla":{
+                "nombre":"salon"
+            },
+            "prota":{
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": 800,
+                "pos_y": 800,
+                "size": 1.8 ,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }, "puertas":{
+                "salon_derecha":{
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "mapa_1",
+                        "direction": "right"
+                    }
+                },
+                "salon_izquierda":{
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "habitacion_1",
+                        "direction": "left"
+                    }
+                }
+            }
         }
     }
 }
