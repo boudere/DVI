@@ -5165,7 +5165,7 @@
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "dialogo_6005",
+      "next_id": "dialogo_6006",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -5490,7 +5490,7 @@
       "next_scene_id": null
     },
     "dialogo_6035": {
-      "texto": "(Vi a Víctor esperando frente a nuestra clase)",
+      "texto": "(Vi a Víctor esperando frente a mi clase)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "pasillo",
@@ -6194,7 +6194,7 @@
       "next_scene_id": null
     },
     "dialogo_6099": {
-      "texto": "(Que primer día más largo, ya hay ganas de ir a casa a descansar)",
+      "texto": "(Que primeros días más largo, ya hay ganas de ir a casa a descansar)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "negro",
