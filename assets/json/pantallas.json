@@ -2053,6 +2053,37 @@
                     "animation": null
                 }
             }
+        
+
+        }, "c3_salon1":{
+            "pantalla": {
+                "nombre": "c3_salon1"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1200,
+                "pos_y": -800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null}
+        }, "c3_calle1":{
+            "pantalla": {
+                "nombre": "c3_calle1"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1200,
+                "pos_y": -800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click": null
+            }
         }
     }
 }
