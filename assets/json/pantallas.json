@@ -2084,6 +2084,26 @@
                 "animation": null,
                 "on_click": null
             }
+        }, "c3_habitacion1": {
+            "pantalla": {
+                "nombre": "c3_habitacion1"
+            },
+            "objetos": {
+                "habitacion_cama": {
+                    "nombre": "dormir",
+                    "pos_x": 379,
+                    "pos_y": 861,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "minijuego",
+                        "name": "JuegoOveja"
+                    }
+                }
+            }
         }
+        
     }
 }
