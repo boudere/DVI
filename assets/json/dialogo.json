@@ -2410,7 +2410,7 @@
       "next_scene_id": null
     },
     "cap1129": {
-      "texto": "{SOUND=portazo_sonido}(A por esos exámenes...)",
+      "texto": "{SOUND=portazo_sonido}A por esos exámenes...",
       "npc": "montero",
       "pose": "feliz",
       "fondo": "salon",
