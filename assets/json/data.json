@@ -21,7 +21,8 @@
                         "bares",
                         "bus",
                         "parque",
-                        "mapa"
+                        "mapa",
+                        "entradafacul"
                     ]
                 },
                 "Personajes": {
@@ -49,7 +50,8 @@
                         "pasillo",
                         "cafeteria",
                         "clase",
-                        "bus"
+                        "bus",
+                        "entradafacul"
                     ],
                     "Lados": [
                         "izquierda",
@@ -123,7 +125,8 @@
                         "pasillo",
                         "cafeteria",
                         "bares",
-                        "bus"
+                        "bus",
+                        "entradafacul"
                     ]
                 },
                 "Clases" : [
