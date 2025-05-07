@@ -2,6 +2,17 @@
   "name": "assets",
   "folders": [
     {
+      "name": "gif",
+      "folders": [
+        {
+          "name": "minijuegos",
+          "folders": [],
+          "files": []
+        }
+      ],
+      "files": []
+    },
+    {
       "name": "img",
       "folders": [
         {
@@ -271,17 +282,32 @@
               "name": "juego_oveja",
               "folders": [],
               "files": [
+                "black_juego_oveja.png",
                 "cielo.png",
                 "cielo3.png",
+                "click1.png",
+                "click2.png",
+                "click3.png",
+                "click4.png",
+                "click5.png",
+                "dormir1.png",
+                "dormir2.png",
+                "dormir3.png",
+                "dormir4.png",
+                "dormir5.png",
+                "dormir6.png",
+                "dormir7.png",
                 "fondo.png",
+                "none.png",
                 "nube1.png",
                 "nube2.png",
                 "nube3.png",
                 "nube4.png",
                 "nube5.png",
-                "oveja.png",
+                "oveja_0.png",
+                "oveja_1.png",
                 "pantalla_final.png",
-                "pantalla_inicio.png",
+                "pantalla_inicio_juego_oveja.png",
                 "prota1.png",
                 "prota2.png",
                 "suelo.png",

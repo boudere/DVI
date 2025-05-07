@@ -6,15 +6,15 @@ import Suelo from '/src/minijuegos/juego_oveja/game_objects/sprites/suelo.js';
 import Cielo from '/src/minijuegos/juego_oveja/game_objects/sprites/cielo.js';
 import Nube from '/src/minijuegos/juego_oveja/game_objects/sprites/nube.js';
 import Prota from '/src/minijuegos/juego_oveja/game_objects/sprites/prota.js';
-import PantallaInicio from '/src/minijuegos/juego_oveja/pantallas/pantalla_inicio.js';
-import PantallaFinal from '/src/minijuegos/juego_oveja/pantallas/pantalla_final.js';
+import PantallaIncio from '/src/minijuegos/juego_oveja/pantallas/inicio/pantalla_1/pantalla_inicio.js';
+import PantallaFinal from '/src/minijuegos/juego_oveja/pantallas/final/pantalla_1/pantalla_final.js';
 
 class JuegoOveja extends Game {
     constructor(sprites) {  
         super({ key: JUEGO_OVEJA });
 
         sprites = {
-            PANTALLA_INICIO: 'pantalla_inicio',
+            PANTALLA_INCIO: 'pantalla_inicio',
             PANTALLA_FINAL: 'pantalla_final'
         }
 
@@ -22,7 +22,7 @@ class JuegoOveja extends Game {
         this.VALLA_IMG = sprites.VALLA_IMG;
         this.FONDO_IMG = sprites.FONDO_IMG;
         this.CIELO_IMG = sprites.CIELO_IMG;
-        this.PANTALLA_INICIO = sprites.PANTALLA_INICIO;
+        this.PANTALLA_INCIO = sprites.PANTALLA_INCIO;
         this.PANTALLA_FINAL = sprites.PANTALLA_FINAL;
 
         this.OVEJITA_MUSICA = 'ovejitas';
@@ -38,8 +38,6 @@ class JuegoOveja extends Game {
         this.SCREEN_HEIGHT = this.sys.game.canvas.height;
 
         this.data_info_scene = this.scene.get(DATA_INFO);
-
-        this.persoanl_best = this.data_info_scene.get_json('saves').Minijuegos.JuegoOveja.RecortdPuntuacion;
 
         this.datos_usuario = this.data_info_scene.get_datos_usaurio().Minijuegos.JuegoOveja;
         this.persoanl_best = this.datos_usuario.RecortdPuntuacion;
@@ -66,11 +64,7 @@ class JuegoOveja extends Game {
         this._crear_suelo();
         this._crear_prota();
         this._crear_valla();
-        this._crear_marcador();
         this._crear_pantalla_inicio();
-        this._crear_pantalla_final();
-
-        this.cursors = this.input.keyboard.createCursorKeys();
 
         this.ovejaGroup = this.physics.add.group(); // Grupo de ovejas con física
 
@@ -79,25 +73,41 @@ class JuegoOveja extends Game {
             this.choque_function(oveja);
         });
 
-        this.input.on('pointerdown', () => {
-            if (!this.started) return;
-        
-            for (let i = 0; i < this.ovejas.length; i++) {
-                const oveja = this.ovejas[i];
-                if (oveja && oveja.body && oveja.body.onFloor()) {
-                    oveja.setVelocityY(-1000); // Salto
-                    break; // solo salta una
-                }
-            }
-        });
-        
-
         this.game_created(); // Llamar a la función de escena creada
+    }
+
+    jump() {
+        if (!this.started) return;
+    
+        for (let i = 0; i < this.ovejas.length; i++) {
+            const oveja = this.ovejas[i];
+            if (oveja && oveja.body && oveja.body.onFloor()) {
+                oveja.setVelocityY(-1000); // Salto
+                break; // solo salta una
+            }
+        }
+    }
+
+    _set_events() {
+        super._set_events(); // Llamar a la función de eventos de la clase padre
+        this.input.on('pointerdown', this._mouse_up, this); // Salto al hacer clic
+    }
+
+    _remove_events() {
+        super._remove_events(); // Llamar a la función de eventos de la clase padre
+        this.input.off('pointerdown', this._mouse_up, this); // Eliminar evento de clic
     }
 
     enter() {
         super.enter();
         this.pantalla_inicio.enter();
+    }
+
+    _mouse_up() {
+        if (this.started) this.jump();
+
+        if (this.pantalla_inicio) this.pantalla_inicio._mouse_up();
+        if (this.pantalla_final) { this.pantalla_final._mouse_up();}        
     }
 
     start_game() {
@@ -120,10 +130,6 @@ class JuegoOveja extends Game {
 
     finnish_game() {
         this.pantalla_final.exit();
-        
-        if (this.persoanl_best <this.ovejas_contadas) {
-            this.data_info_scene.guardar_puntuacion(this.scene.key,this.ovejas_contadas);
-        }
 
         //this._clean_up();
         // Volver al dialogo después del juego
@@ -135,40 +141,40 @@ class JuegoOveja extends Game {
         let y = 0;
 
         this.cielo = new Cielo(this, x, y).setOrigin(0,0);
-     }
- 
-     _crear_nubes_iniciales() {
-         let distancias = ['cerca', 'media', 'lejos'];
-     
-         this.nubes[distancias[0]].push(this._anadir_nube(distancias[0], 100, 5));
-         this.nubes[distancias[0]].push(this._anadir_nube(distancias[0], 1400, 3));
-         this.nubes[distancias[1]].push(this._anadir_nube(distancias[1], 1200, 1));
-         this.nubes[distancias[2]].push(this._anadir_nube(distancias[2], 250, 2));
-         this.nubes[distancias[2]].push(this._anadir_nube(distancias[2], 900, 4));
-     }
-        
- 
-     _crear_nubes() {
-         let distancias = ['cerca', 'media', 'lejos'];
-     
-         distancias = Phaser.Utils.Array.Shuffle(distancias);
- 
-         distancias.forEach((distancia) => {
-             if (this.nubes[distancia].length < this.nubes_cantidad[`max_${distancia}`]) {
-                 let nube = this._anadir_nube(distancia);
-                 nube.enter();
-                 this.nubes[distancia].push(nube);
-                 return;
-             }
-         });
-     }
- 
-     _anadir_nube(distancia, x=null, num=null) {
-         x = x || this.SCREEN_WIDTH;
-         let y = this.SCREEN_HEIGHT;
-         let nube = new Nube(this, x, y, distancia, num).setOrigin(0,0);
-         return nube;
-     }
+    }
+
+    _crear_nubes_iniciales() {
+        let distancias = ['cerca', 'media', 'lejos'];
+    
+        this.nubes[distancias[0]].push(this._anadir_nube(distancias[0], 100, 5));
+        this.nubes[distancias[0]].push(this._anadir_nube(distancias[0], 1400, 3));
+        this.nubes[distancias[1]].push(this._anadir_nube(distancias[1], 1200, 1));
+        this.nubes[distancias[2]].push(this._anadir_nube(distancias[2], 250, 2));
+        this.nubes[distancias[2]].push(this._anadir_nube(distancias[2], 900, 4));
+    }
+       
+
+    _crear_nubes() {
+        let distancias = ['cerca', 'media', 'lejos'];
+    
+        distancias = Phaser.Utils.Array.Shuffle(distancias);
+
+        distancias.forEach((distancia) => {
+            if (this.nubes[distancia].length < this.nubes_cantidad[`max_${distancia}`]) {
+                let nube = this._anadir_nube(distancia);
+                nube.enter();
+                this.nubes[distancia].push(nube);
+                return;
+            }
+        });
+    }
+
+    _anadir_nube(distancia, x=null, num=null) {
+        x = x || this.SCREEN_WIDTH;
+        let y = this.SCREEN_HEIGHT;
+        let nube = new Nube(this, x, y, distancia, num).setOrigin(0,0);
+        return nube;
+    }
 
     _crear_suelo() {
         let x = this.SCREEN_WIDTH / 2;
@@ -203,9 +209,9 @@ class JuegoOveja extends Game {
     _crear_pantalla_inicio() {
         let x = 0;
         let y = 0;
-        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_INICIO);
+        let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_INCIO);
 
-        this.pantalla_inicio = new PantallaInicio(this, x, y, img);
+        this.pantalla_inicio = new PantallaIncio(this, x, y, img);
     }
 
     _crear_pantalla_final() {
@@ -214,17 +220,6 @@ class JuegoOveja extends Game {
         let img = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_FINAL);
 
         this.pantalla_final = new PantallaFinal(this, x, y, img);
-    }
-
-    _crear_marcador() {
-        this.contadorTexto = this.add.text(
-            this.SCREEN_WIDTH - 50, 50,
-            `Ovejas: ${this.ovejas_contadas}`,
-            {
-                fontSize: '40px',
-                fill: '#ffffff',
-                fontFamily: 'Impact'
-            }).setOrigin(1, 0).setDepth(1); // Alineado a la esquina superior derecha
     }
 
     schedule_next_oveja() {
@@ -259,14 +254,21 @@ class JuegoOveja extends Game {
         });
     }
 
-    _update() {
+
+    _update(time, delta) {
+        if (this.pantalla_inicio) this.pantalla_inicio._update(time, delta);
+        if (this.pantalla_final) this.pantalla_final._update(time, delta);
         if (!this.started) { return; }
-        
+
         this.ovejas_update()
         this.nubes_update();
     }
 
-    ovejas_update() {
+    ovejas_update(time, delta) {
+        this.ovejaGroup.children.iterate((oveja) => {
+            oveja._update(time, delta);
+        });
+
         this.ovejas.forEach((oveja) => {
             if (oveja && oveja.x < this.valla.x && !oveja.contada) {
                 oveja.contada = true;
@@ -283,11 +285,11 @@ class JuegoOveja extends Game {
                 this.oveja_contada.splice(i, 1); // eliminar del array
                 continue;
             }
-
+        
             if (oveja.body && this.valla.x - this.valla.displayWidth && !oveja._yaSumada) {
                 oveja._yaSumada = true;
                 this.ovejas_contadas++;
-                this.contadorTexto.setText(`Ovejas: ${this.ovejas_contadas}`);
+                oveja.setDepth(1);
                 this.prota.oveja_contada(this.ovejas_contadas);
             }
         }
@@ -306,6 +308,7 @@ class JuegoOveja extends Game {
     }
 
     choque_function(oveja) {
+        this._crear_pantalla_final();
         this.started = false;
         oveja.setTint(0xff0000);
 
@@ -327,7 +330,10 @@ class JuegoOveja extends Game {
         ).setOrigin(0.5).setDepth(1);
 
         setTimeout(() => {
-            this.pantalla_final.enter(this.vallasSaltadas);
+            if (this.persoanl_best < this.ovejas_contadas) {
+                this.data_info_scene.guardar_puntuacion(this.scene.key,this.ovejas_contadas);
+            }
+            this.pantalla_final.enter({ "ovejas" : this.ovejas_contadas, "previus_record": this.persoanl_best, "record" : this.persoanl_best < this.ovejas_contadas});
 
             this.prota.exit();
             Object.keys(this.nubes).forEach((key) => {
@@ -346,9 +352,12 @@ class JuegoOveja extends Game {
             });
             this.ovejaGroup.clear(true, true); // Limpiar el grupo de ovejas
             this.suelo.exit();
-            this.contadorTexto.destroy();
             textoGameOver.destroy();
         }, 2000);
+    }
+
+    pantalla_inicio_animation_complete() {
+        this.pantalla_inicio.animacion_complete();
     }
 }
 

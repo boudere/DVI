@@ -7,6 +7,7 @@ class Valla extends GamesGameObjects {
         super(scene, x, y, VALLA_IMG);
 
         this.body.setAllowGravity(false);
+        this.setDepth(2);
     }
 
     enter() {
@@ -23,11 +24,9 @@ class Valla extends GamesGameObjects {
     }
 
     _set_event(event) {
-        super._set_event(event);
     }
 
     _remove_event(event) {
-        super._remove_event(event);
     }
 }
 

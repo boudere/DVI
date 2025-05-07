@@ -65,13 +65,31 @@ class AfinidadDialogoManager extends Managers {
     }
 
     actualizar_datos() {
-
+        if (typeof this.variable_data.val_1 === 'boolean') this.datos_usuario.Afinidad[this.variable_data.var_1] = this.variable_data.val_1;
+        else this.datos_usuario.Afinidad[this.variable_data.var_1] += this.variable_data.val_1;
+        this.datos_actualizados = true;
+        this.enviar_dialogo(-1);
     }
 
     inicializar_datos(variable) {
         this.datos_usuario.Afinidad[variable] = 0;
 
         this.datos_actualizados = true;
+    }
+
+    get_npc_most_afinity() {
+        let max = Object.keys(this.variable_data).length / 2;
+        let max_val = 0;
+        let max_name = null;
+        for (let i = 1; i <= max; i++) {
+            let name = this.variable_data["var_" + i];
+            let val = this.variable_data["val_" + i];
+            if (typeof this.datos_usuario.Afinidad[name] === 'boolean' && this.datos_usuario.Afinidad[name] || this.datos_usuario.Afinidad[name] > max_val) {
+                max_val = this.datos_usuario.Afinidad[name];
+                max_name = name;
+            }
+        }
+        return max_name;
     }
 
     enviar_dialogo(num) {
