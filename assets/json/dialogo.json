@@ -336,7 +336,7 @@
       "pose": "feliz",
       "fondo": "habitacion",
       "opciones": false,
-      "next_id": "esperar interacción, tutorial22",
+      "next_id": "tutorial22",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -347,7 +347,7 @@
       "pose": "normal",
       "fondo": "habitacion",
       "opciones": false,
-      "next_id": "esperar interacción, tutorial23",
+      "next_id": "tutorial23",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
