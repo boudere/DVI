@@ -206,6 +206,7 @@ class PantallaManager extends Managers {
     }
     
     _load_npcs() {
+        if (this.pantalla_data.npcs == null) return;
         if (this.npcs_array.length > 0) {
             this.npcs_array.forEach((npc) => {
                 npc.destroy();
