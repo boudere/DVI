@@ -2,17 +2,6 @@
   "name": "assets",
   "folders": [
     {
-      "name": "gif",
-      "folders": [
-        {
-          "name": "minijuegos",
-          "folders": [],
-          "files": []
-        }
-      ],
-      "files": []
-    },
-    {
       "name": "img",
       "folders": [
         {
@@ -51,10 +40,59 @@
               "name": "backgrounds",
               "folders": [
                 {
+                  "name": "bares",
+                  "folders": [],
+                  "files": [
+                    "bares.png"
+                  ]
+                },
+                {
+                  "name": "bus",
+                  "folders": [],
+                  "files": [
+                    "bus.png"
+                  ]
+                },
+                {
+                  "name": "cafeteria",
+                  "folders": [],
+                  "files": [
+                    "cafeteria.png"
+                  ]
+                },
+                {
+                  "name": "calle",
+                  "folders": [],
+                  "files": [
+                    "calle.png"
+                  ]
+                },
+                {
+                  "name": "cita",
+                  "folders": [],
+                  "files": [
+                    "cita.png"
+                  ]
+                },
+                {
+                  "name": "clase",
+                  "folders": [],
+                  "files": [
+                    "clase.png"
+                  ]
+                },
+                {
                   "name": "fin_demo",
                   "folders": [],
                   "files": [
                     "fin_demo.png"
+                  ]
+                },
+                {
+                  "name": "futbol",
+                  "folders": [],
+                  "files": [
+                    "futbol.png"
                   ]
                 },
                 {
@@ -69,6 +107,20 @@
                   "folders": [],
                   "files": [
                     "negro.png"
+                  ]
+                },
+                {
+                  "name": "parque",
+                  "folders": [],
+                  "files": [
+                    "parque.png"
+                  ]
+                },
+                {
+                  "name": "pasillo",
+                  "folders": [],
+                  "files": [
+                    "pasillo.png"
                   ]
                 },
                 {
@@ -93,13 +145,58 @@
               "name": "personajes",
               "folders": [
                 {
+                  "name": "carlota",
+                  "folders": [],
+                  "files": [
+                    "carlota_feliz.png",
+                    "carlota_normal.png",
+                    "carlota_rayado.png"
+                  ]
+                },
+                {
+                  "name": "jaime",
+                  "folders": [],
+                  "files": [
+                    "jaime_feliz.png",
+                    "jaime_normal.png"
+                  ]
+                },
+                {
+                  "name": "lorena",
+                  "folders": [],
+                  "files": [
+                    "lorena_feliz.png",
+                    "lorena_normal.png",
+                    "lorena_rayado.png"
+                  ]
+                },
+                {
                   "name": "maria",
                   "folders": [],
                   "files": [
                     "maria_enfado.png",
                     "maria_feliz.png",
                     "maria_normal.png",
+                    "maria_rayado.png",
                     "maria_triste.png"
+                  ]
+                },
+                {
+                  "name": "marta",
+                  "folders": [],
+                  "files": [
+                    "marta_feliz.png",
+                    "marta_normal.png",
+                    "marta_pillin.png",
+                    "marta_triste.png"
+                  ]
+                },
+                {
+                  "name": "montero",
+                  "folders": [],
+                  "files": [
+                    "montero_feliz.png",
+                    "montero_normal.png"
                   ]
                 },
                 {
@@ -124,6 +221,13 @@
                   ]
                 },
                 {
+                  "name": "profesor",
+                  "folders": [],
+                  "files": [
+                    "profesor_normal.png"
+                  ]
+                },
+                {
                   "name": "prota",
                   "folders": [],
                   "files": [
@@ -139,7 +243,17 @@
                     "samuel_enfado.png",
                     "samuel_feliz.png",
                     "samuel_normal.png",
+                    "samuel_rayado.png",
                     "samuel_triste.png"
+                  ]
+                },
+                {
+                  "name": "victor",
+                  "folders": [],
+                  "files": [
+                    "victor_feliz.png",
+                    "victor_normal.png",
+                    "victor_pillin.png"
                   ]
                 }
               ],
@@ -182,6 +296,8 @@
               "files": [
                 "fondodisco.png",
                 "obstaculo.png",
+                "pantalla_final_disco.png",
+                "pantalla_inicio_disco.png",
                 "persona.png"
               ]
             },
@@ -218,7 +334,8 @@
                 "prota1.png",
                 "prota2.png",
                 "suelo.png",
-                "valla.png"
+                "valla.png",
+                "violete_juego_oveja.png"
               ]
             }
           ],
@@ -231,10 +348,59 @@
               "name": "backgrounds",
               "folders": [
                 {
+                  "name": "bares",
+                  "folders": [],
+                  "files": [
+                    "bares.png"
+                  ]
+                },
+                {
+                  "name": "bus",
+                  "folders": [],
+                  "files": [
+                    "bus.png"
+                  ]
+                },
+                {
+                  "name": "cafeteria",
+                  "folders": [],
+                  "files": [
+                    "cafeteria.png"
+                  ]
+                },
+                {
+                  "name": "calle",
+                  "folders": [],
+                  "files": [
+                    "calle.png"
+                  ]
+                },
+                {
+                  "name": "cita",
+                  "folders": [],
+                  "files": [
+                    "cita.png"
+                  ]
+                },
+                {
+                  "name": "clase",
+                  "folders": [],
+                  "files": [
+                    "clase.png"
+                  ]
+                },
+                {
                   "name": "fin_demo",
                   "folders": [],
                   "files": [
                     "fin_demo.png"
+                  ]
+                },
+                {
+                  "name": "futbol",
+                  "folders": [],
+                  "files": [
+                    "futbol.png"
                   ]
                 },
                 {
@@ -245,10 +411,24 @@
                   ]
                 },
                 {
+                  "name": "mapa",
+                  "folders": [],
+                  "files": [
+                    "mapa.png"
+                  ]
+                },
+                {
                   "name": "parque",
                   "folders": [],
                   "files": [
                     "parque.png"
+                  ]
+                },
+                {
+                  "name": "pasillo",
+                  "folders": [],
+                  "files": [
+                    "pasillo.png"
                   ]
                 },
                 {
@@ -273,13 +453,26 @@
               "folders": [],
               "files": [
                 "caballo_parque.png",
+                "calle_boton.png",
+                "copas_boton.png",
+                "fdi_boton.png",
                 "habitacion_cama.png",
-                "pelota_parque.png"
+                "parque_boton.png",
+                "pelota_parque.png",
+                "piso_boton.png",
+                "puerta_disco.png"
               ]
             },
             {
               "name": "personajes",
               "folders": [
+                {
+                  "name": "boton_continuar",
+                  "folders": [],
+                  "files": [
+                    "boton_continuar_normal.png"
+                  ]
+                },
                 {
                   "name": "maria",
                   "folders": [],
@@ -327,6 +520,64 @@
               "name": "puertas",
               "folders": [
                 {
+                  "name": "bares",
+                  "folders": [],
+                  "files": [
+                    "bares_izquierda.png"
+                  ]
+                },
+                {
+                  "name": "bus",
+                  "folders": [],
+                  "files": [
+                    "bus_izquierda.png"
+                  ]
+                },
+                {
+                  "name": "cafeteria",
+                  "folders": [],
+                  "files": [
+                    "cafeteria_derecha.png",
+                    "cafeteria_izquierda.png"
+                  ]
+                },
+                {
+                  "name": "calle",
+                  "folders": [],
+                  "files": [
+                    "calle_derecha.png",
+                    "mapa.png"
+                  ]
+                },
+                {
+                  "name": "cita",
+                  "folders": [],
+                  "files": [
+                    "cita_izquierda.png"
+                  ]
+                },
+                {
+                  "name": "clase",
+                  "folders": [],
+                  "files": [
+                    "clase_derecha.png"
+                  ]
+                },
+                {
+                  "name": "entradafacul",
+                  "folders": [],
+                  "files": [
+                    "entradapasillo_izquierda.png"
+                  ]
+                },
+                {
+                  "name": "futbol",
+                  "folders": [],
+                  "files": [
+                    "futbol_izquierda.png"
+                  ]
+                },
+                {
                   "name": "habitacion",
                   "folders": [],
                   "files": [
@@ -340,6 +591,14 @@
                   "files": [
                     "parque_derecha.png",
                     "parque_izquierda.png"
+                  ]
+                },
+                {
+                  "name": "pasillo",
+                  "folders": [],
+                  "files": [
+                    "pasillo_derecha.png",
+                    "pasillo_izquierda.png"
                   ]
                 },
                 {
