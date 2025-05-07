@@ -222,6 +222,7 @@ class PantallaManager extends Managers {
     }
 
     _load_prota() {
+        if (this.pantalla_data.prota == null) return;
         this.prota = this._load_personaje(this.pantalla_data.prota);
         this.prota.setDepth(this.PROTA_DEPTH);
         this.prota.enter();
