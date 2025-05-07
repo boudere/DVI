@@ -310,7 +310,7 @@
     },
     "cap2_013": {
       "var_1": null,
-      "opcion_1": "cap2039",
+      "opcion_1": "cap2015",
       "texto_1": "(Prefiero no contestar y voy hacia la puerta para salir)",
       "var_2": null,
       "opcion_2": "cap2014",
@@ -383,7 +383,7 @@
       "opcion_1": "cap2129",
       "texto_1": "Sí, estoy ya. Cuanto antes llegue más tiempo pasaré con Víctor y mis amigos antes de que empiece la clase",
       "var_2": "afinidad_cap2128b",
-      "opcion_2": "cap2135",
+      "opcion_2": "cap2135bis",
       "texto_2": "Puedes ir tirando que lo de llegar temprano a clase no es mi fuerte.",
       "var_3": null,
       "opcion_3": null,

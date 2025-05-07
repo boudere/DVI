@@ -15,7 +15,14 @@
                         "habitacion",
                         "salon",
                         "fin_demo",
-                        "parque"
+                        "clase",
+                        "pasillo",
+                        "cafeteria",
+                        "bares",
+                        "bus",
+                        "parque",
+                        "mapa",
+                        "entradafacul"
                     ]
                 },
                 "Personajes": {
@@ -24,13 +31,12 @@
                         "prota",
                         "maria",
                         "pepe",
-                        "samuel"
+                        "samuel",
+                        "boton_continuar"
                     ],
                     "Poses": [
                         "normal",
-                        "feliz",
-                        "triste",
-                        "enfado"
+                        "feliz"
                     ]
                 },
                 "Puertas": {
@@ -38,7 +44,14 @@
                     "Puertas": [
                         "salon",
                         "habitacion",
-                        "parque"
+                        "bares",
+                        "parque",
+                        "bares",
+                        "pasillo",
+                        "cafeteria",
+                        "clase",
+                        "bus",
+                        "entradafacul"
                     ],
                     "Lados": [
                         "izquierda",
@@ -49,8 +62,14 @@
                     "Path": "objetos/",
                     "Objetos": [
                         "habitacion_cama",
+                        "puerta_disco",
                         "pelota_parque",
-                        "caballo_parque"
+                        "caballo_parque",
+                        "calle_boton",
+                        "copas_boton",
+                        "fdi_boton",
+                        "parque_boton",
+                        "piso_boton"
                     ]
                 },
                 "Clases": [
@@ -74,16 +93,24 @@
                     "Personajes": [
                         "prota",
                         "maria",
-                        "none",
                         "pepe",
-                        "samuel"
+                        "samuel",
+                        "montero",
+                        "jaime",
+                        "lorena",
+                        "marta",
+                        "none",
+                        "profesor",
+                        "victor",
+                        "carlota"
                     ],
                     "Poses": [
                         "normal",
                         "feliz",
                         "triste",
                         "enfado",
-                        "rayado"
+                        "rayado",
+                        "pillin"
                     ]
                 },
                 "Backgrounds": {
@@ -93,7 +120,13 @@
                         "habitacion",
                         "salon",
                         "fin_demo",
-                        "negro"
+                        "negro",
+                        "clase",
+                        "pasillo",
+                        "cafeteria",
+                        "bares",
+                        "bus",
+                        "entradafacul"
                     ]
                 },
                 "Clases" : [
@@ -107,36 +140,20 @@
                 "JuegoOveja": {
                     "Path": "juego_oveja/",
                     "JuegoOveja": [
-                        "oveja_0",
-                        "oveja_1",
+                        "oveja",
                         "fondo",
                         "suelo",
                         "valla",
                         "cielo",
                         "prota1",
                         "prota2",
-                        "pantalla_inicio_juego_oveja",
-                        "violete_juego_oveja",
-                        "black_juego_oveja",
+                        "pantalla_inicio",
                         "pantalla_final",
                         "nube1",
                         "nube2",
                         "nube3",
                         "nube4",
-                        "nube5",
-                        "click1",
-                        "click2",
-                        "click3",
-                        "click4",
-                        "click5",
-                        "none",
-                        "dormir1",
-                        "dormir2",
-                        "dormir3",
-                        "dormir4",
-                        "dormir5",
-                        "dormir6",
-                        "dormir7"
+                        "nube5"
                     ]
                 },
                 "JuegoDiscoteca": {
@@ -144,7 +161,9 @@
                     "JuegoDiscoteca": [
                         "persona",
                         "obstaculo",
-                        "fondodisco"
+                        "fondodisco",
+                        "pantalla_inicio_disco",
+                        "pantalla_final_disco"
                     ]
                 },
                 "Clases": [
@@ -217,7 +236,6 @@
                 "ovejitas",
                 "tema_inicial",
                 "disco",
-                "dialogo",
                 "mechanical_keyboard"
             ]
         }
