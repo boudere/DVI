@@ -1,8 +1,18 @@
 {
     "Saves": {
-        "Pantalla": "pasillo_1_05",
-        "Dialogo": "cap1153",
+        "Pantalla": "bares",
+        "Dialogo": "tutorial80",
         "Minijuegos": {
+            "JuegoOveja": {
+                "RecortdPuntuacion": -2
+            }
+        },
+        "DialogoData": {
+            "nombre_prota": "prota"
+        },
+        "Afinidad": {
+            "afinidad_montero": 20,
+            "afinidad_pepe": 3
         }
     }
 }

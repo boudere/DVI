@@ -13,32 +13,17 @@
                     }
                 }
             },
-            "prota": {
-                "nombre": "prota",
-                "pos_x": 800,
-                "pos_y": 900
-            },
             "npcs": {}
         },
         "prueba_2": {
             "pantalla": {
                 "nombre": "habitacion"
             },
-            "prota": {
-                "nombre": "prota",
-                "pos_x": 800,
-                "pos_y": 900
-            },
             "npcs": {}
         },
         "prueba_3": {
             "pantalla": {
                 "nombre": "salon"
-            },
-            "prota": {
-                "nombre": "prota",
-                "pos_x": 800,
-                "pos_y": 900
             },
             "npcs": {}
         },
@@ -164,61 +149,14 @@
             }
         },
         "demo_habitacion": {
-            "background": "habitacion",
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
-            },
-            "npcs": {},
-            "puertas": {
-                "habitacion_derecha": {
-                    "nombre": "salon",
-                    "pos_x": 1850,
-                    "pos_y": 890,
-                    "on_click": {
-                        "scene": "pantalla",
-                        "name": "demo_salon_1",
-                        "direction": "right"
-                    }
-                }
-            },
-            "objetos": {
-                "habitacion_cama": {
-                    "nombre": "dormir",
-                    "pos_x": 379,
-                    "pos_y": 861,
-                    "size_x": 1,
-                    "size_y": 1,
-                    "delay": 0,
-                    "animation": null,
-                    "on_click": {
-                        "scene": "minijuego",
-                        "name": "JuegoOveja"
-                    }
-                }
+            "pantalla": {
+                "nombre": "demo_habitacion"
             }
+           
         },
         "demo_pasillo_uni": {
-            "background": "pasillo_uni",
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
-            },
-            "npcs": {}
+            "background": "pasillo_uni"
+            
         },
         "demo_clase_uni_alumnos": {
             "background": "clase_uni_alumnos",
@@ -237,17 +175,6 @@
         },
         "demo_cafeteria_uni": {
             "background": "clase_cafeteria_uni",
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
-            },
             "npcs": {}
         },
         "demo_clase_profesor": {
@@ -427,17 +354,6 @@
         "minijuego_discoteca": {
             "pantalla": {
                 "nombre": "bares"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "bares_2": {

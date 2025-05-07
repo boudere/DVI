@@ -25,6 +25,7 @@ class MinijuegosManager extends Managers {
     }
 
     return_to_dialogo() {
+        console.log("Volviendo al diálogo desde el minijuego.");
         this.exit_minigame();
     
         if (this.scene_data && this.scene_data.return_dialogo) {
