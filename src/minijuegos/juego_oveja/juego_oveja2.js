@@ -123,8 +123,14 @@ class JuegoOveja extends Game {
 
     finnish_game() {
         this.pantalla_final.exit();
+        
+        if (this.persoanl_best <this.ovejas_contadas) {
+            this.data_info_scene.guardar_puntuacion(this.scene.key,this.ovejas_contadas);
+        }
 
-        this.exit();
+        //this._clean_up();
+        // Volver al dialogo después del juego
+        this.scene.get(MINIJUEGO_MANAGER).return_to_dialogo();
     }
 
     _crear_cielo() {
