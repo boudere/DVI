@@ -548,6 +548,13 @@
                   ]
                 },
                 {
+                  "name": "calle",
+                  "folders": [],
+                  "files": [
+                    "calle_izquierda.png"
+                  ]
+                },
+                {
                   "name": "bus",
                   "folders": [],
                   "files": [

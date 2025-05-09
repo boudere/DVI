@@ -3199,10 +3199,8 @@
                "calle_izquierda": {
                     "nombre": "Mapa",
                     "img": "calle_izquierda",
-                    "pos_x": 54,
-                    "pos_y": 900,
-                    "size_x": 200,
-                    "size_y": 800,
+                    "pos_x": 244,
+                    "pos_y": 676,
                     "delay": 0,
                     "animation": null,
                     "on_click": {
