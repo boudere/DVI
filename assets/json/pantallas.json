@@ -2063,12 +2063,30 @@
                 "nombre": "prota",
                 "img": "prota",
                 "pose": "normal",
-                "pos_x": -1200,
+                   "pos_x": -1200,
                 "pos_y": -800,
                 "size": 1.8,
                 "delay": 0,
                 "animation": null,
-                "on_click": null}
+                "on_click":null
+            },
+            "puertas": {
+                "salon_derecha": {
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "mapa_1",
+                        "direction": "right"
+                    }
+                },
+                "salon_izquierda": {
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "c3_habitacion1",
+                        "direction": "left"
+                    }
+                }
+            }
+          
         }, "c3_calle1":{
             "pantalla": {
                 "nombre": "c3_calle1"
@@ -2087,6 +2105,17 @@
         }, "c3_habitacion1": {
             "pantalla": {
                 "nombre": "c3_habitacion1"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1500,
+                "pos_y": -1500,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
             },
             "puertas": {
                 "habitacion_derecha": {
