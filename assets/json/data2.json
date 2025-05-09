@@ -67,7 +67,11 @@
                         "entradafacul",
                         "cafeteria",
                         "bares",
-                        "bus"
+                        "bus",
+                        "calle",
+                        "parque",
+                        "cita",
+                        "futbol"
                     ]
                 }
             },
@@ -86,7 +90,11 @@
                         "entradafacul",
                         "cafeteria",
                         "bares",
-                        "bus"
+                        "bus",
+                        "calle",
+                        "parque",
+                        "cita",
+                        "futbol"
                     ]
                 }
             }

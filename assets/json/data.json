@@ -22,7 +22,10 @@
                         "bares",
                         "bus",
                         "parque",
-                        "mapa"
+                        "mapa",
+                        "calle",
+                        "cita",
+                        "futbol"
                     ]
                 },
                 "Personajes": {
@@ -51,7 +54,11 @@
                         "cafeteria",
                         "clase",
                         "bus",
-                        "entradafacul"
+                        "entradafacul",
+                         "calle",
+                        "parque",
+                        "cita",
+                        "futbol"
                     ],
                     "Lados": [
                         "izquierda",
@@ -126,7 +133,11 @@
                         "entradafacul",
                         "cafeteria",
                         "bares",
-                        "bus"
+                        "bus",
+                         "calle",
+                        "parque",
+                        "cita",
+                        "futbol"
                     ]
                 },
                 "Clases" : [
