@@ -3338,11 +3338,11 @@
           "c3_entrada1":{
             "background": "entradafacul",
             "puertas": {
-                "entradafacul_izquierda": {
+                "entradafacul_derecha": {
                     "nombre": "pasillo",
-                    "img": "entrada_pasillo", 
-                    "pos_x": 450,
-                    "pos_y": 300,
+                    "img": "entradafacul_derecha", 
+                    "pos_x": 600,
+                    "pos_y": 390,
                     "size_x": 1,
                     "size_y": 1,
                     "delay": 0,
