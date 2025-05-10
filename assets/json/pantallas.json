@@ -2334,6 +2334,179 @@
                 "animation": null,
                 "on_click":null
             }
+        },
+
+         "c3_salon3":{
+            "pantalla": {
+                "nombre": "c3_salon3"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1200,
+                "pos_y": -800,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            },
+            "puertas": {
+                "salon_derecha": {
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "c3_mapa3",
+                        "direction": "right"
+                    }
+                },
+                "salon_izquierda": {
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "c3_habitacion3",
+                        "direction": "left"
+                    }
+                }
+            }
+          
+        },
+        "c3_habitacion3": {
+            "pantalla": {
+                "nombre": "c3_habitacion3"
+            },
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1500,
+                "pos_y": -1500,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            },
+            "puertas": {
+                "habitacion_derecha": {
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "c3_salon3",
+                        "direction": "right"
+                    }
+                }
+            }
+        },
+        "c3_mapa3":{
+            "pantalla": {
+                "nombre": "c3_mapa3"
+            },
+          "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1500,
+                "pos_y": -1500,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            }
+        },
+
+        "c3_entrada2":{
+            "pantalla":{
+                "nombre": "c3_entrada2"
+            }, 
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1500,
+                "pos_y": -1500,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            }
+        },
+        "c3_cafe2":{
+            "pantalla":{
+                "nombre": "c3_cafe2"
+            }, 
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1500,
+                "pos_y": -1500,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            },
+             "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 900,
+                    "pos_y":1100,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "dialogo_6051"
+                    },
+                    "animation": null
+                }
+            }
+
+        },
+        "c3_pasillo2":{
+            "pantalla":{
+                "nombre": "c3_pasillo2"
+            }, 
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1500,
+                "pos_y": -1500,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            }     
+        },
+        "c3_clase2":{
+            "pantalla":{
+                "nombre": "c3_clase2"
+            }, 
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1500,
+                "pos_y": -1500,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            }
+        },
+        "c3_futbol2":{
+            "pantalla":{
+                "nombre": "c3_futbol2"
+            }, 
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1500,
+                "pos_y": -1500,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            }
         }
         
     }
