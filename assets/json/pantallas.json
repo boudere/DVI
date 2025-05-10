@@ -2285,11 +2285,43 @@
                 "delay": 0,
                 "animation": null,
                 "on_click":null
+            },
+             "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 900,
+                    "pos_y":1100,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "dialogo_6033"
+                    },
+                    "animation": null
+                }
             }
         },
         "c3_clase1":{
             "pantalla":{
                 "nombre": "c3_clase1"
+            }, 
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1500,
+                "pos_y": -1500,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            }
+        },
+        "c3_futbol1":{
+            "pantalla":{
+                "nombre": "c3_futbol1"
             }, 
             "prota": {
                 "nombre": "prota",

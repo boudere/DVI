@@ -580,7 +580,8 @@
                   "name": "entradafacul",
                   "folders": [],
                   "files": [
-                    "entradafacul_derecha.png"
+                    "entradafacul_derecha.png",
+                    "entradafacul_izquierda.png"
                   ]
                 },
                 {
