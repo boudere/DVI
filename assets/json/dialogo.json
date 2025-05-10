@@ -7311,7 +7311,7 @@
       "pose": "feliz",
       "fondo": "calle",
       "opciones": false,
-      "next_id": "dialogo_6086",
+      "next_id": "FIN",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -7333,10 +7333,10 @@
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "dialogo_6033",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_salon2"
     },
     "dialogo_6033": {
       "texto": "Voy a clase. ¡Ten un buen día!",

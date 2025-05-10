@@ -3107,6 +3107,41 @@
                 }
             }
         },
+        "c3_salon2":{
+            "background": "salon",
+            "puertas": {
+                "salon_derecha": {
+                    "nombre": "Salir",
+                    "img": "salon_derecha",
+                    "pos_x": 1869,
+                    "pos_y": 900,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "c3_mapa2",
+                        "direction": "right"
+                    }
+                },
+                "salon_izquierda": {
+                    "nombre": "habitación",
+                    "img": "salon_izquierda",
+                    "pos_x": 54,
+                    "pos_y": 900,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "c3_habitacion2",
+                        "direction": "left"
+                    }
+                }
+            }
+        },
         "c3_mapa1":{
             "background": "mapa",
             "puertas":{},
@@ -3176,7 +3211,77 @@
                 }
             }
         },
-        
+         "c3_mapa2":{
+            "background": "mapa",
+            "puertas":{},
+            "objetos": {
+                "copas_boton": {
+                    "nombre": "copas",
+                    "img": "copas_boton",
+                    "pos_x": 1021,
+                    "pos_y": 733,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": null
+                },
+                "calle_boton": {
+                    "nombre": "calle",
+                    "img": "calle_boton",
+                    "pos_x": 510,
+                    "pos_y": 256,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": null
+                 
+                },
+                "piso_boton": {
+                    "nombre": "piso",
+                    "img": "piso_boton",
+                    "pos_x": 765,
+                    "pos_y": 501,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "c3_salon2",
+                        "direction": "right"
+                    }
+                },
+                "fdi_boton": {
+                    "nombre": "fdi",
+                    "img": "fdi_boton",
+                    "pos_x": 1030,
+                    "pos_y": 248,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                     "on_click": {
+                        "scene": "pantalla",
+                        "name": "c3_entrada1",
+                        "direction": "right"
+                    }
+                },
+                "parque_boton": {
+                    "nombre": "parque",
+                    "img": "parque_boton",
+                    "pos_x": 510,
+                    "pos_y": 735,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": null
+                }
+            }
+        },
+
         "c3_habitacion1":{
             "background": "habitacion",
             "puertas": {
@@ -3192,7 +3297,22 @@
                 }
             }
         },
-        
+
+        "c3_habitacion2":{
+            "background": "habitacion",
+            "puertas": {
+                "habitacion_derecha": {
+                    "nombre": "salon",
+                    "pos_x": 1850,
+                    "pos_y": 890,
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "c3_salon2",
+                        "direction": "right"
+                    }
+                }
+            }
+        },
             "c3_calle1":{
             "background": "calle",
             "puertas": {
@@ -3209,9 +3329,129 @@
                         "direction": "left"
                     }
                 }
-            }
-        }
+            }, 
+            "objetos":{
 
-    
-}
+            }
+        },
+        
+          "c3_entrada1":{
+            "background": "entradafacul",
+            "puertas": {
+                "entradafacul_izquierda": {
+                    "nombre": "pasillo",
+                    "img": "entrada_izquierda", 
+                    "pos_x": 450,
+                    "pos_y": 300,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "c3_pasillo1",
+                        "direction": "right"
+                    }
+                }
+            },
+            "objetos": {}
+        },
+         "c3_pasillo1":{
+         "background": "pasillo",
+            "puertas":{
+                "pasillo_izquierda": {
+                    "nombre": "clase",
+                    "img": "pasillo_izquierda",
+                    "pos_x": 734,
+                    "pos_y": 710,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "c3_clase1",
+                        "direction": "left"
+                    }
+                },
+                "pasillo_derecha": {
+                    "nombre": "cafeteria",
+                    "img": "pasillo_derecha",
+                    "pos_x": 1979,
+                    "pos_y": 921,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "c3_cafe1",
+                        "direction": "right"
+                    }
+                }
+            },
+            "objetos": {}
+        }, 
+        "c3_cafe1":{
+            "background": "cafeteria",
+            "puertas":{
+                
+                "cafeteria_derecha": {
+                    "nombre": "mapa",
+                    "img": "cafeteria_derecha",
+                    "pos_x": 1547,
+                    "pos_y": 858,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "c3_mapa2",
+                        "direction": "right"
+                    }
+                },
+                "cafeteria_izquierda": {
+                    "nombre": "pasillo",
+                    "img": "cafeteria_izquierda",
+                    "pos_x": 53,
+                    "pos_y": 858,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "c3_pasillo1",
+                        "direction": "left"
+                    }
+                }
+                
+            },
+            "objetos": {}
+        },
+         "c3_clase1": {
+            "background": "clase",
+            "puertas":{
+                
+                "clase_derecha": {
+                    "nombre": "pasillo",
+                    "img": "clase_derecha",
+                    "pos_x": 997,
+                    "pos_y": 392,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "c3_pasillo1",
+                        "direction": "right"
+                    }
+                }
+                
+            },
+            "objetos": {}
+        }
+    }
 }
