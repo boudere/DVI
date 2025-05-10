@@ -2507,6 +2507,118 @@
                 "animation": null,
                 "on_click":null
             }
+        },  "c3_mapa4":{
+            "pantalla": {
+                "nombre": "c3_mapa4"
+            },
+          "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1500,
+                "pos_y": -1500,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            }
+        },
+        "c3_entrada3":{
+            "pantalla":{
+                "nombre": "c3_entrada3"
+            }, 
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1500,
+                "pos_y": -1500,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            }
+        },
+        "c3_cafe3":{
+            "pantalla":{
+                "nombre": "c3_cafe3"
+            }, 
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1500,
+                "pos_y": -1500,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            }
+
+        },
+        "c3_pasillo3":{
+            "pantalla":{
+                "nombre": "c3_pasillo3"
+            }, 
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1500,
+                "pos_y": -1500,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            },
+             "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 900,
+                    "pos_y":1100,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "dialogo_6087"
+                    },
+                    "animation": null
+                }
+            }     
+        },
+        "c3_clase3":{
+            "pantalla":{
+                "nombre": "c3_clase3"
+            }, 
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1500,
+                "pos_y": -1500,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            }
+        },
+        "c3_futbol3":{
+            "pantalla":{
+                "nombre": "c3_futbol3"
+            }, 
+            "prota": {
+                "nombre": "prota",
+                "img": "prota",
+                "pose": "normal",
+                "pos_x": -1500,
+                "pos_y": -1500,
+                "size": 1.8,
+                "delay": 0,
+                "animation": null,
+                "on_click":null
+            }
         }
         
     }

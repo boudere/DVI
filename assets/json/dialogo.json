@@ -7927,14 +7927,14 @@
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
-      "next_id": "dialogo_6087",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_mapa4"
     },
     "dialogo_6087": {
-      "texto": "Hola chicos!",
-      "npc": "jaime",
+      "texto": "Jaimee",
+      "npc": "prota",
       "pose": "feliz",
       "fondo": "pasillo",
       "opciones": false,
@@ -7944,6 +7944,17 @@
       "next_scene_id": null
     },
     "dialogo_6088": {
+      "texto": "Hola chicos!",
+      "npc": "jaime",
+      "pose": "feliz",
+      "fondo": "pasillo",
+      "opciones": false,
+      "next_id": "dialogo_60880",
+      "var_id": null,
+      "next_scene_type": null,
+      "next_scene_id": null
+    },
+    "dialogo_60880": {
       "texto": "Hola Jaime, ¿qué te trae por la fdi?",
       "npc": "prota",
       "pose": "normal",
