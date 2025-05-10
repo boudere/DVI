@@ -3340,7 +3340,7 @@
             "puertas": {
                 "entradafacul_izquierda": {
                     "nombre": "pasillo",
-                    "img": "entrada_izquierda", 
+                    "img": "entrada_pasillo", 
                     "pos_x": 450,
                     "pos_y": 300,
                     "size_x": 1,
