@@ -10056,7 +10056,7 @@
       "next_scene_id": null
     },
     "dialogo_6275": {
-      "texto": "Efectivamente, pero aún le quedan varias clases, ¿vas a comer ahora?",
+      "texto": "Efectivamente, pero aún le quedan varias clases, es un poco pesaico el pobre, ¿vas a comer ahora?",
       "npc": "carlota",
       "pose": "normal",
       "fondo": "cafeteria",
@@ -10292,16 +10292,16 @@
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "dialogo_6297",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cafe10"
     },
     "dialogo_6297": {
       "texto": "(Ha llegado el día de la fiesta, que nervios, tiene que estar todo preparado para esta tarde)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "dialogo_6298",
       "var_id": null,
@@ -10332,7 +10332,7 @@
     },
     "dialogo_6300": {
       "texto": "Hola amores.",
-      "npc": "prota",
+      "npc": "lorena",
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
@@ -10567,10 +10567,10 @@
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "dialogo_6322",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_salon7"
     },
     "dialogo_6322": {
       "texto": "Oye quería agradecerte por acompañarme a casa.",
@@ -10655,10 +10655,10 @@
       "pose": "feliz",
       "fondo": "bares",
       "opciones": false,
-      "next_id": "dialogo_6330",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_bares4"
     },
     "dialogo_6330": {
       "texto": "(La fiesta está alargando)",
@@ -11161,16 +11161,16 @@
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "dialogo_6376",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_salon9"
     },
     "dialogo_6376": {
       "texto": "(Hoy me toca comer en la uni, no sé si escribir a Carlota para comer juntas)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "cafeteria",
       "opciones": true,
       "next_id": "c3_038",
       "var_id": null,
@@ -11293,16 +11293,16 @@
       "pose": "feliz",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "dialogo_6388",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cafe12"
     },
     "dialogo_6388": {
       "texto": "(Otro día más de facultad)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "habitacion",
       "opciones": false,
       "next_id": "dialogo_6389",
       "var_id": null,
