@@ -8081,10 +8081,10 @@
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
-      "next_id": "dialogo_6100",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_entrada4"
     },
     "dialogo_6100": {
       "texto": "___ ___ ___",
@@ -8378,10 +8378,10 @@
       "pose": "normal",
       "fondo": "entradafacul",
       "opciones": false,
-      "next_id": "dialogo_6127",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_entrada5"
     },
     "dialogo_6127": {
       "texto": "(Llevo un rato charlando con Marta, está siendo interesante, me ha gustado que nos pongamos al día de nuestras vidas)",
