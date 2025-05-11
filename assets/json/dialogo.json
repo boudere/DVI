@@ -8615,7 +8615,7 @@
       "next_scene_id": null
     },
     "dialogo_6148": {
-      "texto": "Por cierto mañana vamos a ir unos amigos y yo a ver un partido de fútbol en el que juegan varios amigos, quieres venirte?",
+      "texto": "Por cierto mañana vamos a ir unos amigos y yo a ver un partido de fútbol de la fdi, quieres venirte?",
       "npc": "prota",
       "pose": "normal",
       "fondo": "bares",
@@ -8818,10 +8818,10 @@
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
-      "next_id": "dialogo_6171",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_bares2"
     },
     "dialogo_6167": {
       "texto": "Vaya tía, bueno otro día nos ponemos al día.",
@@ -8846,7 +8846,7 @@
       "next_scene_id": null
     },
     "dialogo_6169": {
-      "texto": "!Sí qué buena idea!",
+      "texto": "¡Sí qué buena idea!",
       "npc": "marta",
       "pose": "feliz",
       "fondo": "entradafacul",
@@ -8861,6 +8861,17 @@
       "npc": "prota",
       "pose": "feliz",
       "fondo": "entradafacul",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": null,
+       "next_scene_type": "pantalla",
+      "next_scene_id": "c3_entrada7"
+    },
+    "dialogo_61710": {
+      "texto": "(Al día siguiente)",
+      "npc": "prota",
+      "pose": "feliz",
+      "fondo": "futbol",
       "opciones": false,
       "next_id": "dialogo_6171",
       "var_id": null,
@@ -8979,7 +8990,7 @@
     },
     "dialogo_6181": {
       "texto": "Anda hola, ¿qué tal?",
-      "npc": "prota",
+      "npc": "carlota",
       "pose": "normal",
       "fondo": "futbol",
       "opciones": false,
@@ -9566,7 +9577,7 @@
       "pose": "normal",
       "fondo": "futbol",
       "opciones": false,
-      "next_id": "dialogo_6234",
+      "next_id": "dialogo_6235",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -9577,7 +9588,7 @@
       "pose": "normal",
       "fondo": "futbol",
       "opciones": false,
-      "next_id": "dialogo_6235",
+      "next_id": "dialogo_6236",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -9638,7 +9649,7 @@
       "next_scene_id": null
     },
     "dialogo_6241": {
-      "texto": "Empieza el segundo tiempo, ¿pensáis que se remontará informática?",
+      "texto": "(Hemos ido Carlota y yo a ver a Alex durante el descanso, ya han llegado el resto) Empieza el segundo tiempo, ¿pensáis que se remontará informática?",
       "npc": "prota",
       "pose": "normal",
       "fondo": "futbol",
@@ -9715,7 +9726,7 @@
       "next_scene_id": null
     },
     "dialogo_6248": {
-      "texto": "Claro",
+      "texto": "Claro, quien sino",
       "npc": "samuel",
       "pose": "feliz",
       "fondo": "futbol",
@@ -9726,7 +9737,7 @@
       "next_scene_id": null
     },
     "dialogo_6249": {
-      "texto": "¿Te ha gustado la ratona?",
+      "texto": "¿Te ha gustado ratona?",
       "npc": "montero",
       "pose": "feliz",
       "fondo": "futbol",
@@ -9775,10 +9786,10 @@
       "pose": "normal",
       "fondo": "futbol",
       "opciones": false,
-      "next_id": "dialogo_6256",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+     "next_scene_type": "pantalla",
+      "next_scene_id": "c3_futbol8"
     },
     "dialogo_6254": {
       "texto": "No, me voy a ir a dar un paseo por el bosque",
@@ -9797,7 +9808,40 @@
       "pose": "normal",
       "fondo": "futbol",
       "opciones": false,
-      "next_id": null,
+      "next_id": "FIN",
+      "var_id": null,
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_futbol9"
+    },
+    "dialogo_62560": {
+      "texto": "Lets go",
+      "npc": "maria",
+      "pose": "feliz",
+      "fondo": "futbol",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": null,
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_futbol8"
+    },
+    "dialogo_62561": {
+      "texto": "Buenas a todos y todas, aquí llega el hombre de vuestros sueños",
+      "npc": "montero",
+      "pose": "feliz",
+      "fondo": "salon",
+      "opciones": false,
+      "next_id": "dialogo_62562",
+      "var_id": null,
+      "next_scene_type": null,
+      "next_scene_id": null
+    },
+     "dialogo_62562": {
+      "texto": "Que friki ...",
+      "npc": "pepe",
+      "pose": "normal",
+      "fondo": "salon",
+      "opciones": false,
+      "next_id": "dialogo_6256",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -9960,7 +10004,7 @@
       "texto": "(Otro día más viviendo aventuras)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "habitacion",
       "opciones": false,
       "next_id": "dialogo_6271",
       "var_id": null,
