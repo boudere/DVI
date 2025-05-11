@@ -11518,13 +11518,24 @@
       "next_scene_type": null,
       "next_scene_id": null
     },
+    "dialogo_64080": {
+      "texto": "(Por fin me puedo ir a casita)",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "cafeteria",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": null,
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cafe13"
+    },
     "dialogo_6408": {
       "texto": "Ya estoy en casa.",
       "npc": "prota",
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "dialogo_6410",
+      "next_id": "dialogo_6409",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -11535,7 +11546,7 @@
       "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "dialogo_6411",
+      "next_id": "dialogo_6410",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -11546,7 +11557,7 @@
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "dialogo_6412",
+      "next_id": "dialogo_6411",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -11586,6 +11597,17 @@
     },
     "dialogo_6414": {
       "texto": "Buen momento para dormirse.",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "habitacion",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": null,
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_habitacion12"
+    },
+    "dialogo_64140": {
+      "texto": "(Un nuevo día)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "habitacion",
@@ -11674,7 +11696,7 @@
     },
     "dialogo_6422": {
       "texto": "Ahora te presento al resto.",
-      "npc": "prota",
+      "npc": "carlota",
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
@@ -11685,7 +11707,7 @@
     },
     "dialogo_6423": {
       "texto": "Son buena gente.",
-      "npc": "prota",
+      "npc": "alex",
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
@@ -11696,7 +11718,7 @@
     },
     "dialogo_6424": {
       "texto": "Ayy que mona eres!!",
-      "npc": "prota",
+      "npc": "carlota",
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
@@ -11706,7 +11728,7 @@
       "next_scene_id": null
     },
     "dialogo_6425": {
-      "texto": "Perdí la fama en un piano bar, se han olvidado a que huele la luna ....",
+      "texto": "PERDÍ LA FAMA EN UN PIANO BAR, SE HAN OLVIDADO A QUE HUELE LA LUNAAAAA ....",
       "npc": "anonimo",
       "pose": "normal",
       "fondo": "bares",
@@ -11832,10 +11854,10 @@
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
-      "next_id": "dialogo_6438",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_bares5"
     },
     "dialogo_6437": {
       "texto": null,
@@ -11849,10 +11871,10 @@
       "next_scene_id": null
     },
     "dialogo_6438": {
-      "texto": "Uff que cansada etoy, otra vez escucho a Montero ..",
+      "texto": "(Uff que cansada etoy, otra vez escucho a Montero ..)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "dialogo_6439",
       "var_id": null,
@@ -11918,7 +11940,7 @@
       "texto": "Geniaal!!!",
       "npc": "montero",
       "pose": "feliz",
-      "fondo": "negro",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "dialogo_6446",
       "var_id": null,
@@ -11930,14 +11952,25 @@
       "npc": "montero",
       "pose": "normal",
       "fondo": "salon",
-      "opciones": true,
-      "next_id": "c3_048",
+      "opciones": false,
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_salon14"
     },
     "dialogo_6446": {
       "texto": "(Acabo de volver del gym, este Montero… se le coge cariño y todo)",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "salon",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": null,
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_salon14"
+    },
+    "dialogo_64460": {
+      "texto": "",
       "npc": "prota",
       "pose": "normal",
       "fondo": "salon",
@@ -11951,7 +11984,7 @@
       "texto": "Tengo una idea, de hacer un juego ambientado en Shin Chan.",
       "npc": "victor",
       "pose": "normal",
-      "fondo": "salon",
+      "fondo": "cafeteria",
       "opciones": false,
       "next_id": "dialogo_6448",
       "var_id": null,
@@ -11962,7 +11995,7 @@
       "texto": "Por la cara",
       "npc": "marta",
       "pose": "normal",
-      "fondo": "salon",
+      "fondo": "cafeteria",
       "opciones": true,
       "next_id": "c3_052",
       "var_id": null,
@@ -12206,16 +12239,16 @@
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "dialogo_6471",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cafe14"
     },
     "dialogo_6471": {
       "texto": "(Otro día de rutina más, a cogerlo con ganas)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "habitacion",
       "opciones": false,
       "next_id": "dialogo_6472",
       "var_id": null,
