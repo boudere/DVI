@@ -8,8 +8,8 @@ class AudioManager {
         this.currentMusic = null;
 
         // Volúmenes
-        this.musicVolume = 1.0;
-        this.sfxVolume = 1.0;
+        this.musicVolume = 0.10;
+        this.sfxVolume = 0.3;
 
         // Lista de efectos de sonido activos
         this.activesfx = [];

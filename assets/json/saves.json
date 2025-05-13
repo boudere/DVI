@@ -1,7 +1,7 @@
 {
     "Saves": {
-        "Pantalla": "bares",
-        "Dialogo": "tutorial80",
+        "Pantalla": "demo_habitacion",
+        "Dialogo": "tutorial1",
         "Minijuegos": {
             "JuegoOveja": {
                 "RecortdPuntuacion": -2

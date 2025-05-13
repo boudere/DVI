@@ -35,7 +35,7 @@ class JuegoOveja extends Phaser.Scene {
         this.data_info_scene = this.scene.get(DATA_INFO);
         this.musica = this.sound.add(this.data_info_scene.get_musica(this.OVEJITA_MUSICA), {
             loop: true,
-            volume: 1.0
+            volume: 0.5
         });
         this.musica.play();
         //this.animations();

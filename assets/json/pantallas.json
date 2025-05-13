@@ -28,86 +28,7 @@
             "npcs": {}
         },
         "demo_salon_1": {
-            "background": "salon",
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 900,
-                "size": 1.6,
-                "delay": 0,
-                "animation": {
-                    "animation_1":  [
-                        {
-                            "type": "move_right",
-                            "var": {
-                                "pos_x": 200
-                            },
-                            "duration": 600
-                        },
-                        {
-                            "type": "move_up",
-                            "var": {
-                                "pos_y": 700
-                            },
-                            "duration": 1000
-                        }
-                    ]
-                },
-                "on_click": null
-            },
-            "npcs": {
-                "npc_1": {
-                    "nombre": "boton_continuar",
-                    "img": "boton_continuar",
-                    "pose": "normal",
-                    "pos_x": 580,
-                    "pos_y": 400,
-                    "size": 1.3,
-                    "delay": 0,
-                    "on_click": {
-                        "scene": "dialogo",
-                        "name": "tutorial80"
-                    },
-                    "animation": null
-                }
-            },
-            "puertas": {
-                "salon_derecha": {
-                    "nombre": "salir",
-                    "pos_x": 1869,
-                    "pos_y": 900,
-                    "size_x": 200,
-                    "size_y": 800,
-                    "delay": 0,
-                    "animation": null,
-                    "on_click": {
-                        "scene": "pantalla",
-                        "name": "demo_habitacion_1",
-                        "direction": "left"
-                    }
-                },
-                "salon_izquierda": {
-                    "nombre": "habitacion",
-                    "pos_x": 54,
-                    "pos_y": 900,
-                    "size_x": 200,
-                    "size_y": 800,
-                    "delay": 0,
-                    "animation": null,
-                    "on_click": {
-                        "scene": "pantalla",
-                        "name": "demo_habitacion_1",
-                        "direction": "left"
-                    }
-                }
-            },
-            "objetos": {
-                "cama": {
-                    "nombre": null
-                }
-            }
+            "background": "salon"
         },
         "demo_habitacion_1": {
             "background": "habitacion",
@@ -147,12 +68,6 @@
                     "on_click": null
                 }
             }
-        },
-        "demo_habitacion": {
-            "pantalla": {
-                "nombre": "demo_habitacion"
-            }
-           
         },
         "demo_pasillo_uni": {
             "background": "pasillo_uni"
@@ -198,141 +113,53 @@
             "npcs": {},
             "change_pantallas_objects": {}
         },
+    
+        "tutorial_habitacion": {
+            "pantalla": {
+                "nombre": "tutorial_habitacion"
+            }
+           
+        },
+        
+        "tutorial_salon": {
+            "pantalla": {
+                "nombre": "tutorial_salon"
+            }
+           
+        },
         "cap2_1": {
             "pantalla": {
                 "nombre": "salon"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "salon_1": {
             "pantalla": {
                 "nombre": "salon_1"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 900,
-                "pos_y": 850,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click":null
-            },
-            "puertas": {
-                "salon_derecha": {
-                    "on_click": {
-                        "scene": "pantalla",
-                        "name": "mapa_1",
-                        "direction": "right"
-                    }
-                },
-                "salon_izquierda": {
-                    "on_click": {
-                        "scene": "pantalla",
-                        "name": "habitacion_1",
-                        "direction": "left"
-                    }
-                }
             }
         },
         "habitacion_1": {
             "pantalla": {
                 "nombre": "habitacion_1"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click":null
-            },
-            "puertas": {
-                "habitacion_derecha": {
-                    "on_click": {
-                        "scene": "pantalla",
-                        "name": "salon_1",
-                        "direction": "right"
-                    }
-                }
             }
         },
         "mapa_1":{
             "pantalla": {
                 "nombre": "mapa_1"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -100000,
-                "pos_y": -100000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click":null
             }
         },
         "mapa_2":{
             "pantalla": {
                 "nombre": "mapa_2"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -100000,
-                "pos_y": -100000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click":null
             }
         },
         "mapa_3":{
             "pantalla": {
                 "nombre": "mapa_3"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -100000,
-                "pos_y": -100000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click":null
             }
         },
         "cap2_2": {
             "pantalla": {
                 "nombre": "bares_1"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -359,33 +186,11 @@
         "bares_2": {
             "pantalla": {
                 "nombre": "bares_2"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "cap2_3a": {
             "pantalla": {
                 "nombre": "salon_3a"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 900,
-                "pos_y": 850,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -407,49 +212,16 @@
         "habitacion_3a":{
             "pantalla": {
                 "nombre": "habitacion_3a"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click":null
             }
         },
         "bares_3": {
             "pantalla": {
                 "nombre": "bares_3"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "cap2_3b": {
             "pantalla": {
                 "nombre": "salon_3b"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 900,
-                "pos_y": 850,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -471,49 +243,16 @@
         "habitacion_3b":{
             "pantalla": {
                 "nombre": "habitacion_3b"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click":null
             }
         },
         "habitacion_4":{
             "pantalla": {
                 "nombre": "habitacion_4"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click":null
             }
         },
         "cap2_4": {
             "pantalla": {
                 "nombre": "salon_4"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 900,
-                "pos_y": 850,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -535,81 +274,26 @@
         "cap2_4a": {
             "pantalla": {
                 "nombre": "salon_4a"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 900,
-                "pos_y": 850,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "habitacion_4a": {
             "pantalla": {
                 "nombre": "habitacion_4a"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "salon_4a": {
             "pantalla": {
                 "nombre": "salon_4a"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 900,
-                "pos_y": 850,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "mapa_4a":{
             "pantalla": {
                 "nombre": "mapa_4a"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -100000,
-                "pos_y": -100000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click":null
             }
         },
         "pasillo_4a": {
             "pantalla": {
                 "nombre": "pasillo_4a"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 1200,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -631,65 +315,21 @@
         "clase_4a": {
             "pantalla": {
                 "nombre": "clase_4a"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 500,
-                "pos_y": 750,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "cafe_4a": {
             "pantalla": {
                 "nombre": "cafe_4a"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 750,
-                "pos_y": 1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "pasillo_4a1": {
             "pantalla": {
                 "nombre": "pasillo_4a1"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 1200,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "clase_4a1": {
             "pantalla": {
                 "nombre": "clase_4a1"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 500,
-                "pos_y": 750,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -711,113 +351,36 @@
         "cafe_4a1": {
             "pantalla": {
                 "nombre": "cafe_4a1"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 750,
-                "pos_y": 1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "cap2_4b": {
             "pantalla": {
                 "nombre": "salon_4b"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 900,
-                "pos_y": 850,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "habitacion_4b": {
             "pantalla": {
                 "nombre": "habitacion_4b"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "salon_4b": {
             "pantalla": {
                 "nombre": "salon_4b"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 900,
-                "pos_y": 850,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "mapa_4b":{
             "pantalla": {
                 "nombre": "mapa_4b"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -100000,
-                "pos_y": -100000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click":null
             }
         },
         "pasillo_4b": {
             "pantalla": {
                 "nombre": "pasillo_4b"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 1200,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "clase_4b": {
             "pantalla": {
                 "nombre": "clase_4b"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 500,
-                "pos_y": 750,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -839,65 +402,21 @@
         "cafe_4b": {
             "pantalla": {
                 "nombre": "cafe_4b"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 750,
-                "pos_y": 1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "clase_5a": {
             "pantalla": {
                 "nombre": "clase_5a"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 500,
-                "pos_y": 750,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "pasillo_5a": {
             "pantalla": {
                 "nombre": "pasillo_5a"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-               "pos_x": 1200,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "cafe_5a": {
             "pantalla": {
                 "nombre": "cafe_5a"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 750,
-                "pos_y": 1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -919,49 +438,16 @@
         "clase_5b": {
             "pantalla": {
                 "nombre": "clase_5b"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 500,
-                "pos_y": 750,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "pasillo_5b": {
             "pantalla": {
                 "nombre": "pasillo_5b"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 1200,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "cafe_5b": {
             "pantalla": {
                 "nombre": "cafe_5b"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 750,
-                "pos_y": 1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -983,33 +469,11 @@
         "cafe_6": {
             "pantalla": {
                 "nombre": "cafe_6"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 750,
-                "pos_y": 1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "pasillo_6": {
             "pantalla": {
                 "nombre": "pasillo_6"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 1200,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -1031,49 +495,16 @@
         "clase_6": {
             "pantalla": {
                 "nombre": "clase_6"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 500,
-                "pos_y": 750,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "pasillo_7": {
             "pantalla": {
                 "nombre": "pasillo_7"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 1200,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "clase_7": {
             "pantalla": {
                 "nombre": "clase_7"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 500,
-                "pos_y": 750,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -1095,49 +526,16 @@
         "cafe_7": {
             "pantalla": {
                 "nombre": "cafe_7"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 750,
-                "pos_y": 1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "clase_8": {
             "pantalla": {
                 "nombre": "clase_8"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 500,
-                "pos_y": 750,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "pasillo_8": {
             "pantalla": {
                 "nombre": "pasillo_8"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 1200,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -1159,81 +557,26 @@
         "cafe_8": {
             "pantalla": {
                 "nombre": "cafe_8"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 750,
-                "pos_y": 1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "pasillo_9": {
             "pantalla": {
                 "nombre": "pasillo_9"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 1200,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "clase_9": {
             "pantalla": {
                 "nombre": "clase_9"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 500,
-                "pos_y": 750,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "cafe_9": {
             "pantalla": {
                 "nombre": "cafe_9"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 750,
-                "pos_y": 1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "bus_9": {
             "pantalla": {
                 "nombre": "bus_9"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 1000,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -1255,65 +598,21 @@
         "habitacion_10": {
             "pantalla": {
                 "nombre": "habitacion_10"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "salon_10": {
             "pantalla": {
                 "nombre": "salon_10"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 900,
-                "pos_y": 850,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "mapa_10":{
             "pantalla": {
                 "nombre": "mapa_10"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -100000,
-                "pos_y": -100000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click":null
             }
         },
         "pasillo_10": {
             "pantalla": {
                 "nombre": "pasillo_10"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 1200,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -1335,127 +634,41 @@
         "clase_10": {
             "pantalla": {
                 "nombre": "clase_10"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 500,
-                "pos_y": 750,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "cafe_10": {
             "pantalla": {
                 "nombre": "cafe_10"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 750,
-                "pos_y": 1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "minijuego_examen_2": {
             "pantalla": {
                 "nombre": "pasillo_final2"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 1200,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "cafefinal2": {
             "pantalla": {
                 "nombre": "cafefinal2"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 750,
-                "pos_y": 1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "pasillo_1_00":{
             "pantalla": {
                 "nombre": "pasillo_1_00"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -1200,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null}
+            }
         },
         "clase_1_00":{
             "pantalla": {
                 "nombre": "clase_1_00"
-            },
-            "prota":{
-                "nombre": "prota",
-            "img": "prota",
-            "pose": "normal",
-            "pos_x": -500,
-            "pos_y": -750,
-            "size": 1.8,
-            "delay": 0,
-            "animation": null,
-            "on_click": null}
+            }
         },
         "cafe_1_00":{
             "pantalla": {
                 "nombre": "cafe_1_00"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "entrada_facultad_1_00":{
             "pantalla": {
                 "nombre": "entrada_facultad_1_00"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -1000,
-                "pos_y": -1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -1477,49 +690,16 @@
         "cafe_1_01":{
             "pantalla": {
                 "nombre": "cafe_1_01"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "pasillo_1_01":{
             "pantalla": {
                 "nombre": "pasillo_1_01"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "entrada_facultad_1_01":{
             "pantalla": {
                 "nombre": "entrada_facultad_1_01"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -1541,129 +721,41 @@
         "clase_1_01":{
             "pantalla": {
                 "nombre": "clase_1_01"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "salon_1_02":{
             "pantalla": {
                 "nombre": "salon_1_02"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -900,
-                "pos_y": -850,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "habitacion_1_02":{
             "pantalla": {
                 "nombre": "habitacion_1_02"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "mapa_1_02":{
             "pantalla": {
                 "nombre": "mapa_1_02"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -100000,
-                "pos_y": -100000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click":null
             }
         },
         "pasillo_1_02":{
             "pantalla": {
                 "nombre": "pasillo_1_02"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "clase_1_02":{
             "pantalla": {
                 "nombre": "clase_1_02"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "cafe_1_02":{
             "pantalla": {
                 "nombre": "cafe_1_02"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "entrada_facultad_1_02":{
             "pantalla": {
                 "nombre": "entrada_facultad_1_02"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -1000,
-                "pos_y": -1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -1686,17 +778,6 @@
             "pantalla": {
                 "nombre": "entrada_facultad_1_03"
             },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -1000,
-                "pos_y": -1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
-            },
             "npcs": {
                 "npc_1": {
                     "nombre": "boton_continuar",
@@ -1717,129 +798,41 @@
         "pasillo_1_03":{
             "pantalla": {
                 "nombre": "pasillo_1_03"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "clase_1_03":{
             "pantalla": {
                 "nombre": "clase_1_03"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "cafe_1_03":{
             "pantalla": {
                 "nombre": "cafe_1_03"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "salon_1_04":{
             "pantalla": {
                 "nombre": "salon_1_04"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -900,
-                "pos_y": -850,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "habitacion_1_04":{
             "pantalla": {
                 "nombre": "habitacion_1_04"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "mapa_1_04":{
             "pantalla": {
                 "nombre": "mapa_1_04"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -100000,
-                "pos_y": -100000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click":null
             }
         },
         "pasillo_1_04":{
             "pantalla": {
                 "nombre": "pasillo_1_04"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "clase_1_04":{
             "pantalla": {
                 "nombre": "clase_1_04"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {
@@ -1861,97 +854,31 @@
         "cafe_1_04":{
             "pantalla": {
                 "nombre": "cafe_1_04"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "entrada_facultad_1_04":{
             "pantalla": {
                 "nombre": "entrada_facultad_1_04"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -1000,
-                "pos_y": -1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "clase_1_05":{
             "pantalla": {
                 "nombre": "clase_1_05"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "pasillo_1_05":{
             "pantalla": {
                 "nombre": "pasillo_1_05"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "cafe_1_05":{
             "pantalla": {
                 "nombre": "cafe_1_05"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -800,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             }
         },
         "entrada_facultad_1_05":{
             "pantalla": {
                 "nombre": "entrada_facultad_1_05"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -1000,
-                "pos_y": -1000,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
             },
             "npcs": {
                 "npc_1": {

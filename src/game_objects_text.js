@@ -3,7 +3,7 @@ class GameObjectsText extends Phaser.GameObjects.Text {
     constructor(scene, x, y, container, container_width, texto, delay, opciones_entrada = {}) {
         // opciones por defecto para el Text
         let opciones_por_defecto = {
-            fontSize: "32px",
+            fontSize: "40px",
             fontFamily: "Times New Roman",
             color: "#000000",
             align: "left",

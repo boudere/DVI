@@ -65,20 +65,8 @@
                 }
             }
         },
-        "demo_habitacion": {
+        "tutorial_habitacion": {
             "background": "habitacion",
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": 800,
-                "pos_y": 800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
-            },
-            "npcs": {},
             "puertas": {
                 "habitacion_derecha": {
                     "nombre": "salon",
@@ -86,7 +74,7 @@
                     "pos_y": 890,
                     "on_click": {
                         "scene": "pantalla",
-                        "name": "demo_salon_1",
+                        "name": "tutorial_salon",
                         "direction": "right"
                     }
                 }
@@ -108,6 +96,38 @@
                     }
                 }
             }
+        },
+        "tutorial_salon": {
+            "background": "salon",
+            "puertas": {
+                "salon_derecha": {
+                    "nombre": "salir",
+                    "img": "salon_derecha",
+                    "pos_x": 1869,
+                    "pos_y": 900,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":null
+                },
+                "salon_izquierda": {
+                    "nombre": "habitacion",
+                    "img": "salon_izquierda",
+                    "pos_x": 54,
+                    "pos_y": 900,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "tutorial_habitacion",
+                        "direction": "left"
+                    }
+                }
+            },
+            "objetos": {}
         },
         "bares": {
             "background": "bares",
