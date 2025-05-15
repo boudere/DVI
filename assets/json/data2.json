@@ -89,7 +89,10 @@
                         "cafeteria",
                         "bares",
                         "bus",
-                        "entradafacul"
+                        "entradafacul",
+                        "calle",
+                        "cita",
+                        "futbol"
                     ]
                 }
             }

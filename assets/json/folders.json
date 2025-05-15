@@ -551,7 +551,8 @@
                   "name": "calle",
                   "folders": [],
                   "files": [
-                    "calle_izquierda.png"
+                    "calle_izquierda.png",
+                    "calle_derecha.png"
                   ]
                 },
                 {
