@@ -22,7 +22,10 @@
                         "bus",
                         "parque",
                         "mapa",
-                        "entradafacul"
+                        "entradafacul",
+                        "calle",
+                        "futbol",
+                        "cita"
                     ]
                 },
                 "Personajes": {
