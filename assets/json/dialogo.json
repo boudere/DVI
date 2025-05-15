@@ -1,61 +1,6 @@
 
 {
   "Dialogo": {
-  "perueba_0": {
-      "texto": "Esto es una prueba",
-      "npc": "prota",
-      "pose": "normal",
-      "fondo": "salon",
-      "opciones": false,
-      "next_id": "FIN",
-      "var_id": null,
-      "next_scene_type": "dialogo",
-      "next_scene_id": "perueba_1"
-    },
-    "perueba_1": {
-      "texto": "Esto es una prueba",
-      "npc": "prota",
-      "pose": "normal",
-      "fondo": "salon",
-      "opciones": false,
-      "next_id": "FIN",
-      "var_id": "prueba_1",
-      "next_scene_type": "afinidad_dialogo",
-      "next_scene_id": "perueba_2"
-    },
-    "perueba_2A": {
-      "texto": "afinidad_montero",
-      "npc": "prota",
-      "pose": "normal",
-      "fondo": "salon",
-      "opciones": false,
-      "next_id": "FIN",
-      "var_id": "prueba_1",
-      "next_scene_type": "pantalla",
-      "next_scene_id": "prueba_1"
-    },
-    "perueba_2B": {
-      "texto": "Esto es una prueba",
-      "npc": "prota",
-      "pose": "normal",
-      "fondo": "salon",
-      "opciones": false,
-      "next_id": "FIN",
-      "var_id": "prueba_1",
-      "next_scene_type": "pantalla",
-      "next_scene_id": "prueba_1"
-    },
-    "perueba_2C": {
-      "texto": "Esto es una prueba",
-      "npc": "prota",
-      "pose": "normal",
-      "fondo": "salon",
-      "opciones": false,
-      "next_id": "FIN",
-      "var_id": "prueba_1",
-      "next_scene_type": "pantalla",
-      "next_scene_id": "prueba_1"
-    },
     "dialogo_1": {
       "texto": "Esto es una prueba",
       "npc": "veronica",
@@ -101,13 +46,13 @@
       "next_scene_id": null
     },
     "": {
-      "texto": null,
-      "npc": null,
-      "pose": null,
-      "fondo": null,
-      "opciones": null,
-      "next_id": null,
-      "var_id": null,
+      "texto": "dialogo_5260",
+      "npc": "Hoy no tengo muy claro que hacer",
+      "pose": "prota",
+      "fondo": "normal",
+      "opciones": "negro",
+      "next_id": true,
+      "var_id": "cap3_015",
       "next_scene_type": null,
       "next_scene_id": null
     },
@@ -2366,63 +2311,8 @@
       "next_scene_type": null,
       "next_scene_id": null
     },
-    "cap1125": {
-      "texto": "Vaaale, aunque me haces daño mi princesa. Pero te doy la promesa de un caballero.",
-      "npc": "montero",
-      "pose": "feliz",
-      "fondo": "salon",
-      "opciones": false,
-      "next_id": "cap1126",
-      "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
-    },
-    "cap1126": {
-      "texto": "Bueno, yo me tengo que ir ya que si no pierdo el tren. Dale un abrazo a estos cuando se despierten. Y bueno, supongo que otro para ti.",
-      "npc": "prota",
-      "pose": "feliz",
-      "fondo": "salon",
-      "opciones": false,
-      "next_id": "cap1127",
-      "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
-    },
-    "cap1127": {
-      "texto": "Qué generosa. Buen viaje anda, no me eches mucho de menos.",
-      "npc": "montero",
-      "pose": "feliz",
-      "fondo": "salon",
-      "opciones": false,
-      "next_id": "cap1128",
-      "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
-    },
-    "cap1128": {
-      "texto": "No te preocupes que no lo haré. ¡Besis!",
-      "npc": "prota",
-      "pose": "feliz",
-      "fondo": "salon",
-      "opciones": false,
-      "next_id": "cap1129",
-      "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
-    },
-    "cap1129": {
-      "texto": "{SOUND=portazo_sonido}A por esos exámenes...",
-      "npc": "montero",
-      "pose": "feliz",
-      "fondo": "salon",
-      "opciones": false,
-      "next_id": "cap1145",
-      "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
-    },
-    "cap1130": {
-      "texto": "(ayyy qué dolor de cabeza tengo, todo me da vueltas...)",
+    "cap1102": {
+      "texto": null,
       "npc": "prota",
       "pose": "normal",
       "fondo": "habitacion",
@@ -2600,10 +2490,10 @@
     "cap1146": {
       "texto": "(Pero bueno, hay que ir a por todas...)",
       "npc": "prota",
-      "pose": "triste",
+      "pose": "normal",
       "fondo": "negro",
       "opciones": false,
-      "next_id": "cap1147",
+      "next_id": null,
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -2709,25 +2599,14 @@
     },
     "cap1156": {
       "texto": "Alumnos, id entrando al aula.",
-      "npc": "profesor",
-      "pose": "normal",
+      "npc": "lorena",
+      "pose": "feliz",
       "fondo": "pasillo",
       "opciones": false,
-      "next_id": "cap1157",
+      "next_id": "minijuego_examen",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
-    },
-    "cap1157": {
-      "texto": "Qué rápido ha pasado el verano!!!! Tengo ganas de ver a esta gente... Además empezamos con una fiestuki de bienvenida.",
-      "npc": "prota",
-      "pose": "feliz",
-      "fondo": "negro",
-      "opciones": false,
-      "next_id": "cap2000",
-      "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "minijuego_examen_1"
     },
     "cap2000": {
       "texto": "Hola Montero! Tenía la música tan alta mientras me arreglaba que ni he escuchado que habías llegado.",
@@ -2900,10 +2779,10 @@
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "cap2039",
       "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "salon_1"
+      "next_scene_type": null,
+      "next_scene_id": null
     },
     "cap2016": {
       "texto": "Aquí nos lo pasamos bien siempre eh",
@@ -3153,10 +3032,10 @@
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "cap2039",
       "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "salon_1"
+      "next_scene_type": null,
+      "next_scene_id": null
     },
     "cap2039": {
       "texto": "Bueno pues ya estamos a ver qué se cuece por aquí",
@@ -3516,7 +3395,7 @@
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "minijuego_discoteca",
       "var_id": null,
       "next_scene_type": "pantalla",
       "next_scene_id": "minijuego_discoteca"
@@ -3681,10 +3560,10 @@
       "pose": "feliz",
       "fondo": "bares",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "cap2087",
       "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "bares_2"
+      "next_scene_type": null,
+      "next_scene_id": null
     },
     "cap2087": {
       "texto": "Bueno pues ya estamos aquí. Me pido el baño así me desmaquillo rápido y me duermo",
@@ -3767,7 +3646,7 @@
       "texto": "Bueno como quieras",
       "npc": "montero",
       "pose": "normal",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2095",
       "var_id": null,
@@ -3778,7 +3657,7 @@
       "texto": "Okey, estaremos en la barra",
       "npc": "samuel",
       "pose": "normal",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2096",
       "var_id": null,
@@ -3789,7 +3668,7 @@
       "texto": "Yo me quedo con los chicos esperando a que vuelvas",
       "npc": "maria",
       "pose": "normal",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2097",
       "var_id": null,
@@ -3800,7 +3679,7 @@
       "texto": "Vamos a buscarles, espero que no se hayan movido mucho",
       "npc": "lorena",
       "pose": "normal",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2098",
       "var_id": null,
@@ -3811,7 +3690,7 @@
       "texto": "(Nos adentramos Lorena y yo en la discoteca)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2099",
       "var_id": null,
@@ -3822,7 +3701,7 @@
       "texto": "Hola!! Madre mía qué dices pero, ¿qué haces aquí?",
       "npc": "victor",
       "pose": "feliz",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2100",
       "var_id": null,
@@ -3833,7 +3712,7 @@
       "texto": "Eso iba a decir yo el delegado en una discoteca",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2101",
       "var_id": null,
@@ -3844,7 +3723,7 @@
       "texto": "Hola!! Esperaba ya verte en clase, qué sorpresa!",
       "npc": "jaime",
       "pose": "feliz",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2102",
       "var_id": null,
@@ -3855,7 +3734,7 @@
       "texto": "Hola!! Bueno yo también pero me he encontrado a Lorena y me ha dicho que estabais aquí",
       "npc": "prota",
       "pose": "feliz",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2103",
       "var_id": null,
@@ -3866,7 +3745,7 @@
       "texto": "Vienes justo a tiempo para beberte mi ginebra que se han equivocado y yo soy na más que de ron",
       "npc": "jaime",
       "pose": "normal",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2104",
       "var_id": null,
@@ -3877,7 +3756,7 @@
       "texto": "Bueno no le haré ascos a una copa gratis",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2105",
       "var_id": null,
@@ -3888,7 +3767,7 @@
       "texto": "Bueno y, ¿qué tal el verano y esas cosas?",
       "npc": "victor",
       "pose": "feliz",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2106",
       "var_id": null,
@@ -3899,7 +3778,7 @@
       "texto": "Bien sí descansando y apurando hasta que lleguen las clases",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2107",
       "var_id": null,
@@ -3910,7 +3789,7 @@
       "texto": "Callarse y disfrutad de la fiesta!",
       "npc": "jaime",
       "pose": "feliz",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2108",
       "var_id": null,
@@ -3921,7 +3800,7 @@
       "texto": "Empezamos a bailar y a disfrutar poco a poco de la fiesta).",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2109",
       "var_id": null,
@@ -3932,7 +3811,7 @@
       "texto": "(Pasó el tiempo volando, sobre todo junto a Victor, hasta que empeazó a sonar el tecno que nos invitaba a abandonar la discoteca)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "bares",
+      "fondo": "salon",
       "opciones": false,
       "next_id": "cap2110",
       "var_id": null,
@@ -4022,10 +3901,10 @@
       "pose": "feliz",
       "fondo": "bares",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "cap2118",
       "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "bares_3"
+      "next_scene_type": null,
+      "next_scene_id": null
     },
     "cap2118": {
       "texto": "Hogar dulce hogar. Yo tiro la calle para arriba y debería estar en 10 minutos",
@@ -4077,7 +3956,7 @@
       "pose": "pillin",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "cap2125",
+      "next_id": "cap2123",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -4132,10 +4011,10 @@
       "pose": "normal",
       "fondo": "habitacion",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "cap2128",
       "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "habitacion_4"
+      "next_scene_type": null,
+      "next_scene_id": null
     },
     "cap2128": {
       "texto": "¿Estás ya preparada? Tengo que irme rápido hoy que tengo laboratorio a primera",
@@ -4154,10 +4033,10 @@
       "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "cap2130",
       "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "cap2_4a"
+      "next_scene_type": null,
+      "next_scene_id": null
     },
     "cap2130": {
       "texto": "Hola! ¿Qué te trae por aquí tan temprano?",
@@ -4209,38 +4088,16 @@
       "pose": "normal",
       "fondo": "pasillo",
       "opciones": false,
-      "next_id": "FIN",
-      "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "pasillo_4a1"
-    },
-    "cap2135bis": {
-      "texto": "Valeee, ten un buen día",
-      "npc": "maria",
-      "pose": "feliz",
-      "fondo": "salon",
-      "opciones": false,
-      "next_id": "FIN",
-      "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "cap2_4b"
-    },
-    "cap2135": {
-      "texto": "(Lorena llega tarde como acostumbra)",
-      "npc": "prota",
-      "pose": "normal",
-      "fondo": "clase",
-      "opciones": false,
       "next_id": "cap2136",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
     },
-    "cap2136bis": {
-      "texto": "(He llegado muy justa a clase y aún así Lorena llega después que yo)",
+    "cap2135": {
+      "texto": "(Por suerte Lorena llega igual de tarde que yo)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "clase",
+      "fondo": "pasillo",
       "opciones": false,
       "next_id": "cap2136",
       "var_id": null,
@@ -4462,10 +4319,10 @@
       "pose": "feliz",
       "fondo": "clase",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "cap2170",
       "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "clase_5a"
+      "next_scene_type": null,
+      "next_scene_id": null
     },
     "cap2156": {
       "texto": "Bueno, supongo que luego os contaré hasta donde llega",
@@ -4517,10 +4374,10 @@
       "pose": "normal",
       "fondo": "clase",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "cap2161",
       "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "clase_5b"
+      "next_scene_type": null,
+      "next_scene_id": null
     },
     "cap2161": {
       "texto": "Bueno entonces tres pinchos de tortilla, ¿no?",
@@ -4561,7 +4418,7 @@
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "cap2167",
+      "next_id": "cap2170",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -4825,10 +4682,10 @@
       "pose": "feliz",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "cap2189",
       "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "cafe_6"
+      "next_scene_type": null,
+      "next_scene_id": null
     },
     "cap2189": {
       "texto": "Por lo que sea no hablan de absolutamente nada",
@@ -4979,10 +4836,10 @@
       "pose": "feliz",
       "fondo": "pasillo",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "cap2203",
       "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "pasillo_7"
+      "next_scene_type": null,
+      "next_scene_id": null
     },
     "cap2203": {
       "texto": "Sabía que algo raro tenía",
@@ -5122,10 +4979,10 @@
       "pose": "normal",
       "fondo": "clase",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "cap2216",
       "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "clase_8"
+      "next_scene_type": null,
+      "next_scene_id": null
     },
     "cap2216": {
       "texto": "Bueno por fin se acabó",
@@ -5166,10 +5023,10 @@
       "pose": "normal",
       "fondo": "pasillo",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "cap2220",
       "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "pasillo_9"
+      "next_scene_type": null,
+      "next_scene_id": null
     },
     "cap2220": {
       "texto": "(Coger un asiento en el F es siempre muy difícil pero la verdad es que he tenido suerte con la conexión)",
@@ -5361,7 +5218,7 @@
     "cap2237": {
       "texto": "No creo que sea cuestión de que Álex sea informático",
       "npc": "carlota",
-      "pose": "rayado",
+      "pose": "triste",
       "fondo": "bus",
       "opciones": false,
       "next_id": "cap2238",
@@ -5540,32 +5397,10 @@
       "pose": "normal",
       "fondo": "bus",
       "opciones": false,
-      "next_id": "cap2300",
+      "next_id": "cap2254",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
-    },
-    "cap2300": {
-      "texto": "(Último día de examenes, por fin!)",
-      "npc": "prota",
-      "pose": "normal",
-      "fondo": "habitacion",
-      "opciones": false,
-      "next_id": "cap2301",
-      "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
-    },
-    "cap2301": {
-      "texto": "(Cuanto antes termine con esto, mejor)",
-      "npc": "prota",
-      "pose": "normal",
-      "fondo": "habitacion",
-      "opciones": false,
-      "next_id": "FIN",
-      "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "habitacion_10"
     },
     "cap2254": {
       "texto": "¿Readys para el examen?",
@@ -5617,7 +5452,7 @@
       "pose": "rayado",
       "fondo": "pasillo",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "minijuego_examen",
       "var_id": null,
       "next_scene_type": "pantalla",
       "next_scene_id": "minijuego_examen_2"
