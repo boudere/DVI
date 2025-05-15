@@ -68,13 +68,6 @@
                   ]
                 },
                 {
-                  "name": "entradafacul",
-                  "folders": [],
-                  "files": [
-                    "entradafacul.png"
-                  ]
-                },
-                {
                   "name": "fin_demo",
                   "folders": [],
                   "files": [
@@ -93,13 +86,6 @@
                   "folders": [],
                   "files": [
                     "negro.png"
-                  ]
-                },
-                {
-                  "name": "parque",
-                  "folders": [],
-                  "files": [
-                    "parque.png"
                   ]
                 },
                 {
@@ -130,11 +116,6 @@
             {
               "name": "personajes",
               "folders": [
-                {
-                  "name": "anonimo",
-                  "folders": [],
-                  "files": []
-                },
                 {
                   "name": "carlota",
                   "folders": [],
@@ -339,24 +320,9 @@
                 },
                 {
                   "name": "clase",
-                  "folders": [
-                    {
-                      "name": "cafeteria",
-                      "folders": [],
-                      "files": [
-                        "cafeteria.png"
-                      ]
-                    }
-                  ],
-                  "files": [
-                    "clase.png"
-                  ]
-                },
-                {
-                  "name": "entradafacul",
                   "folders": [],
                   "files": [
-                    "entradafacul.png"
+                    "clase.png"
                   ]
                 },
                 {
@@ -378,13 +344,6 @@
                   "folders": [],
                   "files": [
                     "mapa.png"
-                  ]
-                },
-                {
-                  "name": "negro",
-                  "folders": [],
-                  "files": [
-                    "negro.png"
                   ]
                 },
                 {
@@ -437,11 +396,6 @@
               "name": "personajes",
               "folders": [
                 {
-                  "name": "anonimo",
-                  "folders": [],
-                  "files": []
-                },
-                {
                   "name": "boton_continuar",
                   "folders": [],
                   "files": [
@@ -449,69 +403,30 @@
                   ]
                 },
                 {
-                  "name": "jaime",
-                  "folders": [],
-                  "files": [
-                    "jaime_feliz.png",
-                    "jaime_normal.png"
-                  ]
-                },
-                {
-                  "name": "lorena",
-                  "folders": [],
-                  "files": [
-                    "lorena_feliz.png",
-                    "lorena_normal.png",
-                    "lorena_rayado.png"
-                  ]
-                },
-                {
                   "name": "maria",
                   "folders": [],
                   "files": [
+                    "maria_enfado.png",
                     "maria_feliz.png",
                     "maria_normal.png",
-                    "maria_rayado.png"
-                  ]
-                },
-                {
-                  "name": "montero",
-                  "folders": [],
-                  "files": [
-                    "montero_feliz.png",
-                    "montero_normal.png"
-                  ]
-                },
-                {
-                  "name": "none",
-                  "folders": [],
-                  "files": [
-                    "none_enfado.png",
-                    "none_feliz.png",
-                    "none_normal.png",
-                    "none_triste.png"
+                    "maria_triste.png"
                   ]
                 },
                 {
                   "name": "pepe",
                   "folders": [],
                   "files": [
+                    "pepe_enfado.png",
                     "pepe_feliz.png",
                     "pepe_normal.png",
-                    "pepe_rayado.png"
-                  ]
-                },
-                {
-                  "name": "profesor",
-                  "folders": [],
-                  "files": [
-                    "profesor_normal.png"
+                    "pepe_triste.png"
                   ]
                 },
                 {
                   "name": "prota",
                   "folders": [],
                   "files": [
+                    "prota_enfado.png",
                     "prota_feliz.png",
                     "prota_normal.png",
                     "prota_triste.png"
@@ -521,18 +436,10 @@
                   "name": "samuel",
                   "folders": [],
                   "files": [
-                    "samu_feliz.png",
-                    "samu_normal.png",
-                    "samu_rayado.png"
-                  ]
-                },
-                {
-                  "name": "victor",
-                  "folders": [],
-                  "files": [
-                    "victor_feliz.png",
-                    "victor_normal.png",
-                    "victor_pillin.png"
+                    "samuel_enfado.png",
+                    "samuel_feliz.png",
+                    "samuel_normal.png",
+                    "samuel_triste.png"
                   ]
                 }
               ],
@@ -546,13 +453,6 @@
                   "folders": [],
                   "files": [
                     "bares_izquierda.png"
-                  ]
-                },
-                {
-                  "name": "calle",
-                  "folders": [],
-                  "files": [
-                    "calle_izquierda.png"
                   ]
                 },
                 {
@@ -581,10 +481,7 @@
                   "name": "entradafacul",
                   "folders": [],
                   "files": [
-
-                    "entradafacul_derecha.png",
-                    "entradafacul_izquierda.png"
-
+                    "entradapasillo_izquierda.png"
                   ]
                 },
                 {
@@ -634,7 +531,6 @@
       "files": [
         "animation.json",
         "dialogo.json",
-        "dialogo_original.json",
         "opciones_dialogo.json",
         "pantallas.json",
         "pantalla_info.json",
@@ -652,13 +548,6 @@
         "ovejitas.ogg",
         "tema_inicial.ogg",
         "tema_inicial2.ogg"
-      ]
-    },
-    {
-      "name": "sonidos",
-      "folders": [],
-      "files": [
-        "mechanical_keyboard.ogg"
       ]
     }
   ],

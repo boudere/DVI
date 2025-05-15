@@ -17,15 +17,12 @@
                         "fin_demo",
                         "clase",
                         "pasillo",
-                        "entradafacul",
                         "cafeteria",
                         "bares",
                         "bus",
                         "parque",
                         "mapa",
-                        "calle",
-                        "cita",
-                        "futbol"
+                        "entradafacul"
                     ]
                 },
                 "Personajes": {
@@ -54,12 +51,7 @@
                         "cafeteria",
                         "clase",
                         "bus",
-                        "entradafacul",
-                         "calle",
-                        "parque",
-                        "cita",
-                        "futbol"
-
+                        "entradafacul"
                     ],
                     "Lados": [
                         "izquierda",
@@ -131,14 +123,10 @@
                         "negro",
                         "clase",
                         "pasillo",
-                        "entradafacul",
                         "cafeteria",
                         "bares",
                         "bus",
-                        "calle",
-                        "parque",
-                        "cita",
-                        "futbol"
+                        "entradafacul"
                     ]
                 },
                 "Clases" : [

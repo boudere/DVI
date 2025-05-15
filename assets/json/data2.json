@@ -64,15 +64,10 @@
                         "salon_descanso",
                         "clase",
                         "pasillo",
-                        "entradafacul",
                         "cafeteria",
                         "bares",
                         "bus",
-                        "calle",
-                        "parque",
-                        "cita",
-                        "futbol"
-
+                        "entradafacul"
                     ]
                 }
             },
@@ -88,15 +83,10 @@
                         "fin_demo",
                         "clase",
                         "pasillo",
-                        "entradafacul",
                         "cafeteria",
                         "bares",
                         "bus",
-                        "calle",
-                        "parque",
-                        "cita",
-                        "futbol"
-
+                        "entradafacul"
                     ]
                 }
             }
