@@ -216,7 +216,7 @@ class DialogoManager extends Managers {
         let x = this.cuadrado_dialogo.x + (this.cuadrado_dialogo.width / 2 * this.cuadrado_dialogo.SCALE);
         let y = this.cuadrado_dialogo.y - (this.cuadrado_dialogo.height / 2 * this.cuadrado_dialogo.SCALE);
         this.buttons_index = 1;
-        while (this.buttons_index <= 3 && this.opciones_dialogo_data_selected["texto_" + this.buttons_index]) {
+        while (this.buttons_index <= 4 && this.opciones_dialogo_data_selected["texto_" + this.buttons_index]) {
             let button = new ButtonCuadradoDialogo(this, x, y, img, this.opciones_dialogo_data_selected["texto_" + this.buttons_index], this.opciones_dialogo_data_selected["opcion_" + this.buttons_index] , true);
             button.setDepth(this.CUADRADO_DIALOGO_DEPTH + 1);
 
