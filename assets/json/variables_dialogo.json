@@ -207,6 +207,1110 @@
       "val_2": null,
       "var_3": null,
       "val_3": null
+    },
+     "afinidad_c3_001a": {
+      "var_1": "afinidad_montero",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_001b": {
+      "var_1": "afinidad_victor",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_001c": {
+      "var_1": "afinidad_carlota",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_002a": {
+      "var_1": "afinidad_montero",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_002b": {
+      "var_1": "afinidad_montero",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_003a": {
+      "var_1": "afinidad_montero",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_003b": {
+      "var_1": "afinidad_victor",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_003c": {
+      "var_1": "afinidad_carlota",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_004a": {
+      "var_1": "afinidad_victor",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_004b": {
+      "var_1": "afinidad_montero",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_004c": {
+      "var_1": "afinidad_carlota",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_006a": {
+      "var_1": "afinidad_montero",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_006b": {
+      "var_1": "afinidad_victor",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_006c": {
+      "var_1": "afinidad_carlota",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_007a": {
+      "var_1": "afinidad_marta",
+      "val_1": 3,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_007b": {
+      "var_1": "afinidad_marta",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_008a": {
+      "var_1": "afinidad_marta",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_008b": {
+      "var_1": "afinidad_marta",
+      "val_1": 3,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_008c": {
+      "var_1": "afinidad_marta",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_009a": {
+      "var_1": "afinidad_marta",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_009b": {
+      "var_1": "afinidad_marta",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_009c": {
+      "var_1": "afinidad_marta",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_010a": {
+      "var_1": "afinidad_marta",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_010b": {
+      "var_1": "afinidad_marta",
+      "val_1": 3,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_010c": {
+      "var_1": "afinidad_marta",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_010d": {
+      "var_1": "afinidad_marta",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_011a": {
+      "var_1": "afinidad_marta",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_011b": {
+      "var_1": "afinidad_marta",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_012a": {
+      "var_1": "afinidad_marta",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_012b": {
+      "var_1": "afinidad_marta",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_013a": {
+      "var_1": "afinidad_marta",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_013b": {
+      "var_1": "afinidad_marta",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_013c": {
+      "var_1": "afinidad_marta",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_014a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_014b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_014c": {
+      "var_1": "afinidad_carlota",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_015a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_015b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_016a": {
+      "var_1": "afinidad_victor",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_016b": {
+      "var_1": "afinidad_victor",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_016c": {
+      "var_1": "afinidad_victor",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_017a": {
+      "var_1": "afinidad_marta",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_017b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_017c": {
+      "var_1": "afinidad_victor",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_018a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_018b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_019a": {
+      "var_1": "afinidad_victor",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_019b": {
+      "var_1": "afinidad_marta",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_020a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_020b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_021a": {
+      "var_1": "afinidad_montero",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_021b": {
+      "var_1": "afinidad_montero",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_022a": {
+      "var_1": "afinidad_montero",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_022b": {
+      "var_1": "afinidad_montero",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_023a": {
+      "var_1": "afinidad_montero",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_023b": {
+      "var_1": "afinidad_montero",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_024a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 3,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_024b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_025a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_025b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_027a": {
+      "var_1": "afinidad_montero",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_027b": {
+      "var_1": "afinidad_montero",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_028a": {
+      "var_1": "afinidad_marta",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_028b": {
+      "var_1": "afinidad_marta",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_029a": {
+      "var_1": "afinidad_marta",
+      "val_1": 3,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_029b": {
+      "var_1": "afinidad_marta",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_030a": {
+      "var_1": "afinidad_montero",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_030b": {
+      "var_1": "afinidad_montero",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_031a": {
+      "var_1": "afinidad_montero",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_031b": {
+      "var_1": "afinidad_montero",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_033a": {
+      "var_1": "afinidad_montero",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_033b": {
+      "var_1": "afinidad_montero",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_034a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_034b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_038a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_038b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_039a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_039b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_040a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_040b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_041a": {
+      "var_1": "afinidad_marta",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_041b": {
+      "var_1": "afinidad_marta",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_042a": {
+      "var_1": "afinidad_victor",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_042b": {
+      "var_1": "afinidad_victor",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_043a": {
+      "var_1": "afinidad_victor",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_043b": {
+      "var_1": "afinidad_victor",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_044a": {
+      "var_1": "afinidad_montero",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_044b": {
+      "var_1": "afinidad_montero",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_046a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_046b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_046c": {
+      "var_1": "afinidad_carlota",
+      "val_1": 3,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_047a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_047b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_049a": {
+      "var_1": "afinidad_montero",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_049b": {
+      "var_1": "afinidad_montero",
+      "val_1": 1,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_049c": {
+      "var_1": "afinidad_montero",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_050a": {
+      "var_1": "afinidad_montero",
+      "val_1": 3,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_050b": {
+      "var_1": "afinidad_montero",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_051a": {
+      "var_1": "afinidad_montero",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_051b": {
+      "var_1": "afinidad_montero",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_053a": {
+      "var_1": "afinidad_victor",
+      "val_1": 3,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_053b": {
+      "var_1": "afinidad_marta",
+      "val_1": 3,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_054a": {
+      "var_1": "afinidad_victor",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_054b": {
+      "var_1": "afinidad_marta",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_055a": {
+      "var_1": "afinidad_victor",
+      "val_1": 2,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_055b": {
+      "var_1": "afinidad_victor",
+      "val_1": 0,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_057a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_057b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_058a": {
+      "var_1": "afinidad_montero",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_058b": {
+      "var_1": "afinidad_montero",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_059a": {
+      "var_1": "afinidad_victor",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_059b": {
+      "var_1": "afinidad_victor",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_060a": {
+      "var_1": "afinidad_marta",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_060b": {
+      "var_1": "afinidad_marta",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_063a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_063b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_064a": {
+      "var_1": "afinidad_montero",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_064b": {
+      "var_1": "afinidad_montero",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_065a": {
+      "var_1": "afinidad_victor",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_065b": {
+      "var_1": "afinidad_victor",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_066a": {
+      "var_1": "afinidad_marta",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_066b": {
+      "var_1": "afinidad_marta",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_068a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_068b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_069a": {
+      "var_1": "afinidad_montero",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_069b": {
+      "var_1": "afinidad_montero",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_070a": {
+      "var_1": "afinidad_victor",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_070b": {
+      "var_1": "afinidad_victor",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_071a": {
+      "var_1": "afinidad_marta",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_071b": {
+      "var_1": "afinidad_marta",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_074a": {
+      "var_1": "afinidad_carlota",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_074b": {
+      "var_1": "afinidad_carlota",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_075a": {
+      "var_1": "afinidad_montero",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_075b": {
+      "var_1": "afinidad_montero",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_076a": {
+      "var_1": "afinidad_victor",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_076b": {
+      "var_1": "afinidad_victor",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_077a": {
+      "var_1": "afinidad_marta",
+      "val_1": 7,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
+    },
+    "afinidad_c3_077b": {
+      "var_1": "afinidad_marta",
+      "val_1": 4,
+      "var_2": null,
+      "val_2": null,
+      "var_3": null,
+      "val_3": null
     }
   }
 }
