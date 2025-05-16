@@ -69,7 +69,8 @@
                         "copas_boton",
                         "fdi_boton",
                         "parque_boton",
-                        "piso_boton"
+                        "piso_boton",
+                        "pasillo_entrada"
                     ]
                 },
                 "Clases": [

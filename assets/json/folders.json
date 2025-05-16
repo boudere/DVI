@@ -117,6 +117,11 @@
               "name": "personajes",
               "folders": [
                 {
+                  "name": "anonimo",
+                  "folders": [],
+                  "files": []
+                },
+                {
                   "name": "carlota",
                   "folders": [],
                   "files": [
@@ -326,6 +331,13 @@
                   ]
                 },
                 {
+                  "name": "entradafacul",
+                  "folders": [],
+                  "files": [
+                    "entradafacul.png"
+                  ]
+                },
+                {
                   "name": "fin_demo",
                   "folders": [],
                   "files": [
@@ -387,6 +399,7 @@
                 "fdi_boton.png",
                 "habitacion_cama.png",
                 "parque_boton.png",
+                "pasillo_entrada.png",
                 "pelota_parque.png",
                 "piso_boton.png",
                 "puerta_disco.png"
@@ -395,6 +408,11 @@
             {
               "name": "personajes",
               "folders": [
+                {
+                  "name": "anonimo",
+                  "folders": [],
+                  "files": []
+                },
                 {
                   "name": "boton_continuar",
                   "folders": [],
@@ -475,6 +493,13 @@
                   "folders": [],
                   "files": [
                     "clase_derecha.png"
+                  ]
+                },
+                {
+                  "name": "entradafacul",
+                  "folders": [],
+                  "files": [
+                    "entrada_pasillo.png"
                   ]
                 },
                 {
