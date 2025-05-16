@@ -10929,10 +10929,10 @@
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "dialogo_6475",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_salon16"
     },
     "dialogo_6475": {
       "texto": "Tienes planes para este finde?",
@@ -10957,7 +10957,7 @@
       "next_scene_id": null
     },
     "dialogo_6477": {
-      "texto": "Pues yo me voy a mi pueblo, era por si querías venirte, pero bueno para otra ocasión.",
+      "texto": "Pues yo me voy a mi pueblo, era por si querías venirte, pero bueno para otra ocasión nos vamos de picos pardos.",
       "npc": "maria",
       "pose": "normal",
       "fondo": "pasillo",
@@ -10968,7 +10968,7 @@
       "next_scene_id": null
     },
     "dialogo_6478": {
-      "texto": "Síii",
+      "texto": "I cant wait my friend",
       "npc": "prota",
       "pose": "normal",
       "fondo": "pasillo",
@@ -10979,7 +10979,7 @@
       "next_scene_id": null
     },
     "dialogo_6479": {
-      "texto": "Ya me contarás que tal!",
+      "texto": "Ya me contarás que tal, pillina!",
       "npc": "maria",
       "pose": "feliz",
       "fondo": "pasillo",
@@ -10990,7 +10990,7 @@
       "next_scene_id": null
     },
     "dialogo_6480": {
-      "texto": "Se empieza a  hacer larga la clase.",
+      "texto": "Se empieza a  hacer larga la clase, a ver si las transacciones se hacen más amenas.",
       "npc": "lorena",
       "pose": "normal",
       "fondo": "clase",
@@ -11001,7 +11001,7 @@
       "next_scene_id": null
     },
     "dialogo_6481": {
-      "texto": "Y que lo digas, menos mal que es viernes ya",
+      "texto": "Y que lo digas, menos mal que es viernes y el cuerpo lo sabe",
       "npc": "prota",
       "pose": "normal",
       "fondo": "clase",
@@ -11012,7 +11012,7 @@
       "next_scene_id": null
     },
     "dialogo_6482": {
-      "texto": "Bueno, ya está terminando",
+      "texto": "Bueno, ya está terminando, esta tarde tocará menear las caderas en la nuit",
       "npc": "lorena",
       "pose": "normal",
       "fondo": "clase",
@@ -11023,16 +11023,31 @@
       "next_scene_id": null
     },
     "dialogo_6483": {
-      "texto": "Buen finde chicos",
+      "texto": "Buen finde chicos, recordad que los modelos soa bla bla bla ",
       "npc": "profesor",
       "pose": "normal",
       "fondo": "clase",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": null,
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_clase16"
+    },
+
+    "dialogo_64830": {
+      "texto": " ",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "cita",
       "opciones": true,
       "next_id": "c3_056",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
     },
+
+
+
     "dialogo_6484": {
       "texto": "Tengo que contarte algo.",
       "npc": "carlota",
