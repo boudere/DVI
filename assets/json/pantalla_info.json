@@ -3380,8 +3380,7 @@
             "background": "calle",
             "puertas": {
                "calle_izquierda": {
-                    "nombre": "Mapa",
-                    "img": "calle_izquierda",
+                    "nombre": "mapa",
                     "pos_x": 244,
                     "pos_y": 676,
                     "delay": 0,

@@ -616,6 +616,22 @@
                     "salon_derecha.png",
                     "salon_izquierda.png"
                   ]
+                },
+                 {
+                  "name": "futbol",
+                  "folders": [],
+                  "files": [
+                    "futbol_izquierda.png",
+                    "futbol_derecha.png"
+                  ]
+                },
+                 {
+                  "name": "cita",
+                  "folders": [],
+                  "files": [
+                    "cita_izquierda.png",
+                    "cita_derecha.png"
+                  ]
                 }
               ],
               "files": []

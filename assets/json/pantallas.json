@@ -900,57 +900,11 @@
         "c3_salon1":{
             "pantalla": {
                 "nombre": "c3_salon1"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -1200,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click":null
-            },
-            "puertas": {
-                "salon_derecha": {
-                    "on_click": {
-                        "scene": "pantalla",
-                        "name": "c3_mapa1",
-                        "direction": "right"
-                    }
-                },
-                "salon_izquierda": {
-                    "on_click": {
-                        "scene": "pantalla",
-                        "name": "c3_habitacion1",
-                        "direction": "left"
-                    }
-                }
             }
           
         }, "c3_calle1":{
             "pantalla": {
                 "nombre": "c3_calle1"
-            },
-            "prota": {
-                "nombre": "prota",
-                "img": "prota",
-                "pose": "normal",
-                "pos_x": -1200,
-                "pos_y": -800,
-                "size": 1.8,
-                "delay": 0,
-                "animation": null,
-                "on_click": null
-            }, "puertas": {
-                "calle_izquierda": {
-                    "on_click": {
-                        "scene": "pantalla",
-                        "name": "c3_mapa1",
-                        "direction": "right"
-                    }
-                }
             },
             "npcs": {
                 "npc_1": {

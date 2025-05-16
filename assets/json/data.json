@@ -54,8 +54,11 @@
                         "cafeteria",
                         "clase",
                         "bus",
-                        "entradafacul"
-                    ],
+                        "entradafacul", 
+                        "calle",
+                        "cita",
+                        "futbol" 
+                                   ],
                     "Lados": [
                         "izquierda",
                         "derecha"
@@ -129,7 +132,11 @@
                         "cafeteria",
                         "bares",
                         "bus",
-                        "entradafacul"
+                        "entradafacul",
+                        "calle",
+                        "cita",
+                        "parque", 
+                        "futbol"
                     ]
                 },
                 "Clases" : [
