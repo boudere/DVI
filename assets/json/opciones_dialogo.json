@@ -1,7 +1,6 @@
 {
-  "Hoja 1": {
+  "OpcionesDialogo": {
     "prueba_001": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_2",
       "texto_1": "ve a dialogo 2",
@@ -16,7 +15,6 @@
       "texto_4": null
     },
     "tutorial_014": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "tutorial15",
       "texto_1": "Mejor la de la cocina, que escucho menos jaleo.",
@@ -31,7 +29,6 @@
       "texto_4": null
     },
     "tutorial_042": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "tutorial43",
       "texto_1": "Con la 4 quesos voy bien, me gusta.",
@@ -46,7 +43,6 @@
       "texto_4": null
     },
     "tutorial_046": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "tutorial47",
       "texto_1": "La verdad es que quería irme de casa.",
@@ -61,7 +57,6 @@
       "texto_4": "He escuchado que esta universidad tenía mucho prestigio."
     },
     "tutorial_057": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "tutorial58",
       "texto_1": "La residencia significa convivir con mucha gente, y yo paso de movidas...",
@@ -76,7 +71,6 @@
       "texto_4": null
     },
     "tutorial_059": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "tutorial60",
       "texto_1": "¡Sí! ¡Me han dicho que se sale hasta los jueves!",
@@ -91,7 +85,6 @@
       "texto_4": "Por una parte sí pero por otra...me da miedo que la carrera sea muy difícil."
     },
     "tutorial_063": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "tutorial64",
       "texto_1": "Siempre he tenido claro que quería hacer algo de eso. Me molan las mates y todas esas cosas.",
@@ -106,7 +99,6 @@
       "texto_4": null
     },
     "tutorial_69": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "tutorial70",
       "texto_1": "Si drifteo un poco seguro que puedo atropellar a los cuatro.",
@@ -121,7 +113,6 @@
       "texto_4": "Pero ¿qué pregunta es esa?"
     },
     "": {
-      "condicion": null,
       "var_1": null,
       "opcion_1": null,
       "texto_1": null,
@@ -136,7 +127,6 @@
       "texto_4": null
     },
     "cap1_001": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "cap1003",
       "texto_1": "No me he enterado de nada",
@@ -151,22 +141,20 @@
       "texto_4": null
     },
     "cap1_002": {
-      "condicion": false,
-      "var_1": "afinidad_cap1002a",
+      "var_1": null,
       "opcion_1": "cap1013",
       "texto_1": "guapo!!!!",
-      "var_2": "afinidad_cap1002b",
+      "var_2": null,
       "opcion_2": "cap1013",
       "texto_2": "friki...",
-      "var_3": "afinidad_cap1002c",
+      "var_3": null,
       "opcion_3": "cap1013",
       "texto_3": "rarito la verdad, típico informático.",
-      "var_4": "afinidad_cap1002d",
+      "var_4": null,
       "opcion_4": "cap1013",
       "texto_4": "formal, qué mono..."
     },
     "cap1_003": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "cap1022",
       "texto_1": "No me pillo nada que no tengo un duro.",
@@ -181,7 +169,6 @@
       "texto_4": "bocata lomo ya."
     },
     "cap1_004": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "cap1024",
       "texto_1": "Me apetece mucho emborracharme así que venga.",
@@ -196,7 +183,6 @@
       "texto_4": null
     },
     "cap1_005": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "cap1030",
       "texto_1": "Por favor si seguro que es un chulo por cómo habláis de él...",
@@ -211,7 +197,6 @@
       "texto_4": null
     },
     "cap1_006": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "cap1036",
       "texto_1": "Yo no bebo eh, así que un Nestea.",
@@ -226,14 +211,13 @@
       "texto_4": "para mi un tercio."
     },
     "cap1_007": {
-      "condicion": false,
-      "var_1": "afinidad_cap1007a",
+      "var_1": null,
       "opcion_1": "cap1038",
       "texto_1": "Soy ___, encantada!",
-      "var_2": "afinidad_cap1007b",
+      "var_2": null,
       "opcion_2": "cap1039",
       "texto_2": "Soy ___, ¿te digo mi insta también?",
-      "var_3": "afinidad_cap1007c",
+      "var_3": null,
       "opcion_3": "cap1040",
       "texto_3": "Me llamo ___, pero tú puedes llamarme cuando quieras...",
       "var_4": null,
@@ -241,14 +225,13 @@
       "texto_4": null
     },
     "cap1_008": {
-      "condicion": false,
-      "var_1": "afinidad_cap1008a",
+      "var_1": null,
       "opcion_1": "cap1053",
       "texto_1": "Sí, ¿te ha costado mucho deducirlo?",
-      "var_2": "afinidad_cap1008b",
+      "var_2": null,
       "opcion_2": "cap1054",
       "texto_2": "Sip, soy ___ encantada.",
-      "var_3": "afinidad_cap1008c",
+      "var_3": null,
       "opcion_3": "cap1055",
       "texto_3": "Si, soy ___. ¿Tú eres el famoso Montero, no?",
       "var_4": null,
@@ -256,7 +239,6 @@
       "texto_4": null
     },
     "cap1_009": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "cap1060",
       "texto_1": "Resacón en Las Vegas",
@@ -271,14 +253,13 @@
       "texto_4": null
     },
     "cap1_010": {
-      "condicion": false,
-      "var_1": "afinidad_cap1010a",
+      "var_1": null,
       "opcion_1": "cap1065",
       "texto_1": "Menudo pringao la verdad.",
-      "var_2": "afinidad_cap1010b",
+      "var_2": null,
       "opcion_2": "cap1067",
       "texto_2": "Me parece hasta cuqui.",
-      "var_3": "afinidad_cap1010c",
+      "var_3": null,
       "opcion_3": "cap1067",
       "texto_3": "Ojalá sea igual de aplicado en anatomía...",
       "var_4": null,
@@ -286,112 +267,20 @@
       "texto_4": null
     },
     "cap1_011": {
-      "condicion": false,
-      "var_1": "afinidad_cap1011a",
+      "var_1": null,
       "opcion_1": "cap1070",
       "texto_1": "Hola Victor, ¿tienes algo que hacer durante el puente?",
-      "var_2": "afinidad_cap1011b",
+      "var_2": null,
       "opcion_2": "cap1070",
-      "texto_2": "Oye delegado, ¿me ayudas con mdl durante el puente?",
-      "var_3": "afinidad_cap1011c",
+      "texto_2": null,
+      "var_3": null,
       "opcion_3": "cap1072",
-      "texto_3": "Tú y yo, en mi piso, 16:30 el sábado.",
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap1_012": {
-      "condicion": false,
-      "var_1": "afinidad_cap1012a",
-      "opcion_1": "cap1079",
-      "texto_1": "Bueno, pensaba mejor que me ayudases con mdl un rato y luego merendábamos.",
-      "var_2": "afinidad_cap1012b",
-      "opcion_2": "cap1079",
-      "texto_2": "Pues si quieres podemos ver una peli, que aún es pronto. ¿Los otros, por ejemplo?",
-      "var_3": null,
-      "opcion_3": null,
       "texto_3": null,
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap1_013": {
-      "condicion": false,
-      "var_1": null,
-      "opcion_1": "cap1101",
-      "texto_1": "Bueno, en peores plazas hemos toreado supongo.",
-      "var_2": null,
-      "opcion_2": "cap1099",
-      "texto_2": "Bastante bien, un amigo me ayudó a estudiar.",
-      "var_3": null,
-      "opcion_3": "cap1101",
-      "texto_3": "Digamos que espero que el estrés me haga estudiar en vacaciones.",
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap1_014": {
-      "condicion": false,
-      "var_1": "afinidad_cap1014a",
-      "opcion_1": "cap1113",
-      "texto_1": "Sí, supongo que sí. Y supongo que ese jagger no estaba tan malo… Aunque igual tengo que probarlo otra vez…",
-      "var_2": "afinidad_cap1014b",
-      "opcion_2": "cap1130",
-      "texto_2": "Sí te entiendo sí. Bueno, me voy a dormir.",
-      "var_3": null,
-      "opcion_3": null,
-      "texto_3": null,
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap1_015": {
-      "condicion": false,
-      "var_1": "afinidad_cap1015a",
-      "opcion_1": "cap1140",
-      "texto_1": "Qué mono... muchas gracias.",
-      "var_2": "afinidad_cap1015b",
-      "opcion_2": "cap1140",
-      "texto_2": "Muchas gracias, en serio.",
-      "var_3": "afinidad_cap1015c",
-      "opcion_3": "cap1136",
-      "texto_3": "Bueno, tampoco creo que se espanten mucho.",
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap1_016": {
-      "condicion": false,
-      "var_1": null,
-      "opcion_1": "cap1151",
-      "texto_1": "JAIME, ni una pregunta.",
-      "var_2": null,
-      "opcion_2": "cap1151",
-      "texto_2": "Como sigas hablando me tienen que meter en la cárcel.",
-      "var_3": null,
-      "opcion_3": "cap1151",
-      "texto_3": "BLAH BLAH BLAH BLAH",
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap1_017": {
-      "condicion": false,
-      "var_1": "afinidad_cap1017a",
-      "opcion_1": "cap1153",
-      "texto_1": "Muchas gracias. Luego tomaremos algo en la cafe, por si quieres venir",
-      "var_2": "afinidad_cap1017b",
-      "opcion_2": "cap1154",
-      "texto_2": "Gracias e igualmente. Bueno, voy entrando al aula.",
-      "var_3": "afinidad_cap1017c",
-      "opcion_3": "cap1155",
-      "texto_3": "Muchas gracias Víctor, suerte a ti también.",
       "var_4": null,
       "opcion_4": null,
       "texto_4": null
     },
     "cap2_001": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "cap2002",
       "texto_1": "Bueno espero que os guste el reggaeton entonces.",
@@ -406,7 +295,6 @@
       "texto_4": null
     },
     "cap2_010": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "cap2011",
       "texto_1": "Yo creo que mejor salimos y pillamos sitio cuanto antes",
@@ -421,9 +309,8 @@
       "texto_4": null
     },
     "cap2_013": {
-      "condicion": false,
       "var_1": null,
-      "opcion_1": "cap2039",
+      "opcion_1": "cap2015",
       "texto_1": "(Prefiero no contestar y voy hacia la puerta para salir)",
       "var_2": null,
       "opcion_2": "cap2014",
@@ -436,7 +323,6 @@
       "texto_4": null
     },
     "cap2_045": {
-      "condicion": false,
       "var_1": "afinidad_cap2045a",
       "opcion_1": "cap2046",
       "texto_1": "Nada, solo nos liamos un poco en la fiesta en casa pero sin más.",
@@ -451,7 +337,6 @@
       "texto_4": null
     },
     "cap2_073": {
-      "condicion": false,
       "var_1": "afinidad_cap2073a",
       "opcion_1": "cap2074",
       "texto_1": "Bueno la verdad es que puedo saludarlos después prefiero quedarme con vosotros.",
@@ -466,7 +351,6 @@
       "texto_4": null
     },
     "cap2_091": {
-      "condicion": false,
       "var_1": "afinidad_cap2091a",
       "opcion_1": "cap2092",
       "texto_1": "Siempre puedes quedarte y dormir donde la última vez",
@@ -481,7 +365,6 @@
       "texto_4": null
     },
     "cap2_118": {
-      "condicion": false,
       "var_1": "afinidad_cap2118a",
       "opcion_1": "cap2119",
       "texto_1": "Bueno, si quieres te puedes quedar...No creo que les importe mucho a mis compañeros.",
@@ -496,12 +379,11 @@
       "texto_4": null
     },
     "cap2_128": {
-      "condicion": false,
       "var_1": "afinidad_cap2128a",
       "opcion_1": "cap2129",
       "texto_1": "Sí, estoy ya. Cuanto antes llegue más tiempo pasaré con Víctor y mis amigos antes de que empiece la clase",
       "var_2": "afinidad_cap2128b",
-      "opcion_2": "cap2135",
+      "opcion_2": "cap2135bis",
       "texto_2": "Puedes ir tirando que lo de llegar temprano a clase no es mi fuerte.",
       "var_3": null,
       "opcion_3": null,
@@ -511,7 +393,6 @@
       "texto_4": null
     },
     "cap2_130": {
-      "condicion": false,
       "var_1": "afinidad_cap2130a",
       "opcion_1": "cap2131",
       "texto_1": "Tenía ganas de verte",
@@ -526,7 +407,6 @@
       "texto_4": null
     },
     "cap2_143": {
-      "condicion": false,
       "var_1": "afinidad_cap2143a",
       "opcion_1": "cap2144",
       "texto_1": "Tranquilo, yo me quedo a hacerte compañía",
@@ -541,7 +421,6 @@
       "texto_4": null
     },
     "cap2_162": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "cap2163",
       "texto_1": "Esto drena la energía a cualquiera",
@@ -556,7 +435,6 @@
       "texto_4": null
     },
     "cap2_178": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "cap2179",
       "texto_1": "Pues no sé pero si es por Alex enterito para ella que yo ya tengo bastante",
@@ -571,7 +449,6 @@
       "texto_4": null
     },
     "cap2_209": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "cap2210",
       "texto_1": "En cualquier caso, no me gustan las chicas",
@@ -586,7 +463,6 @@
       "texto_4": null
     },
     "cap2_225": {
-      "condicion": false,
       "var_1": "afinidad_cap2225a",
       "opcion_1": "cap2226",
       "texto_1": "Te he visto alguna vez por la fdi, ¿tú que estudias?",
@@ -601,7 +477,6 @@
       "texto_4": null
     },
     "cap2_228": {
-      "condicion": false,
       "var_1": "afinidad_cap2228a",
       "opcion_1": "cap2230",
       "texto_1": "No, no está bien así tengo algo de charla ligera en el bus",
@@ -616,7 +491,6 @@
       "texto_4": null
     },
     "cap2_234": {
-      "condicion": false,
       "var_1": "afinidad_cap2234a",
       "opcion_1": "cap2235",
       "texto_1": "La verdad es que no tengo pareja ni nada,  pero es lo que pienso que pasa en las relaciones",
@@ -631,7 +505,6 @@
       "texto_4": null
     },
     "cap2_244": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "cap2245",
       "texto_1": "Solo de oídas, no me gusta mucho.",
@@ -645,89 +518,27 @@
       "opcion_4": null,
       "texto_4": null
     },
-    "cap4_001": {
-      "condicion": false,
+     "cap3_001": {
       "var_1": null,
-      "opcion_1": "cap4003",
-      "texto_1": "Así que decidiste ser una falsa conmigo y hacerme creer que éramos amigas.",
+      "opcion_1": "dialogo_5005",
+      "texto_1": "afinidad montero",
       "var_2": null,
-      "opcion_2": "cap4005",
-      "texto_2": "Si en el fondo te entiendo, a mí también me gusta…",
+      "opcion_2": "dialogo_5033",
+      "texto_2": "afinidad víctor",
       "var_3": null,
-      "opcion_3": "cap4003",
-      "texto_3": "La verdad es que no tengo nada que decirte.",
+      "opcion_3": "dialogo_5049",
+      "texto_3": "afinidad carlota",
       "var_4": null,
       "opcion_4": null,
       "texto_4": null
     },
-    "cap4_002": {
-      "condicion": false,
+    "cap3_002": {
       "var_1": null,
-      "opcion_1": "cap4023",
-      "texto_1": "No debería haber dudado de ti, la Lorena esa me rayó, aunque sé que no es excusa…",
+      "opcion_1": "dialogo_5016",
+      "texto_1": "ve a dialogo_5016",
       "var_2": null,
-      "opcion_2": "cap4023",
-      "texto_2": "Eres una persona muy importante para mí, y aunque sé que me he equivocado, no querría perderte por algo así.",
-      "var_3": null,
-      "opcion_3": "cap4023",
-      "texto_3": "Se me fue la olla tía, si me perdonas me encargo de hacer la cena durante un mes.",
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_003": {
-      "condicion": false,
-      "var_1": null,
-      "opcion_1": "cap4046",
-      "texto_1": "Buah siempre he pensado que ayudar en la cafetería tiene que ser divertido, como uno de esos minijuegos online de las páginas de juegos de chicas.",
-      "var_2": null,
-      "opcion_2": "cap4046",
-      "texto_2": "¿Lo dices en serio? Si se trata de camelar a chicas guapas soy tu chica.",
-      "var_3": null,
-      "opcion_3": "cap4046",
-      "texto_3": "Me da bastante palo si te soy sincera…",
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_004": {
-      "condicion": false,
-      "var_1": "afinidad_cap4004a",
-      "opcion_1": "cap4072_007",
-      "texto_1": "Bastante bien la verdad, creo que un ex no deja de ser alguien a quien en algún momento has querido.",
-      "var_2": "afinidad_cap4004b",
-      "opcion_2": "cap4072_011",
-      "texto_2": "No me llevo. Creo que nunca podría tener una relación de amistad con alguien con quien he estado.",
-      "var_3": "afinidad_cap4004c",
-      "opcion_3": "cap4072_013",
-      "texto_3": "La verdad es que nunca he tenido pareja.",
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_005": {
-      "condicion": false,
-      "var_1": "afinidad_cap4005a",
-      "opcion_1": "cap4072_023",
-      "texto_1": "Ni fu ni fa, quitando el cubata de los findes nunca he ido más allá.",
-      "var_2": "afinidad_cap4005b",
-      "opcion_2": "cap4072_026",
-      "texto_2": "La verdad es que me cunden.",
-      "var_3": "afinidad_cap4005c",
-      "opcion_3": "cap4072_032",
-      "texto_3": "No creo que puedan aportar nada bueno a la vida de nadie ni a la de sus seres queridos.",
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_006": {
-      "condicion": false,
-      "var_1": "afinidad_cap4006a",
-      "opcion_1": "cap4072_041",
-      "texto_1": "(Corro sin ninguna vergüenza hacia la mesa. Ni de coña nos la quitan.)",
-      "var_2": "afinidad_cap4006b",
-      "opcion_2": "cap4072_043",
-      "texto_2": "(Sigo en dirección a la mesa pero sin prisa. Estaría un poco feo ir corriendo para llegar antes, que gane el mejor.)",
+      "opcion_2": "dialogo_5017",
+      "texto_2": "ve a dialogo_5017",
       "var_3": null,
       "opcion_3": null,
       "texto_3": null,
@@ -735,209 +546,13 @@
       "opcion_4": null,
       "texto_4": null
     },
-    "cap4_007": {
-      "condicion": false,
-      "var_1": "afinidad_cap4007a",
-      "opcion_1": "cap4076",
-      "texto_1": "(Estoy tan agusto en su compañía…las horas se me pasan como minutos. De verdad espero que esto salga bien…)",
-      "var_2": "afinidad_cap4007b",
-      "opcion_2": "cap4076",
-      "texto_2": "(La verdad es que esto no ha resultado ser como yo esperaba. Lo mejor es que lo nuestro no siga adelante.)",
-      "var_3": null,
-      "opcion_3": null,
-      "texto_3": null,
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_008": {
-      "condicion": false,
-      "var_1": "afinidad_cap4008a",
-      "opcion_1": "cap4073_008",
-      "texto_1": "Bastante bien la verdad, creo que un ex no deja de ser alguien a quien en algún momento has querido.",
-      "var_2": "afinidad_cap4008b",
-      "opcion_2": "cap4073_012",
-      "texto_2": "No me llevo. Creo que nunca podría tener una relación de amistad con alguien con quien he estado.",
-      "var_3": "afinidad_cap4008c",
-      "opcion_3": "cap4073_015",
-      "texto_3": "La verdad es que nunca he tenido pareja.",
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_009": {
-      "condicion": false,
-      "var_1": "afinidad_cap4009a",
-      "opcion_1": "cap4073_025",
-      "texto_1": "Ni fu ni fa, quitando el cubata de los findes nunca he ido más allá.",
-      "var_2": "afinidad_cap4009b",
-      "opcion_2": "cap4073_028",
-      "texto_2": "La verdad es que me cunden.",
-      "var_3": "afinidad_cap4009c",
-      "opcion_3": "cap4073_034",
-      "texto_3": "No creo que puedan aportar nada bueno a la vida de nadie ni a la de sus seres queridos.",
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_010": {
-      "condicion": false,
-      "var_1": "afinidad_cap4010a",
-      "opcion_1": "cap4073_045",
-      "texto_1": "(Corro sin ninguna vergüenza hacia la mesa. Ni de coña nos la quitan.)",
-      "var_2": "afinidad_cap4010b",
-      "opcion_2": "cap4073_047",
-      "texto_2": "(Sigo en dirección a la mesa pero sin prisa. Estaría un poco feo ir corriendo para llegar antes, que gane el mejor.)",
-      "var_3": null,
-      "opcion_3": null,
-      "texto_3": null,
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_011": {
-      "condicion": false,
-      "var_1": "afinidad_cap4011a",
-      "opcion_1": "cap4076",
-      "texto_1": "(Estoy tan agusto en su compañía…las horas se me pasan como minutos. De verdad espero que esto salga bien…)",
-      "var_2": "afinidad_cap4011b",
-      "opcion_2": "cap4076",
-      "texto_2": "(La verdad es que esto no ha resultado ser como yo esperaba. Lo mejor es que lo nuestro no siga adelante.)",
-      "var_3": null,
-      "opcion_3": null,
-      "texto_3": null,
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_012": {
-      "condicion": false,
-      "var_1": "afinidad_cap4012a",
-      "opcion_1": "cap4074_008",
-      "texto_1": "Bastante bien la verdad, creo que un ex no deja de ser alguien a quien en algún momento has querido.",
-      "var_2": "afinidad_cap4012b",
-      "opcion_2": "cap4074_012",
-      "texto_2": "No me llevo. Creo que nunca podría tener una relación de amistad con alguien con quien he estado.",
-      "var_3": "afinidad_cap4012c",
-      "opcion_3": "cap4074_016",
-      "texto_3": "La verdad es que nunca he tenido pareja.",
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_013": {
-      "condicion": false,
-      "var_1": "afinidad_cap4013a",
-      "opcion_1": "cap4074_026",
-      "texto_1": "Ni fu ni fa, quitando el cubata de los findes nunca he ido más allá.",
-      "var_2": "afinidad_cap4013b",
-      "opcion_2": "cap4074_028",
-      "texto_2": "La verdad es que me cunden.",
-      "var_3": "afinidad_cap4013c",
-      "opcion_3": "cap4074_036",
-      "texto_3": "No creo que puedan aportar nada bueno a la vida de nadie ni a la de sus seres queridos.",
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_014": {
-      "condicion": false,
-      "var_1": "afinidad_cap4014a",
-      "opcion_1": "cap4074_046",
-      "texto_1": "(Corro sin ninguna vergüenza hacia la mesa. Ni de coña nos la quitan.)",
-      "var_2": "afinidad_cap4014b",
-      "opcion_2": "cap4074_049",
-      "texto_2": "(Sigo en dirección a la mesa pero sin prisa. Estaría un poco feo ir corriendo para llegar antes, que gane el mejor.)",
-      "var_3": null,
-      "opcion_3": null,
-      "texto_3": null,
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_015": {
-      "condicion": false,
-      "var_1": "afinidad_cap4015a",
-      "opcion_1": "cap4076",
-      "texto_1": "(Estoy tan agusto en su compañía…las horas se me pasan como minutos. De verdad espero que esto salga bien…)",
-      "var_2": "afinidad_cap4015b",
-      "opcion_2": "cap4076",
-      "texto_2": "(La verdad es que esto no ha resultado ser como yo esperaba. Lo mejor es que lo nuestro no siga adelante.)",
-      "var_3": null,
-      "opcion_3": null,
-      "texto_3": null,
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_016": {
-      "condicion": false,
-      "var_1": "afinidad_cap4016a",
-      "opcion_1": "cap4075_013",
-      "texto_1": "Bastante bien la verdad, creo que un ex no deja de ser alguien a quien en algún momento has querido.",
-      "var_2": "afinidad_cap4016b",
-      "opcion_2": "cap4075_019",
-      "texto_2": "No me llevo. Creo que nunca podría tener una relación de amistad con alguien con quien he estado.",
-      "var_3": "afinidad_cap4016c",
-      "opcion_3": "cap4075_025",
-      "texto_3": "La verdad es que nunca he tenido pareja.",
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_017": {
-      "condicion": false,
-      "var_1": "afinidad_cap4017a",
-      "opcion_1": "cap4075_035",
-      "texto_1": "Ni fu ni fa, quitando el cubata de los findes nunca he ido más allá.",
-      "var_2": "afinidad_cap4017b",
-      "opcion_2": "cap4075_039",
-      "texto_2": "La verdad es que me cunden.",
-      "var_3": "afinidad_cap4017c",
-      "opcion_3": "cap4075_044",
-      "texto_3": "No creo que puedan aportar nada bueno a la vida de nadie ni a la de sus seres queridos.",
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_018": {
-      "condicion": false,
-      "var_1": "afinidad_cap4018a",
-      "opcion_1": "cap4075_058",
-      "texto_1": "(Corro sin ninguna vergüenza hacia la mesa. Ni de coña nos la quitan.)",
-      "var_2": "afinidad_cap4018b",
-      "opcion_2": "cap4075_062",
-      "texto_2": "(Sigo en dirección a la mesa pero sin prisa. Estaría un poco feo ir corriendo para llegar antes, que gane el mejor.)",
-      "var_3": null,
-      "opcion_3": null,
-      "texto_3": null,
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_019": {
-      "condicion": false,
-      "var_1": "afinidad_cap4019a",
-      "opcion_1": "cap4076",
-      "texto_1": "(Estoy tan agusto en su compañía…las horas se me pasan como minutos. De verdad espero que esto salga bien…)",
-      "var_2": "afinidad_cap4019b",
-      "opcion_2": "cap4076",
-      "texto_2": "(La verdad es que esto no ha resultado ser como yo esperaba. Lo mejor es que lo nuestro no siga adelante.)",
-      "var_3": null,
-      "opcion_3": null,
-      "texto_3": null,
-      "var_4": null,
-      "opcion_4": null,
-      "texto_4": null
-    },
-    "cap4_020": {
-      "condicion": false,
+    "cap3_003": {
       "var_1": null,
-      "opcion_1": "cap4079_020",
-      "texto_1": "Ni de coña.",
+      "opcion_1": "dialogo_5022",
+      "texto_1": "ve a dialogo_5022",
       "var_2": null,
-      "opcion_2": "cap4079_032",
-      "texto_2": "¿Sabes qué? Me parece buena idea y todo.",
+      "opcion_2": "dialogo_5023",
+      "texto_2": "ve a dialogo_5023",
       "var_3": null,
       "opcion_3": null,
       "texto_3": null,
@@ -945,98 +560,189 @@
       "opcion_4": null,
       "texto_4": null
     },
-    "cap4_021": {
-      "condicion": false,
+    "cap3_004": {
       "var_1": null,
-      "opcion_1": "cap4080_005",
-      "texto_1": "Me cunde mazo una cenita. Nada como unas buenas pizzas caseras y una peli de miedo para fortalecer lazos.",
+      "opcion_1": "dialogo_5097",
+      "texto_1": "afinidad carlota",
       "var_2": null,
-      "opcion_2": "cap4080_005",
-      "texto_2": "No has terminado de proponer el plan y ya he añadido a la cesta: una botella de recompensa y una de revoltosa cola.",
+      "opcion_2": "dialogo_5098",
+      "texto_2": "afinidad montero",
       "var_3": null,
-      "opcion_3": "cap4080_011",
-      "texto_3": "Puff…estoy un poco desanimada últimamente, no sé si me apetece mucho.",
+      "opcion_3": "dialogo_5099",
+      "texto_3": "afinidad victor",
       "var_4": null,
       "opcion_4": null,
       "texto_4": null
     },
-    "cap4_022": {
-      "condicion": false,
+    "cap3_005": {
       "var_1": null,
-      "opcion_1": "cap4086_009",
-      "texto_1": "Oye…me he dado cuenta de que me gustas de verdad.",
+      "opcion_1": "dialogo_5104",
+      "texto_1": "afinidad carlota",
       "var_2": null,
-      "opcion_2": "cap4086_013",
-      "texto_2": "Igual te pilla de sopetón, pero ¿cómo te suena formalizar lo que tenemos?",
+      "opcion_2": "dialogo_5105",
+      "texto_2": "afinidad montero",
       "var_3": null,
-      "opcion_3": "cap4086_013",
-      "texto_3": "¿Quieres salir conmigo?",
+      "opcion_3": "dialogo_5106",
+      "texto_3": "afinidad victor",
       "var_4": null,
       "opcion_4": null,
       "texto_4": null
     },
-    "cap4_023": {
-      "condicion": false,
+    "cap3_006": {
       "var_1": null,
-      "opcion_1": "cap4087_010",
-      "texto_1": "Oye…me he dado cuenta de que me gustas de verdad.",
+      "opcion_1": "dialogo_5113",
+      "texto_1": "afinidad carlota",
       "var_2": null,
-      "opcion_2": "cap4087_016",
-      "texto_2": "Igual te pilla de sopetón, pero ¿cómo te suena formalizar lo que tenemos?",
+      "opcion_2": "dialogo_5115",
+      "texto_2": "afinidad montero",
       "var_3": null,
-      "opcion_3": "cap4087_016",
-      "texto_3": "¿Quieres salir conmigo?",
+      "opcion_3": "dialogo_5117",
+      "texto_3": "afinidad victor",
       "var_4": null,
       "opcion_4": null,
       "texto_4": null
     },
-    "cap4_024": {
-      "condicion": false,
+    "cap3_007": {
       "var_1": null,
-      "opcion_1": "cap4088_012",
-      "texto_1": "Oye…me he dado cuenta de que me gustas de verdad.",
+      "opcion_1": "dialogo_5121",
+      "texto_1": "ve a dialogo 5121",
       "var_2": null,
-      "opcion_2": "cap4088_016",
-      "texto_2": "Igual te pilla de sopetón, pero ¿cómo te suena formalizar lo que tenemos?",
+      "opcion_2": "dialogo_5122",
+      "texto_2": "ve a dialogo 5122",
       "var_3": null,
-      "opcion_3": "cap4088_016",
-      "texto_3": "¿Quieres salir conmigo?",
+      "opcion_3": "dialogo_5123",
+      "texto_3": "ve a dialogo 5123",
       "var_4": null,
       "opcion_4": null,
       "texto_4": null
     },
-    "cap4_025": {
-      "condicion": false,
+    "cap3_008": {
       "var_1": null,
-      "opcion_1": "cap4089_012",
-      "texto_1": "Oye…me he dado cuenta de que me gustas de verdad.",
+      "opcion_1": "dialogo_5130",
+      "texto_1": "ve a dialogo 5130",
       "var_2": null,
-      "opcion_2": "cap4089_018",
-      "texto_2": "Igual te pilla de sopetón, pero ¿cómo te suena formalizar lo que tenemos?",
+      "opcion_2": "dialogo_5131",
+      "texto_2": "ve a dialogo 5131",
       "var_3": null,
-      "opcion_3": "cap4089_018",
-      "texto_3": "¿Quieres salir conmigo?",
+      "opcion_3": "dialogo_5150",
+      "texto_3": "afinidad victor",
       "var_4": null,
       "opcion_4": null,
       "texto_4": null
     },
-    "cap4_026": {
-      "condicion": false,
+    "cap3_009": {
       "var_1": null,
-      "opcion_1": "cap4094_030",
-      "texto_1": "Me gustaría tomarme un año para ver qué quiero hacer con mi vida de verdad.",
+      "opcion_1": "dialogo_5132",
+      "texto_1": "afinidad carlota",
       "var_2": null,
-      "opcion_2": "cap4094_036",
-      "texto_2": "Aunque suene a tópico…me gustaría encontrar una persona con la que compartir mi vida.",
+      "opcion_2": "dialogo_5142",
+      "texto_2": "afinidad montero",
       "var_3": null,
-      "opcion_3": "cap4094_043",
-      "texto_3": "Esto de la carrera ha acabado por gustarme más de lo que me esperaba.",
+      "opcion_3": "dialogo_5196",
+      "texto_3": "afinidad victor",
+      "var_4": null,
+      "opcion_4": null,
+      "texto_4": null
+    },
+    "cap3_010": {
+      "var_1": null,
+      "opcion_1": "dialogo_5194",
+      "texto_1": "afinidad carlota",
+      "var_2": null,
+      "opcion_2": "dialogo_5195",
+      "texto_2": "afinidad montero",
+      "var_3": null,
+      "opcion_3": null,
+      "texto_3": null,
+      "var_4": null,
+      "opcion_4": null,
+      "texto_4": null
+    },
+    "cap3_011": {
+      "var_1": null,
+      "opcion_1": "dialogo_5197",
+      "texto_1": "ve a dialogo 5197",
+      "var_2": null,
+      "opcion_2": "dialogo_5198",
+      "texto_2": "ve a dialogo 5198",
+      "var_3": null,
+      "opcion_3": null,
+      "texto_3": null,
+      "var_4": null,
+      "opcion_4": null,
+      "texto_4": null
+    },
+    "cap3_012": {
+      "var_1": null,
+      "opcion_1": "dialogo_5199",
+      "texto_1": "ve a dialogo 5199",
+      "var_2": null,
+      "opcion_2": "dialogo_5198",
+      "texto_2": "ve a dialogo 5198",
+      "var_3": null,
+      "opcion_3": null,
+      "texto_3": null,
+      "var_4": null,
+      "opcion_4": null,
+      "texto_4": null
+    },
+    "cap3_013": {
+      "var_1": null,
+      "opcion_1": "dialogo_5200",
+      "texto_1": "Carlota && citas >= 1",
+      "var_2": null,
+      "opcion_2": "dialogo_5132",
+      "texto_2": "Carlota && citas < 1",
+      "var_3": null,
+      "opcion_3": "dialogo_5210",
+      "texto_3": "Montero && citas >= 1",
+      "var_4": null,
+      "opcion_4": "dialogo_5142",
+      "texto_4": "Montero && citas < 1"
+    },
+    "cap3_014": {
+      "var_1": null,
+      "opcion_1": "dialogo_5254",
+      "texto_1": "citas Carlota == 2 || citas Montero == 2 || citas Victor == 2 || citas Marta == 2",
+      "var_2": null,
+      "opcion_2": "dialogo_5260",
+      "texto_2": "Si no hay ninguno con 2p de afinidad",
+      "var_3": null,
+      "opcion_3": null,
+      "texto_3": null,
+      "var_4": null,
+      "opcion_4": null,
+      "texto_4": null
+    },
+    "cap3_015": {
+      "var_1": null,
+      "opcion_1": "dialogo_5181",
+      "texto_1": "ve a dialogo 5181",
+      "var_2": null,
+      "opcion_2": "dialogo_5182",
+      "texto_2": "ve a dialogo 5182",
+      "var_3": null,
+      "opcion_3": null,
+      "texto_3": null,
+      "var_4": null,
+      "opcion_4": null,
+      "texto_4": null
+    },
+    "cap3_016": {
+      "var_1": null,
+      "opcion_1": null,
+      "texto_1": null,
+      "var_2": null,
+      "opcion_2": null,
+      "texto_2": null,
+      "var_3": null,
+      "opcion_3": null,
+      "texto_3": null,
       "var_4": null,
       "opcion_4": null,
       "texto_4": null
     },
     "c3_001": {
-      "condicion": false,
       "var_1": "afinidad_c3_001a",
       "opcion_1": "dialogo_6005",
       "texto_1": "No, voy a acompañar a Samu a su facultad y voy a segunda tranquilamente.",
@@ -1051,7 +757,6 @@
       "texto_4": null
     },
     "c3_002": {
-      "condicion": false,
       "var_1": "afinidad_c3_002a",
       "opcion_1": "dialogo_6018",
       "texto_1": "No te flipes tanto eh.",
@@ -1066,7 +771,6 @@
       "texto_4": null
     },
     "c3_003": {
-      "condicion": false,
       "var_1": "afinidad_c3_003a",
       "opcion_1": "dialogo_6025",
       "texto_1": "Sí, qué ilusión!",
@@ -1081,7 +785,6 @@
       "texto_4": null
     },
     "c3_004": {
-      "condicion": false,
       "var_1": "afinidad_c3_004a",
       "opcion_1": "dialogo_6046",
       "texto_1": "Te apetece que vayamos a verlo?",
@@ -1096,7 +799,6 @@
       "texto_4": null
     },
     "c3_005": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6075",
       "texto_1": "Tengo unos amigos que juegan en ese equipo!!",
@@ -1104,20 +806,19 @@
       "opcion_2": "dialogo_6078",
       "texto_2": "Id preparando la vaselina ….",
       "var_3": null,
-      "opcion_3": "dialogo_6082",
-      "texto_3": "ve a dialogo_6082",
+      "opcion_3": null,
+      "texto_3": null,
       "var_4": null,
       "opcion_4": null,
       "texto_4": null
     },
     "c3_006": {
-      "condicion": false,
       "var_1": "afinidad_c3_006a",
       "opcion_1": "dialogo_6084",
       "texto_1": "Sí, pero voy a ir a animar a mi compañero de piso y a su amigo que juegan en CAFyD.",
       "var_2": "afinidad_c3_006b",
       "opcion_2": "dialogo_6083",
-      "texto_2": "Sí, avisaré también al delegado, que vaya en nombre de la clase.",
+      "texto_2": "Sí, avisaré también al delegado, que vaya en nombre de la fdi.",
       "var_3": "afinidad_c3_006c",
       "opcion_3": "dialogo_6084",
       "texto_3": "Me parece una buena idea.",
@@ -1126,7 +827,6 @@
       "texto_4": null
     },
     "c3_007": {
-      "condicion": false,
       "var_1": "afinidad_c3_007a",
       "opcion_1": "dialogo_6102",
       "texto_1": "MARTA QUE HACES AQUÍ???",
@@ -1141,7 +841,6 @@
       "texto_4": null
     },
     "c3_008": {
-      "condicion": false,
       "var_1": "afinidad_c3_008a",
       "opcion_1": "dialogo_6124",
       "texto_1": "Obviamente, es el destino que nos ha hecho encontrarnos.",
@@ -1156,7 +855,6 @@
       "texto_4": null
     },
     "c3_009": {
-      "condicion": false,
       "var_1": "afinidad_c3_009a",
       "opcion_1": "dialogo_6130",
       "texto_1": "Sí, me siento muy reflejada con mi signo",
@@ -1171,7 +869,6 @@
       "texto_4": null
     },
     "c3_010": {
-      "condicion": false,
       "var_1": "afinidad_c3_010a",
       "opcion_1": "dialogo_6140",
       "texto_1": "Síi que guay",
@@ -1186,7 +883,6 @@
       "texto_4": "Nah tía esas cosas me la sudan"
     },
     "c3_011": {
-      "condicion": false,
       "var_1": "afinidad_c3_011a",
       "opcion_1": "dialogo_6151",
       "texto_1": "Bueno, estoy cansada, me recojo ya",
@@ -1201,7 +897,6 @@
       "texto_4": null
     },
     "c3_012": {
-      "condicion": false,
       "var_1": "afinidad_c3_012a",
       "opcion_1": "dialogo_6166",
       "texto_1": "Yo también, hay que repetir",
@@ -1216,7 +911,6 @@
       "texto_4": null
     },
     "c3_013": {
-      "condicion": false,
       "var_1": "afinidad_c3_013a",
       "opcion_1": "dialogo_6158",
       "texto_1": "Yo también toco un instrumento",
@@ -1231,7 +925,6 @@
       "texto_4": null
     },
     "c3_014": {
-      "condicion": false,
       "var_1": "afinidad_c3_014a",
       "opcion_1": "dialogo_6189",
       "texto_1": "Pobrecitos, CAFyD les van a dejar secos.",
@@ -1246,13 +939,12 @@
       "texto_4": null
     },
     "c3_015": {
-      "condicion": false,
       "var_1": "afinidad_c3_015a",
       "opcion_1": "dialogo_6193",
       "texto_1": "Sí, pero prefería ver el partido contigo.",
       "var_2": "afinidad_c3_015b",
-      "opcion_2": "dialogo_6196",
-      "texto_2": "Ah vaya",
+      "opcion_2": "dialogo_6195",
+      "texto_2": "Sí, ahora me vuelvo con ellos",
       "var_3": null,
       "opcion_3": null,
       "texto_3": null,
@@ -1261,7 +953,6 @@
       "texto_4": null
     },
     "c3_016": {
-      "condicion": false,
       "var_1": "afinidad_c3_016a",
       "opcion_1": "dialogo_6208",
       "texto_1": "Y muy bien que nos representa a todos",
@@ -1276,7 +967,6 @@
       "texto_4": null
     },
     "c3_017": {
-      "condicion": false,
       "var_1": "afinidad_c3_017a",
       "opcion_1": "dialogo_6213",
       "texto_1": "Marta",
@@ -1291,10 +981,9 @@
       "texto_4": null
     },
     "c3_018": {
-      "condicion": false,
       "var_1": "afinidad_c3_018a",
       "opcion_1": "dialogo_6217",
-      "texto_1": "Voy con vosotros",
+      "texto_1": "Voy con vosotros (los amigos no con Pepe)",
       "var_2": "afinidad_c3_018b",
       "opcion_2": "dialogo_6234",
       "texto_2": "Yo me quedo cuidando las cosas",
@@ -1306,7 +995,6 @@
       "texto_4": null
     },
     "c3_019": {
-      "condicion": false,
       "var_1": "afinidad_c3_019a",
       "opcion_1": "dialogo_6222",
       "texto_1": "Bueno, lo justo y necesario",
@@ -1321,7 +1009,6 @@
       "texto_4": null
     },
     "c3_020": {
-      "condicion": false,
       "var_1": "afinidad_c3_020a",
       "opcion_1": "dialogo_6238",
       "texto_1": "Hacéis buena pareja",
@@ -1336,12 +1023,11 @@
       "texto_4": null
     },
     "c3_021": {
-      "condicion": false,
       "var_1": "afinidad_c3_021a",
       "opcion_1": "dialogo_6246",
       "texto_1": "Yo voy a esperar Samu y Montero",
       "var_2": "afinidad_c3_021b",
-      "opcion_2": "dialogo_6256",
+      "opcion_2": "dialogo_62560",
       "texto_2": "Voy contigo a casa",
       "var_3": null,
       "opcion_3": null,
@@ -1351,7 +1037,6 @@
       "texto_4": null
     },
     "c3_022": {
-      "condicion": false,
       "var_1": "afinidad_c3_022a",
       "opcion_1": "dialogo_6256",
       "texto_1": "Sí, voy con vosotros",
@@ -1366,7 +1051,6 @@
       "texto_4": null
     },
     "c3_023": {
-      "condicion": false,
       "var_1": "afinidad_c3_023a",
       "opcion_1": "dialogo_6270",
       "texto_1": "Me voy a dormir, estoy muy cansada.",
@@ -1381,7 +1065,6 @@
       "texto_4": null
     },
     "c3_024": {
-      "condicion": false,
       "var_1": "afinidad_c3_024a",
       "opcion_1": "dialogo_6279",
       "texto_1": "Esa es mi idea sí.",
@@ -1396,7 +1079,6 @@
       "texto_4": null
     },
     "c3_025": {
-      "condicion": false,
       "var_1": "afinidad_c3_025a",
       "opcion_1": "dialogo_6284",
       "texto_1": "Un poco bola si se ha hecho.",
@@ -1411,13 +1093,12 @@
       "texto_4": null
     },
     "c3_026": {
-      "condicion": false,
       "var_1": null,
-      "opcion_1": "dialogo_6305",
-      "texto_1": "carlota_invitada == true ---> Aquí llega la estrella",
+      "opcion_1": "dialogo_6304",
+      "texto_1": "carlota_invitada == true",
       "var_2": null,
-      "opcion_2": "c3_027",
-      "texto_2": "carlota_invitada == false ---> ¿Me esperabais?",
+      "opcion_2": "dialogo_6310",
+      "texto_2": "carlota_invitada == false",
       "var_3": null,
       "opcion_3": null,
       "texto_3": null,
@@ -1426,7 +1107,6 @@
       "texto_4": null
     },
     "c3_027": {
-      "condicion": false,
       "var_1": "afinidad_c3_027a",
       "opcion_1": "dialogo_6313",
       "texto_1": "Yo sí",
@@ -1441,7 +1121,6 @@
       "texto_4": null
     },
     "c3_028": {
-      "condicion": false,
       "var_1": "afinidad_c3_028a",
       "opcion_1": "dialogo_6318",
       "texto_1": "Quédate en el cuarto de Pepe, él siempre llega a media noche.",
@@ -1456,7 +1135,6 @@
       "texto_4": null
     },
     "c3_029": {
-      "condicion": false,
       "var_1": "afinidad_c3_029a",
       "opcion_1": "dialogo_6326",
       "texto_1": "No se me ocurre mejor plan.",
@@ -1471,7 +1149,6 @@
       "texto_4": null
     },
     "c3_030": {
-      "condicion": false,
       "var_1": "afinidad_c3_030a",
       "opcion_1": "dialogo_6336",
       "texto_1": "¿También te quedas hoy de parásito?",
@@ -1486,7 +1163,6 @@
       "texto_4": null
     },
     "c3_031": {
-      "condicion": false,
       "var_1": "afinidad_c3_031a",
       "opcion_1": "dialogo_6351",
       "texto_1": "¿Quieres que te prepare el desayuno rey?",
@@ -1501,7 +1177,6 @@
       "texto_4": null
     },
     "c3_032": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6358",
       "texto_1": "Sí",
@@ -1516,7 +1191,6 @@
       "texto_4": null
     },
     "c3_033": {
-      "condicion": false,
       "var_1": "afinidad_c3_033a",
       "opcion_1": "dialogo_6361",
       "texto_1": "Gracias rey",
@@ -1531,13 +1205,12 @@
       "texto_4": null
     },
     "c3_034": {
-      "condicion": false,
       "var_1": "afinidad_c3_034a",
       "opcion_1": "dialogo_6293",
-      "texto_1": "SI --> Carlota_fiesta == true",
+      "texto_1": "SI",
       "var_2": "afinidad_c3_034b",
       "opcion_2": "dialogo_6295",
-      "texto_2": "NO --> Carlota_fiesta == false",
+      "texto_2": "NO",
       "var_3": null,
       "opcion_3": null,
       "texto_3": null,
@@ -1546,7 +1219,6 @@
       "texto_4": null
     },
     "c3_036": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6368",
       "texto_1": "Hoy no te vas a buscar smurf cats?",
@@ -1561,7 +1233,6 @@
       "texto_4": null
     },
     "c3_035": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6362",
       "texto_1": "*quedada marta == true *",
@@ -1576,7 +1247,6 @@
       "texto_4": null
     },
     "c3_037": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6373",
       "texto_1": "Podemos hacer Italian Brainrots de plastilina",
@@ -1591,7 +1261,6 @@
       "texto_4": null
     },
     "c3_038": {
-      "condicion": false,
       "var_1": "afinidad_c3_038a",
       "opcion_1": "dialogo_6377",
       "texto_1": "Escribir",
@@ -1606,7 +1275,6 @@
       "texto_4": null
     },
     "c3_039": {
-      "condicion": false,
       "var_1": "afinidad_c3_039a",
       "opcion_1": "dialogo_6380",
       "texto_1": "No demasiado.",
@@ -1621,7 +1289,6 @@
       "texto_4": null
     },
     "c3_040": {
-      "condicion": false,
       "var_1": "afinidad_c3_040a",
       "opcion_1": "dialogo_6398",
       "texto_1": "IR --> fiesta_carlota == true",
@@ -1636,7 +1303,6 @@
       "texto_4": null
     },
     "c3_041": {
-      "condicion": false,
       "var_1": "afinidad_c3_041a",
       "opcion_1": "dialogo_6393",
       "texto_1": "Bueno, las clases con Marta se me hacen más amenas la verdad",
@@ -1651,13 +1317,12 @@
       "texto_4": null
     },
     "c3_042": {
-      "condicion": false,
       "var_1": "afinidad_c3_042a",
       "opcion_1": "dialogo_6404",
-      "texto_1": "No me da la vida gamejam == false",
+      "texto_1": "No me da la vida",
       "var_2": "afinidad_c3_042b",
       "opcion_2": "dialogo_6405",
-      "texto_2": "Yo me apunto gamejam == true",
+      "texto_2": "Yo me apunto",
       "var_3": null,
       "opcion_3": null,
       "texto_3": null,
@@ -1666,12 +1331,11 @@
       "texto_4": null
     },
     "c3_043": {
-      "condicion": false,
       "var_1": "afinidad_c3_043a",
-      "opcion_1": "dialogo_6408",
+      "opcion_1": "dialogo_64080",
       "texto_1": "Yo digo SI",
       "var_2": "afinidad_c3_043b",
-      "opcion_2": "dialogo_6408",
+      "opcion_2": "dialogo_64080",
       "texto_2": "Miedo me da.",
       "var_3": null,
       "opcion_3": null,
@@ -1681,7 +1345,6 @@
       "texto_4": null
     },
     "c3_044": {
-      "condicion": false,
       "var_1": "afinidad_c3_044a",
       "opcion_1": "dialogo_6412",
       "texto_1": "Eres tontísimo",
@@ -1696,7 +1359,6 @@
       "texto_4": null
     },
     "c3_045": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6415",
       "texto_1": "fiesta_carlota == true",
@@ -1711,7 +1373,6 @@
       "texto_4": null
     },
     "c3_046": {
-      "condicion": false,
       "var_1": "afinidad_c3_046a",
       "opcion_1": "dialogo_6419",
       "texto_1": "No sé yo si congenio mucho en esta fachosfera.",
@@ -1726,7 +1387,6 @@
       "texto_4": null
     },
     "c3_047": {
-      "condicion": false,
       "var_1": "afinidad_c3_047a",
       "opcion_1": "dialogo_6429",
       "texto_1": "UYY no que vergüenza",
@@ -1741,12 +1401,11 @@
       "texto_4": null
     },
     "c3_048": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6447",
       "texto_1": "gamejam == true",
       "var_2": null,
-      "opcion_2": "dialogo_",
+      "opcion_2": "dialogo_6471",
       "texto_2": "gamejam == false",
       "var_3": null,
       "opcion_3": null,
@@ -1756,7 +1415,6 @@
       "texto_4": null
     },
     "c3_049": {
-      "condicion": false,
       "var_1": "afinidad_c3_049a",
       "opcion_1": "dialogo_6440",
       "texto_1": "Contenta de verte",
@@ -1771,7 +1429,6 @@
       "texto_4": null
     },
     "c3_050": {
-      "condicion": false,
       "var_1": "afinidad_c3_050a",
       "opcion_1": "dialogo_6444",
       "texto_1": "No tienes remedio, pero iré.",
@@ -1786,7 +1443,6 @@
       "texto_4": null
     },
     "c3_051": {
-      "condicion": false,
       "var_1": "afinidad_c3_051a",
       "opcion_1": "dialogo_6444",
       "texto_1": "Venga voy",
@@ -1801,7 +1457,6 @@
       "texto_4": null
     },
     "c3_052": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6450",
       "texto_1": "Adoro shin chan",
@@ -1816,10 +1471,9 @@
       "texto_4": null
     },
     "c3_053": {
-      "condicion": false,
       "var_1": "afinidad_c3_053a",
       "opcion_1": "dialogo_6453",
-      "texto_1": "Con lo bien que me lo estoy pasando en este concurso, me estoy animando a apuntarme a (concurso de algoritmia de cuyo nombre no me acuerdo)",
+      "texto_1": "Con lo bien que me lo estoy pasando en este concurso, me estoy animando a apuntarme al Ada Byron",
       "var_2": "afinidad_c3_053b",
       "opcion_2": "dialogo_6456",
       "texto_2": "El otro día ví un cartel de un concurso de patinaje.",
@@ -1831,7 +1485,6 @@
       "texto_4": null
     },
     "c3_054": {
-      "condicion": false,
       "var_1": "afinidad_c3_054a",
       "opcion_1": "dialogo_6460",
       "texto_1": "Dormir al lado de Víctor",
@@ -1846,7 +1499,6 @@
       "texto_4": null
     },
     "c3_055": {
-      "condicion": false,
       "var_1": "afinidad_c3_055a",
       "opcion_1": "dialogo_6463",
       "texto_1": "Víctor, también te quiero ver a ti bailar y mover el culito.",
@@ -1861,7 +1513,6 @@
       "texto_4": null
     },
     "c3_056": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6484",
       "texto_1": "rutaCarlota",
@@ -1876,7 +1527,6 @@
       "texto_4": "rutaMarta"
     },
     "c3_057": {
-      "condicion": false,
       "var_1": "afinidad_c3_057a",
       "opcion_1": "dialogo_6492",
       "texto_1": "Qué poética!",
@@ -1891,7 +1541,6 @@
       "texto_4": null
     },
     "c3_058": {
-      "condicion": false,
       "var_1": "afinidad_c3_058a",
       "opcion_1": "dialogo_6498",
       "texto_1": "Ya ya, no hace falta que lo jures.",
@@ -1906,7 +1555,6 @@
       "texto_4": null
     },
     "c3_059": {
-      "condicion": false,
       "var_1": "afinidad_c3_059a",
       "opcion_1": "dialogo_6509",
       "texto_1": "Si quieres podría darles un toque, pero deberías ser tú el que hable con ellos, tienes que ganar seguridad en ti mismo.",
@@ -1921,7 +1569,6 @@
       "texto_4": null
     },
     "c3_060": {
-      "condicion": false,
       "var_1": "afinidad_c3_060a",
       "opcion_1": "dialogo_6522",
       "texto_1": "Vaya lo siento, menudo drama tía, hay que ver hoy en día, la gente está como una cabra.",
@@ -1936,7 +1583,6 @@
       "texto_4": null
     },
     "c3_061": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6542",
       "texto_1": "Eso me gustaría.",
@@ -1951,7 +1597,6 @@
       "texto_4": null
     },
     "c3_062": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6554",
       "texto_1": "ruta carlota",
@@ -1966,7 +1611,6 @@
       "texto_4": "rutaMarta"
     },
     "c3_063": {
-      "condicion": false,
       "var_1": "afinidad_c3_063a",
       "opcion_1": "dialogo_6560",
       "texto_1": "Tía siempre llegas tarde, cansa un poco.",
@@ -1981,7 +1625,6 @@
       "texto_4": null
     },
     "c3_064": {
-      "condicion": false,
       "var_1": "afinidad_c3_064a",
       "opcion_1": "dialogo_6577",
       "texto_1": "Tú como siempre preocupandote más porque se vea tu musculatura que tu elegancia.",
@@ -1996,7 +1639,6 @@
       "texto_4": null
     },
     "c3_065": {
-      "condicion": false,
       "var_1": "afinidad_c3_065a",
       "opcion_1": "dialogo_6595",
       "texto_1": "Tu lo estarías más si te hubieses peinado un poco",
@@ -2011,7 +1653,6 @@
       "texto_4": null
     },
     "c3_066": {
-      "condicion": false,
       "var_1": "afinidad_c3_066a",
       "opcion_1": "dialogo_6611",
       "texto_1": "No me gusta la piña!",
@@ -2026,7 +1667,6 @@
       "texto_4": null
     },
     "c3_067": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6652",
       "texto_1": "rutaCarlota",
@@ -2041,7 +1681,6 @@
       "texto_4": "rutaMarta"
     },
     "c3_068": {
-      "condicion": false,
       "var_1": "afinidad_c3_068a",
       "opcion_1": "dialogo_6655",
       "texto_1": "Me encanta!!",
@@ -2056,7 +1695,6 @@
       "texto_4": null
     },
     "c3_069": {
-      "condicion": false,
       "var_1": "afinidad_c3_069a",
       "opcion_1": "dialogo_6671",
       "texto_1": "Hoy no vienes en chandal eh, veo que aprendes",
@@ -2071,7 +1709,6 @@
       "texto_4": null
     },
     "c3_070": {
-      "condicion": false,
       "var_1": "afinidad_c3_070a",
       "opcion_1": "dialogo_6682",
       "texto_1": "Tantas ganas tienes de ver al resto?",
@@ -2086,7 +1723,6 @@
       "texto_4": null
     },
     "c3_071": {
-      "condicion": false,
       "var_1": "afinidad_c3_071a",
       "opcion_1": "dialogo_6694",
       "texto_1": "Bueno, no mucho",
@@ -2101,7 +1737,6 @@
       "texto_4": null
     },
     "c3_072": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6724",
       "texto_1": "Bastante la verdad",
@@ -2116,7 +1751,6 @@
       "texto_4": null
     },
     "c3_073": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6740",
       "texto_1": "rutaCarlota",
@@ -2131,7 +1765,6 @@
       "texto_4": "rutaMarta"
     },
     "c3_074": {
-      "condicion": false,
       "var_1": "afinidad_c3_074a",
       "opcion_1": "dialogo_6746",
       "texto_1": "(Voy a tratar de calmar las aguas)",
@@ -2146,7 +1779,6 @@
       "texto_4": null
     },
     "c3_075": {
-      "condicion": false,
       "var_1": "afinidad_c3_075a",
       "opcion_1": "dialogo_6763",
       "texto_1": "(Esto es una confusión, voy a hablar con tranquilidad)",
@@ -2161,7 +1793,6 @@
       "texto_4": null
     },
     "c3_076": {
-      "condicion": false,
       "var_1": "afinidad_c3_076a",
       "opcion_1": "dialogo_6789",
       "texto_1": "(Qué pregunta más rara, voy a tratar de hablar las cosas)",
@@ -2176,7 +1807,6 @@
       "texto_4": null
     },
     "c3_077": {
-      "condicion": false,
       "var_1": "afinidad_c3_077a",
       "opcion_1": "dialogo_6814",
       "texto_1": "(Creo que está rayada, vamos a tranquilizarla)",
@@ -2191,7 +1821,6 @@
       "texto_4": null
     },
     "c3_078": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6832",
       "texto_1": "(Hablar con María)",
@@ -2206,7 +1835,6 @@
       "texto_4": null
     },
     "c3_079": {
-      "condicion": false,
       "var_1": null,
       "opcion_1": "dialogo_6875",
       "texto_1": "rutaCarlota",
