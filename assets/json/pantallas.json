@@ -4229,6 +4229,196 @@
             "pantalla":{
                 "nombre": "c3_parque1.1"
             }
+        },
+
+         "c3_salon22":{
+            "pantalla": {
+                "nombre": "c3_salon22"
+            }
+             
+        },
+        "c3_habitacion22": {
+            "pantalla": {
+                "nombre": "c3_habitacion22"
+            }
+        },
+        "c3_mapa33":{
+            "pantalla": {
+                "nombre": "c3_mapa33"
+            }
+        },
+         "c3_entrada24":{
+            "pantalla":{
+                "nombre": "c3_entrada24"
+            }
+        },
+        "c3_cafe24":{
+            "pantalla":{
+                "nombre": "c3_cafe24"
+            }
+        },
+        "c3_pasillo24":{
+            "pantalla":{
+                "nombre": "c3_pasillo24"
+            }
+            
+        },
+        "c3_clase24":{
+            "pantalla":{
+                "nombre": "c3_clase24"
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "dialogo_6733"
+                    },
+                    "animation": null
+                }
+        }
+        },
+        "c3_futbol24":{
+            "pantalla":{
+                "nombre": "c3_futbol24"
+            }
+        },
+
+        "c3_mapa34":{
+            "pantalla": {
+                "nombre": "c3_mapa34"
+            }
+        },
+         "c3_entrada25":{
+            "pantalla":{
+                "nombre": "c3_entrada25"
+            }
+        },
+        "c3_cafe25":{
+            "pantalla":{
+                "nombre": "c3_cafe25"
+            }
+        },
+        "c3_pasillo25":{
+            "pantalla":{
+                "nombre": "c3_pasillo25"
+            }
+            
+        },
+        "c3_clase25":{
+            "pantalla":{
+                "nombre": "c3_clase25"
+            }
+        },
+        "c3_futbol25":{
+            "pantalla":{
+                "nombre": "c3_futbol25"
+            }
+        },
+         "c3_cita9":{
+            "pantalla": {
+                "nombre": "c3_cita9"
+            },
+
+              "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "dialogo_6739"
+                    },
+                    "animation": null
+                }
+        }
+        },
+
+         "c3_cita10":{
+            "pantalla": {
+                "nombre": "c3_cita10"
+            }
+        },
+         "c3_mapa35":{
+            "pantalla": {
+                "nombre": "c3_mapa35"
+            }
+        },
+          "c3_salon23":{
+            "pantalla": {
+                "nombre": "c3_salon23"
+            },
+
+              "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "dialogo_6831"
+                    },
+                    "animation": null
+                }
+        }
+             
+        },
+        "c3_habitacion23": {
+            "pantalla": {
+                "nombre": "c3_habitacion23"
+            }
+        },
+         "c3_mapa36":{
+            "pantalla": {
+                "nombre": "c3_mapa36"
+            }
+        },
+          "c3_salon24":{
+            "pantalla": {
+                "nombre": "c3_salon24"
+            }
+             
+        },
+        "c3_habitacion24": {
+            "pantalla": {
+                "nombre": "c3_habitacion24"
+            }
+        },
+        "c3_parque1":{
+            "pantalla": {
+                "nombre": "c3_parque1"
+            },
+
+              "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "dialogo_6856"
+                    },
+                    "animation": null
+                }
+        }
         }
     }
 }

@@ -13714,7 +13714,7 @@
       "next_scene_id": null
     },
     "dialogo_6721": {
-      "texto": "Algo que contarnos, ehhh",
+      "texto": "Algo que contarnos!! Somos la policía vegana, cuenta cuenta",
       "npc": "lorena",
       "pose": "feliz",
       "fondo": "salon",
@@ -13769,7 +13769,7 @@
       "next_scene_id": null
     },
     "dialogo_6726": {
-      "texto": "Uyyy que cosaaas",
+      "texto": "Uyyy que cosaaas te pasan amigaa",
       "npc": "jaime",
       "pose": "feliz",
       "fondo": "salon",
@@ -13840,16 +13840,16 @@
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "dialogo_6733",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_salon22"
     },
     "dialogo_6733": {
       "texto": "(Otro día de clase ...)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "clase",
       "opciones": false,
       "next_id": "dialogo_6734",
       "var_id": null,
@@ -13901,21 +13901,21 @@
       "next_scene_id": null
     },
     "dialogo_6738": {
-      "texto": "Que va, no creo que esta semana podamos vernos mucho, hay que estudiar los exámenes.",
+      "texto": "Que va, no creo que esta semana podamos vernos mucho, el finde intentaré quedar, hay que estudiar los exámenes.",
       "npc": "prota",
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "dialogo_6739",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cafe25"
     },
     "dialogo_6739": {
       "texto": "(Por fin ha llegado el día de quedar con ($most_interest), llevo varios días con mucho trabajo y que hablamos un poco menos)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "cita",
       "opciones": true,
       "next_id": "c3_073",
       "var_id": null,
@@ -14033,7 +14033,7 @@
       "next_scene_id": null
     },
     "dialogo_6750": {
-      "texto": "Claro, pero eso es lo que pensaba de ti hace unos meses, todos podemos tener prejuicios, seguramente tu también los puede que los tuvieses de mi, la cosa es que ahora nos conocemos y sabemos como somos en realidad.",
+      "texto": "Claro, pero eso es lo que pensaba de ti hace unos meses, todos podemos tener prejuicios, seguramente tu también los tuvieses de mi, la cosa es que ahora nos conocemos y sabemos como somos en realidad.",
       "npc": "prota",
       "pose": "triste",
       "fondo": "cita",
@@ -14082,7 +14082,7 @@
       "pose": "normal",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6755",
+      "next_id": "dialogo_6760",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -14093,7 +14093,7 @@
       "pose": "normal",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6760",
+      "next_id": "dialogo_6756",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -14104,7 +14104,7 @@
       "pose": "rayado",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6756",
+      "next_id": "dialogo_6757",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -14115,7 +14115,7 @@
       "pose": "triste",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6757",
+      "next_id": "dialogo_6758",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -14126,7 +14126,7 @@
       "pose": "rayado",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6758",
+      "next_id": "dialogo_6759",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -14154,15 +14154,15 @@
       "next_scene_id": null
     },
     "dialogo_6761": {
-      "texto": "(Creo que ha sido María, ella ha estado últimamente muy metida en mi relación, en varias ocasiones se ha quedado a solas con ella, que forma más rastrera de comportarse.)",
+      "texto": "(Creo que ha sido María la metemerdé, ella ha estado últimamente muy metida en mi relación, en varias ocasiones se ha quedado a solas con ella, que forma más rastrera de comportarse.)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
-      "next_id": "dialogo_6831",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cita10"
     },
     "dialogo_6762": {
       "texto": "Te voy a ser sincero, pensaba que durante estas semanas me veías de otra manera. Pensaba que me estaba centrando contigo, pero ya veo que soy un guarro y un picaflor, eso es lo único que piensas de mí.",
@@ -14198,7 +14198,7 @@
       "next_scene_id": null
     },
     "dialogo_6765": {
-      "texto": "¿Quién te ha dicho eso?",
+      "texto": "¿Quién te ha dicho eso? es mas falso que una moneda de 3€, totalmente sacado de contexto",
       "npc": "prota",
       "pose": "triste",
       "fondo": "cita",
@@ -14209,7 +14209,7 @@
       "next_scene_id": null
     },
     "dialogo_6766": {
-      "texto": "Tu compi, con la que estás siempre.",
+      "texto": "Tu querida compi",
       "npc": "montero",
       "pose": "normal",
       "fondo": "cita",
@@ -14220,7 +14220,7 @@
       "next_scene_id": null
     },
     "dialogo_6767": {
-      "texto": "¡Qué zorra! Voy a tener una seria conversación con ella. Ya le hubiese gustado tener algo contigo. Si que es cierto que hace unos meses veía complicado que pudieses tener una relación seria con alguien, pero de verdad, he visto que has cambiado.",
+      "texto": "¡Qué zorra! Voy a tener una seria conversación con ella. Ya le hubiese gustado tener algo contigo. Si que es cierto que hace unos meses veía complicado que pudieses tener una relación seria con alguien, pero de verdad, he visto que has cambiado y quiero confiar en ti, estoy preparada para ello.",
       "npc": "prota",
       "pose": "triste",
       "fondo": "cita",
@@ -14330,7 +14330,7 @@
       "next_scene_id": null
     },
     "dialogo_6777": {
-      "texto": "Síi",
+      "texto": "Síi y tan en serio",
       "npc": "montero",
       "pose": "normal",
       "fondo": "cita",
@@ -14352,7 +14352,7 @@
       "next_scene_id": null
     },
     "dialogo_6779": {
-      "texto": "Bueno, habrá sido un malentendido.",
+      "texto": "Bueno, habrá sido un malentendido, hablaré con ella.",
       "npc": "montero",
       "pose": "normal",
       "fondo": "cita",
@@ -14363,7 +14363,7 @@
       "next_scene_id": null
     },
     "dialogo_6780": {
-      "texto": "Supongo",
+      "texto": "Supongo, la que voy a hablar con ella soy yo ...",
       "npc": "prota",
       "pose": "normal",
       "fondo": "cita",
@@ -14412,10 +14412,10 @@
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
-      "next_id": "dialogo_6831",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cita10"
     },
     "dialogo_6785": {
       "texto": "(Dónde está Víctor, con lo puntual que suele ser él)",
@@ -14616,8 +14616,19 @@
       "next_scene_id": null
     },
     "dialogo_6803": {
-      "texto": "Segurísimo",
+      "texto": "Segurísimo, pero a que viene todo esto",
       "npc": "prota",
+      "pose": "normal",
+      "fondo": "cita",
+      "opciones": false,
+      "next_id": "dialogo_68040",
+      "var_id": null,
+      "next_scene_type": null,
+      "next_scene_id": null
+    },
+    "dialogo_68040": {
+      "texto": "Nada, nada simplemente soy inseguro",
+      "npc": "victor",
       "pose": "normal",
       "fondo": "cita",
       "opciones": false,
@@ -14643,10 +14654,10 @@
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
-      "next_id": "dialogo_6831",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cita10"
     },
     "dialogo_6806": {
       "texto": "Hola guapa, cómo estás",
@@ -14918,10 +14929,10 @@
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
-      "next_id": "dialogo_6831",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cita10"
     },
     "dialogo_6831": {
       "texto": "Holaa como ha ido todo?",
@@ -15059,7 +15070,7 @@
       "texto": "(Vaya día, me acuesto ya)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "habitacion",
       "opciones": false,
       "next_id": "dialogo_6844",
       "var_id": null,
@@ -15067,7 +15078,7 @@
       "next_scene_id": null
     },
     "dialogo_6844": {
-      "texto": "Tía necesito que hablemos, que te pasó ayer",
+      "texto": "Tía necesito que hablemos, que pasó ayer",
       "npc": "maria",
       "pose": "rayado",
       "fondo": "salon",
@@ -15081,7 +15092,7 @@
       "texto": "(Bueno necesito desconectar un poco del piso, voy a llamar a Lorena)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "habitacion",
       "opciones": false,
       "next_id": "dialogo_6846",
       "var_id": null,
@@ -15193,10 +15204,10 @@
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
-      "next_id": "dialogo_6856",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_salon24"
     },
     "dialogo_6856": {
       "texto": "Estoy confundida, creo que no puedo confiar más en María.",
