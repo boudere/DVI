@@ -1417,7 +1417,7 @@
             },
             "npcs": {
                 "npc_1": {
-                    "nombre": "continuar dialogo",
+                    "nombre": "boton_continuar",
                     "img": "boton_continuar",
                     "pose": "normal",
                     "pos_x": 1500,
@@ -1483,7 +1483,7 @@
             },
             "npcs": {
                 "npc_1": {
-                    "nombre": "continuar dialogo",
+                    "nombre": "boton_continuar",
                     "img": "boton_continuar",
                     "pose": "normal",
                     "pos_x": 1500,
@@ -1534,7 +1534,7 @@
             },
             "npcs": {
                 "npc_1": {
-                    "nombre": "continuar dialogo",
+                    "nombre": "boton_continuar",
                     "img": "boton_continuar",
                     "pose": "normal",
                     "pos_x": 1500,
@@ -1575,7 +1575,7 @@
             },
             "npcs": {
                 "npc_1": {
-                    "nombre": "continuar dialogo",
+                    "nombre": "boton_continuar",
                     "img": "boton_continuar",
                     "pose": "normal",
                     "pos_x": 1500,
@@ -1626,7 +1626,7 @@
             },
             "npcs": {
                 "npc_1": {
-                    "nombre": "continuar dialogo",
+                    "nombre": "boton_continuar",
                     "img": "boton_continuar",
                     "pose": "normal",
                     "pos_x": 1500,
@@ -1682,7 +1682,7 @@
             },
             "npcs": {
                 "npc_1": {
-                    "nombre": "continuar dialogo",
+                    "nombre": "boton_continuar",
                     "img": "boton_continuar",
                     "pose": "normal",
                     "pos_x": 1500,

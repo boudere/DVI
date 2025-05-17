@@ -2367,7 +2367,7 @@
                     "animation": null,
                     "on_click":{
                         "scene": "pantalla",
-                        "name": "entrada_facultad_1_01",
+                        "name": "mapa_1_01",
                         "direction": "right"
                     }
                 }
@@ -2834,7 +2834,7 @@
                     "animation": null,
                     "on_click":{
                         "scene": "pantalla",
-                        "name": "entrada_facultad_1_02",
+                        "name": "mapa_1_02",
                         "direction": "right"
                     }
                 }
@@ -2965,7 +2965,7 @@
                     "animation": null,
                     "on_click":{
                         "scene": "pantalla",
-                        "name": "entrada_facultad_1_03",
+                        "name": "mapa_1_03",
                         "direction": "right"
                     }
                 }
@@ -3336,7 +3336,7 @@
                     "animation": null,
                     "on_click":{
                         "scene": "pantalla",
-                        "name": "entrada_facultad_1_04",
+                        "name": "mapa_1_04",
                         "direction": "right"
                     }
                 }

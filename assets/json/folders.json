@@ -68,6 +68,13 @@
                   ]
                 },
                 {
+                  "name": "entradafacul",
+                  "folders": [],
+                  "files": [
+                    "entradafacul.png"
+                  ]
+                },
+                {
                   "name": "fin_demo",
                   "folders": [],
                   "files": [
@@ -499,7 +506,7 @@
                   "name": "entradafacul",
                   "folders": [],
                   "files": [
-                    "entrada_pasillo.png"
+                    "entradafacul_derecha.png"
                   ]
                 },
                 {
