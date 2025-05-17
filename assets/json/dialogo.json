@@ -11153,10 +11153,10 @@
       "pose": "normal",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6535",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cita2"
     },
     "dialogo_6494": {
       "texto": "Llevo unos días que estoy un poco rayado.",
@@ -11241,10 +11241,10 @@
       "pose": "normal",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6535",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cita2"
     },
     "dialogo_6502": {
       "texto": "Antes sí, pero estoy cambiando porque me empiezo a sentir un poco vacío, estoy un poco cansado, pero me cuesta replantearme las cosas, abrirme con alguien...",
@@ -11406,10 +11406,10 @@
       "pose": "normal",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6535",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cita2"
     },
     "dialogo_6517": {
       "texto": "Bueno tía, me está gustando mucho retormar el contacto.",
@@ -11527,10 +11527,10 @@
       "pose": "normal",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6535",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cita2"
     },
     "dialogo_6528": {
       "texto": "?",
@@ -11538,7 +11538,7 @@
       "pose": "triste",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6530",
+      "next_id": "dialogo_6529",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -11549,7 +11549,7 @@
       "pose": "normal",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6531",
+      "next_id": "dialogo_6530",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -11560,7 +11560,7 @@
       "pose": "triste",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6532",
+      "next_id": "dialogo_6531",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -11571,7 +11571,7 @@
       "pose": "normal",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6533",
+      "next_id": "dialogo_6532",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -11582,7 +11582,7 @@
       "pose": "normal",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6534",
+      "next_id": "dialogo_6533",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -11593,7 +11593,7 @@
       "pose": "normal",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6535",
+      "next_id": "dialogo_6534",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -11686,11 +11686,24 @@
       "next_scene_type": null,
       "next_scene_id": null
     },
-    "dialogo_6542": {
-      "texto": "Otro día más a clase",
+"dialogo_6542": {
+      "texto": "(Otro día más ...)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "habitacion",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": null,
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_salon18"
+    },
+
+
+    "dialogo_65420": {
+      "texto": "(La senda del triunfo puede ser complicada)",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "clase",
       "opciones": false,
       "next_id": "dialogo_6543",
       "var_id": null,
@@ -11701,7 +11714,7 @@
       "texto": "(No ha venido casi nadie a clase hoy, me siento un poco sola)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "cafeteria",
+      "fondo": "clase",
       "opciones": false,
       "next_id": "dialogo_6544",
       "var_id": null,
@@ -11753,7 +11766,7 @@
       "next_scene_id": null
     },
     "dialogo_6548": {
-      "texto": "Acabo de ver tu mensaje jeje, no me daba tiempo a llegar a clase, me he encontrado con María e (interés romántico) en el metro y nos hemos quedado aquí esperándote.",
+      "texto": "Acabo de ver tu mensaje jeje, no me daba tiempo a llegar a clase, me he encontrado con María y ($most_interest) en el metro y nos hemos quedado aquí esperándote.",
       "npc": "lorena",
       "pose": "normal",
       "fondo": "cafeteria",
@@ -11859,14 +11872,14 @@
       "opciones": false,
       "next_id": "dialogo_6558",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_entrada18"
     },
     "dialogo_6558": {
-      "texto": "(Ha llegado el día!! Me voy a poner guapa para esta tarde, tengo mariposas en el estómago)",
+      "texto": "(Ha llegado el día!!Espero estar lo suficientemente guapa, tengo mariposas en el estómago)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "parque",
       "opciones": false,
       "next_id": "dialogo_6559",
       "var_id": null,
@@ -12039,10 +12052,10 @@
       "next_scene_id": null
     },
     "dialogo_6574": {
-      "texto": "(Ha llegado el día!! Me voy a poner guapa para esta tarde, tengo mariposas en el estómago)",
+      "texto": "(Ha llegado el día!!Espero estar lo suficientemente guapa, tengo mariposas en el estómago)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "cita",
       "opciones": false,
       "next_id": "dialogo_6575",
       "var_id": null,

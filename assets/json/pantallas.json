@@ -3721,6 +3721,102 @@
                     "animation": null
                 }
         }
+        },
+          "c3_mapa23":{
+            "pantalla": {
+                "nombre": "c3_mapa23"
+            }
+        },
+        "c3_cita2":{
+            "pantalla": {
+                "nombre": "c3_cita2"
+            }
+        },
+         "c3_salon17":{
+            "pantalla": {
+                "nombre": "c3_salon17"
+            },
+              "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "dialogo_6535"
+                    },
+                    "animation": null
+                }
+        }
+          
+        },
+        "c3_habitacion17": {
+            "pantalla": {
+                "nombre": "c3_habitacion17"
+            }
+        },
+         "c3_entrada17":{
+            "pantalla":{
+                "nombre": "c3_entrada17"
+            }
+        },
+        "c3_cafe17":{
+            "pantalla":{
+                "nombre": "c3_cafe17"
+            }
+        },
+        "c3_pasillo17":{
+            "pantalla":{
+                "nombre": "c3_pasillo17"
+            }
+            
+        },
+        "c3_clase17":{
+            "pantalla":{
+                "nombre": "c3_clase17"
+            }, 
+            
+              "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "dialogo_65420"
+                    },
+                    "animation": null
+                }
+        }
+        },
+        "c3_futbol17":{
+            "pantalla":{
+                "nombre": "c3_futbol17"
+            }
+        },
+        "c3_mapa24":{
+            "pantalla": {
+                "nombre": "c3_mapa24"
+            }
+        },
+         "c3_salon18":{
+            "pantalla": {
+                "nombre": "c3_salon18"
+            }
+          
+        },
+        "c3_habitacion18": {
+            "pantalla": {
+                "nombre": "c3_habitacion18"
+            }
         }
     }
 }
