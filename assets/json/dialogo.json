@@ -11695,7 +11695,7 @@
       "next_id": "FIN",
       "var_id": null,
       "next_scene_type": "pantalla",
-      "next_scene_id": "c3_salon18"
+      "next_scene_id": "c3_habitacion18"
     },
 
 
@@ -11870,7 +11870,7 @@
       "pose": "normal",
       "fondo": "entradafacul",
       "opciones": false,
-      "next_id": "dialogo_6558",
+      "next_id": "FIN",
       "var_id": null,
       "next_scene_type": "pantalla",
       "next_scene_id": "c3_entrada18"
@@ -11879,7 +11879,7 @@
       "texto": "(Ha llegado el día!!Espero estar lo suficientemente guapa, tengo mariposas en el estómago)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "parque",
+      "fondo": "cita",
       "opciones": false,
       "next_id": "dialogo_6559",
       "var_id": null,
@@ -11909,7 +11909,7 @@
       "next_scene_id": null
     },
     "dialogo_6561": {
-      "texto": "Bueno, supongo que nadie es perfecto, tranquila jajajaja",
+      "texto": "Bueno, supongo que nadie es perfecto, tranquila",
       "npc": "prota",
       "pose": "normal",
       "fondo": "cita",
@@ -11953,7 +11953,7 @@
       "next_scene_id": null
     },
     "dialogo_6565": {
-      "texto": "Me alegro de que estés más tranquila",
+      "texto": "Me alegro de que estés más tranquila, un peso menos de encima supongo",
       "npc": "prota",
       "pose": "normal",
       "fondo": "cita",
@@ -11991,6 +11991,17 @@
       "pose": "normal",
       "fondo": "cita",
       "opciones": false,
+      "next_id": "dialogo_65680",
+      "var_id": null,
+      "next_scene_type": null,
+      "next_scene_id": null
+    },
+     "dialogo_65680": {
+      "texto": "(El resto de la quedada ha transcurrido por buen cauce)",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "cita",
+      "opciones": false,
       "next_id": "dialogo_6569",
       "var_id": null,
       "next_scene_type": null,
@@ -12002,10 +12013,10 @@
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
-      "next_id": "dialogo_6621",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cita7"
     },
     "dialogo_6570": {
       "texto": "Te gustaría quedar este  fin de semana de nuevo?",
@@ -12019,7 +12030,7 @@
       "next_scene_id": null
     },
     "dialogo_6571": {
-      "texto": "Sí, claro jeje",
+      "texto": "Sí, claro hehe (sonrisita)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "cafeteria",
@@ -12046,10 +12057,10 @@
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "dialogo_6574",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cafe19"
     },
     "dialogo_6574": {
       "texto": "(Ha llegado el día!!Espero estar lo suficientemente guapa, tengo mariposas en el estómago)",
@@ -12074,7 +12085,7 @@
       "next_scene_id": null
     },
     "dialogo_6576": {
-      "texto": "Hola señorita, estás muy guapa.",
+      "texto": "Hola señorita,  muy guapa está usted.",
       "npc": "montero",
       "pose": "feliz",
       "fondo": "cita",
@@ -12189,21 +12200,33 @@
       "pose": "normal",
       "fondo": "cita",
       "opciones": false,
+      "next_id": "dialogo_65870",
+      "var_id": null,
+      "next_scene_type": null,
+      "next_scene_id": null
+    },
+     "dialogo_65870": {
+      "texto": "(Besitos y más cosillas)",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "cita",
+      "opciones": false,
       "next_id": "dialogo_6587",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
     },
+
     "dialogo_6587": {
       "texto": "(Este chico me vuelve loca, en todos los sentidos)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
-      "next_id": "dialogo_6621",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cita7"
     },
     "dialogo_6588": {
       "texto": "Una pregunta, tienes libre este finde?",
@@ -12228,7 +12251,7 @@
       "next_scene_id": null
     },
     "dialogo_6590": {
-      "texto": "Sí, efectivamente.",
+      "texto": "Sí, efectivamente, en eso pensaba -> <-",
       "npc": "victor",
       "pose": "normal",
       "fondo": "cafeteria",
@@ -12255,16 +12278,16 @@
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "dialogo_6593",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cafe20"
     },
     "dialogo_6593": {
-      "texto": "(Ha llegado el día!! Me voy a poner guapa para esta tarde, tengo mariposas en el estómago)",
+      "texto": "(Ha llegado el día!! Tengo mariposas en el estómago)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "cita",
       "opciones": false,
       "next_id": "dialogo_6594",
       "var_id": null,
@@ -12272,7 +12295,7 @@
       "next_scene_id": null
     },
     "dialogo_6594": {
-      "texto": "Hola, que guapa estás",
+      "texto": "Hola, que guapa!!",
       "npc": "victor",
       "pose": "normal",
       "fondo": "cita",
@@ -12360,7 +12383,7 @@
       "next_scene_id": null
     },
     "dialogo_6602": {
-      "texto": "Sí",
+      "texto": "Efectivy wonder",
       "npc": "prota",
       "pose": "normal",
       "fondo": "cita",
@@ -12382,7 +12405,7 @@
       "next_scene_id": null
     },
     "dialogo_6604": {
-      "texto": "Sí, entre otras cosas ... (momento rosita)",
+      "texto": "Sí, entre otras muchas cosas ... (momento rosita)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "cita",
@@ -12398,10 +12421,10 @@
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
-      "next_id": "dialogo_6621",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cita7"
     },
     "dialogo_6606": {
       "texto": "He pensado que este finde podemos ir al parque del otro día.",
@@ -12431,16 +12454,16 @@
       "pose": "feliz",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "dialogo_6609",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cafe21"
     },
     "dialogo_6609": {
-      "texto": "(Ha llegado el día!! Me voy a poner guapa para esta tarde, tengo mariposas en el estómago)",
+      "texto": "(Ha llegado el día!! Tengo mariposas en el estómago)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "cita",
       "opciones": false,
       "next_id": "dialogo_6610",
       "var_id": null,
@@ -12464,13 +12487,13 @@
       "pose": "triste",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6613",
+      "next_id": "dialogo_6612",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
     },
     "dialogo_6612": {
-      "texto": "No te preocupes, al menos has tenido el detalle",
+      "texto": "No te preocupes, al menos has tenido el detalle, podrías no haber traído nada, como yo :(",
       "npc": "prota",
       "pose": "normal",
       "fondo": "cita",
@@ -12481,7 +12504,7 @@
       "next_scene_id": null
     },
     "dialogo_6613": {
-      "texto": "Que acierto jajjaa están súper ricos",
+      "texto": "Que acierto están súper ricos, de rechupete",
       "npc": "marta",
       "pose": "feliz",
       "fondo": "cita",
@@ -12525,7 +12548,7 @@
       "next_scene_id": null
     },
     "dialogo_6617": {
-      "texto": "Casualidades bonitas que tiene el destino.",
+      "texto": "Casualidades bonitas que tiene el destino, o los aasstrossss.",
       "npc": "marta",
       "pose": "normal",
       "fondo": "cita",
@@ -12549,7 +12572,7 @@
     "dialogo_6619": {
       "texto": "Eso está por verse todavía",
       "npc": "marta",
-      "pose": "normal",
+      "pose": "feliz",
       "fondo": "cita",
       "opciones": false,
       "next_id": "dialogo_6620",
@@ -12563,13 +12586,13 @@
       "pose": "normal",
       "fondo": "negro",
       "opciones": false,
-      "next_id": "dialogo_6621",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cita7"
     },
     "dialogo_6621": {
-      "texto": "Bueno, que tal con ($most_interest), últimamente os veo quedar mucho",
+      "texto": "Bueno, que tal con ($most_interest), últimamente os veo quedar mucho, no os separáis",
       "npc": "maria",
       "pose": "normal",
       "fondo": "salon",
