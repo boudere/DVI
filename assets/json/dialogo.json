@@ -12647,21 +12647,21 @@
       "next_scene_id": null
     },
     "dialogo_6626": {
-      "texto": "Tía me tienes que ir actualizando!",
+      "texto": "Tía me tienes que ir actualizando, estoy expectante!",
       "npc": "maria",
       "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "dialogo_6627",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_salon20"
     },
     "dialogo_6627": {
       "texto": "(Toca día de rutina y de clase)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "clase",
       "opciones": false,
       "next_id": "dialogo_6628",
       "var_id": null,
@@ -12691,7 +12691,7 @@
       "next_scene_id": null
     },
     "dialogo_6630": {
-      "texto": "Lo dices en serio?",
+      "texto": "Lo dices en serio?, yo necesito desayunar lo mismo que tú!",
       "npc": "lorena",
       "pose": "normal",
       "fondo": "clase",
@@ -12889,7 +12889,7 @@
       "next_scene_id": null
     },
     "dialogo_6648": {
-      "texto": "Eso",
+      "texto": "Eso cara queso",
       "npc": "lorena",
       "pose": "normal",
       "fondo": "cafeteria",
@@ -12900,7 +12900,7 @@
       "next_scene_id": null
     },
     "dialogo_6649": {
-      "texto": "Bueno puede ser una opción",
+      "texto": "Bueno ... puede ser una opción",
       "npc": "prota",
       "pose": "normal",
       "fondo": "cafeteria",
@@ -12916,16 +12916,38 @@
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "dialogo_6651",
+      "next_id": "dialogo_66510",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
+    },
+    "dialogo_66510": {
+      "texto": "Ojo un dospa",
+      "npc": "jaime",
+      "pose": "feliz",
+      "fondo": "cafeteria",
+      "opciones": false,
+      "next_id": "dialogo_66511",
+      "var_id": null,
+      "next_scene_type": null,
+      "next_scene_id": null
+    },
+    "dialogo_66511": {
+      "texto": "Jaime!!! Que asco",
+      "npc": "lorena",
+      "pose": "rayado",
+      "fondo": "cafeteria",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": null,
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cafe23"
     },
     "dialogo_6651": {
       "texto": "(Finalmente iremos los cuatro, aunque voy a ir primero a solas con ($most_interest))",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "cita",
       "opciones": true,
       "next_id": "c3_067",
       "var_id": null,
@@ -12971,7 +12993,7 @@
       "pose": "normal",
       "fondo": "cita",
       "opciones": false,
-      "next_id": "dialogo_6656",
+      "next_id": "dialogo_6657",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -13142,7 +13164,7 @@
       "next_scene_id": null
     },
     "dialogo_6671": {
-      "texto": "Intentando buscar la mejor versión de mi mismo",
+      "texto": "Intentando buscar la mejor versión de mi mismo, sobre todo contigo",
       "npc": "montero",
       "pose": "feliz",
       "fondo": "cita",
@@ -13219,7 +13241,7 @@
       "next_scene_id": null
     },
     "dialogo_6678": {
-      "texto": "ya jejeje",
+      "texto": "ya (risita)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "cita",
@@ -13285,7 +13307,7 @@
       "next_scene_id": null
     },
     "dialogo_6684": {
-      "texto": "Y eso?",
+      "texto": "Yo en realidad también",
       "npc": "prota",
       "pose": "normal",
       "fondo": "cita",
@@ -13296,7 +13318,7 @@
       "next_scene_id": null
     },
     "dialogo_6685": {
-      "texto": "Puees, me he dado cuenta de que siempre he sido un tipo bastante inseguro, siempre he sacado buenas notas y he sido el primero de la clase, pero detrás de esto, tengo una gran coraza y una baja autoestima en otros ámbitos.",
+      "texto": "Me gustaría decirte ..., me he dado cuenta de que siempre he sido un tipo bastante inseguro, siempre he sacado buenas notas y he sido el primero de la clase, pero detrás de esto, tengo una gran coraza y una baja autoestima en otros ámbitos.",
       "npc": "victor",
       "pose": "normal",
       "fondo": "cita",
@@ -13340,7 +13362,7 @@
       "next_scene_id": null
     },
     "dialogo_6689": {
-      "texto": "Yo también siento lo mismo.",
+      "texto": "La verdad es que yo también siento lo mismo.",
       "npc": "prota",
       "pose": "normal",
       "fondo": "cita",
@@ -13406,7 +13428,7 @@
       "next_scene_id": null
     },
     "dialogo_6695": {
-      "texto": "Olee vamosss",
+      "texto": "Lo sabía, mi instinto no falla",
       "npc": "marta",
       "pose": "normal",
       "fondo": "cita",
@@ -13483,7 +13505,7 @@
       "next_scene_id": null
     },
     "dialogo_6702": {
-      "texto": "¿Tú también sientes cosas por mí ?",
+      "texto": "¿Tú también .... sientes cosas por mí ?",
       "npc": "marta",
       "pose": "feliz",
       "fondo": "cita",
@@ -13494,7 +13516,7 @@
       "next_scene_id": null
     },
     "dialogo_6703": {
-      "texto": "Se podría decir que sí",
+      "texto": "Se podría decir que sí, será cosa de los astros",
       "npc": "prota",
       "pose": "feliz",
       "fondo": "cita",
@@ -13519,7 +13541,7 @@
       "texto": "(Ha llegado la hora de la quedada con el resto, Lorena y Jaime no saben que hemos quedado ($most_interest) y yo al final, un rato antes)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "cita",
+      "fondo": "parque1",
       "opciones": false,
       "next_id": "dialogo_6706",
       "var_id": null,
@@ -13530,7 +13552,7 @@
       "texto": "Eyy chicos holaa",
       "npc": "lorena",
       "pose": "normal",
-      "fondo": "cita",
+      "fondo": "parque1",
       "opciones": false,
       "next_id": "dialogo_6707",
       "var_id": null,
@@ -13538,10 +13560,10 @@
       "next_scene_id": null
     },
     "dialogo_6707": {
-      "texto": "He comprado merienda para todos",
+      "texto": "He comprado merienda para todos, espero que os guste",
       "npc": "lorena",
       "pose": "normal",
-      "fondo": "cita",
+      "fondo": "parque1",
       "opciones": false,
       "next_id": "dialogo_6708",
       "var_id": null,
@@ -13549,10 +13571,10 @@
       "next_scene_id": null
     },
     "dialogo_6708": {
-      "texto": "He traído cartas, ¿os apetece jugar?",
+      "texto": "He traído cartas, jugamos a la sota cabrona?",
       "npc": "jaime",
       "pose": "normal",
-      "fondo": "cita",
+      "fondo": "parque1",
       "opciones": false,
       "next_id": "dialogo_6709",
       "var_id": null,
@@ -13560,10 +13582,10 @@
       "next_scene_id": null
     },
     "dialogo_6709": {
-      "texto": "Sí porque no!!",
+      "texto": "Mejor un mus que somos 4",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "cita",
+      "fondo": "parque1",
       "opciones": false,
       "next_id": "dialogo_6710",
       "var_id": null,
@@ -13574,7 +13596,7 @@
       "texto": "Bueno chicos, ya llevamos un rato jugando, es hora de recogerse.",
       "npc": "jaime",
       "pose": "normal",
-      "fondo": "cita",
+      "fondo": "parque1",
       "opciones": false,
       "next_id": "dialogo_6711",
       "var_id": null,
@@ -13585,7 +13607,7 @@
       "texto": "Chao chicos hasta mañana!!",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "cita",
+      "fondo": "parque1",
       "opciones": false,
       "next_id": "dialogo_6712",
       "var_id": null,
@@ -13596,15 +13618,15 @@
       "texto": "(No me he despedido en publico de manera sentimental de ($most_interest) aún es pronto para eso creo.",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "parque1",
       "opciones": false,
-      "next_id": "dialogo_6713",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_parque1.1"
     },
     "dialogo_6713": {
-      "texto": "Ya he llegado!",
+      "texto": "Ya he arrivadooo!",
       "npc": "prota",
       "pose": "normal",
       "fondo": "salon",
@@ -13637,7 +13659,7 @@
       "next_scene_id": null
     },
     "dialogo_6716": {
-      "texto": "En serio ???",
+      "texto": "Vees, ya te decía yo, últimemente sois uña y carne",
       "npc": "maria",
       "pose": "normal",
       "fondo": "salon",
@@ -13659,7 +13681,7 @@
       "next_scene_id": null
     },
     "dialogo_6718": {
-      "texto": "Que bonito, estoy orgullosa",
+      "texto": "Que bonito es el amor, estoy orgullosa",
       "npc": "maria",
       "pose": "normal",
       "fondo": "salon",
@@ -13673,7 +13695,7 @@
       "texto": "(Hoy vienen a comer a casa Jaime y Lorena, tendré que ponerles al día)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "negro",
+      "fondo": "habitacion",
       "opciones": false,
       "next_id": "dialogo_6720",
       "var_id": null,

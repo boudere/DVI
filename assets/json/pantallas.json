@@ -4077,6 +4077,158 @@
             "pantalla": {
                 "nombre": "c3_habitacion19"
             }
+        },
+
+         "c3_salon20":{
+            "pantalla": {
+                "nombre": "c3_salon20"
+            }
+        },
+        "c3_habitacion20": {
+            "pantalla": {
+                "nombre": "c3_habitacion20"
+            }
+        },
+        "c3_mapa30":{
+            "pantalla": {
+                "nombre": "c3_mapa30"
+            }
+        },
+
+         "c3_entrada22":{
+            "pantalla":{
+                "nombre": "c3_entrada22"
+            }
+        },
+        "c3_cafe22":{
+            "pantalla":{
+                "nombre": "c3_cafe22"
+            }
+        },
+        "c3_pasillo22":{
+            "pantalla":{
+                "nombre": "c3_pasillo22"
+            }
+            
+        },
+        "c3_clase22":{
+            "pantalla":{
+                "nombre": "c3_clase22"
+            },
+
+              "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "dialogo_6627"
+                    },
+                    "animation": null
+                }
+        }
+            
+            
+        },
+        "c3_futbol22":{
+            "pantalla":{
+                "nombre": "c3_futbol22"
+            }
+        },
+          "c3_mapa31":{
+            "pantalla": {
+                "nombre": "c3_mapa31"
+            }
+        },
+
+         "c3_entrada23":{
+            "pantalla":{
+                "nombre": "c3_entrada23"
+            }
+        },
+        "c3_cafe23":{
+            "pantalla":{
+                "nombre": "c3_cafe23"
+            }
+        },
+        "c3_pasillo23":{
+            "pantalla":{
+                "nombre": "c3_pasillo23"
+            }
+            
+        },
+        "c3_clase23":{
+            "pantalla":{
+                "nombre": "c3_clase23"
+            }
+        },
+        "c3_futbol23":{
+            "pantalla":{
+                "nombre": "c3_futbol23"
+            }
+        },
+         "c3_cita8":{
+            "pantalla": {
+                "nombre": "c3_cita8"
+            },
+
+              "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "dialogo_6651"
+                    },
+                    "animation": null
+                }
+        }
+        },
+           "c3_salon21":{
+            "pantalla": {
+                "nombre": "c3_salon21"
+            },
+             "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "dialogo_6713"
+                    },
+                    "animation": null
+                }
+        }
+        },
+        "c3_habitacion21": {
+            "pantalla": {
+                "nombre": "c3_habitacion21"
+            }
+        },
+        "c3_mapa32":{
+            "pantalla": {
+                "nombre": "c3_mapa32"
+            }
+        },  
+        "c3_parque1.1":{
+            "pantalla":{
+                "nombre": "c3_parque1.1"
+            }
         }
     }
 }

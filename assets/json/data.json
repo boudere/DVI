@@ -21,6 +21,7 @@
                         "bares",
                         "bus",
                         "parque",
+                        "parque1",
                         "mapa",
                         "entradafacul",
                         "calle",
@@ -49,6 +50,7 @@
                         "habitacion",
                         "bares",
                         "parque",
+                        "parque1",
                         "bares",
                         "pasillo",
                         "cafeteria",
@@ -136,6 +138,7 @@
                         "calle",
                         "cita",
                         "parque", 
+                        "parque1",
                         "futbol"
                     ]
                 },

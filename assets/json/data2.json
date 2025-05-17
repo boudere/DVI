@@ -70,7 +70,9 @@
                         "entradafacul",
                          "calle",
                         "futbol",
-                        "cita"
+                        "cita",
+                        "parque",
+                        "parque1"
                     ]
                 }
             },
@@ -92,7 +94,9 @@
                         "entradafacul",
                         "calle",
                         "cita",
-                        "futbol"
+                        "futbol",
+                           "parque",
+                        "parque1"
                     ]
                 }
             }

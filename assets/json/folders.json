@@ -632,6 +632,14 @@
                     "cita_izquierda.png",
                     "cita_derecha.png"
                   ]
+                },
+                {
+                  "name": "parque1",
+                  "folders": [],
+                  "files": [
+                    "parque1_izquierda.png",
+                    "parque1_derecha.png"
+                  ]
                 }
               ],
               "files": []
