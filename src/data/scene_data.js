@@ -14,4 +14,5 @@ export const AUDIO_MANAGER = "AUDIO_MANAGER";
 // MINIJUEGOS
 export const JUEGO_OVEJA = "JuegoOveja";
 export const JUEGO_DISCOTECA = "JuegoDiscoteca";
-export const JUEGO_PAREJAS = "JuegoParejas"
+export const JUEGO_FRUIT = "JuegoFruit";
+export const JUEGO_PAREJAS = "JuegoParejas";

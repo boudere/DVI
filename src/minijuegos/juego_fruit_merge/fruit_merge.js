@@ -1,8 +1,8 @@
 import { MINIJUEGO_MANAGER, DATA_INFO, SCENE_MANAGER } from '/src/data/scene_data.js';
 import Games from '/src/minijuegos/games.js';
-import Fruit from '/src/minijuegos/fruit_merge/game_objects/sprites/fruit.js';
-import PantallaInicioDefault from "/src/minijuegos/fruit_merge/pantallas/pantalla_inicio"; 
-import PantallaFinalDefault from "/src/minijuegos/fruit_merge/pantallas/pantalla_final"; 
+import Fruit from '/src/minijuegos/juego_fruit_merge/game_objects/sprites/fruit.js';
+import PantallaInicioDefault from "/src/minijuegos/juego_fruit_merge/pantallas/pantalla_inicio"; 
+import PantallaFinalDefault from "/src/minijuegos/juego_fruit_merge/pantallas/pantalla_final"; 
 
 // Define tus tipos de fruta. Necesitarás las imágenes correspondientes.
 // El 'next' indica el índice de la fruta a la que se transforma al fusionarse. 'null' para la más grande.
