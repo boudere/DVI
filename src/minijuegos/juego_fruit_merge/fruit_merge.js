@@ -16,16 +16,16 @@ export const FRUIT_TYPES = [
     { key: 'fruta_melon_img', radius_factor: 0.45, points: 100, next: null, color: 0x90ee90 } // 5: Melón (más grande)
 ];
 
-const JUEGO_FRUIT_MERGE_KEY = 'JuegoFruitMerge'; // Define una clave única para tu juego
+const JUEGO_FRUIT = 'JuegoFruit'; 
 
 class JuegoFruitMerge extends Games {
     constructor() {
-        super({ key: JUEGO_FRUIT_MERGE_KEY });
+        super({ key: JUEGO_FRUIT });
 
         // Nombres de imágenes para pantallas (debes tener estas imágenes)
-        this.PANTALLA_INICIO_IMG = 'pantalla_inicio_fruit_merge';
-        this.PANTALLA_FINAL_IMG = 'pantalla_final_fruit_merge';
-        this.FONDO_IMG = 'fondo_fruit_merge'; // Imagen de fondo para el juego
+        this.PANTALLA_INICIO_IMG = 'pantalla_inicio';
+        this.PANTALLA_FINAL_IMG = 'pantalla_final';
+        this.FONDO_IMG = 'fondoFruit'; // Imagen de fondo para el juego
 
         this.FRUIT_DROP_Y = 100; // Altura desde donde cae la fruta
         this.GAME_OVER_LINE_Y = 150; // Altura de la línea de game over

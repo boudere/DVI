@@ -11816,10 +11816,10 @@
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "dialogo_6551",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": "minijuego cafeteria",
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "cafe_juego"
     },
     "dialogo_6551": {
       "texto": "Bueno, puede estar bien un rato",

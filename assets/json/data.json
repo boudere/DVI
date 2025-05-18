@@ -77,7 +77,8 @@
                         "copas_boton",
                         "fdi_boton",
                         "parque_boton",
-                        "piso_boton"
+                        "piso_boton", 
+                        "barra_cafe"
                     ]
                 },
                 "Clases": [
@@ -198,7 +199,7 @@
                 "tortillax.png",
                 "pantalla_inicio.png",
                 "pantalla_final.png",
-                "fondoFruit.jpg"
+                "fondoFruit.png"
                     ]
                 },
                 "Clases": [

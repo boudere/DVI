@@ -183,6 +183,11 @@
                 "nombre": "bares"
             }
         },
+         "cafe_juego": {
+            "pantalla": {
+                "nombre": "cafe_juego"
+            }
+        },
         "bares_2": {
             "pantalla": {
                 "nombre": "bares_2"
