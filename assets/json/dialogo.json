@@ -6998,7 +6998,7 @@
     },
     "dialogo_6124": {
       "texto": "Han sido los astros",
-      "npc": "prota",
+      "npc": "marta",
       "pose": "normal",
       "fondo": "entradafacul",
       "opciones": false,
@@ -7657,7 +7657,7 @@
       "next_scene_id": null
     },
     "dialogo_6183": {
-      "texto": "Ya veo.",
+      "texto": "Ya veo, que descriptiva eres.",
       "npc": "carlota",
       "pose": "normal",
       "fondo": "futbol",
@@ -7679,7 +7679,7 @@
       "next_scene_id": null
     },
     "dialogo_6185": {
-      "texto": "Creo que sí",
+      "texto": "Creo que sí, el pobre lo ha estado dando todo",
       "npc": "carlota",
       "pose": "normal",
       "fondo": "futbol",
@@ -7723,7 +7723,7 @@
       "next_scene_id": null
     },
     "dialogo_6189": {
-      "texto": "Oye mi novio es muy buen deportista",
+      "texto": "Oye mi novio es muy buen deportista, sino no podría estar con él",
       "npc": "carlota",
       "pose": "normal",
       "fondo": "futbol",
@@ -7822,7 +7822,7 @@
       "next_scene_id": null
     },
     "dialogo_6198": {
-      "texto": "Bueno ella es Carlota, una amiga y la novia de Alex.",
+      "texto": "Hola de nuevo a todos, ella es Carlota, una amiga y la novia de Alex.",
       "npc": "prota",
       "pose": "normal",
       "fondo": "futbol",
@@ -7833,7 +7833,7 @@
       "next_scene_id": null
     },
     "dialogo_6199": {
-      "texto": "Ya se quien es.",
+      "texto": "Ya se quien es tía.",
       "npc": "lorena",
       "pose": "normal",
       "fondo": "futbol",
@@ -7844,7 +7844,7 @@
       "next_scene_id": null
     },
     "dialogo_6200": {
-      "texto": "Bueno lo decía por el resto.",
+      "texto": "Bueno lo decía por el resto, egocéntrica.",
       "npc": "prota",
       "pose": "normal",
       "fondo": "futbol",
@@ -8284,7 +8284,7 @@
       "next_scene_id": null
     },
     "dialogo_6240": {
-      "texto": "Bueno jajaja",
+      "texto": "Bueno jajaja, eso me lo planteo con relativa frecuencia",
       "npc": "carlota",
       "pose": "normal",
       "fondo": "futbol",
@@ -8308,6 +8308,17 @@
     "dialogo_6242": {
       "texto": "Yo confío.",
       "npc": "lorena",
+      "pose": "normal",
+      "fondo": "futbol",
+      "opciones": false,
+      "next_id": "dialogo_62430",
+      "var_id": null,
+      "next_scene_type": null,
+      "next_scene_id": null
+    },
+     "dialogo_62430": {
+      "texto": "Yo no, son unos paquetes, tendré que poner las pilas a Alex.",
+      "npc": "carlota",
       "pose": "normal",
       "fondo": "futbol",
       "opciones": false,
@@ -8462,6 +8473,17 @@
     "dialogo_62560": {
       "texto": "Lets go",
       "npc": "maria",
+      "pose": "feliz",
+      "fondo": "futbol",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": null,
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_futbol8"
+    },
+     "dialogo_62563": {
+      "texto": "Arreando que es gerundio",
+      "npc": "samuel",
       "pose": "feliz",
       "fondo": "futbol",
       "opciones": false,
@@ -9980,7 +10002,7 @@
     "dialogo_6391": {
       "texto": "Hola chicas que tal os va.",
       "npc": "alex",
-      "pose": "feliz",
+      "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
       "next_id": "dialogo_6392",
@@ -10038,18 +10060,19 @@
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "dialogo_6397",
+      "next_id": "dialogo_63970",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
     },
-    "dialogo_6397": {
-      "texto": "(Justo veo que Carlota me ha escrito por whatsapp invitándome a su cumple, la semana que viene).",
+    
+    "dialogo_63970": {
+      "texto": "(Justo veo que Carlota me ha escrito por whatsapp invitándome a su cumple, la semana que viene)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": true,
-      "next_id": "c3_40",
+      "next_id": "c3_040",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -10089,7 +10112,7 @@
     },
     "dialogo_6401": {
       "texto": "Es como un concurso en el que tenemos que programar un videojuego en 48 horas, está súper guay, dormimos en la facultad etc.",
-      "npc": "prota",
+      "npc": "victor",
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
@@ -10126,10 +10149,10 @@
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "dialogo_6408",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "c3_cafe13"
     },
     "dialogo_6405": {
       "texto": "Venga yo me animo también",
@@ -10429,7 +10452,7 @@
       "next_scene_id": null
     },
     "dialogo_6430": {
-      "texto": "Vamoss !!!",
+      "texto": "Vamoss myy frieeendd!!!",
       "npc": "carlota",
       "pose": "normal",
       "fondo": "bares",
@@ -10462,7 +10485,7 @@
       "next_scene_id": null
     },
     "dialogo_6433": {
-      "texto": "La semana que viene tienes examen de derecho civil",
+      "texto": "La semana que viene tienes examen de derecho civil, que no se te olvide",
       "npc": "alex",
       "pose": "normal",
       "fondo": "bares",
@@ -10484,7 +10507,7 @@
       "next_scene_id": null
     },
     "dialogo_6435": {
-      "texto": "No por favor",
+      "texto": "No por favor, lo siento mucho",
       "npc": "alex",
       "pose": "normal",
       "fondo": "bares",
@@ -10698,7 +10721,7 @@
       "pose": "feliz",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "dialogo_6453",
+      "next_id": "dialogo_6454",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -10709,7 +10732,7 @@
       "pose": "feliz",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "dialogo_6454",
+      "next_id": "dialogo_6455",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
