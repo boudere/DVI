@@ -5930,7 +5930,7 @@
       "next_scene_id": null
     },
     "dialogo_6028": {
-      "texto": "Oleee",
+      "texto": "Ya has conseguido más que yo",
       "npc": "samuel",
       "pose": "feliz",
       "fondo": "calle",
@@ -5941,7 +5941,7 @@
       "next_scene_id": null
     },
     "dialogo_6029": {
-      "texto": "Bueno chicos, yo tiro para mi facultad, adiós chicos.",
+      "texto": "Bueno, yo tiro para mi facultad, adiós chicos.",
       "npc": "prota",
       "pose": "normal",
       "fondo": "calle",
@@ -6129,7 +6129,7 @@
     },
     "dialogo_6046": {
       "texto": "Puede ser un buen plan",
-      "npc": "prota",
+      "npc": "victor",
       "pose": "normal",
       "fondo": "pasillo",
       "opciones": false,
@@ -6360,7 +6360,7 @@
     },
     "dialogo_6067": {
       "texto": "Hola, sé quién eres, te he visto mucho por clase.",
-      "npc": "Alex",
+      "npc": "alex",
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
@@ -6393,7 +6393,7 @@
     },
     "dialogo_6070": {
       "texto": "Carlota, ¿mañana al final vienes a verme al partido de fútbol?",
-      "npc": "Alex",
+      "npc": "alex",
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
@@ -6426,7 +6426,7 @@
     },
     "dialogo_6073": {
       "texto": "Con los de la facultad de CAFyD",
-      "npc": "Alex",
+      "npc": "alex",
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": true,
@@ -6448,7 +6448,7 @@
     },
     "dialogo_6075": {
       "texto": "¿Quienes?",
-      "npc": "Alex",
+      "npc": "alex",
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
@@ -8923,7 +8923,7 @@
     },
     "dialogo_6295": {
       "texto": "Ya estoy aquí, hola ___",
-      "npc": "Alex",
+      "npc": "alex",
       "pose": "normal",
       "fondo": "cafeteria",
       "opciones": false,
@@ -9979,7 +9979,7 @@
     },
     "dialogo_6391": {
       "texto": "Hola chicas que tal os va.",
-      "npc": "Alex",
+      "npc": "alex",
       "pose": "feliz",
       "fondo": "cafeteria",
       "opciones": false,
@@ -10298,7 +10298,7 @@
     },
     "dialogo_6418": {
       "texto": "Me alegro de verte!",
-      "npc": "Alex",
+      "npc": "alex",
       "pose": "normal",
       "fondo": "bares",
       "opciones": true,
@@ -10320,7 +10320,7 @@
     },
     "dialogo_6420": {
       "texto": "Son buena gente.",
-      "npc": "Alex",
+      "npc": "alex",
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
@@ -10386,7 +10386,7 @@
     },
     "dialogo_6426": {
       "texto": "Buah Carlota llevas una importante",
-      "npc": "Alex",
+      "npc": "alex",
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
@@ -10463,7 +10463,7 @@
     },
     "dialogo_6433": {
       "texto": "La semana que viene tienes examen de derecho civil",
-      "npc": "Alex",
+      "npc": "alex",
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
@@ -10485,7 +10485,7 @@
     },
     "dialogo_6435": {
       "texto": "No por favor",
-      "npc": "Alex",
+      "npc": "alex",
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
