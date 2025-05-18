@@ -182,9 +182,29 @@
                         "pantalla_final_disco"
                     ]
                 },
+                  "JuegoFruit": {
+                    "Path": "juego_fruit/",
+                    "JuegoFruit": [
+                         "alitax.png",
+                "cafex.png",
+                "croasanx.png",
+                "croquetax.png",
+                "hamburguesax.png",
+                "heladox.png",
+                "huevox.png",
+                "kebabx.png",
+                "perritox.png",
+                "quesadillax.png",
+                "tortillax.png",
+                "pantalla_inicio.png",
+                "pantalla_final.png",
+                "fondoFruit.jpg"
+                    ]
+                },
                 "Clases": [
                     "JuegoOveja",
-                    "JuegoDiscoteca"
+                    "JuegoDiscoteca",
+                    "JuegoFruit"
                 ]
             },
             "Cursors": {

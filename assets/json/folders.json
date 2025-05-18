@@ -251,28 +251,23 @@
           "name": "minijuegos",
           "folders": [
             {
-              "name": "food_merge",
+              "name": "juego_fruit",
               "folders": [],
               "files": [
-                "cafe.png",
-                "cerve.png",
-                "churros.png",
-                "cocina.png",
-                "croasan.png",
-                "croquetas.png",
-                "donut.png",
-                "fondoMinijuegoFood.png",
-                "hamburguesa.png",
-                "huevos.png",
-                "kebap.png",
-                "magdalena.png",
-                "menu.png",
-                "patatas.png",
-                "prioridad.txt",
-                "quesadilla.png",
-                "salchichas.png",
-                "sandwich.png",
-                "tortilla.png"
+                "alitax.png",
+                "cafex.png",
+                "croasanx.png",
+                "croquetax.png",
+                "hamburguesax.png",
+                "heladox.png",
+                "huevox.png",
+                "kebabx.png",
+                "perritox.png",
+                "quesadillax.png",
+                "tortillax.png",
+                "pantalla_inicio.png",
+                "pantalla_final.png",
+                "fondoFruit.jpg"
               ]
             },
             {
@@ -429,7 +424,8 @@
                 "parque_boton.png",
                 "pelota_parque.png",
                 "piso_boton.png",
-                "puerta_disco.png"
+                "puerta_disco.png",
+                "barra_cafe.png"
               ]
             },
             {

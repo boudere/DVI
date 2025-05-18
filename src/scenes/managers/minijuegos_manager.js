@@ -92,6 +92,8 @@ class MinijuegosManager extends Managers {
                 return JuegoOveja;
             case JUEGO_DISCOTECA:
                 return JuegoDiscoteca;
+            case JUEGO_FRUIT:
+                return JuegoFruit;
             default:
                 return null;
         }
