@@ -10375,7 +10375,7 @@
     },
     "dialogo_6425": {
       "texto": "PERDÍ LA FAMA EN UN PIANO BAR, SE HAN OLVIDADO A QUE HUELE LA LUNAAAAA ....",
-      "npc": "anonimo",
+      "npc": "anonimo1",
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
@@ -10385,7 +10385,7 @@
       "next_scene_id": null
     },
     "dialogo_6426": {
-      "texto": "Buah Carlota llevas una importante",
+      "texto": "Lleváis todos una butarda importante",
       "npc": "alex",
       "pose": "normal",
       "fondo": "bares",
@@ -10396,8 +10396,8 @@
       "next_scene_id": null
     },
     "dialogo_6427": {
-      "texto": "Y qué lo digas.",
-      "npc": "anonimo",
+      "texto": "Carlota, ese es el dj que pinchó en el viaje a Vaqueira??.",
+      "npc": "anonimo1",
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
@@ -10407,9 +10407,9 @@
       "next_scene_id": null
     },
     "dialogo_6428": {
-      "texto": "Quien un karaoke!!!",
+      "texto": "Vooy un poccoooo borrachaa, Quien un KARAOKEE!!!",
       "npc": "carlota",
-      "pose": "normal",
+      "pose": "feliz",
       "fondo": "bares",
       "opciones": true,
       "next_id": "c3_047",
@@ -10420,7 +10420,7 @@
     "dialogo_6429": {
       "texto": "No seas tonta, anímate",
       "npc": "carlota",
-      "pose": "normal",
+      "pose": "feliz",
       "fondo": "bares",
       "opciones": false,
       "next_id": "dialogo_6431",
@@ -10441,7 +10441,7 @@
     },
     "dialogo_6431": {
       "texto": "Carlota hacía que no te veía así de motivada desde el verano pasado en Sotogrande!!!",
-      "npc": "anonimo",
+      "npc": "anonimo2",
       "pose": "normal",
       "fondo": "bares",
       "opciones": false,
