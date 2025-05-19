@@ -1,7 +1,7 @@
 import Managers from "/src/scenes/managers";
 import { AFINIDAD_DIALOGO_MANAGER, DATA_INFO, SCENE_MANAGER } from "/src/data/scene_data.js";
 
-// esta escena de momento solo lanza la escena de dialogo
+
 class AfinidadDialogoManager extends Managers {
     constructor() {
         super({ key: AFINIDAD_DIALOGO_MANAGER });
@@ -30,21 +30,34 @@ class AfinidadDialogoManager extends Managers {
     }
 
     enter(scene_data) {
+        this.datos_actualizados = false;
         this.datos_usuario = this.data_info_scene.get_datos_usaurio();
         this.variable_data = this.variables_data[scene_data.var_id];
         this.next_scene_id = scene_data.name;
 
-        if (Object.keys(this.variable_data).length / 2 == 1) {
+        if (this._get_length() == 1) {
             this.actualizar_datos();
         } else {
             this.elegir_dialogo();
         }
     }
 
+    _get_length() {
+        let max = Object.keys(this.variable_data).length / 2;
+        let length = 0;
+        for (let i = 1; i <= max; i++) {
+            let val = this.variable_data["var_" + i];
+            if (val) {
+                length++;
+            }
+        }
+        return length;
+    }
+
     elegir_dialogo() {
         let val_prefix = "val_"
         let var_prefix = "var_";
-        let max = Object.keys(this.variable_data).length / 2;
+        let max = this._get_length();
         let usuario_afinidad = this.datos_usuario.Afinidad;
 
         for (let i = 1; i <= max; i++) {
@@ -73,17 +86,11 @@ class AfinidadDialogoManager extends Managers {
 
     inicializar_datos(variable) {
         this.datos_usuario.Afinidad[variable] = 0;
+        if (variable == 'afinidad_maria') {
+            this.datos_usuario.Afinidad[variable] = 40;
+        }
 
         this.datos_actualizados = true;
-    }
-
-    enviar_dialogo(num) {
-        let on_click = {
-            scene: 'dialogo',
-            name: this.next_scene_id + this._numero_a_letra(num),
-            var_id: null
-        };
-        this.scene.get(SCENE_MANAGER).signal_click(on_click);
     }
 
     get_npc_most_afinity() {
@@ -101,7 +108,17 @@ class AfinidadDialogoManager extends Managers {
         return max_name;
     }
 
+    enviar_dialogo(num) {
+        let on_click = {
+            scene: 'dialogo',
+            name: this.next_scene_id + this._numero_a_letra(num),
+            var_id: null
+        };
+        this.scene.get(SCENE_MANAGER).signal_click(on_click);
+    }
+
     _numero_a_letra(n) {
+        if (n == -1) { return '';}
         return String.fromCharCode(64 + n);
       }
       
