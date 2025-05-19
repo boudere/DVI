@@ -48,12 +48,19 @@ class JuegoFruit extends Games {
         this.jumpHandler = null;
         this.loseButton = null;
         this.mouseMoveHandler = null;
+
+        // Define a factor for the player's initial Y position
+        this.initialPlayerYFactor = 0.35;
+
+        // NUEVA PROPIEDAD: Controla si el movimiento X del ratón está activo
+        this.horizontalMouseMoveActive = true;
     }
 
     create() {
         this.obstaculossaltados = 0;
         this.losing = false;
         this.gravityStarted = false;
+        this.horizontalMouseMoveActive = true; // Asegurar estado inicial en create también
         this.SCREEN_WIDTH = this.sys.game.canvas.width;
         this.SCREEN_HEIGHT = this.sys.game.canvas.height;
 
@@ -72,41 +79,36 @@ class JuegoFruit extends Games {
         this.jumpHandler = () => {
             if (!this.persona || this.losing) return;
 
-            // El juego "comienza" oficialmente con el primer clic si no ha comenzado
-            // Esto es importante para que los obstáculos y la puntuación solo avancen después.
             if (!this.started) {
-                // No es necesario llamar a this.start_game() aquí si la pantalla de inicio ya lo hizo.
-                // Si estamos directamente en el juego sin pantalla de inicio, this.start_game() ya se habrá llamado.
-                // Lo importante es que this.started se vuelva true.
-                // Si la pantalla de inicio está activa, ella llamará a start_game() que pondrá this.started = true.
-                // Si no hay pantalla de inicio, this.start_game() se llama desde enter().
-                // Forzamos 'started' aquí si no lo está, para asegurar que el juego se active.
                 if (!this.pantalla_inicio || (this.pantalla_inicio && !this.pantalla_inicio.visible)) {
-                     // Solo si la pantalla de inicio no está o ya se cerró.
-                     // this.start_game(); // Podría ser redundante si ya se llamó
-                     this.started = true; // Asegurar que el juego está "activo" para obstáculos etc.
-                     this._next_obstaculo(); // Iniciar obstáculos si no se han iniciado
+                     this.started = true;
+                     this._next_obstaculo();
                 }
-
             }
 
-
-            if (!this.gravityStarted) { // Solo activar gravedad una vez
+            if (!this.gravityStarted) {
                 this.gravityStarted = true;
+                // MODIFICACIÓN: Desactivar movimiento horizontal del ratón
+                this.horizontalMouseMoveActive = false;
+
                 if (this.persona.body) {
                     this.persona.body.setAllowGravity(true);
                 }
+                // If obstacles haven't started because of initial screen, start them now.
+                if (this.started && this.obstaculos.length === 0 && (!this.timerEvent || !this.timerEvent.getProgress() === 1)) {
+                    this._next_obstaculo();
+                }
             }
 
-            if (this.persona.body) { // Salto normal
+            if (this.persona.body) {
                 this.persona.setVelocityY(-450);
             }
         };
         this.input.on('pointerdown', this.jumpHandler);
 
         this.mouseMoveHandler = (pointer) => {
-            // Mover al jugador horizontalmente con el ratón SIEMPRE que exista y no esté perdiendo
-            if (this.persona && !this.losing) {
+            // MODIFICACIÓN: Solo mover si está activo
+            if (this.horizontalMouseMoveActive && this.persona && !this.losing) {
                 this.persona.x = pointer.x;
                 this.persona.x = Phaser.Math.Clamp(this.persona.x, this.persona.displayWidth / 2, this.SCREEN_WIDTH - this.persona.displayWidth / 2);
             }
@@ -120,16 +122,15 @@ class JuegoFruit extends Games {
         super.enter();
         this.losing = false;
         this.gravityStarted = false;
+        this.horizontalMouseMoveActive = true; // MODIFICACIÓN: Restablecer al entrar
         this.obstaculossaltados = 0;
         if (this.contadorTexto) this.contadorTexto.setText(`Puntuación: ${this.obstaculossaltados}`);
 
         this._clear_obstacles();
 
         if (this.persona) {
-            // Posicionar en la X actual del ratón si está disponible, sino centro.
-            // La Y es fija inicialmente.
             const initialX = this.input.mousePointer.x !== 0 ? this.input.mousePointer.x : this.SCREEN_WIDTH / 2;
-            this.persona.setPosition(initialX, this.SCREEN_HEIGHT * 0.5);
+            this.persona.setPosition(initialX, this.SCREEN_HEIGHT * this.initialPlayerYFactor);
             this.persona.setVelocity(0,0);
             this.persona.clearTint();
             this.persona.setActive(true).setVisible(true);
@@ -137,24 +138,22 @@ class JuegoFruit extends Games {
                  this.persona.body.setAllowGravity(false);
             }
         }
-        // No reanudar la física aquí, se hará en start_game o cuando la gravedad inicie
-        // this.physics.resume(); // Comentado
 
         if (this.loseButton) this.loseButton.setVisible(true).setActive(true);
 
         if (this.pantalla_inicio && typeof this.pantalla_inicio.enter === 'function') {
             this.pantalla_inicio.enter();
-            // this.started sigue false hasta que pantalla_inicio llame a start_game
         } else {
             console.warn("Pantalla de inicio no disponible para JuegoFruitFlap");
-            this.start_game(); // Si no hay pantalla de inicio, el juego comienza inmediatamente
+            this.start_game();
         }
     }
 
     start_game() {
         super.start_game();
         this.losing = false;
-        this.gravityStarted = false; // Gravedad NO inicia aquí, sino con el primer clic
+        this.gravityStarted = false;
+        this.horizontalMouseMoveActive = true; // MODIFICACIÓN: Restablecer al iniciar juego
         this.obstaculossaltados = 0;
         if (this.contadorTexto) this.contadorTexto.setText(`Puntuación: ${this.obstaculossaltados}`);
 
@@ -165,22 +164,19 @@ class JuegoFruit extends Games {
         if(this.fondo && typeof this.fondo.enter === 'function') this.fondo.enter();
         if(this.persona) {
              const initialX = this.input.mousePointer.x !== 0 ? this.input.mousePointer.x : this.SCREEN_WIDTH / 2;
-            this.persona.setPosition(initialX, this.SCREEN_HEIGHT * 0.5);
+            this.persona.setPosition(initialX, this.SCREEN_HEIGHT * this.initialPlayerYFactor);
             this.persona.setVelocity(0,0);
             this.persona.clearTint();
             this.persona.setActive(true).setVisible(true);
             if (this.persona.body) {
-                 this.persona.body.setAllowGravity(false); // Gravedad sigue desactivada
+                 this.persona.body.setAllowGravity(false);
             }
             if (typeof this.persona.enter === 'function') this.persona.enter();
         }
 
         this._clear_obstacles();
-        // NO iniciar _next_obstaculo aquí. Se iniciará con el primer clic que también activa la gravedad.
-        // this._next_obstaculo();
-        this.started = true; // Marca que el "juego" (interacción principal) ha comenzado
-                            // pero los obstáculos y gravedad esperan el primer clic.
-        this.physics.resume(); // Necesario para que el jugador colisione con bordes si se mueve con ratón
+        this.started = true;
+        this.physics.resume();
 
         if (this.loseButton) this.loseButton.setVisible(true).setActive(true);
     }
@@ -226,7 +222,7 @@ class JuegoFruit extends Games {
 
     _crear_persona() {
         let x = this.SCREEN_WIDTH / 2;
-        let y = this.SCREEN_HEIGHT * 0.5;
+        let y = this.SCREEN_HEIGHT * this.initialPlayerYFactor;
         const targetPlayerDisplaySize = 80;
         let scale = targetPlayerDisplaySize / Math.max(this.playerFruitWidth, this.playerFruitHeight);
 
@@ -248,7 +244,6 @@ class JuegoFruit extends Games {
 
         if (imgData && imgData.key) {
             this.pantalla_inicio = new PantallaInicio(this, x, y, imgData);
-             // La pantalla de inicio ahora es responsable de llamar a this.start_game()
         } else {
             console.warn(`[${this.sys.settings.key}] Imagen para pantalla de inicio con clave lógica '${this.PANTALLA_INICIO_KEY}' no encontrada.`);
             this.pantalla_inicio = { enter: () => this.start_game(), exit: () => {}, destroy: () => {} };
@@ -289,7 +284,7 @@ class JuegoFruit extends Games {
 
         this.loseButton.on('pointerdown', (pointer) => {
             pointer.event.stopPropagation();
-            if (this.started && !this.losing) { // Solo si el juego está activo (después del primer clic)
+            if (this.started && !this.losing) {
                 this._game_over('boton');
             }
         });
@@ -299,12 +294,13 @@ class JuegoFruit extends Games {
 
 
     _next_obstaculo() {
-        // Esta función solo se llamará si this.started es true Y this.gravityStarted es true
         if (this.losing || !this.started || !this.gravityStarted) return;
         const delay = Phaser.Math.Between(1500, 2500);
         this.timerEvent = this.time.delayedCall(delay, () => {
             this._spawn_obstaculo();
-            this._next_obstaculo(); // Schedule next one only if conditions still met
+             if (!this.losing && this.started && this.gravityStarted) {
+                this._next_obstaculo();
+            }
         });
     }
 
@@ -357,8 +353,9 @@ class JuegoFruit extends Games {
     _game_over(causa = 'colision') {
         if (this.losing) return;
         this.losing = true;
-        this.started = false; // Detiene la lógica de obstáculos en update y _next_obstaculo
-        // this.gravityStarted = false; // Resetear para el próximo reinicio
+        this.started = false;
+        // No necesitamos cambiar horizontalMouseMoveActive aquí, ya que `losing` lo controla en mouseMoveHandler
+        // y se restablecerá en enter/start_game
 
         if (this.loseButton) this.loseButton.setVisible(false).setActive(false);
 
@@ -398,16 +395,9 @@ class JuegoFruit extends Games {
     }
 
     update(time, delta) {
-        // El movimiento X del jugador es manejado por 'pointermove'.
-        // La gravedad se activa con el primer clic.
-        // Los obstáculos se mueven y se cuenta la puntuación solo si el juego ha "comenzado de verdad"
-        // (es decir, this.started es true Y this.gravityStarted es true).
+        if (this.losing || !this.persona) return;
 
-        if (this.losing || !this.persona) return; // Si se está perdiendo o no hay persona, no hacer nada
-
-        // Lógica de juego principal (obstáculos, puntuación) solo si started Y gravityStarted
         if (this.started && this.gravityStarted) {
-            // Game over si choca con el techo (si la gravedad está activa y se impulsa mucho)
             if (this.persona.y <= (0 + this.persona.displayHeight / 2)) {
                 if (this.persona.body && this.persona.body.blocked.up) {
                     this._game_over('colision');
@@ -415,10 +405,9 @@ class JuegoFruit extends Games {
                 }
             }
 
-            // Actualizar puntuación y limpiar obstáculos
             for (let i = this.obstaculos.length - 1; i >= 0; i--) {
                 const obstaculoPair = this.obstaculos[i];
-                const tubo = obstaculoPair.inferior; // Usar tubo inferior para la lógica
+                const tubo = obstaculoPair.inferior;
 
                 if (tubo.x < this.persona.x - this.persona.displayWidth / 2 && !obstaculoPair.contado) {
                     this.obstaculossaltados++;
@@ -481,6 +470,7 @@ class JuegoFruit extends Games {
         this.started = false;
         this.losing = false;
         this.gravityStarted = false;
+        this.horizontalMouseMoveActive = true; // Restablecer en clean_up por si acaso
     }
 
     shutdown() {
