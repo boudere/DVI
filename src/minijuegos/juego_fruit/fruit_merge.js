@@ -42,15 +42,21 @@ class JuegoFruit extends Games {
         this.loseButton = null;
         this.mouseMoveHandler = null;
 
-        this.initialPlayerYFactor = 0.35; // This determines the initial height and thus the deathLine
+       
+        this.initialPlayerYFactor = 0.20; 
+       
+        this.deathLineYFactor = 0.20; 
+      
+
         this.horizontalMouseMoveActive = true;
 
         this.deathLineY = 0;
         this.deathLineGraphics = null;
-        this.deathLinePadding = 1; // Small padding to ensure the line is just above the player's head
+        this.deathLinePadding = 1; 
 
         this.fallenPersonas = [];
     }
+
 
     create() {
         this.obstaculossaltados = 0;
@@ -137,8 +143,6 @@ class JuegoFruit extends Games {
 
     start_game() {
         super.start_game();
-        // _full_game_reset is called by enter, which is usually called before start_game
-        // but if start_game is called directly, ensure reset happens.
         if (!this.started) this._full_game_reset();
 
 
@@ -151,14 +155,11 @@ class JuegoFruit extends Games {
     start_game_logic() {
         if(this.fondo && typeof this.fondo.enter === 'function') this.fondo.enter();
         
-        this.started = true; // Crucial: ensure game is marked as started
+        this.started = true; 
         this.physics.resume();
 
         if (this.loseButton) this.loseButton.setVisible(true).setActive(true);
         if (this.deathLineGraphics) this.deathLineGraphics.setVisible(true);
-        // If no obstacles and gravity isn't started, the jump handler will kick off _next_obstaculo.
-        // If gravity IS started (e.g. after a respawn), we might need to kick it off here if appropriate.
-        // However, current logic has _next_obstaculo tied to gravityStarted being true.
     }
 
 
@@ -183,101 +184,106 @@ class JuegoFruit extends Games {
             this.persona = null;
         }
         
-        this._setup_new_active_player(); // This will also setup colliders with any (now empty) fallenPersonas
+        this._setup_new_active_player(); 
     }
 
     _setup_new_active_player() {
         const x = this.SCREEN_WIDTH / 2;
-        const y_inicial_persona = this.SCREEN_HEIGHT * this.initialPlayerYFactor; // Use the factor
-        const targetPlayerDisplaySize = 80; // Desired visual size
+        const y_inicial_persona = this.SCREEN_HEIGHT * this.initialPlayerYFactor; 
+        const targetPlayerDisplaySize = 80; 
         const scale = targetPlayerDisplaySize / Math.max(this.playerFruitWidth, this.playerFruitHeight);
 
         this.persona = new Cafex(this, x, y_inicial_persona, scale, scale);
-        this.persona.setDepth(10); // Active player on top
+        this.persona.setDepth(10); 
 
         if (this.persona.body) {
             this.persona.setCollideWorldBounds(true);
-            this.persona.body.setAllowGravity(false); // Gravity off initially
-            this.persona.body.gravity.y = 800; // Set standard gravity for when it's enabled
-            this.persona.setVelocity(0,0); // Reset velocity
+            this.persona.body.setAllowGravity(false); 
+            this.persona.body.gravity.y = 800; 
+            this.persona.setVelocity(0,0); 
             this.persona.clearTint();
             this.persona.setAlpha(1);
             this.persona.setActive(true).setVisible(true);
-            this.persona.body.setEnable(true); // Ensure physics body is enabled
+            this.persona.body.setEnable(true); 
 
-            // Add colliders between the new active persona and all existing fallen personas
             this.fallenPersonas.forEach(fallen => {
-                if (fallen && fallen.active && fallen.body && fallen.body.enable) { // Check if fallen still exists and is collidable
+                if (fallen && fallen.active && fallen.body && fallen.body.enable) { 
                     this.physics.add.collider(this.persona, fallen, () => {
-                        if (this.losing) return; // Evitar múltiples game overs
+                        if (this.losing) return; 
 
-                        // Conditions for game over:
-                        // 1. Active player is actually falling (gravity started for it)
-                        // 2. Active player is landing on top of a fallen player
-                        // 3. The top of the active player is at or above the deathLineY
                         const isLandingOnTop = this.persona.body.touching.down && fallen.body.touching.up;
-                        const isActiveFalling = this.gravityStarted; // Was gravity initiated for this jump/fall?
+                        const isActiveFalling = this.gravityStarted; 
 
                         if (isLandingOnTop && isActiveFalling) {
                             const activePlayerTopY = this.persona.y - (this.persona.displayHeight / 2);
                             const isAtOrAboveDeathLine = activePlayerTopY <= this.deathLineY;
 
-                            if (isAtOrAboveDeathLine) {
-                                // Additional check: ensure they are reasonably overlapped horizontally
-                                // and that the active player is indeed physically above the fallen one,
-                                // as `touching` can sometimes be sensitive at edges.
-                                const horizontalOverlap = Math.abs(this.persona.x - fallen.x) < (this.persona.displayWidth / 2 + fallen.displayWidth / 2) * 0.9; // 90% overlap needed
-                                const isPersonaPhysicallyAboveFallen = this.persona.y < fallen.y; // Check vertical position
+                            if (isAtOrAboveDeathLine) { // Game over if the impact point itself is too high
+                                const horizontalOverlap = Math.abs(this.persona.x - fallen.x) < (this.persona.displayWidth / 2 + fallen.displayWidth / 2) * 0.9; 
+                                const isPersonaPhysicallyAboveFallen = this.persona.y < fallen.y; 
 
                                 if (horizontalOverlap && isPersonaPhysicallyAboveFallen) {
                                     this._game_over('colision_jugador_caido');
                                 }
+                            } else {
+                                // Landed on a fallen player, and the impact point is BELOW the death line.
+                                // Proceed to handle this as a "successful" landing.
+                                // _handle_successful_landing will do a final check once player settles.
+                                if (!this.losing) { 
+                                    this._handle_successful_landing();
+                                }
                             }
-                            // If not at or above death line, it's a normal landing on a fallen player.
-                            // The player might just sit there, or if the fallen player is sloped, might slide.
-                            // Current logic will treat this as "hitting the ground" via onFloor() eventually if it rests.
                         }
                     }, null, this);
                 }
             });
 
         } else {
-            // This can happen if the sprite's body isn't created in the same frame.
-            // Phaser usually handles this, but good to be aware.
             console.warn("New persona body not immediately available during _setup_new_active_player. Colliders with fallen might be missed for this instance.");
         }
     }
 
-    _handle_ground_hit_and_respawn() {
+    _handle_successful_landing() {
         if (this.losing || !this.persona || !this.persona.body || !this.gravityStarted) return;
 
-        // Current persona becomes a "fallen" one
+        // Current persona stops
         if (this.persona && this.persona.body) {
-            this.persona.body.setVelocity(0, 0); // Stop it
-            this.persona.body.setAllowGravity(false); // Stop further gravity effects
-            this.persona.body.setImmovable(true); // Make it a static platform
+            this.persona.body.setVelocity(0, 0); 
+            this.persona.body.setAllowGravity(false); 
+            this.persona.body.setImmovable(true); 
             
-            // Visual cue for fallen persona
-            this.persona.setAlpha(0.4); // Make it somewhat transparent
-            this.persona.setDepth(1);   // Send it to a lower depth
+            // Check if the stopped player is now too high (above or on the deathLine)
+            const currentPlayerTopY = this.persona.y - (this.persona.displayHeight / 2);
+            if (currentPlayerTopY <= this.deathLineY) {
+                // If player is too high after stopping, it's game over.
+                // Tint red if not already (e.g. if it just landed on floor but it's too high)
+                this.persona.setTint(0xff0000); 
+                this._game_over('apilado_demasiado_alto'); 
+                return; // Exit before making it a "fallen" player or respawning
+            }
+            
+            // If not too high, make it a "fallen" visual
+            this.persona.setAlpha(0.4); 
+            this.persona.setDepth(1);   
         }
+        
+        // Only add to fallenPersonas if it wasn't a game over for being too high
         this.fallenPersonas.push(this.persona);
 
         // Reset for the new "life" or attempt
         this.gravityStarted = false;
-        this.horizontalMouseMoveActive = true; // Allow mouse movement for new persona
-        this.obstaculossaltados = 0; // Reset score for this "life"
+        this.horizontalMouseMoveActive = true; 
+        this.obstaculossaltados = 0; 
         if (this.contadorTexto) this.contadorTexto.setText(`Puntuación: ${this.obstaculossaltados}`);
 
-        this._clear_obstacles(); // Clear existing pipes
-        if (this.timerEvent) { // Stop any pending obstacle spawns
+        this._clear_obstacles(); 
+        if (this.timerEvent) { 
             this.timerEvent.remove(false);
             this.timerEvent = null;
         }
 
         // Setup the new active player
         this._setup_new_active_player();
-        // Note: _next_obstaculo will be triggered by the next jumpHandler event
     }
 
 
@@ -321,22 +327,18 @@ class JuegoFruit extends Games {
     }
 
     _initial_player_and_deathline_setup() {
-        // First, create the player to get its dimensions
+        // Primero, crea el jugador para que use initialPlayerYFactor para su posición inicial
         this._setup_new_active_player(); 
 
-        // Then, set up the death line based on the player's initial position and height
-        if (this.persona && this.persona.displayHeight > 0) {
-            const y_inicial_persona = this.SCREEN_HEIGHT * this.initialPlayerYFactor;
-            // The death line is slightly above the initial resting position of the player's head
-            this.deathLineY = y_inicial_persona - (this.persona.displayHeight / 2) - this.deathLinePadding;
-            this.deathLineY = Math.max(this.deathLineY, 0); // Ensure it's not off-screen (top)
-            this._crear_linea_muerte();
-        } else {
-            console.error("Cannot create deathline accurately, persona not fully initialized or displayHeight is zero.");
-            // Fallback deathline if player isn't ready (should ideally not happen with current flow)
-            this.deathLineY = this.SCREEN_HEIGHT * 0.1; // Default to 10% from top
-            this._crear_linea_muerte();
-        }
+        // --- MODIFICACIÓN INTEGRADA ---
+        // Luego, establece la deathLineY usando su propio factor, independientemente de la pos. inicial del jugador
+        this.deathLineY = this.SCREEN_HEIGHT * this.deathLineYFactor;
+        // Asegurarse de que no esté fuera de la pantalla por abajo (aunque con 0.75 no debería)
+        this.deathLineY = Math.min(this.deathLineY, this.SCREEN_HEIGHT - 4); // -4 por el grosor de la línea
+        this.deathLineY = Math.max(this.deathLineY, 0); // Y no por encima
+        // --- FIN DE MODIFICACIÓN ---
+        
+        this._crear_linea_muerte(); // Dibuja la línea en su nueva posición
     }
 
     _crear_pantalla_inicio() {
@@ -348,15 +350,13 @@ class JuegoFruit extends Games {
             this.pantalla_inicio = new PantallaInicio(this, x, y, imgData);
         } else {
             console.warn(`[${this.sys.settings.key}] Imagen para pantalla de inicio con clave lógica '${this.PANTALLA_INICIO_KEY}' no encontrada.`);
-            // Create a dummy object so the game doesn't crash if it's missing
             this.pantalla_inicio = { 
                 enter: () => {
-                    // If no start screen, start game logic directly if not already started
                     if(!this.started) this.start_game_logic(); 
                 }, 
                 exit: () => {}, 
                 destroy: () => {},
-                visible: false // Assume not visible if dummy
+                visible: false 
             };
         }
     }
@@ -384,35 +384,33 @@ class JuegoFruit extends Games {
             {
                 fontSize: '40px',
                 fill: '#000000',
-                backgroundColor: '#ff877e', // A reddish color
+                backgroundColor: '#ff877e', 
                 padding: { x: 10, y: 7 },
                 fontFamily: 'Arial, sans-serif'
             }
         )
         .setOrigin(0, 0)
-        .setDepth(200) // High depth to be on top
+        .setDepth(200) 
         .setInteractive({ useHandCursor: true });
 
         this.loseButton.on('pointerdown', (pointer) => {
-            pointer.event.stopPropagation(); // Prevent click from triggering jumpHandler
+            pointer.event.stopPropagation(); 
             if (this.started && !this.losing) {
                 this._game_over('boton');
             }
         });
 
-        // Initially hidden, shown when game starts
         this.loseButton.setVisible(false).setActive(false);
     }
 
 
     _next_obstaculo() {
-        if (this.losing || !this.started || !this.gravityStarted) return; // Only spawn if game is active and player is falling
+        if (this.losing || !this.started || !this.gravityStarted) return; 
 
-        const delay = Phaser.Math.Between(1500, 2500); // Time between obstacle sets
+        const delay = Phaser.Math.Between(1500, 2500); 
         this.timerEvent = this.time.delayedCall(delay, () => {
             this._spawn_obstaculo();
-            // Schedule the next one only if the game is still running
-             if (!this.losing && this.started && this.gravityStarted) { // Check again before scheduling next
+             if (!this.losing && this.started && this.gravityStarted) { 
                 this._next_obstaculo();
             }
         });
@@ -421,87 +419,60 @@ class JuegoFruit extends Games {
     _spawn_obstaculo() {
         if (this.losing || !this.started || !this.gravityStarted) return;
 
-        const gapHeight = 250; // Vertical space for player to pass through
-        const obstaclePipeWidth = 120; // Width of the pipes
+        const gapHeight = 250; 
+        const obstaclePipeWidth = 120; 
 
-        const x_pos = this.SCREEN_WIDTH + obstaclePipeWidth / 2; // Spawn off-screen to the right
+        const x_pos = this.SCREEN_WIDTH + obstaclePipeWidth / 2; 
 
-        // Determine vertical position of the gap
-        // Gap should not be too close to the top or bottom, and also consider deathLineY
-        const minGapY = 100; // Minimum y for the top of the gap (from screen top)
-        // Max Y for the top of the gap, ensuring space for gap and bottom pipe,
-        // and also ensuring the gap isn't *entirely* above a very high deathLine.
-        // The gap's top should be below the death line or just slightly above it to allow passage.
-        // Let's try to keep the gap's top (gapTopY) at least a bit below the deathLine if possible,
-        // or allow it to be slightly above if deathLine is very low.
-        // The player needs to pass through, so the gap itself must be below the deathLine.
-        // We want `gapTopY > deathLineY` to be possible.
-        // The player's center will be at `gapTopY + gapHeight / 2`.
-        // The player's top will be at `gapTopY + gapHeight / 2 - playerHeight / 2`.
-        // This must be `< deathLineY`.  No, this is wrong.
-        // The *top of the gap opening* (gapTopY) must be below deathLineY, or player can't enter it from above.
-        // The *bottom of the gap opening* (gapTopY + gapHeight) must be above the floor.
-
-        // Let's make sure the gap is mostly below the death line to be passable
-        // Max y for the *top of the gap*.
-        const maxGapYConsiderandoDeathLine = Math.min(
-            this.SCREEN_HEIGHT - gapHeight - 100, // Ensure room for bottom pipe and some margin
-            this.deathLineY + 50 // Allow gap to start a bit above deathline if needed for player to pass
-        );
+        // --- MODIFICACIÓN INTEGRADA: Rango vertical para el centro del hueco del obstáculo ---
+        const minGapYScreenPercentage = 0.25; // Centro del hueco no más arriba del 25% de la pantalla
+        const maxGapYScreenPercentage = 0.75; // Centro del hueco no más abajo del 75% de la pantalla
         
-        let finalMaxGapY = maxGapYConsiderandoDeathLine;
-        if (finalMaxGapY <= minGapY) { // Safety if deathLine is very high or screen very small
-            // Fallback: prioritize screen boundaries if deathline constraint is too tight
-            finalMaxGapY = this.SCREEN_HEIGHT - gapHeight - 100;
-            // If still problematic, adjust minGapY too
-            if (finalMaxGapY <= minGapY) {
-                // This case means screen is extremely constrained.
-                // Try to ensure gap can exist at all.
-                minGapY = Math.max(this.deathLineY + 10, 50); // Gap must start below deathline + player clearance
-                finalMaxGapY = minGapY + gapHeight; // Make gap just barely possible
-                 if (finalMaxGapY >= this.SCREEN_HEIGHT - 100) { // If this pushes it too low
-                    finalMaxGapY = this.SCREEN_HEIGHT - 100 -1;
-                    minGapY = finalMaxGapY - gapHeight;
-                    if (minGapY < 0) minGapY = 0;
-                 }
-            }
-        }
+        const minPossibleGapCenterY = this.SCREEN_HEIGHT * minGapYScreenPercentage;
+        const maxPossibleGapCenterY = this.SCREEN_HEIGHT * maxGapYScreenPercentage;
+
+        // Límites absolutos para el borde superior del hueco (gapTopY)
+        const minGapTopY = 50; // Margen superior para el tubo de arriba
+        const maxGapTopY = this.SCREEN_HEIGHT - gapHeight - 50; // Margen inferior para el tubo de abajo
+
+        // Calcular el centro del hueco
+        let gapCenterY = Phaser.Math.Between(minPossibleGapCenterY, maxPossibleGapCenterY);
         
-        // The Y position for the *top edge of the gap*
-        const gapTopY = Phaser.Math.Between(Math.max(minGapY, this.deathLineY + 10), finalMaxGapY);
+        // Calcular el borde superior del hueco (gapTopY) a partir del centro
+        let gapTopY = gapCenterY - gapHeight / 2;
+
+        // Ajustar gapTopY para que respete los límites absolutos
+        gapTopY = Phaser.Math.Clamp(gapTopY, minGapTopY, maxGapTopY);
+        // --- FIN DE MODIFICACIÓN ---
 
 
         const imgData = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OBSTACLE_FRUIT_IMG);
         if (!imgData || !imgData.key) {
             console.warn(`[${this.sys.settings.key}] Obstacle image '${this.OBSTACLE_FRUIT_IMG}' not found.`);
-            return; // Cannot spawn obstacle
+            return; 
         }
         const obstacleTextureKey = imgData.key;
 
-        // Create top pipe
-        const topObstacleHeight = gapTopY; // Height of the pipe itself
-        const tuboSuperior = this.physics.add.sprite(x_pos, gapTopY / 2, obstacleTextureKey) // Positioned by its center
+        const topObstacleHeight = gapTopY; 
+        const tuboSuperior = this.physics.add.sprite(x_pos, gapTopY / 2, obstacleTextureKey) 
             .setOrigin(0.5, 0.5);
         tuboSuperior.displayWidth = obstaclePipeWidth;
-        tuboSuperior.displayHeight = topObstacleHeight; // Stretch to fill space
+        tuboSuperior.displayHeight = topObstacleHeight; 
 
-        // Create bottom pipe
-        const bottomObstacleY = gapTopY + gapHeight; // Y where the bottom pipe starts
+        const bottomObstacleY = gapTopY + gapHeight; 
         const bottomObstacleHeight = this.SCREEN_HEIGHT - bottomObstacleY;
         const tuboInferior = this.physics.add.sprite(x_pos, bottomObstacleY + bottomObstacleHeight / 2, obstacleTextureKey)
             .setOrigin(0.5, 0.5);
         tuboInferior.displayWidth = obstaclePipeWidth;
         tuboInferior.displayHeight = bottomObstacleHeight;
 
-        // Common properties for pipes
         [tuboSuperior, tuboInferior].forEach(tubo => {
-            tubo.setVelocityX(-200); // Move left
+            tubo.setVelocityX(-200); 
             tubo.setImmovable(true);
             tubo.body.setAllowGravity(false);
-            tubo.refreshBody(); // Important after changing display size
+            tubo.refreshBody(); 
         });
 
-        // Add colliders if persona is valid
         if (this.persona && this.persona.active) {
             this.physics.add.collider(this.persona, tuboInferior, () => this._game_over('colision_obstaculo'), null, this);
             this.physics.add.collider(this.persona, tuboSuperior, () => this._game_over('colision_obstaculo'), null, this);
@@ -511,114 +482,93 @@ class JuegoFruit extends Games {
     }
 
     _game_over(causa = 'colision') {
-        if (this.losing) return; // Already losing
+        if (this.losing) return; 
         this.losing = true;
 
         if (this.loseButton) this.loseButton.setVisible(false).setActive(false);
-        if (this.deathLineGraphics) this.deathLineGraphics.setVisible(false); // Hide death line on game over screen
+        if (this.deathLineGraphics) this.deathLineGraphics.setVisible(false); 
 
-        let mensajeGameOver = '¡FRUTA APLASTADA!'; // Default message
+        let mensajeGameOver = '¡FRUTA APLASTADA!'; 
 
-        // Stop player
         if (this.persona) {
-            // If game over by hitting ceiling, ensure player sprite doesn't go above line visually
-            if (causa === 'colision_techo' && this.persona.body) {
-                // Reposition slightly below the death line
-                this.persona.y = this.deathLineY + (this.persona.displayHeight / 2);
-            }
-
-            this.persona.setTint(0xff0000); // Tint red
+            this.persona.setTint(0xff0000); 
             if (this.persona.body) {
                 this.persona.body.setAllowGravity(false);
-                this.persona.body.setVelocity(0,0); // Stop all movement
+                this.persona.body.setVelocity(0,0); 
             }
         }
         
-        this.physics.pause(); // Pause all physics interactions
+        this.physics.pause(); 
         
-        // Stop spawning new obstacles
         if (this.timerEvent) {
             this.timerEvent.remove(false);
             this.timerEvent = null;
         }
 
-        // Customize message based on cause
         if (causa === 'boton') {
             mensajeGameOver = 'Se terminó la partida';
-        } else if (causa === 'colision_techo') {
-            mensajeGameOver = '¡DEMASIADO ALTO!';
+        } else if (causa === 'colision_techo') { 
+            mensajeGameOver = '¡DEMASIADO ALTO!'; 
         } else if (causa === 'colision_jugador_caido') {
             mensajeGameOver = '¡COLISIÓN DE CAFÉS!';
+        } else if (causa === 'apilado_demasiado_alto') { 
+            mensajeGameOver = '¡TORRE DEMASIADO ALTA!';
         }
 
 
         const textoGameOver = this.add.text(
             this.SCREEN_WIDTH / 2,
-            this.SCREEN_HEIGHT / 2 - 50, // Slightly above center
+            this.SCREEN_HEIGHT / 2 - 50, 
             mensajeGameOver,
             {
                 fontSize: '56px',
-                fill: '#ff6347', // Tomato color
+                fill: '#ff6347', 
                 fontFamily: 'Arial Black, Gadget, sans-serif',
                 stroke: '#000000',
                 strokeThickness: 4
             }
-        ).setOrigin(0.5).setDepth(200); // Ensure it's on top
+        ).setOrigin(0.5).setDepth(200); 
 
-        // Transition to final screen after a delay
         this.time.delayedCall(2000, () => {
             textoGameOver.destroy();
             if (this.pantalla_final && typeof this.pantalla_final.enter === 'function') {
                  this.pantalla_final.enter({ score: this.obstaculossaltados });
             } else {
-                this.finnish_game(); // Fallback if no final screen
+                this.finnish_game(); 
             }
         });
     }
 
     update(time, delta) {
         if (this.losing || !this.persona || !this.persona.body || !this.persona.active) {
-            // If losing, or no player, or player has no body, or player is inactive, do nothing.
             return;
         }
 
-        // Game logic when player is actively falling/jumping
         if (this.started && this.gravityStarted) {
-            // Check for hitting the "ceiling" (deathLineY)
-            // Player's top edge: this.persona.y - this.persona.displayHeight / 2
-            if ((this.persona.y - this.persona.displayHeight / 2) <= this.deathLineY) {
-                // If already losing due to another collision in the same frame (e.g., with a fallen player at this height),
-                // don't trigger another game over.
-                if (!this.losing) {
-                    this._game_over('colision_techo');
-                }
-                return; // Stop further updates for this frame if game over
-            }
-
+            // REMOVED: Player is now immune to deathLineY while actively falling.
+            // The check is done in _handle_successful_landing or collider callback once stopped.
+            
             // Check for hitting the "ground" (bottom of the world)
             if (this.persona.body.onFloor()) {
-                if (!this.losing) { // Avoid respawn if already lost (e.g. hit techo then floor in quick succession)
-                    this._handle_ground_hit_and_respawn();
+                if (!this.losing) { 
+                    this._handle_successful_landing(); 
                 }
-                return; // Stop further updates for this frame after respawn logic
+                return; 
             }
 
             // Obstacle scoring and cleanup
-            if (this.gravityStarted && this.persona && this.persona.active && !this.losing) { // Redundant checks, but safe
+            if (this.gravityStarted && this.persona && this.persona.active && !this.losing) { 
                  for (let i = this.obstaculos.length - 1; i >= 0; i--) {
                     const obstaculoPair = this.obstaculos[i];
-                    // Use either pipe for x-check, inferior is fine. Check if it exists.
                     const tubo = obstaculoPair.inferior; 
 
-                    // Score point if player passed the obstacle
                     if (tubo && tubo.active && tubo.x < this.persona.x - this.persona.displayWidth / 2 && !obstaculoPair.contado) {
                         this.obstaculossaltados++;
                         this.contadorTexto.setText(`Puntuación: ${this.obstaculossaltados}`);
                         obstaculoPair.contado = true;
                     }
 
-                    // Remove obstacles that are off-screen
-                    if (tubo && tubo.x < -tubo.displayWidth / 2) { // Check if fully off-screen
+                    if (tubo && tubo.x < -tubo.displayWidth / 2) { 
                         if(obstaculoPair.superior) obstaculoPair.superior.destroy();
                         if(obstaculoPair.inferior) obstaculoPair.inferior.destroy();
                         this.obstaculos.splice(i, 1);
@@ -626,14 +576,11 @@ class JuegoFruit extends Games {
                 }
             }
         }
-        // Horizontal movement is handled by pointermove event when horizontalMouseMoveActive is true
     }
 
     _clean_up() {
-        // Call super's cleanup if it exists
         super._clean_up && super._clean_up();
 
-        // Remove event listeners
         if (this.jumpHandler) {
             this.input.off('pointerdown', this.jumpHandler);
             this.jumpHandler = null;
@@ -643,14 +590,12 @@ class JuegoFruit extends Games {
             this.mouseMoveHandler = null;
         }
 
-        // Stop timers
         if (this.timerEvent) {
             this.timerEvent.remove(false);
             this.timerEvent = null;
         }
-        this.time.removeAllEvents(); // Clear any other delayed calls
+        this.time.removeAllEvents(); 
 
-        // Destroy game objects
         if (this.fallenPersonas) {
             this.fallenPersonas.forEach(p => { if (p && p.destroy) p.destroy(); });
             this.fallenPersonas = [];
@@ -679,15 +624,13 @@ class JuegoFruit extends Games {
             this.deathLineGraphics = null;
         }
 
-        this._clear_obstacles(); // Ensures all obstacle sprites are destroyed
+        this._clear_obstacles(); 
 
-        // Destroy screens
         if (this.pantalla_inicio && typeof this.pantalla_inicio.destroy === 'function') this.pantalla_inicio.destroy();
         if (this.pantalla_final && typeof this.pantalla_final.destroy === 'function') this.pantalla_final.destroy();
         this.pantalla_inicio = null;
         this.pantalla_final = null;
 
-        // Reset state flags
         this.started = false;
         this.losing = false;
         this.gravityStarted = false;
@@ -696,12 +639,9 @@ class JuegoFruit extends Games {
 
     shutdown() {
         this._clean_up();
-        // Phaser's shutdown will handle pausing physics world, but good practice:
         if (this.physics.world) {
             this.physics.pause();
-            // this.physics.world.colliders.destroy(); // More aggressive cleanup if needed
         }
-        // super.shutdown() if Games class has one
     }
 }
 
