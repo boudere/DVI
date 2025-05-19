@@ -70,7 +70,8 @@
                         "fdi_boton",
                         "parque_boton",
                         "piso_boton",
-                        "pasillo_entrada"
+                        "pasillo_entrada",
+                        "ducha_boton"
                     ]
                 },
                 "Clases": [
@@ -167,9 +168,22 @@
                         "pantalla_final_disco"
                     ]
                 },
+                "JuegoDucha": {
+                    "Path": "juego_ducha/",
+                    "JuegoDucha": [
+                        "mampara",
+                        "burbuja",
+                        "burbuja_rosa",
+                        "barra",
+                        "gota",
+                        "pantalla_inicio_ducha",
+                        "pantalla_final_ducha"
+                    ]
+                },
                 "Clases": [
                     "JuegoOveja",
-                    "JuegoDiscoteca"
+                    "JuegoDiscoteca",
+                    "JuegoDucha"
                 ]
             },
             "Cursors": {

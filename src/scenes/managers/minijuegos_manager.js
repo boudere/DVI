@@ -1,8 +1,9 @@
 import Managers from "/src/scenes/managers";
-import { MINIJUEGO_MANAGER, SCENE_MANAGER, DIALOGO_MANAGER, DATA_INFO, JUEGO_OVEJA, JUEGO_DISCOTECA } from "/src/data/scene_data.js";
+import { MINIJUEGO_MANAGER, SCENE_MANAGER, DIALOGO_MANAGER, DATA_INFO, JUEGO_OVEJA, JUEGO_DISCOTECA, JUEGO_DUCHA } from "/src/data/scene_data.js";
 
 import JuegoOveja from '/src/minijuegos/juego_oveja/juego_oveja2.js';
 import JuegoDiscoteca from '/src/minijuegos/juego_discoteca/juego_discoteca';
+import JuegoDucha from '/src/minijuegos/juego_ducha/juego_ducha';
 
 class MinijuegosManager extends Managers {
     constructor() {
@@ -91,6 +92,8 @@ class MinijuegosManager extends Managers {
                 return JuegoOveja;
             case JUEGO_DISCOTECA:
                 return JuegoDiscoteca;
+            case JUEGO_DUCHA:
+                return JuegoDucha;
             default:
                 return null;
         }

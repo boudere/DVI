@@ -157,9 +157,20 @@
                         "pantalla_final"
                     ]
                 },
+                "JuegoDucha": {
+                    "Path": "juego_ducha/",
+                    "JuegoDucha": [
+                        "mampara",
+                        "burbuja",
+                        "burbuja_rosa",
+                        "pantalla_inicio",
+                        "pantalla_final"
+                    ]
+                },
                 "Clases": [
                     "JuegoOveja",
-                    "JuegoDiscoteca"
+                    "JuegoDiscoteca",
+                    "JuegoDucha"
                 ]
             },
             "Cursors": {

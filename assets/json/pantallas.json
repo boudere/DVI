@@ -1701,6 +1701,11 @@
             "pantalla": {
                 "nombre": "habitacion_1_05"
             }
+        },
+        "minijuego_ducha": {
+            "pantalla": {
+                "nombre": "ducha"
+            }
         }
     }
 }

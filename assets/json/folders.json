@@ -280,6 +280,19 @@
               ]
             },
             {
+              "name": "juego_ducha",
+              "folders": [],
+              "files": [
+                "barra.png",
+                "burbuja.png",
+                "gota.png",
+                "mampara.png",
+                "movil_peque.png",
+                "pantalla_final_ducha.png",
+                "pantalla_inicio_ducha.png"
+              ]
+            },
+            {
               "name": "juego_oveja",
               "folders": [],
               "files": [
@@ -403,6 +416,7 @@
                 "caballo_parque.png",
                 "calle_boton.png",
                 "copas_boton.png",
+                "ducha_boton.png",
                 "fdi_boton.png",
                 "habitacion_cama.png",
                 "parque_boton.png",

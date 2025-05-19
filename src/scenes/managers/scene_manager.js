@@ -59,8 +59,8 @@ class SceneManager extends Managers {
          //this.add_scene(DIALOGO_MANAGER, DialogoManager);
  
          // minijuego manager:
-         //this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager, 'JuegoDiscoteca');
-         this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager);
+        //this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager, 'JuegoDucha');
+        this.add_scene(MINIJUEGO_MANAGER, MinijuegosManager);
 
         this.add_scene(AFINIDAD_DIALOGO_MANAGER, AfinidadDialogoManager);
  

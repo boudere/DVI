@@ -3594,7 +3594,29 @@
                     }
                 }
             }
-        }
+        },
+        "ducha":{
+            "background": "habitacion",
+            "puertas": { },
+            "objetos": {
+                "ducha_boton": {
+                    "nombre": "ducha",
+                    "img": "ducha_boton",
+                    "pos_x": 1021,
+                    "pos_y": 733,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "minijuego",
+                        "name": "JuegoDucha",
+                        "return_dialogo": "cap1087"
 
+                    }
+                }
+            }
+
+        }
     }
 }
