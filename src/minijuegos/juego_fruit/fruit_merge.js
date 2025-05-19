@@ -1,31 +1,42 @@
 import { MINIJUEGO_MANAGER, DATA_INFO, SCENE_MANAGER } from '/src/data/scene_data.js';
 import Games from '/src/minijuegos/games.js';
 import Fruit from '/src/minijuegos/juego_fruit/game_objects/sprites/fruit.js';
-import PantallaInicioDefault from "/src/minijuegos/juego_fruit/pantallas/pantalla_inicio"; 
-import PantallaFinalDefault from "/src/minijuegos/juego_fruit/pantallas/pantalla_final"; 
+import PantallaInicio from "/src/minijuegos/juego_fruit/pantallas/pantalla_inicio"; 
+import PantallaFinal from "/src/minijuegos/juego_fruit/pantallas/pantalla_final"; 
 
 // Define tus tipos de fruta. Necesitarás las imágenes correspondientes.
 // El 'next' indica el índice de la fruta a la que se transforma al fusionarse. 'null' para la más grande.
 // El 'radius_factor' es un multiplicador para el radio del cuerpo físico respecto al ancho de la imagen.
 export const FRUIT_TYPES = [
-    { key: 'fruta_cereza_img', radius_factor: 0.45, points: 10, next: 1, color: 0xff0000 },   // 0: Cereza
-    { key: 'fruta_fresa_img', radius_factor: 0.45, points: 20, next: 2, color: 0xff69b4 },    // 1: Fresa
-    { key: 'fruta_uva_img', radius_factor: 0.45, points: 30, next: 3, color: 0x800080 },      // 2: Uva
-    { key: 'fruta_naranja_img', radius_factor: 0.45, points: 40, next: 4, color: 0xffa500 },   // 3: Naranja
-    { key: 'fruta_manzana_img', radius_factor: 0.45, points: 50, next: 5, color: 0x00ff00 },   // 4: Manzana
-    { key: 'fruta_melon_img', radius_factor: 0.45, points: 100, next: null, color: 0x90ee90 } // 5: Melón (más grande)
+    { key: 'cafex', radius_factor: 0.10, points: 10, next: 1, color: 0xff0000 },  
+    { key: 'croquetax', radius_factor: 0.15, points: 20, next: 2, color: 0xff69b4 },    
+    { key: 'alitax', radius_factor: 0.20, points: 30, next: 3, color: 0x800080 },      
+    { key: 'croasanx', radius_factor: 0.25, points: 40, next: 4, color: 0xffa500 },   
+    { key: 'heladox', radius_factor: 0.30, points: 50, next: 5, color: 0x00ff00 },   
+    { key: 'huevox', radius_factor: 0.35, points: 60, next: 6, color: 0x90ee90 }, 
+    { key: 'kebabx', radius_factor: 0.40, points: 70, next: 7, color: 0x90ee90 }, 
+    { key: 'perritox', radius_factor: 0.45, points: 80, next: 8, color: 0x90ee90 }, 
+    { key: 'tortillax', radius_factor: 0.50, points: 90, next: 9, color: 0x90ee90 }, 
+    { key: 'hamburguesax', radius_factor: 0.55, points: 100, next: 10, color: 0x90ee90 }, 
+    { key: 'quesadillax', radius_factor: 0.60, points: 110, next: 11, color: 0x90ee90 } 
 ];
 
 const JUEGO_FRUIT = 'JuegoFruit'; 
 
 class JuegoFruitMerge extends Games {
-    constructor() {
+    constructor(sprites) {
         super({ key: JUEGO_FRUIT });
 
+        sprites = {
+            FONDO_IMG: 'fondoFruit',
+            PANTALLA_INICIO: 'pantalla_inicio',
+            PANTALLA_FINAL: 'pantalla_final'
+        };
+
         // Nombres de imágenes para pantallas (debes tener estas imágenes)
-        this.PANTALLA_INICIO_IMG = 'pantalla_inicio';
-        this.PANTALLA_FINAL_IMG = 'pantalla_final';
-        this.FONDO_IMG = 'fondoFruit'; // Imagen de fondo para el juego
+        this.PANTALLA_INICIO_IMG = sprites.PANTALLA_INICIO_IMG;
+        this.PANTALLA_FINAL_IMG = sprites.PANTALLA_FINAL_IMG;
+        this.FONDO_IMG = sprites.FONDO_IMG;
 
         this.FRUIT_DROP_Y = 100; // Altura desde donde cae la fruta
         this.GAME_OVER_LINE_Y = 150; // Altura de la línea de game over
@@ -44,6 +55,20 @@ class JuegoFruitMerge extends Games {
         // this.load.image(this.PANTALLA_INICIO_IMG, `path/to/${this.PANTALLA_INICIO_IMG}.png`);
         // this.load.image(this.PANTALLA_FINAL_IMG, `path/to/${this.PANTALLA_FINAL_IMG}.png`);
         // this.load.image(this.FONDO_IMG, `path/to/${this.FONDO_IMG}.png`);
+
+
+        this.data_info_scene = this.scene.get(DATA_INFO); // Necesitas la instancia
+
+    const basePathImgFromDataInfo = this.data_info_scene.IMG_PATH + "minijuegos/juego_fruit/"; // Construir la ruta base
+    const imgPrefixFromDataInfo = this.data_info_scene.img_prefix + "Minijuegos_"; // Construir el prefijo
+    // Cargar fondo
+    // Clave parcial
+    const fondoKeyParcial = 'fondoFruit';
+    // Clave completa con la que se cargará
+    const fondoKeyCompleta = imgPrefixFromDataInfo + fondoKeyParcial;
+    this.load.image(fondoKeyCompleta, basePathImgFromDataInfo + fondoKeyParcial + '.png');
+    console.log(fondoKeyCompleta, basePathImgFromDataInfo + fondoKeyParcial + '.png')
+
     }
 
     create() {
@@ -125,6 +150,7 @@ class JuegoFruitMerge extends Games {
     }
 
     _crear_pantalla_inicio() {
+        console.log(MINIJUEGO_MANAGER, this.PANTALLA_INICIO_IMG);
         let imgData = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_INICIO_IMG);
         if (!imgData || !imgData.key) {
             console.warn(`Imagen ${this.PANTALLA_INICIO_IMG} no encontrada para pantalla de inicio.`);
@@ -170,7 +196,7 @@ class JuegoFruitMerge extends Games {
         this.canDrop = true;
         this.isGameOver = false;
         this.spawnNextFruitPreview();
-        this.scene.get(MINIJUEGO_MANAGER).play_music('fruit_merge_music'); // Asume que tienes una música
+       
     }
 
     spawnNextFruitPreview() {
@@ -335,7 +361,6 @@ class JuegoFruitMerge extends Games {
             this.nextFruitPreview = null;
         }
 
-        this.scene.get(MINIJUEGO_MANAGER).stop_music('fruit_merge_music');
         console.log("GAME OVER");
 
         const gameOverText = this.add.text(this.SCREEN_WIDTH / 2, this.SCREEN_HEIGHT / 2, '¡FIN DEL JUEGO!', {
