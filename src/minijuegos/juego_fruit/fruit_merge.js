@@ -49,18 +49,20 @@ class JuegoFruit extends Games {
         this.loseButton = null;
         this.mouseMoveHandler = null;
 
-        // Define a factor for the player's initial Y position
         this.initialPlayerYFactor = 0.35;
-
-        // NUEVA PROPIEDAD: Controla si el movimiento X del ratón está activo
         this.horizontalMouseMoveActive = true;
+
+        // MODIFICACIÓN: this.deathLineY se calculará dinámicamente
+        this.deathLineY = 0; // Inicializar, pero se establecerá en _crear_persona
+        this.deathLineGraphics = null;
+        this.deathLinePadding = 100; // Pequeño espacio entre el personaje y la línea
     }
 
     create() {
         this.obstaculossaltados = 0;
         this.losing = false;
         this.gravityStarted = false;
-        this.horizontalMouseMoveActive = true; // Asegurar estado inicial en create también
+        this.horizontalMouseMoveActive = true;
         this.SCREEN_WIDTH = this.sys.game.canvas.width;
         this.SCREEN_HEIGHT = this.sys.game.canvas.height;
 
@@ -68,46 +70,46 @@ class JuegoFruit extends Games {
 
         this.obstaculos = [];
         this._crear_fondo();
-        this._crear_persona();
+        this._crear_persona(); // _crear_linea_muerte se llamará desde aquí ahora
         this._crear_marcador();
         this._crear_pantalla_inicio();
         this._crear_pantalla_final();
         this._crear_boton_perder();
 
         this.cursors = this.input.keyboard.createCursorKeys();
+this.jumpHandler = () => {
+    // Solo actuar si el juego no ha comenzado realmente con la gravedad
+    // y si el personaje existe y no estamos perdiendo.
+    if (!this.gravityStarted && this.persona && !this.losing) {
 
-        this.jumpHandler = () => {
-            if (!this.persona || this.losing) return;
-
-            if (!this.started) {
-                if (!this.pantalla_inicio || (this.pantalla_inicio && !this.pantalla_inicio.visible)) {
-                     this.started = true;
-                     this._next_obstaculo();
-                }
+        // Iniciar el juego si la pantalla de inicio no está visible o no existe
+        if (!this.started) {
+            if (!this.pantalla_inicio || (this.pantalla_inicio && !this.pantalla_inicio.visible)) {
+                this.started = true;
             }
+        }
 
-            if (!this.gravityStarted) {
-                this.gravityStarted = true;
-                // MODIFICACIÓN: Desactivar movimiento horizontal del ratón
-                this.horizontalMouseMoveActive = false;
-
-                if (this.persona.body) {
-                    this.persona.body.setAllowGravity(true);
-                }
-                // If obstacles haven't started because of initial screen, start them now.
-                if (this.started && this.obstaculos.length === 0 && (!this.timerEvent || !this.timerEvent.getProgress() === 1)) {
-                    this._next_obstaculo();
-                }
-            }
+        // Si el juego ha comenzado (lógicamente, por saltar pantalla de inicio o esta no bloquear)
+        if (this.started) {
+            this.gravityStarted = true; // Activar la bandera de gravedad
+            this.horizontalMouseMoveActive = false; // Bloquear movimiento horizontal del ratón
 
             if (this.persona.body) {
-                this.persona.setVelocityY(-450);
+                this.persona.body.setAllowGravity(true); // Activar gravedad en el personaje
+                // NO SE APLICA setVelocityY(-450)
             }
-        };
+
+            // Iniciar la generación de obstáculos si aún no ha comenzado
+            if (this.obstaculos.length === 0 && (!this.timerEvent || this.timerEvent.getProgress() === 1)) {
+                this._next_obstaculo();
+            }
+        }
+    }
+    // Los clics subsecuentes (cuando gravityStarted ya es true) no harán nada.
+};
         this.input.on('pointerdown', this.jumpHandler);
 
         this.mouseMoveHandler = (pointer) => {
-            // MODIFICACIÓN: Solo mover si está activo
             if (this.horizontalMouseMoveActive && this.persona && !this.losing) {
                 this.persona.x = pointer.x;
                 this.persona.x = Phaser.Math.Clamp(this.persona.x, this.persona.displayWidth / 2, this.SCREEN_WIDTH - this.persona.displayWidth / 2);
@@ -118,11 +120,25 @@ class JuegoFruit extends Games {
         this.game_created();
     }
 
+    _crear_linea_muerte() {
+        if (this.deathLineGraphics) {
+            this.deathLineGraphics.destroy();
+        }
+        this.deathLineGraphics = this.add.graphics();
+        this.deathLineGraphics.lineStyle(4, 0xff0000, 1);
+        this.deathLineGraphics.beginPath();
+        this.deathLineGraphics.moveTo(0, this.deathLineY);
+        this.deathLineGraphics.lineTo(this.SCREEN_WIDTH, this.deathLineY);
+        this.deathLineGraphics.closePath();
+        this.deathLineGraphics.strokePath();
+        this.deathLineGraphics.setDepth(150);
+    }
+
     enter() {
         super.enter();
         this.losing = false;
         this.gravityStarted = false;
-        this.horizontalMouseMoveActive = true; // MODIFICACIÓN: Restablecer al entrar
+        this.horizontalMouseMoveActive = true;
         this.obstaculossaltados = 0;
         if (this.contadorTexto) this.contadorTexto.setText(`Puntuación: ${this.obstaculossaltados}`);
 
@@ -130,16 +146,28 @@ class JuegoFruit extends Games {
 
         if (this.persona) {
             const initialX = this.input.mousePointer.x !== 0 ? this.input.mousePointer.x : this.SCREEN_WIDTH / 2;
-            this.persona.setPosition(initialX, this.SCREEN_HEIGHT * this.initialPlayerYFactor);
+            const initialY = this.SCREEN_HEIGHT * this.initialPlayerYFactor;
+            this.persona.setPosition(initialX, initialY);
             this.persona.setVelocity(0,0);
             this.persona.clearTint();
             this.persona.setActive(true).setVisible(true);
             if (this.persona.body) {
                  this.persona.body.setAllowGravity(false);
             }
+
+            // MODIFICACIÓN: Recalcular y redibujar la línea si la posición inicial del personaje cambia en enter
+            // (aunque en este caso _crear_persona ya la establece basada en initialPlayerYFactor)
+            // Si la posición Y inicial en enter() fuera diferente a la de _crear_persona,
+            // necesitaríamos actualizar this.deathLineY y llamar a _crear_linea_muerte() de nuevo.
+            // Por ahora, asumimos que la posición Y inicial es consistente.
+            // Si no, descomenta y ajusta:
+            // this.deathLineY = initialY - (this.persona.displayHeight / 2) - this.deathLinePadding;
+            // this._crear_linea_muerte();
         }
 
+
         if (this.loseButton) this.loseButton.setVisible(true).setActive(true);
+        if (this.deathLineGraphics) this.deathLineGraphics.setVisible(true);
 
         if (this.pantalla_inicio && typeof this.pantalla_inicio.enter === 'function') {
             this.pantalla_inicio.enter();
@@ -153,7 +181,7 @@ class JuegoFruit extends Games {
         super.start_game();
         this.losing = false;
         this.gravityStarted = false;
-        this.horizontalMouseMoveActive = true; // MODIFICACIÓN: Restablecer al iniciar juego
+        this.horizontalMouseMoveActive = true;
         this.obstaculossaltados = 0;
         if (this.contadorTexto) this.contadorTexto.setText(`Puntuación: ${this.obstaculossaltados}`);
 
@@ -164,7 +192,8 @@ class JuegoFruit extends Games {
         if(this.fondo && typeof this.fondo.enter === 'function') this.fondo.enter();
         if(this.persona) {
              const initialX = this.input.mousePointer.x !== 0 ? this.input.mousePointer.x : this.SCREEN_WIDTH / 2;
-            this.persona.setPosition(initialX, this.SCREEN_HEIGHT * this.initialPlayerYFactor);
+             const initialY = this.SCREEN_HEIGHT * this.initialPlayerYFactor; // Usar la misma lógica
+            this.persona.setPosition(initialX, initialY);
             this.persona.setVelocity(0,0);
             this.persona.clearTint();
             this.persona.setActive(true).setVisible(true);
@@ -172,6 +201,10 @@ class JuegoFruit extends Games {
                  this.persona.body.setAllowGravity(false);
             }
             if (typeof this.persona.enter === 'function') this.persona.enter();
+
+            // Similar a enter(), si la posición Y cambia significativamente, recalcular la línea.
+            // this.deathLineY = initialY - (this.persona.displayHeight / 2) - this.deathLinePadding;
+            // this._crear_linea_muerte();
         }
 
         this._clear_obstacles();
@@ -179,6 +212,7 @@ class JuegoFruit extends Games {
         this.physics.resume();
 
         if (this.loseButton) this.loseButton.setVisible(true).setActive(true);
+        if (this.deathLineGraphics) this.deathLineGraphics.setVisible(true);
     }
 
     finnish_game() {
@@ -222,11 +256,17 @@ class JuegoFruit extends Games {
 
     _crear_persona() {
         let x = this.SCREEN_WIDTH / 2;
-        let y = this.SCREEN_HEIGHT * this.initialPlayerYFactor;
+        let y_inicial_persona = this.SCREEN_HEIGHT * this.initialPlayerYFactor; // Posición Y inicial del centro del personaje
         const targetPlayerDisplaySize = 80;
         let scale = targetPlayerDisplaySize / Math.max(this.playerFruitWidth, this.playerFruitHeight);
 
-        this.persona = new Cafex(this, x, y, scale, scale);
+        this.persona = new Cafex(this, x, y_inicial_persona, scale, scale);
+
+        // Asegurarse de que displayHeight esté establecido.
+        // Si Cafex no lo hace al escalar, puedes forzarlo:
+        // this.persona.setDisplaySize(targetPlayerDisplaySize, targetPlayerDisplaySize);
+        // O si Cafex lo hace, simplemente usa this.persona.displayHeight
+
         if (this.persona.body) {
             this.persona.setCollideWorldBounds(true);
             this.persona.body.setAllowGravity(false);
@@ -235,6 +275,17 @@ class JuegoFruit extends Games {
         } else {
             console.warn("Persona body not immediately available. Ensure Cafex/player class is a physics sprite.");
         }
+
+        // MODIFICACIÓN: Calcular this.deathLineY y crear la línea aquí
+        // this.persona.displayHeight debería estar disponible ahora
+        // El origen (0.5, 0.5) significa que y_inicial_persona es el centro.
+        // El borde superior del personaje es y_inicial_persona - (this.persona.displayHeight / 2)
+        this.deathLineY = y_inicial_persona - (this.persona.displayHeight / 2) - this.deathLinePadding;
+
+        // Asegurarse de que la línea no esté fuera de la pantalla (por si acaso)
+        this.deathLineY = Math.max(this.deathLineY, 0); // No puede ser menor que 0
+
+        this._crear_linea_muerte(); // Llamar a crear la línea después de calcular su Y
     }
 
     _crear_pantalla_inicio() {
@@ -311,9 +362,12 @@ class JuegoFruit extends Games {
         const obstaclePipeWidth = 120;
 
         const x_pos = this.SCREEN_WIDTH + obstaclePipeWidth / 2;
-        const minGapY = 100;
-        const maxGapY = this.SCREEN_HEIGHT - 100 - gapHeight;
-        const gapTopY = Phaser.Math.Between(minGapY, maxGapY);
+        const minGapY = 100; // Asegurar que el hueco no esté demasiado cerca del borde superior
+        // Ajustar maxGapY para que el hueco no esté demasiado cerca de la línea de muerte (opcional pero bueno)
+        const maxGapYConsiderandoDeathLine = Math.min(this.SCREEN_HEIGHT - 100 - gapHeight, this.deathLineY - gapHeight - 50); // 50 es un margen adicional
+        const finalMaxGapY = Math.max(minGapY, maxGapYConsiderandoDeathLine); // El hueco no puede estar por debajo de minGapY
+
+        const gapTopY = Phaser.Math.Between(minGapY, finalMaxGapY > minGapY ? finalMaxGapY : minGapY + gapHeight); // Asegurar que haya un rango válido
 
         const imgData = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OBSTACLE_FRUIT_IMG);
         if (!imgData || !imgData.key) {
@@ -343,8 +397,8 @@ class JuegoFruit extends Games {
         });
 
         if (this.persona) {
-            this.physics.add.collider(this.persona, tuboInferior, () => this._game_over('colision'), null, this);
-            this.physics.add.collider(this.persona, tuboSuperior, () => this._game_over('colision'), null, this);
+            this.physics.add.collider(this.persona, tuboInferior, () => this._game_over('colision_obstaculo'), null, this);
+            this.physics.add.collider(this.persona, tuboSuperior, () => this._game_over('colision_obstaculo'), null, this);
         }
 
         this.obstaculos.push({ superior: tuboSuperior, inferior: tuboInferior, contado: false });
@@ -354,10 +408,9 @@ class JuegoFruit extends Games {
         if (this.losing) return;
         this.losing = true;
         this.started = false;
-        // No necesitamos cambiar horizontalMouseMoveActive aquí, ya que `losing` lo controla en mouseMoveHandler
-        // y se restablecerá en enter/start_game
 
         if (this.loseButton) this.loseButton.setVisible(false).setActive(false);
+        if (this.deathLineGraphics) this.deathLineGraphics.setVisible(false);
 
         if (this.persona) {
             this.persona.setTint(0xff0000);
@@ -369,7 +422,10 @@ class JuegoFruit extends Games {
         let mensajeGameOver = '¡FRUTA APLASTADA!';
         if (causa === 'boton') {
             mensajeGameOver = 'Se terminó la partida';
+        } else if (causa === 'colision_techo') {
+            mensajeGameOver = '¡DEMASIADO ALTO!';
         }
+
 
         const textoGameOver = this.add.text(
             this.SCREEN_WIDTH / 2,
@@ -398,11 +454,9 @@ class JuegoFruit extends Games {
         if (this.losing || !this.persona) return;
 
         if (this.started && this.gravityStarted) {
-            if (this.persona.y <= (0 + this.persona.displayHeight / 2)) {
-                if (this.persona.body && this.persona.body.blocked.up) {
-                    this._game_over('colision');
-                    return;
-                }
+            if ((this.persona.y - this.persona.displayHeight / 2) <= this.deathLineY) {
+                this._game_over('colision_techo');
+                return;
             }
 
             for (let i = this.obstaculos.length - 1; i >= 0; i--) {
@@ -460,6 +514,11 @@ class JuegoFruit extends Games {
             this.loseButton = null;
         }
 
+        if (this.deathLineGraphics) {
+            this.deathLineGraphics.destroy();
+            this.deathLineGraphics = null;
+        }
+
         this._clear_obstacles();
 
         if (this.pantalla_inicio && typeof this.pantalla_inicio.destroy === 'function') this.pantalla_inicio.destroy();
@@ -470,7 +529,7 @@ class JuegoFruit extends Games {
         this.started = false;
         this.losing = false;
         this.gravityStarted = false;
-        this.horizontalMouseMoveActive = true; // Restablecer en clean_up por si acaso
+        this.horizontalMouseMoveActive = true;
     }
 
     shutdown() {
