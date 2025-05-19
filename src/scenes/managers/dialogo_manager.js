@@ -157,10 +157,14 @@ class DialogoManager extends Managers {
     }
 
     signal_click(on_click) {
-        if (on_click.scene == 'dialogo') {
-            this.enter(on_click);
-        } else {
+        if ( on_click.var_id || on_click.scene != 'dialogo') {
+            if (on_click.var_id) {
+                on_click.scene = 'afinidad_dialogo';
+            }
             this.scene.get(SCENE_MANAGER).signal_click(on_click);
+        }
+        else {
+            this.enter(on_click);
         }
     }
 

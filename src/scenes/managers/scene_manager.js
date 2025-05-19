@@ -125,6 +125,8 @@ class SceneManager extends Managers {
             case "minijuego":
                 return MINIJUEGO_MANAGER;
                 break;
+            case "afinidad_dialogo":
+                return AFINIDAD_DIALOGO_MANAGER;
             default:
                 break;
         }

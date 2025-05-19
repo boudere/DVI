@@ -3,18 +3,19 @@ import DialogoMainText from "/src/dialogos/game_objects/text/dialogo_main_text.j
 import Animation from '/src/utils/animation.js';
 
 class ButtonCuadradoDialogo extends DialogoGameObject {
-    constructor(scene, x, y, nombre_img, text, next_text, animation) {
+    constructor(scene, x, y, nombre_img, text_data, next_text, animation, var_id) {
         super(scene, x, y, nombre_img, 200);
 
         this.setOrigin(1, 1);
 
         this.SCALE = 1.2;
 
-        this.text = text;
+        this.text = text_data;
         this.next_text = next_text;
 
         this.finished_animation = 0;
         this.total_animations = 0;
+        this.animation_finished = false;
 
         this.game_object_data = {
             'alpha': this.alpha,
@@ -26,6 +27,7 @@ class ButtonCuadradoDialogo extends DialogoGameObject {
         this.on_click = {
             "scene": "dialogo",
             "name": this.next_text,
+            "var_id": var_id
         }
 
         // animacion del boton al aparecer
@@ -62,6 +64,7 @@ class ButtonCuadradoDialogo extends DialogoGameObject {
 
         if (this.finished_animation != this.total_animations) { return; }
         this.finished_animation = 0;
+        this.animation_finished = true;
 
         this.scene.finish_animation();
     }
@@ -78,9 +81,10 @@ class ButtonCuadradoDialogo extends DialogoGameObject {
         if (this.main_text) {
             this.main_text.destroy();
         }
+
         let x = this.x - this.width / 2 - 100;
         let y = this.y - this.height / 2;
-        this.main_text = new DialogoMainText(this.scene, x - this.width / 2, y - this.height / 3, this, this.width * this.SCALE, this.text, this.delay, {fontSize: "32px",}).setOrigin(0, 0)
+        this.main_text = new DialogoMainText(this.scene, x - this.width / 2, y - this.height / 3, this, this.width * this.SCALE, this.text, this.delay, !this.animation_finished, {fontSize: "32px",}).setOrigin(0, 0)
         
         this.total_animations++;
     }

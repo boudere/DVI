@@ -30,6 +30,7 @@ class AfinidadDialogoManager extends Managers {
     }
 
     enter(scene_data) {
+        console.log("Entrando en el manager de dialogo de afinidad");
         this.datos_actualizados = false;
         this.datos_usuario = this.data_info_scene.get_datos_usaurio();
         this.variable_data = this.variables_data[scene_data.var_id];
