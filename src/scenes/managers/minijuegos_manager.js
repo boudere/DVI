@@ -3,7 +3,7 @@ import { MINIJUEGO_MANAGER, SCENE_MANAGER, DIALOGO_MANAGER, DATA_INFO, JUEGO_OVE
 
 import JuegoOveja from '/src/minijuegos/juego_oveja/juego_oveja2.js';
 import JuegoDiscoteca from '/src/minijuegos/juego_discoteca/juego_discoteca';
-import JuegoFruit from '/src/minijuegos/juego_fruit_merge/fruit_merge.js';
+import JuegoFruit from '/src/minijuegos/juego_fruit/fruit_merge.js';
 
 class MinijuegosManager extends Managers {
     constructor() {

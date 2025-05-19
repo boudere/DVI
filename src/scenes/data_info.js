@@ -223,6 +223,7 @@ class DataInfo extends Phaser.Scene {
     load_img2(scene, name, path) {
         const img_suffix = this.data_imgs.Suffix;
         this.load.image(this.img_prefix + scene + "_" + name, this.IMG_PATH + path + name + img_suffix);
+        console.info( this.img_prefix + scene + "_" + name, this.IMG_PATH + path + name + img_suffix);
     }
 
     load_musicas() {

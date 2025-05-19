@@ -186,20 +186,20 @@
                   "JuegoFruit": {
                     "Path": "juego_fruit/",
                     "JuegoFruit": [
-                         "alitax.png",
-                "cafex.png",
-                "croasanx.png",
-                "croquetax.png",
-                "hamburguesax.png",
-                "heladox.png",
-                "huevox.png",
-                "kebabx.png",
-                "perritox.png",
-                "quesadillax.png",
-                "tortillax.png",
-                "pantalla_inicio.png",
-                "pantalla_final.png",
-                "fondoFruit.png"
+                         "alitax",
+                "cafex",
+                "croasanx",
+                "croquetax",
+                "hamburguesax",
+                "heladox",
+                "huevox",
+                "kebabx",
+                "perritox",
+                "quesadillax",
+                "tortillax",
+                "pantalla_inicio",
+                "pantalla_final",
+                "fondoFruit"
                     ]
                 },
                 "Clases": [

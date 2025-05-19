@@ -1,7 +1,7 @@
 // src/minijuegos/fruit_merge/game_objects/fruit.js
 import { MINIJUEGO_MANAGER, DATA_INFO } from "/src/data/scene_data.js";
 import GamesGameObjects from "/src/minijuegos/games_game_objects.js";
-import { FRUIT_TYPES } from "/src/minijuegos/juego_fruit_merge/fruit_merge.js"; // Asegúrate que la ruta es correcta
+import { FRUIT_TYPES } from "/src/minijuegos/juego_fruit/fruit_merge.js"; // Asegúrate que la ruta es correcta
 
 class Fruit extends GamesGameObjects {
     constructor(scene, x, y, fruitTypeIndex) {
