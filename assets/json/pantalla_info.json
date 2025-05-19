@@ -174,7 +174,7 @@
                     "animation": null,
                     "on_click":{
                         "scene": "pantalla",
-                        "name": "c3_entrada1",
+                        "name": "c3_entrada",
                         "direction": "right"
                     }
                 },
@@ -189,7 +189,7 @@
                     "animation": null,
                     "on_click":{
                         "scene": "pantalla",
-                        "name": "c3_futbol1",
+                        "name": "c3_futbol",
                         "direction": "left"
                     }
                 }
@@ -213,6 +213,108 @@
                 }
             }
 
+        },
+          "c3_entrada":{
+            "background": "entradafacul",
+            "puertas": {
+                "entradafacul_derecha": {
+                    "nombre": "pasillo",
+                    "img": "entradafacul_derecha", 
+                    "pos_x": 600,
+                    "pos_y": 390,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "c3_pasillo",
+                        "direction": "right"
+                    }
+                }
+            },
+            "objetos": {}
+        },
+         "c3_pasillo":{
+         "background": "pasillo",
+            "puertas":{
+                "pasillo_izquierda": {
+                    "nombre": "clase",
+                    "img": "pasillo_izquierda",
+                    "pos_x": 734,
+                    "pos_y": 710,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click": {
+                        "scene": "pantalla",
+                        "name": "c3_clase",
+                        "direction": "left"
+                    }
+                },
+                "pasillo_derecha": {
+                    "nombre": "cafeteria",
+                    "img": "pasillo_derecha",
+                    "pos_x": 1979,
+                    "pos_y": 921,
+                    "size_x": 1,
+                    "size_y": 1,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "cafe_juego",
+                        "direction": "right"
+                    }
+                }
+            },
+            "objetos": {}
+        },
+         "c3_clase": {
+            "background": "clase",
+            "puertas":{
+                
+                "clase_derecha": {
+                    "nombre": "pasillo",
+                    "img": "clase_derecha",
+                    "pos_x": 997,
+                    "pos_y": 392,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "c3_pasillo",
+                        "direction": "right"
+                    }
+                }
+                
+            },
+            "objetos": {}
+        },  "c3_futbol": {
+            "background": "futbol",
+            "puertas":{
+                
+                "futbol_izquierda": {
+                    "nombre": "cafeteria",
+                    "img": "futbol_izquierda",
+                    "pos_x": 93,
+                    "pos_y": 508,
+                    "size_x": 200,
+                    "size_y": 800,
+                    "delay": 0,
+                    "animation": null,
+                    "on_click":{
+                        "scene": "pantalla",
+                        "name": "cafe_juego",
+                        "direction": "right"
+                    }
+                }
+                
+            },
+            "objetos": {}
         },
         "bares_1": {
             "background": "bares",

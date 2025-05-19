@@ -55,11 +55,12 @@ class JuegoFruit extends Games {
         this.deathLinePadding = 1; 
 
         this.fallenPersonas = [];
+        this.puntuacion = 0; 
     }
 
 
     create() {
-        this.obstaculossaltados = 0;
+        this.puntuacion = 0;
         this.losing = false;
         this.gravityStarted = false;
         this.horizontalMouseMoveActive = true;
@@ -72,8 +73,9 @@ class JuegoFruit extends Games {
         this.fallenPersonas = [];
 
         this._crear_fondo();
-        this._initial_player_and_deathline_setup(); // Sets up player and deathline based on player
-        this._crear_marcador();
+        // MODIFICACIÓN: Crear marcador antes de configurar el jugador inicial
+        this._crear_marcador(); 
+        this._initial_player_and_deathline_setup(); 
         this._crear_pantalla_inicio();
         this._crear_pantalla_final();
         this._crear_boton_perder();
@@ -167,8 +169,9 @@ class JuegoFruit extends Games {
         this.losing = false;
         this.gravityStarted = false;
         this.horizontalMouseMoveActive = true;
-        this.obstaculossaltados = 0;
-        if (this.contadorTexto) this.contadorTexto.setText(`Puntuación: ${this.obstaculossaltados}`);
+        this.puntuacion = 0;
+        if (this.contadorTexto) this.contadorTexto.setText(`Puntuación: ${this.puntuacion}`);
+
 
         this._clear_obstacles();
         if (this.timerEvent) {
@@ -184,7 +187,7 @@ class JuegoFruit extends Games {
             this.persona = null;
         }
         
-        this._setup_new_active_player(); 
+        this._setup_new_active_player(); // Esto sumará 10 a la puntuación y actualizará el marcador
     }
 
     _setup_new_active_player() {
@@ -202,7 +205,7 @@ class JuegoFruit extends Games {
             this.persona.body.gravity.y = 800; 
             this.persona.setVelocity(0,0); 
             this.persona.clearTint();
-            this.persona.setAlpha(1);
+            this.persona.setAlpha(1); 
             this.persona.setActive(true).setVisible(true);
             this.persona.body.setEnable(true); 
 
@@ -218,17 +221,14 @@ class JuegoFruit extends Games {
                             const activePlayerTopY = this.persona.y - (this.persona.displayHeight / 2);
                             const isAtOrAboveDeathLine = activePlayerTopY <= this.deathLineY;
 
-                            if (isAtOrAboveDeathLine) { // Game over if the impact point itself is too high
+                            if (isAtOrAboveDeathLine) { 
                                 const horizontalOverlap = Math.abs(this.persona.x - fallen.x) < (this.persona.displayWidth / 2 + fallen.displayWidth / 2) * 0.9; 
                                 const isPersonaPhysicallyAboveFallen = this.persona.y < fallen.y; 
 
                                 if (horizontalOverlap && isPersonaPhysicallyAboveFallen) {
-                                    this._game_over('colision_jugador_caido');
+                                    this._game_over('Colisión');
                                 }
                             } else {
-                                // Landed on a fallen player, and the impact point is BELOW the death line.
-                                // Proceed to handle this as a "successful" landing.
-                                // _handle_successful_landing will do a final check once player settles.
                                 if (!this.losing) { 
                                     this._handle_successful_landing();
                                 }
@@ -241,40 +241,41 @@ class JuegoFruit extends Games {
         } else {
             console.warn("New persona body not immediately available during _setup_new_active_player. Colliders with fallen might be missed for this instance.");
         }
+
+        // MODIFICACIÓN: Sumar puntos y actualizar marcador cada vez que se crea un Cafex
+        this.puntuacion += 10;
+        if (this.contadorTexto) { // Asegurarse que el marcador ya existe
+            this.contadorTexto.setText(`Puntuación: ${this.puntuacion}`);
+        }
     }
 
     _handle_successful_landing() {
         if (this.losing || !this.persona || !this.persona.body || !this.gravityStarted) return;
 
-        // Current persona stops
         if (this.persona && this.persona.body) {
             this.persona.body.setVelocity(0, 0); 
             this.persona.body.setAllowGravity(false); 
             this.persona.body.setImmovable(true); 
             
-            // Check if the stopped player is now too high (above or on the deathLine)
             const currentPlayerTopY = this.persona.y - (this.persona.displayHeight / 2);
             if (currentPlayerTopY <= this.deathLineY) {
-                // If player is too high after stopping, it's game over.
-                // Tint red if not already (e.g. if it just landed on floor but it's too high)
                 this.persona.setTint(0xff0000); 
-                this._game_over('apilado_demasiado_alto'); 
-                return; // Exit before making it a "fallen" player or respawning
+                this._game_over('apilado_demasiado_alto');
+                return; 
             }
             
-            // If not too high, make it a "fallen" visual
-            this.persona.setAlpha(0.4); 
+            this.persona.setAlpha(1);
             this.persona.setDepth(1);   
         }
         
-        // Only add to fallenPersonas if it wasn't a game over for being too high
         this.fallenPersonas.push(this.persona);
 
-        // Reset for the new "life" or attempt
         this.gravityStarted = false;
         this.horizontalMouseMoveActive = true; 
-        this.obstaculossaltados = 0; 
-        if (this.contadorTexto) this.contadorTexto.setText(`Puntuación: ${this.obstaculossaltados}`);
+        
+        // MODIFICACIÓN: Eliminar reinicio de puntuación y actualización del texto aquí
+        // this.puntuacion = 0; // ELIMINADO
+        // if (this.contadorTexto) this.contadorTexto.setText(`Puntuación: ${this.puntuacion}`); // ELIMINADO
 
         this._clear_obstacles(); 
         if (this.timerEvent) { 
@@ -282,8 +283,7 @@ class JuegoFruit extends Games {
             this.timerEvent = null;
         }
 
-        // Setup the new active player
-        this._setup_new_active_player();
+        this._setup_new_active_player(); // Esto se encargará de la puntuación y el marcador
     }
 
 
@@ -306,7 +306,7 @@ class JuegoFruit extends Games {
     _crear_marcador() {
         this.contadorTexto = this.add.text(
             this.SCREEN_WIDTH - 50, 50,
-            `Puntuación: ${this.obstaculossaltados}`,
+            `Puntuación: ${this.puntuacion}`, // Se inicializa con la puntuación actual (0 al principio)
             {
                 fontSize: '40px',
                 fill: '#ffffff',
@@ -327,18 +327,13 @@ class JuegoFruit extends Games {
     }
 
     _initial_player_and_deathline_setup() {
-        // Primero, crea el jugador para que use initialPlayerYFactor para su posición inicial
-        this._setup_new_active_player(); 
+        this._setup_new_active_player(); // Esto sumará los primeros 10 puntos y actualizará el marcador
 
-        // --- MODIFICACIÓN INTEGRADA ---
-        // Luego, establece la deathLineY usando su propio factor, independientemente de la pos. inicial del jugador
         this.deathLineY = this.SCREEN_HEIGHT * this.deathLineYFactor;
-        // Asegurarse de que no esté fuera de la pantalla por abajo (aunque con 0.75 no debería)
-        this.deathLineY = Math.min(this.deathLineY, this.SCREEN_HEIGHT - 4); // -4 por el grosor de la línea
-        this.deathLineY = Math.max(this.deathLineY, 0); // Y no por encima
-        // --- FIN DE MODIFICACIÓN ---
+        this.deathLineY = Math.min(this.deathLineY, this.SCREEN_HEIGHT - 4); 
+        this.deathLineY = Math.max(this.deathLineY, 0); 
         
-        this._crear_linea_muerte(); // Dibuja la línea en su nueva posición
+        this._crear_linea_muerte(); 
     }
 
     _crear_pantalla_inicio() {
@@ -424,27 +419,20 @@ class JuegoFruit extends Games {
 
         const x_pos = this.SCREEN_WIDTH + obstaclePipeWidth / 2; 
 
-        // --- MODIFICACIÓN INTEGRADA: Rango vertical para el centro del hueco del obstáculo ---
-        const minGapYScreenPercentage = 0.25; // Centro del hueco no más arriba del 25% de la pantalla
-        const maxGapYScreenPercentage = 0.75; // Centro del hueco no más abajo del 75% de la pantalla
+        const minGapYScreenPercentage = 0.25; 
+        const maxGapYScreenPercentage = 0.75; 
         
         const minPossibleGapCenterY = this.SCREEN_HEIGHT * minGapYScreenPercentage;
         const maxPossibleGapCenterY = this.SCREEN_HEIGHT * maxGapYScreenPercentage;
 
-        // Límites absolutos para el borde superior del hueco (gapTopY)
-        const minGapTopY = 50; // Margen superior para el tubo de arriba
-        const maxGapTopY = this.SCREEN_HEIGHT - gapHeight - 50; // Margen inferior para el tubo de abajo
+        const minGapTopY = 50; 
+        const maxGapTopY = this.SCREEN_HEIGHT - gapHeight - 50; 
 
-        // Calcular el centro del hueco
         let gapCenterY = Phaser.Math.Between(minPossibleGapCenterY, maxPossibleGapCenterY);
         
-        // Calcular el borde superior del hueco (gapTopY) a partir del centro
         let gapTopY = gapCenterY - gapHeight / 2;
 
-        // Ajustar gapTopY para que respete los límites absolutos
         gapTopY = Phaser.Math.Clamp(gapTopY, minGapTopY, maxGapTopY);
-        // --- FIN DE MODIFICACIÓN ---
-
 
         const imgData = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OBSTACLE_FRUIT_IMG);
         if (!imgData || !imgData.key) {
@@ -512,7 +500,7 @@ class JuegoFruit extends Games {
         } else if (causa === 'colision_jugador_caido') {
             mensajeGameOver = '¡COLISIÓN DE CAFÉS!';
         } else if (causa === 'apilado_demasiado_alto') { 
-            mensajeGameOver = '¡TORRE DEMASIADO ALTA!';
+            mensajeGameOver = 'Perdiste'; 
         }
 
 
@@ -532,7 +520,7 @@ class JuegoFruit extends Games {
         this.time.delayedCall(2000, () => {
             textoGameOver.destroy();
             if (this.pantalla_final && typeof this.pantalla_final.enter === 'function') {
-                 this.pantalla_final.enter({ score: this.obstaculossaltados });
+                 this.pantalla_final.enter({ score: this.puntuacion });
             } else {
                 this.finnish_game(); 
             }
@@ -545,10 +533,6 @@ class JuegoFruit extends Games {
         }
 
         if (this.started && this.gravityStarted) {
-            // REMOVED: Player is now immune to deathLineY while actively falling.
-            // The check is done in _handle_successful_landing or collider callback once stopped.
-            
-            // Check for hitting the "ground" (bottom of the world)
             if (this.persona.body.onFloor()) {
                 if (!this.losing) { 
                     this._handle_successful_landing(); 
@@ -556,16 +540,16 @@ class JuegoFruit extends Games {
                 return; 
             }
 
-            // Obstacle scoring and cleanup
             if (this.gravityStarted && this.persona && this.persona.active && !this.losing) { 
                  for (let i = this.obstaculos.length - 1; i >= 0; i--) {
                     const obstaculoPair = this.obstaculos[i];
                     const tubo = obstaculoPair.inferior; 
 
+                    // MODIFICACIÓN: Eliminar suma de puntos por pasar obstáculos
                     if (tubo && tubo.active && tubo.x < this.persona.x - this.persona.displayWidth / 2 && !obstaculoPair.contado) {
-                        this.obstaculossaltados++;
-                        this.contadorTexto.setText(`Puntuación: ${this.obstaculossaltados}`);
-                        obstaculoPair.contado = true;
+                        // this.puntuacion += 10; // ELIMINADO
+                        // this.contadorTexto.setText(`Puntuación: ${this.puntuacion}`); // ELIMINADO
+                        obstaculoPair.contado = true; // Se mantiene por si es útil para otra lógica, o para saber si se pasó
                     }
 
                     if (tubo && tubo.x < -tubo.displayWidth / 2) { 
@@ -635,6 +619,7 @@ class JuegoFruit extends Games {
         this.losing = false;
         this.gravityStarted = false;
         this.horizontalMouseMoveActive = true;
+        this.puntuacion = 0;
     }
 
     shutdown() {

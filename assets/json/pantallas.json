@@ -1136,6 +1136,33 @@
                 "on_click":null
             }
         },
+        "c3_entrada":{
+            "pantalla":{
+                "nombre": "c3_entrada"
+            }
+        },
+        "c3_cafe":{
+            "pantalla":{
+                "nombre": "c3_cafe"
+            }
+        },
+        "c3_pasillo":{
+            "pantalla":{
+                "nombre": "c3_pasillo"
+            }
+            
+        },
+        "c3_clase":{
+            "pantalla":{
+                "nombre": "c3_clase"
+            }
+        },
+        "c3_futbol":{
+            "pantalla":{
+                "nombre": "c3_futbol"
+            }
+        },
+
 
          "c3_salon3":{
             "pantalla": {
