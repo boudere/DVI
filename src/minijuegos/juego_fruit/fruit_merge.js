@@ -1,436 +1,398 @@
-import { MINIJUEGO_MANAGER, DATA_INFO, SCENE_MANAGER } from '/src/data/scene_data.js';
-import Games from '/src/minijuegos/games.js';
-import Fruit from '/src/minijuegos/juego_fruit/game_objects/sprites/fruit.js';
-import PantallaInicio from "/src/minijuegos/juego_fruit/pantallas/pantalla_inicio"; 
-import PantallaFinal from "/src/minijuegos/juego_fruit/pantallas/pantalla_final"; 
+import { DATA_INFO, MINIJUEGO_MANAGER } from '/src/data/scene_data.js'; // SCENE_MANAGER might not be needed directly
+import Games from '/src/minijuegos/games.js'; // Corrected 'Game' to 'Games' to match your FruitMerge
+// Assuming these classes from 'juego_discoteca' are generic enough:
+import Persona from '/src/minijuegos/juego_fruit/game_objects/sprites/cafex.js';
+import Fondo from '/src/minijuegos/juego_fruit/game_objects/sprites/fondo.js';
+import PantallaInicio from '/src/minijuegos/juego_fruit/pantallas/pantalla_inicio.js';
+import PantallaFinal from '/src/minijuegos/juego_fruit/pantallas/pantalla_final.js';
 
-// Define tus tipos de fruta. Necesitarás las imágenes correspondientes.
-// El 'next' indica el índice de la fruta a la que se transforma al fusionarse. 'null' para la más grande.
-// El 'radius_factor' es un multiplicador para el radio del cuerpo físico respecto al ancho de la imagen.
-export const FRUIT_TYPES = [
-    { key: 'cafex', radius_factor: 0.10, points: 10, next: 1, color: 0xff0000 },  
-    { key: 'croquetax', radius_factor: 0.15, points: 20, next: 2, color: 0xff69b4 },    
-    { key: 'alitax', radius_factor: 0.20, points: 30, next: 3, color: 0x800080 },      
-    { key: 'croasanx', radius_factor: 0.25, points: 40, next: 4, color: 0xffa500 },   
-    { key: 'heladox', radius_factor: 0.30, points: 50, next: 5, color: 0x00ff00 },   
-    { key: 'huevox', radius_factor: 0.35, points: 60, next: 6, color: 0x90ee90 }, 
-    { key: 'kebabx', radius_factor: 0.40, points: 70, next: 7, color: 0x90ee90 }, 
-    { key: 'perritox', radius_factor: 0.45, points: 80, next: 8, color: 0x90ee90 }, 
-    { key: 'tortillax', radius_factor: 0.50, points: 90, next: 9, color: 0x90ee90 }, 
-    { key: 'hamburguesax', radius_factor: 0.55, points: 100, next: 10, color: 0x90ee90 }, 
-    { key: 'quesadillax', radius_factor: 0.60, points: 110, next: 11, color: 0x90ee90 } 
-];
+// You would need to add this new key to your scene_data.js or constants file
+export const JUEGO_FRUIT = 'JuegoFruit';
 
-const JUEGO_FRUIT = 'JuegoFruit'; 
-
-class JuegoFruitMerge extends Games {
-    constructor(sprites) {
+class JuegoFruit extends Games {
+    constructor() {
         super({ key: JUEGO_FRUIT });
 
-        sprites = {
-            FONDO_IMG: 'fondoFruit',
-            PANTALLA_INICIO: 'pantalla_inicio',
-            PANTALLA_FINAL: 'pantalla_final'
+        // Define logical image keys for this game.
+        // These keys MUST be configured in your DATA_INFO setup to point to actual image assets.
+        const sprites = {
+            PLAYER_FRUIT_IMG: 'cafex',        // Logical key for the player fruit (e.g., the 'cafex' image)
+            OBSTACLE_FRUIT_IMG: 'quesadillax',// Logical key for the obstacle fruit (e.g., 'quesadillax')
+            FONDO_IMG: 'fondoFruit',          // Logical key for the background from FruitMerge
+            PANTALLA_INICIO: 'pantalla_inicio_fruit', // New logical key
+            PANTALLA_FINAL: 'pantalla_final_fruit'    // New logical key
         };
 
-        // Nombres de imágenes para pantallas (debes tener estas imágenes)
-        this.PANTALLA_INICIO_IMG = sprites.PANTALLA_INICIO_IMG;
-        this.PANTALLA_FINAL_IMG = sprites.PANTALLA_FINAL_IMG;
+        this.PLAYER_FRUIT_IMG = sprites.PLAYER_FRUIT_IMG;
+        this.OBSTACLE_FRUIT_IMG = sprites.OBSTACLE_FRUIT_IMG;
         this.FONDO_IMG = sprites.FONDO_IMG;
+        this.PANTALLA_INICIO_KEY = sprites.PANTALLA_INICIO; // Store the key
+        this.PANTALLA_FINAL_KEY = sprites.PANTALLA_FINAL;   // Store the key
 
-        this.FRUIT_DROP_Y = 100; // Altura desde donde cae la fruta
-        this.GAME_OVER_LINE_Y = 150; // Altura de la línea de game over
+        // --- IMPORTANT: Adjust these dimensions based on your actual fruit sprite assets ---
+        // Dimensions for the 'cafex' sprite (or whatever you choose for the player)
+        this.playerFruitWidth = 100; // Example: intrinsic width of cafex.png
+        this.playerFruitHeight = 100; // Example: intrinsic height of cafex.png
 
-        this.currentFruit = null;
-        this.nextFruitPreview = null;
-        this.canDrop = false;
-        this.score = 0;
-        this.fruitsGroup = null;
-        this.isGameOver = false;
-    }
+        // Dimensions for the 'quesadillax' sprite (or obstacle sprite)
+        this.obstacleFruitWidth = 200; // Example: intrinsic width of quesadillax.png
+        this.obstacleFruitHeight = 200; // Example: intrinsic height of quesadillax.png
 
-    preload() {
-        // Si DATA_INFO no precarga, puedes hacerlo aquí
-        // Por ejemplo: FRUIT_TYPES.forEach(ft => this.load.image(ft.key, `path/to/${ft.key}.png`));
-        // this.load.image(this.PANTALLA_INICIO_IMG, `path/to/${this.PANTALLA_INICIO_IMG}.png`);
-        // this.load.image(this.PANTALLA_FINAL_IMG, `path/to/${this.PANTALLA_FINAL_IMG}.png`);
-        // this.load.image(this.FONDO_IMG, `path/to/${this.FONDO_IMG}.png`);
+        // Dimensions for the 'fondoFruit' sprite
+        this.fondoWidth = 1536; // Example: intrinsic width of fondoFruit.png
+        this.fondoHeight = 1024; // Example: intrinsic height of fondoFruit.png
+        // --- END OF DIMENSION ADJUSTMENTS ---
 
-
-        this.data_info_scene = this.scene.get(DATA_INFO); // Necesitas la instancia
-
-    const basePathImgFromDataInfo = this.data_info_scene.IMG_PATH + "minijuegos/juego_fruit/"; // Construir la ruta base
-    const imgPrefixFromDataInfo = this.data_info_scene.img_prefix + "Minijuegos_"; // Construir el prefijo
-    // Cargar fondo
-    // Clave parcial
-    const fondoKeyParcial = 'fondoFruit';
-    // Clave completa con la que se cargará
-    const fondoKeyCompleta = imgPrefixFromDataInfo + fondoKeyParcial;
-    this.load.image(fondoKeyCompleta, basePathImgFromDataInfo + fondoKeyParcial + '.png');
-    console.log(fondoKeyCompleta, basePathImgFromDataInfo + fondoKeyParcial + '.png')
-
+        this.started = false;
+        this.losing = false; // Initialize losing flag
     }
 
     create() {
+        this.obstaculossaltados = 0;
+        this.losing = false; // Reset on create/restart
         this.SCREEN_WIDTH = this.sys.game.canvas.width;
         this.SCREEN_HEIGHT = this.sys.game.canvas.height;
+
         this.data_info_scene = this.scene.get(DATA_INFO);
+        // this.scene.get(MINIJUEGO_MANAGER).play_music(this.DISCOTECA_MUSICA); // Music removed/changed
 
-        // 1. Fondo
-        const fondoImgData = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.FONDO_IMG);
-        if (fondoImgData && fondoImgData.key) {
-            this.add.image(this.SCREEN_WIDTH / 2, this.SCREEN_HEIGHT / 2, fondoImgData.key)
-                .setDisplaySize(this.SCREEN_WIDTH, this.SCREEN_HEIGHT);
-        } else {
-            console.warn(`Imagen de fondo ${this.FONDO_IMG} no encontrada.`);
-            this.cameras.main.setBackgroundColor('#abcdef'); // Color de fondo por defecto
-        }
-
-
-        // 2. Límites del juego (contenedor)
-        const wallThickness = 20;
-        const containerWidth = this.SCREEN_WIDTH * 0.6; // Ancho del área de juego
-        const containerHeight = this.SCREEN_HEIGHT * 0.8;
-        const containerX = (this.SCREEN_WIDTH - containerWidth) / 2;
-        const containerY = this.SCREEN_HEIGHT - containerHeight - 50; // Un poco arriba del fondo
-
-        // Visualización del contenedor (opcional)
-        this.add.graphics()
-            .fillStyle(0x000000, 0.2)
-            .fillRect(containerX, containerY, containerWidth, containerHeight)
-            .lineStyle(2, 0xffffff)
-            .strokeRect(containerX, containerY, containerWidth, containerHeight);
-
-
-        this.physics.world.setBounds(containerX, containerY, containerWidth, containerHeight);
-        
-        // Ajustar gravedad si es necesario
-        this.physics.world.gravity.y = 300;
-
-        // 3. Línea de Game Over
-        this.gameOverLine = this.add.graphics({ lineStyle: { width: 4, color: 0xff0000, alpha: 0.5 } });
-        this.gameOverLine.strokeLineShape(new Phaser.Geom.Line(
-            containerX, 
-            containerY + this.GAME_OVER_LINE_Y, 
-            containerX + containerWidth, 
-            containerY + this.GAME_OVER_LINE_Y
-        ));
-        this.gameOverLine.setDepth(1000); // Asegurar que esté visible
-
-        // 4. Grupo para las frutas con física
-        this.fruitsGroup = this.physics.add.group();
-
-        // Colisión entre frutas
-        this.physics.add.collider(this.fruitsGroup, this.fruitsGroup, this.handleFruitCollision, null, this);
-        
-        // Colisión con los límites del mundo (ya configurado por setBounds en el grupo, pero individualmente también)
-        // this.physics.add.collider(this.fruitsGroup, this.leftWall); // Si crearas paredes individuales
-        // this.physics.add.collider(this.fruitsGroup, this.rightWall);
-        // this.physics.add.collider(this.fruitsGroup, this.floor);
-
-
-        // 5. Puntuación
-        this.scoreText = this.add.text(containerX + containerWidth - 20, containerY + 20, `Puntos: 0`, {
-            fontSize: '32px',
-            fill: '#fff',
-            fontFamily: 'Arial',
-            stroke: '#000',
-            strokeThickness: 4
-        }).setOrigin(1, 0).setDepth(1001);
-
-        // 6. Lógica de control
-        this.input.on('pointerdown', this.dropFruit, this);
-        this.input.on('pointermove', this.movePreviewFruit, this);
-
-        // 7. Pantallas
+        this.obstaculos = [];
+        this._crear_fondo();
+        this._crear_persona(); // This will now create a fruit player
+        this._crear_marcador();
         this._crear_pantalla_inicio();
         this._crear_pantalla_final();
 
-        this.game_created(); // Notifica al manager que el juego está listo
-    }
+        this.cursors = this.input.keyboard.createCursorKeys(); // Keep for potential keyboard input
 
-    _crear_pantalla_inicio() {
-        console.log(MINIJUEGO_MANAGER, this.PANTALLA_INICIO_IMG);
-        let imgData = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_INICIO_IMG);
-        if (!imgData || !imgData.key) {
-            console.warn(`Imagen ${this.PANTALLA_INICIO_IMG} no encontrada para pantalla de inicio.`);
-            // Usar un color o texto por defecto si la imagen no está
-            this.pantalla_inicio = { enter: () => this.start_game(), exit: () => {} }; // Mock object
-            return;
-        }
-        this.pantalla_inicio = new PantallaInicioDefault(this, 0, 0, imgData.key);
-    }
+        this.pointerDownEvent = this.input.on('pointerdown', () => {
+            if (!this.started || !this.persona || this.losing) return;
+            this.persona.setVelocityY(-450); // Adjusted velocity for potentially different feel
+        });
 
-    _crear_pantalla_final() {
-        let imgData = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_FINAL_IMG);
-         if (!imgData || !imgData.key) {
-            console.warn(`Imagen ${this.PANTALLA_FINAL_IMG} no encontrada para pantalla final.`);
-            this.pantalla_final = { enter: () => this.finnish_game(), exit: () => {} }; // Mock object
-            return;
-        }
-        this.pantalla_final = new PantallaFinalDefault(this, 0, 0, imgData.key);
+        this.game_created();
     }
 
     enter() {
         super.enter();
-        this.isGameOver = false;
-        this.score = 0;
-        this.updateScoreDisplay();
-        if (this.fruitsGroup) this.fruitsGroup.clear(true, true); // Limpiar frutas de partidas anteriores
-        
-        // Asegurarse de que las pantallas existan antes de llamar a enter
-        if (this.pantalla_inicio && typeof this.pantalla_inicio.enter === 'function') {
-            this.pantalla_inicio.enter();
-        } else {
-            // Si no hay pantalla de inicio, iniciar el juego directamente
-            console.warn("Pantalla de inicio no definida, iniciando juego directamente.");
-            this.start_game();
+        this.losing = false; // Reset losing state when entering
+        this.obstaculossaltados = 0; // Reset score
+        if (this.contadorTexto) this.contadorTexto.setText(`Puntuación: ${this.obstaculossaltados}`);
+
+        // Clear old obstacles if any
+        this._clear_obstacles();
+
+        if (this.persona) {
+            this.persona.setPosition(175, this.SCREEN_HEIGHT * 0.5);
+            this.persona.setVelocity(0,0);
+            this.persona.clearTint();
+            this.persona.setActive(true).setVisible(true);
+        }
+        this.physics.resume();
+
+
+        if (this.pantalla_inicio) this.pantalla_inicio.enter();
+        else {
+            console.warn("Pantalla de inicio no disponible para JuegoFruitFlap");
+            this.start_game(); // Directly start if no screen
         }
     }
 
     start_game() {
-        super.start_game();
+        super.start_game(); // Call super if it does anything
+        this.losing = false;
+        this.obstaculossaltados = 0;
+        if (this.contadorTexto) this.contadorTexto.setText(`Puntuación: ${this.obstaculossaltados}`);
+
+
         if (this.pantalla_inicio && typeof this.pantalla_inicio.exit === 'function') {
             this.pantalla_inicio.exit();
         }
-        this.canDrop = true;
-        this.isGameOver = false;
-        this.spawnNextFruitPreview();
-       
-    }
 
-    spawnNextFruitPreview() {
-        if (this.nextFruitPreview) {
-            this.nextFruitPreview.destroy();
-        }
-        if (this.isGameOver) return;
-
-        const fruitTypeIndex = Phaser.Math.Between(0, Math.min(2, FRUIT_TYPES.length - 1)); // Suelta solo los primeros 3 tipos de frutas
-        const fruitData = FRUIT_TYPES[fruitTypeIndex];
-        
-        // Usamos GamesGameObjects para la preview para poder reusar la lógica de carga de textura
-        // pero no la añadimos al grupo de físicas principal aún.
-        const previewImgData = this.data_info_scene.get_img(MINIJUEGO_MANAGER, fruitData.key);
-        
-        if (!previewImgData || !previewImgData.key) {
-            console.error(`Imagen ${fruitData.key} no encontrada para preview.`);
-            // Intentar con un placeholder si la imagen no carga
-            this.nextFruitPreview = this.add.circle(this.input.x, this.FRUIT_DROP_Y, 20, fruitData.color || 0xcccccc).setAlpha(0.7);
-            this.nextFruitPreview.fruitTypeIndex = fruitTypeIndex; // Guardar el tipo para cuando se suelte
-            this.nextFruitPreview.isPlaceholder = true;
-        } else {
-            this.nextFruitPreview = this.add.sprite(this.input.x, this.FRUIT_DROP_Y, previewImgData.key).setAlpha(0.7);
-            const scale = (fruitData.radius_factor * 2 * 100) / this.nextFruitPreview.width; // Asumimos un radio base de 100px para el factor
-            this.nextFruitPreview.setScale(scale * 0.8); // Un poco más pequeño para preview
-            this.nextFruitPreview.fruitTypeIndex = fruitTypeIndex;
-            this.nextFruitPreview.isPlaceholder = false;
-        }
-        this.nextFruitPreview.setDepth(100); // Encima de otras frutas pero debajo de UI
-        this.movePreviewFruit(this.input.activePointer); // Posicionar inmediatamente
-    }
-    
-    movePreviewFruit(pointer) {
-        if (!this.nextFruitPreview || !this.canDrop || this.isGameOver) return;
-        
-        const containerX = (this.SCREEN_WIDTH - (this.SCREEN_WIDTH * 0.6)) / 2;
-        const containerWidth = this.SCREEN_WIDTH * 0.6;
-        let previewRadius = 20; // default
-        if(this.nextFruitPreview && !this.nextFruitPreview.isPlaceholder) {
-            previewRadius = (this.nextFruitPreview.displayWidth / 2);
-        } else if (this.nextFruitPreview && this.nextFruitPreview.isPlaceholder) {
-            previewRadius = this.nextFruitPreview.radius; // Para el círculo de placeholder
+        if(this.fondo && typeof this.fondo.enter === 'function') this.fondo.enter();
+        if(this.persona && typeof this.persona.enter === 'function') {
+            this.persona.setPosition(175, this.SCREEN_HEIGHT * 0.5); // Reset position
+            this.persona.setVelocity(0,0); // Reset velocity
+            this.persona.clearTint();
+            this.persona.setActive(true).setVisible(true);
+            this.persona.enter();
         }
 
-        this.nextFruitPreview.x = Phaser.Math.Clamp(
-            pointer.x,
-            containerX + previewRadius,
-            containerX + containerWidth - previewRadius
-        );
-        this.nextFruitPreview.y = this.FRUIT_DROP_Y;
+
+        this._clear_obstacles(); // Clear any existing obstacles before starting
+        this._next_obstaculo();
+        this.started = true;
+        this.physics.resume(); // Ensure physics is running
     }
 
-    dropFruit(pointer) {
-        if (!this.canDrop || !this.nextFruitPreview || this.isGameOver) return;
-
-        this.canDrop = false; // Prevenir drops múltiples rápidos
-
-        const fruitX = this.nextFruitPreview.x;
-        const fruitTypeIndex = this.nextFruitPreview.fruitTypeIndex;
-        
-        this.nextFruitPreview.destroy();
-        this.nextFruitPreview = null;
-
-        const newFruit = new Fruit(this, fruitX, this.FRUIT_DROP_Y, fruitTypeIndex);
-        this.fruitsGroup.add(newFruit);
-        newFruit.enter(); // Para hacerlo visible y activar físicas si es necesario
-
-        // Retraso antes de poder soltar la siguiente y generar la preview
-        this.time.delayedCall(700, () => { // Aumentar delay si es necesario para que la fruta caiga
-            if (!this.isGameOver) {
-                 this.spawnNextFruitPreview();
-                 this.canDrop = true;
-            }
-        });
-    }
-
-    handleFruitCollision(fruitA, fruitB) {
-        if (fruitA.isMerging || fruitB.isMerging || this.isGameOver) return;
-        if (fruitA.fruitTypeIndex === fruitB.fruitTypeIndex) {
-            
-            const currentTypeData = FRUIT_TYPES[fruitA.fruitTypeIndex];
-            if (currentTypeData.next === null) return; // Ya es la fruta más grande
-
-            fruitA.isMerging = true;
-            fruitB.isMerging = true;
-
-            const nextFruitTypeIndex = currentTypeData.next;
-            const mergeX = (fruitA.x + fruitB.x) / 2;
-            const mergeY = (fruitA.y + fruitB.y) / 2;
-
-            // Efecto visual simple de merge
-            this.tweens.add({
-                targets: [fruitA, fruitB],
-                alpha: 0,
-                scale: 0,
-                duration: 150,
-                onComplete: () => {
-                    fruitA.exit(); // Llama a destroy internamente
-                    fruitB.exit();
-
-                    if (this.isGameOver) return;
-
-                    const mergedFruit = new Fruit(this, mergeX, mergeY, nextFruitTypeIndex);
-                    this.fruitsGroup.add(mergedFruit);
-                    mergedFruit.enter();
-                    
-                    // Pequeño impulso hacia arriba al fusionar
-                    mergedFruit.setVelocityY(Phaser.Math.Between(-50, -100));
-
-
-                    this.score += currentTypeData.points * 2; // Puntos por la fruta fusionada
-                    this.updateScoreDisplay();
-                }
-            });
-        }
-    }
-    
-    updateScoreDisplay() {
-        this.scoreText.setText(`Puntos: ${this.score}`);
-    }
-
-    _update(time, delta) { // Phaser llama a update, no _update
-        super._update(time, delta);
-        if (this.isGameOver || !this.canDrop) return;
-
-        // Lógica de Game Over
-        let highestFruitY = this.SCREEN_HEIGHT;
-        let triggerGameOver = false;
-
-        this.fruitsGroup.getChildren().forEach(fruit => {
-            if (!fruit.body || !fruit.active) return;
-
-            // Si una fruta está por encima de la línea Y DEL CONTENEDOR + LINEA DE GAME OVER
-            // y está casi quieta (para evitar game over mientras caen)
-            const containerY = this.SCREEN_HEIGHT - (this.SCREEN_HEIGHT * 0.8) - 50;
-            const fruitTopY = fruit.y - fruit.body.halfHeight; // Usa el radio del cuerpo si es círculo
-
-            if (fruitTopY < (containerY + this.GAME_OVER_LINE_Y) && Math.abs(fruit.body.velocity.y) < 1 && fruit.body.touching.down) {
-                 // Verificar si ha estado quieta por un tiempo
-                 if (!fruit.quietTimer) {
-                    fruit.quietTimer = time;
-                } else if (time - fruit.quietTimer > 1000) { // 1 segundo quieta arriba
-                    triggerGameOver = true;
-                }
-            } else {
-                fruit.quietTimer = null; // Resetear si se mueve o cae
-            }
-        });
-
-        if (triggerGameOver) {
-            this.gameOver();
-        }
-    }
-
-    gameOver() {
-        if (this.isGameOver) return;
-        this.isGameOver = true;
-        this.canDrop = false;
-        
-        if(this.nextFruitPreview) {
-            this.nextFruitPreview.destroy();
-            this.nextFruitPreview = null;
-        }
-
-        console.log("GAME OVER");
-
-        const gameOverText = this.add.text(this.SCREEN_WIDTH / 2, this.SCREEN_HEIGHT / 2, '¡FIN DEL JUEGO!', {
-            fontSize: '64px',
-            fill: '#ff0000',
-            fontFamily: 'Arial Black',
-            stroke: '#000',
-            strokeThickness: 6
-        }).setOrigin(0.5).setDepth(2000);
-
-        // Guardar puntuación (si tienes un sistema para ello)
-        // this.scene.get(MINIJUEGO_MANAGER).save_score(this.score);
-
-        this.time.delayedCall(3000, () => {
-            gameOverText.destroy();
-            if (this.pantalla_final && typeof this.pantalla_final.enter === 'function') {
-                 this.pantalla_final.enter({ score: this.score }); // Pasar puntuación a la pantalla final si es necesario
-            } else {
-                this.finnish_game(); // Salir directamente si no hay pantalla final
-            }
-        });
-    }
-
-    finnish_game() { // Corregido de 'finnish_game' a 'finish_game' si es un typo, o mantener si es intencional
-        super.finnish_game(); // O 'finish_game'
+    finnish_game() { // Name kept from original
         if (this.pantalla_final && typeof this.pantalla_final.exit === 'function') {
             this.pantalla_final.exit();
         }
-        
-        this.fruitsGroup.clear(true, true);
-        this.isGameOver = false;
-        this.canDrop = false;
-        this.score = 0;
-        this.updateScoreDisplay();
+        this._clean_up(); // Calls physics.pause()
 
-        // Volver al diálogo o escena principal
         this.scene.get(MINIJUEGO_MANAGER).return_to_dialogo();
     }
 
-    _clean_up() { // Método de limpieza si es necesario al salir de la escena completamente
-        super._clean_up && super._clean_up(); // Si existe en la clase Games
-        this.input.off('pointerdown', this.dropFruit, this);
-        this.input.off('pointermove', this.movePreviewFruit, this);
-        if (this.fruitsGroup) {
-            this.fruitsGroup.destroy(true); // Destruir el grupo y sus hijos
-            this.fruitsGroup = null;
-        }
-        if (this.nextFruitPreview) {
-            this.nextFruitPreview.destroy();
-            this.nextFruitPreview = null;
-        }
-        if (this.scoreText) {
-            this.scoreText.destroy();
-            this.scoreText = null;
-        }
-        if (this.gameOverLine) {
-            this.gameOverLine.destroy();
-            this.gameOverLine = null;
-        }
-         if (this.pantalla_inicio && typeof this.pantalla_inicio.destroy === 'function') this.pantalla_inicio.destroy();
-         if (this.pantalla_final && typeof this.pantalla_final.destroy === 'function') this.pantalla_final.destroy();
-
-        this.time.removeAllEvents();
+    _clear_obstacles() {
+        this.obstaculos.forEach(obstaculo => {
+            if (obstaculo.superior) obstaculo.superior.destroy();
+            if (obstaculo.inferior) obstaculo.inferior.destroy();
+        });
+        this.obstaculos = [];
     }
 
-    // Sobrescribir si es necesario
-    exit() {
-        this._clean_up(); // Llama a la limpieza personalizada
-        super.exit(); // Llama al exit de la clase base (que en tu ejemplo está vacío)
+    _crear_marcador() {
+        this.contadorTexto = this.add.text(
+            this.SCREEN_WIDTH - 50, 50,
+            `Puntuación: ${this.obstaculossaltados}`,
+            {
+                fontSize: '40px',
+                fill: '#ffffff', // White text, good for most backgrounds
+                fontFamily: 'Arial, sans-serif', // More generic font
+                stroke: '#000000',
+                strokeThickness: 3
+            }
+        ).setOrigin(1, 0).setDepth(100); // Ensure it's on top
+    }
+
+    _crear_fondo() {
+        let x = 0;
+        let y = 0;
+        // Calculate scale to fit the screen, preserving aspect ratio or stretching
+        // This assumes you want to stretch. If not, you'd use Math.max or cover logic.
+        let scale_x = this.SCREEN_WIDTH / this.fondoWidth;
+        let scale_y = this.SCREEN_HEIGHT / this.fondoHeight;
+
+        // The Fondo class is from 'juego_discoteca', it needs this.FONDO_IMG to be set.
+        // It will internally use data_info_scene.get_img(MINIJUEGO_MANAGER, this.FONDO_IMG)
+        // For this to work, Fondo's constructor or creation method must be adapted to use `scene.FONDO_IMG`
+        // or receive the logical key directly.
+        // Let's assume Fondo's constructor has been updated to: new Fondo(scene, x, y, scale_x, scale_y, logicalImageKey)
+        // OR, more likely, that the `Fondo` class uses `scene.FONDO_IMG` if `scene` is `this` (the game scene).
+        this.fondo = new Fondo(this, x, y, scale_x, scale_y); // Pass `this` as scene
+        this.fondo.setOrigin(0, 0);
+    }
+
+    _crear_persona() {
+        let x = 175;
+        let y = this.SCREEN_HEIGHT * 0.5;
+        // Target display size for the player fruit
+        const targetPlayerDisplaySize = 80; // pixels (e.g., diameter if somewhat circular)
+        let scale = targetPlayerDisplaySize / Math.max(this.playerFruitWidth, this.playerFruitHeight); // Maintain aspect ratio
+
+        // The Persona class from 'juego_discoteca' needs this.PERSONA_IMG to be set.
+        // It will internally use data_info_scene.get_img(MINIJUEGO_MANAGER, this.PERSONA_IMG)
+        // For this to work, Persona's constructor must be adapted like Fondo.
+        // We pass 'this' as the scene. The Persona class will need to use `scene.PLAYER_FRUIT_IMG`
+        this.persona = new Persona(this, x, y, scale, scale); // Assuming Persona takes scene, x, y, scaleX, scaleY
+        // If Persona takes specific width/height for scaling factor calculation:
+        // this.persona = new Persona(this, x, y, targetPlayerDisplaySize / this.playerFruitWidth, targetPlayerDisplaySize / this.playerFruitHeight);
+    }
+
+    _crear_pantalla_inicio() {
+        let x = 0; // Centered by the PantallaInicio class usually
+        let y = 0;
+        let imgData = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_INICIO_KEY);
+
+        if (imgData && imgData.key) {
+            this.pantalla_inicio = new PantallaInicio(this, x, y, imgData); // Pass full imgData
+        } else {
+            console.warn(`[${this.sys.settings.key}] Imagen para pantalla de inicio con clave lógica '${this.PANTALLA_INICIO_KEY}' no encontrada.`);
+            // Fallback: create a mock object if PantallaInicio expects a texture key
+             this.pantalla_inicio = { enter: () => this.start_game(), exit: () => {}, destroy: () => {} };
+        }
+    }
+
+    _crear_pantalla_final() {
+        let x = 0;
+        let y = 0;
+        let imgData = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.PANTALLA_FINAL_KEY);
+
+        if (imgData && imgData.key) {
+            this.pantalla_final = new PantallaFinal(this, x, y, imgData); // Pass full imgData
+        } else {
+            console.warn(`[${this.sys.settings.key}] Imagen para pantalla final con clave lógica '${this.PANTALLA_FINAL_KEY}' no encontrada.`);
+            this.pantalla_final = { enter: () => this.finnish_game(), exit: () => {}, destroy: () => {} };
+        }
+    }
+
+    _next_obstaculo() {
+        if (this.losing || !this.started) return; // Don't spawn if game over or not started
+        const delay = Phaser.Math.Between(1500, 2500); // Time between obstacle spawns
+        this.timerEvent = this.time.delayedCall(delay, () => {
+            this._spawn_obstaculo();
+            this._next_obstaculo(); // Schedule next one
+        });
+    }
+
+    _spawn_obstaculo() {
+        if (this.losing || !this.started) return;
+
+        const gapHeight = 250; // Height of the gap for the player to fly through
+        const obstaclePipeWidth = 120; // Visual width of the "pipe" sections
+
+        const x = this.SCREEN_WIDTH + obstaclePipeWidth / 2; // Start off-screen to the right
+        const minGapY = 100; // Minimum Y for the top of the gap
+        const maxGapY = this.SCREEN_HEIGHT - 100 - gapHeight; // Maximum Y for the top of the gap
+        const gapTopY = Phaser.Math.Between(minGapY, maxGapY);
+
+        // Get the actual texture key for the obstacle fruit
+        const imgData = this.data_info_scene.get_img(MINIJUEGO_MANAGER, this.OBSTACLE_FRUIT_IMG);
+        if (!imgData || !imgData.key) {
+            console.warn(`[${this.sys.settings.key}] Obstacle image '${this.OBSTACLE_FRUIT_IMG}' not found.`);
+            return; // Can't spawn obstacle
+        }
+        const obstacleTextureKey = imgData.key;
+
+        // Top obstacle part
+        const topObstacleHeight = gapTopY;
+        const tuboSuperior = this.physics.add.sprite(x, gapTopY / 2, obstacleTextureKey)
+            .setOrigin(0.5, 0.5);
+        tuboSuperior.displayWidth = obstaclePipeWidth;
+        tuboSuperior.displayHeight = topObstacleHeight;
+        // tuboSuperior.setFlipY(true); // Optional: flip if the sprite looks better as a bottom part
+
+        // Bottom obstacle part
+        const bottomObstacleY = gapTopY + gapHeight;
+        const bottomObstacleHeight = this.SCREEN_HEIGHT - bottomObstacleY;
+        const tuboInferior = this.physics.add.sprite(x, bottomObstacleY + bottomObstacleHeight / 2, obstacleTextureKey)
+            .setOrigin(0.5, 0.5);
+        tuboInferior.displayWidth = obstaclePipeWidth;
+        tuboInferior.displayHeight = bottomObstacleHeight;
+
+        // Physics for obstacles
+        [tuboSuperior, tuboInferior].forEach(tubo => {
+            tubo.setVelocityX(-200); // Speed at which obstacles move left
+            tubo.setImmovable(true); // Obstacles should not be moved by player collision
+            tubo.body.setAllowGravity(false); // Obstacles are not affected by gravity
+            tubo.refreshBody(); // Apply changes to physics body
+        });
+
+        // Add colliders
+        if (this.persona) {
+            this.physics.add.collider(this.persona, tuboInferior, this._game_over, null, this);
+            this.physics.add.collider(this.persona, tuboSuperior, this._game_over, null, this);
+        }
+
+        this.obstaculos.push({ superior: tuboSuperior, inferior: tuboInferior, contado: false });
+    }
+
+    _game_over() {
+        if (this.losing) return;
+        this.losing = true;
+        this.started = false; // Stop new obstacles from spawning via _next_obstaculo checks
+
+        if (this.persona) {
+            this.persona.setTint(0xff0000); // Tint player red
+            this.persona.setVelocityX(0); // Stop horizontal movement if any
+        }
+        this.physics.pause(); // Pause all physics
+        if (this.timerEvent) this.timerEvent.remove(false); // Stop spawning new obstacles
+
+        // Stop music if any:
+        // this.scene.get(MINIJUEGO_MANAGER).stop_music(this.CURRENT_MUSIC_KEY);
+
+        const textoGameOver = this.add.text(
+            this.SCREEN_WIDTH / 2,
+            this.SCREEN_HEIGHT / 2 - 50, // Slightly above center
+            '¡FRUTA APLASTADA!', // Themed game over text
+            {
+                fontSize: '56px', // Adjusted size
+                fill: '#ff6347', // Tomato color
+                fontFamily: 'Arial Black, Gadget, sans-serif', // Impactful font
+                stroke: '#000000',
+                strokeThickness: 4
+            }
+        ).setOrigin(0.5).setDepth(200); // Ensure it's on top
+
+        this.time.delayedCall(2000, () => { // Use delayedCall for scene context
+            textoGameOver.destroy();
+            if (this.pantalla_final && typeof this.pantalla_final.enter === 'function') {
+                 this.pantalla_final.enter({ score: this.obstaculossaltados }); // Pass score
+            } else {
+                this.finnish_game();
+            }
+        });
+    }
+
+    update(time, delta) { // Renamed from _update
+        if (!this.started || this.losing || !this.persona) return;
+
+        // Keep player upright (optional, Flappy Bird usually rotates)
+        // this.persona.setAngle(0);
+
+        // If player hits top or bottom of screen
+        if (this.persona.y < 0 + this.persona.displayHeight / 2 || this.persona.y > this.SCREEN_HEIGHT - this.persona.displayHeight / 2) {
+            if (this.persona.body && (this.persona.body.blocked.up || this.persona.body.blocked.down)) {
+                 this._game_over();
+                 return; // Important to return after game over
+            }
+        }
+
+
+        // Score and obstacle cleanup
+        for (let i = this.obstaculos.length - 1; i >= 0; i--) {
+            const obstaculoPair = this.obstaculos[i];
+            const tubo = obstaculoPair.inferior; // Use one of the pipes for X position check
+
+            if (tubo.x < this.persona.x - this.persona.displayWidth/2 && !obstaculoPair.contado) {
+                this.obstaculossaltados++;
+                this.contadorTexto.setText(`Puntuación: ${this.obstaculossaltados}`);
+                obstaculoPair.contado = true;
+            }
+
+            // Remove obstacles that have passed off screen
+            if (tubo.x < -tubo.displayWidth) {
+                obstaculoPair.superior.destroy();
+                obstaculoPair.inferior.destroy();
+                this.obstaculos.splice(i, 1);
+            }
+        }
+    }
+
+    _clean_up() {
+        super._clean_up && super._clean_up(); // If Games has a _clean_up
+
+        if (this.pointerDownEvent) {
+            this.input.off('pointerdown', this.pointerDownEvent.callback, this.pointerDownEvent.context);
+            this.pointerDownEvent = null; // Clear the reference
+        }
+        if (this.timerEvent) {
+            this.timerEvent.remove(false);
+            this.timerEvent = null;
+        }
+        this.time.removeAllEvents(); // Clear any other delayed calls
+        this.physics.pause(); // Pause physics
+
+        if (this.persona) {
+            this.persona.destroy();
+            this.persona = null;
+        }
+        if (this.fondo) {
+            this.fondo.destroy();
+            this.fondo = null;
+        }
+        if (this.contadorTexto) {
+            this.contadorTexto.destroy();
+            this.contadorTexto = null;
+        }
+
+        this._clear_obstacles(); // Ensure all obstacle sprites are destroyed
+
+        // Destroy screens if they have a destroy method
+        if (this.pantalla_inicio && typeof this.pantalla_inicio.destroy === 'function') this.pantalla_inicio.destroy();
+        if (this.pantalla_final && typeof this.pantalla_final.destroy === 'function') this.pantalla_final.destroy();
+        this.pantalla_inicio = null;
+        this.pantalla_final = null;
+
+        this.started = false;
+        this.losing = false;
+    }
+
+    shutdown() { // Phaser's scene lifecycle method
+        this._clean_up();
     }
 }
 
-export default JuegoFruitMerge;
+export default JuegoFruit;
