@@ -5759,10 +5759,10 @@
       "pose": "triste",
       "fondo": "parque",
       "opciones": false,
-      "next_id": "cap4012",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "parque_0401"
     },
     "cap4012": {
       "texto": "(Me encuentro con María, Samu y Pepe, que están cenando en el salón.)",
@@ -5990,10 +5990,10 @@
       "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "cap4033",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "salon_0402"
     },
     "cap4033": {
       "texto": "(Me despierto de golpe. Hoy tengo clase a primera, espero no llegar muy tarde.)",
@@ -6023,10 +6023,10 @@
       "pose": "normal",
       "fondo": "habitacion",
       "opciones": false,
-      "next_id": "cap4036",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "habitacion_0403"
     },
     "cap4036": {
       "texto": "(Me he pegado la carrera de mi vida, siento que se me sale el corazón por la boca, aunque no parece haber servido de mucho…)",
@@ -6056,10 +6056,10 @@
       "pose": "normal",
       "fondo": "pasillo",
       "opciones": false,
-      "next_id": "cap4039",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "pasillo_0402"
     },
     "cap4039": {
       "texto": "¡Me cago en mis muertos!",
@@ -6518,10 +6518,10 @@
       "pose": "rayado",
       "fondo": "cafeteria",
       "opciones": false,
-      "next_id": "cap4066",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "cafeteria_0404"
     },
     "cap4066": {
       "texto": "(Al salir de la cafetería, no sé muy bien por qué, empezamos a correr al metro de ciu.)",
@@ -9037,10 +9037,10 @@
       "pose": "normal",
       "fondo": "parque",
       "opciones": false,
-      "next_id": "cap4077",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "parque_0403"
     },
     "cap4077": {
       "texto": "(Ahora que lo pienso hace mucho que no veo a Lorena…)",
@@ -9400,10 +9400,10 @@
       "pose": "feliz",
       "fondo": "pasillo",
       "opciones": false,
-      "next_id": "cap4081",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "pasillo_0406"
     },
     "cap4079_032": {
       "texto": "Normal, mis ideas siempre son buenas.",
@@ -9444,10 +9444,10 @@
       "pose": "normal",
       "fondo": "pasillo",
       "opciones": false,
-      "next_id": "cap4081",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "pasillo_0406"
     },
     "cap4080_001": {
       "texto": "Bueno qué, ¿hacemos algo este finde?",
@@ -9664,10 +9664,10 @@
       "pose": "feliz",
       "fondo": "pasillo",
       "opciones": false,
-      "next_id": "cap4094_001",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "pasillo_0406"
     },
     "cap4081": {
       "texto": "(Por fin ha llegado la noche decisiva.)",
@@ -10775,10 +10775,10 @@
       "pose": "feliz",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "cap4095",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "salon_0405"
     },
     "cap4094_001": {
       "texto": "(Ha llegado el día de la mayor fiesta del año, según María.)",
@@ -11358,10 +11358,10 @@
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "cap4095",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "salon_0405"
     },
     "cap4095": {
       "texto": "(¿Que ya han pasado 4 años de carrera? Me parece una locura.)",
