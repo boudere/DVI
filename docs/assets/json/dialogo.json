@@ -1515,8 +1515,8 @@
       "opciones": false,
       "next_id": "cap1048",
       "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "juego_discoteca"
+      "next_scene_type": null,
+      "next_scene_id": null
     },
     "cap1048": {
       "texto": "Qué bien me lo he pasado, tengo muchas ganas de la siguiente. Aunque ha sido un poco raro lo de Víctor…",

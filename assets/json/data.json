@@ -183,6 +183,17 @@
                         "pantalla_final_disco"
                     ]
                 },
+                "JuegoDucha": {
+                    "Path": "juego_ducha/",
+                    "JuegoDucha": [
+                        "barra",
+                        "burbuja",
+                        "gota",
+                        "mampara",
+                        "pantalla_final",
+                        "pantalla_inicio"
+                    ]
+                },
                   "JuegoFruit": {
                     "Path": "juego_fruit/",
                     "JuegoFruit": [
@@ -205,6 +216,7 @@
                 "Clases": [
                     "JuegoOveja",
                     "JuegoDiscoteca",
+                    "JuegoDucha",
                     "JuegoFruit"
                 ]
             },

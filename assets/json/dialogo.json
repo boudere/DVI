@@ -1719,10 +1719,10 @@
     "cap1066": {
       "texto": "Ni regalado gracias.",
       "npc": "prota",
-      "pose": "rayado",
+      "pose": "triste",
       "fondo": "clase",
       "opciones": false,
-      "next_id": "cap1087",
+      "next_id": "cap1086_b",
       "var_id": null,
       "next_scene_type": null,
       "next_scene_id": null
@@ -1928,7 +1928,7 @@
     "cap1085": {
       "texto": "¡¡¡QUÉ ACABA DE PASAR!!! Esto mejor me lo guardo para mi…",
       "npc": "prota",
-      "pose": "rayado",
+      "pose": "normal",
       "fondo": "salon",
       "opciones": false,
       "next_id": "cap1086",
@@ -1942,10 +1942,21 @@
       "pose": "normal",
       "fondo": "salon",
       "opciones": false,
-      "next_id": "cap1087",
+      "next_id": "FIN",
       "var_id": null,
-      "next_scene_type": null,
-      "next_scene_id": null
+      "next_scene_type": "pantalla",
+      "next_scene_id": "minijuego_ducha"
+    },
+    "cap1086_b": {
+      "texto": "Bueno, voy a darme una duchita que ya se me va notando lo informático...",
+      "npc": "prota",
+      "pose": "normal",
+      "fondo": "salon",
+      "opciones": false,
+      "next_id": "FIN",
+      "var_id": null,
+      "next_scene_type": "pantalla",
+      "next_scene_id": "minijuego_ducha"
     },
     "cap1087": {
       "texto": "(...)",

@@ -197,6 +197,7 @@ class DataInfo extends Phaser.Scene {
                 break;
             case "JuegoOveja":
             case "JuegoDiscoteca":
+            case "JuegoDucha":
             case "JuegoFruit":
             case "Dialogos":
             case "Cursors":

@@ -282,6 +282,18 @@
               ]
             },
             {
+              "name": "juego_ducha",
+              "folders": [],
+              "files": [
+                "barra.png",
+                "burbuja.png",
+                "mampara.png",
+                "pantalla_final_ducha.png",
+                "pantalla_inicio_ducha.png",
+                "gota.png"
+              ]
+            },
+            {
               "name": "juego_oveja",
               "folders": [],
               "files": [
