@@ -41,7 +41,10 @@
                         "none",
                         "profesor",
                         "victor",
-                        "carlota"
+                        "carlota",
+                        "alex",
+                        "anonimo1",
+                        "anonimo2"
                     ],
 
                     "Poses": [
@@ -66,7 +69,13 @@
                         "pasillo",
                         "cafeteria",
                         "bares",
-                        "bus"
+                        "bus",
+                        "entradafacul",
+                         "calle",
+                        "futbol",
+                        "cita",
+                        "parque",
+                        "parque1"
                     ]
                 }
             },
@@ -84,7 +93,13 @@
                         "pasillo",
                         "cafeteria",
                         "bares",
-                        "bus"
+                        "bus",
+                        "entradafacul",
+                        "calle",
+                        "cita",
+                        "futbol",
+                           "parque",
+                        "parque1"
                     ]
                 }
             }

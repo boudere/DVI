@@ -21,7 +21,12 @@
                         "bares",
                         "bus",
                         "parque",
-                        "mapa"
+                        "parque1",
+                        "mapa",
+                        "entradafacul",
+                        "calle",
+                        "futbol",
+                        "cita"
                     ]
                 },
                 "Personajes": {
@@ -45,12 +50,17 @@
                         "habitacion",
                         "bares",
                         "parque",
+                        "parque1",
                         "bares",
                         "pasillo",
                         "cafeteria",
                         "clase",
-                        "bus"
-                    ],
+                        "bus",
+                        "entradafacul", 
+                        "calle",
+                        "cita",
+                        "futbol" 
+                                   ],
                     "Lados": [
                         "izquierda",
                         "derecha"
@@ -67,7 +77,10 @@
                         "copas_boton",
                         "fdi_boton",
                         "parque_boton",
-                        "piso_boton"
+                        "piso_boton", 
+                        "barra_cafe",
+                        "pasillo_entrada",
+                        "ducha_boton"
                     ]
                 },
                 "Clases": [
@@ -100,7 +113,10 @@
                         "none",
                         "profesor",
                         "victor",
-                        "carlota"
+                        "carlota",
+                        "alex",
+                        "anonimo1",
+                        "anonimo2"
                     ],
                     "Poses": [
                         "normal",
@@ -123,7 +139,13 @@
                         "pasillo",
                         "cafeteria",
                         "bares",
-                        "bus"
+                        "bus",
+                        "entradafacul",
+                        "calle",
+                        "cita",
+                        "parque", 
+                        "parque1",
+                        "futbol"
                     ]
                 },
                 "Clases" : [
@@ -139,12 +161,18 @@
                     "JuegoOveja": [
                         "oveja",
                         "fondo",
+                        "suelo",
                         "valla",
                         "cielo",
                         "prota1",
                         "prota2",
                         "pantalla_inicio",
-                        "pantalla_final"
+                        "pantalla_final",
+                        "nube1",
+                        "nube2",
+                        "nube3",
+                        "nube4",
+                        "nube5"
                     ]
                 },
                 "JuegoDiscoteca": {
@@ -153,8 +181,8 @@
                         "persona",
                         "obstaculo",
                         "fondodisco",
-                        "pantalla_inicio",
-                        "pantalla_final"
+                        "pantalla_inicio_disco",
+                        "pantalla_final_disco"
                     ]
                 },
                 "JuegoDucha": {
@@ -164,14 +192,34 @@
                         "burbuja",
                         "gota",
                         "mampara",
-                        "pantalla_inicio",
-                        "pantalla_final"
+                        "pantalla_final_ducha",
+                        "pantalla_inicio_ducha"
+                    ]
+                },
+                  "JuegoFruit": {
+                    "Path": "juego_fruit/",
+                    "JuegoFruit": [
+                         "alitax",
+                "cafex",
+                "croasanx",
+                "croquetax",
+                "hamburguesax",
+                "heladox",
+                "huevox",
+                "kebabx",
+                "perritox",
+                "quesadillax",
+                "tortillax",
+                "pantalla_inicio_fruit",
+                "pantalla_final_fruit",
+                "fondoFruit"
                     ]
                 },
                 "Clases": [
                     "JuegoOveja",
                     "JuegoDiscoteca",
-                    "JuegoDucha"
+                    "JuegoDucha",
+                    "JuegoFruit"
                 ]
             },
             "Cursors": {

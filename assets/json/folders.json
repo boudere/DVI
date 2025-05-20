@@ -166,11 +166,6 @@
                   ]
                 },
                 {
-                  "name": "anonimo",
-                  "folders": [],
-                  "files": []
-                },
-                {
                   "name": "anonimo1",
                   "folders": [],
                   "files": [
@@ -362,6 +357,14 @@
                 "suelo.png",
                 "valla.png"
               ]
+            },
+            {
+              "name": "juego_parejas",
+              "folders": [],
+              "files": [
+                "fondo.png",
+                "reverso.png"
+              ]
             }
           ],
           "files": []
@@ -530,11 +533,6 @@
                   "files": [
                     "alex_normal.png"
                   ]
-                },
-                {
-                  "name": "anonimo",
-                  "folders": [],
-                  "files": []
                 },
                 {
                   "name": "anonimo1",
