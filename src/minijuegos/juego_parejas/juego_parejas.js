@@ -13,11 +13,11 @@ class JuegoParejas extends Game {
     constructor(sprites) {
         super({ key: JUEGO_PAREJAS });
 
-        /*sprites = {
-            FRONT_IMG: 'cara', // prefijo, no puede ser la misma para todas
+        sprites = {
+            /*FRONT_IMG: 'cara', // prefijo, no puede ser la misma para todas */
             BACK_IMG: 'reverso',
             FONDO_IMG: 'fondo'
-        }*/
+        }
 
         this.BACK_IMG = sprites.BACK_IMG;
         this.FONDO_IMG = sprites.FONDO_IMG;
