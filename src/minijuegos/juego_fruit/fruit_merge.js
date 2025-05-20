@@ -16,14 +16,14 @@ class JuegoFruit extends Games {
 
         const sprites = {
             CAFEX_IMG: 'cafex',
-            CROASANX_IMG: 'croasanx', // Make sure this key is loaded in your preload
+            CROASANX_IMG: 'croasanx',
             FONDO_IMG: 'fondoFruit',
             PANTALLA_INICIO: 'pantalla_inicio_fruit',
             PANTALLA_FINAL: 'pantalla_final_fruit'
         };
 
         this.PLAYER_FRUIT_IMG = sprites.CAFEX_IMG;
-        this.OBSTACLE_FRUIT_IMG = sprites.CROASANX_IMG; // This is now used for Croasanx primarily
+        this.OBSTACLE_FRUIT_IMG = sprites.CROASANX_IMG;
         this.FONDO_IMG = sprites.FONDO_IMG;
         this.PANTALLA_INICIO_KEY = sprites.PANTALLA_INICIO;
         this.PANTALLA_FINAL_KEY = sprites.PANTALLA_FINAL;
@@ -53,7 +53,7 @@ class JuegoFruit extends Games {
 
         this.fallenPersonas = [];
         this.puntuacion = 0;
-        this.croasanxScaleFactor = 0.8; // Croasanx might be slightly smaller or different base size
+        this.croasanxScaleFactor = 0.8; 
     }
 
 
@@ -67,7 +67,7 @@ class JuegoFruit extends Games {
 
         this.data_info_scene = this.scene.get(DATA_INFO);
 
-        this.obstaculos = []; // For Flappy Bird style obstacles, not directly used for Cafex/Croasanx
+        this.obstaculos = []; // Aunque _clear_obstacles se llama, esta lista no se poblará si las funciones de spawn no se usan.
         this.fallenPersonas = [];
 
         this._crear_fondo();
@@ -113,13 +113,13 @@ class JuegoFruit extends Games {
             this.deathLineGraphics.destroy();
         }
         this.deathLineGraphics = this.add.graphics();
-        this.deathLineGraphics.lineStyle(4, 0xff0000, 1); // Red line
+        this.deathLineGraphics.lineStyle(4, 0xff0000, 1);
         this.deathLineGraphics.beginPath();
         this.deathLineGraphics.moveTo(0, this.deathLineY);
         this.deathLineGraphics.lineTo(this.SCREEN_WIDTH, this.deathLineY);
         this.deathLineGraphics.closePath();
         this.deathLineGraphics.strokePath();
-        this.deathLineGraphics.setDepth(150); // Ensure it's visible
+        this.deathLineGraphics.setDepth(150);
     }
 
     enter() {
@@ -166,7 +166,7 @@ class JuegoFruit extends Games {
         this.puntuacion = 0;
         if (this.contadorTexto) this.contadorTexto.setText(`Puntuación: ${this.puntuacion}`);
 
-        this._clear_obstacles(); // Flappy bird obstacles
+        this._clear_obstacles(); // Esta función se llama
         if (this.timerEvent) {
             this.timerEvent.remove(false);
             this.timerEvent = null;
@@ -211,60 +211,47 @@ class JuegoFruit extends Games {
                         const isActiveFalling = this.gravityStarted;
 
                         if (isLandingOnTop && isActiveFalling) {
-                            // --- TRANSFORMATION LOGIC ---
                             if (collidedPersona.objectType === 'cafex' && collidedFallen.objectType === 'cafex') {
-                                console.log("Cafex landed on Cafex! Transforming...");
-
-                                const croasanxX = collidedFallen.x; // Place it where the bottom Cafex was
+                                const croasanxX = collidedFallen.x;
                                 const croasanxY = collidedFallen.y;
-                                const targetCroasanxDisplaySize = targetPlayerDisplaySize * this.croasanxScaleFactor; // Croasanx might be a bit smaller/larger
+                                const targetCroasanxDisplaySize = targetPlayerDisplaySize * this.croasanxScaleFactor;
                                 const croasanxScale = targetCroasanxDisplaySize / Math.max(this.obstacleFruitWidth, this.obstacleFruitHeight);
 
-                                // 1. Create Croasanx
                                 const newCroasanx = new Croasanx(this, croasanxX, croasanxY, croasanxScale, croasanxScale);
-                                newCroasanx.setDepth(collidedFallen.depth); // Same depth as the object it replaced
+                                newCroasanx.setDepth(collidedFallen.depth);
                                 if (newCroasanx.body) {
                                     newCroasanx.body.setImmovable(true);
                                     newCroasanx.body.setAllowGravity(false);
-                                    newCroasanx.setCollideWorldBounds(true); // Ensure it stays in bounds
+                                    newCroasanx.setCollideWorldBounds(true);
                                     newCroasanx.refreshBody();
                                 }
                                 
-                                // 2. Remove 'fallen' Cafex from array and destroy
                                 const fallenIndex = this.fallenPersonas.indexOf(collidedFallen);
                                 if (fallenIndex > -1) {
                                     this.fallenPersonas.splice(fallenIndex, 1);
                                 }
                                 collidedFallen.destroy();
 
-                                // 3. Destroy 'cafe' Cafex
                                 collidedPersona.destroy();
-                                this.cafe = null; // Mark current cafe as gone
+                                this.cafe = null; 
 
-                                // 4. Add newCroasanx to fallen stack
                                 this.fallenPersonas.push(newCroasanx);
                                 
-                                // 5. Update Score (e.g., bonus for merging)
-                                this.puntuacion += 5; // Bonus for merge
+                                this.puntuacion += 5;
                                 if (this.contadorTexto) this.contadorTexto.setText(`Puntuación: ${this.puntuacion}`);
 
-
-                                // 6. Reset for next player and continue game
                                 this.gravityStarted = false;
                                 this.horizontalMouseMoveActive = true;
-                                // No Flappy Bird obstacles in this mode _clear_obstacles();
                                 if (this.timerEvent) {
                                     this.timerEvent.remove(false);
                                     this.timerEvent = null;
                                 }
-                                this._setup_new_cafex(); // Creates the next Cafex
-                                return; // Collision handled by transformation
+                                this._setup_new_cafex(); 
+                                return; 
                             }
-                            // --- END TRANSFORMATION LOGIC ---
-
 
                             const activePlayerTopY = collidedPersona.y - (collidedPersona.displayHeight / 2);
-                            const isAtOrAboveDeathLine = activePlayerTopY <= this.deathLineY + this.deathLinePadding; // Added padding
+                            const isAtOrAboveDeathLine = activePlayerTopY <= this.deathLineY + this.deathLinePadding;
 
                             if (isAtOrAboveDeathLine) {
                                 const horizontalOverlap = Math.abs(collidedPersona.x - collidedFallen.x) < (collidedPersona.displayWidth / 2 + collidedFallen.displayWidth / 2) * 0.9;
@@ -273,7 +260,7 @@ class JuegoFruit extends Games {
                                 if (horizontalOverlap && isPersonaPhysicallyAboveFallen) {
                                     this._game_over('apilado_demasiado_alto_directo');
                                 } else {
-                                     this._handle_successful_landing(); // Landed below line but on something
+                                     this._handle_successful_landing(); 
                                 }
                             } else {
                                 if (!this.losing) {
@@ -289,7 +276,7 @@ class JuegoFruit extends Games {
             console.warn("New cafe body not immediately available during _setup_new_cafex. Colliders with fallen might be missed for this instance.");
         }
 
-        this.puntuacion += 10; // For new Cafex appearing
+        this.puntuacion += 10;
         if (this.contadorTexto) {
             this.contadorTexto.setText(`Puntuación: ${this.puntuacion}`);
         }
@@ -304,7 +291,7 @@ class JuegoFruit extends Games {
             this.cafe.body.setImmovable(true);
 
             const currentPlayerTopY = this.cafe.y - (this.cafe.displayHeight / 2);
-            if (currentPlayerTopY <= this.deathLineY + this.deathLinePadding) { // Added padding
+            if (currentPlayerTopY <= this.deathLineY + this.deathLinePadding) { 
                 this.cafe.setTint(0xff0000);
                 this._game_over('apilado_demasiado_alto_en_handle');
                 return;
@@ -319,7 +306,6 @@ class JuegoFruit extends Games {
         this.gravityStarted = false;
         this.horizontalMouseMoveActive = true;
 
-        // No Flappy Bird obstacles _clear_obstacles();
         if (this.timerEvent) {
             this.timerEvent.remove(false);
             this.timerEvent = null;
@@ -337,7 +323,7 @@ class JuegoFruit extends Games {
         this.scene.get(MINIJUEGO_MANAGER).return_to_dialogo();
     }
 
-    _clear_obstacles() { // This is for Flappy Bird style obstacles, not Cafex/Croasanx
+    _clear_obstacles() { 
         this.obstaculos.forEach(obstaculo => {
             if (obstaculo.superior) obstaculo.superior.destroy();
             if (obstaculo.inferior) obstaculo.inferior.destroy();
@@ -369,9 +355,6 @@ class JuegoFruit extends Games {
     }
 
     _initial_player_and_deathline_setup() {
-        // _setup_new_cafex is called in _full_game_reset which is called by enter()
-        // this._setup_new_cafex(); // Call this after marker is created for initial score
-
         this.deathLineY = this.SCREEN_HEIGHT * this.deathLineYFactor;
         this.deathLineY = Math.min(this.deathLineY, this.SCREEN_HEIGHT - 4);
         this.deathLineY = Math.max(this.deathLineY, 0);
@@ -441,21 +424,17 @@ class JuegoFruit extends Games {
         this.loseButton.setVisible(false).setActive(false);
     }
 
-
-    _next_obstaculo() { /* Flappy bird style - likely not needed if focusing on stacking */ }
-    _spawn_obstaculo() { /* Flappy bird style - likely not needed */ }
-
     _game_over(causa = 'colision') {
         if (this.losing) return;
         this.losing = true;
-        this.horizontalMouseMoveActive = false; // Stop mouse movement on game over
+        this.horizontalMouseMoveActive = false;
 
         if (this.loseButton) this.loseButton.setVisible(false).setActive(false);
         if (this.deathLineGraphics) this.deathLineGraphics.setVisible(false);
 
         let mensajeGameOver = '¡FRUTA APLASTADA!';
 
-        if (this.cafe && this.cafe.body) { // Check if cafe exists and has body
+        if (this.cafe && this.cafe.body) { 
             this.cafe.setTint(0xff0000);
             this.cafe.body.setAllowGravity(false);
             this.cafe.body.setVelocity(0, 0);
@@ -507,21 +486,11 @@ class JuegoFruit extends Games {
             return;
         }
 
-        // World bounds check for active cafe if gravity has started
         if (this.started && this.gravityStarted && this.cafe) {
             if (this.cafe.y + this.cafe.displayHeight / 2 >= this.SCREEN_HEIGHT) {
-                 // Landed on the "floor" of the game screen.
-                 // This might be considered a successful landing on an invisible base
-                 // or a game over depending on your rules.
-                 // For now, let's treat it like a successful landing if no other objects.
                 if (!this.losing && this.fallenPersonas.length === 0) { 
                     this._handle_successful_landing();
                 } else if (!this.losing) {
-                    // If there are other fallen items, it should have collided with them.
-                    // If it reaches here, it means it fell past everything.
-                    // This could be a game over condition or handled by world bounds collision.
-                    // The setCollideWorldBounds(true) on cafe should prevent it from going off screen.
-                    // If it lands on the world bound and body.onFloor() is true:
                     if (this.cafe.body.onFloor()) {
                          this._handle_successful_landing();
                     }
@@ -529,23 +498,6 @@ class JuegoFruit extends Games {
                 return;
             }
         }
-
-
-        // Flappy bird obstacle update logic - remove if not used
-        // if (this.started && this.gravityStarted) {
-        //      for (let i = this.obstaculos.length - 1; i >= 0; i--) {
-        //         const obstaculoPair = this.obstaculos[i];
-        //         const tubo = obstaculoPair.inferior;
-        //         if (tubo && tubo.active && tubo.x < this.cafe.x - this.cafe.displayWidth / 2 && !obstaculoPair.contado) {
-        //             obstaculoPair.contado = true;
-        //         }
-        //         if (tubo && tubo.x < -tubo.displayWidth / 2) {
-        //             if(obstaculoPair.superior) obstaculoPair.superior.destroy();
-        //             if(obstaculoPair.inferior) obstaculoPair.inferior.destroy();
-        //             this.obstaculos.splice(i, 1);
-        //         }
-        //     }
-        // }
     }
 
     _clean_up() {
@@ -594,7 +546,7 @@ class JuegoFruit extends Games {
             this.deathLineGraphics = null;
         }
 
-        this._clear_obstacles(); // Flappy bird obstacles
+        this._clear_obstacles(); // Esta función se llama
 
         if (this.pantalla_inicio && typeof this.pantalla_inicio.destroy === 'function') this.pantalla_inicio.destroy();
         if (this.pantalla_final && typeof this.pantalla_final.destroy === 'function') this.pantalla_final.destroy();
@@ -611,8 +563,7 @@ class JuegoFruit extends Games {
     shutdown() {
         this._clean_up();
         if (this.physics.world) {
-            this.physics.pause(); // Ensure physics is paused on shutdown
-            // Consider this.physics.world.colliders.destroy() if you have persistent colliders causing issues.
+            this.physics.pause();
         }
     }
 }
