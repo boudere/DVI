@@ -5627,10 +5627,10 @@
       "pose": "rayado",
       "fondo": "pasillo",
       "opciones": false,
-      "next_id": "FIN",
+      "next_id": "dialogo_6000",
       "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "minijuego_examen_2"
+      "next_scene_type": null,
+      "next_scene_id": null
     },
     "cap4000": {
       "texto": "No pretendía que te enteraras así tía…",
@@ -11474,7 +11474,7 @@
       "next_scene_id": null
     },
       "dialogo_6000": {
-      "texto": "(Un día más con clase a las 9 am)",
+      "texto": "(Año nuevo vida nueva, un día más con clase a las 9 am)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "salon",
@@ -21354,10 +21354,10 @@
       "pose": "triste",
       "fondo": "parque",
       "opciones": false,
-      "next_id": "minijuego_examen",
+      "next_id": "cap4001",
       "var_id": null,
-      "next_scene_type": "pantalla",
-      "next_scene_id": "minijuego_examen_3"
+      "next_scene_type": null,
+      "next_scene_id": null
     }
   }
 }
