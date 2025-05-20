@@ -67,7 +67,6 @@ class JuegoFruit extends Games {
 
         this.data_info_scene = this.scene.get(DATA_INFO);
 
-        this.obstaculos = []; // Aunque _clear_obstacles se llama, esta lista no se poblará si las funciones de spawn no se usan.
         this.fallenPersonas = [];
 
         this._crear_fondo();
@@ -166,7 +165,6 @@ class JuegoFruit extends Games {
         this.puntuacion = 0;
         if (this.contadorTexto) this.contadorTexto.setText(`Puntuación: ${this.puntuacion}`);
 
-        this._clear_obstacles(); // Esta función se llama
         if (this.timerEvent) {
             this.timerEvent.remove(false);
             this.timerEvent = null;
@@ -321,14 +319,6 @@ class JuegoFruit extends Games {
         }
         this._clean_up();
         this.scene.get(MINIJUEGO_MANAGER).return_to_dialogo();
-    }
-
-    _clear_obstacles() { 
-        this.obstaculos.forEach(obstaculo => {
-            if (obstaculo.superior) obstaculo.superior.destroy();
-            if (obstaculo.inferior) obstaculo.inferior.destroy();
-        });
-        this.obstaculos = [];
     }
 
     _crear_marcador() {
@@ -546,7 +536,7 @@ class JuegoFruit extends Games {
             this.deathLineGraphics = null;
         }
 
-        this._clear_obstacles(); // Esta función se llama
+
 
         if (this.pantalla_inicio && typeof this.pantalla_inicio.destroy === 'function') this.pantalla_inicio.destroy();
         if (this.pantalla_final && typeof this.pantalla_final.destroy === 'function') this.pantalla_final.destroy();
