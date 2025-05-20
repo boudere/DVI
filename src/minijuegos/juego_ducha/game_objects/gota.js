@@ -5,8 +5,6 @@ class Gota extends GamesGameObjects {
         const GOTA_IMG = 'gota';
         super(scene, x, y, GOTA_IMG);
         this.scene = scene;
-        this.scale_x=0.5;
-        this.scale_y=0.5;
         this.setScale(scale_x, scale_y);
     }
 
