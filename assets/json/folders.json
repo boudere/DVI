@@ -61,6 +61,20 @@
                   ]
                 },
                 {
+                  "name": "calle",
+                  "folders": [],
+                  "files": [
+                    "calle.png"
+                  ]
+                },
+                {
+                  "name": "cita",
+                  "folders": [],
+                  "files": [
+                    "cita.png"
+                  ]
+                },
+                {
                   "name": "clase",
                   "folders": [],
                   "files": [
@@ -82,6 +96,13 @@
                   ]
                 },
                 {
+                  "name": "futbol",
+                  "folders": [],
+                  "files": [
+                    "futbol.png"
+                  ]
+                },
+                {
                   "name": "habitacion",
                   "folders": [],
                   "files": [
@@ -100,6 +121,13 @@
                   "folders": [],
                   "files": [
                     "parque.png"
+                  ]
+                },
+                {
+                  "name": "parque1",
+                  "folders": [],
+                  "files": [
+                    "parque1.png"
                   ]
                 },
                 {
@@ -131,9 +159,30 @@
               "name": "personajes",
               "folders": [
                 {
+                  "name": "alex",
+                  "folders": [],
+                  "files": [
+                    "alex_normal.png"
+                  ]
+                },
+                {
                   "name": "anonimo",
                   "folders": [],
                   "files": []
+                },
+                {
+                  "name": "anonimo1",
+                  "folders": [],
+                  "files": [
+                    "anonimo1_normal.png"
+                  ]
+                },
+                {
+                  "name": "anonimo2",
+                  "folders": [],
+                  "files": [
+                    "anonimo2_normal.png"
+                  ]
                 },
                 {
                   "name": "carlota",
@@ -251,26 +300,6 @@
           "name": "minijuegos",
           "folders": [
             {
-              "name": "juego_fruit",
-              "folders": [],
-              "files": [
-                "alitax.png",
-                "cafex.png",
-                "croasanx.png",
-                "croquetax.png",
-                "hamburguesax.png",
-                "heladox.png",
-                "huevox.png",
-                "kebabx.png",
-                "perritox.png",
-                "quesadillax.png",
-                "tortillax.png",
-                "pantalla_inicio_fruit.png",
-                "pantalla_final_fruit.png",
-                "fondoFruit.png"
-              ]
-            },
-            {
               "name": "juego_discoteca",
               "folders": [],
               "files": [
@@ -287,10 +316,30 @@
               "files": [
                 "barra.png",
                 "burbuja.png",
+                "gota.png",
                 "mampara.png",
                 "pantalla_final_ducha.png",
-                "pantalla_inicio_ducha.png",
-                "gota.png"
+                "pantalla_inicio_ducha.png"
+              ]
+            },
+            {
+              "name": "juego_fruit",
+              "folders": [],
+              "files": [
+                "alitax.png",
+                "cafex.png",
+                "croasanx.png",
+                "croquetax.png",
+                "fondoFruit.png",
+                "hamburguesax.png",
+                "heladox.png",
+                "huevox.png",
+                "kebabx.png",
+                "pantalla_final_fruit.png",
+                "pantalla_inicio_fruit.png",
+                "perritox.png",
+                "quesadillax.png",
+                "tortillax.png"
               ]
             },
             {
@@ -310,6 +359,7 @@
                 "pantalla_inicio.png",
                 "prota1.png",
                 "prota2.png",
+                "suelo.png",
                 "valla.png"
               ]
             }
@@ -344,6 +394,20 @@
                   ]
                 },
                 {
+                  "name": "calle",
+                  "folders": [],
+                  "files": [
+                    "calle.png"
+                  ]
+                },
+                {
+                  "name": "cita",
+                  "folders": [],
+                  "files": [
+                    "cita.png"
+                  ]
+                },
+                {
                   "name": "clase",
                   "folders": [
                     {
@@ -373,6 +437,13 @@
                   ]
                 },
                 {
+                  "name": "futbol",
+                  "folders": [],
+                  "files": [
+                    "futbol.png"
+                  ]
+                },
+                {
                   "name": "habitacion",
                   "folders": [],
                   "files": [
@@ -397,7 +468,15 @@
                   "name": "parque",
                   "folders": [],
                   "files": [
+                    "parque-LAPTOP-GADRNNSN.png",
                     "parque.png"
+                  ]
+                },
+                {
+                  "name": "parque1",
+                  "folders": [],
+                  "files": [
+                    "parque1.png"
                   ]
                 },
                 {
@@ -428,25 +507,48 @@
               "name": "objetos",
               "folders": [],
               "files": [
+                "barra_cafe.PNG",
                 "caballo_parque.png",
                 "calle_boton.png",
                 "copas_boton.png",
+                "ducha_boton.png",
                 "fdi_boton.png",
                 "habitacion_cama.png",
                 "parque_boton.png",
+                "pasillo_entrada.png",
                 "pelota_parque.png",
                 "piso_boton.png",
-                "puerta_disco.png",
-                "barra_cafe.png"
+                "puerta_disco.png"
               ]
             },
             {
               "name": "personajes",
               "folders": [
                 {
+                  "name": "alex",
+                  "folders": [],
+                  "files": [
+                    "alex_normal.png"
+                  ]
+                },
+                {
                   "name": "anonimo",
                   "folders": [],
                   "files": []
+                },
+                {
+                  "name": "anonimo1",
+                  "folders": [],
+                  "files": [
+                    "anonimo1_normal.png"
+                  ]
+                },
+                {
+                  "name": "anonimo2",
+                  "folders": [],
+                  "files": [
+                    "anonimo2_normal.png"
+                  ]
                 },
                 {
                   "name": "boton_continuar",
@@ -476,7 +578,9 @@
                   "name": "maria",
                   "folders": [],
                   "files": [
+                    "maria_feliz-LAPTOP-GADRNNSN.png",
                     "maria_feliz.png",
+                    "maria_normal-LAPTOP-GADRNNSN.png",
                     "maria_normal.png",
                     "maria_rayado.png"
                   ]
@@ -503,7 +607,9 @@
                   "name": "pepe",
                   "folders": [],
                   "files": [
+                    "pepe_feliz-LAPTOP-GADRNNSN.png",
                     "pepe_feliz.png",
+                    "pepe_normal-LAPTOP-GADRNNSN.png",
                     "pepe_normal.png",
                     "pepe_rayado.png"
                   ]
@@ -519,8 +625,11 @@
                   "name": "prota",
                   "folders": [],
                   "files": [
+                    "prota_feliz-LAPTOP-GADRNNSN.png",
                     "prota_feliz.png",
+                    "prota_normal-LAPTOP-GADRNNSN.png",
                     "prota_normal.png",
+                    "prota_triste-LAPTOP-GADRNNSN.png",
                     "prota_triste.png"
                   ]
                 },
@@ -556,14 +665,6 @@
                   ]
                 },
                 {
-                  "name": "calle",
-                  "folders": [],
-                  "files": [
-                    "calle_izquierda.png",
-                    "calle_derecha.png"
-                  ]
-                },
-                {
                   "name": "bus",
                   "folders": [],
                   "files": [
@@ -579,6 +680,22 @@
                   ]
                 },
                 {
+                  "name": "calle",
+                  "folders": [],
+                  "files": [
+                    "calle_derecha.png",
+                    "calle_izquierda.PNG"
+                  ]
+                },
+                {
+                  "name": "cita",
+                  "folders": [],
+                  "files": [
+                    "cita_derecha.PNG",
+                    "cita_izquierda.png"
+                  ]
+                },
+                {
                   "name": "clase",
                   "folders": [],
                   "files": [
@@ -590,7 +707,14 @@
                   "folders": [],
                   "files": [
                     "entradafacul_derecha.png",
-                    "entradafacul_izquierda.png"
+                    "entradafacul_izquierda.PNG"
+                  ]
+                },
+                {
+                  "name": "futbol",
+                  "folders": [],
+                  "files": [
+                    "futbol_izquierda.png"
                   ]
                 },
                 {
@@ -605,8 +729,14 @@
                   "name": "parque",
                   "folders": [],
                   "files": [
-                    "parque_derecha.png",
                     "parque_izquierda.png"
+                  ]
+                },
+                {
+                  "name": "parque1",
+                  "folders": [],
+                  "files": [
+                    "parque1_derecha.PNG"
                   ]
                 },
                 {
@@ -624,30 +754,6 @@
                     "salon_derecha.png",
                     "salon_izquierda.png"
                   ]
-                },
-                 {
-                  "name": "futbol",
-                  "folders": [],
-                  "files": [
-                    "futbol_izquierda.png",
-                    "futbol_derecha.png"
-                  ]
-                },
-                 {
-                  "name": "cita",
-                  "folders": [],
-                  "files": [
-                    "cita_izquierda.png",
-                    "cita_derecha.png"
-                  ]
-                },
-                {
-                  "name": "parque1",
-                  "folders": [],
-                  "files": [
-                    "parque1_izquierda.png",
-                    "parque1_derecha.png"
-                  ]
                 }
               ],
               "files": []
@@ -664,7 +770,6 @@
       "files": [
         "animation.json",
         "dialogo.json",
-        "dialogo_original.json",
         "opciones_dialogo.json",
         "pantallas.json",
         "pantalla_info.json",
@@ -680,14 +785,8 @@
         "disco.ogg",
         "mechanical_keyboard.ogg",
         "ovejitas.ogg",
-        "tema_inicial.ogg"
-      ]
-    },
-    {
-      "name": "sonidos",
-      "folders": [],
-      "files": [
-        "mechanical_keyboard.ogg"
+        "tema_inicial.ogg",
+        "tema_inicial2.ogg"
       ]
     }
   ],

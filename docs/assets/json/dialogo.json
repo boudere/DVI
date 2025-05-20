@@ -1035,7 +1035,7 @@
       "next_scene_id": null
     },
     "cap1004": {
-      "texto": "Bueno chicos, bienvenidos. Os voy avisando de que si no venís a clase tendréis un problema gordo en Enero, y aún más gordo en Junio… Así que id poniéendoos las pilas, que esto no es moco de pavo.",
+      "texto": "Bueno chicos, bienvenidos. Os voy avisando de que si no venís a clase tendréis un problema gordo en Enero, y aún más gordo en Junio… Así que id poniéndoos las pilas, que esto no es moco de pavo.",
       "npc": "profesor",
       "pose": "normal",
       "fondo": "claseasientos",
@@ -1101,7 +1101,7 @@
       "next_scene_id": null
     },
     "cap1010": {
-      "texto": "Buenos días queridos compañeros, soy Victor, vuestro delegado. Espero estar a la altura de vuestras expectativas.",
+      "texto": "Buenos días queridos compañeros, soy Víctor, vuestro delegado. Espero estar a la altura de vuestras expectativas.",
       "npc": "victor",
       "pose": "normal",
       "fondo": "claseasientos",
@@ -1750,7 +1750,7 @@
       "next_scene_id": null
     },
     "cap1069": {
-      "texto": "a ver...",
+      "texto": "A ver...",
       "npc": "prota",
       "pose": "normal",
       "fondo": "claseasientos",

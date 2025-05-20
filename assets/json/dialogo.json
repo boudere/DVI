@@ -1035,7 +1035,7 @@
       "next_scene_id": null
     },
     "cap1004": {
-      "texto": "Bueno chicos, bienvenidos. Os voy avisando de que si no venís a clase tendréis un problema gordo en Enero, y aún más gordo en Junio… Así que id poniéendoos las pilas, que esto no es moco de pavo.",
+      "texto": "Bueno chicos, bienvenidos. Os voy avisando de que si no venís a clase tendréis un problema gordo en Enero, y aún más gordo en Junio… Así que id poniéndoos las pilas, que esto no es moco de pavo.",
       "npc": "profesor",
       "pose": "normal",
       "fondo": "clase",
@@ -1433,7 +1433,7 @@
     "cap1040": {
       "texto": "Encantado ___, me pensaré tu oferta.",
       "npc": "victor",
-      "pose": "pillin",
+      "pose": "feliz",
       "fondo": "entradafacul",
       "opciones": false,
       "next_id": "cap1041",
@@ -1466,7 +1466,7 @@
     "cap1043": {
       "texto": "Oye Lorena, ¿cómo que ya ha conseguido mi nombre?? ¿Te habló de mi?",
       "npc": "prota",
-      "pose": "rayado",
+      "pose": "normal",
       "fondo": "entradafacul",
       "opciones": false,
       "next_id": "cap1044",
@@ -1522,7 +1522,7 @@
       "texto": "(Qué bien me lo he pasado, tengo muchas ganas de la siguiente. Aunque ha sido un poco raro lo de Víctor…)",
       "npc": "prota",
       "pose": "normal",
-      "fondo": "habiacion",
+      "fondo": "habitacion",
       "opciones": false,
       "next_id": "cap1049",
       "var_id": null,
@@ -1882,7 +1882,7 @@
       "next_scene_id": null
     },
     "cap1081": {
-      "texto": "{SOUND=besito_sonido}(muac muac muac)",
+      "texto": "(muac muac muac)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "salon",
@@ -2025,7 +2025,7 @@
       "next_scene_id": null
     },
     "cap1093": {
-      "texto": "(qué bien poder desconectar una última noche antes de exámenes... A ver si no se desfasa demasiado que mañana me vuelvo a casa...) {SOUND=fiesta_musica}",
+      "texto": "(qué bien poder desconectar una última noche antes de exámenes... A ver si no se desfasa demasiado que mañana me vuelvo a casa...) ",
       "npc": "prota",
       "pose": "normal",
       "fondo": "negro",
@@ -2223,7 +2223,7 @@
       "next_scene_id": null
     },
     "cap1111": {
-      "texto": "No entiendo muy bien a qué...{SOUND=besito_sonido}",
+      "texto": "No entiendo muy bien a qué...(MUAC)",
       "npc": "prota",
       "pose": "normal",
       "fondo": "habitacion",
@@ -2421,7 +2421,7 @@
       "next_scene_id": null
     },
     "cap1129": {
-      "texto": "{SOUND=portazo_sonido}A por esos exámenes...",
+      "texto": "A por esos exámenes...",
       "npc": "montero",
       "pose": "feliz",
       "fondo": "salon",
@@ -2531,7 +2531,7 @@
       "next_scene_id": null
     },
     "cap1139": {
-      "texto": "Gracias, pasátelo bien en vacaciones. ¡Chao!{SOUND=portazo_sonido}",
+      "texto": "Gracias, pasátelo bien en vacaciones. ¡Chao!",
       "npc": "prota",
       "pose": "normal",
       "fondo": "salon",
@@ -2586,7 +2586,7 @@
       "next_scene_id": null
     },
     "cap1144": {
-      "texto": "¡Adiós! {SOUND=portazo_sonido}",
+      "texto": "¡Adiós!",
       "npc": "montero",
       "pose": "normal",
       "fondo": "salon",

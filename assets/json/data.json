@@ -78,7 +78,9 @@
                         "fdi_boton",
                         "parque_boton",
                         "piso_boton", 
-                        "barra_cafe"
+                        "barra_cafe",
+                        "pasillo_entrada",
+                        "ducha_boton"
                     ]
                 },
                 "Clases": [
@@ -190,8 +192,8 @@
                         "burbuja",
                         "gota",
                         "mampara",
-                        "pantalla_final",
-                        "pantalla_inicio"
+                        "pantalla_final_ducha",
+                        "pantalla_inicio_ducha"
                     ]
                 },
                   "JuegoFruit": {
