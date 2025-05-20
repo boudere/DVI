@@ -4,13 +4,12 @@ class Burbuja extends GamesGameObjects {
     constructor(scene, x, y, scale_x, scale_y) {
         const BURBUJA_IMG = 'burbuja';
         super(scene, x, y, BURBUJA_IMG);
-        /*scene.add.existing(this);         // ✅ Mostrar
-        scene.physics.add.existing(this);
-        this.points = 5;*/
         this.setScale(scale_x, scale_y);
         this.body.setAllowGravity(false);
+        this.body.setImmovable(true);
         scene.add.existing(this);
     }
+
 
     enter() {
         super.enter();

@@ -29,8 +29,6 @@ class JuegoDucha extends Game {
 
         this.mamparawidth = 1536;
         this.mamparaheight = 1024;
-        this.barrancho = 300;
-        this.barraalto = 60;
         this.SCORE = 0;
         this.started = false;
     }
@@ -43,17 +41,17 @@ class JuegoDucha extends Game {
         //this.physics.world.setBoundsCollision(true, true, true, false); //ni idea
 
         this._crear_mampara();
-        this._crear_burbujas();
         this._crear_barra();
         this._crear_gota();
         this._crear_marcador();
+        this._crear_burbujas();
         this._crear_pantalla_inicio();
         this._crear_pantalla_final();
-
+       
         this.burbujas = [];
 
         this.physics.add.collider(this.gota, this.barra, this._rebote_barra, null, this);
-        this.physics.add.collider(this.gota, this.burbujas, this._hit_burbuja, null, this);
+        this.physics.add.collider(this.gota, this.burbujas, this._romper_burbuja, null, this);
 
         this.physics.world.on('worldbounds', (body, up, down) => {
             if (body.gameObject === this.gota && down) {
@@ -74,20 +72,12 @@ class JuegoDucha extends Game {
     start_game() {
         this.pantalla_inicio.exit();
         this.mampara.enter();
-        Object.keys(this.burbujas).forEach((key) => {
-            this.burbujas[key].forEach((burbuja) => {
-                burbuja.enter();
-                burbuja.setActive(true).setVisible(true);
-            });
-        });
+        this.burbujas.forEach(b => b.enter());
         this.barra.enter();
         this.gota.enter();
 
-        //this.gota.setActive(true).setVisible(true); //no se
         this._setup_input();         
         this.started = true;
-         console.log('¿Existe textura burbuja?', this.textures.exists('burbuja'));
-        console.log('¿Existe textura burbuja?', this.textures.exists('barra'));
     }
 
     _crear_mampara() {
@@ -100,16 +90,13 @@ class JuegoDucha extends Game {
     }
 
     _crear_barra() {
-        const scaleX = 200 / 512;
-        const scaleY = 50 / 512;
-        this.barra = new Barra(this, this.SCREEN_WIDTH / 2, this.SCREEN_HEIGHT - 50, scaleX, scaleY);
+        this.barra = new Barra(this, this.SCREEN_WIDTH / 2, this.SCREEN_HEIGHT - 50, 1.5, 1.5);
         //this.physics.add.existing(this.barra);//.setCollideWorldBounds(true);
         this.barra.body.allowGravity = false;
     }
 
     _crear_gota() {
-        const scale = 60 / 256;
-        this.gota = new Gota(this, this.barra.x, this.barra.y - 30, scale, scale);
+        this.gota = new Gota(this, this.barra.x, this.barra.y - 30, 0.2, 0.2);
         this.physics.add.existing(this.gota);
         this.gota.body.setMaxVelocity(700, 800); // Limita velocidad horizontal y vertical
         this.gota.setBounce(5);
@@ -144,24 +131,30 @@ class JuegoDucha extends Game {
     }
 
     _crear_burbujas() {
-        this.burbujas = this.physics.add.staticGroup();
-        const rows = 5;
-        const cols = 7;
-        const startX = 100;
-        const startY = 80;
-        const spacingX = 120;
-        const spacingY = 100;
-        const scale = 60 / 256;
+    this.burbujas = this.physics.add.staticGroup();
 
-        for (let row = 0; row < rows; row++) {
-            for (let col = 0; col < cols; col++) {
-                const x = startX + col * spacingX;
-                const y = startY + row * spacingY;
-                const burbuja = new Burbuja(this, x, y, scale, scale);
-                this.burbujas.add(burbuja);
-            }
+    const rows = 5;
+    const cols = 7;
+    const spacingX = 120;
+    const spacingY = 100;
+    const scale = 60 / 256;
+
+    // Centrado en pantalla (más arriba del centro)
+    const totalWidth = (cols - 1) * spacingX;
+    const totalHeight = (rows - 1) * spacingY;
+    const startX = (this.SCREEN_WIDTH - totalWidth) / 2;
+    const startY = this.SCREEN_HEIGHT * 0.1;
+
+    for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+            const x = startX + col * spacingX;
+            const y = startY + row * spacingY;
+            const burbuja = new Burbuja(this, x, y, scale, scale, this.BURBUJA_IMG);
+            this.burbujas.add(burbuja);
         }
     }
+}
+
 
 
     _setup_input() {
