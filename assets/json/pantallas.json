@@ -4515,7 +4515,376 @@
                     },
                     "animation": null
                 }
-        }
+            }
+        },
+        "cap4_1": {
+            "pantalla": {
+                "nombre": "parque_0400"
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap4000"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "mapa_0400": {
+            "pantalla": {
+                "nombre": "mapa_0400"
+            }
+        },
+        "parque_0401": {
+            "pantalla": {
+                "nombre": "parque_0401"
+            }
+        },
+        "mapa_0401": {
+            "pantalla": {
+                "nombre": "mapa_0401"
+            }
+        },
+        "cap4_2": {
+            "pantalla": {
+                "nombre": "salon_0401"
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap4012"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "habitacion_0401": {
+            "pantalla": {
+                "nombre": "habitacion_0401"
+            }
+        },
+        "salon_0402": {
+            "pantalla": {
+                "nombre": "salon_0402"
+            }
+        },
+        "mapa_0402": {
+            "pantalla": {
+                "nombre": "mapa_0402"
+            }
+        },
+        "cap4_3": {
+            "pantalla": {
+                "nombre": "habitacion_0402"
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap4033"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "habitacion_0403": {
+            "pantalla": {
+                "nombre": "habitacion_0403"
+            }
+        },
+        "salon_0403": {
+            "pantalla": {
+                "nombre": "salon_0403"
+            }
+        },
+        "mapa_0403": {
+            "pantalla": {
+                "nombre": "mapa_0403"
+            }
+        },
+        "cap4_4": {
+            "pantalla": {
+                "nombre": "pasillo_0401"
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap4036"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "cafeteria_0401": {
+            "pantalla": {
+                "nombre": "cafeteria_0401"
+            }
+        },
+        "clase_0401": {
+            "pantalla": {
+                "nombre": "clase_0401"
+            }
+        },
+        "pasillo_0402": {
+            "pantalla": {
+                "nombre": "pasillo_0402"
+            }
+        },
+        "mapa_0404": {
+            "pantalla": {
+                "nombre": "mapa_0404"
+            }
+        },
+        "cap4_5": {
+            "pantalla": {
+                "nombre": "cafeteria_0402"
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap4039"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "clase_0402": {
+            "pantalla": {
+                "nombre": "clase_0402"
+            }
+        },
+        "minijuego_cafeteria_4": {
+            "pantalla": {
+                "nombre": "cafeteria_0403"
+            }
+        },
+        "pasillo_0403": {
+            "pantalla": {
+                "nombre": "pasillo_0403"
+            }
+        },
+        "clase_0403": {
+            "pantalla": {
+                "nombre": "clase_0403"
+            }
+        },
+        "cafeteria_0404": {
+            "pantalla": {
+                "nombre": "cafeteria_0404"
+            }
+        },
+        "mapa_0405": {
+            "pantalla": {
+                "nombre": "mapa_0405"
+            }
+        },
+        "pasillo_0404": {
+            "pantalla": {
+                "nombre": "pasillo_0404"
+            }
+        },
+        "clase_0404": {
+            "pantalla": {
+                "nombre": "clase_0404"
+            }
+        },
+        "cap4_6": {
+            "pantalla": {
+                "nombre": "parque_0402"
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap4066"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "parque_0403": {
+            "pantalla": {
+                "nombre": "parque_0403"
+            }
+        },
+        "mapa_0406": {
+            "pantalla": {
+                "nombre": "mapa_0406"
+            }
+        },
+        "cap4_7": {
+            "pantalla": {
+                "nombre": "pasillo_0405"
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap4077"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "cafeteria_0405": {
+            "pantalla": {
+                "nombre": "cafeteria_0405"
+            }
+        },
+        "clase_0405": {
+            "pantalla": {
+                "nombre": "clase_0405"
+            }
+        },
+        "pasillo_0406": {
+            "pantalla": {
+                "nombre": "pasillo_0406"
+            }
+        },
+        "cafeteria_0406": {
+            "pantalla": {
+                "nombre": "cafeteria_0406"
+            }
+        },
+        "clase_0406": {
+            "pantalla": {
+                "nombre": "clase_0406"
+            }
+        },
+        "mapa_0407": {
+            "pantalla": {
+                "nombre": "mapa_0407"
+            }
+        },
+        "cap4_8": {
+            "pantalla": {
+                "nombre": "salon_0404"
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap4081"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "habitacion_0404": {
+            "pantalla": {
+                "nombre": "habitacion_0404"
+            }
+        },
+        "salon_0405": {
+            "pantalla": {
+                "nombre": "salon_0405"
+            }
+        },
+        "habitacion_0405": {
+            "pantalla": {
+                "nombre": "habitacion_0405"
+            }
+        },
+        "mapa_0408": {
+            "pantalla": {
+                "nombre": "mapa_0408"
+            }
+        },
+        "cap4_9_final": {
+            "pantalla": {
+                "nombre": "entradafacul_final"
+            },
+            "npcs": {
+                "npc_1": {
+                    "nombre": "boton_continuar",
+                    "img": "boton_continuar",
+                    "pose": "normal",
+                    "pos_x": 1000,
+                    "pos_y":1000,
+                    "size": 0.5,
+                    "delay": 0,
+                    "on_click": {
+                        "scene": "dialogo",
+                        "name": "cap4095"
+                    },
+                    "animation": null
+                }
+            }
+        },
+        "pasillo_0407": {
+            "pantalla": {
+                "nombre": "pasillo_0407"
+            }
+        },
+        "cafeteria_0407": {
+            "pantalla": {
+                "nombre": "cafeteria_0407"
+            }
+        },
+        "clase_0407": {
+            "pantalla": {
+                "nombre": "clase_0407"
+            }
         }
     }
 }
