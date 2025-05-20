@@ -276,6 +276,18 @@
                 "prota2.png",
                 "valla.png"
               ]
+            },
+            {
+            "name": "juego_ducha",
+              "folders": [],
+              "files": [
+                "mampara.png",
+                "barra.png",
+                "burbuja.png",
+                "gota.png",
+                "pantalla_inicio.png",
+                "pantalla_final.png"
+              ]
             }
           ],
           "files": []

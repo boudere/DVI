@@ -196,6 +196,7 @@ class JuegoDiscoteca extends Game {
         setTimeout(() => {
             this.pantalla_final.enter();
             textoGameOver.destroy();
+            this._clean_up();
         }, 2000);
     }
 

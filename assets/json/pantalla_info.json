@@ -3604,8 +3604,8 @@
                     "img": "ducha_boton",
                     "pos_x": 1021,
                     "pos_y": 733,
-                    "size_x": 1,
-                    "size_y": 1,
+                    "size_x": 1.5,
+                    "size_y": 1.5,
                     "delay": 0,
                     "animation": null,
                     "on_click": {
